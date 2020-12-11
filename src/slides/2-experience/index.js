@@ -4,7 +4,7 @@ import "./style.scss";
 import Jobs from "./data/jobs.json";
 import Schools from "./data/schools.json";
 import Skills from "./data/skills.json";
-import { ProgressBar } from '../../../elements';
+import { ProgressBar } from '../../elements';
 
 const SlideExperience = () => {
   return (
@@ -15,7 +15,7 @@ const SlideExperience = () => {
         {Jobs.map((job) => (
           <div className="segment">
             <div className={`image-holder ${ job.className }`}>
-              <img src={`../../../../static/img/experience/${ job.image }`} alt={job.company} />
+              <img src={`../../../static/img/experience/${ job.image }`} alt={job.company} />
             </div>
             <div className="segment-left">
               <div className={`org ${ job.className }`}>{job.company}</div>
@@ -35,7 +35,7 @@ const SlideExperience = () => {
         {Schools.map((school) => (
           <div className="segment">
             <div className={`image-holder ${ school.className }`}>
-              <img src={`../../../../static/img/experience/${ school.image }`} alt={school.name} />
+              <img src={`../../../static/img/experience/${ school.image }`} alt={school.name} />
             </div>
             <div className="segment-left">
               <div className={`org ${school.classNameName}`}>{school.name}</div>

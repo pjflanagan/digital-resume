@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import { Reveal } from '../../../../elements'
+import { Reveal } from '../../../elements'
 
 class FeaturedProject extends Reveal {
   render() {
@@ -9,7 +9,7 @@ class FeaturedProject extends Reveal {
     return (
       <div class="project featured" ref={this.ref}>
         <div class="project-image"
-          style={{ backgroundImage: `url(../../../../static/img/project/${image})` }}
+          style={{ backgroundImage: `url(../../../static/img/project/${image})` }}
         ></div>
         <div class="info">
           <a href={`//${link}`} target="_blank" rel="noreferrer">

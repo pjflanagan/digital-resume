@@ -3,7 +3,7 @@ import Projects from './data/projects.json';
 import { FeaturedProject } from './featured-project';
 import { BlueprintDecoration } from './blueprint-decoration'
 import { Project } from './project';
-import { Ruler } from '../../../elements';
+import { Ruler } from '../../elements';
 import './style.scss';
 
 const INVENTIONS = [

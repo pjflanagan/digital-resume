@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Multipass } from './multipass'
-import { LabeledButton } from '../../../elements'
+import { LabeledButton } from '../../elements'
 
 import './style.scss'
 

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Reveal } from '../../../../elements'
+import { Reveal } from '../../../elements'
 import './style.scss'
 
 class BlueprintDecoration extends Reveal {

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BillCypher } from "./bill-cypher";
-import { FrameHolder, Reveal } from "../../../../elements";
+import { FrameHolder, Reveal } from "../../../elements";
 import "./style.scss";
 
 const FRAME_STYLE = {

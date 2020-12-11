@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./style.scss";
-import { SlideSplash, SlidePersonal, SlideExperience, SlideProjects, SlideContact } from "./slides";
+import { SlideSplash, SlidePersonal, SlideExperience, SlideProjects, SlideContact } from "../slides";
 import { Cover } from '../elements'
 
 // markup
