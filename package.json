@@ -1,11 +1,11 @@
 {
-  "name": "my-gatsby-site",
+  "name": "pjflanagan-digital-resume",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby site",
+  "description": "Peter James Flanagan | Digital Resume",
   "author": "Peter Flanagan",
   "keywords": [
-    "gatsby"
+    "resume", "web developer"
   ],
   "scripts": {
     "develop": "gatsby develop",

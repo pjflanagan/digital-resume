@@ -1,3 +1,4 @@
+import React from 'react'
 
 const calcAge = () => {
   const ageDifMs = Date.now() - new Date("August 11, 1996").getTime();
@@ -70,3 +71,6 @@ class Multipass extends React.Component {
   }
 
 }
+
+
+export { Multipass }

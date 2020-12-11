@@ -1,0 +1,52 @@
+.bar {
+  padding: 4px 12px;
+  margin: 4px 12px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  background: #0002;
+  background: linear-gradient(
+    90deg,
+    #0002 0%,
+    #0002 50%,
+    #0003 50%,
+    #0003 100%
+  );
+  background-position: 0 0;
+  background-size: 200%;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+
+  .name {
+    color: #fff;
+    z-index: 25;
+    position: relative;
+  }
+
+  .loader {
+    position: absolute;
+    background: #be0c09;
+    background: linear-gradient(
+      90deg,
+      #be0c09 0%,
+      #be0c09 50%,
+      #850705 50%,
+      #850705 100%
+    );
+    background-position: 0 0;
+    height: 100%;
+    background-size: 200%;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+  }
+
+  &:hover {
+    background-position: 100% 0;
+    .loader {
+      background-position: -100% 0;
+    }
+  }
+}

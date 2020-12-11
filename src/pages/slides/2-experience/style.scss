@@ -1,0 +1,196 @@
+$lineColor: #00000022;
+
+.slide-experience {
+  width: 100%;
+  z-index: 20;
+  position: relative;
+  background: #e9e6da;
+  padding-bottom: 68px;
+
+  h1 {
+    font-family: "AmericanCaptain";
+    z-index: 20;
+    position: relative;
+    text-align: center;
+    font-size: 52px;
+    color: #1d1d1d;
+    text-shadow: 1px 2px 0 #fffa;
+    box-shadow: inset 0 -40px #1b1d1d11;
+    width: 60%;
+    left: 15%;
+  }
+
+  .slide-body {
+    font-family: "Ubuntu";
+    z-index: 21;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+
+    h2 {
+      font-size: 28px;
+      color: #000a;
+      padding: 28px 8px 8px;
+      border-bottom: 2px solid $lineColor;
+    }
+
+    .segment {
+      border-left: 2px solid $lineColor;
+      margin-left: 40px;
+      padding: 28px 4px 8px 40px;
+
+      .image-holder {
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        left: 37px;
+        border-radius: 50%;
+        border: 2px solid $lineColor;
+        overflow: hidden;
+
+        img {
+          width: 68%;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          left: 16%;
+        }
+      }
+
+      .image-holder.freewheel {
+        background: #000;
+      }
+      .image-holder.bentley {
+        background: #62bb47;
+      }
+      .image-holder.biotelem {
+        background: #009edc;
+      }
+      .image-holder.express {
+        background: #b13617;
+      }
+      .image-holder.umich {
+        background: #00274c;
+      }
+      .image-holder.gvhs {
+        background: #1c4b98;
+        img {
+          top: 54%;
+        }
+      }
+
+      .segment-left {
+        .org {
+          font-weight: bold;
+          font-size: 18px;
+          padding: 8px 0;
+        }
+        .org.freewheel {
+          color: #3b778a;
+        }
+        .org.bentley {
+          color: #62bb47;
+        }
+        .org.biotelem {
+          color: #009edc;
+        }
+        .org.express {
+          color: #b13617;
+        }
+        .org.umich {
+          color: #00274c;
+        }
+        .org.gvhs {
+          color: #1c4b98;
+        }
+        .location {
+          font-size: 14px;
+          padding: 4px 0;
+        }
+        .time {
+          color: #000a;
+          font-size: 10px;
+          padding: 4px 0;
+        }
+      }
+
+      .segment-right {
+        .position {
+          padding: 8px 0;
+        }
+        p.description {
+          font-size: 12px;
+          padding: 4px;
+          line-height: 14px;
+          color: #000a;
+        }
+      }
+    }
+
+    h3 {
+      padding: 14px 12px 4px;
+      font-size: 21px;
+    }
+  }
+}
+
+.slide-experience::before {
+  content: "";
+  width: 120%;
+  background: #e9e6da;
+  height: 100px;
+  position: absolute;
+  left: -10%;
+  border-radius: 50%;
+  margin-top: -30px;
+  box-shadow: 0 -4px #0002;
+}
+
+@media only screen and (min-width: 576px) {
+  .slide-experience {
+    background: #fffaf0;
+    background: radial-gradient(circle, #fffaf0 54%, #e9e1db 100%) !important;
+    z-index: 0;
+
+    h1 {
+      padding: 48px 0 0;
+      font-size: 84px;
+      width: 40%;
+      left: 30%;
+    }
+
+    .slide-body {
+      .segment {
+        display: flex;
+        .segment-left {
+          min-width: 220px;
+        }
+        .segment-right {
+          max-width: 400px;
+          display: grid;
+
+          p.description {
+            display: inline;
+            font-size: 14px;
+            padding: 4px 0;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .slide-experience::before {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .slide-experience {
+    .slide-body {
+      width: 680px;
+    }
+  }
+}

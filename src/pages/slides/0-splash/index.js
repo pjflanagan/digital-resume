@@ -7,7 +7,7 @@ import './style.scss';
 // TODO: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
 const CanvasComponent = props => {
-  const canvasRef = useRef(null)
+  const canvasRef = useRef(null);
   
   useEffect(() => {
     const canvasElem = canvasRef.current
@@ -39,17 +39,20 @@ class SlideSplash extends React.Component {
   }
 
   handleScroll(e) {
-    const scrollY = window.scrollY,
-          itemTranslate = Math.min(0, scrollY/3 - 60);
     this.setState({
-      transform: itemTranslate
+      transform: -window.scrollY / 6
     });
   }
 
   render() {
     return (
       <div id="splash">
-        <div className="title-container">
+        <div
+          className="title-container" 
+          style={{
+            transform: `translateY(${this.state.transform}px)`
+          }}
+        >
           <div className="name">Peter James Flanagan</div>
           <div className="description">Circuit-navigating Cyberspace</div>
         </div>

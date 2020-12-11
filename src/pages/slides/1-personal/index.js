@@ -6,6 +6,7 @@ import {
   CurveBottomTop,
   CurveBottomBottom
 } from './curves';
+import { Photo } from './photo'
 
 import './style.scss'
 
@@ -15,15 +16,7 @@ const SlidePersonal = () => {
       <CurveTopTop />
       <CurveTopBottom />
       <div className="slide-personal-side-left">
-        <div id="personal-photo" className="personal-photo">
-          {/* {% include object-bill-cypher.html %} */}
-          <div className="frame-holder">
-            <div className="frame frame-top-left"></div>
-            <div className="frame frame-top-right"></div>
-            <div className="frame frame-bottom-left"></div>
-            <div className="frame frame-bottom-right"></div>
-          </div>
-        </div>
+        <Photo />
       </div>
       <div className="slide-personal-side-right">
         <h1>Hi, I'm Peter</h1>
@@ -33,7 +26,7 @@ const SlidePersonal = () => {
           designed, and fun web tools.
         </p>
         <p>
-          Outside of coding, I'm an avid <a target="_blank" href="//instagram.com/roller.babe">rollerblader</a>,
+          Outside of coding, I'm an avid <a target="_blank" rel="noreferrer" href="//instagram.com/roller.babe">rollerblader</a>,
           a novice <span className="photo-link">rock climber</span>, and an eager Mandarin student.
         </p>
       </div>

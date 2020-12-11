@@ -1,13 +1,19 @@
 import * as React from "react";
-import "./style.css";
-import { SlideSplash, SlidePersonal } from "./slides";
+import "./style.scss";
+import { SlideSplash, SlidePersonal, SlideExperience, SlideProjects } from "./slides";
+import { Cover } from '../elements'
 
 // markup
 const IndexPage = () => {
   return (
-    <div>
+    <div className="container">
+      <Cover />
       <SlideSplash />
-      <SlidePersonal />
+      <div className="slides">
+        <SlidePersonal />
+        <SlideExperience />
+        <SlideProjects />
+      </div>
     </div>
   );
 };
