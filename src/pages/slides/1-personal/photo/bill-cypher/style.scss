@@ -32,14 +32,17 @@
 }
 
 @keyframes bill-hat {
-  0% {
-    height: 40px;
+  0%{
+    opacity: .72;
+  }
+  49% {
+    opacity: .6;
   }
   50% {
-    height: 24px;
+    opacity: .2;
   }
-  100% {
-    height: 40px;
+  99% {
+    opacity: .2;
   }
 }
 
@@ -55,8 +58,8 @@
 
     .bill-body {
       animation: bill-rotate 69s infinite linear;
-      height: 121px;
-      width: 140px;
+      height: 173.205081px;
+      width: 200px;
       transform-origin: center 66.6666%;
 
       .triangle {
@@ -112,26 +115,26 @@
         animation: bill-rotate 42s infinite linear reverse;
         top: 66.66%;
         left: 50%;
-        margin: -27px;
+        margin: -26px;
         position: absolute;
 
         .eye {
           border: 1px dashed #fffa;
-          width: 54px;
-          height: 54px;
+          width: 52px;
+          height: 52px;
           border-radius: 50%;
           animation: bill-eye 8s infinite linear;
         }
       }
 
       .hat {
-        animation: bill-hat 8s infinite linear;
+        animation: bill-hat 2s infinite linear;
         position: absolute;
         background: #fff4;
         left: 50%;
         bottom: 100%;
         width: 10px;
-        height: 40px;
+        height: 32px;
         margin: 24px -5px;
       }
 

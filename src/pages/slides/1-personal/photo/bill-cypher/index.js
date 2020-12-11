@@ -11,6 +11,8 @@ const randomPosition = () => {
   }
 }
 
+const randomInterval = () => Math.random() * 2800 + 2800;
+
 class BillCypher extends React.Component {
   constructor(props) {
     super(props);
@@ -21,11 +23,12 @@ class BillCypher extends React.Component {
 
 
   componentDidMount() {
-    setInterval(this.changePosition, 2800);
+    this.changePosition();
   }
 
   changePosition() {
-    this.setState(randomPosition())
+    this.setState(randomPosition());
+    setTimeout(this.changePosition, randomInterval());
   }
 
   render() {
@@ -46,8 +49,8 @@ class BillCypher extends React.Component {
           <div className="rotater">
             <div className="eye"></div>
           </div>
-          <div className="arm arm-left"></div>
-          <div className="arm arm-right"></div>
+          {/* <div className="arm arm-left"></div>
+          <div className="arm arm-right"></div> */}
           <div className="legs"></div>
         </div>
       </div>

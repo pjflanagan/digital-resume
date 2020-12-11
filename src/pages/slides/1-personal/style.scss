@@ -7,22 +7,6 @@
     height: 100%;
     width: 100%;
     background: #bf0e0d;
-
-    #personal-photo {
-      width: 84%;
-      background-size: cover;
-      position: absolute;
-      height: 372px;
-      left: 8%;
-      top: -32px;
-      box-shadow: 4px -4px #0002;
-      overflow: hidden;
-    }
-
-    #personal-photo.personal-photo {
-      background-image: url(../../../../static/img/personal/personal-photo.jpg);
-      background-position: top center;
-    }
   }
 
   .slide-personal-side-right {

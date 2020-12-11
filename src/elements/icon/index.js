@@ -33,7 +33,7 @@ const GITHUB_ICON = (
   </svg>
 );
 
-const Icon = (props) => {
+const SVGIcon = (props) => {
   const { icon } = props;
   switch (icon) {
     case "linkedin":
@@ -42,8 +42,9 @@ const Icon = (props) => {
       return EMAIL_ICON;
     case "github":
       return GITHUB_ICON;
+    default:
+      return (<span />);
   }
-  return (<span />);
 };
 
-export { Icon };
+export { SVGIcon };

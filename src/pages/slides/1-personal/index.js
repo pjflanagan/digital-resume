@@ -16,7 +16,7 @@ const SlidePersonal = () => {
       <CurveTopTop />
       <CurveTopBottom />
       <div className="slide-personal-side-left">
-        <Photo />
+        <Photo edge="top" gap={120} />
       </div>
       <div className="slide-personal-side-right">
         <h1>Hi, I'm Peter</h1>

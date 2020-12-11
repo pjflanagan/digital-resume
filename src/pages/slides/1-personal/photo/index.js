@@ -1,16 +1,27 @@
-import React from 'react'
+import React from "react";
 
-import { BillCypher } from './bill-cypher'
-import { FrameHolder } from '../../../../elements'
-import Styles from './style.css';
+import { BillCypher } from "./bill-cypher";
+import { FrameHolder, Reveal } from "../../../../elements";
+import "./style.scss";
 
-const Photo = () => {
-  return (
-    <div id="personal-photo" className="personal-photo">
-      <BillCypher />
-      <FrameHolder style={Styles.photoFrameHolder} />
-    </div>
-  );
+const FRAME_STYLE = {
+  position: "relative",
+  width: "80%",
+  height: "80%",
+  left: "10%",
+  top: "10%",
 }
 
-export { Photo }
+class Photo extends Reveal {
+  render() {
+    const className = this.state.isRevealed ? "" : "hidden";
+    return (
+      <div className={`personal-photo ${className}`} ref={this.ref}>
+        <BillCypher />
+        <FrameHolder style={FRAME_STYLE} />
+      </div>
+    );
+  }
+}
+
+export { Photo };

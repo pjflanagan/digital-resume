@@ -1,0 +1,42 @@
+.personal-photo {
+  width: 84%;
+  background-size: cover;
+  position: absolute;
+  height: 372px;
+  left: 8%;
+  top: -32px;
+  box-shadow: 4px -4px #0002;
+  overflow: hidden;
+  background-image: url(../../../../../static/img/personal/personal-photo.jpg);
+  background-position: top center;
+
+  .photo-frame-holder {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+  }
+
+  &.hidden {
+    // TODO: maybe something here like just blur it
+  }
+
+  &.reveal {
+    // TODO: have some glitch effect
+  }
+}
+
+// md
+@media only screen and (min-width: 576px) {
+  .personal-photo {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: top center;
+    filter: grayscale(1);
+    opacity: 0.6;
+    box-shadow: inset 0 0 100px #0008;
+  }
+}
