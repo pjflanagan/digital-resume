@@ -4,19 +4,21 @@ import { SlideSplash, SlidePersonal, SlideExperience, SlideProjects, SlideContac
 import { Cover } from '../elements'
 
 // markup
-const IndexPage = () => {
-  return (
-    <div className="container">
-      <Cover />
-      <SlideSplash />
-      <div className="slides">
-        <SlidePersonal />
-        <SlideExperience />
-        <SlideProjects />
-        <SlideContact />
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <Cover />
+        <SlideSplash />
+        <div className="slides">
+          <SlidePersonal />
+          <SlideExperience />
+          <SlideProjects />
+          <SlideContact />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default IndexPage;
