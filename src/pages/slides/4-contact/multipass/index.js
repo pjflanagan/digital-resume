@@ -1,4 +1,6 @@
-import React from 'react'
+import React from "react";
+
+import './style.scss'
 
 const calcAge = () => {
   const ageDifMs = Date.now() - new Date("August 11, 1996").getTime();
@@ -6,27 +8,18 @@ const calcAge = () => {
   return Math.abs(ageDate.getUTCFullYear() - 1970);
 };
 
-
 class Multipass extends React.Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-      on: false,
-      age: calcAge()
-    }
-    
-		this.setLight = this.setLight.bind(this);
-  }
-
-  setLight(on) {
-		this.setState({
-			on
-		});
+      age: calcAge(),
+    };
   }
 
   render() {
-    const lightClass = (this.state.on) ? 'light' : ''
+    const lightClass = this.props.on ? "light" : "";
+    const { age } = this.state;
     return (
       <div className={`multipass ${lightClass}`}>
         <div className="white-card">
@@ -40,20 +33,22 @@ class Multipass extends React.Component {
           <div className="bio">
             <div className="name">Peter Flanagan</div>
             <div className="address yellow">
-              New York . NY . USA<br />
-              Planet Earth<br />
+              New York . NY . USA
+              <br />
+              Planet Earth
+              <br />
               Orion Arm . Milky Way
             </div>
             <div className="traits">
-              Species: Human . Age: {this.state.age}<br />
+              Species: Human . Age: {age}
+              <br />
               Speed: Moderate <br />
               Strength: Reasonable <br />
               Looks: Adequate
             </div>
             <div className="occupation yellow">pj@pjflanagan.me</div>
           </div>
-          <div className="blue-bar">
-          </div>
+          <div className="blue-bar"></div>
         </div>
         <div className="top-square">
           <div className="top-square-bar"></div>
@@ -69,8 +64,6 @@ class Multipass extends React.Component {
       </div>
     );
   }
-
 }
 
-
-export { Multipass }
+export { Multipass };

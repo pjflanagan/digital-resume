@@ -2,7 +2,9 @@ import React from 'react'
 import Projects from './data/projects.json';
 import { FeaturedProject } from './featured-project';
 import { BlueprintDecoration } from './blueprint-decoration'
-import './style.scss'
+import { Project } from './project';
+import { Ruler } from '../../../elements';
+import './style.scss';
 
 const INVENTIONS = [
   'What-if Machine',
@@ -54,7 +56,6 @@ class SlideProjects extends React.Component {
           {/* <!-- TODO: we want this to be a popup with more details eventually --> */}
           <div class="slide-body">
             <div class="featured-body">
-
               {
                 Projects.featured.map(project => (
                   <FeaturedProject
@@ -62,31 +63,28 @@ class SlideProjects extends React.Component {
                     description={project.description}
                     link={project.link}
                     image={project.image}
-                    gap={12}
-                    edge={'bottom'}
+                    gap={48}
+                    edge={'top'}
                   />
                 ))
               }
             </div>
-
-            {/* <div class="all-body">
-              {% for project in site.data.projects.all %}
-              <div class="project">
-                <div class="project-image"
-                  style="background-image: url('{{ site.baseurl }}/files/images/projects/{{ project.image }}')"
-                ></div>
-                <div class="info">
-                  <a href="//{{project.link}}" target="_blank">
-                    <h2 class="name">{{ project.name }}</h2>
-                    <span class="arrow"></span>
-                  </a>
-                  <p class="description">{{ project.description }}</p>
-                </div>
-              </div>
-              {% endfor %}
-            </div> */}
+            <div class="all-body">
+              {
+                Projects.all.map(project => (
+                  <Project
+                    name={project.name}
+                    description={project.description}
+                    link={project.link}
+                    image={project.image}
+                    gap={12}
+                    edge={'top'}
+                  />
+                ))
+              }
+            </div>
           </div>
-          {/* {% include object-ruler.html %} */}
+          <Ruler />
         </div>
       </div>
     );

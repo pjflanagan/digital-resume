@@ -154,12 +154,12 @@
       width: 55px;
       position: absolute;
       top: 32px;
-      background: url(files/images/contact/headshot.jpg);
+      background: url(../../../../../static/img/contact/headshot.jpg);
       background-size: 258%;
       background-position: top;
 
       .number {
-        font-family: $ubuntu;
+        font-family: 'Ubuntu';
         font-size: 8px;
         width: 100%;
         position: absolute;
@@ -196,7 +196,7 @@
       top: 32px;
       width: 96px;
       height: 95px;
-      font-family: $ubuntu;
+      font-family: 'Ubuntu';
 
       .name {
         font-size: 11px;
