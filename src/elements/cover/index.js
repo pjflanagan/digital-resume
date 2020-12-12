@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './style.scss';
+import Style from './style.module.scss';
 
 const Cover = () => {
   return (
-    <div className="cover noise"></div>
+    <div className={Style.cover}></div>
   )
 };
 

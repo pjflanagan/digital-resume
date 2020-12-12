@@ -1,4 +1,7 @@
-a.labeled-button {
+a {
+  text-decoration: none;
+
+  &.labeled-button {
   min-width: 120px;
   position: relative;
   background: #b71e25;
@@ -12,7 +15,7 @@ a.labeled-button {
   svg {
     width: 28px;
     height: 28px;
-    margin: 4px -8px 0 6px;
+    margin: 8px 8px;
 
     path {
       fill: #fff;
@@ -28,11 +31,20 @@ a.labeled-button {
     position: relative;
     top: 0;
     left: 50%;
-    margin-left: -68px;
+    margin-left: -48px;
     border-left: 1px solid #fff6;
   }
 
   &:hover {
     background: #9b191f;
+    svg {
+      path {
+        fill: #fffe;
+      }
+    }
+    .name {
+      color: #fffe;
+    }
   }
+}
 }

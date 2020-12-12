@@ -1,6 +1,6 @@
 import React from "react";
 
-import './style.scss'
+import Style from './style.module.scss'
 
 const calcAge = () => {
   const ageDifMs = Date.now() - new Date("August 11, 1996").getTime();
@@ -18,49 +18,50 @@ class Multipass extends React.Component {
   }
 
   render() {
-    const lightClass = this.props.on ? "light" : "";
+    const { on } = this.props; // TODO: data
+    const lightClass = on ? Style.light : "";
     const { age } = this.state;
     return (
-      <div className={`multipass ${lightClass}`}>
-        <div className="white-card">
-          <div className="multipass-title">MULTI PASS</div>
-          <div className="picture picture-left">
-            <div className="number">A5805757</div>
+      <div className={`${Style.multipass} ${lightClass}`}>
+        <div className={Style.whiteCard}>
+          <div className={Style.multipassTitle}>MULTI PASS</div>
+          <div className={`${Style.picture} ${Style.pictureLeft}`}>
+            <div className={Style.number}>A5805757</div>
           </div>
-          <div className="picture picture-right">
-            <div className="number">C4765536</div>
+          <div className={`${Style.picture} ${Style.pictureRight}`}>
+            <div className={Style.number}>C4765536</div>
           </div>
-          <div className="bio">
-            <div className="name">Peter Flanagan</div>
-            <div className="address yellow">
+          <div className={Style.bio}>
+            <div className={Style.name}>Peter Flanagan</div>
+            <div className={`${Style.address} ${Style.yellow}`}>
               New York . NY . USA
               <br />
               Planet Earth
               <br />
               Orion Arm . Milky Way
             </div>
-            <div className="traits">
+            <div className={Style.traits}>
               Species: Human . Age: {age}
               <br />
               Speed: Moderate <br />
               Strength: Reasonable <br />
               Looks: Adequate
             </div>
-            <div className="occupation yellow">pj@pjflanagan.me</div>
+            <div className={`${Style.occupation} ${Style.yellow}`}>pj@pjflanagan.me</div>
           </div>
-          <div className="blue-bar"></div>
+          <div className={Style.blueBar}></div>
         </div>
-        <div className="top-square">
-          <div className="top-square-bar"></div>
+        <div className={Style.topSquare}>
+          <div className={Style.topSquareBar}></div>
         </div>
-        <div className="bottom-square">
-          <div className="bottom-square-white"></div>
+        <div className={Style.bottomSquare}>
+          <div className={Style.bottomSquareWhite}></div>
         </div>
-        <div className="bottom-left-circle-grey"></div>
-        <div className="bottom-left-circle-yellow">
-          <div className="bottom-left-circle-shine"></div>
+        <div className={Style.bottomLeftCircleGrey}></div>
+        <div className={Style.bottomLeftCircleYellow}>
+          <div className={Style.bottomLeftCircleShine}></div>
         </div>
-        <div className="stripes"></div>
+        <div className={Style.stripes}></div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 [
   {
-     "company": "FreeWheel",
+     "name": "FreeWheel",
      "location": "Manhattan, NY",
      "time": "June 2018 - Present",
      "position": "Software Engineer",
@@ -15,7 +15,7 @@
      "className": "freewheel"
   },
   {
-     "company": "Bentley Systems",
+     "name": "Bentley Systems",
      "location": "Exton, PA",
      "time": "Summer 2016, 2017",
      "position": "Performance Monitor Intern, Web Development Intern",
@@ -28,7 +28,7 @@
      "className": "bentley"
   },
   {
-     "company": "BioTelemetry Inc.",
+     "name": "BioTelemetry Inc.",
      "location": "Malvern, PA",
      "time": "Summer 2015",
      "position": "IT Intern",
@@ -39,7 +39,7 @@
      "className": "biotelem"
   },
   {
-     "company": "Express Pizza & Subs",
+     "name": "Express Pizza & Subs",
      "location": "Ocean City, NJ",
      "time": "Summer 2013, 2014",
      "position": "Fry Cook, Dishwasher",

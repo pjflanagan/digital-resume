@@ -3,7 +3,7 @@ import React from 'react';
 import { SVGIcon } from "../icon";
 
 import Links from "./links.json";
-import './style.scss'
+import Style from './style.module.scss'
 
 const RoundButton = (props) => {
   const { name } = props;
@@ -16,13 +16,18 @@ const RoundButton = (props) => {
 };
 
 const LabeledButton = (props) => {
-  const { name } = props;
+  const { name, onMouseEnter, onMouseLeave } = props;
   const linkID = name.toLowerCase();
-  console.log(Links);
   return (
-    <a className="labeled-button" rel="noreferrer" target="_blank" href={Links[linkID]}>
+    <a
+      className={Style.labeledButton}
+      rel="noreferrer" target="_blank"
+      href={Links[linkID]}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <SVGIcon icon={linkID} />
-      <div class="name">{name}</div>
+      <div className={Style.name}>{name}</div>
     </a>
   );
 };

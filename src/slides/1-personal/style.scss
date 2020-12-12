@@ -2,6 +2,7 @@
   z-index: 15;
   height: 480px;
   position: relative;
+  margin-bottom: -28px;
 
   .slide-personal-side-left {
     height: 100%;
@@ -15,7 +16,7 @@
     width: 94%;
     left: 3%;
     background: #000d;
-    top: 140px;
+    top: 206px;
     z-index: 16;
     color: #fff;
     backdrop-filter: blur(20px);
@@ -28,14 +29,14 @@
       text-align: center;
       margin-top: -8px;
 
-      // &:before {
-      //   content: "Hi, I\'m";
-      //   font-family: $roboto;
-      //   font-size: 14px;
-      //   position: absolute;
-      //   margin: -24px -60px;
-      //   color: #F00;
-      // }
+      &:before {
+        content: "Hi, I\'m";
+        font-family: 'Ubuntu';
+        font-size: 14px;
+        position: absolute;
+        margin: -24px -60px;
+        color: #F00;
+      }
     }
 
     p {
@@ -74,17 +75,6 @@
       height: 100%;
       width: 40%;
       background: #f00;
-
-      #personal-photo {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-position: center;
-        filter: grayscale(1);
-        opacity: 0.6;
-        box-shadow: inset 0 0 100px #0008;
-      }
     }
 
     .slide-personal-side-right {

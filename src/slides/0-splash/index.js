@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { Canvas } from './canvas.js';
-import './style.scss';
+import Styles from './style.module.scss';
 
 // CanvasComponent
 // TODO: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
@@ -14,7 +14,7 @@ const CanvasComponent = props => {
     new Canvas(canvasElem);
   }, []);
   
-  return <canvas ref={canvasRef} {...props}/>
+  return <canvas className={Styles.canvas} ref={canvasRef} {...props}/>
 }
 
 // SlideSplash
@@ -46,17 +46,17 @@ class SlideSplash extends React.Component {
 
   render() {
     return (
-      <div id="splash">
+      <div className={Styles.splash}>
         <div
-          className="title-container" 
+          className={Styles.titleContainer}
           style={{
             transform: `translateY(${this.state.transform}px)`
           }}
         >
-          <div className="name">Peter James Flanagan</div>
-          <div className="description">Circuit-navigating Cyberspace</div>
+          <div className={Styles.name}>Peter James Flanagan</div>
+          <div className={Styles.description}>Circuit-navigating Cyberspace</div>
         </div>
-        <CanvasComponent id="pix"></CanvasComponent>
+        <CanvasComponent></CanvasComponent>
       </div>
     )
   }

@@ -5,7 +5,8 @@
   "description": "Peter James Flanagan | Digital Resume",
   "author": "Peter Flanagan",
   "keywords": [
-    "resume", "web developer"
+    "resume",
+    "web developer"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -17,7 +18,11 @@
   "license": "0BSD",
   "dependencies": {
     "gatsby": "^2.26.1",
+    "gatsby-image": "^2.7.0",
     "gatsby-plugin-sass": "^2.7.0",
+    "gatsby-plugin-sharp": "^2.10.1",
+    "gatsby-source-filesystem": "^2.7.0",
+    "gatsby-transformer-sharp": "^2.8.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

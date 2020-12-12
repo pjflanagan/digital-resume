@@ -47,6 +47,7 @@ class SlideProjects extends React.Component {
   
 
   render() {
+    const { data} = this.props;
     return (
       <div>
         <BlueprintDecoration num={1} invention={this.state.invention1} gap={42} edge={'top'} />
@@ -63,6 +64,7 @@ class SlideProjects extends React.Component {
                     description={project.description}
                     link={project.link}
                     image={project.image}
+                    data={ data }
                     gap={48}
                     edge={'top'}
                   />
@@ -79,6 +81,7 @@ class SlideProjects extends React.Component {
                     image={project.image}
                     gap={12}
                     edge={'top'}
+                    data={data}
                   />
                 ))
               }
