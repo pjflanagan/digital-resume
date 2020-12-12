@@ -1,5 +1,6 @@
 import * as React from "react";
-import "./style.scss";
+import { graphql } from "gatsby";
+
 import {
   SlideSplash,
   SlidePersonal,
@@ -8,7 +9,9 @@ import {
   SlideContact,
 } from "../slides";
 import { Cover } from "../elements";
-import { graphql } from "gatsby";
+
+import "./style.scss";
+import "./reset.scss";
 
 // markup
 class IndexPage extends React.Component {

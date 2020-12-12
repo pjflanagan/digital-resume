@@ -8,7 +8,8 @@
      "description": [
         "Coursework &mdash; Web Databases and Information Systems, Computer Architecture, Data Structures and Algorithms, User Interface Design"
      ],
-     "className": "umich",
+     "background": "#00274c",
+     "color": "#00274c",
      "extra": [
         {
            "name": "The Every Three Weekly",
@@ -32,6 +33,7 @@
      "description": [
         "Distinguished Honors, <a href=\"//www.youtube.com/watch?v=MaLZTBOxGMI\" target=\"_blank\" rel=\"noreferrer\">Baccalaureate Speaker</a>, Varsity Runner, PA State Computer Fair Finalist"
      ],
-     "className": "gvhs"
+     "background": "#1c4b98",
+     "color": "#1c4b98"
   }
 ]

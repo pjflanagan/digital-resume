@@ -52,14 +52,15 @@ class SlideProjects extends React.Component {
       <div>
         <BlueprintDecoration num={1} invention={this.state.invention1} gap={42} edge={'top'} />
         <BlueprintDecoration num={2} invention={this.state.invention2} gap={32} edge={'top'} />
-        <div class="slide-projects blueprint">
+        <div className="slide-projects blueprint">
           <h1>Projects</h1>
           {/* <!-- TODO: we want this to be a popup with more details eventually --> */}
-          <div class="slide-body">
-            <div class="featured-body">
+          <div className="slide-body">
+            <div className="featured-body">
               {
-                Projects.featured.map(project => (
+                Projects.featured.map((project, i) => (
                   <FeaturedProject
+                    key={i}
                     name={project.name}
                     description={project.description}
                     link={project.link}
@@ -71,10 +72,11 @@ class SlideProjects extends React.Component {
                 ))
               }
             </div>
-            <div class="all-body">
+            <div className="all-body">
               {
-                Projects.all.map(project => (
+                Projects.all.map((project, i) => (
                   <Project
+                    key={i}
                     name={project.name}
                     description={project.description}
                     link={project.link}

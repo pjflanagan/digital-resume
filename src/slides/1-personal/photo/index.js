@@ -2,7 +2,7 @@ import React from "react";
 
 import { BillCypher } from "./bill-cypher";
 import { FrameHolder, Reveal } from "../../../elements";
-import "./style.scss";
+import Style from "./style.module.scss";
 
 const FRAME_STYLE = {
   position: "relative",
@@ -14,9 +14,9 @@ const FRAME_STYLE = {
 
 class Photo extends Reveal {
   render() {
-    const className = this.state.isRevealed ? "" : "hidden";
+    const className = this.state.isRevealed ? '' : Style.hidden;
     return (
-      <div className={`personal-photo ${className}`} ref={this.ref}>
+      <div className={`${Style.personalPhoto} ${className}`} ref={this.ref}>
         <BillCypher />
         <FrameHolder style={FRAME_STYLE} />
       </div>

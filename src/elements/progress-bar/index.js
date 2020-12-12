@@ -4,8 +4,7 @@ import Style from './style.module.scss'
 
 class ProgressBar extends Reveal {
   render() {
-    const { isRevealed } = this.state;
-    const progress = (isRevealed) ? this.props.progress : 0
+    const progress = (this.state.isRevealed) ? this.props.progress : 0;
     return (
       <div className={Style.bar} ref={this.ref}>
         <div className={Style.name}>{ this.props.name }</div>

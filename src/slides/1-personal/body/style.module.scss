@@ -1,0 +1,62 @@
+.name {
+  font-family: "AmericanCaptain";
+  color: #fff;
+  text-shadow: 1px 2px 0 #000a;
+  font-size: 62px;
+  text-align: center;
+  margin-top: -8px;
+
+  &:before {
+    content: "Hi, my name is";
+    font-family: "Ubuntu";
+    font-size: 16px;
+    position: absolute;
+    margin: -28px -25px;
+    color: #fff;
+  }
+}
+
+.bio {
+  font-family: "Ubuntu";
+  padding: 0px 14px 12px;
+  line-height: 22px;
+  font-size: 14px;
+
+  a {
+    color: #ff2a2b;
+    text-decoration: none;
+    box-shadow: inset 0px -6px #fff1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    box-shadow: inset 0px -10px #fff2;
+  }
+}
+
+p.additional {
+  display: none;
+}
+
+// md
+@media only screen and (min-width: 576px) {
+  .name {
+    font-size: 40px;
+    padding: 36px 36px 6px;
+    margin-top: 50px;
+  }
+
+  .bio {
+    padding: 14px 48px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bio.additional {
+    display: block;
+  }
+}

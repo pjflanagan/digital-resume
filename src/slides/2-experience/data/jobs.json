@@ -12,7 +12,8 @@
         "Designed new theme, elements and layouts to make web tools match FreeWheel's rebrand",
         "Redesigned open source development tool <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.npmjs.com/package/dashflow\">Dashflow</a>, allowing users to manage multiple terminal command streams"
      ],
-     "className": "freewheel"
+     "background": "#000",
+     "color": "#3b778a"
   },
   {
      "name": "Bentley Systems",
@@ -25,7 +26,8 @@
         "Expanded test suite to encompass more pages and features using C# and Selenium, increasing code coverage",
         "Converted performance test GUI’s to command line applications, allowing for test case automation"
      ],
-     "className": "bentley"
+     "background": "#62bb47",
+     "color": "#62bb47"
   },
   {
      "name": "BioTelemetry Inc.",
@@ -36,7 +38,8 @@
      "description": [
         "Programmed web pages to display call center information on overhead monitors in real time using JavaScript and Toad SQL, improving call response time and internal company communication"
      ],
-     "className": "biotelem"
+     "background": "#009edc",
+     "color": "#009edc"
   },
   {
      "name": "Express Pizza & Subs",
@@ -45,6 +48,7 @@
      "position": "Fry Cook, Dishwasher",
      "image": "express.png",
      "description": [],
-     "className": "express"
+     "background": "#b13617",
+     "color": "#b13617"
   }
 ]

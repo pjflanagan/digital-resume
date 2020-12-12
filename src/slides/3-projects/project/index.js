@@ -10,18 +10,18 @@ class Project extends Reveal {
     const { name, link, description, image, data } = this.props;
     const imageData = FindImage({ image, data });
     return (
-      <div class="project" ref={this.ref}>
+      <div className="project" ref={this.ref}>
         <Img
           fluid={imageData.childImageSharp.fluid}
           alt={name}
-          className="project-image"
+          classNameName="project-image"
         />
-        <div class="info">
+        <div className="info">
           <a href={`//${link}`} target="_blank" rel="noreferrer">
-            <h2 class="name">{ name }</h2>
-            <span class="arrow"></span>
+            <h2 className="name">{ name }</h2>
+            <span className="arrow"></span>
           </a>
-          <p class="description">{ description }</p>
+          <p className="description">{ description }</p>
         </div>
       </div>
     )

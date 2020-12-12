@@ -6,29 +6,21 @@ import {
   CurveBottomTop,
   CurveBottomBottom
 } from './curves';
-import { Photo } from './photo'
+import { Photo } from './photo';
+import { Body } from './body';
 
-import './style.scss'
+import Style from './style.module.scss';
 
 const SlidePersonal = () => {
   return (
-    <div className="slide-personal">
+    <div className={Style.slidePersonal}>
       <CurveTopTop />
       <CurveTopBottom />
-      <div className="slide-personal-side-left">
+      <div className={Style.slidePersonalSideLeft}>
         <Photo edge="top" gap={120} />
       </div>
-      <div className="slide-personal-side-right">
-        <h1>Hi, I'm Peter</h1>
-        <p>
-          I'm a full-stack software engineer living in New York. I fell in love with web development
-          at a young age and have been having playing with it ever since. I enjoy making useful, deliberatley 
-          designed, and fun web tools.
-        </p>
-        <p>
-          Outside of coding, I'm an avid <a target="_blank" rel="noreferrer" href="//instagram.com/roller.babe">rollerblader</a>,
-          a novice <span className="photo-link">rock climber</span>, and an eager Mandarin student.
-        </p>
+      <div className={Style.slidePersonalSideRight}>
+        <Body />
       </div>
       <CurveBottomTop />
       <CurveBottomBottom />
