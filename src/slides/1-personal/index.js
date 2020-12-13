@@ -11,13 +11,13 @@ import { Body } from './body';
 
 import Style from './style.module.scss';
 
-const SlidePersonal = () => {
+const SlidePersonal = ({ data }) => {
   return (
     <div className={Style.slidePersonal}>
       <CurveTopTop />
       <CurveTopBottom />
       <div className={Style.slidePersonalSideLeft}>
-        <Photo edge="top" gap={120} />
+        <Photo edge="top" gap={120} data={data} />
       </div>
       <div className={Style.slidePersonalSideRight}>
         <Body />

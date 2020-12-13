@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
         <Cover />
         <SlideSplash />
         <div className="slides">
-          <SlidePersonal />
+          <SlidePersonal data={data} />
           <SlideExperience data={data} />
           <SlideProjects data={data} />
           <SlideContact data={data} />

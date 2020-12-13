@@ -4,7 +4,7 @@ import { Canvas } from './canvas.js';
 import Styles from './style.module.scss';
 
 // CanvasComponent
-// TODO: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
+// https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
 const CanvasComponent = props => {
   const canvasRef = useRef(null);

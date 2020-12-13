@@ -6,3 +6,4 @@ export * from './icon';
 export * from './progress-bar';
 export * from './reveal';
 export * from './ruler';
+export * from './splash';
