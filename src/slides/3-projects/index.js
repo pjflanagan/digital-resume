@@ -4,7 +4,7 @@ import { FeaturedProject } from './featured-project';
 import { BlueprintDecoration } from './blueprint-decoration'
 import { Project } from './project';
 import { Ruler } from '../../elements';
-import './style.scss';
+import Style from './style.module.scss';
 
 const INVENTIONS = [
   'What-if Machine',
@@ -52,11 +52,11 @@ class SlideProjects extends React.Component {
       <div>
         <BlueprintDecoration num={1} invention={this.state.invention1} gap={42} edge={'top'} />
         <BlueprintDecoration num={2} invention={this.state.invention2} gap={32} edge={'top'} />
-        <div className="slide-projects blueprint">
+        <div className={`${Style.slideProjects} ${Style.blueprint}`}>
           <h1>Projects</h1>
           {/* <!-- TODO: we want this to be a popup with more details eventually --> */}
-          <div className="slide-body">
-            <div className="featured-body">
+          <div className={Style.slideBody}>
+            <div className={Style.featuredBody}>
               {
                 Projects.featured.map((project, i) => (
                   <FeaturedProject
@@ -72,7 +72,7 @@ class SlideProjects extends React.Component {
                 ))
               }
             </div>
-            <div className="all-body">
+            <div className={Style.allBody}>
               {
                 Projects.all.map((project, i) => (
                   <Project

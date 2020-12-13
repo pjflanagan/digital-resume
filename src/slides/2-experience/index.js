@@ -12,7 +12,7 @@ import Style from "./style.module.scss";
 class SegmentImage extends Reveal {
   render() {
     const { image, name, data, background } = this.props;
-    const translateY = this.state.isRevealed ? -50 : 50;
+    const translateY = this.state.isRevealed ? -50 : 100;
     const imageData = FindImage({ data, image });
 
     return (

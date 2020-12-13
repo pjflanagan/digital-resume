@@ -13,7 +13,7 @@ const getFrameTypeClassName = (type) => {
     case "bottom-right":
       return Style.bottomRight;
     default:
-      return '';
+      return Style[type];
   }
 };
 

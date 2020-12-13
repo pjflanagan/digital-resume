@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './style.scss';
+import Style from './style.module.scss';
 
 const CurveTopTop = () => (
-  <svg className="top-curve" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className={Style.topCurve} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="
       M 0 0
@@ -17,7 +17,7 @@ const CurveTopTop = () => (
 );
 
 const CurveTopBottom = () => (
-  <svg className="top-curve-bottom" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className={Style.topCurveBottom} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="
       M 0 0
@@ -30,7 +30,7 @@ const CurveTopBottom = () => (
 );
 
 const CurveBottomTop = () => (
-  <svg className="bottom-curve-top" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className={Style.bottomCurveTop} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="
       M 0 10
@@ -43,7 +43,7 @@ const CurveBottomTop = () => (
 )
 
 const CurveBottomBottom = () => (
-  <svg className="bottom-curve" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className={Style.bottomCurve} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="
       M 0 10
