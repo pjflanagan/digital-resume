@@ -7,11 +7,12 @@ const Canvas = props => {
   const canvasRef = useRef(null);
   
   useEffect(() => {
-    const canvasElem = canvasRef.current
-    props.view.init(canvasElem);
+    const canvasElem = canvasRef.current;
+    new props.view(canvasElem);
+    // eslint-disable-next-line
   }, []);
   
-  return <canvas className={props.className} ref={canvasRef} {...props}/>
+  return <canvas className={props.className} ref={canvasRef} {...props} />
 }
 
 export { Canvas };

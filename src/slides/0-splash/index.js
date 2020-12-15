@@ -51,7 +51,7 @@ class SlideSplash extends React.Component {
         </div>
         <Canvas
           className={Styles.canvas}
-          view={new View()}
+          view={View}
           style={{
             transform: `translateY(${canvasScroll}px)`,
           }}

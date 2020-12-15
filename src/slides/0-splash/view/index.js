@@ -10,21 +10,8 @@ const VIEW_FOREGROUND_MOONS = { min: 2, max: 4 };
 const VIEW_SHIP_LAYER = 5;
 
 class View {
-  constructor() {
-    // user position
-    this.angle = 0;
-    this.strength = 0;
-    this.scrollPercent = 0;
-
-    this.onMouseMove = this.onMouseMove.bind(this);
-    this.onScroll = this.onScroll.bind(this);
-    this.animate = this.animate.bind(this);
-  }
-
-  init(canvasElem) {
+  constructor(canvasElem) {
     this.ctx = canvasElem.getContext("2d", { alpha: false });
-    canvasElem.width = this.W;
-    canvasElem.height = this.H;
 
     // sizing (window)
     this.W = window.innerWidth;
@@ -36,6 +23,18 @@ class View {
     this.shorterSide = Math.min(this.W, this.H);
     this.diagonal = distance({ x: 0, y: 0 }, { x: this.W, y: this.H });
     this.diagonalHalf = this.diagonal / 2;
+    canvasElem.width = this.W;
+    canvasElem.height = this.H;
+
+    // user position
+    this.angle = 0;
+    this.strength = 0;
+    this.scrollPercent = 0;
+
+    // bindings
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.onScroll = this.onScroll.bind(this);
+    this.animate = this.animate.bind(this);
 
     // user input (window)
     window.addEventListener("mousemove", (e) => {
