@@ -11,7 +11,22 @@ const VIEW_SHIP_LAYER = 5;
 
 class View {
   constructor() {
-    // properties
+    // user position
+    this.angle = 0;
+    this.strength = 0;
+    this.scrollPercent = 0;
+
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.onScroll = this.onScroll.bind(this);
+    this.animate = this.animate.bind(this);
+  }
+
+  init(canvasElem) {
+    this.ctx = canvasElem.getContext("2d", { alpha: false });
+    canvasElem.width = this.W;
+    canvasElem.height = this.H;
+
+    // sizing (window)
     this.W = window.innerWidth;
     this.H = window.innerHeight;
     this.C = {
@@ -22,13 +37,7 @@ class View {
     this.diagonal = distance({ x: 0, y: 0 }, { x: this.W, y: this.H });
     this.diagonalHalf = this.diagonal / 2;
 
-    // user position
-    this.angle = 0;
-    this.strength = 0;
-    this.scrollPercent = 0;
-
-    // user input
-    this.onMouseMove = this.onMouseMove.bind(this);
+    // user input (window)
     window.addEventListener("mousemove", (e) => {
       const mouse = {
         x: e.clientX,
@@ -36,21 +45,10 @@ class View {
       };
       this.onMouseMove(mouse);
     });
-
-    this.onScroll = this.onScroll.bind(this);
     window.addEventListener("scroll", () => {
       const scroll = window.scrollY;
       this.onScroll(scroll);
     });
-
-    // setup and animate
-    this.animate = this.animate.bind(this);
-  }
-
-  init(canvasElem) {
-    this.ctx = canvasElem.getContext("2d", { alpha: false });
-    canvasElem.width = this.W;
-    canvasElem.height = this.H;
 
     this.setup();
     this.start();
@@ -380,7 +378,7 @@ class Planet extends Body {
     // unchanging props
     this.prop = {
       center: C, // planet is in the center
-      radius: Random.prop2(PLANET.RADIUS, Math.min(W,H)),
+      radius: Random.prop2(PLANET.RADIUS, Math.min(W, H)),
       colorSpectrum: color.makeSpectrum(toColor, PLANET.COLORS),
       offsetRadiusMax: PLANET.OFFSET.MAX_RADIUS,
       offsetSpeed: PLANET.OFFSET.SPEED,
