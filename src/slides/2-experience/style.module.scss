@@ -1,11 +1,24 @@
-$lineColor: #00000022;
+
+@import '../../elements/variables';
 
 .slide-experience {
   width: 100%;
   z-index: 20;
   position: relative;
-  background: #e9e6da;
+  background: $offWhite;
   padding-bottom: 68px;
+
+  &:before {
+    content: "";
+    width: 120%;
+    background: $offWhite;
+    height: 100px;
+    position: absolute;
+    left: -10%;
+    border-radius: 50%;
+    margin-top: -30px;
+    box-shadow: 0 -4px #0002;
+  }
 
   h1 {
     font-family: "AmericanCaptain";
@@ -31,11 +44,11 @@ $lineColor: #00000022;
       font-size: 28px;
       color: #000a;
       padding: 28px 8px 8px;
-      border-bottom: 2px solid $lineColor;
+      border-bottom: 1px solid $backgroundDarkOpaque;
     }
 
     .segment {
-      border-left: 2px solid $lineColor;
+      border-left: 1px solid $backgroundDarkOpaque;
       margin-left: 40px;
       padding: 28px 4px 8px 40px;
 
@@ -45,7 +58,7 @@ $lineColor: #00000022;
         position: absolute;
         left: 37px;
         border-radius: 50%;
-        border: 2px solid $lineColor;
+        border: 1px solid $backgroundDarkOpaque;
         overflow: hidden;
 
         .image {
@@ -94,23 +107,15 @@ $lineColor: #00000022;
   }
 }
 
-.slide-experience::before {
-  content: "";
-  width: 120%;
-  background: #e9e6da;
-  height: 100px;
-  position: absolute;
-  left: -10%;
-  border-radius: 50%;
-  margin-top: -30px;
-  box-shadow: 0 -4px #0002;
-}
-
 @media only screen and (min-width: 576px) {
   .slide-experience {
     background: #fffaf0;
-    background: radial-gradient(circle, #fffaf0 54%, #e9e1db 100%) !important;
+    background: radial-gradient(circle, #112a32 54%, #121e25 100%) !important;
     z-index: 0;
+
+    &:before {
+      display: none;
+    }
 
     h1 {
       padding: 48px 0 0;
@@ -138,10 +143,6 @@ $lineColor: #00000022;
         }
       }
     }
-  }
-
-  .slide-experience::before {
-    display: none;
   }
 }
 

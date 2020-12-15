@@ -1,0 +1,23 @@
+
+$backgroundDark: #112a32;
+$backgroundDarkOpaque: #112a32dd;
+$backgroundLight: #157270;
+$backgroundLightOpaque: #15727088;
+$backgroundLightHover: #159997;
+$accentYellow: #e4f03c;
+$accentYellowHover: #e8f352;
+$accentCyan: #1fcfcc;
+$white: #fff;
+$offWhite: #eaf4f4;
+$black: #1c1c1c;
+
+$ubuntu: "Ubuntu", sans-serif;
+
+$polygon: polygon(
+  0 0,
+  calc(100% - 20px) 0,
+  100% 20px,
+  100% 100%,
+  20px 100%,
+  0 calc(100% - 20px)
+)

@@ -1,3 +1,4 @@
+@import '../../elements/variables';
 
 .splash {
   width: 100%;
@@ -22,7 +23,7 @@
     }
 
     .description {
-      font-family: 'Ubuntu', sans-serif;
+      font-family: $ubuntu;
       font-size: 18px;
       margin-top: -8px;
     }
@@ -58,6 +59,7 @@
 
     .canvas {
       position: fixed;
+      transform: translateY(0px) !important;
     }
   }
 }

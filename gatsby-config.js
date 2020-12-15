@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -8,6 +8,24 @@ module.exports = {
       options: {
         path: `${__dirname}/static/img`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Ubuntu\:300`
+        ],
+        display: 'swap'
+      }
+    },
   ]
 }
+
+/**
+ *     {
+      resolve: ,
+      options: {
+        data: `@import "${__dirname}/src/elements/variables";`,
+      }
+    },
+ */

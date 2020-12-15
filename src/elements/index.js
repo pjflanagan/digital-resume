@@ -1,4 +1,5 @@
 export * from './button';
+export * from './canvas';
 export * from './cover';
 export * from './frame';
 export * from './header';
@@ -7,3 +8,4 @@ export * from './progress-bar';
 export * from './reveal';
 export * from './ruler';
 export * from './splash';
+export * from './text';

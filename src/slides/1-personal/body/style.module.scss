@@ -1,29 +1,27 @@
+@import "../../../elements/variables";
+
+.accent-text {
+  padding: 12px 12px 8px;
+}
+
 .name {
   font-family: "AmericanCaptain";
   color: #fff;
   text-shadow: 1px 2px 0 #000a;
-  font-size: 62px;
-  text-align: center;
-  margin-top: -8px;
-
-  &:before {
-    content: "Hi, my name is";
-    font-family: "Ubuntu";
-    font-size: 16px;
-    position: absolute;
-    margin: -28px -25px;
-    color: #fff;
-  }
+  font-size: 34px;
+  padding: 0 0 0px 12px;
+  text-align: left;
 }
 
 .bio {
-  font-family: "Ubuntu";
-  padding: 0px 14px 12px;
+  font-family: $ubuntu;
+  padding: 0 14px 12px;
   line-height: 22px;
   font-size: 14px;
 
+  // TODO: InlineLink 
   a {
-    color: #ff2a2b;
+    color: $accentYellow;
     text-decoration: none;
     box-shadow: inset 0px -6px #fff1;
     -webkit-transition: 0.2s;
@@ -41,14 +39,19 @@ p.additional {
 
 // md
 @media only screen and (min-width: 576px) {
-  .name {
-    font-size: 40px;
-    padding: 36px 36px 6px;
+  .accent-text {
+    padding: 36px 36px 8px;
     margin-top: 50px;
   }
 
+  .name {
+    font-size: 40px;
+    padding: 0 36px 8px;
+    margin-top: 0;
+  }
+
   .bio {
-    padding: 14px 48px;
+    padding: 0 36px 18px;
     line-height: 28px;
     font-size: 16px;
     color: #fff;

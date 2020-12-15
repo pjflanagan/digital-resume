@@ -1,3 +1,6 @@
+
+@import '../../elements/variables';
+
 .slide-personal {
   z-index: 15;
   height: 480px;
@@ -7,7 +10,7 @@
   .slide-personal-side-left {
     height: 100%;
     width: 100%;
-    background: #bf0e0d;
+    background: $backgroundLight;
   }
 
   .slide-personal-side-right {
@@ -15,7 +18,7 @@
     height: 100%;
     width: 94%;
     left: 3%;
-    background: #000d;
+    background: $backgroundDarkOpaque;
     top: 206px;
     z-index: 16;
     color: #fff;
@@ -27,12 +30,13 @@
 @media only screen and (min-width: 576px) {
   .slide-personal {
     height: 80%;
+    background: #000;
 
     .slide-personal-side-left {
       position: absolute;
       height: 100%;
       width: 40%;
-      background: #f00;
+      background: $accentCyan;
     }
 
     .slide-personal-side-right {
@@ -40,7 +44,7 @@
       height: 100%;
       width: 60%;
       left: 40%;
-      background: #222;
+      background: $backgroundDarkOpaque;
       top: 0;
     }
   }

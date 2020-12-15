@@ -1,3 +1,6 @@
+
+@import '../../../elements/variables';
+
 svg {
   height: 20px;
   width: 100%;
@@ -14,7 +17,7 @@ svg {
   }
 
   path {
-    fill: #bf0e0d;
+    fill: $backgroundLight;
   }
 }
 
@@ -43,7 +46,7 @@ svg {
     }
 
     path {
-      fill: #1d1d1d;
+      fill: $backgroundDark;
     }
   }
 }

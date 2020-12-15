@@ -1,5 +1,10 @@
 import React from 'react'
 
+// Usage
+// 1. pass in 'gap' and 'edge' as props on <ExtendsRevealComponent />
+// 2. set ref={this.ref} on an element inside ExtendsRevealComponent.render()
+// 3. use state.isRevealed 
+// TODO: and/or set a revealCallback function
 class Reveal extends React.Component {
   constructor(props) {
     super(props);
@@ -24,12 +29,21 @@ class Reveal extends React.Component {
     const bounds = this.ref.current.getBoundingClientRect();
     const viewPoint = bounds[this.props.edge] + this.props.gap;
     if(viewPoint < window.innerHeight) {
-      this.setState({
-        isRevealed: true
-      });
+      this.setState({ isRevealed: true });
       window.removeEventListener('scroll', this.handleScroll);
     }
   }
+
+  // TODO: not sure if this would work, it would then look like
+  // <Reveal gap={} edge={}><div /></Reveal>
+  // not sure how to use the reveal state though..?
+  // render() {
+  //   return (
+  //     <div ref={this.ref}>
+  //       { this.props.children }
+  //     </div>
+  //   )
+  // }
 }
 
 export { Reveal }

@@ -1,19 +1,16 @@
-
-import { Color, Random, distance, ellipseCircleIntersection } from './helpers';
+import { Color, Random, distance, ellipseCircleIntersection } from "./helpers";
 
 Math.TWO_PI = 2 * Math.PI;
 
-// CANVAS -------------------------------------------------------------------------------------------
+// View -------------------------------------------------------------------------------------------
 
-const CANVAS_STARS = { min: 34, max: 44 };
-const CANVAS_BACKGROUND_MOONS = { min: 2, max: 4 };
-const CANVAS_FOREGROUND_MOONS = { min: 2, max: 4 };
-const CANVAS_SHIP_LAYER = 5;
+const VIEW_STARS = { min: 34, max: 44 };
+const VIEW_BACKGROUND_MOONS = { min: 2, max: 4 };
+const VIEW_FOREGROUND_MOONS = { min: 2, max: 4 };
+const VIEW_SHIP_LAYER = 5;
 
-class Canvas {
-  constructor(canvasElem) {
-    this.ctx = canvasElem.getContext('2d', { alpha: false })
-
+class View {
+  constructor() {
     // properties
     this.W = window.innerWidth;
     this.H = window.innerHeight;
@@ -21,8 +18,6 @@ class Canvas {
       x: this.W / 2,
       y: this.H / 2,
     };
-    canvasElem.width = this.W;
-    canvasElem.height = this.H;
     this.shorterSide = Math.min(this.W, this.H);
     this.diagonal = distance({ x: 0, y: 0 }, { x: this.W, y: this.H });
     this.diagonalHalf = this.diagonal / 2;
@@ -34,7 +29,7 @@ class Canvas {
 
     // user input
     this.onMouseMove = this.onMouseMove.bind(this);
-    window.addEventListener('mousemove', (e) => {
+    window.addEventListener("mousemove", (e) => {
       const mouse = {
         x: e.clientX,
         y: e.clientY,
@@ -43,13 +38,20 @@ class Canvas {
     });
 
     this.onScroll = this.onScroll.bind(this);
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const scroll = window.scrollY;
       this.onScroll(scroll);
     });
 
     // setup and animate
     this.animate = this.animate.bind(this);
+  }
+
+  init(canvasElem) {
+    this.ctx = canvasElem.getContext("2d", { alpha: false });
+    canvasElem.width = this.W;
+    canvasElem.height = this.H;
+
     this.setup();
     this.start();
   }
@@ -59,40 +61,40 @@ class Canvas {
     this.space = new Space(this);
     this.bodies = [];
 
-    const starCount = Random.prop(CANVAS_STARS);
+    const starCount = Random.prop(VIEW_STARS);
     for (let i = 0; i < starCount; ++i) {
       this.bodies.push(new Star(this, 0, i));
     }
 
-    const starCount2 = Random.prop(CANVAS_STARS);
+    const starCount2 = Random.prop(VIEW_STARS);
     for (let i = 0; i < starCount2; ++i) {
       this.bodies.push(new Star(this, 1, i));
     }
 
-    const bgMoonCount = Random.prop(CANVAS_BACKGROUND_MOONS);
+    const bgMoonCount = Random.prop(VIEW_BACKGROUND_MOONS);
     for (let i = 0; i < bgMoonCount; ++i) {
       this.bodies.push(new Moon(this, 2, i));
     }
 
-    const bgMoonCount2 = Random.prop(CANVAS_BACKGROUND_MOONS);
+    const bgMoonCount2 = Random.prop(VIEW_BACKGROUND_MOONS);
     for (let i = 0; i < bgMoonCount2; ++i) {
       this.bodies.push(new Moon(this, 3, i));
     }
 
     this.bodies.push(new Planet(this, 4, 0));
-    this.bodies.push(new Ship(this, CANVAS_SHIP_LAYER, 0)); // CANVAS_SHIP_LAYER = 5
+    this.bodies.push(new Ship(this, VIEW_SHIP_LAYER, 0)); // VIEW_SHIP_LAYER = 5
 
-    const fgMoonCount = Random.prop(CANVAS_FOREGROUND_MOONS);
+    const fgMoonCount = Random.prop(VIEW_FOREGROUND_MOONS);
     for (let i = 0; i < fgMoonCount; ++i) {
       this.bodies.push(new Moon(this, 6, i));
     }
 
-    const fgMoonCount2 = Random.prop(CANVAS_FOREGROUND_MOONS);
+    const fgMoonCount2 = Random.prop(VIEW_FOREGROUND_MOONS);
     for (let i = 0; i < fgMoonCount2; ++i) {
       this.bodies.push(new Moon(this, 7, i));
     }
 
-    const starCount3 = Random.prop(CANVAS_STARS);
+    const starCount3 = Random.prop(VIEW_STARS);
     for (let i = 0; i < starCount3; ++i) {
       this.bodies.push(new Star(this, 8, i));
     }
@@ -136,7 +138,7 @@ class Canvas {
   }
 }
 
-// CANVAS -------------------------------------------------------------------------------------------
+// VIEW -------------------------------------------------------------------------------------------
 
 class Space {
   constructor(canvas) {
@@ -373,11 +375,12 @@ class Planet extends Body {
   setup() {
     const color = new Color().setOpacity(0.9);
     const toColor = new Color().setOpacity(0.9);
+    const { W, H, C } = this.canvas;
 
     // unchanging props
     this.prop = {
-      center: this.canvas.C, // planet is in the center
-      radius: Random.prop2(PLANET.RADIUS, this.canvas.H),
+      center: C, // planet is in the center
+      radius: Random.prop2(PLANET.RADIUS, Math.min(W,H)),
       colorSpectrum: color.makeSpectrum(toColor, PLANET.COLORS),
       offsetRadiusMax: PLANET.OFFSET.MAX_RADIUS,
       offsetSpeed: PLANET.OFFSET.SPEED,
@@ -451,6 +454,7 @@ class Planet extends Body {
 
       // TODO: make linear equation for this
       // dx: use a multiplier on the x diff to make them the same at 0 and further apart at the peaks
+      // TODO: offset here really means radius, change the name
       const offsetX = radius / 2 - 120 * scrollPercent + i;
       const offsetY = radius + ring.offsetY;
       const intersection = ellipseCircleIntersection({
@@ -463,8 +467,8 @@ class Planet extends Body {
       this.ctx.ellipse(
         x,
         y,
-        offsetX,
-        offsetY,
+        Math.abs(offsetX),
+        Math.abs(offsetY),
         angle,
         intersection[0].theta,
         intersection[1].theta
@@ -497,7 +501,7 @@ class Moon extends Body {
     // unchanging props
     const radius = Random.prop2(MOON_RADIUS, shorterSide);
     const minX =
-      this.layer > CANVAS_SHIP_LAYER
+      this.layer > VIEW_SHIP_LAYER
         ? SHIP_CENTER.x * W + radius * 3
         : MOON_CENTER.x.min * W;
     this.prop = {
@@ -745,4 +749,4 @@ class Ship extends Body {
   }
 }
 
-export { Canvas };
+export { View };

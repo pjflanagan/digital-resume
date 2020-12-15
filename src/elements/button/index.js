@@ -19,16 +19,17 @@ const LabeledButton = (props) => {
   const { name, onMouseEnter, onMouseLeave } = props;
   const linkID = name.toLowerCase();
   return (
-    <a
-      className={Style.labeledButton}
-      rel="noreferrer" target="_blank"
-      href={Links[linkID]}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <SVGIcon icon={linkID} />
-      <div className={Style.name}>{name}</div>
-    </a>
+    <div className={Style.labeledButton}>
+      <a
+        rel="noreferrer" target="_blank"
+        href={Links[linkID]}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <SVGIcon icon={linkID} />
+        <div className={Style.name}>{name}</div>
+      </a>
+    </div>
   );
 };
 

@@ -1,9 +1,12 @@
 import React from 'react';
 
+import { AccentText } from '../../../elements'
+
 import Style from './style.module.scss';
 
 const Body = () => (
   <div>
+    <AccentText className={Style.accentText}>Hi, my name is</AccentText>
     <h1 className={Style.name}>Peter James Flanagan</h1>
     <p className={Style.bio}>
       I'm a full-stack software engineer living in New York. I fell in love with web development

@@ -1,50 +1,80 @@
-a {
-  text-decoration: none;
 
-  &.labeled-button {
-  min-width: 120px;
+@import '../variables';
+
+.labeled-button {
   position: relative;
-  background: #b71e25;
-  color: #fff;
-  padding: 14px;
-  border-radius: 4px;
-  overflow: hidden;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  width: 220px;
+  height: 68px;
+  font-family: $ubuntu;
 
-  svg {
-    width: 28px;
-    height: 28px;
-    margin: 8px 8px;
-
-    path {
-      fill: #fff;
-    }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border: 1px solid $accentCyan;
+    clip-path: $polygon;
   }
 
-  .name {
-    width: 136px;
-    text-align: center;
-    font-family: "Ubuntu", sans-serif;
-    padding: 8px;
-    font-size: 20px;
+  a {
+    z-index: 2;
+    text-decoration: none;
     position: relative;
-    top: 0;
-    left: 50%;
-    margin-left: -48px;
-    border-left: 1px solid #fff6;
+    color: #fff;
+    padding: 14px;
+    height: 100%;
+    background: $backgroundLight;
+    overflow: hidden;
+    clip-path: $polygon;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin: 10px 12px;
+
+      path {
+        fill: $accentYellow;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+      }
+    }
+
+    .name {
+      width: 136px;
+      text-align: center;
+      padding: 8px;
+      font-size: 20px;
+      position: relative;
+      top: 0;
+      left: 50%;
+      margin-left: -48px;
+      border-left: 1px solid $accentCyan;
+    }
   }
 
   &:hover {
-    background: #9b191f;
-    svg {
-      path {
-        fill: #fffe;
+    &:after {
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+    }
+    a {
+      background: $backgroundLightHover;
+      svg {
+        path {
+          fill: $accentYellowHover;
+        }
+      }
+      .name {
+        color: #e4f03c;
       }
     }
-    .name {
-      color: #fffe;
-    }
   }
-}
 }

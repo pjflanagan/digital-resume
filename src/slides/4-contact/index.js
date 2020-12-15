@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Multipass } from './multipass'
-import { LabeledButton } from '../../elements'
+import { LabeledButton, AccentText } from '../../elements'
 
 import Style from './style.module.scss'
 
@@ -27,7 +27,8 @@ class SlideContact extends React.Component {
     return (
       <div className={Style.slideContact}>
         <div className={Style.slideLeft}>
-          <h1 className={Style.title}>Let's make contact!</h1>
+          <AccentText className={Style.accentText}>Let's make</AccentText>
+          <h1>CONTACT!</h1>
           <div className={Style.linkHolder}>
             <LabeledButton
               name="Email"

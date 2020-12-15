@@ -18,7 +18,7 @@ const FRAME_STYLE = {
 class Photo extends Reveal {
   render() {
     const { data } = this.props;
-    const className = this.state.isRevealed ? Style.reveal : Style.hidden;
+    const className = this.state.isRevealed ? Style.reveal : '';
     const imageData = FindImage({ data, image:'personal-photo.jpg' });
     return (
       <div className={`${Style.personalPhoto} ${className}`} ref={this.ref}>

@@ -9,6 +9,7 @@ export default function HTML(props) {
         <meta content='text/html; charset=utf-8' httpEquiv='Content-Type' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+        <title>Peter James Flanagan</title>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

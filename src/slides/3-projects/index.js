@@ -21,7 +21,8 @@ const INVENTIONS = [
   'Shrink Ray',
   'Electron Carpet',
   'Mind Control Tie',
-  'Memory Ray'
+  'Memory Ray',
+  'Flux Capacitor'
 ];
 
 class SlideProjects extends React.Component {
