@@ -1,3 +1,10 @@
+
+@import '../../../elements/variables';
+
+// @keyframes frame-reveal {
+
+// }
+
 .personal-photo {
   width: 84%;
   position: absolute;
@@ -8,15 +15,21 @@
   overflow: hidden;
 
   .photo-frame-holder {
-    position: relative;
-    width: 80%;
-    height: 80%;
-    left: 10%;
-    top: 10%;
-  }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    background: $backgroundLightOpaque;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
 
-  &.reveal {
-    // TODO: have some glitch effect
+    &.reveal {
+      width: 80%;
+      height: 80%;
+      background: #fff0;
+    }
   }
 }
 
@@ -28,12 +41,12 @@
     top: 0;
     left: 0;
     background-position: top center;
-    opacity: 0.6;
     box-shadow: inset 0 0 100px #0008;
 
     .image {
       filter: grayscale(1);
       height: 100%;
+      opacity: 0.6;
 
       img {
         object-position: top center !important;

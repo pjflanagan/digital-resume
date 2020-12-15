@@ -7,9 +7,11 @@ $backgroundLightHover: #159997;
 $accentYellow: #e4f03c;
 $accentYellowHover: #e8f352;
 $accentCyan: #1fcfcc;
+$accentCyanHover: #1cbebc;
 $white: #fff;
 $offWhite: #eaf4f4;
 $black: #1c1c1c;
+$blackOpaque: #1c1c1c44;
 
 $ubuntu: "Ubuntu", sans-serif;
 
@@ -20,4 +22,8 @@ $polygon: polygon(
   100% 100%,
   20px 100%,
   0 calc(100% - 20px)
-)
+);
+
+// $animationFast: 0.2s;
+// $animationMed: 0.6s;
+// $animationSlow: 1.8s;

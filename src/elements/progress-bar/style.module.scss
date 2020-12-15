@@ -1,19 +1,24 @@
+
+@import '../variables';
+
 .bar {
-  padding: 4px 12px;
-  margin: 4px 12px;
-  border-radius: 4px;
+  padding: 6px 24px;
+  margin: 6px 12px;
   position: relative;
   overflow: hidden;
-  background: #0002;
+  background: $blackOpaque;
   background: linear-gradient(
     90deg,
-    #0002 0%,
-    #0002 50%,
-    #0003 50%,
-    #0003 100%
+    $blackOpaque 0%,
+    $blackOpaque 50%,
+    $backgroundLightOpaque 50%,
+    $backgroundLightOpaque 100%
   );
   background-position: 0 0;
   background-size: 200%;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  clip-path: $polygon;
   transition: 0.4s;
   -webkit-transition: 0.4s;
 
@@ -21,30 +26,41 @@
     color: #fff;
     z-index: 25;
     position: relative;
+
+    .line {
+      background: $accentYellow;
+      height: 1px;
+      top: 50%;
+      position: absolute;
+      margin-left: 6px;
+    }
   }
 
   .loader {
     position: absolute;
-    background: #be0c09;
+    background: $accentCyan;
     background: linear-gradient(
       90deg,
-      #be0c09 0%,
-      #be0c09 50%,
-      #850705 50%,
-      #850705 100%
+      $backgroundLight 0%,
+      $backgroundLight 50%,
+      $accentCyanHover 50%,
+      $accentCyanHover 100%
     );
     background-position: 0 0;
     height: 100%;
     background-size: 200%;
     top: 0;
     left: 0;
-    border-radius: 4px;
+    clip-path: $polygon;
     transition: 0.4s;
     -webkit-transition: 0.4s;
   }
 
   &:hover {
     background-position: 100% 0;
+    .name {
+      color: $accentYellowHover;
+    }
     .loader {
       background-position: -100% 0;
     }

@@ -17,7 +17,7 @@ const SlidePersonal = ({ data }) => {
       <CurveTopTop />
       <CurveTopBottom />
       <div className={Style.slidePersonalSideLeft}>
-        <Photo edge="top" gap={120} data={data} />
+        <Photo edge="top" gap={280} data={data} />
       </div>
       <div className={Style.slidePersonalSideRight}>
         <Body />

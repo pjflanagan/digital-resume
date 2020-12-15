@@ -2,6 +2,7 @@ import React from 'react'
 
 import Style from './style.module.scss'
 
+// TODO: rename TextAccent
 const AccentText = (props) => {
   return (
     <p className={`${Style.accentText} ${props.className}`} style={props.style}>
@@ -10,6 +11,18 @@ const AccentText = (props) => {
   );
 }
 
+// TextHeading
+const Heading = (props) => {
+  return (
+    <h1>
+      { props.children }
+    </h1>
+  );
+}
+
+// TODO: TextSubHeading
+
+// TextInlineLink
 const InlineLink = (props) => {
   return (
     <a
@@ -23,4 +36,4 @@ const InlineLink = (props) => {
   )
 }
 
-export { AccentText, InlineLink }
+export { AccentText, InlineLink, Heading }

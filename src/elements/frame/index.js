@@ -28,9 +28,9 @@ const Frame = ({ type, style }) => {
 };
 
 // FrameHolder takes optional children and styles
-const FrameHolder = ({ children, style }) => {
+const FrameHolder = ({ children, style, className }) => {
   return (
-    <div className={`frame-holder`} style={style}>
+    <div className={`${Style.frameHolder} ${className}`} style={style}>
       <Frame type="top-left" />
       <Frame type="top-right" />
       <Frame type="bottom-left" />

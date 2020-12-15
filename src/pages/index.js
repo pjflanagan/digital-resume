@@ -14,7 +14,7 @@ import "./style.scss";
 import "./reset.scss";
 
 // markup
-class IndexPage extends React.Component {
+class PageIndex extends React.Component {
   render() {
     // TODO: all data should come through graphql
     const { data } = this.props;
@@ -33,7 +33,7 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage;
+export default PageIndex;
 
 export const query = graphql`
   query MyQuery {
