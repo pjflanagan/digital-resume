@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { FrameHolder, Reveal } from "../../../elements";
 import { FindImage } from '../../../data';
 
-import { BillCypher } from "./bill-cypher";
+// import { BillCypher } from "./bill-cypher";
 import Style from "./style.module.scss";
 
 class Photo extends Reveal {
@@ -19,7 +19,7 @@ class Photo extends Reveal {
           alt={'Peter James Flanagan Headshot'}
           className={Style.image}
         />
-        <BillCypher />
+        {/* <BillCypher /> */}
         <FrameHolder className={`${Style.photoFrameHolder} ${className}`} />
       </div>
     );

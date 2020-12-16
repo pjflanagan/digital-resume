@@ -1,65 +1,31 @@
 @import "../../../elements/variables";
 
-.accent-text {
-  padding: 12px 12px 8px;
-}
+.body {
+  padding: 14px 14px;
 
-.name {
-  font-family: "AmericanCaptain";
-  color: #fff;
-  text-shadow: 1px 2px 0 #000a;
-  font-size: 34px;
-  padding: 0 0 0px 12px;
-  text-align: left;
-}
-
-.bio {
-  font-family: $ubuntu;
-  padding: 0 14px 12px;
-  line-height: 22px;
-  font-size: 14px;
-
-  // TODO: InlineLink 
-  a {
-    color: $accentYellow;
-    text-decoration: none;
-    box-shadow: inset 0px -6px #fff1;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
+  .bio {
+    &.additional {
+      display: none;
+    }
   }
-
-  a:hover {
-    box-shadow: inset 0px -10px #fff2;
-  }
-}
-
-p.additional {
-  display: none;
 }
 
 // md
 @media only screen and (min-width: 576px) {
-  .accent-text {
-    padding: 36px 36px 8px;
-    margin-top: 50px;
-  }
+  .body {
+    padding: 50px 24px;
 
-  .name {
-    font-size: 40px;
-    padding: 0 36px 8px;
-    margin-top: 0;
-  }
-
-  .bio {
-    padding: 0 36px 18px;
-    line-height: 28px;
-    font-size: 16px;
-    color: #fff;
+    .bio {
+      &.additional {
+        display: block;
+      }
+    }
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .bio.additional {
-    display: block;
-  }
-}
+// lg
+// @media only screen and (min-width: 768px) {
+//   .bio.additional {
+//     display: block;
+//   }
+// }

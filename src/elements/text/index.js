@@ -1,39 +1,76 @@
-import React from 'react'
+import React from "react";
 
-import Style from './style.module.scss'
+import Style from "./style.module.scss";
 
-// TODO: rename TextAccent
-const AccentText = (props) => {
+// TextAccent
+const TextAccent = (props) => {
   return (
-    <p className={`${Style.accentText} ${props.className}`} style={props.style}>
-      { props.children }
-    </p>
+    <p className={`${Style.textAccent} ${props.className}`}>{props.children}</p>
   );
-}
+};
 
 // TextHeading
-const Heading = (props) => {
+const TextHeading = (props) => {
   return (
-    <h1>
-      { props.children }
+    <h1 className={`${Style.textHeading} ${props.className}`}>
+      {props.children}
     </h1>
   );
-}
+};
 
-// TODO: TextSubHeading
+// TextSubHeading
+const TextSubHeading = (props) => {
+  return (
+    <h2 className={`${Style.textSubHeading} ${props.className}`}>
+      {props.children}
+      <span className={Style.line}></span>
+    </h2>
+  );
+};
+
+// TextSubHeading2
+const TextSubHeading2 = (props) => {
+  return (
+    <h2 className={`${Style.textSubHeading2} ${props.className}`}>
+      {props.children}
+    </h2>
+  );
+};
+
+// TextFlag
+const TextFlag = (props) => {
+  return (
+    <h2 className={`${Style.textFlag} ${props.className}`}>
+      {props.children}
+    </h2>
+  );
+};
 
 // TextInlineLink
-const InlineLink = (props) => {
+const TextInlineLink = (props) => {
   return (
     <a
-      className={Style.inlineLink}
       href={props.href}
       target="_blank"
       rel="noreferrer"
+      className={`${Style.textInlineLink} ${props.className}`}
     >
-      { props.children }
+      {props.children}
     </a>
-  )
-}
+  );
+};
 
-export { AccentText, InlineLink, Heading }
+// Text
+const Text = (props) => {
+  return <p className={`${Style.text} ${props.className}`}>{props.children}</p>;
+};
+
+export {
+  TextAccent,
+  TextHeading,
+  TextSubHeading,
+  TextSubHeading2,
+  TextFlag,
+  TextInlineLink,
+  Text,
+};

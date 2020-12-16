@@ -5,13 +5,13 @@
   width: 100%;
   z-index: 20;
   position: relative;
-  background: $offWhite;
-  padding-bottom: 68px;
+  background: $backgroundDark2;
+  padding: 0 0 120px;
 
   &:before {
     content: "";
     width: 120%;
-    background: $offWhite;
+    background: $backgroundDark2;
     height: 100px;
     position: absolute;
     left: -10%;
@@ -20,128 +20,24 @@
     box-shadow: 0 -4px #0002;
   }
 
-  h1 {
-    font-family: "AmericanCaptain";
-    z-index: 20;
-    position: relative;
-    text-align: center;
-    font-size: 52px;
-    color: #1d1d1d;
-    text-shadow: 1px 2px 0 #fffa;
-    box-shadow: inset 0 -40px #1b1d1d11;
-    width: 60%;
-    left: 15%;
-  }
-
   .slide-body {
     font-family: "Ubuntu";
     z-index: 21;
     position: relative;
     margin: 0 auto;
-    padding: 0 20px 20px;
-
-    h2 {
-      font-size: 28px;
-      color: #000a;
-      padding: 28px 8px 8px;
-      border-bottom: 1px solid $backgroundDarkOpaque;
-    }
-
-    .segment {
-      border-left: 1px solid $backgroundDarkOpaque;
-      margin-left: 40px;
-      padding: 28px 4px 8px 40px;
-
-      .image-holder {
-        width: 48px;
-        height: 48px;
-        position: absolute;
-        left: 37px;
-        border-radius: 50%;
-        border: 1px solid $backgroundDarkOpaque;
-        overflow: hidden;
-
-        .image {
-          width: 68%;
-          margin: 50% 0;
-          left: 16%;
-          transition: transform 0.2s;
-          -webkit-transition: transform 0.2s;;
-        }
-      }
-
-      .segment-left {
-        .org {
-          font-weight: bold;
-          font-size: 18px;
-          padding: 8px 0;
-        }
-        .location {
-          font-size: 14px;
-          padding: 4px 0;
-        }
-        .time {
-          color: #000a;
-          font-size: 10px;
-          padding: 4px 0;
-        }
-      }
-
-      .segment-right {
-        .position {
-          padding: 8px 0;
-        }
-        p.description {
-          font-size: 12px;
-          padding: 4px;
-          line-height: 14px;
-          color: #000a;
-        }
-      }
-    }
-
-    h3 {
-      padding: 14px 12px 4px;
-      font-size: 21px;
-    }
+    padding: 20px 20px 20px;
   }
 }
 
 @media only screen and (min-width: 576px) {
   .slide-experience {
-    background: #fffaf0;
-    background: radial-gradient(circle, #112a32 54%, #121e25 100%) !important;
+    background: $backgroundDark2;
+    // background: radial-gradient(circle, $backgroundDark2 54%, #121e25 100%) !important;
     z-index: 0;
+    padding: 68px 0;
 
     &:before {
       display: none;
-    }
-
-    h1 {
-      padding: 48px 0 0;
-      font-size: 84px;
-      width: 40%;
-      left: 30%;
-    }
-
-    .slide-body {
-      .segment {
-        display: flex;
-        .segment-left {
-          min-width: 220px;
-        }
-        .segment-right {
-          max-width: 400px;
-          display: grid;
-
-          p.description {
-            display: inline;
-            font-size: 14px;
-            padding: 4px 0;
-            line-height: 18px;
-          }
-        }
-      }
     }
   }
 }

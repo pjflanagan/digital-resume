@@ -1,9 +1,72 @@
 
 @import '../variables';
 
-.accent-text {
+.text-accent {
   color: $accentYellow;
   font-family: $ubuntu;
   text-transform: uppercase;
   font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.text-heading {
+  font-family: "AmericanCaptain";
+  color: #fff;
+  text-shadow: 1px 2px 0 #000a;
+  font-size: 34px;
+  text-align: left;
+}
+
+.text-sub-heading {
+  color: #fff;
+  font-family: $ubuntu;
+  font-size: 18px;
+  padding: 24px 0 10px;
+
+  .line {
+    width: 32%;
+    background: $accentCyan;
+    height: 1px;
+    position: absolute;
+    margin: 15px 0 0 20px;
+  }
+}
+
+.text-sub-heading-2 {
+  color: #fff;
+  font-family: $ubuntu;
+  font-size: 16px;
+  padding: 18px 0 10px;
+}
+
+.text-flag {
+  color: #fff;
+  font-family: $ubuntu;;
+  font-size: 12px;
+  padding: 4px 6px;
+  width: 108px;
+  background: #cc471c;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 18px 3px 4px;
+}
+
+a.text-inline-link {
+  color: $accentYellow;
+  text-decoration: none;
+  box-shadow: inset 0px -6px #fff1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: inset 0px -10px #fff2;
+  }
+}
+
+.text {
+  font-family: $ubuntu;
+  padding-bottom: 12px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #fff;
 }

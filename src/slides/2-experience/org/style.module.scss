@@ -1,0 +1,55 @@
+@import "../../../elements/variables";
+
+.segment {
+  color: #fff;
+
+
+  .segment-left {
+    .org {
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 0;
+    }
+    .location {
+      font-size: 14px;
+      padding: 4px 0;
+    }
+    .time {
+      color: #fff8;
+      font-size: 10px;
+      padding: 4px 0;
+    }
+  }
+
+  .segment-right {
+    .position {
+      padding: 8px 0;
+    }
+    p.description {
+      font-size: 12px;
+      padding: 4px;
+      line-height: 14px;
+      color: #fff8;
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .segment {
+    display: flex;
+    .segment-left {
+      min-width: 220px;
+    }
+    .segment-right {
+      max-width: 400px;
+      display: grid;
+
+      p.description {
+        display: inline;
+        font-size: 14px;
+        padding: 4px 0;
+        line-height: 18px;
+      }
+    }
+  }
+}
