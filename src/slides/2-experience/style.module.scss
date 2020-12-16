@@ -39,6 +39,10 @@
     &:before {
       display: none;
     }
+
+    .slide-body {
+      width: 540px;
+    }
   }
 }
 
@@ -46,6 +50,14 @@
   .slide-experience {
     .slide-body {
       width: 680px;
+    }
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .slide-experience {
+    .slide-body {
+      width: 820px;
     }
   }
 }

@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Ubuntu\:300`
+          `Ubuntu\:300,500`
         ],
         display: 'swap'
       }

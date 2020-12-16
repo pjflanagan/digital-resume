@@ -22,6 +22,7 @@
   font-family: $ubuntu;
   font-size: 18px;
   padding: 24px 0 10px;
+  margin-bottom: 6px;
 
   .line {
     width: 32%;
@@ -51,22 +52,23 @@
   margin: 18px 3px 4px;
 }
 
-a.text-inline-link {
-  color: $accentYellow;
-  text-decoration: none;
-  box-shadow: inset 0px -6px #fff1;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-
-  &:hover {
-    box-shadow: inset 0px -10px #fff2;
-  }
-}
-
 .text {
   font-family: $ubuntu;
   padding-bottom: 12px;
   line-height: 22px;
   font-size: 14px;
   color: #fff;
+  font-weight: 300;
+
+  a, a.text-inline-link {
+    color: $accentYellow;
+    text-decoration: none;
+    box-shadow: inset 0px -6px #fff1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  
+    &:hover {
+      box-shadow: inset 0px -10px #fff2;
+    }
+  }
 }

@@ -62,7 +62,13 @@ const TextInlineLink = (props) => {
 
 // Text
 const Text = (props) => {
-  return <p className={`${Style.text} ${props.className}`}>{props.children}</p>;
+  if (!!props.dangerouslySetInnerHTML)
+    return (
+      <p className={`${Style.text} ${props.className}`} dangerouslySetInnerHTML={props.dangerouslySetInnerHTML} />
+    )
+  return (
+    <p className={`${Style.text} ${props.className}`}>{props.children}</p>
+  );
 };
 
 export {
