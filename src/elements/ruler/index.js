@@ -1,8 +1,8 @@
 import React from "react";
 import Style from './style.module.scss'
 
-const Ruler = () => (
-  <div className={Style.ruler}>
+const Ruler = (props) => (
+  <div className={`${Style.ruler} ${props.className}`}>
     {
       [...Array(10)].map((e, i) => (
         <div className={Style.cm}>

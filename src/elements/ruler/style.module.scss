@@ -3,15 +3,12 @@
 
 .ruler {
   position: relative;
-  width: 96%;
-  left: 2%;
-  margin: 26px 0 0;
   height: 14px;
 }
 .ruler .cm,
 .ruler .mm {
   position: absolute;
-  border-left: 1px solid $accentCyan;
+  border-left: 1px solid $accentYellow;
   height: 14px;
   width: 10%;
 }
@@ -21,12 +18,12 @@
   font: 11px/1 sans-serif;
 }
 .ruler .mm {
-  height: 5px;
-  top: 9px;
+  height: 4px;
+  top: 5px;
 }
 .ruler .mm:nth-of-type(5) {
   height: 10px;
-  top: 4px;
+  top: 2px;
 }
 .ruler .cm:nth-of-type(1) {
   left: 0%;

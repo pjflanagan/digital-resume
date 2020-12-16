@@ -13,8 +13,16 @@
   position: relative;
   border-top: 1px solid #fff2;
 
+  .ruler {
+    min-width: 580px;
+    width: 96%;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 26px 0 26px;
+  }
+
   .slide-body {
-    padding: 4px;
+    padding: 4px 8px 36px;
 
     .featured-body {
       display: flex;

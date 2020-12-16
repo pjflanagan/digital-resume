@@ -8,7 +8,7 @@
   overflow: hidden;
 
   .slide-left {
-    background: #fff;
+    background: $backgroundDark2;
     min-width: 100%;
 
     .link-holder {
@@ -25,7 +25,7 @@
   }
 
   .slide-right {
-    background: #ddd;
+    background: $backgroundDarkOpaque;
     height: 180px;
     min-width: 100%;
     position: relative;
@@ -35,7 +35,7 @@
     .multipass-holder {
       width: 220px;
       height: 220px;
-      background: #f79348;
+      // background: #f79348;
       border-radius: 50%;
       position: absolute;
       left: 50%;
@@ -65,13 +65,13 @@
     .slide-left {
       min-width: 50%;
       height: 100%;
-      background: $backgroundDark;
+      background: $backgroundDark2;
     }
 
     .slide-right {
       min-width: 50%;
       height: 100%;
-      background: radial-gradient(circle at center, #ddda 240px, #dddc 240px);
+      background: radial-gradient(circle at center, $backgroundLightOpaque 240px, $backgroundDarkOpaque 240px);
       .multipass-holder {
         width: 320px;
         height: 320px;

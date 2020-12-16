@@ -55,6 +55,8 @@ class SlideProjects extends React.Component {
         {/* <BlueprintDecoration num={1} invention={this.state.invention1} gap={42} edge={'top'} />
         <BlueprintDecoration num={2} invention={this.state.invention2} gap={32} edge={'top'} /> */}
         <div className={`${Style.slideProjects} ${Style.blueprint}`}>
+          {/* TODO: maybe ruler should be sideways */}
+          <Ruler className={Style.ruler} />
           <div className={Style.slideBody}>
             <TextAccent>Some of my</TextAccent>
             <TextHeading>Projects</TextHeading>
@@ -87,7 +89,6 @@ class SlideProjects extends React.Component {
               </div>
             </div>
           </div>
-          <Ruler />
         </div>
       </div>
     );
