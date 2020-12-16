@@ -46,9 +46,13 @@
   }
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: $md) {
   .org {
     display: flex;
+    background: #143443;
+    padding: 14px 10px;
+    clip-path: $polygon;
+
     .org-left {
       min-width: 320px;
     }

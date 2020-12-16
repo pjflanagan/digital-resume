@@ -11,7 +11,7 @@
 }
 
 // md
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: $md) {
   .body {
     padding: 50px 24px;
 
@@ -24,7 +24,7 @@
 }
 
 // lg
-// @media only screen and (min-width: 768px) {
+// @media only screen and (min-width: $lg) {
 //   .bio.additional {
 //     display: block;
 //   }

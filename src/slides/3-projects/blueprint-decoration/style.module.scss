@@ -45,7 +45,7 @@
 
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $lg) {
   .slide-projects-decoration {
     &.decoration-1 {
       transform: rotate(6deg);

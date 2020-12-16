@@ -29,7 +29,7 @@
   }
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: $md) {
   .slide-experience {
     background: $backgroundDark2;
     // background: radial-gradient(circle, $backgroundDark2 54%, #121e25 100%) !important;
@@ -46,7 +46,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $lg) {
   .slide-experience {
     .slide-body {
       width: 680px;
@@ -54,7 +54,7 @@
   }
 }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: $xl) {
   .slide-experience {
     .slide-body {
       width: 820px;

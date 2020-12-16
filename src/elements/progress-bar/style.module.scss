@@ -17,7 +17,7 @@
   background-size: 200%;
   transition: 0.4s;
   -webkit-transition: 0.4s;
-  clip-path: $polygon;
+  clip-path: $polygonSmall;
   transition: 0.4s;
   -webkit-transition: 0.4s;
 
@@ -50,7 +50,7 @@
     background-size: 200%;
     top: 0;
     left: 0;
-    clip-path: $polygon;
+    clip-path: $polygonSmall;
     transition: 0.4s;
     -webkit-transition: 0.4s;
   }

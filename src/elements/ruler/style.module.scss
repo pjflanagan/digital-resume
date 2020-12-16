@@ -1,15 +1,17 @@
+
+@import '../variables';
+
 .ruler {
   position: relative;
   width: 96%;
   left: 2%;
   margin: 26px 0 0;
   height: 14px;
-  color: #FFFa;
 }
 .ruler .cm,
 .ruler .mm {
   position: absolute;
-  border-left: 1px solid #FFFa;
+  border-left: 1px solid $accentCyan;
   height: 14px;
   width: 10%;
 }

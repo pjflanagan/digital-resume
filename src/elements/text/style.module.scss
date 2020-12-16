@@ -1,5 +1,4 @@
-
-@import '../variables';
+@import "../variables";
 
 .text-accent {
   color: $accentYellow;
@@ -42,7 +41,7 @@
 
 .text-flag {
   color: #fff;
-  font-family: $ubuntu;;
+  font-family: $ubuntu;
   font-size: 12px;
   padding: 4px 6px;
   width: 108px;
@@ -60,15 +59,22 @@
   color: #fff;
   font-weight: 300;
 
-  a, a.text-inline-link {
+  a,
+  a.text-inline-link {
     color: $accentYellow;
     text-decoration: none;
     box-shadow: inset 0px -6px #fff1;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-  
+
     &:hover {
       box-shadow: inset 0px -10px #fff2;
     }
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .text-heading {
+    font-size: 46px;
   }
 }

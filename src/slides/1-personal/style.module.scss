@@ -27,7 +27,7 @@
 }
 
 // md
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: $md) {
   .slide-personal {
     height: 80%;
     background: #000;
@@ -51,7 +51,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $lg) {
   .slide-personal {
     .slide-personal-side-left {
       width: 64%;

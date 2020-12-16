@@ -25,6 +25,20 @@ $polygon: polygon(
   0 calc(100% - 20px)
 );
 
+$polygonSmall: polygon(
+  0 0,
+  calc(100% - 10px) 0,
+  100% 10px,
+  100% 100%,
+  10px 100%,
+  0 calc(100% - 10px)
+);
+
 // $animationFast: 0.2s;
 // $animationMed: 0.6s;
 // $animationSlow: 1.8s;
+
+
+$md: 576px;
+$lg: 768px;
+$xl: 960px;

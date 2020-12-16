@@ -1,3 +1,4 @@
+@import '../../../elements/variables';
 
 @keyframes float {
   0% {
@@ -272,7 +273,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $lg) {
   .multipass {
     animation: float 6s infinite;
   }
