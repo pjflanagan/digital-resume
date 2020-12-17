@@ -1,11 +1,10 @@
-
-import React from 'react'
+import React from "react";
 import Img from "gatsby-image";
 
-import { Reveal } from '../../../elements'
-import { FindImage } from '../../../data'
+import { Reveal, FrameHolder } from "../../../elements";
+import { FindImage } from "../../../data";
 
-import Style from './style.module.scss'
+import Style from "./style.module.scss";
 
 class FeaturedProject extends Reveal {
   render() {
@@ -13,21 +12,25 @@ class FeaturedProject extends Reveal {
     const imageData = FindImage({ data, image });
     return (
       <div className={Style.featuredProject} ref={this.ref}>
-        <Img
-          fluid={imageData.childImageSharp.fluid}
-          alt={name}
-          className={Style.projectImage}
-        />
+        <FrameHolder className={Style.projectImageFrame}>
+          <Img
+            fluid={imageData.childImageSharp.fluid}
+            alt={name}
+            className={Style.projectImage}
+          />
+        </FrameHolder>
         <div className={Style.info}>
           <a href={`//${link}`} target="_blank" rel="noreferrer">
-            <h2 className={Style.name}>{ name }</h2>
-            <span className={Style.arrow}></span>
+            <h2 className={Style.name}>
+              {name}
+              <span className={Style.arrow}></span>
+            </h2>
           </a>
-          <p className={Style.description}>{ description }</p>
+          <p className={Style.description}>{description}</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export { FeaturedProject }
+export { FeaturedProject };

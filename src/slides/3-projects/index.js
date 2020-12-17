@@ -5,7 +5,7 @@ import { Ruler, TextHeading, TextAccent } from "../../elements";
 import Projects from "./data/projects.json";
 import { FeaturedProject } from "./featured-project";
 // import { BlueprintDecoration } from './blueprint-decoration'
-import { Project } from "./project";
+// import { Project } from "./project";
 import Style from "./style.module.scss";
 
 // const INVENTIONS = [
@@ -73,21 +73,21 @@ class SlideProjects extends React.Component {
                   edge={"top"}
                 />
               ))}
-              <div className={Style.allBody}>
-                {Projects.all.map((project, i) => (
-                  <Project
-                    key={i}
-                    name={project.name}
-                    description={project.description}
-                    link={project.link}
-                    image={project.image}
-                    gap={12}
-                    edge={"top"}
-                    data={data}
-                  />
-                ))}
-              </div>
             </div>
+            {/* <div className={Style.allBody}>
+              {Projects.all.map((project, i) => (
+                <Project
+                  key={i}
+                  name={project.name}
+                  description={project.description}
+                  link={project.link}
+                  image={project.image}
+                  gap={12}
+                  edge={"top"}
+                  data={data}
+                />
+              ))}
+            </div> */}
           </div>
         </div>
       </div>
