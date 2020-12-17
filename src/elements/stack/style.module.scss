@@ -30,6 +30,9 @@
         filter: opacity(0);
         transform: translate(-50%, 20px);
         pointer-events: none;
+        .name {
+          filter: opacity(0);
+        }
       }
 
       // displayed
@@ -110,6 +113,9 @@
 
       div:not(.name) {
         filter: opacity(0.6);
+        div {
+          filter: opacity(0.2);
+        }
       }
     }
   }

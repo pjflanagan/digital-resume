@@ -67,7 +67,7 @@ class SlideProjects extends React.Component {
                   key={i}
                   project={project}
                   data={data}
-                  gap={48}
+                  gap={220}
                   edge={"top"}
                 />
               ))}

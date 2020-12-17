@@ -51,7 +51,7 @@
         font-weight: 500;
 
         span.arrow {
-          // TODO: turn this into an SVG
+          // TODO: turn this into an SVG and move into icons
           width: 10px;
           height: 10px;
           border-right: 1px solid $accentYellow;
@@ -97,7 +97,7 @@
   }
 }
 
-// @media only screen and (min-width: $md) {
+// @media only screen and (min-width: $md) {}
 
 @media only screen and (min-width: $lg) {
   .featured-project {
@@ -111,6 +111,9 @@
     .project-image-frame {
       min-width: 560px;
       max-width: 560px;
+      transform: translate(0,0);
+      filter: opacity(1);
+      transition: transform 0.2s, filter 0.2s;
 
       .project-image {
         width: calc(100% - 20px);
@@ -132,6 +135,8 @@
       min-height: 140px;
       width: 516px;
       padding: 22px 18px;
+      filter: opacity(1);
+      transition: transform 0.2s, filter 0.2s;
 
       h2 {
         font-size: 24px;
@@ -175,6 +180,28 @@
           img {
             filter: grayscale(0.4) opacity(0.6);
           }
+        }
+      }
+    }
+
+    &.hidden {
+      .project-image-frame {
+        transform: translate(-50px, 0);
+        filter: opacity(0.6);
+      }
+      .info {
+        transform: translate(50px, -50%);
+        filter: opacity(0.6);
+      }
+
+      &:nth-child(2n) {
+        .project-image-frame {
+          transform: translate(50px, 0);
+          filter: opacity(0.6);
+        }
+        .info {
+          transform: translate(-50px, -50%);
+          filter: opacity(0.6);
         }
       }
     }

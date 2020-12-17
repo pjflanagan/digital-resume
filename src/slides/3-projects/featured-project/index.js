@@ -8,11 +8,11 @@ import Style from "./style.module.scss";
 
 class FeaturedProject extends Reveal {
   render() {
-    const { data, project } = this.props;
-    const { name, link, description, image, tech } = project;
+    const { data, project: { name, link, description, image, tech } } = this.props;
+    const className = this.state.isRevealed ? '' : Style.hidden;
     const imageData = FindImage({ data, image });
     return (
-      <div className={Style.featuredProject} ref={this.ref}>
+      <div className={`${Style.featuredProject} ${className}`} ref={this.ref}>
         <FrameHolder className={Style.projectImageFrame}>
           <Img
             fluid={imageData.childImageSharp.fluid}

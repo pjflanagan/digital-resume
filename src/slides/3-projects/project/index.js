@@ -7,8 +7,7 @@ import Style from "./style.module.scss";
 
 class Project extends React.Component {
   render() {
-    const { data, project } = this.props;
-    const { name, link, description, image } = project;
+    const { data, project: { name, link, description, image } } = this.props;
     const imageData = FindImage({ image, data });
     return (
       <div className={Style.project} ref={this.ref}>
