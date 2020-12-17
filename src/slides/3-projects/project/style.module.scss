@@ -2,78 +2,37 @@
 @import '../../../elements/variables';
 
 .project {
-  width: calc(50% - 8px);
-  margin: 4px 4px;
-  background: #e1e1e1;
-  overflow: hidden;
-  height: 140px;
-  font-family: "Ubuntu";
-
-  &:before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    margin: 4px;
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    transition: width 0.2s, height 0.2s;
-    -webkit-transition: width 0.2s, height 0.2s;
-    z-index: 3;
-  }
+  width: 100%;
+  height: 360px;
+  padding: 24px;
+  font-family: $ubuntu;
+  background: $backgroundLightOpaque;
+  clip-path: $polygon;
 
   .project-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
     position: relative;
-    z-index: 1;
+    width: 100%;
+    height: 182px;
     box-shadow: inset 0 0 80px #000a;
-    -webkit-transition: transform 1.8s;
-    transition: transform 1.8s;
+    clip-path: $polygonSmall;
+    background: $accentCyan;
+
+    img {
+      filter: grayscale(0.4) opacity(0.6);
+    }
   }
 
   .info {
-    background: #000a;
     position: relative;
-    -ms-transform: translateY(-46px);
-    transform: translateY(-46px);
-    transition: transform 0.4s;
-    -webkit-transition: transform 0.4s;
-    z-index: 2;
-    backdrop-filter: blur(20px);
 
     a {
-      color: #fff;
+      color: $accentYellow;
       transition: 0.2s;
       -webkit-transition: 0.2s;
+
       h2 {
         font-size: 20px;
         padding: 14px 36px 12px 14px;
-      }
-      span.arrow {
-        width: 10px;
-        height: 10px;
-        border-right: 1px solid #fff;
-        border-top: 1px solid #fff;
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        &:before {
-          content: "";
-          width: 14px;
-          height: 5px;
-          border-top: 1px solid #fff;
-          transform: rotate(-45deg);
-          position: absolute;
-          top: 4px;
-          right: -3px;
-        }
-      }
-
-      &:hover {
-        color: #83c9d5;
       }
     }
 
@@ -81,40 +40,9 @@
       font-size: 14px;
       color: #fff;
       padding: 0 14px 14px;
-      visibility: hidden;
       height: 0px;
-    }
-  }
-
-  &:hover {
-    .project-image {
-      transform: scale(1.2);
-    }
-    .info {
-      transform: translateY(-100%);
-    }
-  }
-
-  &:hover:before {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media only screen and (min-width: $lg) {
-  .project {
-    width: calc(33.33333% - 8px);
-    margin: 4px;
-    height: 160px;
-
-    .info {
-      h2 {
-        font-size: 24px;
-      }
-      p {
-        visibility: visible;
-        height: unset;
-      }
+      font-weight: 300;
+      line-height: 18px;
     }
   }
 }

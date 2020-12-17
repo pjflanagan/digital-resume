@@ -2,6 +2,34 @@ import React from "react";
 
 import Style from "./style.module.scss";
 
+// class StackNav extends React.Component {
+//   render() {
+//     const { nav, selectLayer } = this.props;
+//     return (
+//       <div className={Style.stackNav}>
+//         {nav.map((name, layerIndex) => (
+//           <div
+//             className={layerIndex === currentLayer ? Style.navItemSelected : ""}
+//             onClick={() => selectLayer(layerIndex)}
+//             onKeyDown={() => selectLayer(layerIndex)}
+//             role="button"
+//             tabIndex={0}
+//           >
+//             {name}
+//           </div>
+//         ))}
+//       </div>
+//     );
+//   }
+// }
+
+const getNextLayerIndex = (currentLayer, offset, layersLength) => {
+  if(currentLayer + offset >= layersLength) {
+    return currentLayer - layersLength + offset;
+  }
+  return currentLayer + offset;
+}
+
 class Stack extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +38,8 @@ class Stack extends React.Component {
       currentLayer: 0,
     };
 
-    this.nav = props.children.map(({ props }) => props.title);
-
     this.selectLayer = this.selectLayer.bind(this);
+    this.getNextLayer = this.getNextLayer.bind(this);
   }
 
   selectLayer(layer) {
@@ -21,55 +48,41 @@ class Stack extends React.Component {
     });
   }
 
-  getNextTwoLayers() {
+  getNextLayer(offset) {
+    const { children } = this.props;
     const { currentLayer } = this.state;
-    const nextTwoLayers = [];
-    let counter = currentLayer;
-    for (let i = 1; i <= 2; ++i) {
-      if (counter + i >= this.nav.length) {
-        counter = 0;
-      }
-      nextTwoLayers.push({
-        name: this.nav[counter + i],
-        layerIndex: counter + i
-      });
+    const layerIndex = getNextLayerIndex(currentLayer, offset, children.length);
+    return {
+      layerIndex,
+      name: children[layerIndex].props.name
     }
-    return nextTwoLayers;
   }
 
   render() {
     const { children } = this.props;
     const { currentLayer } = this.state;
-    const nextTwoLayers = this.getNextTwoLayers();
+    const nextTwoLayers = [
+      this.getNextLayer(2),
+      this.getNextLayer(1)
+    ];
     return (
       <div className={Style.stack}>
-        <div className={Style.stackNav}>
-          {this.nav.map((name, layerIndex) => (
+        <div className={Style.stackBody}>
+          <div className={Style.topLayer}>{children[currentLayer]}</div>
+          {nextTwoLayers.map((layer) => (
             <div
-              className={layerIndex === currentLayer ? Style.navItemSelected : ""}
-              onClick={() => this.selectLayer(layerIndex)}
-              onKeyDown={() => this.selectLayer(layerIndex)}
+              key={layer.layerIndex}
+              className={Style.nextLayer}
+              onClick={() => this.selectLayer(layer.layerIndex)}
+              onKeyDown={() => this.selectLayer(layer.layerIndex)}
               role="button"
               tabIndex={0}
             >
-              {name}
+              <div className={Style.name}>{layer.name}</div>
+              {children[layer.layerIndex]}
             </div>
           ))}
         </div>
-        <div className={Style.stackBody}>
-          <div className={Style.topLayer}>{children[currentLayer]}</div>
-        </div>
-        {nextTwoLayers.map((layer, i) => (
-          <div
-            className={Style[`nextLayer${layer.layerIndex}`]}
-            onClick={() => this.selectLayer(layer.layerIndex)}
-            onKeyDown={() => this.selectLayer(layer.layerIndex)}
-            role="button"
-            tabIndex={0}
-          >
-            {layer.name}
-          </div>
-        ))}
       </div>
     );
   }

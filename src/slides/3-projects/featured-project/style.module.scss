@@ -47,7 +47,7 @@
 
       h2 {
         font-size: 20px;
-        padding: 14px 36px 12px 14px;
+        padding: 0 14px 10px;
         font-weight: 500;
 
         span.arrow {
@@ -59,6 +59,8 @@
           position: absolute;
           margin-left: 12px;
           margin-top: 2px;
+          transition: 0.2s;
+          -webkit-transition: 0.2s;
 
           &:before {
             content: "";
@@ -75,14 +77,22 @@
 
       &:hover {
         color: $accentYellowHover;
+        span.arrow {
+          transform: translate(2px, -2px);
+        }
       }
     }
 
     p {
       font-size: 14px;
       color: #fff;
-      padding: 0 14px 14px;
+      padding: 0 14px 4px;
       font-weight: 300;
+      line-height: 18px;
+    }
+
+    .tech-stack-holder {
+      display: none;
     }
   }
 }
@@ -119,8 +129,9 @@
       transform: translate(0, -50%);
       backdrop-filter: blur(20px);
       background: $backgroundLightOpaque;
-      height: 160px;
+      min-height: 140px;
       width: 516px;
+      padding: 22px 18px;
 
       h2 {
         font-size: 24px;
@@ -129,6 +140,19 @@
       p {
         font-size: 14px;
         line-height: 18px;
+      }
+
+      .tech-stack-holder {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px 2px 0;
+        display: inline;
+
+        span {
+          margin: 0 12px;
+          font-size: 12px;
+          color: $accentCyan;
+        }
       }
     }
 

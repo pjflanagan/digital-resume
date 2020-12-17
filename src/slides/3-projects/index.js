@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Ruler, TextHeading, TextAccent } from "../../elements";
+import { Ruler, TextHeading, TextAccent, TextSubHeading, Stack } from "../../elements";
 
 import Projects from "./data/projects.json";
 import { FeaturedProject } from "./featured-project";
 // import { BlueprintDecoration } from './blueprint-decoration'
-// import { Project } from "./project";
+import { Project } from "./project";
 import Style from "./style.module.scss";
 
 // const INVENTIONS = [
@@ -60,34 +60,31 @@ class SlideProjects extends React.Component {
           <div className={Style.slideBody}>
             <TextAccent>Some of my</TextAccent>
             <TextHeading>Projects</TextHeading>
+            <TextSubHeading>Featured</TextSubHeading>
             <div className={Style.featuredBody}>
               {Projects.featured.map((project, i) => (
                 <FeaturedProject
                   key={i}
-                  name={project.name}
-                  description={project.description}
-                  link={project.link}
-                  image={project.image}
+                  project={project}
                   data={data}
                   gap={48}
                   edge={"top"}
                 />
               ))}
             </div>
-            {/* <div className={Style.allBody}>
-              {Projects.all.map((project, i) => (
-                <Project
-                  key={i}
-                  name={project.name}
-                  description={project.description}
-                  link={project.link}
-                  image={project.image}
-                  gap={12}
-                  edge={"top"}
-                  data={data}
-                />
-              ))}
-            </div> */}
+            <TextSubHeading>Other Projects</TextSubHeading>
+            <div className={Style.allBody}>
+              <Stack>
+                {Projects.all.map((project, i) => (
+                  <Project
+                    key={i}
+                    project={project}
+                    name={project.name}
+                    data={data}
+                  />
+                ))}
+              </Stack>
+            </div>
           </div>
         </div>
       </div>

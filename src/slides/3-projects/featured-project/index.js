@@ -8,7 +8,8 @@ import Style from "./style.module.scss";
 
 class FeaturedProject extends Reveal {
   render() {
-    const { name, link, description, image, data } = this.props;
+    const { data, project } = this.props;
+    const { name, link, description, image, tech } = project;
     const imageData = FindImage({ data, image });
     return (
       <div className={Style.featuredProject} ref={this.ref}>
@@ -27,6 +28,11 @@ class FeaturedProject extends Reveal {
             </h2>
           </a>
           <p className={Style.description}>{description}</p>
+          <div className={Style.techStackHolder}>
+            {tech.map((item) => (
+              <span>{item}</span>
+            ))}
+          </div>
         </div>
       </div>
     );
