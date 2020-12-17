@@ -26,6 +26,8 @@ import Style from "./style.module.scss";
 const getNextLayerIndex = (currentLayer, offset, layersLength) => {
   if(currentLayer + offset >= layersLength) {
     return currentLayer - layersLength + offset;
+  } else if(currentLayer + offset < 0) {
+    return layersLength + currentLayer + offset;
   }
   return currentLayer + offset;
 }
@@ -60,19 +62,21 @@ class Stack extends React.Component {
 
   render() {
     const { children } = this.props;
-    const { currentLayer } = this.state;
-    const nextTwoLayers = [
+    const layers = [
+      this.getNextLayer(-1),
+      this.getNextLayer(0),
+      this.getNextLayer(1),
       this.getNextLayer(2),
-      this.getNextLayer(1)
+      this.getNextLayer(3),
+      this.getNextLayer(4)
     ];
     return (
       <div className={Style.stack}>
         <div className={Style.stackBody}>
-          <div className={Style.topLayer}>{children[currentLayer]}</div>
-          {nextTwoLayers.map((layer) => (
+          {layers.map((layer) => (
             <div
               key={layer.layerIndex}
-              className={Style.nextLayer}
+              className={Style.layer}
               onClick={() => this.selectLayer(layer.layerIndex)}
               onKeyDown={() => this.selectLayer(layer.layerIndex)}
               role="button"
