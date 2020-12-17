@@ -16,6 +16,7 @@
       height: 100%;
       z-index: 3;
       position: relative;
+      transition: 0.2s;
     }
 
     .next-layer {
@@ -27,6 +28,7 @@
       left: 50%;
       transform: translate(-50%, 0);
       filter: opacity(0.5);
+      transition: 0.2s;
 
       &:focus {
         outline: 0;
