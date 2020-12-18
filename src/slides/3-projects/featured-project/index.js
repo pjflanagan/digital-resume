@@ -30,7 +30,7 @@ class FeaturedProject extends Reveal {
           <p className={Style.description}>{description}</p>
           <div className={Style.techStackHolder}>
             {tech.map((item) => (
-              <span>{item}</span>
+              <span key={item}>{item}</span>
             ))}
           </div>
         </div>

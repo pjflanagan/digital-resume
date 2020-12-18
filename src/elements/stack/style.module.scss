@@ -89,16 +89,20 @@
       // in back
       &:nth-of-type(5) {
         position: absolute;
+        pointer-events: none;
         width: calc(100% - 120px);
         height: 100%;
+        top: 20px;
         filter: opacity(0);
       }
 
       // in back
       &:nth-of-type(6) {
         position: absolute;
+        pointer-events: none;
         width: calc(100% - 120px);
         height: 100%;
+        top: 20px;
         filter: opacity(0);
       }
 

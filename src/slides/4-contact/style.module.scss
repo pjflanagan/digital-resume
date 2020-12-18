@@ -5,84 +5,53 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  height: auto;
 
   .slide-left {
     background: $backgroundDark2;
     min-width: 100%;
 
-    .link-holder {
-      width: 220px;
+    .container {
+      width: 60%;
+      padding: 36px 12px;
       margin: 0 auto;
 
-      a {
-        display: flex;
-        left: 50%;
-        margin: 20px 0 20px -110px;
-        width: 220px;
+      .button-holder {
+        margin: 18px;
       }
     }
   }
 
   .slide-right {
-    background: $backgroundDarkOpaque;
-    height: 180px;
-    min-width: 100%;
-    position: relative;
-
-    // TODO: could this be the golden record, no image just subtle
-    // and maybe make the gold record a little orange colored
-    .multipass-holder {
-      width: 220px;
-      height: 220px;
-      // background: #f79348;
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -110px;
-      z-index: 42;
-    }
-  }
-
-  .cover {
-    background-image: url(../../../static/img/bg/alien-black.png);
-    background-size: 140%;
     width: 100%;
-    height: 180px;
-    position: absolute;
-    z-index: 41;
-    opacity: 0.15;
-    bottom: 0;
+    height: 120px;
+    background: $backgroundDark;
+    position: relative;
   }
 }
 
 // lg
 @media only screen and (min-width: $lg) {
   .slide-contact {
-    height: 640px;
+    height: auto;
 
     .slide-left {
-      min-width: 50%;
-      height: 100%;
+      min-width: 340px;
       background: $backgroundDark2;
-    }
 
-    .slide-right {
-      min-width: 50%;
-      height: 100%;
-      background: radial-gradient(circle at center, $backgroundLightOpaque 240px, $backgroundDarkOpaque 240px);
-      .multipass-holder {
-        width: 320px;
-        height: 320px;
-        margin: -160px;
+      .container {
+        .link-holder {
+          display: inline;
+          flex-wrap: nowrap;
+        }
       }
     }
 
-    .cover {
-      height: 140px;
-      bottom: 0;
-      background-size: 50%;
+    .slide-right {
+      width: unset;
+      min-width: calc(100% - 340px);
+      height: auto;
+      background: $backgroundDarkOpaque;
     }
   }
 }

@@ -1,61 +1,65 @@
 import React from "react";
 
-import { Multipass } from './multipass'
-import { LabeledButton, TextAccent, TextHeading } from '../../elements'
+import { LabeledButton, TextAccent, TextHeading } from "../../elements";
 
-import Style from './style.module.scss'
+import { Wave } from "./wave";
+import Style from "./style.module.scss";
 
 class SlideContact extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      multipassOn: false,
+      contactOn: false,
     };
 
-    this.setMultipassOn = this.setMultipassOn.bind(this);
+    this.setContactOn = this.setContactOn.bind(this);
   }
 
-  setMultipassOn(on) {
+  setContactOn(on) {
     this.setState({
-      multipassOn: on
-    })
+      contactOn: on,
+    });
   }
 
   render() {
-    const { data } = this.props;
     return (
       <div className={Style.slideContact}>
         <div className={Style.slideLeft}>
-          <TextAccent>Let's make</TextAccent>
-          <TextHeading>CONTACT!</TextHeading>
-          <div className={Style.linkHolder}>
-            <LabeledButton
-              name="Email"
-              onMouseEnter={() => this.setMultipassOn(true)}
-              onMouseLeave={() => this.setMultipassOn(false)}
-            />
-            <LabeledButton
-              name="Github"
-              onMouseEnter={() => this.setMultipassOn(true)}
-              onMouseLeave={() => this.setMultipassOn(false)}
-            />
-            <LabeledButton
-              name="LinkedIn"
-              onMouseEnter={() => this.setMultipassOn(true)}
-              onMouseLeave={() => this.setMultipassOn(false)}
-            />
+          <div className={Style.container}>
+            <TextAccent>Let's make</TextAccent>
+            <TextHeading>CONTACT!</TextHeading>
+            <div class={Style.linkHolder}>
+              <div className={Style.buttonHolder}>
+                <LabeledButton
+                  name="Email"
+                  onMouseEnter={() => this.setContactOn(true)}
+                  onMouseLeave={() => this.setContactOn(false)}
+                />
+              </div>
+              <div className={Style.buttonHolder}>
+                <LabeledButton
+                  name="Github"
+                  onMouseEnter={() => this.setContactOn(true)}
+                  onMouseLeave={() => this.setContactOn(false)}
+                />
+              </div>
+              <div className={Style.buttonHolder}>
+                <LabeledButton
+                  name="LinkedIn"
+                  onMouseEnter={() => this.setContactOn(true)}
+                  onMouseLeave={() => this.setContactOn(false)}
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className={Style.slideRight}>
-          <div className={Style.multipassHolder}>
-            <Multipass on={this.state.multipassOn} data={data} />
-          </div>
+          <Wave on={this.state.contactOn} />
         </div>
-        <div className={Style.cover}></div>
       </div>
     );
   }
 }
 
-export { SlideContact }
+export { SlideContact };

@@ -3,9 +3,9 @@
 
 .labeled-button {
   position: relative;
-  width: 220px;
-  height: 68px;
+  width: 192px;
   font-family: $ubuntu;
+  display: flex;
 
   &:after {
     content: "";
@@ -24,39 +24,44 @@
 
   a {
     z-index: 2;
-    text-decoration: none;
     position: relative;
     color: #fff;
-    padding: 14px;
     height: 100%;
+    width: 100%;
     background: $backgroundLight;
-    overflow: hidden;
     clip-path: $polygon;
+    padding: 8px 24px;
+    display: flex;
+    flex-wrap: wrap;
     -webkit-transition: 0.2s;
     transition: 0.2s;
 
-    svg {
-      width: 20px;
-      height: 20px;
-      margin: 10px 12px;
-
-      path {
-        fill: $accentYellow;
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
+    .svg-holder {
+      width: 36px;
+      height: 100%;
+      padding: 4px;
+      
+      svg {
+        width: 20px;
+        height: 20px;
+  
+        path {
+          fill: $accentYellow;
+          -webkit-transition: 0.2s;
+          transition: 0.2s;
+        }
       }
+
     }
 
     .name {
-      width: 136px;
+      width: calc(100% - 36px);
       text-align: center;
-      padding: 8px;
-      font-size: 20px;
-      position: relative;
-      top: 0;
-      left: 50%;
-      margin-left: -48px;
       border-left: 1px solid $accentCyan;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 16px;
+      padding: 6px;
     }
   }
 
