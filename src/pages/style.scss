@@ -36,6 +36,7 @@ html, body {
 @media only screen and (min-width: $md) {
   html,body {
     .container {
+      overflow-x: unset;
       .slides {
         top: 300%;
       }
