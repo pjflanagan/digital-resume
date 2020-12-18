@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import * as Scroll from 'react-scroll';
 
 import {
   SlideSplash,
@@ -13,8 +14,16 @@ import { Cover } from "../elements";
 import "./style.scss";
 import "./reset.scss";
 
+const ScrollSlides = Scroll.Element;
+
 // markup
 class PageIndex extends React.Component {
+  // constructor(props) {
+  //   super(props);
+    
+  //   // TODO: make a ref for every single slide, then pass that into navigation
+  //   // this.personalSlideRef = React.createRef();
+  // }
   render() {
     // TODO: all data should come through graphql
     const { data } = this.props;
@@ -22,12 +31,15 @@ class PageIndex extends React.Component {
       <div className="container">
         <Cover />
         <SlideSplash />
-        <div className="slides">
+        {/* personalSlideRef={this.personalSlideRef} */}
+        <ScrollSlides className="slides" name="slides">
+
           <SlidePersonal data={data} />
+          {/*  ref={this.personalSlideRef} */}
           <SlideExperience data={data} />
           <SlideProjects data={data} />
           <SlideContact data={data} />
-        </div>
+        </ScrollSlides>
       </div>
     );
   }

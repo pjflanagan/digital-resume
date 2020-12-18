@@ -3,9 +3,10 @@
 
 .labeled-button {
   position: relative;
-  width: 192px;
+  min-width: 192px;
   font-family: $ubuntu;
   display: flex;
+  cursor: pointer;
 
   &:after {
     content: "";
@@ -22,7 +23,7 @@
     clip-path: $polygon;
   }
 
-  a {
+  .holder {
     z-index: 2;
     position: relative;
     color: #fff;
@@ -44,6 +45,7 @@
       svg {
         width: 20px;
         height: 20px;
+        stroke: $accentYellow;
   
         path {
           fill: $accentYellow;
@@ -65,12 +67,13 @@
     }
   }
 
-  &:hover {
+  &:hover, &:focus {
+    outline: none;
     &:after {
       width: calc(100% + 8px);
       height: calc(100% + 8px);
     }
-    a {
+    .holder {
       background: $backgroundLightHover;
       svg {
         path {

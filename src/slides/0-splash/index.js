@@ -1,9 +1,13 @@
 import React from "react";
+import * as Scroll from 'react-scroll';
 
-import { Canvas } from "../../elements";
+import { Canvas, LabeledButton } from "../../elements";
 
 import { View } from "./view";
-import Styles from "./style.module.scss";
+import Style from "./style.module.scss";
+
+
+const scroller = Scroll.scroller;
 
 // SlideSplash
 
@@ -16,6 +20,7 @@ class SlideSplash extends React.Component {
     };
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.clickToScroll = this.clickToScroll.bind(this);
   }
 
   componentDidMount() {
@@ -32,25 +37,35 @@ class SlideSplash extends React.Component {
     });
   }
 
+  clickToScroll() {
+    scroller.scrollTo('slides', {
+      duration: 1500,
+      smooth: true,
+      offset: -64, // Scrolls to element + 50 pixels down the page
+    })
+  }
+
   render() {
     const { scroll } = this.state;
-    const textScroll = -scroll / 6;
+    const textScroll = -scroll / 5;
     const canvasScroll = scroll / 2;
+    const opacity = 1.0 - scroll/1000.0;
     return (
-      <div className={Styles.splash}>
+      <div className={Style.splash}>
         <div
-          className={Styles.titleContainer}
+          className={Style.titleContainer}
           style={{
             transform: `translateY(${textScroll}px)`,
           }}
         >
-          <div className={Styles.name}>Peter James Flanagan</div>
-          <div className={Styles.description}>
-            Circuit-navigating Cyberspace
-          </div>
+          <div className={Style.name}>Peter James Flanagan</div>
+          <div className={Style.description}>Circuit-navigating Cyberspace</div>
+        </div>
+        <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
+          <LabeledButton icon="down-arrow" onClick={this.clickToScroll}>Scroll for Liftoff!</LabeledButton>
         </div>
         <Canvas
-          className={Styles.canvas}
+          className={Style.canvas}
           view={View}
           style={{
             transform: `translateY(${canvasScroll}px)`,

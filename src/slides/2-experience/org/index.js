@@ -11,7 +11,6 @@ const Org = ({
   position,
   image,
   data,
-  color,
   background,
 }) => (
   <div className={Style.org}>

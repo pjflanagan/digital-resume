@@ -11,8 +11,9 @@ const Skills = (props) => (
       <div key={type}>
         <TextSubHeading2>{type}</TextSubHeading2>
         <div className={Style.skillListHolder}>
-          {items.map((skill) => (
+          {items.map((skill, i) => (
             <div
+              key={i}
               className={Style.skillBarHolder}
               style={{ width: `${100 / cols}%` }}
             >

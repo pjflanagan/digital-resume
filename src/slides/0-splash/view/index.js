@@ -146,7 +146,7 @@ class Space {
   drawBackground() {
     this.ctx.beginPath();
     this.ctx.rect(0, 0, this.canvas.W, this.canvas.H);
-    this.ctx.fillStyle = "#1c1c1c";
+    this.ctx.fillStyle = "#06191f";
     this.ctx.fill();
   }
 }
@@ -588,8 +588,8 @@ const SHIP_CENTER = {
 const SHIP_OFFSET_MAX_RADIUS = 80;
 const SHIP_OFFSET_SPEED = 0.3;
 const SHIP_COLORS = {
-  EXHAUST_EDGE: "#F00c",
-  EXHAUST_MIDDLE: "#F008",
+  EXHAUST_EDGE: "#1fcfcccc",
+  EXHAUST_MIDDLE: "#1cbebc88",
   EXHAUST_PORT: "#555",
   FINS: "#777",
   WINDOWS: "#222",

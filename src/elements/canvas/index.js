@@ -12,7 +12,7 @@ const Canvas = props => {
     // eslint-disable-next-line
   }, []);
   
-  return <canvas className={props.className} ref={canvasRef} {...props} />
+  return <canvas className={props.className} ref={canvasRef} />
 }
 
 export { Canvas };

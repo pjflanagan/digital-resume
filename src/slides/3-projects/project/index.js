@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 
+import { Text } from '../../../elements';
 import { FindImage } from "../../../data";
 
 import Style from "./style.module.scss";
@@ -20,7 +21,7 @@ class Project extends React.Component {
           <a href={`//${link}`} target="_blank" rel="noreferrer">
             <h2 className={Style.name}>{name}</h2>
           </a>
-          <p className={Style.description}>{description}</p>
+          <Text>{description}</Text>
         </div>
       </div>
     );

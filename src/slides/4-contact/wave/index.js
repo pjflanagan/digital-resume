@@ -2,17 +2,22 @@ import React from "react";
 
 import Style from "./style.module.scss";
 
-const MAX_HEIGHT = 69;
+const MAX_HEIGHT = 62;
 const FLUX = 12;
 const SPEED = 0.2;
 const GAP = 8;
 const FRAME_RATE = 64;
+const MAX_OFFSET = 40;
 
 const getNextHeight = (pos) => {
   return Math.abs(
     MAX_HEIGHT * Math.sin(-pos) + (Math.random() * FLUX) / 2 - FLUX
   );
 };
+
+const getOffset = (x) => {
+  return Math.sin(x) * MAX_OFFSET;
+}
 
 const incrementPos = (pos) => {
   return pos + SPEED;
@@ -67,7 +72,7 @@ class Wave extends React.Component {
   }
 
   render() {
-    const { wave } = this.state;
+    const { wave, pos } = this.state;
     return (
       <div className={Style.waveHolder}>
         {wave.map((height, i) => (
@@ -76,7 +81,7 @@ class Wave extends React.Component {
             className={Style.bar}
             style={{
               height: `${height}%`,
-              margin: `0 ${GAP}px`
+              margin: `${getOffset(pos + SPEED * i)}px ${GAP}px`
             }}
           />
         ))}

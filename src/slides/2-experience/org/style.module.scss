@@ -17,7 +17,7 @@
     
       .name {
         font-size: 18px;
-        padding: 8px 0 4px;
+        padding: 2px 0 4px;
         color: $accentCyan;
       }
       .location {
@@ -38,11 +38,7 @@
     padding: 14px;
     .position {
       padding: 8px 0;
-    }
-    p.description {
-      font-size: 12px;
-      padding: 4px;
-      line-height: 14px;
+      color: $accentYellow;
     }
   }
 }
@@ -61,12 +57,6 @@
       width: calc(100% - 320px);
       display: grid;
       padding: 0 14px;
-
-      p.description {
-        display: inline;
-        padding: 4px 0;
-        line-height: 18px;
-      }
     }
   }
 }

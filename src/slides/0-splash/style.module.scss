@@ -26,7 +26,13 @@
       font-family: $ubuntu;
       font-size: 18px;
       margin-top: -8px;
+      color: $accentYellow;
     }
+  }
+
+  .button-holder {
+    visibility: hidden;
+    z-index: 2;
   }
 
   .canvas {
@@ -55,6 +61,15 @@
       .name {
         font-size: 80px;
       }
+    }
+
+    .button-holder {
+      visibility: visible;
+      width: 240px;
+      position: absolute;
+      left: 50%;
+      margin-left: -120px;
+      bottom: 40px;
     }
 
     .canvas {

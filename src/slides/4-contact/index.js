@@ -29,27 +29,27 @@ class SlideContact extends React.Component {
           <div className={Style.container}>
             <TextAccent>Let's make</TextAccent>
             <TextHeading>CONTACT!</TextHeading>
-            <div class={Style.linkHolder}>
+            <div className={Style.linkHolder}>
               <div className={Style.buttonHolder}>
                 <LabeledButton
-                  name="Email"
+                  icon="email"
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
-                />
+                >Email</LabeledButton>
               </div>
               <div className={Style.buttonHolder}>
                 <LabeledButton
-                  name="Github"
+                  icon="github"
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
-                />
+                >Github</LabeledButton>
               </div>
               <div className={Style.buttonHolder}>
                 <LabeledButton
-                  name="LinkedIn"
+                  icon="linkedin"
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
-                />
+                >LinkedIn</LabeledButton>
               </div>
             </div>
           </div>
