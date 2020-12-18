@@ -9,15 +9,15 @@
 
   .slide-left {
     background: $backgroundDark2;
-    min-width: 100%;
+    width: 100%;
 
     .container {
-      width: 60%;
+      width: 100%;
       padding: 36px 12px;
       margin: 0 auto;
 
       .button-holder {
-        margin: 18px;
+        margin: 18px 0;
       }
     }
   }
@@ -27,6 +27,7 @@
     height: 120px;
     background: $backgroundDark;
     position: relative;
+    overflow: hidden;
   }
 }
 
@@ -36,10 +37,12 @@
     height: auto;
 
     .slide-left {
-      min-width: 340px;
+      width: 480px;
       background: $backgroundDark2;
 
       .container {
+        width: 60%;
+
         .link-holder {
           display: inline;
           flex-wrap: nowrap;
@@ -48,8 +51,7 @@
     }
 
     .slide-right {
-      width: unset;
-      min-width: calc(100% - 340px);
+      width: calc(100% - 480px);
       height: auto;
       background: $backgroundDarkOpaque;
     }

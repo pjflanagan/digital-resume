@@ -11,9 +11,9 @@ import { Body } from './body';
 
 import Style from './style.module.scss';
 
-const SlidePersonal = ({ data, ref }) => {
+const SlidePersonal = ({ data }) => {
   return (
-    <div className={Style.slidePersonal} ref={ref}>
+    <div className={Style.slidePersonal}>
       <CurveTopTop />
       <CurveTopBottom />
       <div className={Style.slidePersonalSideLeft}>
