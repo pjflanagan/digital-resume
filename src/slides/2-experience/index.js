@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TextHeading, TextSubHeading, TextAccent, Text } from "../../elements";
+import { TextHeading, TextSubHeading, TextAccent } from "../../elements";
 
 import Jobs from "./data/jobs.json";
 import Schools from "./data/schools.json";
@@ -15,10 +15,7 @@ const SlideExperience = ({ data }) => {
       <div className={Style.slideBody}>
         <TextAccent>My digital resume</TextAccent>
         <TextHeading>Experience</TextHeading>
-        <Text>
-          I've exlored many different aspects of computer science in both work
-          projects, academic assignments, and personal exploration.
-        </Text>
+        {/* <Text> */}
         <TextSubHeading>Career</TextSubHeading>
         {Jobs.map((job, i) => (
           <Org
