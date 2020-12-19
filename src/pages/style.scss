@@ -1,43 +1,45 @@
-
-@import '../elements/variables';
+@import "../elements/variables";
 
 @font-face {
   font-family: AmericanCaptain;
-  src: url('../../static/font/AmericanCaptain-MdEY.otf');
+  src: url("../../static/font/AmericanCaptain-MdEY.otf");
 }
 
 a {
   text-decoration: none;
 }
 
-
-html, body {
+html {
   margin: 0;
   width: 100%;
-  max-width: 100%;
   height: 100%;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
   overflow-x: hidden;
-
-  .container {
-    height: 100%;
+  body {
+    position: relative;
+    margin: 0;
     width: 100%;
-    position: absolute;
-    overflow-x: hidden;
+    height: 100%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
 
-    .slides {
+    .container {
       height: 100%;
       width: 100%;
       position: absolute;
+
+      .slides {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
     }
   }
 }
 
 @media only screen and (min-width: $md) {
-  html,body {
+  html,
+  body {
     .container {
-      overflow-x: unset;
       .slides {
         top: 300%;
       }
