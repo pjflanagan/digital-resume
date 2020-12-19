@@ -1,4 +1,4 @@
-import { Color, Random, distance, ellipseCircleIntersection } from "./helpers";
+import { Color, Random, distance, ellipseCircleIntersection } from './helpers';
 
 Math.TWO_PI = 2 * Math.PI;
 
@@ -11,7 +11,7 @@ const VIEW_SHIP_LAYER = 5;
 
 class View {
   constructor(canvasElem) {
-    this.ctx = canvasElem.getContext("2d", { alpha: false });
+    this.ctx = canvasElem.getContext('2d', { alpha: false });
 
     // sizing (window)
     this.W = window.innerWidth;
@@ -37,14 +37,14 @@ class View {
     this.animate = this.animate.bind(this);
 
     // user input (window)
-    window.addEventListener("mousemove", (e) => {
+    window.addEventListener('mousemove', (e) => {
       const mouse = {
         x: e.clientX,
         y: e.clientY,
       };
       this.onMouseMove(mouse);
     });
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       const scroll = window.scrollY;
       this.onScroll(scroll);
     });
@@ -146,7 +146,7 @@ class Space {
   drawBackground() {
     this.ctx.beginPath();
     this.ctx.rect(0, 0, this.canvas.W, this.canvas.H);
-    this.ctx.fillStyle = "#06191f";
+    this.ctx.fillStyle = '#06191f';
     this.ctx.fill();
   }
 }
@@ -588,13 +588,13 @@ const SHIP_CENTER = {
 const SHIP_OFFSET_MAX_RADIUS = 80;
 const SHIP_OFFSET_SPEED = 0.3;
 const SHIP_COLORS = {
-  EXHAUST_EDGE: "#1fcfcccc",
-  EXHAUST_MIDDLE: "#1cbebc88",
-  EXHAUST_PORT: "#555",
-  FINS: "#777",
-  WINDOWS: "#222",
-  BODY: "#EEE",
-  SHADOW: "#0004",
+  EXHAUST_EDGE: '#1fcfcccc',
+  EXHAUST_MIDDLE: '#1cbebc88',
+  EXHAUST_PORT: '#555',
+  FINS: '#777',
+  WINDOWS: '#222',
+  BODY: '#EEE',
+  SHADOW: '#0004',
 };
 const SHIP_BACKPEDAL = 0.08; // proportion scroll percent
 const SHIP_EXHAUST_LENGTH = 0.2;

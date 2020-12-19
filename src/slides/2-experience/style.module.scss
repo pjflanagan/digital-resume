@@ -8,16 +8,24 @@
   background: $backgroundDark2;
   padding: 0 0 36px;
 
-  &:before {
-    content: "";
-    width: 120%;
-    background: $backgroundDark2;
+  .pre-slide-curve-holder {
+    width: 100%;
     height: 100px;
     position: absolute;
-    left: -10%;
-    border-radius: 50%;
     margin-top: -30px;
-    box-shadow: 0 -4px #0002;
+    overflow-x: hidden;
+
+    .pre-slide-curve {
+      background: $backgroundDark2;
+      width: 120%;
+      height: calc(100% - 4px);
+      position: relative;
+      top: 4px;
+      left: -10%;
+      border-radius: 50%;
+      box-shadow: 0 -4px #0002;
+    }
+
   }
 
   .slide-body {

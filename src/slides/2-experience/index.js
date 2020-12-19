@@ -12,6 +12,9 @@ import { Skills } from "./skills";
 const SlideExperience = ({ data }) => {
   return (
     <div className={Style.slideExperience}>
+      <div className={Style.preSlideCurveHolder}>
+        <div className={Style.preSlideCurve} />
+      </div>
       <div className={Style.slideBody}>
         <TextAccent>My digital resume</TextAccent>
         <TextHeading>Experience</TextHeading>

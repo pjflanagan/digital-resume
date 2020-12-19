@@ -11,8 +11,8 @@ import {
 } from "../slides";
 import { Cover } from "../elements";
 
-import "./style.scss";
 import "./reset.scss";
+import "./style.scss";
 
 const ScrollSlides = Scroll.Element;
 

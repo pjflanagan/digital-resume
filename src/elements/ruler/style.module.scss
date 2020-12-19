@@ -1,6 +1,12 @@
 
 @import '../variables';
 
+.ruler-holder {
+  width: 100%;
+  overflow-x: hidden;
+  height: auto;
+}
+
 .ruler {
   position: relative;
   height: 14px;
