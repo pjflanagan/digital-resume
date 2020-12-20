@@ -8,10 +8,15 @@ import { FindImage } from '../../../data';
 import Style from "./style.module.scss";
 
 class Photo extends Reveal {
+
+  // componentDidUpdate() {
+
+  // }
+
   render() {
-    const { data } = this.props;
+    const { data, photo } = this.props;
     const className = this.state.isRevealed ? Style.reveal : '';
-    const imageData = FindImage({ data, image:'personal-photo.jpg' });
+    const imageData = FindImage({ data, image: photo });
     return (
       <div className={Style.personalPhoto} ref={this.ref}>
         <Img

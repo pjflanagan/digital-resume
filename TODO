@@ -1,8 +1,27 @@
+
+
+GENERAL
 - [ ] move ALL data (links, paragraphs) into data folder / graphql
-- [ ] netlify forms for email me
-- [ ] change image on hover (rollerblading, rock climbing) also use open effect every time
-- [ ] add a target back into the photo
-- [ ] header and links
-- [ ] arrow icon for links, make all the icons match, maybe all icons should be red/orange (?)
-- [ ] scroll effect for contact area?
+- [ ] header with scroll links
 - [ ] favicon, social icons, ios icons
+- [ ] Shadow for all dark part thing (specifically personal slide on mobile)
+- [ ] Add my tv show jokes and multi pass back in 
+- [ ] NEED a rollerblade somewhere
+- [ ] Intro paragraphs to many of the things, like projects, experience
+- [ ] Flesh out blogger blog, OR write up a few medium posts about things
+
+PERSONAL 
+- [ ] personal slide change image componontDidUpdate effect
+- [ ] add a target back into the photo
+- [ ] Throw bill cypher from gravity falls in there somehow, maybe as the target shape
+
+EXPERIENCE 
+- [ ] Make that curve an inner shadow on experience mobile (?)
+
+PROJECT 
+- [ ] Add night pro 
+
+CONTACT 
+- [ ] netlify forms for email me
+- [ ] Make the wave at the bottoms more wave like on mobile
+- [ ] scroll effect for contact area?

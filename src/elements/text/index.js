@@ -40,22 +40,22 @@ const TextSubHeading2 = (props) => {
 // TextFlag
 const TextFlag = (props) => {
   return (
-    <h2 className={`${Style.textFlag} ${props.className}`}>
-      {props.children}
-    </h2>
+    <h2 className={`${Style.textFlag} ${props.className}`}>{props.children}</h2>
   );
 };
 
 // TextInlineLink
-const TextInlineLink = (props) => {
+const TextInlineLink = ({ href, className, onMouseOver, onFocus, children }) => {
   return (
     <a
-      href={props.href}
+      href={href}
       target="_blank"
       rel="noreferrer"
-      className={`${Style.textInlineLink} ${props.className}`}
+      className={`${Style.textInlineLink} ${className}`}
+      onMouseOver={onMouseOver}
+      onFocus={onFocus}
     >
-      {props.children}
+      {children}
     </a>
   );
 };
@@ -64,11 +64,12 @@ const TextInlineLink = (props) => {
 const Text = (props) => {
   if (!!props.dangerouslySetInnerHTML)
     return (
-      <p className={`${Style.text} ${props.className}`} dangerouslySetInnerHTML={props.dangerouslySetInnerHTML} />
-    )
-  return (
-    <p className={`${Style.text} ${props.className}`}>{props.children}</p>
-  );
+      <p
+        className={`${Style.text} ${props.className}`}
+        dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
+      />
+    );
+  return <p className={`${Style.text} ${props.className}`}>{props.children}</p>;
 };
 
 export {
