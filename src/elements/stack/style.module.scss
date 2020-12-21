@@ -17,6 +17,8 @@
       transform: translate(-50%, 0);
       left: 50%;
       position: relative;
+      width: 100%;
+      top: 0;
 
       &:focus {
         outline: 0;
@@ -24,11 +26,10 @@
 
       // disapeared in front
       &:nth-of-type(1) {
-        width: calc(100% - 50px);
         height: 100%;
         z-index: 4;
         filter: opacity(0);
-        transform: translate(-50%, 20px);
+        transform: translate(-50%, 20px) scale(.8);
         pointer-events: none;
         .name {
           filter: opacity(0);
@@ -37,9 +38,7 @@
 
       // displayed
       &:nth-of-type(2) {
-        width: 100%;
         z-index: 3;
-        top: 0;
         filter: opacity(1);
         position: absolute;
         .name {
@@ -50,13 +49,13 @@
         }
       }
 
-      // next
+      // next 1
       &:nth-of-type(3) {
         z-index: 2;
         width: calc(100% - 50px);
         position: absolute;
-        top: -32px;
         filter: opacity(0.5);
+        transform: translate(-50%, -32px) scale(.96);
 
         &:focus {
           filter: opacity(0.8);
@@ -64,17 +63,17 @@
 
         &:hover {
           cursor: pointer;
-          transform: translate(-50%, -8px);
+          transform: translate(-50%, -40px) scale(.96);
         }
       }
 
-      // next
+      // next 2
       &:nth-of-type(4) {
         position: absolute;
         width: calc(100% - 100px);
-        top: -64px;
         z-index: 1;
         filter: opacity(0.3);
+        transform: translate(-50%, -64px) scale(.92);
 
         &:focus {
           filter: opacity(0.8);
@@ -82,7 +81,7 @@
 
         &:hover {
           cursor: pointer;
-          transform: translate(-50%, -8px);
+          transform: translate(-50%, -72px) scale(.92);
         }
       }
 
@@ -90,20 +89,18 @@
       &:nth-of-type(5) {
         position: absolute;
         pointer-events: none;
-        width: calc(100% - 120px);
         height: 100%;
-        top: 20px;
         filter: opacity(0);
+        transform: translate(-50%, 20px) scale(.7);
       }
 
       // in back
       &:nth-of-type(6) {
         position: absolute;
         pointer-events: none;
-        width: calc(100% - 120px);
         height: 100%;
-        top: 20px;
         filter: opacity(0);
+        transform: translate(-50%, 20px) scale(.7);
       }
 
       .name {

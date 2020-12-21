@@ -1,0 +1,43 @@
+{
+  "splash": {
+    "title": "Peter James Flanagan",
+    "subtitle": "Circuit-navigating Cyberspace",
+    "prompt": "Scroll for liftoff!"
+  },
+  "personal": {
+    "accent": "Hi, my name is",
+    "title": "Peter James Flanagan",
+    "bio": [
+      "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberatley designed, and fun web tools.",
+      "I kinda want to put a second paragraph here but I'm not sure how well it'll take links. I'll need to invent some type of markdown",
+      "<rollerblader> <rock climber> and then 'rollerblader' and 'rockclimber' will fill in blanks for all sorts of things like links and photos"
+    ]
+  },
+  "experience": {
+    "accent": "Lightyears of",
+    "title": "Experience",
+    "sections": [
+      "Carrer",
+      "Education",
+      "Skills"
+    ]
+  },
+  "projects": {
+    "accent": "Experiments, explorations, and",
+    "title": "Programs",
+    "sections": [
+      "Featured Projects",
+      "Other Projects"
+    ]
+  },
+  "contact": {
+    "accent": "Let's make",
+    "title": "Contact",
+    "text": "While I'm not currently seeking new opportunities, feel free to reach out. I'll try my best to phone back!",
+    "links": [
+      "Email",
+      "Github",
+      "LinkedIn"
+    ]
+  }
+}

@@ -6,7 +6,7 @@
       "link": "app.bamboolearn.com",
       "description": "Developed web app and Chrome extension to help study Mandarin.  Users can add words to they are learning to thier library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
-      "tech": ["Mongodb Stitch", "React", "Chrome"]
+      "tech": ["Mongodb Stitch", "React", "Chrome Dev"]
     },
     {
       "name": "Michelle Calligraphy",
@@ -22,7 +22,7 @@
       "link": "simple-socket-game.herokuapp.com/",
       "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your teams score, get taken out and the other team steals your points.\n",
       "image": "spacefighters.jpg",
-      "tech": ["Socket.io", "Phaser"]
+      "tech": ["Socket.io", "Phaser.js"]
     }
   ],
   "all": [
