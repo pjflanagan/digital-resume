@@ -98,4 +98,8 @@ class SlideProjects extends React.Component {
   }
 }
 
-export { SlideProjects };
+const Arrow = () => (
+  <span className={Style.arrow}></span>
+);
+
+export { SlideProjects, Arrow };

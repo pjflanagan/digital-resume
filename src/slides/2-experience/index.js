@@ -5,7 +5,6 @@ import { Jobs, Schools } from "../../data";
 
 import { Org } from "./org";
 import { Skills } from "./skills";
-
 import Style from "./style.module.scss";
 
 const SlideExperience = ({ data }) => {

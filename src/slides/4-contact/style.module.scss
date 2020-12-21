@@ -1,5 +1,4 @@
-
-@import '../../elements/variables';
+@import "../../elements/variables";
 
 .slide-contact {
   position: relative;
@@ -23,13 +22,22 @@
   }
 
   .slide-right {
-    box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
-    border-top: 1px solid $backgroundLightOpaque;
-    width: 100%;
-    height: 120px;
-    background: $backgroundDark;
-    position: relative;
-    overflow: hidden;
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .slide-contact {
+    .slide-right {
+      display: block;
+      box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+      border-top: 1px solid $backgroundLightOpaque;
+      width: 100%;
+      height: 120px;
+      background: $backgroundDark;
+      position: relative;
+      overflow: hidden;
+    }
   }
 }
 

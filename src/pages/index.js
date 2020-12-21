@@ -19,7 +19,6 @@ const ScrollSlides = Scroll.Element;
 // markup
 class PageIndex extends React.Component {
   render() {
-    // TODO: all data should come through graphql
     const { data } = this.props;
     return (
       <div className="container">

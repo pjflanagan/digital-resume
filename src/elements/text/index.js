@@ -52,7 +52,7 @@ const TextInlineLink = ({
   onFocus,
   children,
 }) => {
-  if (!!href) {
+  if (!href) {
     return (
       <span
         role="button"

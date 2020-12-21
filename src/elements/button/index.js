@@ -2,14 +2,13 @@ import React from "react";
 
 import { SVGIcon } from "../icon";
 
-import Links from "./links.json";
 import Style from "./style.module.scss";
 
 const RoundButton = (props) => {
-  const { name } = props;
+  const { name, href } = props;
   const linkID = name.toLowerCase();
   return (
-    <a target="_blank" rel="noreferrer" href={Links[linkID]}>
+    <a target="_blank" rel="noreferrer" href={href}>
       <SVGIcon icon={linkID} />
     </a>
   );
@@ -20,13 +19,14 @@ const LabeledButtonLinked = ({
   onMouseEnter,
   onMouseLeave,
   children,
+  href
 }) => (
   <div className={Style.labeledButton}>
     <a
       className={Style.holder}
       rel="noreferrer"
       target="_blank"
-      href={Links[icon]}
+      href={href}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

@@ -87,6 +87,7 @@ class Stack extends React.Component {
             </div>
           ))}
         </div>
+        {/* TODO: add bunch of dashes here to scroll through */}
       </div>
     );
   }

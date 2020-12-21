@@ -1,5 +1,4 @@
-
-@import '../../elements/variables';
+@import "../../elements/variables";
 
 .blueprint {
   box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
@@ -35,7 +34,6 @@
       flex-wrap: wrap;
       padding: 12px;
     }
-
   }
 }
 
@@ -52,7 +50,38 @@
         margin: 42px auto 42px;
         width: 88%;
       }
-
     }
+  }
+}
+
+
+
+
+span.arrow {
+  // TODO: turn this into an SVG and move into icons
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid $accentYellow;
+  border-top: 1px solid $accentYellow;
+  position: absolute;
+  margin-left: 12px;
+  margin-top: 2px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+
+  &:before {
+    content: "";
+    width: 14px;
+    height: 5px;
+    border-top: 1px solid $accentYellow;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 4px;
+    right: -3px;
+  }
+
+  :hover > & {
+    transform: translate(2px, -2px);
+
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Links } from '../../data';
 import { LabeledButton, TextAccent, TextHeading, Text } from "../../elements";
 
 import { Wave } from "./wave";
@@ -37,6 +38,7 @@ class SlideContact extends React.Component {
               <div className={Style.buttonHolder}>
                 <LabeledButton
                   icon="email"
+                  href={Links.email}
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
                 >
@@ -46,6 +48,7 @@ class SlideContact extends React.Component {
               <div className={Style.buttonHolder}>
                 <LabeledButton
                   icon="github"
+                  href={Links.github}
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
                 >
@@ -55,6 +58,7 @@ class SlideContact extends React.Component {
               <div className={Style.buttonHolder}>
                 <LabeledButton
                   icon="linkedin"
+                  href={Links.linkedin}
                   onMouseEnter={() => this.setContactOn(true)}
                   onMouseLeave={() => this.setContactOn(false)}
                 >

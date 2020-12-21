@@ -1,9 +1,12 @@
+@import "../../../elements/variables";
 
-@import '../../../elements/variables';
-
-// @keyframes frame-reveal {
-
-// }
+@keyframes frame-reveal {
+  100% {
+    width: 80%;
+    height: 80%;
+    background: #fff0;
+  }
+}
 
 .personal-photo {
   width: 84%;
@@ -22,13 +25,9 @@
     width: 10%;
     height: 10%;
     background: $backgroundLightOpaque;
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
 
     &.reveal {
-      width: 80%;
-      height: 80%;
-      background: #fff0;
+      animation: frame-reveal 0.8s forwards;
     }
   }
 }

@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import { Reveal, FrameHolder, Text } from "../../../elements";
 import { FindImage } from "../../../data";
 
+import { Arrow } from '../index.js';
 import Style from "./style.module.scss";
 
 class FeaturedProject extends Reveal {
@@ -24,7 +25,7 @@ class FeaturedProject extends Reveal {
           <a href={`//${link}`} target="_blank" rel="noreferrer">
             <h2 className={Style.name}>
               {name}
-              <span className={Style.arrow}></span>
+              <Arrow />
             </h2>
           </a>
           <Text>{description}</Text>

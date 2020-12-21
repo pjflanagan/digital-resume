@@ -23,7 +23,6 @@ class SlidePersonal extends React.Component {
   }
 
   changePhoto(photo) {
-    console.log(photo);
     this.setState({ photo });
   }
   
