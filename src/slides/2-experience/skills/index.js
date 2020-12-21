@@ -1,11 +1,11 @@
 import React from "react";
 
 import { ProgressBar, TextSubHeading2 } from "../../../elements";
+import { Skills as SkillsData } from '../../../data';
 
-import SkillsData from "./skills.json";
 import Style from "./style.module.scss";
 
-const Skills = (props) => (
+const Skills = () => (
   <div>
     {SkillsData.map(({ type, items, cols }) => (
       <div key={type}>

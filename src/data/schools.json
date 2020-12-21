@@ -1,0 +1,39 @@
+[
+  {
+     "name": "University of Michigan",
+     "location": "Ann Arbor, MI",
+     "class": "Class of 2018",
+     "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
+     "image": "umich.jpg",
+     "description": [
+        "Coursework &mdash; Web Databases and Information Systems, Computer Architecture, Data Structures and Algorithms, User Interface Design"
+     ],
+     "background": "#00274c",
+     "color": "#00274c",
+     "extra": [
+        {
+           "name": "The Every Three Weekly",
+           "role": "Editor-In-Chief, Lead Graphic Designer",
+           "description": "Wrote and edited articles for U-M humor and satire magazine",
+           "link": "//everythreeweekly.com"
+        },
+        {
+           "name": "Michigan Running Club",
+           "role": "Webmaster, Runner",
+           "description": "Developed and managed club website with Bootstrap and PHP",
+           "link": "//mrun.clubrunning.org"
+        }
+     ]
+  },
+  {
+     "name": "Great Valley High School",
+     "location": "Malvern, PA",
+     "class": "Class of 2014",
+     "image": "gvhs.png",
+     "description": [
+        "Distinguished Honors, <a href=\"//www.youtube.com/watch?v=MaLZTBOxGMI\" target=\"_blank\" rel=\"noreferrer\">Baccalaureate Speaker</a>, Varsity Runner, PA State Computer Fair Finalist"
+     ],
+     "background": "#1c4b98",
+     "color": "#1c4b98"
+  }
+]

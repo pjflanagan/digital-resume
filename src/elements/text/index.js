@@ -45,7 +45,26 @@ const TextFlag = (props) => {
 };
 
 // TextInlineLink
-const TextInlineLink = ({ href, className, onMouseOver, onFocus, children }) => {
+const TextInlineLink = ({
+  href,
+  className,
+  onMouseOver,
+  onFocus,
+  children,
+}) => {
+  if (!!href) {
+    return (
+      <span
+        role="button"
+        tabIndex={0}
+        className={`${Style.textInlineLink} ${className}`}
+        onMouseOver={onMouseOver}
+        onFocus={onFocus}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <a
       href={href}

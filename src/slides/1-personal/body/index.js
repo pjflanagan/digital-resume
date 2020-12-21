@@ -14,6 +14,8 @@ const Body = ({ photoLinkCallback }) => (
     <TextAccent>Hi, my name is</TextAccent>
     <TextHeading>
       <span
+        role="button"
+        tabIndex={0}
         onMouseOver={() => photoLinkCallback("personal-photo.jpg")}
         onFocus={() => photoLinkCallback("personal-photo.jpg")}
       >
@@ -35,12 +37,12 @@ const Body = ({ photoLinkCallback }) => (
         rollerblader
       </TextInlineLink>
       , a novice{" "}
-      <a
+      <TextInlineLink
         onMouseOver={() => photoLinkCallback("personal-rock-climbing.jpg")}
         onFocus={() => photoLinkCallback("personal-rock-climbing.jpg")}
       >
         rock climber
-      </a>
+      </TextInlineLink>
       , and an eager Mandarin student.
     </Text>
   </div>

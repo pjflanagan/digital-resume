@@ -1,9 +1,9 @@
 
 
 GENERAL
+- [ ] favicon, social icons, ios icons
 - [ ] move ALL data (links, paragraphs) into data folder / graphql
 - [ ] header with scroll links
-- [ ] favicon, social icons, ios icons
 - [ ] Shadow for all dark part thing (specifically personal slide on mobile)
 - [ ] Add my tv show jokes and multi pass back in 
 - [ ] NEED a rollerblade somewhere
@@ -12,14 +12,15 @@ GENERAL
 
 PERSONAL 
 - [ ] personal slide change image componontDidUpdate effect
-- [ ] add a target back into the photo
-- [ ] Throw bill cypher from gravity falls in there somehow, maybe as the target shape
+- [ ] add a target back into the photo (Throw bill cypher from gravity falls in there somehow)
 
 EXPERIENCE 
 - [ ] Make that curve an inner shadow on experience mobile (?)
 
 PROJECT 
 - [ ] Add night pro 
+- [ ] external link icon
+- [ ] scrollbar for additional projects (underneath and yellow)
 
 CONTACT 
 - [ ] netlify forms for email me

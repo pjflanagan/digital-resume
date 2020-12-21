@@ -1,10 +1,16 @@
 import React from "react";
 
-import { Ruler, TextHeading, TextAccent, TextSubHeading, Stack } from "../../elements";
+import {
+  Ruler,
+  TextHeading,
+  TextAccent,
+  TextSubHeading,
+  Stack,
+} from "../../elements";
+import { Projects } from "../../data";
 
-import Projects from "./data/projects.json";
-import { FeaturedProject } from "./featured-project";
 // import { BlueprintDecoration } from './blueprint-decoration'
+import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
 import Style from "./style.module.scss";
 

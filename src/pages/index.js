@@ -39,7 +39,7 @@ class PageIndex extends React.Component {
 export default PageIndex;
 
 export const query = graphql`
-  query MyQuery {
+  query ImageQuery {
     allFile(filter: { extension: { regex: "/(jpg)|(png)/" } }) {
       edges {
         node {
