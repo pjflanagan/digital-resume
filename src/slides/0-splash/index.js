@@ -63,7 +63,7 @@ class SlideSplash extends React.Component {
           <div className={Style.description}>{Slides.splash.subtitle}</div>
         </div>
         <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
-          <LabeledButton icon="down-arrow" tracker="Splash.clickToScroll" onClick={this.clickToScroll}>{Slides.splash.prompt}</LabeledButton>
+          <LabeledButton icon="down-arrow" trackerLabel="Splash.clickToScroll" onClick={this.clickToScroll}>{Slides.splash.prompts[0]}</LabeledButton>
         </div>
         <Canvas
           className={Style.canvas}

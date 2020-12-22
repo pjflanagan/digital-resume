@@ -7,66 +7,23 @@ import {
   TextSubHeading,
   Stack,
 } from "../../elements";
-import { Projects } from "../../data";
+import { Projects, Slides } from "../../data";
 
-// import { BlueprintDecoration } from './blueprint-decoration'
 import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
 import Style from "./style.module.scss";
 
-// const INVENTIONS = [
-//   'What-if Machine',
-//   'Portal Gun',
-//   'Arc Reactor',
-//   'Bending Unit',
-//   'Smell-O-Scope',
-//   'Space Elevator',
-//   'Web Shooter',
-//   'Repulsor',
-//   'Microverse Battery',
-//   'Dyson Sphere',
-//   'J.A.R.V.I.S.',
-//   'Shrink Ray',
-//   'Electron Carpet',
-//   'Mind Control Tie',
-//   'Memory Ray',
-//   'Flux Capacitor'
-// ];
-
 class SlideProjects extends React.Component {
-  // constructor(props){
-  //   super(props);
-
-  //   this.inventions = INVENTIONS;
-
-  //   this.state = {
-  //     invention1: this.getRandomInvention(),
-  //     invention2: this.getRandomInvention()
-  //   }
-
-  //   this.getRandomInvention = this.getRandomInvention.bind(this);
-  // }
-
-  // getRandomInvention() {
-  //   const index = Math.floor(Math.random() * this.inventions.length);
-  //   const invention = this.inventions[index];
-  //   this.inventions.splice(index, 1);
-  //   return invention;
-  // };
-
   render() {
     const { data } = this.props;
     return (
       <div>
-        {/* <BlueprintDecoration num={1} invention={this.state.invention1} gap={42} edge={'top'} />
-        <BlueprintDecoration num={2} invention={this.state.invention2} gap={32} edge={'top'} /> */}
         <div className={`${Style.slideProjects} ${Style.blueprint}`}>
-          {/* TODO: maybe ruler should be sideways */}
           <Ruler className={Style.ruler} />
           <div className={Style.slideBody}>
-            <TextAccent>Some of my</TextAccent>
-            <TextHeading>Projects</TextHeading>
-            <TextSubHeading>Featured</TextSubHeading>
+            <TextAccent>{Slides.projects.accent}</TextAccent>
+            <TextHeading>{Slides.projects.title}</TextHeading>
+            <TextSubHeading>{Slides.projects.sections[0]}</TextSubHeading>
             <div className={Style.featuredBody}>
               {Projects.featured.map((project, i) => (
                 <FeaturedProject
@@ -78,9 +35,9 @@ class SlideProjects extends React.Component {
                 />
               ))}
             </div>
-            <TextSubHeading>Other Projects</TextSubHeading>
+            <TextSubHeading>{Slides.projects.sections[1]}</TextSubHeading>
             <div className={Style.allBody}>
-              <Stack>
+              <Stack edge="top" gap={240}>
                 {Projects.all.map((project, i) => (
                   <Project
                     key={i}

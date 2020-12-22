@@ -18,7 +18,7 @@ class Multipass extends React.Component {
   }
 
   render() {
-    const { on } = this.props; // TODO: data
+    const { on } = this.props;
     const lightClass = on ? Style.light : "";
     const { age } = this.state;
     return (

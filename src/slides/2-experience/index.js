@@ -1,7 +1,7 @@
 import React from "react";
 
 import { TextHeading, TextSubHeading, TextAccent } from "../../elements";
-import { Jobs, Schools } from "../../data";
+import { Jobs, Schools, Slides } from "../../data";
 
 import { Org } from "./org";
 import { Skills } from "./skills";
@@ -14,10 +14,10 @@ const SlideExperience = ({ data }) => {
         <div className={Style.preSlideCurve} />
       </div>
       <div className={Style.slideBody}>
-        <TextAccent>My digital resume</TextAccent>
-        <TextHeading>Experience</TextHeading>
+        <TextAccent>{Slides.experience.accent}</TextAccent>
+        <TextHeading>{Slides.experience.title}</TextHeading>
         {/* <Text> */}
-        <TextSubHeading>Career</TextSubHeading>
+        <TextSubHeading>{Slides.experience.sections[0]}</TextSubHeading>
         {Jobs.map((job, i) => (
           <Org
             key={i}
@@ -33,7 +33,7 @@ const SlideExperience = ({ data }) => {
           />
         ))}
 
-        <TextSubHeading>Education</TextSubHeading>
+        <TextSubHeading>{Slides.experience.sections[1]}</TextSubHeading>
         {Schools.map((school, i) => (
           <Org
             key={i}
@@ -49,7 +49,7 @@ const SlideExperience = ({ data }) => {
           />
         ))}
 
-        <TextSubHeading>Skills</TextSubHeading>
+        <TextSubHeading>{Slides.experience.sections[2]}</TextSubHeading>
         <Skills />
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Reveal } from '../reveal';
+
 import Style from "./style.module.scss";
 
 // class StackNav extends React.Component {
@@ -32,7 +34,7 @@ const getNextLayerIndex = (currentLayer, offset, layersLength) => {
   return currentLayer + offset;
 }
 
-class Stack extends React.Component {
+class Stack extends Reveal {
   constructor(props) {
     super(props);
 
@@ -62,6 +64,7 @@ class Stack extends React.Component {
 
   render() {
     const { children } = this.props;
+    const className = this.state.isRevealed ? '' : Style.preReveal;
     const layers = [
       this.getNextLayer(-1),
       this.getNextLayer(0),
@@ -71,7 +74,7 @@ class Stack extends React.Component {
       this.getNextLayer(4)
     ];
     return (
-      <div className={Style.stack}>
+      <div className={`${Style.stack} ${className}`} ref={this.ref}>
         <div className={Style.stackBody}>
           {layers.map((layer) => (
             <div

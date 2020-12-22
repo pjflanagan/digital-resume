@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Links } from '../../data';
+import { Links, Slides } from "../../data";
 import { LabeledButton, TextAccent, TextHeading, Text } from "../../elements";
 
 import { Wave } from "./wave";
@@ -28,12 +28,9 @@ class SlideContact extends React.Component {
       <div className={Style.slideContact}>
         <div className={Style.slideLeft}>
           <div className={Style.container}>
-            <TextAccent>Let's make</TextAccent>
-            <TextHeading>CONTACT!</TextHeading>
-            <Text>
-              While I'm not currently seeking new opportunities, feel free to
-              reach out. I'll try my best to phone back!
-            </Text>
+            <TextAccent>{Slides.contact.accent}</TextAccent>
+            <TextHeading>{Slides.contact.title}</TextHeading>
+            <Text>{Slides.contact.text}</Text>
             <div className={Style.linkHolder}>
               <div className={Style.buttonHolder}>
                 <LabeledButton
