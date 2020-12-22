@@ -2,7 +2,13 @@
   "splash": {
     "title": "Peter James Flanagan",
     "subtitle": "Circuit-navigating Cyberspace",
-    "prompt": "Scroll for liftoff!"
+    "prompt": "Scroll for liftoff!",
+    "prompts": [
+      "Scroll for liftoff!",
+      "Scroll to beam me up!",
+      "Scroll for hyperspace jump!",
+      "Scroll for controlled burn!"
+    ]
   },
   "personal": {
     "accent": "Hi, my name is",

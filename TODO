@@ -29,6 +29,7 @@ CONTACT
 - [ ] netlify forms for email me
 - [x] Make the wave at the bottoms more wave like on mobile (just remove it for now)
 - [ ] scroll effect for contact area (wave opens up from height 0?)
+- [ ] Make contact slide larger on web, center the text and links everything and make the wave go through the middle in the background. Perhaps wave should be a Canvas 
 
 EXTERNAL
 - [ ] Flesh out blogger blog, OR write up a few medium posts about things

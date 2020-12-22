@@ -43,7 +43,7 @@ class SlideSplash extends React.Component {
       duration: 1500,
       smooth: true,
       offset: -64, // Scrolls to element + 50 pixels down the page
-    })
+    });
   }
 
   render() {
@@ -63,7 +63,7 @@ class SlideSplash extends React.Component {
           <div className={Style.description}>{Slides.splash.subtitle}</div>
         </div>
         <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
-          <LabeledButton icon="down-arrow" onClick={this.clickToScroll}>{Slides.splash.prompt}</LabeledButton>
+          <LabeledButton icon="down-arrow" tracker="Splash.clickToScroll" onClick={this.clickToScroll}>{Slides.splash.prompt}</LabeledButton>
         </div>
         <Canvas
           className={Style.canvas}

@@ -18,10 +18,17 @@ module.exports = {
         display: 'swap'
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-66104630-1",
+        head: false,
+      },
+    },
   ]
 }
 
-/**
+/** SCSS variables
  *     {
       resolve: ,
       options: {

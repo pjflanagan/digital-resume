@@ -1,4 +1,5 @@
 import React from "react";
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import Style from "./style.module.scss";
 
@@ -66,7 +67,7 @@ const TextInlineLink = ({
     );
   }
   return (
-    <a
+    <OutboundLink
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -75,7 +76,7 @@ const TextInlineLink = ({
       onFocus={onFocus}
     >
       {children}
-    </a>
+    </OutboundLink>
   );
 };
 

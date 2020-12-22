@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Text } from "../../../elements";
 import { FindImage } from "../../../data";
@@ -22,12 +23,12 @@ class Project extends React.Component {
           className={Style.projectImage}
         />
         <div className={Style.info}>
-          <a href={`//${link}`} target="_blank" rel="noreferrer">
+          <OutboundLink href={`//${link}`} target="_blank" rel="noreferrer">
             <h2 className={Style.name}>
               {name}
               <Arrow />
             </h2>
-          </a>
+          </OutboundLink>
           <Text>{description}</Text>
         </div>
       </div>
