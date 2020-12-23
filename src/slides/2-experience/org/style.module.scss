@@ -2,7 +2,7 @@
 
 .org {
   color: #fff;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 
   .org-left {
     display: flex;
@@ -47,7 +47,7 @@
   .org {
     display: flex;
     background: $blackOpaque;
-    padding: 14px 10px;
+    padding: 24px;
     clip-path: $polygon;
 
     .org-left {

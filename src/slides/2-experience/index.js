@@ -1,6 +1,11 @@
 import React from "react";
 
-import { TextHeading, TextSubHeading, TextAccent } from "../../elements";
+import {
+  TextHeading,
+  TextSubHeading,
+  TextAccent,
+  ShowMore,
+} from "../../elements";
 import { Jobs, Schools, Slides } from "../../data";
 
 import { Org } from "./org";
@@ -18,7 +23,7 @@ const SlideExperience = ({ data }) => {
         <TextHeading>{Slides.experience.title}</TextHeading>
         {/* <Text> */}
         <TextSubHeading>{Slides.experience.sections[0]}</TextSubHeading>
-        {Jobs.map((job, i) => (
+        {Jobs.featured.map((job, i) => (
           <Org
             key={i}
             name={job.name}
@@ -32,8 +37,25 @@ const SlideExperience = ({ data }) => {
             background={job.background}
           />
         ))}
+        <ShowMore>
+          {Jobs.other.map((job, i) => (
+            <Org
+              key={i}
+              name={job.name}
+              location={job.location}
+              time={job.time}
+              description={job.description}
+              position={job.position}
+              image={job.image}
+              data={data}
+              color={job.color}
+              background={job.background}
+            />
+          ))}
+        </ShowMore>
 
         <TextSubHeading>{Slides.experience.sections[1]}</TextSubHeading>
+        {/* TODO: kinda want my extracurriculars here still */}
         {Schools.map((school, i) => (
           <Org
             key={i}

@@ -10,4 +10,5 @@ export * from './reveal';
 export * from './ruler';
 export * from './splash';
 export * from './stack';
+export * from './show-more';
 export * from './text';

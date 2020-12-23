@@ -44,10 +44,14 @@
       max-width: 840px;
       margin: 0 auto;
 
+      .featured-body {
+        margin: 0 auto 24px;
+      }
+
       .all-body {
         display: flex;
         flex-wrap: wrap;
-        margin: 42px auto 24px;
+        margin: 0 auto 24px;
         width: 88%;
       }
     }
