@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import * as Scroll from 'react-scroll';
+import * as Scroll from "react-scroll";
 
 import {
   SlideSplash,
@@ -9,7 +9,7 @@ import {
   SlideProjects,
   SlideContact,
 } from "../slides";
-import { Cover } from "../elements";
+import { Cover, Footer } from "../elements";
 
 import "./reset.scss";
 import "./style.scss";
@@ -30,6 +30,7 @@ class PageIndex extends React.Component {
           <SlideProjects data={data} />
           <SlideContact data={data} />
         </ScrollSlides>
+        <Footer />
       </div>
     );
   }

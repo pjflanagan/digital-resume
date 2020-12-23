@@ -25,7 +25,7 @@ class ShowMore extends React.Component {
   render() {
     const { children, trackerLabel } = this.props;
     const { isOpen } = this.state;
-    const icon = isOpen ? "less" : "more";
+    const icon = isOpen ? "minus" : "plus";
     const prompt = isOpen ? "Show less" : "Show more";
     const className = isOpen ? Style.open : '';
     return (
