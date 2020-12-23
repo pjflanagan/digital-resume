@@ -29,8 +29,8 @@ class PageIndex extends React.Component {
           <SlideExperience data={data} />
           <SlideProjects data={data} />
           <SlideContact data={data} />
+          <Footer />
         </ScrollSlides>
-        <Footer />
       </div>
     );
   }

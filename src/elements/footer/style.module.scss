@@ -1,4 +1,22 @@
 
+
 .footer {
-  display: none;
+  width: 100%;
+  padding: 24px;
+  background: #1c1c1cf0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .text-holder {
+    text-align: center;
+    opacity: 0.3;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    margin: 0 12px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
