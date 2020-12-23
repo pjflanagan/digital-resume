@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   height: auto;
 
-  .slide-left {
+  .slide-front {
     background: $backgroundDark2;
     width: 100%;
 
@@ -15,20 +15,22 @@
       padding: 36px 12px;
       margin: 0 auto;
 
-      .button-holder {
-        margin: 18px 0;
+      .link-holder {
+        .button-holder {
+          margin: 18px 0;
+        }
       }
     }
   }
 
-  .slide-right {
+  .slide-back {
     display: none;
   }
 }
 
 @media only screen and (min-width: $md) {
   .slide-contact {
-    .slide-right {
+    .slide-back {
       display: block;
       box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
       border-top: 1px solid $backgroundLightOpaque;
@@ -41,31 +43,47 @@
   }
 }
 
-// lg
-@media only screen and (min-width: $lg) {
+// xl
+@media only screen and (min-width: $xl) {
   .slide-contact {
-    height: auto;
+    height: 80%;
+    display: block;
+    position: relative;
 
-    .slide-left {
-      width: 480px;
-      background: $backgroundDark2;
+    .slide-front {
+      width: 60%;
+      margin: 0 auto;
+      height: auto;
+      top: 50%;
+      transform: translate(0, -50%);
+      background: none;
+      z-index: 2;
+      position: relative;
+      background: $backgroundDarkOpaque;
+      clip-path: $polygon;
+      max-width: 600px;
 
       .container {
-        width: 60%;
+        width: 100%;
+        padding: 42px;
 
         .link-holder {
-          display: inline;
+          display: block;
           flex-wrap: nowrap;
+          width: 50%;
+          margin: 0 auto;
         }
       }
     }
 
-    .slide-right {
-      width: calc(100% - 480px);
-      height: auto;
-      background: $backgroundDarkOpaque;
+    .slide-back {
+      width: 100%;
+      height: 100%;
+      background: $backgroundDark2Opaque;
       border-top: none;
-      border-left: 1px solid $backgroundLightOpaque;
+      position: absolute;
+      top: 0;
+      z-index: 1;
     }
   }
 }

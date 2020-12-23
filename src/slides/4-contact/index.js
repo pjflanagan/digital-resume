@@ -26,7 +26,7 @@ class SlideContact extends React.Component {
   render() {
     return (
       <div className={Style.slideContact}>
-        <div className={Style.slideLeft}>
+        <div className={Style.slideFront}>
           <div className={Style.container}>
             <TextAccent>{Slides.contact.accent}</TextAccent>
             <TextHeading>{Slides.contact.title}</TextHeading>
@@ -65,7 +65,7 @@ class SlideContact extends React.Component {
             </div>
           </div>
         </div>
-        <div className={Style.slideRight}>
+        <div className={Style.slideBack}>
           <Wave on={this.state.contactOn} />
         </div>
       </div>
