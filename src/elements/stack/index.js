@@ -1,37 +1,40 @@
 import React from "react";
 
-import { Reveal } from '../reveal';
+import { Reveal } from "../reveal";
 
 import Style from "./style.module.scss";
 
-// class StackNav extends React.Component {
-//   render() {
-//     const { nav, selectLayer } = this.props;
-//     return (
-//       <div className={Style.stackNav}>
-//         {nav.map((name, layerIndex) => (
-//           <div
-//             className={layerIndex === currentLayer ? Style.navItemSelected : ""}
-//             onClick={() => selectLayer(layerIndex)}
-//             onKeyDown={() => selectLayer(layerIndex)}
-//             role="button"
-//             tabIndex={0}
-//           >
-//             {name}
-//           </div>
-//         ))}
-//       </div>
-//     );
-//   }
-// }
-
 const getNextLayerIndex = (currentLayer, offset, layersLength) => {
-  if(currentLayer + offset >= layersLength) {
+  if (currentLayer + offset >= layersLength) {
     return currentLayer - layersLength + offset;
-  } else if(currentLayer + offset < 0) {
+  } else if (currentLayer + offset < 0) {
     return layersLength + currentLayer + offset;
   }
   return currentLayer + offset;
+};
+
+class StackNav extends React.Component {
+  render() {
+    const { current, count } = this.props; // selectLayer
+    return (
+      <div className={Style.stackNav}>
+        {[...Array(count)].map((e, i) => {
+          const className = i === current ? Style.current : "";
+          return (
+            <div
+              className={Style.bulletHolder}
+              // onClick={() => selectLayer(i)}
+              // onKeyDown={() => selectLayer(i)}
+              // role="button"
+              // tabIndex={0}
+            >
+              <div className={`${Style.stackBullet} ${className}`} />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 }
 
 class Stack extends Reveal {
@@ -58,12 +61,13 @@ class Stack extends Reveal {
     const layerIndex = getNextLayerIndex(currentLayer, offset, children.length);
     return {
       layerIndex,
-      name: children[layerIndex].props.name
-    }
+      name: children[layerIndex].props.name,
+    };
   }
 
   render() {
     const { children } = this.props;
+    const { currentLayer } = this.state;
     const className = this.state.isRevealed ? '' : Style.preReveal;
     const layers = [
       this.getNextLayer(-1),
@@ -71,7 +75,7 @@ class Stack extends Reveal {
       this.getNextLayer(1),
       this.getNextLayer(2),
       this.getNextLayer(3),
-      this.getNextLayer(4)
+      this.getNextLayer(4),
     ];
     return (
       <div className={`${Style.stack} ${className}`} ref={this.ref}>
@@ -90,7 +94,11 @@ class Stack extends Reveal {
             </div>
           ))}
         </div>
-        {/* TODO: add bunch of dashes here to scroll through */}
+        <StackNav
+          count={children.length}
+          current={currentLayer}
+          // selectLayer={this.selectLayer}
+        />
       </div>
     );
   }
