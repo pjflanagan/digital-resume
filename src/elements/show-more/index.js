@@ -25,19 +25,17 @@ class ShowMore extends React.Component {
   render() {
     const { children, trackerLabel } = this.props;
     const { isOpen } = this.state;
-    const icon = isOpen ? "minus" : "plus";
-    const prompt = isOpen ? "Show less" : "Show more";
-    const className = isOpen ? Style.open : '';
+    const className = isOpen ? Style.open : "";
     return (
       <div className={`${Style.showMore} ${className}`}>
         <div className={Style.contentHolder}>{children}</div>
         <div className={Style.buttonHolder}>
           <LabeledButton
             onClick={this.toggle}
-            icon={icon}
+            icon="plus"
             trackerLabel={trackerLabel}
           >
-            {prompt}
+            Show more
           </LabeledButton>
         </div>
       </div>

@@ -1,12 +1,11 @@
 import React from "react";
-import * as Scroll from 'react-scroll';
+import * as Scroll from "react-scroll";
 
 import { Canvas, LabeledButton } from "../../elements";
-import { Slides } from '../../data';
+import { Slides } from "../../data";
 
 import { View } from "./view";
 import Style from "./style.module.scss";
-
 
 const scroller = Scroll.scroller;
 
@@ -25,11 +24,11 @@ class SlideSplash extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll(e) {
@@ -39,7 +38,7 @@ class SlideSplash extends React.Component {
   }
 
   clickToScroll() {
-    scroller.scrollTo('slides', {
+    scroller.scrollTo("slides", {
       duration: 1500,
       smooth: true,
       offset: -64, // Scrolls to element + 50 pixels down the page
@@ -50,7 +49,7 @@ class SlideSplash extends React.Component {
     const { scroll } = this.state;
     const textScroll = -scroll / 5;
     const canvasScroll = scroll / 2;
-    const opacity = 1.0 - scroll/1000.0;
+    const opacity = 1.0 - scroll / 1000.0;
     return (
       <div className={Style.splash}>
         <div
@@ -62,8 +61,17 @@ class SlideSplash extends React.Component {
           <div className={Style.name}>{Slides.splash.title}</div>
           <div className={Style.description}>{Slides.splash.subtitle}</div>
         </div>
-        <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
-          <LabeledButton icon="down-arrow" trackerLabel="Splash.clickToScroll" onClick={this.clickToScroll}>{Slides.splash.prompts[0]}</LabeledButton>
+        <div
+          className={Style.buttonHolder}
+          style={{ filter: `opacity(${opacity})` }}
+        >
+          <LabeledButton
+            icon="down-arrow"
+            trackerLabel="Splash.clickToScroll"
+            onClick={this.clickToScroll}
+          >
+            {Slides.splash.prompts[0]}
+          </LabeledButton>
         </div>
         <Canvas
           className={Style.canvas}
