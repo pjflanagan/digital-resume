@@ -25,6 +25,10 @@ const Footer = () => {
           <TextInlineLink href="https://www.flaticon.com/authors/freepik">
             Freepik
           </TextInlineLink>
+          {", "}
+          <TextInlineLink href="https://www.flaticon.com/authors/prettycons">
+            prettycons
+          </TextInlineLink>
           {" and "}
           <TextInlineLink href="https://www.flaticon.com/authors/smashicons">
             Smashicons

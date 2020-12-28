@@ -1,5 +1,7 @@
 import React from "react";
 
+import SATURN_ICON from './saturn';
+
 const LINKEDIN_ICON = (
   <svg
     height="512pt"
@@ -173,6 +175,8 @@ const SVGIcon = (props) => {
       return MINUS_ICON;
     case "plus":
       return PLUS_ICON;
+    case "saturn":
+      return SATURN_ICON;
     default:
       return <span />;
   }

@@ -1,4 +1,5 @@
 
 export default {
-  title: "Lost in space?"
+  title: "Lost in space?",
+  prompt: "Let's go back"
 }
