@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Slides } from "../../../data";
+import { Main } from "../../../content";
 import { LabeledButton, TextAccent, TextHeading, Text } from "../../../elements";
 
 import { Wave } from "./wave";
@@ -28,11 +28,11 @@ class SlideContact extends React.Component {
       <div className={Style.slideContact}>
         <div className={Style.slideFront}>
           <div className={Style.container}>
-            <TextAccent>{Slides.contact.accent}</TextAccent>
-            <TextHeading>{Slides.contact.title}</TextHeading>
-            <Text>{Slides.contact.text}</Text>
+            <TextAccent>{Main.contact.accent}</TextAccent>
+            <TextHeading>{Main.contact.title}</TextHeading>
+            <Text>{Main.contact.text}</Text>
             <div className={Style.linkHolder}>
-              {Slides.contact.links.map((link, i) => (
+              {Main.contact.links.map((link, i) => (
                 <div
                   className={Style.buttonHolder}
                   key={i}

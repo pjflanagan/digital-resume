@@ -3,7 +3,7 @@ import Img from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Reveal, FrameHolder, Text } from "../../../../elements";
-import { FindImage } from "../../../../data";
+import { FindImage } from "../../../../content";
 
 import { Arrow } from '../index.js';
 import Style from "./style.module.scss";

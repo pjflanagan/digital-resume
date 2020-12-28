@@ -2,7 +2,7 @@ import React from "react";
 import * as Scroll from "react-scroll";
 
 import { Canvas, LabeledButton } from "../../../elements";
-import { Slides } from "../../../data";
+import { Main } from "../../../content";
 
 import { View } from "./view";
 import Style from "./style.module.scss";
@@ -58,8 +58,8 @@ class SlideSplash extends React.Component {
             transform: `translateY(${textScroll}px)`,
           }}
         >
-          <div className={Style.name}>{Slides.splash.title}</div>
-          <div className={Style.description}>{Slides.splash.subtitle}</div>
+          <div className={Style.name}>{Main.splash.title}</div>
+          <div className={Style.description}>{Main.splash.subtitle}</div>
         </div>
         <div
           className={Style.buttonHolder}
@@ -70,7 +70,7 @@ class SlideSplash extends React.Component {
             trackerLabel="Splash.clickToScroll"
             onClick={this.clickToScroll}
           >
-            {Slides.splash.prompts[0]}
+            {Main.splash.prompts[0]}
           </LabeledButton>
         </div>
         <Canvas

@@ -7,7 +7,7 @@ import {
   TextSubHeading,
   Stack,
 } from "../../../elements";
-import { Projects, Slides } from "../../../data";
+import { Main } from "../../../content";
 
 import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
@@ -21,11 +21,11 @@ class SlideProjects extends React.Component {
         <div className={`${Style.slideProjects} ${Style.blueprint}`}>
           <Ruler className={Style.ruler} />
           <div className={Style.slideBody}>
-            <TextAccent>{Slides.projects.accent}</TextAccent>
-            <TextHeading>{Slides.projects.title}</TextHeading>
-            <TextSubHeading>{Slides.projects.sections[0]}</TextSubHeading>
+            <TextAccent>{Main.projects.accent}</TextAccent>
+            <TextHeading>{Main.projects.title}</TextHeading>
+            <TextSubHeading>{Main.projects.sections[0]}</TextSubHeading>
             <div className={Style.featuredBody}>
-              {Projects.featured.map((project, i) => (
+              {Main.projects.projects.featured.map((project, i) => (
                 <FeaturedProject
                   key={i}
                   project={project}
@@ -35,10 +35,10 @@ class SlideProjects extends React.Component {
                 />
               ))}
             </div>
-            <TextSubHeading>{Slides.projects.sections[1]}</TextSubHeading>
+            <TextSubHeading>{Main.projects.sections[1]}</TextSubHeading>
             <div className={Style.allBody}>
               <Stack edge="top" gap={240}>
-                {Projects.all.map((project, i) => (
+                {Main.projects.projects.all.map((project, i) => (
                   <Project
                     key={i}
                     project={project}

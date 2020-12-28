@@ -8,13 +8,13 @@ import {
   SlideExperience,
   SlideProjects,
   SlideContact,
-} from "../content/main";
+} from "../components/main";
 import { Cover, Footer } from "../elements";
 
 import "./reset.scss";
 import "./style.scss";
 
-const ScrollSlides = Scroll.Element;
+const ScrollMain = Scroll.Element;
 
 // markup
 class PageIndex extends React.Component {
@@ -24,13 +24,13 @@ class PageIndex extends React.Component {
       <div className="container">
         <Cover />
         <SlideSplash />
-        <ScrollSlides className="slides" name="slides">
+        <ScrollMain className="slides" name="slides">
           <SlidePersonal data={data} />
           <SlideExperience data={data} />
           <SlideProjects data={data} />
           <SlideContact data={data} />
           <Footer />
-        </ScrollSlides>
+        </ScrollMain>
       </div>
     );
   }

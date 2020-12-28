@@ -6,7 +6,7 @@ import {
   TextAccent,
   ShowMore,
 } from "../../../elements";
-import { Jobs, Schools, Slides } from "../../../data";
+import { Main } from "../../../content";
 
 import { Org } from "./org";
 import { Skills } from "./skills";
@@ -19,11 +19,11 @@ const SlideExperience = ({ data }) => {
         <div className={Style.preSlideCurve} />
       </div>
       <div className={Style.slideBody}>
-        <TextAccent>{Slides.experience.accent}</TextAccent>
-        <TextHeading>{Slides.experience.title}</TextHeading>
+        <TextAccent>{Main.experience.accent}</TextAccent>
+        <TextHeading>{Main.experience.title}</TextHeading>
         {/* <Text> */}
-        <TextSubHeading>{Slides.experience.sections[0]}</TextSubHeading>
-        {Jobs.featured.map((job, i) => (
+        <TextSubHeading>{Main.experience.sections[0]}</TextSubHeading>
+        {Main.experience.jobs.featured.map((job, i) => (
           <Org
             key={i}
             name={job.name}
@@ -39,7 +39,7 @@ const SlideExperience = ({ data }) => {
           />
         ))}
         <ShowMore trackerLabel="Experience.showMore">
-          {Jobs.other.map((job, i) => (
+          {Main.experience.jobs.other.map((job, i) => (
             <Org
               key={i}
               name={job.name}
@@ -56,9 +56,9 @@ const SlideExperience = ({ data }) => {
           ))}
         </ShowMore>
 
-        <TextSubHeading>{Slides.experience.sections[1]}</TextSubHeading>
+        <TextSubHeading>{Main.experience.sections[1]}</TextSubHeading>
         {/* TODO: kinda want my extracurriculars here still */}
-        {Schools.map((school, i) => (
+        {Main.experience.schools.map((school, i) => (
           <Org
             key={i}
             name={school.name}
@@ -74,7 +74,7 @@ const SlideExperience = ({ data }) => {
           />
         ))}
 
-        <TextSubHeading>{Slides.experience.sections[2]}</TextSubHeading>
+        <TextSubHeading>{Main.experience.sections[2]}</TextSubHeading>
         <Skills />
       </div>
     </div>

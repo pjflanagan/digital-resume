@@ -1,13 +1,13 @@
 import React from "react";
 
 import { ProgressBar, TextSubHeading2 } from "../../../../elements";
-import { Skills as SkillsData } from '../../../../data';
+import { Main } from '../../../../content';
 
 import Style from "./style.module.scss";
 
 const Skills = () => (
   <div>
-    {SkillsData.map(({ type, items, cols }) => (
+    {Main.experience.skills.map(({ type, items, cols }) => (
       <div key={type}>
         <TextSubHeading2>{type}</TextSubHeading2>
         <div className={Style.skillListHolder}>

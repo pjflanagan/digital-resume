@@ -6,12 +6,12 @@ import {
   Text,
   ParseTextForLinks,
 } from "../../../../elements";
-import { Slides } from "../../../../data";
+import { Main } from "../../../../content";
 
 import Style from "./style.module.scss";
 
 const Body = ({ photoLinkCallback }) => {
-  const { accent, title, link_text } = Slides.personal;
+  const { accent, title, link_text } = Main.personal;
   return (
     <div className={Style.body}>
       <TextAccent>{accent}</TextAccent>
