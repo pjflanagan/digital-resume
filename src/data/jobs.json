@@ -11,7 +11,14 @@
         "Created video transcoding service optimizations to avoid duplicate jobs",
         "Upgraded front end to modern, standardized React-based framework, improving code quality and website usability",
         "Designed new theme, elements and layouts to make web tools match FreeWheel's rebrand",
-        "Redesigned open source development tool <a target=\"_blank\" rel=\"noreferrer\" href=\"https://www.npmjs.com/package/dashflow\">Dashflow</a>, allowing users to manage multiple terminal command streams"
+        "Redesigned open source development tool <dashflow>, allowing users to manage multiple terminal command streams"
+      ],
+      "links": [
+        {
+          "key": "dashflow",
+          "href": "//npmjs.com/package/dashflow",
+          "text": "Dashflow"
+        }
       ],
       "background": "#000",
       "color": "#3b778a"

@@ -133,7 +133,7 @@
       width: 12px;
       height: 14px;
       position: relative;
-      // cursor: pointer;
+      cursor: pointer;
       outline: none;
 
       .stack-bullet {
@@ -152,11 +152,11 @@
         }
       }
 
-      // &:hover {
-      //   .stack-bullet {
-      //     height: 80%;
-      //   }
-      // }
+      &:hover {
+        .stack-bullet {
+          height: 80%;
+        }
+      }
     }
   }
 

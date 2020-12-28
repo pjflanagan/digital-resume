@@ -8,7 +8,7 @@ import {
   SlideExperience,
   SlideProjects,
   SlideContact,
-} from "../slides";
+} from "../content/main";
 import { Cover, Footer } from "../elements";
 
 import "./reset.scss";
