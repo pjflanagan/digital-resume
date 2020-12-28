@@ -1,14 +1,15 @@
 import * as React from "react";
 
-// TODO: make this pretty and have a link back to the main site
+import {
+  Page404Content
+} from '../components/404';
+
+import "./reset.scss";
+import "./style.scss";
 
 class Page404 extends React.Component {
   render() {
-    return (
-      <span>
-        Lost in space?
-      </span>
-    );
+    return <Page404Content />;
   }
 }
 

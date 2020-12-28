@@ -1,0 +1,52 @@
+
+@import '../../../../elements/variables';
+
+svg {
+  height: 20px;
+  width: 100%;
+  position: absolute;
+
+  &.top-curve {
+    margin-top: -20px;
+  }
+
+  &.top-curve-bottom,
+  &.bottom-curve-top,
+  &.bottom-curve {
+    display: none;
+  }
+
+  path {
+    fill: $backgroundLight;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  svg {
+    height: 40px;
+
+    &.top-curve {
+      margin-top: -40px;
+    }
+
+    &.top-curve-bottom {
+      display: block;
+      z-index: 17;
+    }
+
+    &.bottom-curve-top {
+      display: block;
+      z-index: 17;
+      bottom: 0;
+    }
+
+    &.bottom-curve {
+      top: 100%;
+      display: block;
+    }
+
+    path {
+      fill: $backgroundDark;
+    }
+  }
+}

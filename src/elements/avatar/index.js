@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 
-import { FindImage } from "../../data";
+import { FindImage } from "../../content";
 import { Reveal } from "../reveal";
 
 import Style from "./style.module.scss";

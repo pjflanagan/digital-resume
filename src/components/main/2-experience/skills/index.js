@@ -1,0 +1,35 @@
+import React from "react";
+
+import { ProgressBar, TextSubHeading2 } from "../../../../elements";
+import { Main } from '../../../../content';
+
+import Style from "./style.module.scss";
+
+const Skills = () => (
+  <div>
+    {Main.experience.skills.map(({ type, items, cols }) => (
+      <div key={type}>
+        <TextSubHeading2>{type}</TextSubHeading2>
+        <div className={Style.skillListHolder}>
+          {items.map((skill, i) => (
+            <div
+              key={i}
+              className={Style.skillBarHolder}
+              style={{ width: `${100 / cols}%` }}
+            >
+              <ProgressBar
+                key={skill.name}
+                name={skill.name}
+                progress={skill.progress}
+                gap={28}
+                edge={"bottom"}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+export { Skills };

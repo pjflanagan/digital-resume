@@ -22,23 +22,28 @@ const LabeledButtonLinked = ({
   onMouseLeave,
   children,
   href,
-}) => (
-  <div className={Style.labeledButton}>
-    <OutboundLink
-      className={Style.holder}
-      rel="noreferrer"
-      target="_blank"
-      href={href}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <div className={Style.svgHolder}>
-        <SVGIcon icon={icon} />
-      </div>
-      <div className={Style.name}>{children}</div>
-    </OutboundLink>
-  </div>
-);
+  sameWindow,
+}) => {
+  const rel = !sameWindow ? "noreferrer" : undefined;
+  const target = !sameWindow ? "_blank" : undefined;
+  return (
+    <div className={Style.labeledButton}>
+      <OutboundLink
+        className={Style.holder}
+        rel={rel}
+        target={target}
+        href={href}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <div className={Style.svgHolder}>
+          <SVGIcon icon={icon} />
+        </div>
+        <div className={Style.name}>{children}</div>
+      </OutboundLink>
+    </div>
+  );
+};
 
 class LabeledButtonAction extends React.Component {
   constructor(props) {
@@ -86,7 +91,8 @@ const LabeledButton = (props) => {
     children,
     onClick,
     trackerLabel,
-    href
+    href,
+    sameWindow
   } = props;
   if (!!onClick) {
     return (
@@ -106,6 +112,7 @@ const LabeledButton = (props) => {
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
       href={href}
+      sameWindow={sameWindow}
     >
       {children}
     </LabeledButtonLinked>

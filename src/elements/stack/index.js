@@ -15,18 +15,19 @@ const getNextLayerIndex = (currentLayer, offset, layersLength) => {
 
 class StackNav extends React.Component {
   render() {
-    const { current, count } = this.props; // selectLayer
+    const { current, count, selectLayer } = this.props;
     return (
       <div className={Style.stackNav}>
         {[...Array(count)].map((e, i) => {
           const className = i === current ? Style.current : "";
           return (
             <div
+              key={i}
               className={Style.bulletHolder}
-              // onClick={() => selectLayer(i)}
-              // onKeyDown={() => selectLayer(i)}
-              // role="button"
-              // tabIndex={0}
+              onClick={() => selectLayer(i)}
+              onKeyDown={() => selectLayer(i)}
+              role="button"
+              tabIndex={0}
             >
               <div className={`${Style.stackBullet} ${className}`} />
             </div>
@@ -97,7 +98,7 @@ class Stack extends Reveal {
         <StackNav
           count={children.length}
           current={currentLayer}
-          // selectLayer={this.selectLayer}
+          selectLayer={this.selectLayer}
         />
       </div>
     );

@@ -1,0 +1,49 @@
+import React from "react";
+
+import { Avatar, Text, ParseTextForLinks } from "../../../../elements";
+import Style from "./style.module.scss";
+
+const Org = ({
+  name,
+  time,
+  location,
+  description,
+  position,
+  image,
+  links,
+  data,
+  background,
+}) => (
+  <div className={Style.org}>
+    <div className={Style.orgLeft}>
+      <div className={Style.avatarHolder}>
+        <Avatar
+          gap={132}
+          edge="top"
+          image={image}
+          name={name}
+          data={data}
+          background={background}
+        />
+      </div>
+      <div className={Style.orgInfoHolder}>
+        <div className={Style.name}>{name}</div>
+        <div className={Style.location}>{location}</div>
+        <div className={Style.time}>{time}</div>
+      </div>
+    </div>
+    <div className={Style.orgRight}>
+      {position && <div className={Style.position}>{position}</div>}
+      {description.map((line, i) => (
+        <Text
+          key={i}
+          className={Style.description}
+        >
+          {ParseTextForLinks(line, links)}
+        </Text>
+      ))}
+    </div>
+  </div>
+);
+
+export { Org };
