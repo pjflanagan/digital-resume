@@ -1,6 +1,5 @@
 
 TOP TODO:
-- [ ] 404Page make it something nice
 - [ ] content should be done with CONTEXT, only at top level
 
 GENERAL
@@ -8,10 +7,12 @@ GENERAL
 - [ ] favicon, social icons, ios icons
 - [ ] Add my tv show jokes and multi pass back in 
 - [ ] NEED a rollerblade somewhere
-- [ ] use data through graphql
+- [ ] use data through graphql and context
 
 PERSONAL 
-- [ ] add a target back into the photo (Throw bill cypher from gravity falls in there somehow)
+- [ ] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
+- [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
+- [ ] add some decorative changing numbers or text maybe too
 
 EXPERIENCE 
 - [ ] Intro paragraph (?)
@@ -25,18 +26,16 @@ PROJECT
 - STACK
   - [ ] make other projects stack side to side, like in the old itunes
   - [ ] include every element to improve animations
-  - [ ] make the scroll indicators clickable
+  - [x] make the scroll indicators clickable
 
 CONTACT 
 - [ ] netlify forms for email me
 - [ ] scroll effect for contact area (wave opens up from height 0?)
-- [ ] Make contact slide larger on web, center the text and links everything and make the wave go through the middle in the background. Perhaps wave should be a Canvas 
 
 ELEMENTS
 - [ ] make footer a reveal from behind page at bottom
 - [ ] header with scroll links
-- [ ] Shadow for all dark part thing (specifically personal slide on mobile)
-
+- [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 
 EXTERNAL
 - [ ] Flesh out blogger blog, OR write up a few medium posts about things

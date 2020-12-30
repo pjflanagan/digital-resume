@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 // Usage
 // 1. pass in 'gap' and 'edge' as props on <ExtendsRevealComponent />
@@ -45,5 +46,10 @@ class Reveal extends React.Component {
   //   )
   // }
 }
+
+Reveal.propTypes = {
+  edge: PropTypes.string,
+  gap: PropTypes.number
+};
 
 export { Reveal }
