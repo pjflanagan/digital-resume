@@ -36,7 +36,7 @@ export default function HTML(props) {
 
         {/* Twitter */}
         <meta name="twitter:title" content={AUTHOR} />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={HANDLE} />
         <meta name="twitter:creator" content={HANDLE} />
         <meta name="twitter:image" content={IMG_TW} />
