@@ -1,13 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
+const DESCRIPTION = "Full-stack Web Developer";
+const AUTHOR = "Peter James Flanagan";
+const HANDLE = "@peterjflan";
+const ROOT = "https://pjflanagan.me";
+const IMG = `${ROOT}/img/social.png`;
+const FAV = `/img/icon/favicon.ico`;
+
 export default function HTML(props) {
-  const description = "Peter James Flanagan | Full-stack Web Developer";
-  const author = "Peter James Flanagan";
-  const handle = "@peterjflan";
-  const root = "https://pjflanagan.me";
-  const img = `${root}/img/social.png`;
-  const fav = `${root}/img/icon/favicon.png`;
 
   return (
     <html {...props.htmlAttributes}>
@@ -19,29 +21,27 @@ export default function HTML(props) {
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
         />
 
-        <link rel="favicon" src={fav} />
+        <link rel="favicon" src={FAV} />
 
         {/* TODO: this could be moved to a <Helmet> object to have it vary by page */}
-        <title>{author}</title>
+        <title>{AUTHOR}</title>
 
         {/* Social */}
-        <meta name="description" content={description} />
-        <meta name="author" content={author} />
+        <meta name="description" content={DESCRIPTION} />
+        <meta name="author" content={AUTHOR} />
+        <meta property="og:title" content={AUTHOR} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={ROOT} />
+        <meta property="og:image" content={IMG} />
 
         {/* Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={author} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={root} />
-        <meta property="og:image" content={img} />
-        <meta property="og:image:secure_url" content={img} />
+        <meta property="og:image:secure_url" content={IMG} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={author} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={img} />
-        <meta name="twitter:site" content={handle} />
+        <meta name="twitter:site" content={HANDLE} />
+        <meta name="twitter:creator" content={HANDLE} />
 
         {/* iOS */}
         {[57, 72, 114, 144].map((size) => (

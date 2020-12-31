@@ -38,6 +38,7 @@
       height: 100%;
       width: 40%;
       background: $accentCyan;
+      background: repeating-linear-gradient($accentCyan, $accentCyan 3px, $accentCyanHover 3px, $accentCyanHover 6px);
     }
 
     .slide-personal-side-right {
