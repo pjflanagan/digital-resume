@@ -14,10 +14,10 @@ npm run develop
 ```
 ./src
 ├── /components - page components
-├── /content - the site data
+├── /content - the site copy
 ├── /elements - individual themed elements
 ├── /helpers - math, color, and random
-├── /image
+├── /images
 ├── /pages - top level page components and styles (builds into site pages automatically)
-└── html.js - top level page for custom header tags
+└── html.js - top level page with custom header tags
 ```
