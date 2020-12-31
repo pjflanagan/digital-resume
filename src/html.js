@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 const DESCRIPTION = "Full-stack Web Developer";
 const AUTHOR = "Peter James Flanagan";
 const HANDLE = "@peterjflan";
 const ROOT = "https://pjflanagan.me";
-const IMG = `${ROOT}/img/social.png`;
-const FAV = `/img/icon/favicon.ico`;
+const IMG = `${ROOT}/img/social/social.png`;
+const IMG_TW = `${ROOT}/img/social/social-tw.png`;
 
 export default function HTML(props) {
-
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -21,9 +19,7 @@ export default function HTML(props) {
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
         />
 
-        <link rel="favicon" src={FAV} />
-
-        {/* TODO: this could be moved to a <Helmet> object to have it vary by page */}
+        {/* TODO: this should be moved to a <Helmet> object to have it vary by page */}
         <title>{AUTHOR}</title>
 
         {/* Social */}
@@ -39,18 +35,11 @@ export default function HTML(props) {
         <meta property="og:image:secure_url" content={IMG} />
 
         {/* Twitter */}
+        <meta name="twitter:title" content={AUTHOR} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content={HANDLE} />
         <meta name="twitter:creator" content={HANDLE} />
-
-        {/* iOS */}
-        {[57, 72, 114, 144].map((size) => (
-          <link
-            rel="apple-touch-icon"
-            sizes={`${size}x${size}`}
-            href={`/img/icon/icon-${size}.png`}
-          />
-        ))}
+        <meta name="twitter:image" content={IMG_TW} />
 
         {props.headComponents}
       </head>

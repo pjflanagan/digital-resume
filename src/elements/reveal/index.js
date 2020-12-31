@@ -48,7 +48,7 @@ class Reveal extends React.Component {
 }
 
 Reveal.propTypes = {
-  edge: PropTypes.string,
+  edge: PropTypes.oneOf(['top', 'bottom']),
   gap: PropTypes.number
 };
 

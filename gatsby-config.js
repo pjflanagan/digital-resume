@@ -1,8 +1,17 @@
 module.exports = {
+  siteMetadata: {
+    title: `Peter James Flanagan`
+  },
   plugins: [
     'gatsby-plugin-sass',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon-sm.png`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

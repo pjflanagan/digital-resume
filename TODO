@@ -4,15 +4,15 @@ TOP TODO:
 
 GENERAL
 - [~] Google Analytics for events, outbound links, TEST
-- [ ] favicon, social icons, ios icons
+- [~] favicon, social icons, ios icons
 - [ ] Add my tv show jokes and multi pass back in 
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
 
 PERSONAL 
-- [ ] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
-- [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
+- [~] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
 - [ ] add some decorative changing numbers or text maybe too
+- [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
 
 EXPERIENCE 
 - [ ] Intro paragraph (?)
@@ -24,7 +24,7 @@ PROJECT
 - [ ] external link icon (match all icon styles like this)
 - [ ] scrollbar for additional projects (underneath and yellow)
 - STACK
-  - [ ] make other projects stack side to side, like in the old itunes
+  - [ ] make other projects stack side to side, like the old itunes
   - [ ] include every element to improve animations
   - [x] make the scroll indicators clickable
 

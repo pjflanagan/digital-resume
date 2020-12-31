@@ -178,7 +178,7 @@
       background-position: top;
 
       .number {
-        font-family: "Ubuntu";
+        font-family: $ubuntu;
         font-size: 8px;
         width: 100%;
         position: absolute;
@@ -215,7 +215,7 @@
       top: 32px;
       width: 96px;
       height: 95px;
-      font-family: "Ubuntu";
+      font-family: $ubuntu;
 
       .name {
         font-size: 11px;
