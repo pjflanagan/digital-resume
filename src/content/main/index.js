@@ -44,7 +44,7 @@ export default {
   experience: {
     accent: "Lightyears of",
     title: "Experience",
-    sections: ["Carrer", "Education", "Skills"],
+    sections: ["Career", "Education", "Skills"],
     jobs: Jobs,
     schools: Schools,
     skills: Skills
