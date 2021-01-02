@@ -1,4 +1,3 @@
-
 import Jobs from "./jobs.json";
 import Schools from "./schools.json";
 import Skills from "./skills.json";
@@ -16,28 +15,49 @@ export default {
     ],
   },
   personal: {
-    accent: "Hi, my name is",
-    title: "Peter James Flanagan",
-    bio: [
-      "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberatley designed, and fun web tools.",
-    ],
+    accent: {
+      english: "Hi, my name is",
+      mandarin: "你好，我名字叫",
+    },
+    title_text: {
+      links: [
+        {
+          key: "peter_james_flanagan",
+          callbackParam: [
+            { action: "image", param: "personal-photo.jpg" },
+            { action: "text", param: "english" },
+          ],
+          text: "Peter James Flanagan",
+        },
+      ],
+      text: "<peter_james_flanagan>",
+    },
     link_text: {
       links: [
         {
           key: "rollerblader",
           href: "//instagram.com/roller.babe",
-          callbackParam: "personal-roller-blade.jpg",
+          callbackParam: [
+            { action: "image", param: "personal-roller-blade.jpg" },
+          ],
           text: "rollerblader",
         },
         {
           key: "rockclimber",
-          callbackParam: "personal-rock-climbing.jpg",
+          callbackParam: [
+            { action: "image", param: "personal-rock-climbing.jpg" },
+          ],
           text: "rock climber",
+        },
+        {
+          key: "mandarin_student",
+          callbackParam: [{ action: "text", param: "mandarin" }],
+          text: "Mandarin student",
         },
       ],
       text: [
-        "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberatley designed, and fun web tools.",
-        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, and an eager Mandarin student.",
+        "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun web tools.",
+        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, and an eager <mandarin_student>.",
       ],
     },
   },
@@ -47,13 +67,13 @@ export default {
     sections: ["Career", "Education", "Skills"],
     jobs: Jobs,
     schools: Schools,
-    skills: Skills
+    skills: Skills,
   },
   projects: {
     accent: "Experiments, explorations, and",
     title: "Programs",
     sections: ["Featured Projects", "Other Projects"],
-    projects: Projects
+    projects: Projects,
   },
   contact: {
     accent: "Let's make",
