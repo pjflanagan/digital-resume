@@ -5,7 +5,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import { Text } from "../../../../elements";
 import { FindImage } from "../../../../content";
 
-import { Arrow } from "../index.js";
+import { Arrow } from "../index";
 import Style from "./style.module.scss";
 
 class Project extends React.Component {

@@ -1,7 +1,7 @@
 import React from "react";
 import * as Scroll from "react-scroll";
 
-import { Canvas, LabeledButton } from "../../../elements";
+import { Canvas, LabeledButton, TextPageCenter } from "../../../elements";
 import { Main } from "../../../content";
 
 import { View } from "./view";
@@ -52,15 +52,14 @@ class SlideSplash extends React.Component {
     const opacity = 1.0 - scroll / 1000.0;
     return (
       <div className={Style.splash}>
-        <div
+        <TextPageCenter
           className={Style.titleContainer}
           style={{
             transform: `translateY(${textScroll}px)`,
           }}
-        >
-          <div className={Style.name}>{Main.splash.title}</div>
-          <div className={Style.description}>{Main.splash.subtitle}</div>
-        </div>
+          headline={Main.splash.title}
+          blurb={Main.splash.subtitle}
+        />
         <div
           className={Style.buttonHolder}
           style={{ filter: `opacity(${opacity})` }}

@@ -57,15 +57,11 @@ class Body extends React.Component {
             this.linkHover
           )}
         </TextHeading>
-        <Text className={Style.bio}>
-          {ParseTextForLinks(link_text.text[0], link_text.links)}
+        <Text className={Style.bio} links={link_text.links}>
+          {link_text.text[0]}
         </Text>
-        <Text className={`${Style.bio} ${Style.additional}`}>
-          {ParseTextForLinks(
-            link_text.text[1],
-            link_text.links,
-            this.linkHover
-          )}
+        <Text className={`${Style.bio} ${Style.additional}`} links={link_text.links} callback={this.linkHover}>
+          {link_text.text[1]}
         </Text>
       </div>
     );

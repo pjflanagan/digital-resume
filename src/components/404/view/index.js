@@ -104,12 +104,12 @@ class Particle {
     };
   }
 
-  scale(property) {
+  scale(property, max) {
     const { H } = this.canvas;
     const {
       pos: { y },
     } = this.state;
-    const scale = Math.pow(y - H / 2, 2);
+    const scale = max * Math.abs(y - H / 2);
     return (property * scale) / (4 * H);
   }
 
@@ -119,7 +119,7 @@ class Particle {
     } = this.state;
     const { color, width, height } = this.props;
 
-    const scaledWidth = this.scale(width);
+    const scaledWidth = this.scale(width, 72);
 
     this.ctx.beginPath();
     this.ctx.rect(x - scaledWidth / 2, y, scaledWidth, height);
@@ -134,10 +134,12 @@ class Particle {
       pos: { x, y },
     } = this.state;
 
+    const scaledSpeed = this.scale(speed, 14) + speed;
+
     const offsetAngle = Math.atan2(to.y - y, to.x - x);
     this.state.pos = {
-      x: x + speed * Math.cos(offsetAngle),
-      y: y + speed * Math.sin(offsetAngle),
+      x: x + scaledSpeed * Math.cos(offsetAngle),
+      y: y + scaledSpeed * Math.sin(offsetAngle),
     };
   }
 

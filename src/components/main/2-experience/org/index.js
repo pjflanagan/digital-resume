@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Avatar, Text, ParseTextForLinks } from "../../../../elements";
+import { Avatar, Text } from "../../../../elements";
 import Style from "./style.module.scss";
 
 const Org = ({
@@ -38,8 +38,9 @@ const Org = ({
         <Text
           key={i}
           className={Style.description}
+          links={links}
         >
-          {ParseTextForLinks(line, links)}
+          {line}
         </Text>
       ))}
     </div>

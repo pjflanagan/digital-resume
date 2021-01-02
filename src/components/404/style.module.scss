@@ -6,16 +6,7 @@
   position: fixed;
   background: #06191f;
 
-  .title {
-    font-family: "AmericanCaptain";
-    font-size: 66px;
-    padding: 0 20px;
-    color: #fff;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 50%;
-    transform: translate(0, -50%);
+  .title-container {
     z-index: 3;
   }
 

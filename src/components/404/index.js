@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { LabeledButton, Canvas, Cover } from "../../elements";
+import { LabeledButton, Canvas, Cover, TextPageCenter } from "../../elements";
 import Data404 from "../../content/404";
 
 import { View } from "./view";
@@ -11,7 +11,11 @@ class Page404Content extends React.Component {
     return (
       <div className={Style.content}>
         <Cover />
-        <div className={Style.title}>{Data404.title}</div>
+        <TextPageCenter
+          className={Style.titleContainer}
+          headline={Data404.title}
+          blurb={Data404.subtitle}
+        />
         <div className={`${Style.plane} ${Style.top}`} />
         <div className={`${Style.plane} ${Style.bottom}`} />
         <div className={Style.buttonHolder}>

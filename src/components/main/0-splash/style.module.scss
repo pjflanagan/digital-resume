@@ -8,26 +8,7 @@
 
   .title-container {
     z-index: 1;
-    height: 120px;
-    margin-top: -60px;
-    top: 32%;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    text-shadow: 0px 3px 8px #0009;
-
-    .name {
-      font-family: 'AmericanCaptain';
-      font-size: 66px;
-      padding: 0 20px;
-    }
-
-    .description {
-      font-family: $ubuntu;
-      font-size: 18px;
-      margin-top: -8px;
-      color: $accentYellow;
-    }
+    top: 32% !important;
   }
 
   .button-holder {
@@ -54,13 +35,7 @@
     position: fixed;
 
     .title-container {
-      height: 120px;
-      margin-top: -60px;
-      top: 50%;
-
-      .name {
-        font-size: 80px;
-      }
+      top: 50% !important;
     }
 
     .button-holder {

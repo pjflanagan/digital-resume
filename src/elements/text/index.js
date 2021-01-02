@@ -1,6 +1,6 @@
 import React from "react";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 
+import { ParseTextForLinks } from './parse-text-for-links';
 import Style from "./style.module.scss";
 
 // TextAccent
@@ -45,41 +45,6 @@ const TextFlag = (props) => {
   );
 };
 
-// TextInlineLink
-const TextInlineLink = ({
-  href,
-  className,
-  onMouseOver,
-  onFocus,
-  children,
-}) => {
-  if (!href) {
-    return (
-      <span
-        role="button"
-        tabIndex={0}
-        className={`${Style.textInlineLink} ${className}`}
-        onMouseOver={onMouseOver}
-        onFocus={onFocus}
-      >
-        {children}
-      </span>
-    );
-  }
-  return (
-    <OutboundLink
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={`${Style.textInlineLink} ${className}`}
-      onMouseOver={onMouseOver}
-      onFocus={onFocus}
-    >
-      {children}
-    </OutboundLink>
-  );
-};
-
 // Text
 const Text = (props) => {
   if (!!props.dangerouslySetInnerHTML)
@@ -89,18 +54,33 @@ const Text = (props) => {
         dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
       />
     );
-  return <p className={`${Style.text} ${props.className}`}>{props.children}</p>;
+  return <p className={`${Style.text} ${props.className}`}>{ParseTextForLinks(props.children, props.links, props.callback)}</p>;
 };
+
+// TODO: make this and use it on the Splash slide and 404 page
+const TextPageCenter = ({
+  className,
+  headline,
+  blurb,
+  style
+}) => (
+  <div className={`${Style.textPageCenter} ${className}`} style={style}>
+    <div className={Style.textHeadline}>{headline}</div>
+    <div className={Style.textBlurb}>{blurb}</div>
+  </div>
+);
+
 
 
 export { ParseTextForLinks } from "./parse-text-for-links";
 export { TextType } from "./text-type"
+export { TextInlineLink } from "./text-inline-link";
 export {
   TextAccent,
   TextHeading,
   TextSubHeading,
   TextSubHeading2,
   TextFlag,
-  TextInlineLink,
+  TextPageCenter,
   Text,
 };

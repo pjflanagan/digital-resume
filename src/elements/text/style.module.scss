@@ -73,8 +73,38 @@
   }
 }
 
+.text-page-center {
+  height: 120px;
+  margin-top: -60px;
+  top: 50%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0px 3px 8px #0009;
+
+  .text-headline {
+    font-family: 'AmericanCaptain';
+    font-size: 66px;
+    padding: 0 20px;
+    color: #fff;
+  }
+
+  .text-blurb {
+    font-family: $ubuntu;
+    font-size: 18px;
+    margin-top: -8px;
+    color: $accentYellow;
+  }
+}
+
 @media only screen and (min-width: $md) {
   .text-heading {
     font-size: 46px;
+  }
+
+  .text-page-center {
+    .text-headline {
+      font-size: 80px;
+    }
   }
 }
