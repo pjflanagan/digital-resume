@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <div className={Style.footer}>
       {FooterText.map((linkText, i) => (
-        <div className={Style.textHolder} key={i} links={linkText.links}>
-          <Text>{linkText.text}</Text>
+        <div className={Style.textHolder} key={i}>
+          <Text links={linkText.links}>{linkText.text}</Text>
         </div>
       ))}
     </div>
