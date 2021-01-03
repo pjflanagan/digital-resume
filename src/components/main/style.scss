@@ -1,0 +1,30 @@
+@import "../../elements/variables";
+
+html {
+  body {
+    .container {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      .slides {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) {
+  html {
+    body {
+      .container {
+        .slides {
+          top: 300%;
+        }
+      }
+    }
+  }
+}

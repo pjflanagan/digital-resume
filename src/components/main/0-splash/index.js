@@ -20,10 +20,7 @@ class SlideSplash extends React.Component {
     };
 
     this.elems = {
-      prompt:
-        Main.splash.prompts[
-          Math.floor(Math.random() * Main.splash.prompts.length)
-        ],
+      prompt: Main.splash.prompts[0] // Math.floor(Math.random() * Main.splash.prompts.length)
     };
 
     this.handleScroll = this.handleScroll.bind(this);

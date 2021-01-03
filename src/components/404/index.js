@@ -6,7 +6,7 @@ import Data404 from "../../content/404";
 import { View } from "./view";
 import Style from "./style.module.scss";
 
-class Page404Content extends React.Component {
+class Page404Component extends React.Component {
   render() {
     return (
       <div className={Style.content}>
@@ -30,4 +30,4 @@ class Page404Content extends React.Component {
   }
 }
 
-export { Page404Content };
+export { Page404Component };
