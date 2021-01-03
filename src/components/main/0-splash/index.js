@@ -19,6 +19,13 @@ class SlideSplash extends React.Component {
       scroll: 0,
     };
 
+    this.elems = {
+      prompt:
+        Main.splash.prompts[
+          Math.floor(Math.random() * Main.splash.prompts.length)
+        ],
+    };
+
     this.handleScroll = this.handleScroll.bind(this);
     this.clickToScroll = this.clickToScroll.bind(this);
   }
@@ -69,7 +76,7 @@ class SlideSplash extends React.Component {
             trackerLabel="Splash.clickToScroll"
             onClick={this.clickToScroll}
           >
-            {Main.splash.prompts[0]}
+            {this.elems.prompt}
           </LabeledButton>
         </div>
         <Canvas

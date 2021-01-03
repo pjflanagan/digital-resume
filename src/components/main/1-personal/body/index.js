@@ -24,20 +24,20 @@ class Body extends React.Component {
 
   linkHover(actions) {
     const { photoLinkCallback } = this.props;
-    actions.forEach(({action, param }) => {
-      switch(action) {
+    actions.forEach(({ action, param }) => {
+      switch (action) {
         case "image":
           photoLinkCallback(param);
           break;
         case "text":
           this.setState({
-            language: param
+            language: param,
           });
           break;
         default:
           break;
       }
-    })
+    });
   }
 
   render() {
@@ -46,21 +46,24 @@ class Body extends React.Component {
     return (
       <div className={Style.body}>
         <TextAccent>
+          {/* TODO: TextType should be a wrapper for <Text> rather than inside,
+          then we can type through links and multiple elements, like Accent then Heading,
+          ensure that ParseText returns items that can be wrapped by TypeText */}
           <TextType speed={120} revealed={true}>
             {accent[language]}
           </TextType>
         </TextAccent>
         <TextHeading>
-          {ParseTextForLinks(
-            title_text.text,
-            title_text.links,
-            this.linkHover
-          )}
+          {ParseTextForLinks(title_text.text, title_text.links, this.linkHover)}
         </TextHeading>
         <Text className={Style.bio} links={link_text.links}>
           {link_text.text[0]}
         </Text>
-        <Text className={`${Style.bio} ${Style.additional}`} links={link_text.links} callback={this.linkHover}>
+        <Text
+          className={`${Style.bio} ${Style.additional}`}
+          links={link_text.links}
+          callback={this.linkHover}
+        >
           {link_text.text[1]}
         </Text>
       </div>

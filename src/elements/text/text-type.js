@@ -2,6 +2,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// TODO: make this a wrapper for multiple Text objects so you can do a few in a row
+// Also text objects need thier own min height, instead of this setting the first character thing
+
 class TextType extends React.Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,8 @@ class TextType extends React.Component {
     this.state = {
       typed: "",
     };
+
+    this.timeoutID = 0;
 
     this.type = this.type.bind(this);
   }
@@ -32,13 +37,14 @@ class TextType extends React.Component {
   }
 
   type(nextCharIndex) {
+    clearTimeout(this.timeoutID);
     const typed = nextCharIndex === 0 ? '' : this.state.typed;
     const { children, speed } = this.props;
     this.setState({
       typed: typed + children[nextCharIndex],
     });
     if (nextCharIndex !== children.length - 1) {
-      setTimeout(() => this.type(nextCharIndex + 1), speed);
+      this.timeoutID = setTimeout(() => this.type(nextCharIndex + 1), speed);
     }
   }
 
