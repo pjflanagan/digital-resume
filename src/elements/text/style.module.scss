@@ -83,7 +83,7 @@
   text-shadow: 0px 3px 8px #0009;
 
   .text-headline {
-    font-family: 'AmericanCaptain';
+    font-family: "AmericanCaptain";
     font-size: 66px;
     padding: 0 20px;
     color: #fff;
@@ -94,6 +94,58 @@
     font-size: 18px;
     margin-top: -8px;
     color: $accentYellow;
+  }
+}
+
+a.text-linked-header-link {
+  color: $accentYellow;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+
+  .text-linked-header {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 0 10px;
+  }
+
+  &:hover {
+    color: $accentYellowHover;
+
+    span.arrow {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  span.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid $accentYellow;
+    border-top: 1px solid $accentYellow;
+    position: absolute;
+    margin-left: 12px;
+    margin-top: 2px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+
+    &.cyan {
+      border-right: 1px solid $accentCyan;
+      border-top: 1px solid $accentCyan;
+
+      &:before {
+        border-top: 1px solid $accentCyan;
+      }
+    }
+
+    &:before {
+      content: "";
+      width: 14px;
+      height: 5px;
+      border-top: 1px solid $accentYellow;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 4px;
+      right: -3px;
+    }
   }
 }
 

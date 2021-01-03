@@ -6,20 +6,20 @@
      "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
      "image": "umich.jpg",
      "description": [
-        "Web Databases and Information Systems, Computer Architecture, Data Structures and Algorithms, User Interface Design"
+        "Web Databases and Information Systems, User Interface Design, Data Structures and Algorithms, Computer Architecture"
      ],
      "background": "#00274c",
      "color": "#00274c",
      "extra": [
         {
            "name": "The Every Three Weekly",
-           "role": "Editor-In-Chief, Lead Graphic Designer",
+           "position": "Editor-In-Chief, Lead Graphic Designer",
            "description": "Wrote and edited articles for U-M humor and satire magazine",
            "link": "//everythreeweekly.com"
         },
         {
            "name": "Michigan Running Club",
-           "role": "Webmaster, Runner",
+           "position": "Webmaster, Runner",
            "description": "Developed and managed club website with Bootstrap and PHP",
            "link": "//mrun.clubrunning.org"
         }
@@ -38,7 +38,7 @@
        }
      ],
      "description": [
-        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, PA State Computer Fair Finalist"
+        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, Pennsylvania State Computer Fair Finalist"
      ],
      "background": "#1c4b98",
      "color": "#1c4b98"

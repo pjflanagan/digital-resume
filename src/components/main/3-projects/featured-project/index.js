@@ -1,11 +1,9 @@
 import React from "react";
 import Img from "gatsby-image";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import { Reveal, FrameHolder, Text } from "../../../../elements";
+import { Reveal, FrameHolder, Text, TextLinkedHeader } from "../../../../elements";
 import { FindImage } from "../../../../content";
 
-import { Arrow } from "../index";
 import Style from "./style.module.scss";
 
 class FeaturedProject extends Reveal {
@@ -26,12 +24,7 @@ class FeaturedProject extends Reveal {
           />
         </FrameHolder>
         <div className={Style.info}>
-          <OutboundLink href={`//${link}`} target="_blank" rel="noreferrer">
-            <h2 className={Style.name}>
-              {name}
-              <Arrow />
-            </h2>
-          </OutboundLink>
+          <TextLinkedHeader href={`//${link}`}>{name}</TextLinkedHeader>
           <Text>{description}</Text>
           <div className={Style.techStackHolder}>
             {tech.map((item) => (

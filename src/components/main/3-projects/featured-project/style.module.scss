@@ -40,22 +40,6 @@
     padding: 14px;
     transform: translate(0px, -100%);
 
-    a {
-      color: $accentYellow;
-      transition: 0.2s;
-      -webkit-transition: 0.2s;
-
-      h2 {
-        font-size: 20px;
-        padding: 0 0 10px;
-        font-weight: 500;
-      }
-
-      &:hover {
-        color: $accentYellowHover;
-      }
-    }
-
     .tech-stack-holder {
       display: none;
     }
@@ -104,10 +88,6 @@
       filter: opacity(1);
       transition: transform 0.4s, filter 0.4s;
       -webkit-transition: transform 0.4s, filter 0.4s;
-
-      h2 {
-        font-size: 24px;
-      }
 
       .tech-stack-holder {
         display: flex;

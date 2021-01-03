@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ParseTextForLinks } from './parse-text-for-links';
+import { ParseTextForLinks } from "./parse-text-for-links";
 import Style from "./style.module.scss";
 
 // TextAccent
@@ -54,27 +54,24 @@ const Text = (props) => {
         dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
       />
     );
-  return <p className={`${Style.text} ${props.className}`}>{ParseTextForLinks(props.children, props.links, props.callback)}</p>;
+  return (
+    <p className={`${Style.text} ${props.className}`}>
+      {ParseTextForLinks(props.children, props.links, props.callback)}
+    </p>
+  );
 };
 
-// TODO: make this and use it on the Splash slide and 404 page
-const TextPageCenter = ({
-  className,
-  headline,
-  blurb,
-  style
-}) => (
+const TextPageCenter = ({ className, headline, blurb, style }) => (
   <div className={`${Style.textPageCenter} ${className}`} style={style}>
     <div className={Style.textHeadline}>{headline}</div>
     <div className={Style.textBlurb}>{blurb}</div>
   </div>
 );
 
-
-
 export { ParseTextForLinks } from "./parse-text-for-links";
-export { TextType } from "./text-type"
+export { TextType } from "./text-type";
 export { TextInlineLink } from "./text-inline-link";
+export { TextLinkedHeader } from "./text-linked-header";
 export {
   TextAccent,
   TextHeading,

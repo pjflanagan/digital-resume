@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { FrameHolder, Reveal } from "../../../../elements";
 import { FindImage } from "../../../../content";
 
-// import { BillCypher } from "./bill-cypher";
+// TODO: import { BillCypher } from "./bill-cypher"; ?
 import Style from "./style.module.scss";
 
 class Photo extends Reveal {

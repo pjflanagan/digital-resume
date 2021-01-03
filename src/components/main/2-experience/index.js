@@ -57,7 +57,6 @@ const SlideExperience = ({ data }) => {
         </ShowMore>
 
         <TextSubHeading>{Main.experience.sections[1]}</TextSubHeading>
-        {/* TODO: kinda want my extracurriculars here still */}
         {Main.experience.schools.map((school, i) => (
           <Org
             key={i}
@@ -71,6 +70,7 @@ const SlideExperience = ({ data }) => {
             data={data}
             color={school.color}
             background={school.background}
+            extra={school.extra}
           />
         ))}
 
