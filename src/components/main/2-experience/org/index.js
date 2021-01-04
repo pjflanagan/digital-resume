@@ -35,7 +35,7 @@ const Org = ({
       </div>
     </div>
     <div className={Style.orgRight}>
-      {position && <div className={Style.position}>{position}</div>}
+      {!!position && <div className={Style.position}>{position}</div>}
       {description.map((line, i) => (
         <Text key={i} className={Style.description} links={links}>
           {line}

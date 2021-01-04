@@ -38,7 +38,7 @@ const SlideExperience = ({ data }) => {
             background={job.background}
           />
         ))}
-        <ShowMore trackerLabel="Experience.showMore">
+        <ShowMore trackerLabel="Experience.showMore.work">
           {Main.experience.jobs.other.map((job, i) => (
             <Org
               key={i}
@@ -57,7 +57,7 @@ const SlideExperience = ({ data }) => {
         </ShowMore>
 
         <TextSubHeading>{Main.experience.sections[1]}</TextSubHeading>
-        {Main.experience.schools.map((school, i) => (
+        {Main.experience.schools.featured.map((school, i) => (
           <Org
             key={i}
             name={school.name}
@@ -73,6 +73,24 @@ const SlideExperience = ({ data }) => {
             extra={school.extra}
           />
         ))}
+        <ShowMore trackerLabel="Experience.showMore.school">
+          {Main.experience.schools.other.map((school, i) => (
+            <Org
+              key={i}
+              name={school.name}
+              location={school.location}
+              time={school.class}
+              links={school.links}
+              description={school.description}
+              position={school.degree}
+              image={school.image}
+              data={data}
+              color={school.color}
+              background={school.background}
+              extra={school.extra}
+            />
+          ))}
+        </ShowMore>
 
         <TextSubHeading>{Main.experience.sections[2]}</TextSubHeading>
         <Skills />

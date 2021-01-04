@@ -1,46 +1,59 @@
-[
-  {
-     "name": "University of Michigan",
-     "location": "Ann Arbor, MI",
-     "class": "Class of 2018",
-     "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
-     "image": "umich.jpg",
-     "description": [
+{
+  "featured": [
+    {
+      "name": "University of Michigan",
+      "location": "Ann Arbor, MI",
+      "class": "Class of 2018",
+      "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
+      "image": "umich.jpg",
+      "description": [
         "Web Databases and Information Systems, User Interface Design, Data Structures and Algorithms, Computer Architecture"
-     ],
-     "background": "#00274c",
-     "color": "#00274c",
-     "extra": [
+      ],
+      "background": "#00274c",
+      "color": "#00274c",
+      "extra": [
         {
-           "name": "The Every Three Weekly",
-           "position": "Editor-In-Chief, Lead Graphic Designer",
-           "description": "Wrote and edited articles for U-M humor and satire magazine",
-           "link": "//everythreeweekly.com"
+          "name": "The Every Three Weekly",
+          "position": "Editor-In-Chief, Lead Graphic Designer",
+          "description": "Wrote and edited articles for U-M humor and satire magazine",
+          "link": "//everythreeweekly.com"
         },
         {
-           "name": "Michigan Running Club",
-           "position": "Webmaster, Runner",
-           "description": "Developed and managed club website with Bootstrap and PHP",
-           "link": "//mrun.clubrunning.org"
+          "name": "Michigan Running Club",
+          "position": "Webmaster, Runner",
+          "description": "Developed and managed club website with Bootstrap and PHP",
+          "link": "//mrun.clubrunning.org"
         }
-     ]
-  },
-  {
-     "name": "Great Valley High School",
-     "location": "Malvern, PA",
-     "class": "Class of 2014",
-     "image": "gvhs.png",
-     "links": [
-       {
-         "key": "baccalaureate_speaker",
-         "href": "//youtube.com/watch?v=MaLZTBOxGMI",
-         "text": "Baccalaureate Speaker"
-       }
-     ],
-     "description": [
+      ]
+    }
+  ],
+  "other": [
+    {
+      "name": "Great Valley High School",
+      "location": "Malvern, PA",
+      "class": "Class of 2014",
+      "image": "gvhs.png",
+      "links": [
+        {
+          "key": "baccalaureate_speaker",
+          "href": "//youtube.com/watch?v=MaLZTBOxGMI",
+          "text": "Baccalaureate Speaker"
+        }
+      ],
+      "description": [
         "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, Pennsylvania State Computer Fair Finalist"
-     ],
-     "background": "#1c4b98",
-     "color": "#1c4b98"
-  }
-]
+      ],
+      "background": "#1c4b98",
+      "color": "#1c4b98"
+    },
+    {
+      "name": "Drexel University Computing Academy",
+      "location": "Philadelphia, PA",
+      "class": "Summer 2012",
+      "image": "gvhs.png",
+      "description": [],
+      "background": "",
+      "color": ""
+    }
+  ]
+}
