@@ -45,7 +45,9 @@
       ],
       "background": "#1c4b98",
       "color": "#1c4b98"
-    },
+    }
+  ],
+  "hidden": [
     {
       "name": "Drexel University Computing Academy",
       "location": "Philadelphia, PA",
