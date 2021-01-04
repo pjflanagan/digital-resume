@@ -79,7 +79,7 @@ export default {
     accent: "Let's make",
     title: "Contact!",
     text:
-      "While I'm not currently seeking new opportunities, feel free to reach out. I'll try my best to phone back!",
+      "I'm seeking new opportunities! Feel free to reach out and I'll do my best to phone back!",
     links: [
       {
         icon: "email",
