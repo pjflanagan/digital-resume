@@ -4,7 +4,7 @@
       "name": "bamboo",
       "type": "individual",
       "link": "app.bamboolearn.com",
-      "description": "Developed web app and Chrome extension to help study Mandarin.  Users can add words to they are learning to thier library, and are shown words every time they open a new tab in Chrome.\n",
+      "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
       "tech": ["Mongodb Stitch", "React", "Chrome Dev"]
     },
@@ -20,7 +20,7 @@
       "name": "Space Fighters",
       "type": "team/individual",
       "link": "simple-socket-game.herokuapp.com/",
-      "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your teams score, get taken out and the other team steals your points.\n",
+      "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
       "image": "spacefighters.jpg",
       "tech": ["Socket.io", "Phaser.js"]
     }
@@ -30,14 +30,14 @@
       "name": "MTA Clock",
       "type": "individual",
       "link": "github.com/pjflanagan/MTA",
-      "description": "Created a cuckoo-style wall clock to track subways at my stop using an AWS Lambda and Arduino",
+      "description": "Created a cuckoo-style wall clock to track subways at my stop using an AWS Lambda and Arduino.",
       "image": "mta.png"
     },
     {
       "name": "earlybird",
       "type": "individual",
       "link": "github.com/pjflanagan/early-bird-twitter",
-      "description": "Designed and developed website that allows users to draft and schedule tweets using Python Flask on Heroku",
+      "description": "Designed and developed website that allows users to draft and schedule tweets using Flask on Heroku.",
       "image": "earlybird.png"
     },
     {
@@ -58,7 +58,7 @@
       "name": "Canvas Animations",
       "type": "individual",
       "link": "pjflanagan.github.io/HTML5Canvas/",
-      "description": "Designed an array of animated visuals using the HTML5 Canvas. One of the best uses of computers is for art, and making animations like the one on this page is my favorite mediums.\n",
+      "description": "Designed an array of animated visuals using the HTML5 Canvas.\n",
       "image": "animations.png"
     },
     {
@@ -86,7 +86,7 @@
       "name": "ML Asteroids",
       "type": "individual",
       "link": "github.com/pjflanagan/Machine-Learning-Asteroids/",
-      "description": "Attempted to teach the game Asteroids to a computer using JavaScript and Phaser",
+      "description": "Attempted to teach the game Asteroids to a computer using JavaScript and Phaser.",
       "image": "asteroids.png"
     }
   ]
