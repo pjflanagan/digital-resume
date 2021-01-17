@@ -1,0 +1,41 @@
+@import '../variables';
+
+.form {
+
+  .form-field {
+    background: $backgroundDarkOpaque;
+    outline: none;
+    border: 0px;
+    width: 100%;
+    margin: 6px 0;
+    padding: 12px;
+    color: #fff;
+    font-family: $ubuntu;
+    font-size: 16px;
+    font-weight: 300;
+
+    &::placeholder {
+      color: $offWhite;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: $offWhite;
+    }
+
+    &::-ms-input-placeholder {
+      color: $offWhite;
+    }
+
+    &::selection {
+      background: $accentYellowHover;
+      color: $backgroundDark;
+    }
+
+
+  }
+
+  textarea {
+    resize: none;
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../../../elements/variables";
+
+.card {
+  width: 100%;
+  padding: 36px 12px;
+
+  .card-sides {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column-reverse;
+
+    .side-left {
+      width: 100%;
+      margin: 0 auto;
+
+      .link-holder {
+        .button-holder {
+          margin: 18px 0;
+        }
+      }
+    }
+
+    .side-right {
+      width: 100%;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: $md) {}
+
+// xl
+@media only screen and (min-width: $xl) {
+  .card {
+    width: 60%;
+    margin: 0 auto;
+    height: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: none;
+    z-index: 2;
+    position: relative;
+    background: $backgroundDarkOpaque;
+    clip-path: $polygon;
+    max-width: 600px;
+
+    .front-left {
+      width: 100%;
+      padding: 42px;
+
+      .link-holder {
+        display: block;
+        flex-wrap: nowrap;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+}
