@@ -1,20 +1,39 @@
 import React from 'react';
+import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
 import { LabeledButtonForm } from '../button';
 
 import Style from './style.module.scss';
 
 class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    trackCustomEvent({
+      category: "form",
+      action: "submit",
+      label: this.props.trackerLabel,
+    });
+    this.props.onSubmit();
+  }
+
   render() {
     const {
-      children
+      children,
+      name
     } = this.props;
     return (
       <div className={Style.formContent}>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          this.props.onSubmit();
-        }} className={Style.form}>
+        <form
+          onSubmit={this.onSubmit}
+          className={Style.form}
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          name={name}>
           <span>
             {children}
           </span>
