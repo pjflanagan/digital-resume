@@ -5,7 +5,7 @@
   .form-field {
     background: $backgroundDarkOpaque;
     outline: none;
-    border: 0px;
+    border: 1px solid #FFF0;
     width: 100%;
     margin: 6px 0;
     padding: 12px;
@@ -15,21 +15,27 @@
     font-weight: 300;
 
     &::placeholder {
-      color: $offWhite;
+      color: $whiteOpaque;
       opacity: 1;
     }
 
     &:-ms-input-placeholder {
-      color: $offWhite;
+      color: $whiteOpaque;
     }
 
     &::-ms-input-placeholder {
-      color: $offWhite;
+      color: $whiteOpaque;
     }
 
     &::selection {
       background: $accentYellowHover;
       color: $backgroundDark;
+    }
+
+    &.error {
+      border: 1px solid $warnOrange;
+      color: $warnOrange;
+      background: $warnLightOpaque;
     }
 
 
