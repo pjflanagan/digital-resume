@@ -168,6 +168,7 @@ class Card extends React.Component {
               error={this.findError('submit')} // TODO: this error goes at the bottom
               isSubmitted={isSubmitted}
               trackerLabel="Contact.formSubmit"
+              name="contact"
             >
               <FormText
                 placeholder="Name"
