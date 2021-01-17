@@ -1,7 +1,11 @@
 import React from "react";
 
 import { Main } from "../../../../content";
-import { LabeledButton, TextAccent, TextHeading, Text, Form, FormText, FormMessage } from "../../../../elements";
+import {
+  LabeledButton,
+  TextAccent, TextHeading, Text,
+  Form, FormText, FormMessage, FormButton
+} from "../../../../elements";
 import { encode } from "../../../../helpers";
 
 import Style from "./style.module.scss";
@@ -55,6 +59,7 @@ class Card extends React.Component {
     this.fetch = this.fetch.bind(this);
     this.success = this.success.bind(this);
     this.error = this.error.bind(this);
+    this.findError = this.findError.bind(this);
   }
 
   // on a field change
@@ -84,7 +89,7 @@ class Card extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(this.success)
+      .then(() => this.success())
       .catch(error => this.error({
         field: "submit",
         message: error
@@ -94,6 +99,7 @@ class Card extends React.Component {
   // error
   error(errorMessages) {
     console.log("ERROR", errorMessages);
+    console.log(this);
     this.setState({
       errorMessages: errorMessages,
     });
@@ -114,7 +120,7 @@ class Card extends React.Component {
   // find error in error array
   findError(field) {
     const { errorMessages } = this.state;
-    if (!!errorMessages || errorMessages.length === 0) {
+    if (!errorMessages || errorMessages.length === 0) {
       return "";
     }
     const error = errorMessages.find(error => error.field === field);
@@ -159,10 +165,6 @@ class Card extends React.Component {
           <div className={Style.sideRight}>
             <Form
               onSubmit={this.onSubmit}
-              prompt="Send"
-              promptSubmitted="Sent"
-              icon="send"
-              iconSubmitted="check"
               error={this.findError('submit')} // TODO: this error goes at the bottom
               isSubmitted={isSubmitted} // TODO: change the success promt
             >
@@ -188,6 +190,15 @@ class Card extends React.Component {
                 value={message}
                 error={this.findError('message')}
                 onChange={(e) => this.onChange(e, 'message')}
+              />
+              <FormButton
+                isSubmitted={isSubmitted}
+                prompt="Send"
+                promptSubmitted="Sent"
+                icon="send"
+                iconSubmitted="check"
+                onMouseEnter={() => this.props.setContactOnCallback(true)}
+                onMouseLeave={() => this.props.setContactOnCallback(false)}
               />
             </Form>
           </div>
