@@ -1,0 +1,78 @@
+@import '../variables';
+
+.form-content {
+  .form {
+    .form-field {
+      background: $backgroundDarkOpaque;
+      outline: none;
+      border: 1px solid #FFF0;
+      width: 100%;
+      margin: 6px 0;
+      padding: 12px;
+      color: #fff;
+      font-family: $ubuntu;
+      font-size: 16px;
+      font-weight: 300;
+      // clip-path: $polygonSmall;
+
+      &::placeholder {
+        color: $whiteOpaque;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: $whiteOpaque;
+      }
+
+      &::-ms-input-placeholder {
+        color: $whiteOpaque;
+      }
+
+      &::selection {
+        background: $accentYellowHover;
+        color: $backgroundDark;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        border: 1px solid $accentCyan;
+        -webkit-text-fill-color: $white;
+        -webkit-box-shadow: 0 0 0px 1000px $backgroundDarkOpaque inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
+      &.error {
+        border: 1px solid $warnOrange;
+        color: $warnOrange;
+        background: $warnLightOpaque;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .submit-holder {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-top: 12px;
+    }
+
+    .error-holder {
+      min-height: 12px;
+
+      p {
+        padding-bottom: 0px !important;
+      }
+    }
+
+  }
+}

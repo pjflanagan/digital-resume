@@ -1,37 +1,36 @@
 import React from "react";
 
 // Usage
-// 1. define scrollRef = React.createRef() on a parent element of ExtendsScrollComponent.render()
-// 2. pass 'scrollRef' and 'end' into <ExtendsScrollComponent scrollRef={scrollRef} end={scrollLength} />
-// 3. use state.windowScroll or state.relativeScroll in render()
+// 1. pass 'scrollRef' into <ExtendsScrollComponent scrollRef={React.createRef()} /> on parent
+// 2. use state.windowScroll or state.relativeScroll in render()
 class Scroll extends React.Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
+		this.ref = React.createRef();
 
-    this.state = {
-      windowScroll: 0,
-      relativeScroll: 0
-    };
+		this.state = {
+			windowScroll: 0,
+			relativeScroll: 0
+		};
 
-    this.handleScroll = this.handleScroll.bind(this);
-  }
+		this.handleScroll = this.handleScroll.bind(this);
+	}
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
 
-  handleScroll(e) {
-    const { scrollRef } = this.props.scrollRef;
-    const bounds = scrollRef.current.getBoundingClientRect();
-    this.setState({
-      windowScroll: window.scrollY,
-      relativeScroll: bounds.top
-    });
-  }
+	handleScroll(e) {
+		const bounds = this.ref.current.getBoundingClientRect();
+		this.setState({
+			windowScroll: window.scrollY,
+			relativeScroll: bounds.top
+		});
+	}
 }
 
 export { Scroll };

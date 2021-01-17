@@ -1,5 +1,16 @@
-
 @import '../variables';
+
+
+.button-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+}
 
 .labeled-button {
   position: relative;
@@ -38,15 +49,15 @@
     transition: 0.2s;
 
     .svg-holder {
-      width: 36px;
+      width: 32px;
       height: 100%;
-      padding: 4px;
-      
+      padding: 4px 30px 4px 0;
+
       svg {
         width: 20px;
         height: 20px;
         stroke: $accentYellow;
-  
+
         path {
           fill: $accentYellow;
           -webkit-transition: 0.2s;
@@ -67,19 +78,24 @@
     }
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     outline: none;
+
     &:after {
       width: calc(100% + 8px);
       height: calc(100% + 8px);
     }
+
     .holder {
       background: $backgroundLightHover;
+
       svg {
         path {
           fill: $accentYellowHover;
         }
       }
+
       .name {
         color: #e4f03c;
       }

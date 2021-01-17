@@ -14,22 +14,22 @@ const ScrollMain = Scroll.Element;
 
 // markup
 class MainComponent extends React.Component {
-  render() {
-    const { data } = this.props;
-    return (
-      <div className="container">
-        <Cover />
-        <SlideSplash />
-        <ScrollMain className="slides" name="slides">
-          <SlidePersonal data={data} />
-          <SlideExperience data={data} />
-          <SlideProjects data={data} />
-          <SlideContact data={data} />
-          <Footer />
-        </ScrollMain>
-      </div>
-    );
-  }
+	render() {
+		const { data } = this.props;
+		return (
+			<div className="container">
+				<Cover />
+				<SlideSplash />
+				<ScrollMain className="slides" name="slides">
+					<SlidePersonal data={data} />
+					<SlideExperience data={data} />
+					<SlideProjects data={data} />
+					<SlideContact data={data} />
+					<Footer />
+				</ScrollMain>
+			</div>
+		);
+	}
 }
 
 export { MainComponent };

@@ -16,6 +16,28 @@ import Style from "./style.module.scss";
 //   );
 // };
 
+const LabeledButtonForm = ({
+  children,
+  onMouseEnter,
+  onMouseLeave
+}) => {
+  return (
+    <button
+      className={`${Style.labeledButton} ${Style.buttonReset}`}
+      type="submit"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className={Style.holder}>
+        <div className={Style.svgHolder}>
+          <SVGIcon icon="saturn" />
+        </div>
+        <div className={Style.name}>{children}</div>
+      </div>
+    </button>
+  );
+};
+
 const LabeledButtonLinked = ({
   icon,
   onMouseEnter,
@@ -119,4 +141,4 @@ const LabeledButton = (props) => {
   );
 };
 
-export { LabeledButton }; // RoundButton
+export { LabeledButton, LabeledButtonForm }; // RoundButton
