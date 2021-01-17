@@ -35,6 +35,8 @@ class Form extends React.Component {
           data-netlify="true"
           name={name}>
           <span>
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value={name} />
             {children}
           </span>
         </form>
