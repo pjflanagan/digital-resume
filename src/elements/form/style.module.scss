@@ -1,47 +1,62 @@
 @import '../variables';
 
-.form {
+.form-content {
+  .form {
+    .form-field {
+      background: $backgroundDarkOpaque;
+      outline: none;
+      border: 1px solid #FFF0;
+      width: 100%;
+      margin: 6px 0;
+      padding: 12px;
+      color: #fff;
+      font-family: $ubuntu;
+      font-size: 16px;
+      font-weight: 300;
 
-  .form-field {
-    background: $backgroundDarkOpaque;
-    outline: none;
-    border: 1px solid #FFF0;
-    width: 100%;
-    margin: 6px 0;
-    padding: 12px;
-    color: #fff;
-    font-family: $ubuntu;
-    font-size: 16px;
-    font-weight: 300;
+      &::placeholder {
+        color: $whiteOpaque;
+        opacity: 1;
+      }
 
-    &::placeholder {
-      color: $whiteOpaque;
-      opacity: 1;
+      &:-ms-input-placeholder {
+        color: $whiteOpaque;
+      }
+
+      &::-ms-input-placeholder {
+        color: $whiteOpaque;
+      }
+
+      &::selection {
+        background: $accentYellowHover;
+        color: $backgroundDark;
+      }
+
+      &.error {
+        border: 1px solid $warnOrange;
+        color: $warnOrange;
+        background: $warnLightOpaque;
+      }
     }
 
-    &:-ms-input-placeholder {
-      color: $whiteOpaque;
+    textarea {
+      resize: none;
     }
 
-    &::-ms-input-placeholder {
-      color: $whiteOpaque;
+    .submit-holder {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-top: 12px;
     }
 
-    &::selection {
-      background: $accentYellowHover;
-      color: $backgroundDark;
+    .error-holder {
+      min-height: 12px;
+
+      p {
+        padding-bottom: 0px !important;
+      }
     }
 
-    &.error {
-      border: 1px solid $warnOrange;
-      color: $warnOrange;
-      background: $warnLightOpaque;
-    }
-
-
-  }
-
-  textarea {
-    resize: none;
   }
 }

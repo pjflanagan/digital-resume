@@ -2,7 +2,6 @@
 
 .card {
   width: 100%;
-  padding: 36px 12px;
 
   .card-sides {
     width: 100%;
@@ -12,7 +11,7 @@
 
     .side-left {
       width: 100%;
-      margin: 0 auto;
+      padding: 36px 12px 0;
 
       .link-holder {
         .button-holder {
@@ -23,13 +22,11 @@
 
     .side-right {
       width: 100%;
+      padding: 0 12px 36px;
     }
   }
 }
 
-
-
-@media only screen and (min-width: $md) {}
 
 // xl
 @media only screen and (min-width: $xl) {
@@ -39,24 +36,33 @@
     height: auto;
     top: 50%;
     transform: translate(0, -50%);
-    background: none;
     z-index: 2;
     position: relative;
     background: $backgroundDarkOpaque;
     clip-path: $polygon;
-    max-width: 600px;
+    max-width: $lg;
 
-    .front-left {
-      width: 100%;
-      padding: 42px;
-
-      .link-holder {
-        display: block;
-        flex-wrap: nowrap;
+    .card-sides {
+      .side-left {
         width: 50%;
-        margin: 0 auto;
+        padding: 36px;
+
+        .link-holder {
+          display: block;
+          flex-wrap: nowrap;
+          margin: 0 auto;
+        }
+      }
+
+      .side-right {
+        width: 50%;
+        padding: 36px;
+        background: $backgroundDark2Opaque;
+        clip-path: $polygon;
       }
     }
+
+
   }
 
 }

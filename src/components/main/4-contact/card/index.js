@@ -7,14 +7,6 @@ import Style from "./style.module.scss";
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
-const ContactTitle = () => (
-  <span>
-    <TextAccent>{Main.contact.accent}</TextAccent>
-    <TextHeading>{Main.contact.title}</TextHeading>
-    <Text>{Main.contact.text}</Text>
-  </span>
-);
-
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -77,7 +69,7 @@ class Card extends React.Component {
     if (!EMAIL_REGEX.test(email)) {
       errorMessages.push({
         field: 'email',
-        message: "This email looks invalid?"
+        message: "This email looks invalid."
       });
     }
 
@@ -125,10 +117,11 @@ class Card extends React.Component {
 
     return (
       <div className={Style.card}>
-        <ContactTitle />
         <div className={Style.cardSides}>
           <div className={Style.sideLeft}>
-            {/* <ContactTitle /> */}
+            <TextAccent>{Main.contact.accent}</TextAccent>
+            <TextHeading>{Main.contact.title}</TextHeading>
+            <Text>{Main.contact.text}</Text>
             <div className={Style.linkHolder}>
               {Main.contact.links.map((link, i) => (
                 <div
@@ -148,10 +141,28 @@ class Card extends React.Component {
             </div>
           </div>
           <div className={Style.sideRight}>
-            <Form onSubmit={(e) => this.onSubmit(e)} errorMessages={errorMessages}>
-              <FormText placeholder="Name" type="name" value={name} error={this.findError('name')} onChange={(e) => this.onChange(e, 'name')} />
-              <FormText placeholder="Email" type="email" value={email} error={this.findError('email')} onChange={(e) => this.onChange(e, 'email')} />
-              <FormMessage placeholder="Message" value={message} error={this.findError('message')} onChange={(e) => this.onChange(e, 'message')} />
+            <Form
+              onSubmit={(e) => this.onSubmit(e)}
+            >
+              <FormText
+                placeholder="Name"
+                type="name" value={name}
+                error={this.findError('name')}
+                onChange={(e) => this.onChange(e, 'name')}
+              />
+              <FormText
+                placeholder="Email"
+                type="email"
+                value={email}
+                error={this.findError('email')}
+                onChange={(e) => this.onChange(e, 'email')}
+              />
+              <FormMessage
+                placeholder="Message"
+                value={message}
+                error={this.findError('message')}
+                onChange={(e) => this.onChange(e, 'message')}
+              />
             </Form>
           </div>
         </div>
