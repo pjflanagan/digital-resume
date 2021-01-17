@@ -40,17 +40,16 @@
     width: 690px;
     display: inline-block;
     // clip-path: $polygon;
-    transition: transform 0.2s;
+    transition: transform 0.4s;
 
     .card-sides {
       width: auto;
 
       .side-left {
-        width: 40%;
         padding: 36px;
         z-index: 2;
         background: $backgroundDarkOpaque;
-        width: 275px;
+        width: 276px;
 
         .link-holder {
           display: block;
@@ -60,11 +59,11 @@
       }
 
       .side-right {
-        width: 415px;
+        width: 414px;
         padding: 36px;
         background: $backgroundDark2Opaque;
         // clip-path: $polygon;
-        transition: transform 0.2s;
+        transition: transform 0.4s;
       }
     }
 

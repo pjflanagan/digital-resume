@@ -52,6 +52,9 @@ class Card extends React.Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.fetch = this.fetch.bind(this);
+    this.success = this.success.bind(this);
+    this.error = this.error.bind(this);
   }
 
   // on a field change
@@ -64,8 +67,7 @@ class Card extends React.Component {
   }
 
   // on form submit
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit() {
     const [isValid, errorMessages] = validate(this.state);
     if (!isValid) {
       this.error(errorMessages);
@@ -76,6 +78,7 @@ class Card extends React.Component {
 
   // fetch resource
   fetch() {
+    console.log("FETCH");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -90,6 +93,7 @@ class Card extends React.Component {
 
   // error
   error(errorMessages) {
+    console.log("ERROR", errorMessages);
     this.setState({
       errorMessages: errorMessages,
     });
@@ -97,6 +101,7 @@ class Card extends React.Component {
 
   // when successful
   success() {
+    console.log("SUCCESS");
     this.setState({
       errorMessages: [],
       name: "",
@@ -108,7 +113,11 @@ class Card extends React.Component {
 
   // find error in error array
   findError(field) {
-    const error = this.state.errorMessages.find(error => error.field === field);
+    const { errorMessages } = this.state;
+    if (!!errorMessages || errorMessages.length === 0) {
+      return "";
+    }
+    const error = errorMessages.find(error => error.field === field);
     return !!error ? error.message : "";
   }
 
@@ -149,7 +158,7 @@ class Card extends React.Component {
           </div>
           <div className={Style.sideRight}>
             <Form
-              onSubmit={(e) => this.onSubmit(e)}
+              onSubmit={this.onSubmit}
               prompt="Send"
               promptSubmitted="Sent"
               icon="send"
