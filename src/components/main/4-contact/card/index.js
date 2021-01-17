@@ -83,7 +83,6 @@ class Card extends React.Component {
 
   // fetch resource
   fetch() {
-    console.log("FETCH");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -98,8 +97,6 @@ class Card extends React.Component {
 
   // error
   error(errorMessages) {
-    console.log("ERROR", errorMessages);
-    console.log(this);
     this.setState({
       errorMessages: errorMessages,
     });
@@ -107,14 +104,17 @@ class Card extends React.Component {
 
   // when successful
   success() {
-    console.log("SUCCESS");
     this.setState({
       errorMessages: [],
       name: "",
       email: "",
       message: "",
-      isSubmitted: true
     });
+    setTimeout(() => {
+      this.setState({
+        isSubmitted: true
+      });
+    }, 600);
   }
 
   // find error in error array

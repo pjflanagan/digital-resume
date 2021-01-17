@@ -33,6 +33,21 @@
         color: $backgroundDark;
       }
 
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        border: 1px solid $accentCyan;
+        -webkit-text-fill-color: $white;
+        -webkit-box-shadow: 0 0 0px 1000px $backgroundDarkOpaque inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
       &.error {
         border: 1px solid $warnOrange;
         color: $warnOrange;

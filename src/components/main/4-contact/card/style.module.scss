@@ -23,6 +23,20 @@
     .side-right {
       width: 100%;
       padding: 0 12px 36px;
+      transition: transform 0.4s;
+      // max-height: 400px;
+    }
+  }
+
+  &.is-submitted {
+
+    .card-sides {
+      .side-right {
+        // max-height: 0;
+        // overflow: hidden;
+        // padding: 0px 12px;
+        filter: opacity(0.4);
+      }
     }
   }
 }
@@ -62,8 +76,8 @@
         width: 414px;
         padding: 36px;
         background: $backgroundDark2Opaque;
+        z-index: 1;
         // clip-path: $polygon;
-        transition: transform 0.4s;
       }
     }
 
@@ -72,9 +86,8 @@
 
       .card-sides {
         .side-right {
-          filter: opacity(0.4);
+          height: auto;
           transform: translate(-120px, 0);
-          z-index: 1;
           pointer-events: none;
         }
       }
