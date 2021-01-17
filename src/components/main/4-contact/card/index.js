@@ -2,10 +2,41 @@ import React from "react";
 
 import { Main } from "../../../../content";
 import { LabeledButton, TextAccent, TextHeading, Text, Form, FormText, FormMessage } from "../../../../elements";
+import { encode } from "../../../../helpers";
 
 import Style from "./style.module.scss";
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
+
+const validate = ({ name, email, message }) => {
+  const errorMessages = [];
+
+  if (name.length === 0) {
+    errorMessages.push({
+      field: 'name',
+      message: "Let me know your name."
+    });
+  }
+
+  if (!EMAIL_REGEX.test(email)) {
+    errorMessages.push({
+      field: 'email',
+      message: "This email looks invalid."
+    });
+  }
+
+  if (message.length === 0) {
+    errorMessages.push({
+      field: 'message',
+      message: "Be sure to leave a note."
+    });
+  }
+
+  return [
+    errorMessages.length === 0,
+    errorMessages
+  ];
+}
 
 class Card extends React.Component {
   constructor(props) {
@@ -23,75 +54,48 @@ class Card extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  // on a field change
   onChange(e, field) {
     const errorMessages = this.state.errorMessages.filter(error => error.field !== field);
-    switch (field) {
-      case "name":
-        this.setState({ name: e.target.value, errorMessages });
-        return;
-      case "email":
-        this.setState({ email: e.target.value, errorMessages });
-        return;
-      case "message":
-        this.setState({ message: e.target.value, errorMessages });
-        return;
-      default:
-        return;
-    }
+    this.setState({
+      [e.target.name]: e.target.value,
+      errorMessages
+    });
   }
 
+  // on form submit
   onSubmit(e) {
     e.preventDefault();
-    // validate first
-    const [isValid, errorMessages] = this.validate();
-    console.log(isValid, errorMessages)
+    const [isValid, errorMessages] = validate(this.state);
     if (!isValid) {
-      // if this isn't valid then set error messages
       this.error(errorMessages);
       return;
     }
-    this.success();
-    // TODO: otherwise, do the submitting
+    this.fetch();
   }
 
-  validate() {
-    const errorMessages = [];
-
-    const { name, email, message } = this.state;
-
-    if (name.length === 0) {
-      errorMessages.push({
-        field: 'name',
-        message: "Let me know your name."
-      });
-    }
-
-    if (!EMAIL_REGEX.test(email)) {
-      errorMessages.push({
-        field: 'email',
-        message: "This email looks invalid."
-      });
-    }
-
-    if (message.length === 0) {
-      errorMessages.push({
-        field: 'message',
-        message: "Be sure to leave a note."
-      });
-    }
-
-    return [
-      errorMessages.length === 0,
-      errorMessages
-    ];
+  // fetch resource
+  fetch() {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(this.success)
+      .catch(error => this.error({
+        field: "submit",
+        message: error
+      }));
   }
 
+  // error
   error(errorMessages) {
     this.setState({
       errorMessages: errorMessages,
     });
   }
 
+  // when successful
   success() {
     this.setState({
       errorMessages: [],
@@ -102,6 +106,7 @@ class Card extends React.Component {
     });
   }
 
+  // find error in error array
   findError(field) {
     const error = this.state.errorMessages.find(error => error.field === field);
     return !!error ? error.message : "";
@@ -109,14 +114,16 @@ class Card extends React.Component {
 
   render() {
     const {
-      errorMessages,
       name,
       email,
-      message
+      message,
+      isSubmitted
     } = this.state;
 
+    const className = isSubmitted ? Style.isSubmitted : "";
+
     return (
-      <div className={Style.card}>
+      <div className={`${Style.card} ${className}`}>
         <div className={Style.cardSides}>
           <div className={Style.sideLeft}>
             <TextAccent>{Main.contact.accent}</TextAccent>
@@ -143,21 +150,31 @@ class Card extends React.Component {
           <div className={Style.sideRight}>
             <Form
               onSubmit={(e) => this.onSubmit(e)}
+              prompt="Send"
+              promptSubmitted="Sent"
+              icon="send"
+              iconSubmitted="check"
+              error={this.findError('submit')} // TODO: this error goes at the bottom
+              isSubmitted={isSubmitted} // TODO: change the success promt
             >
               <FormText
                 placeholder="Name"
-                type="name" value={name}
+                type="name"
+                name="name"
+                value={name}
                 error={this.findError('name')}
                 onChange={(e) => this.onChange(e, 'name')}
               />
               <FormText
                 placeholder="Email"
                 type="email"
+                name="email"
                 value={email}
                 error={this.findError('email')}
                 onChange={(e) => this.onChange(e, 'email')}
               />
               <FormMessage
+                name="message"
                 placeholder="Message"
                 value={message}
                 error={this.findError('message')}
@@ -166,7 +183,7 @@ class Card extends React.Component {
             </Form>
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }

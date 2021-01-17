@@ -31,21 +31,26 @@
 // xl
 @media only screen and (min-width: $xl) {
   .card {
-    width: 60%;
-    margin: 0 auto;
     height: auto;
     top: 50%;
+    left: 50%;
+    margin-left: -345px;
     transform: translate(0, -50%);
-    z-index: 2;
     position: relative;
-    background: $backgroundDarkOpaque;
-    clip-path: $polygon;
-    max-width: $lg;
+    width: 690px;
+    display: inline-block;
+    // clip-path: $polygon;
+    transition: transform 0.2s;
 
     .card-sides {
+      width: auto;
+
       .side-left {
-        width: 50%;
+        width: 40%;
         padding: 36px;
+        z-index: 2;
+        background: $backgroundDarkOpaque;
+        width: 275px;
 
         .link-holder {
           display: block;
@@ -55,14 +60,25 @@
       }
 
       .side-right {
-        width: 50%;
+        width: 415px;
         padding: 36px;
         background: $backgroundDark2Opaque;
-        clip-path: $polygon;
+        // clip-path: $polygon;
+        transition: transform 0.2s;
       }
     }
 
+    &.is-submitted {
+      transform: translate(60px, -50%);
 
+      .card-sides {
+        .side-right {
+          filter: opacity(0.4);
+          transform: translate(-120px, 0);
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+    }
   }
-
 }

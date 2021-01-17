@@ -6,7 +6,7 @@ import Style from './style.module.scss';
 
 class Form extends React.Component {
   render() {
-    const { children, onSubmit } = this.props;
+    const { children, onSubmit, prompt } = this.props;
     return (
       <div className={Style.formContent}>
         <form onSubmit={onSubmit} className={Style.form}>
@@ -14,7 +14,7 @@ class Form extends React.Component {
             {children}
           </span>
           <div className={Style.submitHolder}>
-            <FormButton>Send</FormButton>
+            <FormButton>{prompt}</FormButton>
           </div>
         </form>
       </div>

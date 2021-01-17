@@ -8,6 +8,7 @@ class FormText extends React.Component {
   render() {
     const {
       type,
+      name,
       value,
       onChange,
       placeholder,
@@ -19,6 +20,7 @@ class FormText extends React.Component {
         <input
           value={value}
           onChange={onChange}
+          name={name}
           type={type}
           placeholder={placeholder}
           className={`${Style.formField} ${className}`}
@@ -35,6 +37,7 @@ class FormMessage extends React.Component {
   render() {
     const {
       value,
+      name,
       onChange,
       placeholder,
       error
@@ -44,6 +47,7 @@ class FormMessage extends React.Component {
       <div>
         <textarea
           value={value}
+          name={name}
           onChange={onChange}
           placeholder={placeholder}
           className={`${Style.formField} ${className}`}
