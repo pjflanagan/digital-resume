@@ -47,15 +47,18 @@ class Form extends React.Component {
 
 const FormButton = ({
   prompt,
+  icon,
   isSubmitted,
   promptSubmitted,
+  iconSubmitted,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
 }) => (
   <div className={Style.submitHolder}>
     <LabeledButtonForm
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      icon={isSubmitted ? iconSubmitted : icon}
     >
       {isSubmitted ? promptSubmitted : prompt}
     </LabeledButtonForm>

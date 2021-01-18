@@ -7,6 +7,8 @@ import DOWN_ARROW_ICON from './down-arrow';
 import MINUS_ICON from './minus';
 import PLUS_ICON from './plus';
 import SATURN_ICON from './saturn';
+import SEND_ICON from './send';
+import CHECK_ICON from './check';
 
 
 const SVGIcon = (props) => {
@@ -26,6 +28,10 @@ const SVGIcon = (props) => {
       return PLUS_ICON;
     case "saturn":
       return SATURN_ICON;
+    case "send":
+      return SEND_ICON;
+    case "check":
+      return CHECK_ICON;
     default:
       return <span />;
   }

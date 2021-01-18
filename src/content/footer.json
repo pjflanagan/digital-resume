@@ -30,8 +30,18 @@
         "key": "smashicons",
         "href": "//www.flaticon.com/authors/smashicons",
         "text": "Smashicons"
+      },
+      {
+        "key": "iconixar",
+        "href": "//www.flaticon.com/authors/iconixar",
+        "text": "iconixar"
+      },
+      {
+        "key": "kiranshastry",
+        "href": "//www.flaticon.com/authors/kiranshastry",
+        "text": "Kiranshastry"
       }
     ],
-    "text": "Icons by <pixel_perfect>, <freepik>, <prettycons>, and <smashicons>"
+    "text": "Icons by <pixel_perfect>, <freepik>, <prettycons>, <kiranshastry>, <iconixar> and <smashicons>"
   }
 ]

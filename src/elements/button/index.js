@@ -18,6 +18,7 @@ import Style from "./style.module.scss";
 
 const LabeledButtonForm = ({
   children,
+  icon,
   onMouseEnter,
   onMouseLeave
 }) => {
@@ -30,7 +31,7 @@ const LabeledButtonForm = ({
     >
       <div className={Style.holder}>
         <div className={Style.svgHolder}>
-          <SVGIcon icon="saturn" />
+          <SVGIcon icon={icon} />
         </div>
         <div className={Style.name}>{children}</div>
       </div>
