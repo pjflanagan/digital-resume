@@ -45,6 +45,13 @@ const TextFlag = (props) => {
   );
 };
 
+// TextLittle
+const TextLittle = ({ children }) => {
+  return (
+    <span className={Style.textLittle}>{children}</span>
+  );
+}
+
 // Text
 const Text = (props) => {
   if (!!props.dangerouslySetInnerHTML)
@@ -80,4 +87,5 @@ export {
   TextFlag,
   TextPageCenter,
   Text,
+  TextLittle
 };

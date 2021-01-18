@@ -149,6 +149,11 @@ a.text-linked-header-link {
   }
 }
 
+.text-little {
+  font-size: 12px;
+  color: $accentCyan;
+}
+
 @media only screen and (min-width: $md) {
   .text-heading {
     font-size: 46px;

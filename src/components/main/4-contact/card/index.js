@@ -40,7 +40,11 @@ const validate = ({ name, email, message }) => {
     errorMessages.length === 0,
     errorMessages
   ];
-}
+};
+
+const pickPlaceholder = () => {
+  return Main.contact.formPlaceholders[Math.floor(Math.random() * Main.contact.formPlaceholders.length)];
+};
 
 class Card extends React.Component {
   constructor(props) {
@@ -51,7 +55,8 @@ class Card extends React.Component {
       name: "",
       email: "",
       message: "",
-      isSubmitted: false
+      isSubmitted: false,
+      placeholders: pickPlaceholder()
     };
 
     this.onChange = this.onChange.bind(this);
@@ -132,7 +137,8 @@ class Card extends React.Component {
       name,
       email,
       message,
-      isSubmitted
+      isSubmitted,
+      placeholders
     } = this.state;
 
     const className = isSubmitted ? Style.isSubmitted : "";
@@ -171,7 +177,8 @@ class Card extends React.Component {
               name="contact"
             >
               <FormText
-                placeholder="Name"
+                label="Name"
+                placeholder={placeholders.name}
                 type="name"
                 name="name"
                 value={name}
@@ -179,7 +186,8 @@ class Card extends React.Component {
                 onChange={(e) => this.onChange(e, 'name')}
               />
               <FormText
-                placeholder="Email"
+                label="Email"
+                placeholder={placeholders.email}
                 type="email"
                 name="email"
                 value={email}
@@ -187,8 +195,9 @@ class Card extends React.Component {
                 onChange={(e) => this.onChange(e, 'email')}
               />
               <FormMessage
+                label="Message"
                 name="message"
-                placeholder="Message"
+                placeholder={placeholders.message}
                 value={message}
                 error={this.findError('message')}
                 onChange={(e) => this.onChange(e, 'message')}

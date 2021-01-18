@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextAccent } from '../text';
+import { TextAccent, TextLittle } from '../text';
 
 import Style from './style.module.scss';
 
@@ -9,6 +9,7 @@ class FormText extends React.Component {
     const {
       type,
       name,
+      label,
       value,
       onChange,
       placeholder,
@@ -17,6 +18,9 @@ class FormText extends React.Component {
     const className = !!error ? Style.error : '';
     return (
       <div>
+        <div className={Style.labelHolder}>
+          <TextAccent>{label}</TextAccent>
+        </div>
         <input
           value={value}
           onChange={onChange}
@@ -26,7 +30,7 @@ class FormText extends React.Component {
           className={`${Style.formField} ${className}`}
         />
         <div className={Style.errorHolder}>
-          <TextAccent>{error}</TextAccent>
+          <TextLittle>{error}</TextLittle>
         </div>
       </div>
     );
@@ -38,6 +42,7 @@ class FormMessage extends React.Component {
     const {
       value,
       name,
+      label,
       onChange,
       placeholder,
       error
@@ -45,6 +50,9 @@ class FormMessage extends React.Component {
     const className = !!error ? Style.error : '';
     return (
       <div>
+        <div className={Style.labelHolder}>
+          <TextAccent>{label}</TextAccent>
+        </div>
         <textarea
           value={value}
           name={name}
@@ -54,7 +62,7 @@ class FormMessage extends React.Component {
           rows="4">
         </textarea>
         <div className={Style.errorHolder}>
-          <TextAccent>{error}</TextAccent>
+          <TextLittle>{error}</TextLittle>
         </div>
       </div>
     );

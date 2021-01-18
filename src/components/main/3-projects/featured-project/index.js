@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 
-import { Reveal, FrameHolder, Text, TextLinkedHeader } from "../../../../elements";
+import { Reveal, FrameHolder, Text, TextLinkedHeader, TextLittle } from "../../../../elements";
 import { FindImage } from "../../../../content";
 
 import Style from "./style.module.scss";
@@ -28,7 +28,7 @@ class FeaturedProject extends Reveal {
           <Text>{description}</Text>
           <div className={Style.techStackHolder}>
             {tech.map((item) => (
-              <span key={item}>{item}</span>
+              <TextLittle key={item}>{item}</TextLittle>
             ))}
           </div>
         </div>

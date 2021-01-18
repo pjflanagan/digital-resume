@@ -1,7 +1,7 @@
 import React from 'react';
 import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
-import { LabeledButtonForm } from '../button';
+import { LabeledButtonForm } from '../button/labeled-button';
 
 import Style from './style.module.scss';
 

@@ -2,6 +2,10 @@
 
 .form-content {
   .form {
+    .label-holder {
+      margin-bottom: -12px;
+    }
+
     .form-field {
       background: $backgroundDarkOpaque;
       outline: none;
@@ -13,6 +17,7 @@
       font-family: $ubuntu;
       font-size: 16px;
       font-weight: 300;
+      border-radius: 0px;
       // clip-path: $polygonSmall;
 
       &::placeholder {
@@ -67,11 +72,8 @@
     }
 
     .error-holder {
-      min-height: 12px;
-
-      p {
-        padding-bottom: 0px !important;
-      }
+      min-height: 28px;
+      margin-top: -6px;
     }
 
   }

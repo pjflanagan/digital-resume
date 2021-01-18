@@ -97,5 +97,22 @@ export default {
         text: "LinkedIn",
       },
     ],
+    formPlaceholders: [
+      {
+        name: "Tony Stark",
+        email: "tony@starkindustries.com",
+        message: "I am Ironman."
+      },
+      {
+        name: "Professor Farnsworth",
+        email: "farnsworth@planetexpress.com",
+        message: "Good news everyone!"
+      },
+      // {
+      //   name: "Stanford Pines",
+      //   email: "stan@gravityfalls.com",
+      //   message: "Good news everyone!"
+      // }
+    ]
   },
 };
