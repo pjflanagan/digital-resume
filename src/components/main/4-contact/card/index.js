@@ -114,6 +114,11 @@ class Card extends React.Component {
       name: "",
       email: "",
       message: "",
+      placeholders: {
+        name: "",
+        email: "",
+        message: "",
+      }
     });
     setTimeout(() => {
       this.setState({
@@ -178,7 +183,7 @@ class Card extends React.Component {
             >
               <FormText
                 label="Name"
-                placeholder={!isSubmitted ? placeholders.name : ''}
+                placeholder={placeholders.name}
                 type="name"
                 name="name"
                 value={name}
@@ -187,7 +192,7 @@ class Card extends React.Component {
               />
               <FormText
                 label="Email"
-                placeholder={!isSubmitted ? placeholders.email : ''}
+                placeholder={placeholders.email}
                 type="email"
                 name="email"
                 value={email}
@@ -197,7 +202,7 @@ class Card extends React.Component {
               <FormMessage
                 label="Message"
                 name="message"
-                placeholder={!isSubmitted ? placeholders.message : ''}
+                placeholder={placeholders.message}
                 value={message}
                 error={this.findError('message')}
                 onChange={(e) => this.onChange(e, 'message')}
