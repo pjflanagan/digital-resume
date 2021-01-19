@@ -24,7 +24,7 @@ class FeaturedProject extends Reveal {
           />
         </FrameHolder>
         <div className={Style.info}>
-          <TextLinkedHeader href={`//${link}`}>{name}</TextLinkedHeader>
+          <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
           <Text>{description}</Text>
           <div className={Style.techStackHolder}>
             {tech.map((item) => (
