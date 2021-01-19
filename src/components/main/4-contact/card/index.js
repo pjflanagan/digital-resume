@@ -178,7 +178,7 @@ class Card extends React.Component {
             >
               <FormText
                 label="Name"
-                placeholder={placeholders.name}
+                placeholder={!isSubmitted ? placeholders.name : ''}
                 type="name"
                 name="name"
                 value={name}
@@ -187,7 +187,7 @@ class Card extends React.Component {
               />
               <FormText
                 label="Email"
-                placeholder={placeholders.email}
+                placeholder={!isSubmitted ? placeholders.email : ''}
                 type="email"
                 name="email"
                 value={email}
@@ -197,7 +197,7 @@ class Card extends React.Component {
               <FormMessage
                 label="Message"
                 name="message"
-                placeholder={placeholders.message}
+                placeholder={!isSubmitted ? placeholders.message : ''}
                 value={message}
                 error={this.findError('message')}
                 onChange={(e) => this.onChange(e, 'message')}
