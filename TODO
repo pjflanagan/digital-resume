@@ -2,6 +2,7 @@
 TOP TODO:
 - [ ] content should be done with CONTEXT, only at top level
 - [ ] images should not be globally named
+- [ ] make it so you can go tab through the whole site seamlessly
 
 GENERAL
 - [~] favicon, social icons, ios icons (make ios icon different than just large favicon)

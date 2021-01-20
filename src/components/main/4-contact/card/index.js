@@ -55,6 +55,7 @@ class Card extends React.Component {
       name: "",
       email: "",
       message: "",
+      isLoading: false,
       isSubmitted: false,
       placeholders: pickPlaceholder()
     };
@@ -88,6 +89,9 @@ class Card extends React.Component {
 
   // fetch resource
   fetch() {
+    this.setState({
+      isLoading: true
+    });
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -103,6 +107,7 @@ class Card extends React.Component {
   // error
   error(errorMessages) {
     this.setState({
+      isLoading: false,
       errorMessages: errorMessages,
     });
   }
@@ -122,6 +127,7 @@ class Card extends React.Component {
     });
     setTimeout(() => {
       this.setState({
+        isLoading: false,
         isSubmitted: true
       });
     }, 600);
@@ -143,6 +149,7 @@ class Card extends React.Component {
       email,
       message,
       isSubmitted,
+      isLoading,
       placeholders
     } = this.state;
 
@@ -180,6 +187,7 @@ class Card extends React.Component {
               isSubmitted={isSubmitted}
               trackerLabel="Contact.formSubmit"
               name="contact"
+              isLoading={isLoading}
             >
               <FormText
                 label="Name"

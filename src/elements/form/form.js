@@ -24,13 +24,17 @@ class Form extends React.Component {
   render() {
     const {
       children,
-      name
+      name,
+      isLoading
     } = this.props;
+
+    const className = isLoading ? Style.isLoading : "";
+
     return (
       <div className={Style.formContent}>
         <form
           onSubmit={this.onSubmit}
-          className={Style.form}
+          className={`${Style.form} ${className}`}
           netlify-honeypot="bot-field"
           data-netlify="true"
           name={name}>

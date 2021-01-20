@@ -76,5 +76,10 @@
       margin-top: -6px;
     }
 
+    &.is-loading {
+      filter: opacity(0.8);
+      pointer-events: none;
+    }
+
   }
 }
