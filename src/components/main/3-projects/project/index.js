@@ -21,7 +21,7 @@ class Project extends React.Component {
           className={Style.projectImage}
         />
         <div className={Style.info}>
-          <TextLinkedHeader href={`//${link}`}>{name}</TextLinkedHeader>
+          <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
           <Text>{description}</Text>
         </div>
       </div>
