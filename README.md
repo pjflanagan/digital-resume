@@ -1,4 +1,6 @@
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f93116cd-b061-4c62-b906-154e918bf7ee/deploy-status)](https://app.netlify.com/sites/pjflanagan/deploys)
+
 # Digital Resume
 
 A project portfolio at [pjflanagan.me](https://pjflanagan.me). Created with Gatsby, hosted on Netlify.
