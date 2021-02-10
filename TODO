@@ -14,7 +14,6 @@ PERSONAL
 - [~] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
 - [ ] add some decorative changing numbers or text maybe too
 - [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
-- [ ] on mandarin hover change some text to Chinese 
 
 EXPERIENCE 
 - [ ] Intro paragraph (?)
@@ -24,14 +23,11 @@ EXPERIENCE
 PROJECT
 - [ ] Intro paragraph (?)
 - [ ] external link icon (match all icon styles like this)
-- [ ] scrollbar for additional projects (underneath and yellow)
 - STACK
   - [ ] make other projects stack side to side, like the old itunes
   - [ ] include every element to improve animations
-  - [x] make the scroll indicators clickable
 
 CONTACT 
-- [ ] netlify forms for email me
 - [ ] scroll effect for contact area (wave opens up from height 0?)
 
 ELEMENTS
@@ -41,4 +37,4 @@ ELEMENTS
 
 EXTERNAL
 - [ ] Flesh out blogger blog, OR write up a few medium posts about things
-- [ ] make sure pjflanagan.github.io is link for sites (HTML5Canvas README)
+- [~] make sure pjflanagan.github.io is link for sites (HTML5Canvas README)

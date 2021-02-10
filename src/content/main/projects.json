@@ -6,7 +6,11 @@
       "link": "//app.bamboolearn.com",
       "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
-      "tech": ["Mongodb Stitch", "React", "Chrome Dev"]
+      "tech": [
+        "Mongodb Stitch",
+        "React",
+        "Chrome Dev"
+      ]
     },
     {
       "name": "Michelle Calligraphy",
@@ -14,15 +18,23 @@
       "link": "//tomglobal.org/project?id=5e3b942bd848736b09554581",
       "description": "Worked to develop user friendly web app to interface with 3D printer-like robot capable of drawing calligraphy. TOM is an organization dedicated to pairing engineers with disabled persons to create solutions to their specific needs.\n",
       "image": "team-michelle.jpg",
-      "tech": ["Flask", "Angular", "Arduino"]
+      "tech": [
+        "Flask",
+        "Angular",
+        "Arduino"
+      ]
     },
     {
-      "name": "Space Fighters",
-      "type": "team/individual",
-      "link": "//simple-socket-game.herokuapp.com/",
-      "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
-      "image": "spacefighters.jpg",
-      "tech": ["Socket.io", "Phaser.js"]
+      "name": "Nuclear Codes",
+      "type": "individual",
+      "link": "//nuclear-codes.netlify.com/",
+      "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
+      "image": "nuclear-codes.png",
+      "tech": [
+        "React",
+        "Node.js",
+        "Socket.io"
+      ]
     }
   ],
   "all": [
@@ -39,6 +51,17 @@
       "link": "//github.com/pjflanagan/early-bird-twitter",
       "description": "Designed and developed website that allows users to draft and schedule tweets using Flask on Heroku.",
       "image": "earlybird.png"
+    },
+    {
+      "name": "Space Fighters",
+      "type": "team/individual",
+      "link": "//simple-socket-game.herokuapp.com/",
+      "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
+      "image": "spacefighters.jpg",
+      "tech": [
+        "Socket.io",
+        "Phaser.js"
+      ]
     },
     {
       "name": "NightPro",
