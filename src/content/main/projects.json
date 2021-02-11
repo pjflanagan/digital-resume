@@ -27,7 +27,7 @@
     {
       "name": "Nuclear Codes",
       "type": "individual",
-      "link": "//nuclear-codes.netlify.com/",
+      "link": "//nuclear-codes.com",
       "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
       "image": "nuclear-codes.png",
       "tech": [
