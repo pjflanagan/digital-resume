@@ -68,6 +68,18 @@ export default {
     jobs: Jobs,
     schools: Schools,
     skills: Skills,
+    link_text: {
+      links: [
+        {
+          key: "pdf",
+          href: "/pdf/PeterFlanaganResume2021.pdf",
+          text: "PDF form",
+        }
+      ],
+      text: [
+        "This resume is also available in <pdf>.",
+      ],
+    },
   },
   projects: {
     accent: "Experiments, explorations, and",
@@ -111,11 +123,11 @@ export default {
       // {
       //   name: "Stanford Pines",
       //   email: "stan@gravityfalls.com",
-      //   message: "Good news everyone!"
+      //   message: "..."
       // },
       // {
       //   name: "Doctor Emmett Brown",
-      //   email: "doc@delorean.past",
+      //   email: "doc@delorean.future",
       //   message: "Great Scott!"
       // }
     ]
