@@ -47,7 +47,7 @@ class Multipass extends React.Component {
               Strength: Reasonable <br />
               Looks: Adequate
             </div>
-            <div className={`${Style.occupation} ${Style.yellow}`}>pj@pjflanagan.me</div>
+            <div className={`${Style.occupation} ${Style.yellow}`}>pjflanagan1@gmail.com</div>
           </div>
           <div className={Style.blueBar}></div>
         </div>

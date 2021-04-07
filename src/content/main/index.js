@@ -95,7 +95,7 @@ export default {
     links: [
       {
         icon: "email",
-        href: "mailto:pj@pjflanagan.me",
+        href: "mailto:pjflanagan1@gmail.com",
         text: "Email",
       },
       {
