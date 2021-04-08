@@ -38,10 +38,15 @@
           "key": "baccalaureate_speaker",
           "href": "//youtube.com/watch?v=MaLZTBOxGMI",
           "text": "Baccalaureate Speaker"
+        },
+        {
+          "key": "PACPUF",
+          "href": "//pjflanagan.github.io/Pennsylvania-State-Computer-Fair",
+          "text": "Pennsylvania State Computer Fair Finalist"
         }
       ],
       "description": [
-        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, Pennsylvania State Computer Fair Finalist"
+        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, <PACPUF>"
       ],
       "background": "#1c4b98",
       "color": "#1c4b98"
