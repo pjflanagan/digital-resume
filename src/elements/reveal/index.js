@@ -24,7 +24,11 @@ class Reveal extends React.Component {
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
-	}
+  }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.isRevealed && !this.state.isRevealed;
+  }
 
 	handleScroll(e) {
 		const bounds = this.ref.current.getBoundingClientRect();

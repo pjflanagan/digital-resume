@@ -1,7 +1,7 @@
 import React from "react";
 import * as Scroll from "react-scroll";
 
-import { Cover, Footer } from "../../elements";
+import { Cover, Footer, LoadingCover } from "../../elements";
 
 import { SlideSplash } from "./0-splash";
 import { SlidePersonal } from "./1-personal";
@@ -12,12 +12,29 @@ import "./style.scss";
 
 const ScrollMain = Scroll.Element;
 
-// markup
 class MainComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: true
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      });
+    }, 1000);
+  }
+
 	render() {
-		const { data } = this.props;
+    const { data } = this.props;
+    const { isLoading } = this.state;
 		return (
 			<div className="container">
+        <LoadingCover isLoading={isLoading} />
 				<Cover />
 				<SlideSplash />
 				<ScrollMain className="slides" name="slides">

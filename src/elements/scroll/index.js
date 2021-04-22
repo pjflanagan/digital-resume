@@ -1,5 +1,7 @@
 import React from "react";
 
+// TODO: this is not used
+
 // Usage
 // 1. pass 'scrollRef' into <ExtendsScrollComponent scrollRef={React.createRef()} /> on parent
 // 2. use state.windowScroll or state.relativeScroll in render()

@@ -50,6 +50,10 @@ class Stack extends Reveal {
     this.getNextLayer = this.getNextLayer.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   selectLayer(layer) {
     this.setState({
       currentLayer: layer,

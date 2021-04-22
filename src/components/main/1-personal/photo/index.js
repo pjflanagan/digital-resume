@@ -22,6 +22,10 @@ class Photo extends Reveal {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   render() {
     const { data, photo } = this.props;
     const className = this.state.isRevealed ? Style.reveal : "";
