@@ -106,14 +106,10 @@ class View {
   }
 
   start() {
-    if (!this.isRunning) {
-      this.isRunning = true;
-      this.animate();
-    }
+    this.animate();
   }
 
   animate() {
-    // for(let i = 0; i < 10; ++i)
     this.drawFrame();
     this.animationReq = window.requestAnimationFrame(this.animate);
   }
@@ -122,7 +118,6 @@ class View {
     if (!!this.animationReq) {
       window.cancelAnimationFrame(this.animationReq);
     }
-    this.isRunning = false;
   }
 
   onMouseMove(mouse) {
@@ -692,6 +687,7 @@ class Ship extends Body {
 
   drawShip() {
     const { x, y } = this.state.pos;
+
     // exhaust port
     this.ctx.beginPath();
     this.ctx.moveTo(x + 35, y - 10);
@@ -708,6 +704,8 @@ class Ship extends Body {
     this.ctx.quadraticCurveTo(x + 20, y + 30, x + 35, y + 10);
     this.ctx.fillStyle = SHIP_COLORS.BODY;
     this.ctx.fill();
+
+    // shadow
     this.ctx.beginPath();
     this.ctx.moveTo(x - 50, y);
     this.ctx.quadraticCurveTo(x + 20, y + 30, x + 35, y + 10);
@@ -717,12 +715,12 @@ class Ship extends Body {
     this.ctx.fill();
 
     // 3 windows
+    this.ctx.beginPath();
     for (let i = 0; i < 3; ++i) {
-      this.ctx.beginPath();
       this.ctx.arc(x - 18 + i * 14, y, 4, 0, Math.TWO_PI, false);
-      this.ctx.fillStyle = SHIP_COLORS.WINDOWS;
-      this.ctx.fill();
     }
+    this.ctx.fillStyle = SHIP_COLORS.WINDOWS;
+    this.ctx.fill();
 
     // fins
     this.ctx.beginPath();
@@ -732,9 +730,6 @@ class Ship extends Body {
     this.ctx.lineTo(x + 34, y - 22);
     this.ctx.lineTo(x + 26, y - 10);
     this.ctx.quadraticCurveTo(x + 18, y - 14, x + 6, y - 14);
-    this.ctx.fillStyle = SHIP_COLORS.FINS;
-    this.ctx.fill();
-    this.ctx.beginPath();
     this.ctx.moveTo(x + 6, y + 14);
     this.ctx.lineTo(x + 30, y + 28);
     this.ctx.lineTo(x + 72, y + 30);

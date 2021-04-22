@@ -39,10 +39,8 @@ class View {
   }
 
   start() {
-    if (!this.isRunning) {
-      this.isRunning = true;
-      this.animate();
-    }
+    this.animate();
+
   }
 
   animate() {
@@ -54,7 +52,6 @@ class View {
     if (!!this.animationReq) {
       window.cancelAnimationFrame(this.animationReq);
     }
-    this.isRunning = false;
   }
 }
 

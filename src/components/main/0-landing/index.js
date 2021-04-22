@@ -9,9 +9,9 @@ import Style from "./style.module.scss";
 
 const scroller = Scroll.scroller;
 
-// SlideSplash
+// SlideLanding
 
-class SlideSplash extends React.Component {
+class SlideLanding extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,11 +28,11 @@ class SlideSplash extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll(e) {
@@ -88,4 +88,4 @@ class SlideSplash extends React.Component {
   }
 }
 
-export { SlideSplash };
+export { SlideLanding };

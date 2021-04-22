@@ -1,9 +1,9 @@
 import React from "react";
 import * as Scroll from "react-scroll";
 
-import { Cover, Footer, LoadingCover } from "../../elements";
+import { Cover, Footer, Splash } from "../../elements";
 
-import { SlideSplash } from "./0-splash";
+import { SlideLanding } from "./0-landing";
 import { SlidePersonal } from "./1-personal";
 import { SlideExperience } from "./2-experience";
 import { SlideProjects } from "./3-projects";
@@ -26,27 +26,27 @@ class MainComponent extends React.Component {
       this.setState({
         isLoading: false
       });
-    }, 1000);
+    }, 400);
   }
 
-	render() {
+  render() {
     const { data } = this.props;
     const { isLoading } = this.state;
-		return (
-			<div className="container">
-        <LoadingCover isLoading={isLoading} />
-				<Cover />
-				<SlideSplash />
-				<ScrollMain className="slides" name="slides">
-					<SlidePersonal data={data} />
-					<SlideExperience data={data} />
-					<SlideProjects data={data} />
-					<SlideContact data={data} />
-					<Footer />
-				</ScrollMain>
-			</div>
-		);
-	}
+    return (
+      <div className="container">
+        <Splash isVisible={isLoading} />
+        <Cover />
+        <SlideLanding />
+        <ScrollMain className="slides" name="slides">
+          <SlidePersonal data={data} />
+          <SlideExperience data={data} />
+          <SlideProjects data={data} />
+          <SlideContact data={data} />
+          <Footer />
+        </ScrollMain>
+      </div>
+    );
+  }
 }
 
 export { MainComponent };
