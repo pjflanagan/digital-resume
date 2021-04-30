@@ -14,4 +14,4 @@ export * from "./scroll";
 export * from "./stack";
 export * from "./show-more";
 export * from "./text";
-export * from './loading';
+export * from './splash';
