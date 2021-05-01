@@ -91,7 +91,7 @@ export default {
     accent: "Let's make",
     title: "Contact!",
     text:
-      "I'm seeking new opportunities. Feel free to reach out and I'll be sure to phone back!",
+      "While I'm not seeking new opportunities right now, feel free to reach out and I'll be sure to phone back!",
     links: [
       {
         icon: "email",
