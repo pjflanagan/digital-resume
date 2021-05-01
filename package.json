@@ -30,5 +30,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scroll": "^1.8.1"
+  },
+  "devDependencies": {
+    "gatsby-plugin-root-import": "^2.0.6"
   }
 }

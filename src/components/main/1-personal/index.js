@@ -25,7 +25,7 @@ class SlidePersonal extends React.Component {
   changePhoto(photo) {
     this.setState({ photo });
   }
-  
+
   render() {
     const { data } = this.props;
     const { photo } = this.state;
@@ -34,7 +34,7 @@ class SlidePersonal extends React.Component {
         <CurveTopTop />
         <CurveTopBottom />
         <div className={Style.slidePersonalSideLeft}>
-          <Photo edge="top" gap={280} photo={photo} data={data} />
+          <Photo photo={photo} data={data} />
         </div>
         <div className={Style.slidePersonalSideRight}>
           <Body photoLinkCallback={(newPhoto) => this.changePhoto(newPhoto)} />

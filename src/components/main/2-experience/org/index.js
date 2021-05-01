@@ -20,8 +20,6 @@ const Org = ({
     <div className={Style.orgLeft}>
       <div className={Style.avatarHolder}>
         <Avatar
-          gap={132}
-          edge="top"
           image={image}
           name={name}
           data={data}

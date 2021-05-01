@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-import { Reveal } from "../reveal";
+import { useReveal } from "src/hooks";
 
 import Style from "./style.module.scss";
 
@@ -13,100 +13,72 @@ const getNextLayerIndex = (currentLayer, offset, layersLength) => {
   return currentLayer + offset;
 };
 
-class StackNav extends React.Component {
-  render() {
-    const { current, count, selectLayer } = this.props;
-    return (
-      <div className={Style.stackNav}>
-        {[...Array(count)].map((e, i) => {
-          const className = i === current ? Style.current : "";
-          return (
-            <div
-              key={i}
-              className={Style.bulletHolder}
-              onClick={() => selectLayer(i)}
-              onKeyDown={() => selectLayer(i)}
-              role="button"
-              tabIndex={0}
-            >
-              <div className={`${Style.stackBullet} ${className}`} />
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
+const StackNav = ({ current, count, selectLayer }) => {
+  return (
+    <div className={Style.stackNav}>
+      {[...Array(count)].map((e, i) => {
+        const className = i === current ? Style.current : "";
+        return (
+          <div
+            key={i}
+            className={Style.bulletHolder}
+            onClick={() => selectLayer(i)}
+            onKeyDown={() => selectLayer(i)}
+            role="button"
+            tabIndex={0}
+          >
+            <div className={`${Style.stackBullet} ${className}`} />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
-class Stack extends Reveal {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      currentLayer: 0,
-    };
+const Stack = ({
+  children
+}) => {
 
-    this.selectLayer = this.selectLayer.bind(this);
-    this.getNextLayer = this.getNextLayer.bind(this);
-  }
+  const ref = useRef(null)
+  const isRevealed = useReveal({ ref, gap: 240, edge: 'top' });
+  const [currentLayer, setCurrentLayer] = useState(0);
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return true;
-  }
+  const className = isRevealed ? '' : Style.preReveal;
 
-  selectLayer(layer) {
-    this.setState({
-      currentLayer: layer,
-    });
-  }
-
-  getNextLayer(offset) {
-    const { children } = this.props;
-    const { currentLayer } = this.state;
+  const getNextLayer = (offset) => {
     const layerIndex = getNextLayerIndex(currentLayer, offset, children.length);
     return {
       layerIndex,
       name: children[layerIndex].props.name,
     };
-  }
+  };
+  const layers = [-1, 0, 1, 2, 3, 4].map(i => getNextLayer(i));
 
-  render() {
-    const { children } = this.props;
-    const { currentLayer } = this.state;
-    const className = this.state.isRevealed ? '' : Style.preReveal;
-    const layers = [
-      this.getNextLayer(-1),
-      this.getNextLayer(0),
-      this.getNextLayer(1),
-      this.getNextLayer(2),
-      this.getNextLayer(3),
-      this.getNextLayer(4),
-    ];
-    return (
-      <div className={`${Style.stack} ${className}`} ref={this.ref}>
-        <div className={Style.stackBody}>
-          {layers.map((layer) => (
-            <div
-              key={layer.layerIndex}
-              className={Style.layer}
-              onClick={() => this.selectLayer(layer.layerIndex)}
-              onKeyDown={() => this.selectLayer(layer.layerIndex)}
-              role="button"
-              tabIndex={0}
-            >
-              <div className={Style.name}>{layer.name}</div>
-              {children[layer.layerIndex]}
-            </div>
-          ))}
-        </div>
-        <StackNav
-          count={children.length}
-          current={currentLayer}
-          selectLayer={this.selectLayer}
-        />
+  return (
+    <div className={`${Style.stack} ${className}`} ref={ref}>
+      <div className={Style.stackBody}>
+        {layers.map((layer) => (
+          <div
+            key={layer.layerIndex}
+            className={Style.layer}
+            onClick={() => setCurrentLayer(layer.layerIndex)}
+            onKeyDown={() => setCurrentLayer(layer.layerIndex)}
+            role="button"
+            tabIndex={0}
+          >
+            <div className={Style.name}>{layer.name}</div>
+            {children[layer.layerIndex]}
+          </div>
+        ))}
       </div>
-    );
-  }
+      <StackNav
+        count={children.length}
+        current={currentLayer}
+        selectLayer={setCurrentLayer}
+      />
+    </div>
+  );
 }
 
 export { Stack };

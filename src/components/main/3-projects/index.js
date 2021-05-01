@@ -6,8 +6,8 @@ import {
   TextAccent,
   TextSubHeading,
   Stack,
-} from "../../../elements";
-import { Main } from "../../../content";
+} from "src/elements";
+import { Main } from "src/content";
 
 import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
@@ -30,14 +30,12 @@ class SlideProjects extends React.Component {
                   key={i}
                   project={project}
                   data={data}
-                  gap={220}
-                  edge={"top"}
                 />
               ))}
             </div>
             <TextSubHeading>{Main.projects.sections[1]}</TextSubHeading>
             <div className={Style.allBody}>
-              <Stack edge="top" gap={240}>
+              <Stack>
                 {Main.projects.projects.all.map((project, i) => (
                   <Project
                     key={i}

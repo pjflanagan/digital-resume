@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ProgressBar, TextSubHeading2 } from "../../../../elements";
-import { Main } from '../../../../content';
+import { ProgressBar, TextSubHeading2 } from "src/elements";
+import { Main } from 'src/content';
 
 import Style from "./style.module.scss";
 
@@ -21,8 +21,6 @@ const Skills = () => (
                 key={skill.name}
                 name={skill.name}
                 progress={skill.progress}
-                gap={28}
-                edge={"bottom"}
               />
             </div>
           ))}
