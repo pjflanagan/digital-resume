@@ -6,8 +6,8 @@ import {
   TextAccent,
   Text,
   ShowMore,
-} from "../../../elements";
-import { Main } from "../../../content";
+} from "src/elements";
+import { Main } from "src/content";
 
 import { Org } from "./org";
 import { Skills } from "./skills";

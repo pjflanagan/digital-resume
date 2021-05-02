@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Avatar, Text, TextLinkedHeader } from "../../../../elements";
+import { Avatar, Text, TextLinkedHeader } from "src/elements";
 
 import Style from "./style.module.scss";
 

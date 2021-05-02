@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LabeledButton } from "../button";
+import { LabeledButton } from "src/elements";
 
 import Style from "./style.module.scss";
 

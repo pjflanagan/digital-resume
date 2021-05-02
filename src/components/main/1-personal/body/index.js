@@ -6,8 +6,8 @@ import {
   Text,
   TextType,
   ParseTextForLinks,
-} from "../../../../elements";
-import { Main } from "../../../../content";
+} from "src/elements";
+import { Main } from "src/content";
 
 import Style from "./style.module.scss";
 

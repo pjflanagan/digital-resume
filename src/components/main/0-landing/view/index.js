@@ -1,4 +1,4 @@
-import { Color, Random, distance, ellipseCircleIntersection } from '../../../../helpers';
+import { Color, Random, distance, ellipseCircleIntersection } from 'src/helpers';
 
 Math.TWO_PI = 2 * Math.PI;
 

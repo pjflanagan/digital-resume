@@ -1,7 +1,7 @@
 import React from "react";
 import * as Scroll from "react-scroll";
 
-import { Cover, Footer, Splash } from "../../elements";
+import { Cover, Footer, Splash } from "src/elements";
 
 import { SlideLanding } from "./0-landing";
 import { SlidePersonal } from "./1-personal";

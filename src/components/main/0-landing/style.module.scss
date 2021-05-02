@@ -6,16 +6,6 @@
   color: #fff;
   top: 0;
 
-  .title-container {
-    z-index: 1;
-    top: 32% !important;
-  }
-
-  .button-holder {
-    visibility: hidden;
-    z-index: 2;
-  }
-
   .canvas {
     display: block;
     background: $backgroundDark;
@@ -32,19 +22,6 @@
 @media only screen and (min-width: $md) {
   .splash {
     position: fixed;
-
-    .title-container {
-      top: 50% !important;
-    }
-
-    .button-holder {
-      visibility: visible;
-      width: 280px;
-      position: absolute;
-      left: 50%;
-      margin-left: -140px;
-      bottom: 40px;
-    }
 
     .canvas {
       position: fixed;

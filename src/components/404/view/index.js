@@ -1,4 +1,4 @@
-import { Color } from "../../../helpers";
+import { Color } from "src/helpers";
 
 class View {
   constructor(canvasElem) {

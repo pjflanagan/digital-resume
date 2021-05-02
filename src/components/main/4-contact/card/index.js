@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Main } from "../../../../content";
+import { Main } from "src/content";
 import {
   LabeledButton,
   TextAccent, TextHeading, Text,
   Form, FormText, FormMessage, FormButton
-} from "../../../../elements";
-import { encode } from "../../../../helpers";
+} from "src/elements";
+import { encode } from "src/helpers";
 
 import Style from "./style.module.scss";
 

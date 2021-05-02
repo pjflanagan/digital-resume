@@ -1,16 +1,13 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { MainComponent } from "../components/main";
+import { MainComponent } from "src/components/main";
 
 import "./reset.scss";
 import "./style.scss";
 
-class PageIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    return <MainComponent data={data} />;
-  }
+const PageIndex = ({ data }) => {
+  return <MainComponent data={data} />;
 }
 
 export default PageIndex;

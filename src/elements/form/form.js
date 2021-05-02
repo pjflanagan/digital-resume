@@ -57,16 +57,18 @@ const FormButton = ({
   iconSubmitted,
   onMouseEnter,
   onMouseLeave,
-}) => (
-  <div className={Style.submitHolder}>
-    <LabeledButtonForm
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      icon={isSubmitted ? iconSubmitted : icon}
-    >
-      {isSubmitted ? promptSubmitted : prompt}
-    </LabeledButtonForm>
-  </div>
-);
+}) => {
+  return (
+    <div className={Style.submitHolder}>
+      <LabeledButtonForm
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        icon={isSubmitted ? iconSubmitted : icon}
+      >
+        {isSubmitted ? promptSubmitted : prompt}
+      </LabeledButtonForm>
+    </div>
+  );
+};
 
 export { Form, FormButton }

@@ -2,7 +2,7 @@
 import React from "react";
 import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics";
 
-import { SVGIcon } from "../icon";
+import { SVGIcon } from "src/elements";
 
 import Style from "./style.module.scss";
 

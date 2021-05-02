@@ -1,8 +1,8 @@
 import React from "react";
 
-import FooterText from "../../content/footer.json";
+import FooterText from "src/content/footer.json";
+import { Text } from "src/elements";
 
-import { Text } from "../text";
 import Style from "./style.module.scss";
 
 const Footer = () => {
