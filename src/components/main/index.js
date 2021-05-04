@@ -34,8 +34,8 @@ class MainComponent extends React.Component {
     const { isLoading } = this.state;
     return (
       <div className="container">
-        <Splash isVisible={isLoading} />
         <Cover />
+        <Splash isVisible={isLoading} />
         <SlideLanding />
         <ScrollMain className="slides" name="slides">
           <SlidePersonal data={data} />

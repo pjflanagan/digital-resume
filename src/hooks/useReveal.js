@@ -15,7 +15,10 @@ const useReveal = ({ edge, gap, ref }) => {
       }
     }
 
-    window.addEventListener('scroll', _.throttle(handleScroll, 40));
+    window.addEventListener('scroll', _.throttle(handleScroll, 40), {
+      capture: true,
+      passive: true
+    });
     return function cleanup() {
       window.removeEventListener('scroll', _.throttle(handleScroll, 120));
     };

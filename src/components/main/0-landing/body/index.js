@@ -22,7 +22,7 @@ const prompt = Main.splash.prompts[0] // Math.floor(Math.random() * Main.splash.
 
 const Body = () => {
 
-  const scroll = useScroll({ max: window.innerHeight * 3 });
+  const scroll = useScroll();
 
   const textScroll = -scroll / 5;
   const opacity = 1.0 - scroll / 1000.0;

@@ -11,7 +11,7 @@ import Style from "./style.module.scss";
 // SlideLanding
 
 const SlideLanding = () => {
-  const canvasScroll = useScroll({ max: window.innerHeight * 2 }) / 2;
+  const canvasScroll = useScroll() / 2;
   return (
     <div className={Style.splash}>
       <Body />
