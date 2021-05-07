@@ -10,6 +10,10 @@ GENERAL
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
 
+LANDING
+- [ ] switch to typescript and redo this file?
+- [ ] make the canvas pause and play based on where the scoll is
+
 PERSONAL 
 - [~] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
 - [ ] add some decorative changing numbers or text maybe too
@@ -19,6 +23,7 @@ EXPERIENCE
 - [ ] Intro paragraph (?)
 - [ ] Make that curve an inner shadow on experience mobile (?)
 - [ ] make show more animate in reverse
+- [ ] useReveal isn't on avatar, make that a prop, instead have an effect for whole thing
 
 PROJECT
 - [ ] Intro paragraph (?)
@@ -31,7 +36,7 @@ CONTACT
 - [ ] scroll effect for contact area (wave opens up from height 0?)
 
 ELEMENTS
-- [ ] make footer a reveal from behind page at bottom
+- [ ] make footer reveal from behind page at bottom (fixed and the whole page comes up to show it?)
 - [ ] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 

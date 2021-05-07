@@ -1,3 +1,4 @@
+
 import { Color, Random, distance, ellipseCircleIntersection } from 'src/helpers';
 
 Math.TWO_PI = 2 * Math.PI;
@@ -38,15 +39,13 @@ class View {
 
     // user input (window)
     window.addEventListener('mousemove', (e) => {
-      const mouse = {
+      this.onMouseMove({
         x: e.clientX,
         y: e.clientY,
-      };
-      this.onMouseMove(mouse);
+      });
     });
     window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      this.onScroll(scroll);
+      this.onScroll(window.scrollY);
     });
 
     this.setup();
@@ -106,6 +105,7 @@ class View {
   }
 
   start() {
+    // this.drawFrame();
     this.animate();
   }
 
