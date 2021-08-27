@@ -152,6 +152,7 @@ class Card extends React.Component {
       isLoading,
       placeholders
     } = this.state;
+    const { setIsWaveOn } = this.props;
 
     const className = isSubmitted ? Style.isSubmitted : "";
 
@@ -171,8 +172,8 @@ class Card extends React.Component {
                   <LabeledButton
                     icon={link.icon}
                     href={link.href}
-                    onMouseEnter={() => this.props.setContactOnCallback(true)}
-                    onMouseLeave={() => this.props.setContactOnCallback(false)}
+                    onMouseEnter={() => setIsWaveOn(true)}
+                    onMouseLeave={() => setIsWaveOn(false)}
                   >
                     {link.text}
                   </LabeledButton>
@@ -221,8 +222,8 @@ class Card extends React.Component {
                 promptSubmitted="Sent"
                 icon="send"
                 iconSubmitted="check"
-                onMouseEnter={() => this.props.setContactOnCallback(true)}
-                onMouseLeave={() => this.props.setContactOnCallback(false)}
+                onMouseEnter={() => setIsWaveOn(true)}
+                onMouseLeave={() => setIsWaveOn(false)}
               />
             </Form>
           </div>

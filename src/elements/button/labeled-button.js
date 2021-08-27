@@ -57,44 +57,34 @@ const LabeledButtonLinked = ({
   );
 };
 
-class LabeledButtonAction extends React.Component {
-  constructor(props) {
-    super(props);
+const LabeledButtonAction = ({ icon, children, onClick: propsOnClick, trackerLabel }) => {
 
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick(e) {
+  const onClick = (e) => {
     e.preventDefault();
     trackCustomEvent({
       category: "button",
       action: "click",
-      label: this.props.trackerLabel,
+      label: trackerLabel,
     });
-    this.props.onClick();
+    propsOnClick();
   }
 
-  render() {
-    const { icon, children } = this.props;
-    return (
-      <div
-        className={Style.labeledButton}
-        onClick={this.onClick}
-        onKeyDown={this.onClick}
-        role="button"
-        tabIndex={0}
-      >
-        <div className={Style.holder}>
-          <div className={Style.svgHolder}>
-            <SVGIcon icon={icon} />
-          </div>
-          <div className={Style.name}>{children}</div>
+  return (
+    <div
+      className={Style.labeledButton}
+      onClick={onClick}
+      onKeyDown={onClick}
+      role="button"
+      tabIndex={0}
+    >
+      <div className={Style.holder}>
+        <div className={Style.svgHolder}>
+          <SVGIcon icon={icon} />
         </div>
+        <div className={Style.name}>{children}</div>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-
 
 export { LabeledButtonAction, LabeledButtonLinked, LabeledButtonForm };

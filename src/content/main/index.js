@@ -50,14 +50,24 @@ export default {
           text: "rock climber",
         },
         {
+          key: "scuba",
+          callbackParam: [
+            { action: "image", param: "personal-scuba.jpg" }
+          ],
+          text: "SCUBA diver"
+        },
+        {
           key: "mandarin_student",
-          callbackParam: [{ action: "text", param: "mandarin" }],
+          callbackParam: [
+            { action: "text", param: "mandarin" },
+            { action: "image", param: "personal-mandarin.jpg" }
+          ],
           text: "Mandarin student",
         },
       ],
       text: [
         "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun web tools.",
-        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, and an eager <mandarin_student>.",
+        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, certified <scuba>, and an eager <mandarin_student>.",
       ],
     },
   },

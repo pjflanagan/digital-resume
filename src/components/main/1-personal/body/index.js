@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   TextAccent,
@@ -11,28 +11,18 @@ import { Main } from "src/content";
 
 import Style from "./style.module.scss";
 
-class Body extends React.Component {
-  constructor(props) {
-    super(props);
+const Body = ({ photoLinkCallback }) => {
 
-    this.state = {
-      language: "english",
-    };
+  const [language, setLanguage] = useState('english');
 
-    this.linkHover = this.linkHover.bind(this);
-  }
-
-  linkHover(actions) {
-    const { photoLinkCallback } = this.props;
+  const linkHover = (actions) => {
     actions.forEach(({ action, param }) => {
       switch (action) {
         case "image":
           photoLinkCallback(param);
           break;
         case "text":
-          this.setState({
-            language: param,
-          });
+          setLanguage(param);
           break;
         default:
           break;
@@ -40,34 +30,32 @@ class Body extends React.Component {
     });
   }
 
-  render() {
-    const { language } = this.state;
-    const { accent, link_text, title_text } = Main.personal;
-    return (
-      <div className={Style.body}>
-        <TextAccent>
-          {/* TODO: TextType should be a wrapper for <Text> rather than inside,
-          then we can type through links and multiple elements, like Accent then Heading,
-          ensure that ParseText returns items that can be wrapped by TypeText */}
-          <TextType speed={120} revealed={true}>
-            {accent[language]}
-          </TextType>
-        </TextAccent>
-        <TextHeading>
-          {ParseTextForLinks(title_text.text, title_text.links, this.linkHover)}
-        </TextHeading>
-        <Text className={Style.bio} links={link_text.links}>
-          {link_text.text[0]}
-        </Text>
-        <Text
-          className={`${Style.bio} ${Style.additional}`}
-          links={link_text.links}
-          callback={this.linkHover}
-        >
-          {link_text.text[1]}
-        </Text>
-      </div>
-    );
-  }
+  const { accent, link_text, title_text } = Main.personal;
+  return (
+    <div className={Style.body}>
+      <TextAccent>
+        {/* TODO: TextType should be a wrapper for <Text> rather than inside,
+        then we can type through links and multiple elements, like Accent then Heading,
+        ensure that ParseText returns items that can be wrapped by TypeText */}
+        <TextType speed={120} revealed={true}>
+          {accent[language]}
+        </TextType>
+      </TextAccent>
+      <TextHeading>
+        {ParseTextForLinks(title_text.text, title_text.links, linkHover)}
+      </TextHeading>
+      <Text className={Style.bio} links={link_text.links}>
+        {link_text.text[0]}
+      </Text>
+      <Text
+        className={`${Style.bio} ${Style.additional}`}
+        links={link_text.links}
+        callback={linkHover}
+      >
+        {link_text.text[1]}
+      </Text>
+    </div>
+  );
 }
+
 export { Body };

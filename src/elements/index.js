@@ -9,7 +9,6 @@ export * from "./header";
 export * from "./icon";
 export * from "./progress-bar";
 export * from "./ruler";
-export * from "./scroll";
 export * from "./stack";
 export * from "./show-more";
 export * from "./text";

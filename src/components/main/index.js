@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Scroll from "react-scroll";
 
 import { Cover, Footer, Splash } from "src/elements";
@@ -12,41 +12,29 @@ import "./style.scss";
 
 const ScrollMain = Scroll.Element;
 
-class MainComponent extends React.Component {
-  constructor(props) {
-    super(props);
+const MainComponent = ({ data }) => {
+  const [isLoading, setIsLoading] = useState(true);
 
-    this.state = {
-      isLoading: true
-    }
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     setTimeout(() => {
-      this.setState({
-        isLoading: false
-      });
+      setIsLoading(false);
     }, 400);
-  }
+  });
 
-  render() {
-    const { data } = this.props;
-    const { isLoading } = this.state;
-    return (
-      <div className="container">
-        <Cover />
-        <Splash isVisible={isLoading} />
-        <SlideLanding />
-        <ScrollMain className="slides" name="slides">
-          <SlidePersonal data={data} />
-          <SlideExperience data={data} />
-          <SlideProjects data={data} />
-          <SlideContact data={data} />
-          <Footer />
-        </ScrollMain>
-      </div>
-    );
-  }
+  return (
+    <div className="container">
+      <Cover />
+      <Splash isVisible={isLoading} />
+      <SlideLanding />
+      <ScrollMain className="slides" name="slides">
+        <SlidePersonal data={data} />
+        <SlideExperience data={data} />
+        <SlideProjects data={data} />
+        <SlideContact data={data} />
+        <Footer />
+      </ScrollMain>
+    </div>
+  );
 }
 
 export { MainComponent };
