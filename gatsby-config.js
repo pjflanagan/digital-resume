@@ -10,7 +10,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: `src/images/favicon.png`
+        name: `Peter James Flanagan`,
+        short_name: `PJF`,
+        start_url: `/`,
+        background_color: `#112a32`,
+        theme_color: `#112a32`,
+        display: `standalone`,
+        icon: `static/img/icon/icon.png`,
+        include_favicon: false,
       }
     },
     {

@@ -2,28 +2,29 @@
 TOP TODO:
 - [ ] content should be done with CONTEXT, only at top level
 - [ ] images should not be globally named
-- [ ] make it so you can go tab through the whole site seamlessly
+- [!] make it so you can go tab through the whole site seamlessly
 
 GENERAL
 - [~] favicon, social icons, ios icons (make ios icon different than just large favicon)
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
+- [!] use some functions just for fun
 
 LANDING
 - [ ] switch to typescript and redo this file?
 - [ ] make the canvas pause and play based on where the scoll is
 
 PERSONAL 
-- [~] add wavy lines behind photo, it'll look better when it changes, can be slightly animated
 - [ ] add some decorative changing numbers or text maybe too
 - [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
 
 EXPERIENCE 
-- [ ] Intro paragraph (?)
+- [ ] Intro paragraph longer than just PDF link (?)
+- [ ] side by side on wide enough screen
+- [!] useReveal isn't on avatar, make that a prop, instead have an effect for whole thing
 - [ ] Make that curve an inner shadow on experience mobile (?)
 - [ ] make show more animate in reverse
-- [ ] useReveal isn't on avatar, make that a prop, instead have an effect for whole thing
 
 PROJECT
 - [ ] Intro paragraph (?)
@@ -36,7 +37,7 @@ CONTACT
 - [ ] scroll effect for contact area (wave opens up from height 0?)
 
 ELEMENTS
-- [ ] make footer reveal from behind page at bottom (fixed and the whole page comes up to show it?)
+- [!] make footer reveal from behind page at bottom (fixed and the whole page comes up to show it?)
 - [ ] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 
