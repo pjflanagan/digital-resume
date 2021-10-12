@@ -7,8 +7,8 @@ const HANDLE = "@peterjflan";
 const ROOT = "https://pjflanagan.me";
 const IMG = `${ROOT}/img/social/social.png`;
 const IMG_TW = `${ROOT}/img/social/social-tw.png`;
-const FAVICON_32 = `${ROOT}/img/logo/favicon-32x32.png`;
-const FAVICON_16 = `${ROOT}/img/logo/favicon-16x16.png`;
+const FAVICON_32 = `${ROOT}/img/icon/favicon-32x32.png`;
+const FAVICON_16 = `${ROOT}/img/icon/favicon-16x16.png`;
 
 export default function HTML(props) {
   return (
