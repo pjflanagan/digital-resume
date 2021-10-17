@@ -2,20 +2,14 @@ import React from "react";
 
 import Style from "./style.module.scss";
 
-const getFrameTypeClassName = (type) => {
-  switch (type) {
-    case "top-left":
-      return Style.topLeft;
-    case "top-right":
-      return Style.topRight;
-    case "bottom-left":
-      return Style.bottomLeft;
-    case "bottom-right":
-      return Style.bottomRight;
-    default:
-      return Style[type];
-  }
-};
+const getFrameTypeClassName = (type) => (
+  {
+    'top-left': Style.topLeft,
+    'top-right': Style.topRight,
+    'bottom-left': Style.bottomLeft,
+    'bottom-right': Style.bottomRight
+  }[type] || Style[type]
+);
 
 // Frame takes a type, and optional styles
 const Frame = ({ type, style }) => {

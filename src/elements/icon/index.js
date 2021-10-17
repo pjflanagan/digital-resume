@@ -10,31 +10,18 @@ import SATURN_ICON from './saturn';
 import SEND_ICON from './send';
 import CHECK_ICON from './check';
 
-
-const SVGIcon = (props) => {
-  const { icon } = props;
-  switch (icon) {
-    case "linkedin":
-      return LINKEDIN_ICON;
-    case "email":
-      return EMAIL_ICON;
-    case "github":
-      return GITHUB_ICON;
-    case "down-arrow":
-      return DOWN_ARROW_ICON;
-    case "minus":
-      return MINUS_ICON;
-    case "plus":
-      return PLUS_ICON;
-    case "saturn":
-      return SATURN_ICON;
-    case "send":
-      return SEND_ICON;
-    case "check":
-      return CHECK_ICON;
-    default:
-      return <span />;
-  }
-};
+const SVGIcon = ({ icon }) => (
+  {
+    linkedin: LINKEDIN_ICON,
+    email: EMAIL_ICON,
+    github: GITHUB_ICON,
+    'down-arrow': DOWN_ARROW_ICON,
+    minus: MINUS_ICON,
+    plus: PLUS_ICON,
+    saturn: SATURN_ICON,
+    send: SEND_ICON,
+    check: CHECK_ICON,
+  }[icon] || <span />
+);
 
 export { SVGIcon };

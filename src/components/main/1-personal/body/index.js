@@ -16,18 +16,12 @@ const Body = ({ photoLinkCallback }) => {
   const [language, setLanguage] = useState('english');
 
   const linkHover = (actions) => {
-    actions.forEach(({ action, param }) => {
-      switch (action) {
-        case "image":
-          photoLinkCallback(param);
-          break;
-        case "text":
-          setLanguage(param);
-          break;
-        default:
-          break;
-      }
-    });
+    actions.forEach(({ action, param }) => (
+      {
+        image: () => photoLinkCallback(param),
+        text: () => setLanguage(param),
+      }[action]()
+    ));
   }
 
   const { accent, link_text, title_text } = Main.personal;
