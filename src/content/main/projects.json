@@ -3,7 +3,7 @@
     {
       "name": "bamboo",
       "type": "individual",
-      "link": "//app.bamboolearn.com",
+      "link": "//bamboo.flanny.app",
       "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
       "tech": [
@@ -27,7 +27,7 @@
     {
       "name": "Nuclear Codes",
       "type": "individual",
-      "link": "//nuclear-codes.com",
+      "link": "//nuclearcodes.flanny.app",
       "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
       "image": "nuclear-codes.png",
       "tech": [
@@ -94,7 +94,7 @@
     {
       "name": "Run Calculator",
       "type": "individual",
-      "link": "//runcalculator.net",
+      "link": "//runcalculator.flanny.app",
       "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
       "image": "runcalculator.png"
     },
