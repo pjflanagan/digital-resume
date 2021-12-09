@@ -12,10 +12,6 @@ const PagePost = ({ data }) => {
   const { frontmatter, html } = markdownRemark;
   return (
     <PostComponent frontmatter={frontmatter}>
-      {/* 
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-         */}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />

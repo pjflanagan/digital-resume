@@ -10,11 +10,8 @@ const PageBlog = ({ data }) => {
   const { edges } = data.allMarkdownRemark
   const posts = edges
     .filter(post => post.node.frontmatter.title.length > 0)
-    .map(({ node: post }) => post);
+    .map(({ node }) => node);
   return <BlogComponent posts={posts} />;
-  // <h2>{post.frontmatter.date}</h2>
-  // <div className="blog-post-preview" key={post.id}>
-  // <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link> // from gatsby
 }
 
 export default PageBlog;

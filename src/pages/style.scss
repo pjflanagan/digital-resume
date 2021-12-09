@@ -81,39 +81,39 @@ html {
       }
     }
 
-    a {
-      h2 {
-        color: $accentYellow;
+    a h2,
+    h2 a {
+      color: $accentYellow;
+      transition: 0.2s;
+      box-shadow: none;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 0 0 10px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        margin-left: 6px;
+        margin-top: -5px;
+        width: 10px;
+        height: 10px;
+        background: none;
+        border-right: 1px solid $accentYellow;
+        border-top: 1px solid $accentYellow;
         transition: 0.2s;
-        box-shadow: none;
-        font-size: 20px;
-        font-weight: 500;
-        padding: 0 0 10px;
+      }
+
+      &:hover {
+        color: $accentYellowHover;
 
         &:after {
-          content: '';
-          position: absolute;
-          margin-left: 6px;
-          margin-top: -5px;
-          width: 10px;
-          height: 10px;
-          background: none;
-          border-right: 1px solid $accentYellow;
-          border-top: 1px solid $accentYellow;
-          transition: 0.2s;
-        }
-
-        &:hover {
-          color: $accentYellowHover;
-
-          &:after {
-            transform: translate(2px, -2px);
-          }
+          transform: translate(2px, -2px);
         }
       }
     }
   }
 }
+
 
 @media only screen and (min-width: $md) {
   h1 {

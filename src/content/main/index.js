@@ -67,7 +67,7 @@ const PageMain = {
       ],
       text: [
         "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun web tools.",
-        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, certified <scuba>, and an eager <mandarin_student>.",
+        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, certified <scuba>, board sport enthusiast, and an eager <mandarin_student>.",
       ],
     },
   },
@@ -96,6 +96,23 @@ const PageMain = {
     title: "Programs",
     sections: ["Featured Projects", "Other Projects"],
     projects: Projects,
+    link_text: {
+      links: [
+        {
+          key: "blog",
+          href: "/blog",
+          text: "project blog",
+        },
+        {
+          key: "github",
+          href: "//github.com/pjflanagan",
+          text: "Github",
+        }
+      ],
+      text: [
+        "A list of all my coding adventures can be found on my <blog> as well as my <github>",
+      ],
+    },
   },
   contact: {
     accent: "Let's make",
