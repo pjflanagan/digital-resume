@@ -1,6 +1,6 @@
 import React from "react";
 
-import Style from './style.module.scss'
+import * as Style from './style.module.scss'
 
 const randomPosition = () => {
   const top = -40 + Math.random() * 50;

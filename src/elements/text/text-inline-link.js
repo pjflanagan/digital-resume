@@ -2,7 +2,7 @@ import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import PropTypes from 'prop-types';
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 // TextInlineLink
 const TextInlineLink = ({

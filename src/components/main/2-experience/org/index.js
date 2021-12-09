@@ -2,7 +2,7 @@ import React from "react";
 
 import { Avatar, Text, TextLinkedHeader } from "src/elements";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Org = ({
   name,
@@ -35,7 +35,7 @@ const Org = ({
     <div className={Style.orgRight}>
       {!!position && <div className={Style.position}>{position}</div>}
       {description.map((line, i) => (
-        <Text key={i} className={Style.description} links={links}>
+        <Text key={i} links={links}>
           {line}
         </Text>
       ))}
@@ -47,7 +47,7 @@ const Org = ({
           <div className={Style.orgRight}>
             <TextLinkedHeader href={org.link} className={Style.name} color="cyan">{org.name}</TextLinkedHeader>
             <div className={Style.position}>{org.position}</div>
-            <Text key={i} className={Style.description}>
+            <Text key={i}>
               {org.description}
             </Text>
           </div>

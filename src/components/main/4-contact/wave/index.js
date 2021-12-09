@@ -1,6 +1,6 @@
 import React from "react";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const MAX_HEIGHT = 62;
 const FLUX = 12;
@@ -26,7 +26,7 @@ const incrementPos = (pos) => {
 const initState = (count) => {
   let pos = 0;
   const wave = [];
-  for(let i = 0; i < count; ++i) {
+  for (let i = 0; i < count; ++i) {
     pos = incrementPos(pos);
     wave.unshift(getNextHeight(pos));
   }

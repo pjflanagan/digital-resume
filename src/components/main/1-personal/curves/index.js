@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Style from './style.module.scss';
+import * as Style from './style.module.scss';
 
 const CurveTopTop = () => (
   <svg className={Style.topCurve} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

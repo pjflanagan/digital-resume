@@ -7,7 +7,7 @@ import { FindImage } from "src/content";
 import { useReveal } from 'src/hooks';
 
 // TODO: import { BillCypher } from "./bill-cypher"; ?
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Photo = ({ data, photo }) => {
 

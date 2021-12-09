@@ -8,7 +8,7 @@ import {
 } from "src/elements";
 import { encode } from "src/helpers";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 

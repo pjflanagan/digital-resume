@@ -5,7 +5,7 @@ import { FrameHolder, Text, TextLinkedHeader, TextLittle } from "src/elements";
 import { FindImage } from "src/content";
 import { useReveal } from "src/hooks"
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const FeaturedProject = ({
   data,

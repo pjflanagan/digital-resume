@@ -1,7 +1,7 @@
 import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import Style from './style.module.scss';
+import * as Style from './style.module.scss';
 
 const TextLinkedHeader = ({
   href,

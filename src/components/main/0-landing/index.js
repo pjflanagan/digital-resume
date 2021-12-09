@@ -5,7 +5,7 @@ import { useScroll } from "src/hooks";
 
 import { View } from "./view";
 import { Body } from "./body";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 
 // SlideLanding

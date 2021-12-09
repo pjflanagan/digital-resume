@@ -9,7 +9,7 @@ import {
 } from "src/elements";
 import { Main } from "src/content";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Body = ({ photoLinkCallback }) => {
 

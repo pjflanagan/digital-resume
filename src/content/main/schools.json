@@ -54,6 +54,17 @@
   ],
   "hidden": [
     {
+      "name": "China Institute",
+      "location": "New York, NY",
+      "class": "Fall 2021",
+      "image": "",
+      "description": [
+        "Intermediate Conversation Mandarin Chinese"
+      ],
+      "background": "#fff",
+      "color": "#f00"
+    },
+    {
       "name": "Drexel University Computing Academy",
       "location": "Philadelphia, PA",
       "class": "Summer 2012",

@@ -11,7 +11,7 @@ import { Main } from "src/content";
 
 import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const SlideProjects = ({ data }) => {
   return (

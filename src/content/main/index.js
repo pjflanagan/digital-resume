@@ -3,7 +3,7 @@ import Schools from "./schools.json";
 import Skills from "./skills.json";
 import Projects from "./projects.json";
 
-export default {
+const PageMain = {
   splash: {
     title: "Peter James Flanagan",
     subtitle: "Circuit-navigating Cyberspace",
@@ -143,3 +143,6 @@ export default {
     ]
   },
 };
+
+
+export default PageMain;

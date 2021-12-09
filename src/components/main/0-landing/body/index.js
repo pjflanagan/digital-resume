@@ -5,24 +5,22 @@ import { LabeledButton, TextPageCenter } from "src/elements";
 import { Main } from "src/content";
 import { useScroll } from 'src/hooks';
 
-import Style from './style.module.scss';
+import * as Style from './style.module.scss';
 
 const scroller = Scroll.scroller;
 
 const clickToScroll = () => {
-  scroller.scrollTo("slides", {
+  scroller.scrollTo('slides', {
     duration: 1500,
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page
   });
 }
 
-const prompt = Main.splash.prompts[0] // Math.floor(Math.random() * Main.splash.prompts.length)
-
-
 const Body = () => {
 
   const scroll = useScroll();
+  const prompt = Main.splash.prompts[0];
 
   const textScroll = -scroll / 5;
   const opacity = 1.0 - scroll / 1000.0;

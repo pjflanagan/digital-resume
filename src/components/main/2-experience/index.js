@@ -11,7 +11,7 @@ import { Main } from "src/content";
 
 import { Org } from "./org";
 import { Skills } from "./skills";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const SlideExperience = ({ data }) => {
   return (

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import { useReveal } from "src/hooks";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const getNextLayerIndex = (currentLayer, offset, layersLength) => {
   if (currentLayer + offset >= layersLength) {

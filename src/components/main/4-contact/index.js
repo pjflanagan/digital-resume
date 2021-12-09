@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Wave } from "./wave";
 import { Card } from "./card";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const SlideContact = () => {
 

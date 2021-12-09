@@ -3,7 +3,7 @@ import React from "react";
 import { ProgressBar, TextSubHeading2 } from "src/elements";
 import { Main } from 'src/content';
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Skills = () => (
   <div>

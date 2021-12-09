@@ -4,20 +4,24 @@
     "cols": 1,
     "items": [
       {
-         "name": "React",
-         "progress": 89
+        "name": "React",
+        "progress": 89
       },
       {
-         "name": "Angular",
-         "progress": 64
+        "name": "Svelte",
+        "progress": 52
       },
       {
-         "name": "Flask",
-         "progress": 72
+        "name": "Angular",
+        "progress": 58
       },
       {
-         "name": "GRPC",
-         "progress": 64
+        "name": "Flask",
+        "progress": 72
+      },
+      {
+        "name": "GRPC",
+        "progress": 64
       }
     ]
   },
@@ -30,12 +34,12 @@
         "progress": 74
       },
       {
-          "name": "MongoDB",
-          "progress": 78
+        "name": "MongoDB",
+        "progress": 78
       },
       {
-          "name": "Heroku",
-          "progress": 82
+        "name": "Heroku",
+        "progress": 82
       }
     ]
   },
@@ -44,36 +48,36 @@
     "cols": 2,
     "items": [
       {
-         "name": "JavaScript",
-         "progress": 92
+        "name": "JavaScript",
+        "progress": 92
       },
       {
-         "name": "Golang",
-         "progress": 78
+        "name": "Golang",
+        "progress": 78
       },
       {
-         "name": "Node.js",
-         "progress": 62
+        "name": "Python",
+        "progress": 72
       },
       {
-         "name": "Python",
-         "progress": 72
+        "name": "Java",
+        "progress": 58
       },
       {
-         "name": "C++",
-         "progress": 61
+        "name": "C++",
+        "progress": 61
       },
       {
-         "name": "SQL",
-         "progress": 68
+        "name": "SQL",
+        "progress": 68
       },
       {
-         "name": "HTML",
-         "progress": 99
+        "name": "HTML",
+        "progress": 99
       },
       {
-         "name": "CSS / SCSS",
-         "progress": 89
+        "name": "CSS / SCSS",
+        "progress": 89
       }
     ]
   },
@@ -82,20 +86,20 @@
     "cols": 2,
     "items": [
       {
-         "name": "Webkit Browsers",
-         "progress": 86
+        "name": "Webkit Browsers",
+        "progress": 86
       },
       {
-         "name": "VS Code",
-         "progress": 96
+        "name": "VS Code",
+        "progress": 96
       },
       {
-         "name": "bash",
-         "progress": 94
+        "name": "bash",
+        "progress": 94
       },
       {
-         "name": "Photoshop",
-         "progress": 55
+        "name": "Photoshop",
+        "progress": 55
       }
     ]
   },
@@ -104,12 +108,12 @@
     "cols": 1,
     "items": [
       {
-         "name": "English",
-         "progress": 100
+        "name": "English",
+        "progress": 100
       },
       {
-         "name": "Mandarin",
-         "progress": 23
+        "name": "Mandarin",
+        "progress": 23
       }
     ]
   }

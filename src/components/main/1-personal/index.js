@@ -9,7 +9,7 @@ import {
 import { Photo } from "./photo";
 import { Body } from "./body";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const SlidePersonal = ({ data }) => {
   const [photo, setPhoto] = useState('personal-photo.jpg');

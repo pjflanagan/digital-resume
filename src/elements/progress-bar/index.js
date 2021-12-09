@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { useReveal } from 'src/hooks';
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const ProgressBar = ({ className, progress: progressProp, name }) => {
 

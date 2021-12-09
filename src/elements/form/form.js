@@ -3,7 +3,7 @@ import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
 import { LabeledButtonForm } from '../button/labeled-button';
 
-import Style from './style.module.scss';
+import * as Style from './style.module.scss';
 
 class Form extends React.Component {
   constructor(props) {

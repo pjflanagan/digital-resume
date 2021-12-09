@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { LabeledButton } from "src/elements";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const ShowMore = ({ children, trackerLabel }) => {
 

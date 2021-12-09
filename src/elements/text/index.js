@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ParseTextForLinks } from "./parse-text-for-links";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 // TextAccent
 const TextAccent = (props) => {

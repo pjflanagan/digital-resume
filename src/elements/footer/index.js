@@ -3,7 +3,7 @@ import React from "react";
 import FooterText from "src/content/footer.json";
 import { Text } from "src/elements";
 
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Footer = () => {
   return (

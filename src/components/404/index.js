@@ -4,7 +4,7 @@ import { LabeledButton, Canvas, Cover, TextPageCenter } from "src/elements";
 import Data404 from "src/content/404";
 
 import { View } from "./view";
-import Style from "./style.module.scss";
+import * as Style from "./style.module.scss";
 
 const Page404Component = () => {
   return (
