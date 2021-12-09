@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Img from "gatsby-image";
 
-import { FrameHolder, Text, TextLinkedHeader, TextLittle } from "src/elements";
+import { FrameHolder, Text, TextLinkedHeader, TextTag } from "src/elements";
 import { FindImage } from "src/content";
 import { useReveal } from "src/hooks"
 
@@ -31,7 +31,7 @@ const FeaturedProject = ({
         <Text>{description}</Text>
         <div className={Style.techStackHolder}>
           {tech.map((item) => (
-            <TextLittle key={item}>{item}</TextLittle>
+            <TextTag key={item}>{item}</TextTag>
           ))}
         </div>
       </div>

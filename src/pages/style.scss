@@ -19,6 +19,104 @@ html {
     font-family: $ubuntu;
     font-weight: 300;
     background: $backgroundDark;
+
+    h1 {
+      font-family: "AmericanCaptain";
+      color: #fff;
+      text-shadow: 1px 2px 0 #000a;
+      font-size: 34px;
+      text-align: left;
+    }
+
+    h2 {
+      color: #fff;
+      font-family: $ubuntu;
+      font-size: 18px;
+      padding: 24px 0 10px;
+      margin-bottom: 6px;
+
+      &:after {
+        content: '';
+        width: 32%;
+        background: $accentCyan;
+        height: 1px;
+        position: absolute;
+        margin: 15px 0 0 20px;
+      }
+    }
+
+    h3 {
+      color: #fff;
+      font-family: $ubuntu;
+      font-size: 16px;
+      padding: 18px 0 10px;
+    }
+
+    h4 {
+      color: $accentYellow;
+      font-family: $ubuntu;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-family: $ubuntu;
+      padding-bottom: 12px;
+      line-height: 22px;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 300;
+
+      a {
+        color: $accentYellow;
+        text-decoration: none;
+        box-shadow: inset 0px -6px #fff1;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+
+        &:hover {
+          box-shadow: inset 0px -10px #fff2;
+        }
+      }
+    }
+
+    a {
+      h2 {
+        color: $accentYellow;
+        transition: 0.2s;
+        box-shadow: none;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0 0 10px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          margin-left: 6px;
+          margin-top: -5px;
+          width: 10px;
+          height: 10px;
+          background: none;
+          border-right: 1px solid $accentYellow;
+          border-top: 1px solid $accentYellow;
+          transition: 0.2s;
+        }
+
+        &:hover {
+          color: $accentYellowHover;
+
+          &:after {
+            transform: translate(2px, -2px);
+          }
+        }
+      }
+    }
   }
 }
 
+@media only screen and (min-width: $md) {
+  h1 {
+    font-size: 46px;
+  }
+}

@@ -1,65 +1,15 @@
 @import "../variables";
 
-.text-accent {
-  color: $accentYellow;
-  font-family: $ubuntu;
-  text-transform: uppercase;
+// Tags
+
+.text-tag {
   font-size: 12px;
-  padding-bottom: 10px;
+  color: $accentCyan;
 }
 
-.text-heading {
-  font-family: "AmericanCaptain";
-  color: #fff;
-  text-shadow: 1px 2px 0 #000a;
-  font-size: 34px;
-  text-align: left;
-}
+// Function Paragraph Spans
 
-.text-sub-heading {
-  color: #fff;
-  font-family: $ubuntu;
-  font-size: 18px;
-  padding: 24px 0 10px;
-  margin-bottom: 6px;
-
-  .line {
-    width: 32%;
-    background: $accentCyan;
-    height: 1px;
-    position: absolute;
-    margin: 15px 0 0 20px;
-  }
-}
-
-.text-sub-heading-2 {
-  color: #fff;
-  font-family: $ubuntu;
-  font-size: 16px;
-  padding: 18px 0 10px;
-}
-
-.text-flag {
-  color: #fff;
-  font-family: $ubuntu;
-  font-size: 12px;
-  padding: 4px 6px;
-  width: 108px;
-  background: #cc471c;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 18px 3px 4px;
-}
-
-.text {
-  font-family: $ubuntu;
-  padding-bottom: 12px;
-  line-height: 22px;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 300;
-
-  a,
+p {
   .text-inline-link {
     color: $accentYellow;
     text-decoration: none;
@@ -72,6 +22,24 @@
     }
   }
 }
+
+// Text Linked Header
+// override for cyan color
+
+a {
+  h2.text-linked-header {
+    &.cyan {
+      color: $accentCyan;
+
+      &:after {
+        border-right: 1px solid $accentCyan;
+        border-top: 1px solid $accentCyan;
+      }
+    }
+  }
+}
+
+// Splash Screen
 
 .text-page-center {
   height: 120px;
@@ -97,68 +65,7 @@
   }
 }
 
-a.text-linked-header-link {
-  color: $accentYellow;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-
-  .text-linked-header {
-    font-size: 20px;
-    font-weight: 500;
-    padding: 0 0 10px;
-  }
-
-  &:hover {
-    color: $accentYellowHover;
-
-    span.arrow {
-      transform: translate(2px, -2px);
-    }
-  }
-
-  span.arrow {
-    width: 10px;
-    height: 10px;
-    border-right: 1px solid $accentYellow;
-    border-top: 1px solid $accentYellow;
-    position: absolute;
-    margin-left: 12px;
-    margin-top: 2px;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-
-    &.cyan {
-      border-right: 1px solid $accentCyan;
-      border-top: 1px solid $accentCyan;
-
-      &:before {
-        border-top: 1px solid $accentCyan;
-      }
-    }
-
-    &:before {
-      content: "";
-      width: 14px;
-      height: 5px;
-      border-top: 1px solid $accentYellow;
-      transform: rotate(-45deg);
-      position: absolute;
-      top: 4px;
-      right: -3px;
-    }
-  }
-}
-
-.text-little {
-  font-size: 12px;
-  color: $accentCyan;
-}
-
 @media only screen and (min-width: $md) {
-  .text-heading {
-    font-size: 46px;
-  }
-
   .text-page-center {
     .text-headline {
       font-size: 80px;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextAccent, TextLittle } from 'src/elements';
+import { TextAccent, TextTag } from 'src/elements';
 
 import * as Style from './style.module.scss';
 
@@ -28,7 +28,7 @@ const FormText = ({
         className={`${Style.formField} ${className}`}
       />
       <div className={Style.errorHolder}>
-        <TextLittle>{error}</TextLittle>
+        <TextTag>{error}</TextTag>
       </div>
     </div>
   );
@@ -57,7 +57,7 @@ const FormMessage = ({
         rows="4">
       </textarea>
       <div className={Style.errorHolder}>
-        <TextLittle>{error}</TextLittle>
+        <TextTag>{error}</TextTag>
       </div>
     </div>
   );

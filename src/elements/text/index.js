@@ -1,54 +1,49 @@
 import React from "react";
 
 import { ParseTextForLinks } from "./parse-text-for-links";
+
 import * as Style from "./style.module.scss";
 
-// TextAccent
-const TextAccent = (props) => {
-  return (
-    <p className={`${Style.textAccent} ${props.className}`}>{props.children}</p>
-  );
-};
-
-// TextHeading
+// TextHeading h1
 const TextHeading = (props) => {
   return (
-    <h1 className={`${Style.textHeading} ${props.className}`}>
+    <h1 className={props.className}>
       {props.children}
     </h1>
   );
 };
 
-// TextSubHeading
+// TextSubHeading h2
 const TextSubHeading = (props) => {
   return (
-    <h2 className={`${Style.textSubHeading} ${props.className}`}>
-      {props.children}
-      <span className={Style.line}></span>
-    </h2>
-  );
-};
-
-// TextSubHeading2
-const TextSubHeading2 = (props) => {
-  return (
-    <h2 className={`${Style.textSubHeading2} ${props.className}`}>
+    <h2 className={props.className}>
       {props.children}
     </h2>
   );
 };
 
-// TextFlag
-const TextFlag = (props) => {
+// TextSectionHeading h3
+const TextSectionHeading = (props) => {
   return (
-    <h2 className={`${Style.textFlag} ${props.className}`}>{props.children}</h2>
+    <h3 className={props.className}>
+      {props.children}
+    </h3>
   );
 };
 
-// TextLittle
-const TextLittle = ({ children }) => {
+// TextAccent h4
+const TextAccent = (props) => {
   return (
-    <span className={Style.textLittle}>{children}</span>
+    <h4 className={props.className}>
+      {props.children}
+    </h4>
+  );
+};
+
+// TextTag
+const TextTag = ({ children }) => {
+  return (
+    <span className={Style.textTag}>{children}</span>
   );
 }
 
@@ -57,12 +52,12 @@ const Text = (props) => {
   if (!!props.dangerouslySetInnerHTML)
     return (
       <p
-        className={`${Style.text} ${props.className}`}
+        className={props.className}
         dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
       />
     );
   return (
-    <p className={`${Style.text} ${props.className}`}>
+    <p className={props.className}>
       {ParseTextForLinks(props.children, props.links, props.callback)}
     </p>
   );
@@ -83,9 +78,9 @@ export {
   TextAccent,
   TextHeading,
   TextSubHeading,
-  TextSubHeading2,
-  TextFlag,
+  TextSectionHeading,
+  // TextFlag,
   TextPageCenter,
   Text,
-  TextLittle
+  TextTag
 };

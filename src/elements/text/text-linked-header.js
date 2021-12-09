@@ -10,10 +10,14 @@ const TextLinkedHeader = ({
   color
 }) => {
   return (
-    <OutboundLink href={href} target="_blank" rel="noreferrer" className={Style.textLinkedHeaderLink}>
-      <h2 className={`${Style.textLinkedHeader} ${className}`}>
+    <OutboundLink
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={`${Style.textLinkedHeader} ${Style[color]}`}
+    >
+      <h2 className={className}>
         {children}
-        <span className={`${Style.arrow} ${Style[color]}`}></span>
       </h2>
     </OutboundLink>
   );
