@@ -1,4 +1,4 @@
-@import "../variables";
+@import "src/theme/variables";
 
 @keyframes noise {
   100% {
@@ -15,6 +15,7 @@
   z-index: 201;
   opacity: 0.6;
   background: url("../../../static/img/bg/noise.png");
+  top: 0;
 }
 
 // @media only screen and (min-width: $md) {

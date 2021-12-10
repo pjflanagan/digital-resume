@@ -1,0 +1,31 @@
+@import "/src/theme/variables";
+
+.body {
+  padding: 14px 14px;
+
+  .bio {
+    &.additional {
+      display: none;
+    }
+  }
+}
+
+// md
+@media only screen and (min-width: $md) {
+  .body {
+    padding: 50px 24px;
+
+    .bio {
+      &.additional {
+        display: block;
+      }
+    }
+  }
+}
+
+// lg
+// @media only screen and (min-width: $lg) {
+//   .bio.additional {
+//     display: block;
+//   }
+// }

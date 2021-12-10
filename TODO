@@ -1,4 +1,19 @@
 
+Blog TODO:
+
+- Reorganize
+  - Add typescript
+  - Styles
+  - Organize files
+    - Rename main to bio or resume
+  - Elements
+    - Less passing in custom styles to Elements, instead take variables
+    - No accessing content in  Elements
+    - Make the Header and HeaderLink element for both blog and resume
+  - Content
+    - Move content into static and get with graphql
+
+
 TOP TODO:
 - [ ] content should be done with CONTEXT, only at top level
 - [ ] images should not be globally named

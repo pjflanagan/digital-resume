@@ -1,0 +1,71 @@
+
+@import '/src/theme/variables';
+
+.slide-experience {
+  width: 100%;
+  z-index: 20;
+  position: relative;
+  background: $backgroundDark2;
+  padding: 0 0 36px;
+
+  .pre-slide-curve-holder {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    margin-top: -30px;
+    overflow-x: hidden;
+
+    .pre-slide-curve {
+      background: $backgroundDark2;
+      width: 120%;
+      height: calc(100% - 4px);
+      position: relative;
+      top: 4px;
+      left: -10%;
+      border-radius: 50%;
+      box-shadow: 0 -4px #0002;
+    }
+
+  }
+
+  .slide-body {
+    font-family: $ubuntu;
+    z-index: 21;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .slide-experience {
+    background: $backgroundDark2;
+    // background: radial-gradient(circle, $backgroundDark2 54%, #121e25 100%) !important;
+    z-index: 0;
+    padding: 68px 0;
+
+    &:before {
+      display: none;
+    }
+
+    .slide-body {
+      width: 540px;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .slide-experience {
+    .slide-body {
+      width: 680px;
+    }
+  }
+}
+
+@media only screen and (min-width: $xl) {
+  .slide-experience {
+    .slide-body {
+      width: 820px;
+    }
+  }
+}

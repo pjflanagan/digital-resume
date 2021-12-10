@@ -31,12 +31,21 @@ const TextSectionHeading = (props) => {
   );
 };
 
-// TextAccent h4
-const TextAccent = (props) => {
+// TextSectionSubHeading h4
+const TextSectionSubHeading = (props) => {
   return (
     <h4 className={props.className}>
       {props.children}
     </h4>
+  );
+};
+
+// TextAccent h5
+const TextAccent = (props) => {
+  return (
+    <h5 className={props.className}>
+      {props.children}
+    </h5>
   );
 };
 
@@ -79,7 +88,7 @@ export {
   TextHeading,
   TextSubHeading,
   TextSectionHeading,
-  // TextFlag,
+  TextSectionSubHeading,
   TextPageCenter,
   Text,
   TextTag

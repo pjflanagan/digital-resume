@@ -18,6 +18,7 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "classnames": "^2.3.1",
     "gatsby": "^4.3.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-analytics": "^4.3.0",

@@ -1,0 +1,56 @@
+@import "/src/theme/variables";
+
+.slide-contact {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  background: $backgroundDark2;
+
+  .slide-back {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .slide-contact {
+    .slide-back {
+      display: block;
+      box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+      border-top: 1px solid $backgroundLightOpaque;
+      width: 100%;
+      height: 120px;
+      background: $backgroundDark;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+
+// xl
+@media only screen and (min-width: $xl) {
+  .slide-contact {
+    height: 80%;
+    display: block;
+    position: relative;
+    background: none;
+    min-height: 600px;
+
+    .slide-front {
+      z-index: 2;
+      position: relative;
+      height: 100%;
+
+    }
+
+    .slide-back {
+      width: 100%;
+      height: 100%;
+      background: $backgroundDark2Opaque;
+      border-top: none;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+  }
+}

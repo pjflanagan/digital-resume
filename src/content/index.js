@@ -1,5 +1,5 @@
 
-import Main from './main';
+import Bio from './bio';
 
 const FindImage = ({ data: { allFile: { edges } }, image }) => {
   const imageEdge = edges.find(({ node }) => node.base === image);
@@ -10,4 +10,4 @@ const FindImage = ({ data: { allFile: { edges } }, image }) => {
   return imageEdge.node;
 }
 
-export { FindImage, Main };
+export { FindImage, Bio };

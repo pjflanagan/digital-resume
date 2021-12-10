@@ -1,13 +1,12 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { MainComponent } from "src/components/main";
+import { BioComponent } from "src/components/bio";
 
-import "./reset.scss";
-import "./style.scss";
+import "src/theme/theme.scss";
 
 const PageIndex = ({ data }) => {
-  return <MainComponent data={data} />;
+  return <BioComponent data={data} />;
 }
 
 export default PageIndex;
