@@ -4,7 +4,7 @@ import {
   Page404Component
 } from 'src/components/404';
 
-import "./style.scss";
+import "src/theme/theme.scss";
 
 const Page404 = () => {
   return <Page404Component />;

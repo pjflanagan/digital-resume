@@ -1,0 +1,99 @@
+@import "/src/theme/variables";
+
+.card {
+  width: 100%;
+
+  .card-sides {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column-reverse;
+
+    .side-left {
+      width: 100%;
+      padding: 36px 12px 0;
+
+      .link-holder {
+        .button-holder {
+          margin: 18px 0;
+        }
+      }
+    }
+
+    .side-right {
+      width: 100%;
+      padding: 0 12px 36px;
+      transition: transform 0.4s;
+      margin-top: 32px;
+      // max-height: 400px;
+    }
+  }
+
+  &.is-submitted {
+
+    .card-sides {
+      .side-right {
+        // max-height: 0;
+        // overflow: hidden;
+        // padding: 0px 12px;
+        filter: opacity(0.3);
+      }
+    }
+  }
+}
+
+
+// xl
+@media only screen and (min-width: $xl) {
+  .card {
+    height: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: -345px;
+    transform: translate(0, -50%);
+    position: relative;
+    width: 690px;
+    display: inline-block;
+    // clip-path: $polygon;
+    transition: transform 0.4s;
+
+    .card-sides {
+      width: auto;
+
+      .side-left {
+        padding: 36px;
+        z-index: 2;
+        background: $backgroundDarkOpaque;
+        width: 276px;
+        clip-path: $polygonLeft;
+
+        .link-holder {
+          display: block;
+          flex-wrap: nowrap;
+          margin: 0 auto;
+        }
+      }
+
+      .side-right {
+        width: 414px;
+        padding: 36px;
+        background: $backgroundDark2Opaque;
+        z-index: 1;
+        margin-top: 0px;
+        clip-path: $polygonRight;
+      }
+    }
+
+    &.is-submitted {
+      transform: translate(60px, -50%);
+
+      .card-sides {
+        .side-right {
+          height: auto;
+          transform: translate(-120px, 0);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

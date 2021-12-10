@@ -19,8 +19,15 @@ const PostComponent = ({
       {/* TODO: blog general header */}
       <PostHeaderImageComponent src={frontmatter.image} />
       <div className={Style.blogContainer}>
-        <PostFrontmatterComponent frontmatter={frontmatter} />
-        {children}
+        <div className={Style.blogContainerBack}>
+          <div className={Style.blogContent}>
+            <PostFrontmatterComponent frontmatter={frontmatter} />
+            {children}
+          </div>
+        </div>
+      </div>
+      <div className={Style.blogFooter}>
+        Footer
       </div>
       {/* TODO: blog general footer */}
     </>

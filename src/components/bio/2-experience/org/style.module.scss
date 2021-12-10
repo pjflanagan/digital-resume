@@ -1,0 +1,78 @@
+@import "/src/theme/variables";
+
+.org {
+  color: #fff;
+  margin-bottom: 24px;
+
+  .org-left {
+    display: flex;
+    flex-wrap: wrap;
+
+    .avatar-holder {
+      padding: 0 6px;
+    }
+
+    .org-info-holder {
+      padding-left: 6px;
+
+      .name {
+        padding: 0 0 4px;
+        color: $accentCyan;
+      }
+
+      .location {
+        padding: 2px 2px 4px;
+      }
+
+      .time {
+        padding: 2px 2px;
+      }
+    }
+
+  }
+
+  .org-right {
+    padding: 14px;
+  }
+
+  .org-extra {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .org {
+    display: flex;
+    background: $blackOpaque;
+    padding: 24px;
+    clip-path: $polygon;
+    flex-wrap: wrap;
+
+    .org-left {
+      min-width: 320px;
+    }
+
+    .org-right {
+      width: calc(100% - 320px);
+      display: grid;
+      padding: 0 14px;
+
+      .position {
+        padding: 0 0 4px;
+      }
+    }
+
+    .org-extra {
+      width: 100%;
+      display: flex;
+
+      .name {
+        font-size: 18px;
+        padding: 2px 0;
+        color: $accentYellow;
+        font-weight: 300;
+        font-size: 16px;
+      }
+    }
+  }
+}

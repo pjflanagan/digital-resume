@@ -1,9 +1,9 @@
-
+@import 'src/theme/variables';
 
 .footer {
   width: 100%;
   padding: 24px 0 16px;
-  background: #1c1c1cf0;
+  background: $backgroundDark3Transparent;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -1,14 +1,17 @@
 
 Blog TODO:
 
-- Add typescript
-- Organize Elements a little better
-- Make theme that works with both 
-- Make blog
-
-
-
-
+- Reorganize
+  - Add typescript
+  - Styles
+  - Organize files
+    - Rename main to bio or resume
+  - Elements
+    - Less passing in custom styles to Elements, instead take variables
+    - No accessing content in  Elements
+    - Make the Header and HeaderLink element for both blog and resume
+  - Content
+    - Move content into static and get with graphql
 
 
 TOP TODO:

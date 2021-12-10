@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 // TODO: Helemet for social media share images and other stuff
 
-import "../style.scss";
+import "src/theme/theme.scss";
 
 import { PostComponent } from 'src/components/blog';
 

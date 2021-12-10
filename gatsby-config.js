@@ -66,7 +66,7 @@ module.exports = {
  *     {
       resolve: ,
       options: {
-        data: `@import "${__dirname}/src/elements/variables";`,
+        data: `@import "${__dirname}/src/theme/variables";`,
       }
     },
  */

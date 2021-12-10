@@ -1,0 +1,214 @@
+@import "./reset.scss";
+@import "./variables";
+
+@font-face {
+  font-family: AmericanCaptain;
+  src: url("../../static/font/AmericanCaptain-MdEY.otf");
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    position: relative;
+    height: 100%;
+    font-family: $ubuntu;
+    font-weight: 300;
+    background: $backgroundDark;
+  }
+}
+
+// TextHeading
+h1 {
+  font-family: "AmericanCaptain";
+  color: #fff;
+  text-shadow: 1px 2px 0 #000a;
+  font-size: 3em;
+  text-align: left;
+}
+
+// TextSubHeading _________
+h2 {
+  color: #fff;
+  font-family: $ubuntu;
+  font-size: 1.4em;
+  padding: 1em 0 0.4em;
+  margin-bottom: 6px;
+
+  &:after {
+    content: '';
+    width: 32%;
+    background: $accentCyan;
+    height: 1px;
+    position: absolute;
+    margin: 15px 0 0 20px;
+  }
+}
+
+// TextSectionHeading
+h3 {
+  color: $accentYellow;
+  font-family: $ubuntu;
+  font-size: 1.2em;
+  padding: 1em 0 0.4em;
+
+  a {
+    &:after {
+      content: '';
+      position: absolute;
+      margin-left: 6px;
+      margin-top: -5px;
+      width: 10px;
+      height: 10px;
+      background: $accentYellowOpaque2;
+      border-right: 1px solid $accentYellow;
+      border-top: 1px solid $accentYellow;
+      transition: 0.2s;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    &:hover {
+      &:after {
+        background: $accentYellowOpaque;
+        transform: translate(2px, -2px);
+      }
+    }
+  }
+}
+
+// TextSectionSubHeading
+h4 {
+  color: $accentCyan;
+  font-family: $ubuntu;
+  font-size: 1em;
+  padding: 0.4em 0;
+}
+
+// TextAccent
+h5 {
+  color: $accentYellow;
+  font-family: $ubuntu;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 1em 0;
+}
+
+// Text
+p {
+  font-family: $ubuntu;
+  padding: 0.4em 0 0.8em;
+  line-height: 1.6em;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+
+  code {
+    padding: 0.2em 0.6em;
+    background: $backgroundLightOpaque2;
+    color: $accentYellowHover;
+    border-radius: 3px;
+    font-size: 1.2em;
+    font-family: monospace;
+  }
+}
+
+// Links
+a {
+  text-decoration: none;
+  color: $accentYellow;
+  box-shadow: inset 0px -6px $accentYellowOpaque2;
+  transition: 0.2s;
+
+  &:hover {
+    color: $accentYellowHover;
+    box-shadow: inset 0px -10px $accentYellowOpaque2;
+  }
+}
+
+// Lists
+ul,
+ol {
+  padding: 0.2em 0 0.2em 2em;
+
+  li {
+    color: $white;
+    padding: 0.3em 0;
+
+    ul,
+    ol {
+      padding: 0.2em 0 0 2em;
+    }
+  }
+}
+
+// Unordered list dash
+ul li:before {
+  content: '—'; // &#8212;
+  position: absolute;
+  margin-left: -1.6em;
+  margin-top: -2px;
+  color: $accentCyan;
+}
+
+// Numbered list counter
+ol {
+  list-style: none;
+  counter-reset: customCounter;
+
+  li {
+    counter-increment: customCounter;
+
+    &::before {
+      content: counter(customCounter) ". ";
+      position: absolute;
+      margin-left: -1.6em;
+      margin-top: -2px;
+      color: $accentCyan;
+    }
+  }
+}
+
+// Blockquote
+blockquote {
+  border: 1px solid $backgroundLightOpaque2;
+  box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+  background: $backgroundDark;
+  background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
+  background-size: 20px 20px;
+  transition: background-position 0.2s;
+  padding: 2em;
+  text-align: center;
+  margin: 1em 0;
+
+  &:before {
+    content: '"';
+    position: absolute;
+    margin-top: -0.2em;
+    font-size: 4em;
+    font-family: AmericanCaptain;
+    color: $backgroundLight;
+  }
+
+  p {
+    padding: 0.8em 0 0.2em 0;
+    color: $accentYellow;
+    text-shadow: 1px 2px 0 #000a;
+    font-size: 1.6em;
+  }
+
+}
+
+// Bar
+hr {
+  width: 100%;
+  border-top: 1px solid $accentCyan;
+  height: 1px;
+  border-bottom: none;
+}
+
+@media only screen and (min-width: $md) {
+  h1 {
+    font-size: 46px;
+  }
+}
