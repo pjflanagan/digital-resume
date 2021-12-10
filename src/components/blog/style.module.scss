@@ -1,12 +1,23 @@
+@import "src/elements/variables.scss";
+
+.header-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid $backgroundLightOpaque2;
+  box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+}
+
 .blog-container {
   margin: 40px auto;
   max-width: 780px;
   width: 100%;
   padding: 12px;
 
-  .post-container {
-    // outline
-  }
+  // .post-container {
+  //   // outline
+  // }
 
   img {
     width: 100%;

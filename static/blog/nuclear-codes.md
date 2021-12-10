@@ -1,6 +1,6 @@
 ---
 slug: nuclear-codes
-date: 2021-02-15
+date: "2021-02-15"
 title: Nuclear Codes
 image: https://raw.githubusercontent.com/pjflanagan/nuclear-codes/master/media/social.png
 ---
@@ -9,6 +9,8 @@ During the lockdown my family....
 
 This is a React based Socket.io game that can be played by 5 to 10 friends. Agents
 try to recover a code while Spies try and stop them. Hosted on Netlify and Heroku.
+
+> Never trust anyone.
 
 ### [Play Nuclear Codes!](https://nuclearcodes.flanny.com)
 

@@ -2,7 +2,10 @@
 
 import * as React from "react";
 
+import { Cover } from 'src/elements';
+
 import { PostFrontmatterComponent } from "./post-frontmatter";
+import { PostHeaderImageComponent } from "./post-header-image";
 
 import * as Style from '../style.module.scss';
 
@@ -11,12 +14,16 @@ const PostComponent = ({
   frontmatter,
 }) => {
   return (
-    <div className={Style.blogContainer}>
+    <>
+      <Cover />
       {/* TODO: blog general header */}
-      <PostFrontmatterComponent frontmatter={frontmatter} />
-      {children}
+      <PostHeaderImageComponent src={frontmatter.image} />
+      <div className={Style.blogContainer}>
+        <PostFrontmatterComponent frontmatter={frontmatter} />
+        {children}
+      </div>
       {/* TODO: blog general footer */}
-    </div>
+    </>
   );
 }
 

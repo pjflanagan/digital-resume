@@ -29,6 +29,7 @@ html {
     font-weight: 300;
     background: $backgroundDark;
 
+    // TextHeading
     h1 {
       font-family: "AmericanCaptain";
       color: #fff;
@@ -37,6 +38,7 @@ html {
       text-align: left;
     }
 
+    // TextSubHeading _________
     h2 {
       color: #fff;
       font-family: $ubuntu;
@@ -54,6 +56,7 @@ html {
       }
     }
 
+    // TextSectionHeading
     h3 {
       color: $accentYellow;
       font-family: $ubuntu;
@@ -84,6 +87,7 @@ html {
       }
     }
 
+    // TextSectionSubHeading
     h4 {
       color: $accentCyan;
       font-family: $ubuntu;
@@ -91,6 +95,7 @@ html {
       padding: 0.4em 0;
     }
 
+    // TextAccent
     h5 {
       color: $accentYellow;
       font-family: $ubuntu;
@@ -99,6 +104,7 @@ html {
       padding: 1em 0;
     }
 
+    // Text
     p {
       font-family: $ubuntu;
       padding: 0.4em 0 0.8em;
@@ -109,7 +115,7 @@ html {
 
       code {
         padding: 0.2em 0.6em;
-        background: $backgroundLight;
+        background: $backgroundLightOpaque2;
         color: $accentYellowHover;
         border-radius: 3px;
         font-size: 1.2em;
@@ -117,14 +123,7 @@ html {
       }
     }
 
-    ul li:before {
-      content: '—'; // &#8212;
-      position: absolute;
-      margin-left: -1.6em;
-      margin-top: -2px;
-      color: $accentCyan;
-    }
-
+    // Lists
     ul,
     ol {
       padding: 0.2em 0 0.2em 2em;
@@ -140,17 +139,73 @@ html {
       }
     }
 
-    // blockquote {
-    //   background: ;
-    // }
+    // Unordered list dash
+    ul li:before {
+      content: '—'; // &#8212;
+      position: absolute;
+      margin-left: -1.6em;
+      margin-top: -2px;
+      color: $accentCyan;
+    }
 
+    // Numbered list counter
+    ol {
+      list-style: none;
+      counter-reset: customCounter;
+
+      li {
+        counter-increment: customCounter;
+
+        &::before {
+          content: counter(customCounter) ". ";
+          position: absolute;
+          margin-left: -1.6em;
+          margin-top: -2px;
+          color: $accentCyan;
+        }
+      }
+    }
+
+    // Blockquote
+    blockquote {
+      border: 1px solid $backgroundLightOpaque2;
+      box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+      background: $backgroundDark;
+      background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
+      background-size: 20px 20px;
+      transition: background-position 0.2s;
+      padding: 2em;
+      text-align: center;
+      margin: 1em 0;
+
+      &:before {
+        content: '"';
+        position: absolute;
+        margin-top: -0.2em;
+        font-size: 4em;
+        font-family: AmericanCaptain;
+        color: $backgroundLight;
+      }
+
+      p {
+        padding: 0.8em 0 0.2em 0;
+        color: $accentYellow;
+        text-shadow: 1px 2px 0 #000a;
+        font-size: 1.6em;
+      }
+
+    }
+
+    // Bar
     hr {
       width: 100%;
-      background: $accentCyan;
+      border-top: 1px solid $accentCyan;
       height: 1px;
+      border-bottom: none;
     }
   }
 }
+
 
 
 @media only screen and (min-width: $md) {
