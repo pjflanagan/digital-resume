@@ -7,6 +7,7 @@ import {
   TextSubHeading,
   Text,
   Stack,
+  LabeledButton
 } from "src/elements";
 import { Main } from "src/content";
 
@@ -46,6 +47,16 @@ const SlideProjects = ({ data }) => {
               />
             ))}
           </Stack>
+        </div>
+        <div className={Style.buttonHolder}>
+          <LabeledButton
+            icon="saturn"
+            trackerLabel="main.goToBlog"
+            href="/blog"
+          >
+            See Project Portfolio
+          </LabeledButton>
+
         </div>
       </div>
     </div>

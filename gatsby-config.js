@@ -7,7 +7,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-root-import',
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      // options: {
+      //   plugins: [
+      //     {
+      //       resolve: `gatsby-remark-highlight-code`,
+      //     },
+      //   ],
+      // },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

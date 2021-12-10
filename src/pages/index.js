@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 
 import { MainComponent } from "src/components/main";
 
-import "./reset.scss";
 import "./style.scss";
 
 const PageIndex = ({ data }) => {

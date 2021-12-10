@@ -110,7 +110,7 @@ const PageMain = {
         }
       ],
       text: [
-        "A list of all my coding adventures can be found on my <blog> as well as my <github>",
+        "A list of all my coding adventures can be found on my <blog> as well as my <github>.",
       ],
     },
   },

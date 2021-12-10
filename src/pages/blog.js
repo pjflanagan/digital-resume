@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 
 import { BlogComponent } from "src/components/blog";
 
-import "./reset.scss";
 import "./style.scss";
 
 const PageBlog = ({ data }) => {

@@ -1,3 +1,4 @@
+@import "./reset.scss";
 @import "../elements/variables";
 
 @font-face {
@@ -7,6 +8,14 @@
 
 a {
   text-decoration: none;
+  color: $accentYellow;
+  box-shadow: inset 0px -6px $accentYellowOpaque2;
+  transition: 0.2s;
+
+  &:hover {
+    color: $accentYellowHover;
+    box-shadow: inset 0px -10px $accentYellowOpaque2;
+  }
 }
 
 html {
@@ -24,15 +33,15 @@ html {
       font-family: "AmericanCaptain";
       color: #fff;
       text-shadow: 1px 2px 0 #000a;
-      font-size: 34px;
+      font-size: 3em;
       text-align: left;
     }
 
     h2 {
       color: #fff;
       font-family: $ubuntu;
-      font-size: 18px;
-      padding: 24px 0 10px;
+      font-size: 1.4em;
+      padding: 1em 0 0.4em;
       margin-bottom: 6px;
 
       &:after {
@@ -46,77 +55,111 @@ html {
     }
 
     h3 {
-      color: #fff;
+      color: $accentYellow;
       font-family: $ubuntu;
-      font-size: 16px;
-      padding: 18px 0 10px;
+      font-size: 1.2em;
+      padding: 1em 0 0.4em;
+
+      a {
+        &:after {
+          content: '';
+          position: absolute;
+          margin-left: 6px;
+          margin-top: -5px;
+          width: 10px;
+          height: 10px;
+          background: $accentYellowOpaque2;
+          border-right: 1px solid $accentYellow;
+          border-top: 1px solid $accentYellow;
+          transition: 0.2s;
+          clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        &:hover {
+          &:after {
+            background: $accentYellowOpaque;
+            transform: translate(2px, -2px);
+          }
+        }
+      }
     }
 
     h4 {
+      color: $accentCyan;
+      font-family: $ubuntu;
+      font-size: 1em;
+      padding: 0.4em 0;
+    }
+
+    h5 {
       color: $accentYellow;
       font-family: $ubuntu;
       text-transform: uppercase;
-      font-size: 12px;
-      padding-bottom: 10px;
+      font-size: 0.8em;
+      padding: 1em 0;
     }
 
     p {
       font-family: $ubuntu;
-      padding-bottom: 12px;
-      line-height: 22px;
-      font-size: 14px;
+      padding: 0.4em 0 0.8em;
+      line-height: 1.6em;
+      font-size: 1em;
       color: #fff;
       font-weight: 300;
 
-      a {
-        color: $accentYellow;
-        text-decoration: none;
-        box-shadow: inset 0px -6px #fff1;
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
+      code {
+        padding: 0.2em 0.6em;
+        background: $backgroundLight;
+        color: $accentYellowHover;
+        border-radius: 3px;
+        font-size: 1.2em;
+        font-family: monospace;
+      }
+    }
 
-        &:hover {
-          box-shadow: inset 0px -10px #fff2;
+    ul li:before {
+      content: '—'; // &#8212;
+      position: absolute;
+      margin-left: -1.6em;
+      margin-top: -2px;
+      color: $accentCyan;
+    }
+
+    ul,
+    ol {
+      padding: 0.2em 0 0.2em 2em;
+
+      li {
+        color: $white;
+        padding: 0.3em 0;
+
+        ul,
+        ol {
+          padding: 0.2em 0 0 2em;
         }
       }
     }
 
-    a h2,
-    h2 a {
-      color: $accentYellow;
-      transition: 0.2s;
-      box-shadow: none;
-      font-size: 20px;
-      font-weight: 500;
-      padding: 0 0 10px;
+    // blockquote {
+    //   background: ;
+    // }
 
-      &:after {
-        content: '';
-        position: absolute;
-        margin-left: 6px;
-        margin-top: -5px;
-        width: 10px;
-        height: 10px;
-        background: none;
-        border-right: 1px solid $accentYellow;
-        border-top: 1px solid $accentYellow;
-        transition: 0.2s;
-      }
-
-      &:hover {
-        color: $accentYellowHover;
-
-        &:after {
-          transform: translate(2px, -2px);
-        }
-      }
+    hr {
+      width: 100%;
+      background: $accentCyan;
+      height: 1px;
     }
   }
 }
 
 
 @media only screen and (min-width: $md) {
-  h1 {
-    font-size: 46px;
+  html {
+    body {
+      h1 {
+        font-size: 46px;
+      }
+
+    }
   }
 }

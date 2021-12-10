@@ -14,32 +14,25 @@
 
     .org-info-holder {
       padding-left: 6px;
-    
+
       .name {
-        font-size: 18px;
-        padding: 2px 0 4px;
+        padding: 0 0 4px;
         color: $accentCyan;
       }
+
       .location {
-        font-size: 14px;
-        padding: 0 2px 4px;
+        padding: 2px 2px 4px;
       }
+
       .time {
-        color: $accentYellow;
-        font-size: 10px;
-        padding: 0 2px;
-        font-weight: 300;
+        padding: 2px 2px;
       }
     }
-    
+
   }
 
   .org-right {
     padding: 14px;
-    .position {
-      padding: 8px 0;
-      color: $accentYellow;
-    }
   }
 
   .org-extra {
@@ -58,12 +51,14 @@
     .org-left {
       min-width: 320px;
     }
+
     .org-right {
       width: calc(100% - 320px);
       display: grid;
       padding: 0 14px;
+
       .position {
-        padding: 0 0 8px;
+        padding: 0 0 4px;
       }
     }
 
@@ -74,13 +69,9 @@
       .name {
         font-size: 18px;
         padding: 2px 0;
-        color: $accentCyan;
+        color: $accentYellow;
         font-weight: 300;
         font-size: 16px;
-      }
-      .position {
-        font-size: 14px;
-        padding: 6px 0 4px;
       }
     }
   }

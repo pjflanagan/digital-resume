@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Avatar, Text, TextLinkedHeader } from "src/elements";
+import {
+  Avatar,
+  Text,
+  TextLinkedHeader,
+  TextSectionHeading,
+  TextSectionSubHeading,
+  TextAccent
+} from "src/elements";
 
 import * as Style from "./style.module.scss";
 
@@ -27,13 +34,13 @@ const Org = ({
         />
       </div>
       <div className={Style.orgInfoHolder}>
-        <div className={Style.name}>{name}</div>
-        <div className={Style.location}>{location}</div>
-        <div className={Style.time}>{time}</div>
+        <TextSectionHeading className={Style.name}>{name}</TextSectionHeading>
+        <Text className={Style.location}>{location}</Text>
+        <TextAccent className={Style.time}>{time}</TextAccent>
       </div>
     </div>
     <div className={Style.orgRight}>
-      {!!position && <div className={Style.position}>{position}</div>}
+      {!!position && <TextSectionHeading className={Style.position}>{position}</TextSectionHeading>}
       {description.map((line, i) => (
         <Text key={i} links={links}>
           {line}
@@ -46,7 +53,7 @@ const Org = ({
           <div className={Style.orgLeft}></div>
           <div className={Style.orgRight}>
             <TextLinkedHeader href={org.link} className={Style.name} color="cyan">{org.name}</TextLinkedHeader>
-            <div className={Style.position}>{org.position}</div>
+            <TextSectionSubHeading>{org.position}</TextSectionSubHeading>
             <Text key={i}>
               {org.description}
             </Text>

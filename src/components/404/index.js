@@ -18,7 +18,7 @@ const Page404Component = () => {
       <div className={`${Style.plane} ${Style.top}`} />
       <div className={`${Style.plane} ${Style.bottom}`} />
       <div className={Style.buttonHolder}>
-        <LabeledButton icon="saturn" trackerLabel="404.goBack" href={"/"} sameWindow={true}>
+        <LabeledButton icon="saturn" trackerLabel="404.goBack" href="/" sameWindow={true}>
           {Data404.prompt}
         </LabeledButton>
       </div>

@@ -1,61 +1,66 @@
 @import "../../../elements/variables";
 
 .blueprint {
-    box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
-    background: $backgroundDark;
-    background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
-    background-size: 20px 20px;
-    transition: background-position 0.2s;
+  box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;
+  background: $backgroundDark;
+  background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
+  background-size: 20px 20px;
+  transition: background-position 0.2s;
 }
 
 .slide-projects {
-    z-index: 31;
-    position: relative;
-    border-top: 1px solid $backgroundLightOpaque;
-    border-bottom: 1px solid $backgroundLightOpaque;
+  z-index: 31;
+  position: relative;
+  border-top: 1px solid $backgroundLightOpaque;
+  border-bottom: 1px solid $backgroundLightOpaque;
 
-    .ruler {
-        min-width: 580px;
-        width: 96%;
-        left: 50%;
-        transform: translate(-50%);
-        margin: 26px 0 26px;
+  .ruler {
+    min-width: 580px;
+    width: 96%;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 26px 0 26px;
+  }
+
+  .slide-body {
+    padding: 4px 8px 36px;
+
+    .featured-body {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .slide-body {
-        padding: 4px 8px 36px;
-
-        .featured-body {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .all-body {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 12px;
-        }
+    .all-body {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 12px;
     }
+
+    .button-holder {
+      width: 280px;
+      margin: 0 auto;
+    }
+  }
 }
 
 @media only screen and (min-width: $lg) {
-    .slide-projects {
-        padding: 0 4px;
+  .slide-projects {
+    padding: 0 4px;
 
-        .slide-body {
-            max-width: 840px;
-            margin: 0 auto;
+    .slide-body {
+      max-width: 840px;
+      margin: 0 auto;
 
-            .featured-body {
-                margin: 0 auto 24px;
-            }
+      .featured-body {
+        margin: 0 auto 24px;
+      }
 
-            .all-body {
-                display: flex;
-                flex-wrap: wrap;
-                margin: 0 auto 24px;
-                width: 88%;
-            }
-        }
+      .all-body {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto 24px;
+        width: 88%;
+      }
     }
+  }
 }

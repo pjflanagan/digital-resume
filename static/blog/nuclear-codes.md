@@ -1,7 +1,7 @@
 ---
-slug: "nuclear-codes"
-date: "2020-02-15"
-title: "Nuclear Codes"
+slug: nuclear-codes
+date: 2021-02-15
+title: Nuclear Codes
 image: https://raw.githubusercontent.com/pjflanagan/nuclear-codes/master/media/social.png
 ---
 
@@ -39,6 +39,8 @@ After all players have entered codes, the most voted on code will be tried in th
   - The code then changes for the next round and the agents are given another chance to figure out who the spies are. 
   
 If the agents fail to enter a correct code after 5 rounds the spies win. 
+
+***
 
 ## Develop
 
