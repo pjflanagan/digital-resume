@@ -2,29 +2,29 @@
 Blog TODO:
 
 - Reorganize
-  - Add typescript
-  - Styles
+  - [ ] Add typescript
+  - [ ] Use `classnames` more
+  - [ ] Styles, use less of them in the components
   - Organize files
-    - Rename main to bio or resume
+    - [x] Rename main to bio or resume
   - Elements
-    - Less passing in custom styles to Elements, instead take variables
-    - No accessing content in  Elements
-    - Make the Header and HeaderLink element for both blog and resume
+    - [ ] Less passing in custom styles to Elements, instead take variables like color
+    - [ ] No accessing content in Elements (avater, footer)
+    - [ ] Make the Header and HeaderLink element for both blog and resume
   - Content
-    - Move content into static and get with graphql
+    - [ ] Move content into static and get with graphql
 
-
-TOP TODO:
-- [ ] content should be done with CONTEXT, only at top level
-- [ ] images should not be globally named
-- [!] make it so you can go tab through the whole site seamlessly
 
 GENERAL
+- [ ] use `react-icon` instead of the ones I have
 - [~] favicon, social icons, ios icons (make ios icon different than just large favicon)
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
 - [!] use some functions just for fun
+- [ ] content should be done with CONTEXT, only at top level, or graphql
+- [ ] images should not be globally named (some should also be remote from either the website or git instead)
+- [!] make it so you can go tab through the whole site seamlessly
 
 LANDING
 - [ ] switch to typescript and redo this file?

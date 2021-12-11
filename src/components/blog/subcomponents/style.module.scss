@@ -1,7 +1,5 @@
 @import "src/theme/variables";
 
-// TODO: separate this into parts, only shared lives here
-
 .header-image {
   position: fixed;
   width: 100%;
@@ -16,7 +14,12 @@
   position: absolute;
   margin: 400px 0;
   width: 100%;
+  // min-height: 100%;
   border-top: 1px solid $backgroundLightOpaque2;
+
+  &.container-no-image {
+    margin: 0;
+  }
 
   .blog-container-back {
     margin: 0 auto 100px;
@@ -30,7 +33,11 @@
       padding: 40px 12px;
 
       img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 400px;
+        border: 1px solid $accentCyan;
+        margin-left: 50%;
+        transform: translateX(-50%);
       }
     }
   }

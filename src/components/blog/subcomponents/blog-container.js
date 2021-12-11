@@ -1,27 +1,33 @@
 
 
 import * as React from "react";
+import classNames from "classnames";
 
 import { Cover } from 'src/elements';
 
-import { PostFrontmatterComponent } from "./post-frontmatter";
-import { PostHeaderImageComponent } from "./post-header-image";
+import { HeaderImage } from "./post-header-image";
 
-import * as Style from '../style.module.scss';
+import * as Style from './style.module.scss';
 
-const PostComponent = ({
+const BlogContainer = ({
   children,
-  frontmatter,
+  image,
 }) => {
+
+  const className = classNames(Style.blogContainer, {
+    [Style.containerNoImage]: !image,
+  });
+
   return (
     <>
       <Cover />
       {/* TODO: blog general header */}
-      <PostHeaderImageComponent src={frontmatter.image} />
-      <div className={Style.blogContainer}>
+      {
+        image && <HeaderImage src={image} />
+      }
+      <div className={className}>
         <div className={Style.blogContainerBack}>
           <div className={Style.blogContent}>
-            <PostFrontmatterComponent frontmatter={frontmatter} />
             {children}
           </div>
         </div>
@@ -34,4 +40,4 @@ const PostComponent = ({
   );
 }
 
-export { PostComponent };
+export { BlogContainer };

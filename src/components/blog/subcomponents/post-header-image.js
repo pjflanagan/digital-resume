@@ -4,9 +4,9 @@ import * as React from "react";
 
 import { useScroll } from 'src/hooks';
 
-import * as Style from '../style.module.scss';
+import * as Style from './style.module.scss';
 
-const PostHeaderImageComponent = ({
+const HeaderImage = ({
   src,
 }) => {
   const scroll = useScroll();
@@ -15,10 +15,10 @@ const PostHeaderImageComponent = ({
       className={Style.headerImage}
       style={{
         backgroundImage: `url("${src}")`,
-        top: -scroll / 4
+        transform: `translateY(${-scroll / 4}px)`,
       }}
     />
   );
 }
 
-export { PostHeaderImageComponent };
+export { HeaderImage };

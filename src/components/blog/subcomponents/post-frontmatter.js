@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { TextAccent, TextHeading } from 'src/elements';
 
-const PostFrontmatterComponent = ({
+const FrontMatter = ({
   frontmatter,
 }) => {
   return (
@@ -15,4 +15,4 @@ const PostFrontmatterComponent = ({
   );
 }
 
-export { PostFrontmatterComponent };
+export { FrontMatter };

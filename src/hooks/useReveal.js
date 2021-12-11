@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import _ from 'lodash'
 
+// TODO: this should call useRef in here and return a ref
 const useReveal = ({ edge, gap, ref }) => {
 
   const [isRevealed, setIsRevealed] = useState(false);
@@ -19,6 +20,7 @@ const useReveal = ({ edge, gap, ref }) => {
       capture: true,
       passive: true
     });
+
     return function cleanup() {
       window.removeEventListener('scroll', _.throttle(handleScroll, 120));
     };
