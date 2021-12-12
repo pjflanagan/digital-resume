@@ -5,16 +5,16 @@ import { FrontMatter } from "./post-frontmatter";
 import * as Style from './style.module.scss';
 
 const BlogListItem = ({ post }) => {
+  const { frontmatter } = post;
   return (
     <div className={Style.blogListItemHolder}>
-      <Link to={`/blog/${post.frontmatter.slug}`}>
+      <Link to={`/blog/${frontmatter.slug}`}>
         <div className={Style.blogListItem}>
-          {post.frontmatter.image && <div className={Style.image} style={{
-            backgroundImage: `url(${post.frontmatter.image})`
+          {frontmatter.image && <div className={Style.image} style={{
+            backgroundImage: `url(${frontmatter.image})`
           }} />}
-          <FrontMatter
-            frontmatter={post.frontmatter}
-          />
+          <FrontMatter frontmatter={frontmatter} />
+          {frontmatter.blurb && <p>{frontmatter.blurb}</p>}
         </div>
       </Link>
     </div>

@@ -21,6 +21,7 @@
   width: 100%;
   // min-height: 100%;
   border-top: 1px solid $backgroundLightOpaque2;
+  pointer-events: none;
 
   &.container-no-image {
     margin: 0;
@@ -30,6 +31,7 @@
     margin: 0 auto 100px;
     width: 100%;
     background: $backgroundDark;
+    pointer-events: all;
 
     .blog-content {
       margin: 0 auto;
@@ -69,6 +71,11 @@
         }
       }
 
+      // iframe {
+      //   margin: 1em 0 1em 50%;
+      //   transform: translateX(-50%);
+      //   border: 1px solid $accentCyan;
+      // }
 
       img {
         max-width: 100%;

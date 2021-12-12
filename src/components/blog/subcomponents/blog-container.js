@@ -3,7 +3,7 @@
 import * as React from "react";
 import classNames from "classnames";
 
-import { Cover, Header, HeaderLink } from 'src/elements';
+import { Cover, Header, HeaderLink, Footer } from 'src/elements';
 
 import { HeaderImage } from "./post-header-image";
 
@@ -36,9 +36,7 @@ const BlogContainer = ({
           </div>
         </div>
       </div>
-      <div className={Style.blogFooter}>
-        Footer
-      </div>
+      <Footer className={Style.blogFooter} />
     </>
   );
 }

@@ -3,6 +3,7 @@ slug: nuclear-codes
 date: "2021-02-15"
 title: Nuclear Codes
 image: https://raw.githubusercontent.com/pjflanagan/nuclear-codes/master/media/social.png
+# blurb: "A Socket.io game"
 ---
 
 During the lockdown my family....

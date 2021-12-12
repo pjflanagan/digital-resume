@@ -2,11 +2,15 @@
 slug: nightpro-for-gopro
 date: "2020-12-23"
 title: NightPro For GoPro
-image: ''
-# blurb
+image: ""
+# blurb: ""
 ---
 
+<!-- TODO: make a youtube video with a bunch of nightlapses -->
+
 ### A Python package for merging nightlapse photos into video
+
+I purchased a GoPro to film myself rollerblading, but found that I really enjoyed the nightlapse features. 
 
 ## Project Reasons
 
