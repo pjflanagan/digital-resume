@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { FrameHolder } from "src/elements";
 import { FindImage } from "src/content";
@@ -28,11 +28,10 @@ const Photo = ({ data, photo }) => {
 
   return (
     <div className={Style.personalPhoto} ref={ref}>
-      <Img
-        fluid={imageData.childImageSharp.fluid}
+      <GatsbyImage
+        image={imageData.childImageSharp.gatsbyImageData}
         alt={"Peter James Flanagan Headshot"}
-        className={Style.image}
-      />
+        className={Style.image} />
       <FrameHolder className={`${Style.photoFrameHolder} ${className}`} />
     </div>
   );

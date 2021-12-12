@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { Text, TextLinkedHeader } from "src/elements";
 import { FindImage } from "src/content";
@@ -13,11 +13,10 @@ const Project = ({
   const imageData = FindImage({ image, data });
   return (
     <div className={Style.project}>
-      <Img
-        fluid={imageData.childImageSharp.fluid}
+      <GatsbyImage
+        image={imageData.childImageSharp.gatsbyImageData}
         alt={name}
-        className={Style.projectImage}
-      />
+        className={Style.projectImage} />
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
         <Text>{description}</Text>

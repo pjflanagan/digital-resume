@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { FrameHolder, Text, TextLinkedHeader, TextTag } from "src/elements";
 import { FindImage } from "src/content";
@@ -20,11 +20,10 @@ const FeaturedProject = ({
   return (
     <div className={`${Style.featuredProject} ${className}`} ref={ref}>
       <FrameHolder className={Style.projectImageFrame}>
-        <Img
-          fluid={imageData.childImageSharp.fluid}
+        <GatsbyImage
+          image={imageData.childImageSharp.gatsbyImageData}
           alt={name}
-          className={Style.projectImage}
-        />
+          className={Style.projectImage} />
       </FrameHolder>
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>

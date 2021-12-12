@@ -11,23 +11,16 @@ const PageIndex = ({ data }) => {
 
 export default PageIndex;
 
-export const query = graphql`
-  query ImageQuery {
-    allFile(filter: { extension: { regex: "/(jpg)|(png)/" } }) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-            }
-          }
+export const query = graphql`query ImageQuery {
+  allFile(filter: {extension: {regex: "/(jpg)|(png)/"}}) {
+    edges {
+      node {
+        base
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
         }
       }
     }
   }
+}
 `;

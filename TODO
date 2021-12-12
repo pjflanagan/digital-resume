@@ -1,6 +1,8 @@
 
 Blog TODO:
 
+`gatsby-source-filesystem`
+
 - [ ] START USING NETLIFY IMAGE STORE
 - Reorganize
   - [ ] Add typescript

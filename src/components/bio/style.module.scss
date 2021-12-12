@@ -6,6 +6,10 @@
   height: 100%;
   width: 100%;
 
+  .header {
+    display: none;
+  }
+
   .slides {
     height: 100%;
     width: 100%;
@@ -16,6 +20,10 @@
 
 @media only screen and (min-width: $md) {
   .container {
+    .header {
+      display: flex;
+    }
+
     .slides {
       top: 300%;
     }

@@ -32,7 +32,7 @@ const BioComponent = ({ data }) => {
 
   return (
     <div className={Style.container}>
-      <Header>
+      <Header className={Style.header}>
         <HeaderLink onClick={() => clickToScroll('personal')}>0. Bio</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('experience')}>1. Experience</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('projects')}>2. Projects</HeaderLink>

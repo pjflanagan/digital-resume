@@ -20,9 +20,10 @@ const BlogContainer = ({
 
   return (
     <>
+      {/* TODO: might be better to generalize this */}
       <Cover />
       <Header className={Style.blogHeader}>
-        <HeaderLink href="/">Resume</HeaderLink>
+        <HeaderLink href="/">Bio</HeaderLink>
         <HeaderLink samePage href="/blog">Blog</HeaderLink>
       </Header>
       {
@@ -38,7 +39,6 @@ const BlogContainer = ({
       <div className={Style.blogFooter}>
         Footer
       </div>
-      {/* TODO: blog general footer */}
     </>
   );
 }

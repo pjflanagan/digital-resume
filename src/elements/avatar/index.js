@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { FindImage } from "src/content";
 import { useReveal } from "src/hooks";
@@ -22,11 +22,10 @@ const Avatar = ({ data, image, name, background }) => {
         className={Style.avatarImageHolder}
         style={{ background: background }}
       >
-        <Img
-          fluid={imageData.childImageSharp.fluid}
+        <GatsbyImage
+          image={imageData.childImageSharp.gatsbyImageData}
           alt={name}
-          className={Style.avatarImage}
-        />
+          className={Style.avatarImage} />
       </div>
       <div className={Style.avatarBack} />
     </div>
