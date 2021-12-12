@@ -13,12 +13,16 @@ p {
   .text-inline-link {
     color: $accentYellow;
     text-decoration: none;
-    box-shadow: inset 0px -6px #fff1;
-    -webkit-transition: 0.2s;
+    box-shadow: inset 0px -6px $accentYellowOpaque2;
     transition: 0.2s;
 
+    .clickable {
+      cursor: pointer;
+    }
+
     &:hover {
-      box-shadow: inset 0px -10px #fff2;
+      color: $accentYellowHover;
+      box-shadow: inset 0px -10px $accentYellowOpaque;
     }
   }
 }

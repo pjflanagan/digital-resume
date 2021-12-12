@@ -20,7 +20,7 @@ Within a few weeks, people from all over California had been tested and register
 
 Herd Immune was going to make California safer, Herd Immune was going to bring California back to life.
 
-![Herd Immune Covid Mask](/blog/herd-immune/mask.jpg)
+![Herd Immune Uber Option](/blog/herd-immune/uberapp.png)
 
 John Briskman hadn’t worked since the first day of stay at home orders. His barbershop had been closed for weeks. He didn’t fear what The Disease could do to him, he feared what stopping The Disease would do to him.
 
@@ -47,7 +47,7 @@ Soon Ali was seeing it everywhere. A bookstore she hadn’t been to in months ha
 
 Maybe if the staff actually was immune she’d try eating out at a restaurant. Maybe she’d go into a bookstore instead of buying online. Maybe she’d tell her boyfriend to get a haircut. Maybe she’d switch to that safer grocery store instead of her usual one. Maybe the days would feel just a little less boring.
 
-![Herd Immune Uber Option](/blog/herd-immune/uberapp.png)
+![Herd Immune Uber](/blog/herd-immune/uber.jpg)
 
 Josephine Taylor had been unemployed for several weeks, which was several weeks longer than she could afford. She was told she was essential at one point months ago, that her being at the grocery store was necessary for the safety of the public. After the first few weeks of confusion, the only way work had changed was a surgical mask had been made part of the uniform and the checkout aisles had hand sanitizer. She had been as careful as she could to avoid The Disease.
 
@@ -61,7 +61,7 @@ Having a job was now more important than ever, and Josephine couldn’t afford n
 
 She had no choice but to make herself hireable. She needed a purple bull shield. She drove to the hospital.
 
-![Herd Immune Uber](/blog/herd-immune/uber.jpg)
+![Herd Immune Covid Mask](/blog/herd-immune/mask.jpg)
 
 Things hadn’t been as bad since the first few weeks of The Disease, thought Dr. Rivera. She had already been desensitized to all the death. She saw patients she thought would live, die. She saw patients hanging by a thread make miraculous recoveries. She felt like she played little role in either result. She just brought out the breathing machine when a patient sounded bad.
 

@@ -1,6 +1,7 @@
 
 Blog TODO:
 
+- [ ] START USING NETLIFY IMAGE STORE
 - Reorganize
   - [ ] Add typescript
   - [ ] Use `classnames` more

@@ -1,25 +1,35 @@
 import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import PropTypes from 'prop-types';
+import classNames from "classnames";
 
 import * as Style from "./style.module.scss";
 
 // TextInlineLink
 const TextInlineLink = ({
   href,
-  className,
+  className: classNameProp,
   onMouseOver,
   onFocus,
   children,
+  samePage,
+  onClick
 }) => {
+  const className = classNames(Style.textInlineLink, {
+    [classNameProp]: classNameProp,
+    [Style.clickable]: !!onClick
+  });
+
   if (!href) {
     return (
       <span
         role="button"
         tabIndex={0}
-        className={`${Style.textInlineLink} ${className}`}
+        className={`${className} ${Style.clickable}`}
         onMouseOver={onMouseOver}
         onFocus={onFocus}
+        onClick={onClick}
+        onKeyDown={onClick}
       >
         {children}
       </span>
@@ -28,9 +38,9 @@ const TextInlineLink = ({
   return (
     <OutboundLink
       href={href}
-      target="_blank"
+      target={samePage ? '' : '_blank'}
       rel="noreferrer"
-      className={`${Style.textInlineLink} ${className}`}
+      className={className}
       onMouseOver={onMouseOver}
       onFocus={onFocus}
     >

@@ -3,7 +3,7 @@
 import * as React from "react";
 import classNames from "classnames";
 
-import { Cover } from 'src/elements';
+import { Cover, Header, HeaderLink } from 'src/elements';
 
 import { HeaderImage } from "./post-header-image";
 
@@ -21,7 +21,10 @@ const BlogContainer = ({
   return (
     <>
       <Cover />
-      {/* TODO: blog general header */}
+      <Header>
+        <HeaderLink href="/">Resume</HeaderLink>
+        <HeaderLink samePage href="/blog">Blog</HeaderLink>
+      </Header>
       {
         image && <HeaderImage src={image} />
       }

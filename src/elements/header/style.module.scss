@@ -1,0 +1,30 @@
+@import 'src/theme/variables';
+
+.header {
+  display: flex;
+  position: fixed;
+  margin: 10px;
+  z-index: 99;
+  width: calc(100% - 20px);
+  justify-content: right;
+
+  .link-holder {
+    margin: 10px 24px;
+    text-align: center;
+
+    .header-link {
+      cursor: pointer;
+      color: $accentYellow;
+      text-decoration: none;
+      box-shadow: inset 0px -6px $accentYellowOpaque2;
+      font-family: monospace;
+      font-size: 1em;
+      transition: 0.2s;
+
+      &:hover {
+        color: $accentYellowHover;
+        box-shadow: inset 0px -10px $accentYellowOpaque;
+      }
+    }
+  }
+}
