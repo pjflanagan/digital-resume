@@ -75,6 +75,6 @@ The Disease was much worse than Dr. Rivera had first thought. Her next patient w
 
 ## About This Story
 
-At the begining of the pandemic, I saw this tweet. I feel like it's dangerous for tech entrepreneurs to jump into situations they might not know about. Ideas like this can be dangerous.
+At the begining of the pandemic, I saw this tweet by a tech entrepreuer. I felt like it was dangerous for tech entrepreneurs insert themeselves into situations they might not know about. Ideas like this prioritize work as a means to survive, and deprioritize government intervention.
 
 ![Herd Immune Storefront](/blog/herd-immune/tweet.png)

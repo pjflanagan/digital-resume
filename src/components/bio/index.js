@@ -11,7 +11,15 @@ import { SlideContact } from "./4-contact";
 
 import * as Style from "./style.module.scss";
 
-const ScrollComponent = Scroll.Element;
+const scroller = Scroll.scroller;
+
+const clickToScroll = (slideName) => {
+  scroller.scrollTo(slideName, {
+    duration: 1500,
+    smooth: true,
+    offset: -64, // Scrolls to element + 50 pixels down the page
+  });
+}
 
 const BioComponent = ({ data }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,21 +33,21 @@ const BioComponent = ({ data }) => {
   return (
     <div className={Style.container}>
       <Header>
-        <HeaderLink onClick={() => { }}>0. Bio</HeaderLink>
-        <HeaderLink onClick={() => { }}>1. Experience</HeaderLink>
-        <HeaderLink onClick={() => { }}>2. Projects</HeaderLink>
-        <HeaderLink onClick={() => { }}>3. Contact</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('personal')}>0. Bio</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('experience')}>1. Experience</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('projects')}>2. Projects</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('contact')}>3. Contact</HeaderLink>
       </Header>
       <Cover />
       <Splash isVisible={isLoading} />
       <SlideLanding />
-      <ScrollComponent className={Style.slides} name="slides">
+      <div className={Style.slides}>
         <SlidePersonal data={data} />
         <SlideExperience data={data} />
         <SlideProjects data={data} />
         <SlideContact data={data} />
         <Footer />
-      </ScrollComponent>
+      </div>
     </div>
   );
 }

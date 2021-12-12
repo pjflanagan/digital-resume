@@ -21,7 +21,7 @@ const BlogContainer = ({
   return (
     <>
       <Cover />
-      <Header>
+      <Header className={Style.blogHeader}>
         <HeaderLink href="/">Resume</HeaderLink>
         <HeaderLink samePage href="/blog">Blog</HeaderLink>
       </Header>

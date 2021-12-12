@@ -1,14 +1,19 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { TextInlineLink } from '../text';
 
 import * as Style from './style.module.scss';
 
 const Header = ({
-  children
+  children,
+  className: classNameProp
 }) => {
+  const className = classNames(Style.header, {
+    [classNameProp]: classNameProp,
+  })
   return (
-    <div className={Style.header}>
+    <div className={className}>
       {children}
     </div>
   );

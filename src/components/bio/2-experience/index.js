@@ -1,4 +1,5 @@
 import React from "react";
+import * as Scroll from 'react-scroll';
 
 import {
   TextHeading,
@@ -13,9 +14,11 @@ import { Org } from "./org";
 import { Skills } from "./skills";
 import * as Style from "./style.module.scss";
 
+const ScrollComponent = Scroll.Element;
+
 const SlideExperience = ({ data }) => {
   return (
-    <div className={Style.slideExperience}>
+    <ScrollComponent className={Style.slideExperience} name="experience">
       <div className={Style.preSlideCurveHolder}>
         <div className={Style.preSlideCurve} />
       </div>
@@ -98,7 +101,7 @@ const SlideExperience = ({ data }) => {
         <TextSubHeading>{Bio.experience.sections[2]}</TextSubHeading>
         <Skills />
       </div>
-    </div>
+    </ScrollComponent>
   );
 };
 

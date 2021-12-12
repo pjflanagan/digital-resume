@@ -10,8 +10,7 @@ Blog TODO:
     - [x] Rename main to bio or resume
   - Elements
     - [ ] Less passing in custom styles to Elements, instead take variables like color
-    - [ ] No accessing content in Elements (avater, footer)
-    - [ ] Make the Header and HeaderLink element for both blog and resume
+    - [ ] No accessing content in Elements (avatar, footer)
   - Content
     - [ ] Move content into static and get with graphql
 

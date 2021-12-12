@@ -10,7 +10,7 @@ import * as Style from './style.module.scss';
 const scroller = Scroll.scroller;
 
 const clickToScroll = () => {
-  scroller.scrollTo('slides', {
+  scroller.scrollTo('personal', {
     duration: 1500,
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page

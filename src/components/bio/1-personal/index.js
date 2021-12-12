@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as Scroll from 'react-scroll';
 
 import {
   CurveTopTop,
@@ -11,11 +12,13 @@ import { Body } from "./body";
 
 import * as Style from "./style.module.scss";
 
+const ScrollComponent = Scroll.Element;
+
 const SlidePersonal = ({ data }) => {
   const [photo, setPhoto] = useState('personal-photo.jpg');
 
   return (
-    <div className={Style.slidePersonal}>
+    <ScrollComponent className={Style.slidePersonal} name="personal">
       <CurveTopTop />
       <CurveTopBottom />
       <div className={Style.slidePersonalSideLeft}>
@@ -26,7 +29,7 @@ const SlidePersonal = ({ data }) => {
       </div>
       <CurveBottomTop />
       <CurveBottomBottom />
-    </div>
+    </ScrollComponent>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import * as Scroll from 'react-scroll';
 
 import {
   Ruler,
@@ -15,9 +16,11 @@ import { FeaturedProject } from "./featured-project";
 import { Project } from "./project";
 import * as Style from "./style.module.scss";
 
+const ScrollComponent = Scroll.Element;
+
 const SlideProjects = ({ data }) => {
   return (
-    <div className={`${Style.slideProjects} ${Style.blueprint}`}>
+    <ScrollComponent className={`${Style.slideProjects} ${Style.blueprint}`} name="projects">
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
         <TextAccent>{Bio.projects.accent}</TextAccent>
@@ -59,7 +62,7 @@ const SlideProjects = ({ data }) => {
 
         </div>
       </div>
-    </div>
+    </ScrollComponent>
   );
 }
 
