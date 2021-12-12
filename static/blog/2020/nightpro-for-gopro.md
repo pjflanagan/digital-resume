@@ -3,7 +3,7 @@ slug: nightpro-for-gopro
 date: "2020-12-23"
 title: NightPro For GoPro
 image: ""
-# blurb: ""
+blurb: A Python package for GoPro nightlapses
 ---
 
 <!-- TODO: make a youtube video with a bunch of nightlapses -->

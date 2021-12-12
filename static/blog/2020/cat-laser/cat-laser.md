@@ -3,7 +3,7 @@ slug: cat-laser
 date: "2020-05-13"
 title: Cat Laser
 image: /blog/2020/cat-laser/charlotte.jpg
-# blurb: ""
+blurb: An Arduino laser pointer cat toy
 ---
 
 In spring of 2019 I moved in to a new apartment with a woman who owned a cat. 

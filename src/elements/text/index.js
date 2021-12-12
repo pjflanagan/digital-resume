@@ -22,7 +22,7 @@ const TextSubHeading = (props) => {
   );
 };
 
-// TextSectionHeading h3
+// TextSectionHeading h3 // TODO: this name should switch with TextSubHeading 
 const TextSectionHeading = (props) => {
   return (
     <h3 className={props.className}>

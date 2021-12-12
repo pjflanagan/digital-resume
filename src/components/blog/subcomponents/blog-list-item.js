@@ -14,7 +14,6 @@ const BlogListItem = ({ post }) => {
             backgroundImage: `url(${frontmatter.image})`
           }} />}
           <FrontMatter frontmatter={frontmatter} />
-          {frontmatter.blurb && <p>{frontmatter.blurb}</p>}
         </div>
       </Link>
     </div>

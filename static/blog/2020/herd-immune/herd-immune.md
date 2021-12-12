@@ -2,11 +2,11 @@
 slug: herd-immune
 date: "2020-10-04"
 title: Herd Immune
-image: "/blog/2020/herd-immune/header.png"
-# blurb: "A short story"
+image: /blog/2020/herd-immune/header.png
+blurb: A short story about tech and the pandemic
 ---
 
-## A Short Story
+## The Story
 
 The Disease reached San Francisco despite warnings from the eastern US despite warnings from Europe despite warnings from Asia. Outside of compliance with mask and distance and hygiene orders, those that felt they were destined to make an impact, decided now was as good a time as any. So they set forth, using whatever was in their power and skillset to do so.
 
