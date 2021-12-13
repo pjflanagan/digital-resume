@@ -37,6 +37,7 @@ const LabeledButtonLinked = ({
   className: classNameProp,
   href,
   sameWindow,
+  // TODO: internal use Link from 'gatsby'
 }) => {
   const rel = !sameWindow ? "noreferrer" : undefined;
   const target = !sameWindow ? "_blank" : undefined;

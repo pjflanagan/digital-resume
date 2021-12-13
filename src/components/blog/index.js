@@ -1,2 +1,2 @@
-export * from './blog-component';
-export * from './post-component';
+export * from './home';
+export * from './post';

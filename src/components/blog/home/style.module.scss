@@ -1,0 +1,44 @@
+@import "src/theme/variables";
+
+.blog-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 780px;
+  padding: 64px 12px 48px;
+
+  .blog-list-item-holder {
+    padding: 0.5em 1em;
+
+    .blog-list-item {
+      background: $backgroundLightOpaque;
+      clip-path: $polygon;
+      padding-bottom: 24px;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.02) translateY(-5px);
+      }
+
+      .image {
+        width: 100%;
+        height: 240px;
+        border: none;
+        background-position: center;
+        background-size: cover;
+      }
+
+      h1 {
+        font-size: 2.4em;
+        padding: 24px 24px 0;
+      }
+
+      p {
+        padding: 0 24px 0.4em;
+      }
+
+      h5 {
+        padding: 0 24px;
+      }
+    }
+  }
+}

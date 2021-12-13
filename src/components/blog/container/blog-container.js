@@ -5,8 +5,7 @@ import classNames from "classnames";
 
 import { Cover, Header, HeaderLink, Footer } from 'src/elements';
 
-import { HeaderImage } from "./post-header-image";
-
+import { HeaderImage } from "./header-image";
 import * as Style from './style.module.scss';
 
 const BlogContainer = ({
@@ -20,7 +19,6 @@ const BlogContainer = ({
 
   return (
     <>
-      {/* TODO: might be better to generalize this */}
       <Cover />
       <Header className={Style.blogHeader}>
         <HeaderLink href="/">Profile</HeaderLink>
@@ -32,9 +30,7 @@ const BlogContainer = ({
       }
       <div className={className}>
         <div className={Style.blogContainerBack}>
-          <div className={Style.blogContent}>
-            {children}
-          </div>
+          {children}
         </div>
       </div>
       <Footer className={Style.blogFooter} />
