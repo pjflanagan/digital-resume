@@ -4,16 +4,15 @@ date: "2021-02-15"
 title: Nuclear Codes
 image: https://raw.githubusercontent.com/pjflanagan/nuclear-codes/master/media/social.png
 blurb: A Socket.io game
+github: https://github.com/pjflanagan/nuclearcodes
+website: https://nuclearcodes.flanny.app/
 ---
 
-During the lockdown my family....
+My friends and I play a lot of games when we get together. A favorite of ours is Spies, a simple game about trying to figure out who the spies are. Innocent villagers try and get the group to play black cards and the spies try and trick the group into playing red cards. 
 
-This is a React based Socket.io game that can be played by 5 to 10 friends. Agents
-try to recover a code while Spies try and stop them. Hosted on Netlify and Heroku.
+During the lockdown my family and friends played moved our games to be over Zoom. We invented a few (call out an object and everyone has to run and find that object in their house was always exciting). And we played a few, for instance, an online version of Codewords which we really enjoyed. Codewords was a socket game, and unlike the dynamic birds-eye-view canvas games like Slither.io and Paper.io, codewords was more like an HTML based chat app.
 
-> Never trust anyone.
-
-### [Play Nuclear Codes!](https://nuclearcodes.flanny.com)
+So I felt like I could make one too. I had previous experience with creating [socket games](/blog/simple-socket-game) so I was sure I could apply it in a React app. I came up with Nuclear Codes, a game where federal agents try to recover a code while spies try and stop them.
 
 ## Game Rules
 
@@ -43,38 +42,6 @@ After all players have entered codes, the most voted on code will be tried in th
   
 If the agents fail to enter a correct code after 5 rounds the spies win. 
 
-***
+## Development
 
-## Develop
-
-### Install
-
-Clone this repository and then run `npm i` inside the `./client` and inside the `./server` folder.
-
-### Run
-
-After installation, in terminal run:
-
-```bash
-# terminal 1
-$ cd ./client && npm run start
-
-# terminal 2
-$ cd ./server && npm run start
-```
-### Test 
-
-#### Live Test
-
-  1. http://localhost:5000/test to open the test, click one of the "Start Test" buttons
-  2. http://localhost:3000/test in browser to join the test room
-
-#### Mocha Test
-
-```bash
-# test
-$ cd ./server && npm run test
-
-# coverage
-$ cd ./server && npm run coverage
-```
+I decided to hosted this project on Netlify for free frontend hosting and the backend on a Heroku dyno that starts up when the app opens.

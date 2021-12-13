@@ -20,6 +20,7 @@
 .labeled-button {
   position: relative;
   min-width: 192px;
+  width: fit-content;
   font-family: $ubuntu;
   display: flex;
   cursor: pointer;
@@ -81,13 +82,14 @@
     }
 
     .name {
-      width: calc(100% - 36px);
+      min-width: calc(100% - 36px);
       text-align: center;
       border-left: 1px solid $accentCyan;
       text-decoration: none;
       font-weight: 300;
       font-size: 16px;
-      padding: 6px;
+      width: fit-content;
+      padding: 6px 12px;
     }
   }
 

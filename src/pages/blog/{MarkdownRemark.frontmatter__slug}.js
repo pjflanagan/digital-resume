@@ -30,6 +30,8 @@ export const pageQuery = graphql`
         title
         image
         blurb
+        github
+        website
       }
     }
   }

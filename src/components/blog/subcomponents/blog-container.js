@@ -23,8 +23,9 @@ const BlogContainer = ({
       {/* TODO: might be better to generalize this */}
       <Cover />
       <Header className={Style.blogHeader}>
-        <HeaderLink href="/">Bio</HeaderLink>
+        <HeaderLink href="/">Profile</HeaderLink>
         <HeaderLink samePage href="/blog">Blog</HeaderLink>
+        <HeaderLink href="https://github.com/pjflanagan">Github</HeaderLink>
       </Header>
       {
         image && <HeaderImage src={image} />

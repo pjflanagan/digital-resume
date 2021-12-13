@@ -2,7 +2,11 @@
 
 import * as React from "react";
 
-import { TextAccent, TextHeading, Text } from 'src/elements';
+import {
+  TextAccent,
+  TextHeading,
+  Text,
+} from 'src/elements';
 
 const FrontMatter = ({
   frontmatter,

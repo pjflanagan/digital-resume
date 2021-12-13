@@ -3,17 +3,25 @@ slug: nightpro-for-gopro
 date: "2020-12-23"
 title: NightPro For GoPro
 image: ""
-blurb: A Python package for GoPro nightlapses
+blurb: A Python package for merging nightlapse photos into video
+github: https://github.com/pjflanagan/nightpro-for-gopro
+website: https://pypi.org/project/nightpro-for-gopro/
 ---
 
 <!-- TODO: make a youtube video with a bunch of nightlapses -->
 
-### A Python package for merging nightlapse photos into video
-
-I purchased a GoPro to film myself rollerblading, but found that I really enjoyed the nightlapse features. 
+I purchased a GoPro to film myself rollerblading, but found that I also really enjoyed the nightlapse features. 
 
 ## Project Reasons
 
-GoPro nightlapses are wonderful. But they save oddly. Rather than saving as a single video, the way other GoPro timelapses do, they save as individual photos.
+GoPro nightlapses are wonderful. But they save oddly. Rather than saving as a single video, the way other GoPro timelapses do, they save as a series of individual photos. Merging them all into one required a tedious ffmpeg command. 
 
-Merging them all into one requires a tedious ffmpeg command. NightPro is a wrapper for ffmpeg that turns all the nightlapse photo series in a folder into videos just by running nightpro once.
+```bash
+$ ffmpeg -r 32 -start_number <number> -i ./<folder>/G00%d.JPG -vcodec libx264 -pix_fmt yuv420p <name>.mp4
+```
+
+I decided to make NightPro as a Python package to automatically find all the sets of files that can be turned into nightlapes videos and run this command on them. After installation, it can be run using.
+
+```bash
+$ nightpro
+```

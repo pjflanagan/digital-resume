@@ -182,6 +182,8 @@ ol {
 pre {
   margin: 0.8em 0;
   padding: 1em;
+  overflow: scroll;
+  max-height: 400px;
   font-size: 1.1em;
   border: 1px solid $backgroundLightOpaque2;
   box-shadow: inset 0 0 100px #0008, -2px -2px 8px #0004;

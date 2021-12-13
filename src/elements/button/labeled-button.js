@@ -4,6 +4,7 @@ import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics";
 import { SVGIcon } from "src/elements";
 
 import * as Style from "./style.module.scss";
+import classNames from "classnames";
 
 const LabeledButtonForm = ({
   children,
@@ -33,13 +34,19 @@ const LabeledButtonLinked = ({
   onMouseEnter,
   onMouseLeave,
   children,
+  className: classNameProp,
   href,
   sameWindow,
 }) => {
   const rel = !sameWindow ? "noreferrer" : undefined;
   const target = !sameWindow ? "_blank" : undefined;
+
+  const className = classNames(Style.labeledButton, {
+    [classNameProp]: classNameProp
+  })
+
   return (
-    <div className={Style.labeledButton}>
+    <div className={className}>
       <OutboundLink
         className={Style.holder}
         rel={rel}

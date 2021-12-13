@@ -4,6 +4,8 @@ date: "2020-10-04"
 title: Herd Immune
 image: /blog/2020/herd-immune/header.png
 blurb: A short story about tech and the pandemic
+github: ''
+website: ''
 ---
 
 ## The Story
@@ -75,6 +77,6 @@ The Disease was much worse than Dr. Rivera had first thought. Her next patient w
 
 ## About This Story
 
-At the begining of the pandemic, I saw this tweet by a tech entrepreuer and was immediatley put off. I felt like it can be dangerous for tech entrepreneurs to insert themeselves into situations they lack expertise in, public health for instance. Ideas like this prioritize work as a means to survive, which, in week two of the pandemic in the US is not where I think our minds should go.
+At the beginning of the pandemic, I saw this tweet by a tech entrepreneur and was immediately put off. I felt like it can be dangerous for tech entrepreneurs to insert themeselves into situations they lack expertise in, public health for instance. Ideas like this prioritize work as a means to survive, which, in week two of the pandemic in the US is not where I think our minds should go.
 
 ![Herd Immune Storefront](/blog/2020/herd-immune/tweet.png)
