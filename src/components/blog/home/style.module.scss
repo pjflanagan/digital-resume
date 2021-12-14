@@ -3,11 +3,14 @@
 .blog-content {
   margin: 0 auto;
   width: 100%;
-  max-width: 780px;
+  max-width: 1400px;
   padding: 64px 12px 48px;
+  display: flex;
+  flex-wrap: wrap;
 
   .blog-list-item-holder {
     padding: 0.5em 1em;
+    width: 100%;
 
     .blog-list-item {
       background: $backgroundLightOpaque;
@@ -39,6 +42,22 @@
       h5 {
         padding: 0 24px;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .blog-content {
+    .blog-list-item-holder {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (min-width: $xl) {
+  .blog-content {
+    .blog-list-item-holder {
+      width: 33.333333%;
     }
   }
 }
