@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { BioComponent } from "src/components/bio";
-
 import "src/theme/theme.scss";
+
+import { BioComponent } from "src/components/bio";
 
 const PageIndex = ({ data }) => {
   return <BioComponent data={data} />;

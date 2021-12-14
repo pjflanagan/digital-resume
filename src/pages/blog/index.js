@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { BlogComponent } from "src/components/blog";
-
 import "src/theme/theme.scss";
+
+import { BlogComponent } from "src/components/blog";
 
 // NOTE: the blog is meant to be prose form stories about projects detailing
 // why I wanted to make it, how I envisioned it, what technology I used 
@@ -17,7 +17,7 @@ import "src/theme/theme.scss";
 // - Links to build progress
 
 const PageBlog = ({ data }) => {
-  const { edges } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark;
   const posts = edges
     .filter(post => post.node.frontmatter.title.length > 0)
     .map(({ node }) => node);
