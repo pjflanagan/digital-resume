@@ -1,6 +1,5 @@
 
 MAIN TODO: Start writing blog posts
-- [ ] START USING NETLIFY IMAGE STORE
 - [ ] Add typescript
 
 
@@ -32,7 +31,7 @@ PERSONAL
 - [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
 
 EXPERIENCE 
-- [ ] Intro paragraph longer than just PDF link (?)
+- [x] Intro paragraph longer than just PDF link (?)
 - [ ] side by side on wide enough screen
 - [!] useReveal isn't on avatar, make that a prop, instead have an effect for whole thing
 - [ ] Make that curve an inner shadow on experience mobile (?)
@@ -50,7 +49,7 @@ CONTACT
 
 ELEMENTS
 - [!] make footer reveal from behind page at bottom (fixed and the whole page comes up to show it?)
-- [ ] header with scroll links
+- [x] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 
 EXTERNAL

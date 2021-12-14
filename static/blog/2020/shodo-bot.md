@@ -1,9 +1,3 @@
----
-slug: shodo-bot
-date: "2020-02-21"
-title: ShodoBot
-image: ""
-blurb: Team Michelle calligraphy robot project with TOM
-github: https://github.com/Team-Michelle-Calligraphy/calligraphy
-website: https://tomglobal.org/project?id=5e3b942bd848736b09554581
----
+version https://git-lfs.github.com/spec/v1
+oid sha256:cef80f088a04e1b78c76ff460bb94f6a120c5cced3aac680f7f364a15f9ea16e
+size 257
