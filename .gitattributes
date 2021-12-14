@@ -1,4 +1,4 @@
-static/**/*.png filter=lfs diff=lfs merge=lfs -text
-static/**/*.jpg filter=lfs diff=lfs merge=lfs -text
-static/**/*.otf filter=lfs diff=lfs merge=lfs -text
-static/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+static/blog/**/*.png filter=lfs diff=lfs merge=lfs -text
+static/blog/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+static/font/*.otf filter=lfs diff=lfs merge=lfs -text
+static/pdf/*.pdf filter=lfs diff=lfs merge=lfs -text
