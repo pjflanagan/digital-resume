@@ -8,16 +8,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-root-import',
-    {
-      resolve: `gatsby-transformer-remark`,
-      // options: {
-      //   plugins: [
-      //     {
-      //       resolve: `gatsby-remark-highlight-code`,
-      //     },
-      //   ],
-      // },
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -34,7 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/img/main`,
+        path: `${__dirname}/static/img/bio`,
+        name: "bio",
       },
     },
     {

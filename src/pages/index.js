@@ -12,7 +12,9 @@ const PageIndex = ({ data }) => {
 export default PageIndex;
 
 export const query = graphql`query ImageQuery {
-  allFile(filter: {extension: {regex: "/(jpg)|(png)/"}}) {
+  allFile(
+    filter: {extension: {regex: "/(jpg)|(png)/"}, sourceInstanceName: {eq: "bio"}}
+  ) {
     edges {
       node {
         base
