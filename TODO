@@ -11,16 +11,12 @@ MAIN TODO:
 
 
 GENERAL
-- [ ] Use `classnames` more
-- [~] favicon, social icons, ios icons (make ios icon different than just large favicon)
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
-- [!] use some functions just for fun
 - [ ] content should be done with CONTEXT, only at top level, or graphql
 - [ ] images should not be globally named (some should also be remote from either the website or git instead)
 - [!] make it so you can go tab through the whole site seamlessly
-- [ ] lfs for blog image files
 
 LANDING
 - [ ] switch to typescript and redo this file?
