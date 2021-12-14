@@ -110,7 +110,7 @@ const PageBio = {
         }
       ],
       text: [
-        "A list of all my coding adventures can be found on my <blog> as well as my <github>.",
+        "Tinkering has always been a favorite hobby of mine. I'm always toying with the latest technologies and writing code. A list of all my development adventures can be found on my <blog> as well as my <github>.",
       ],
     },
   },
