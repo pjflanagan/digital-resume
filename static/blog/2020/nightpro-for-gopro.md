@@ -2,7 +2,7 @@
 slug: nightpro-for-gopro
 date: "2020-12-23"
 title: NightPro For GoPro
-image: /blog/2020/nightpro-for-gopro/jpg
+image: /blog/2020/nightpro-for-gopro.jpg
 blurb: A Python package for merging nightlapse photos into video
 github: https://github.com/pjflanagan/nightpro-for-gopro
 website: https://pypi.org/project/nightpro-for-gopro/
