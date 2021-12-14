@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 
 import { Bio } from "src/content";
@@ -154,10 +155,12 @@ class Card extends React.Component {
     } = this.state;
     const { setIsWaveOn } = this.props;
 
-    const className = isSubmitted ? Style.isSubmitted : "";
+    const className = classNames(Style.card, {
+      [Style.isSubmitted]: isSubmitted
+    });
 
     return (
-      <div className={`${Style.card} ${className}`}>
+      <div className={className}>
         <div className={Style.cardSides}>
           <div className={Style.sideLeft}>
             <TextAccent>{Bio.contact.accent}</TextAccent>

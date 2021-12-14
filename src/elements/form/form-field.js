@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 
 import { TextAccent, TextTag } from 'src/elements';
@@ -13,7 +14,9 @@ const FormText = ({
   placeholder,
   error
 }) => {
-  const className = !!error ? Style.error : '';
+  const className = classNames(Style.formField, {
+    [Style.error]: !!error
+  });
   return (
     <div>
       <div className={Style.labelHolder}>
@@ -25,7 +28,7 @@ const FormText = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        className={`${Style.formField} ${className}`}
+        className={className}
       />
       <div className={Style.errorHolder}>
         <TextTag>{error}</TextTag>
@@ -42,7 +45,10 @@ const FormMessage = ({
   placeholder,
   error
 }) => {
-  const className = !!error ? Style.error : '';
+  const className = classNames(Style.formField, {
+    [Style.error]: !!error
+  })
+
   return (
     <div>
       <div className={Style.labelHolder}>
@@ -53,7 +59,7 @@ const FormMessage = ({
         name={name}
         onChange={onChange}
         placeholder={placeholder}
-        className={`${Style.formField} ${className}`}
+        className={className}
         rows="4">
       </textarea>
       <div className={Style.errorHolder}>

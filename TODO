@@ -1,15 +1,13 @@
 
-MAIN TODO: Start writing blog posts
-- [ ] figure out lfs
+MAIN TODO: 
+- [ ] Start writing blog posts
+- [x] figure out lfs
 - [ ] Add typescript
 
-- replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
-
-
-  - Elements
-    - [ ] Less passing in custom classes to Elements, instead take variables like color
-    - [ ] No accessing content in Elements (avatar, footer)
-    - [ ] use `react-icon` instead of the ones I have
+- [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
+- [ ] Less passing in custom classes to Elements, instead take variables like color
+- [ ] No accessing content in Elements (avatar, footer)
+- [ ] use `react-icon` instead of the ones I have
 
 
 GENERAL

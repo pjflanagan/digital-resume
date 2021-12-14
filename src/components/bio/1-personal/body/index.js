@@ -38,11 +38,11 @@ const Body = ({ photoLinkCallback }) => {
       <TextTitle>
         {ParseTextForLinks(title_text.text, title_text.links, linkHover)}
       </TextTitle>
-      <Text className={Style.bio} links={link_text.links}>
+      <Text links={link_text.links}>
         {link_text.text[0]}
       </Text>
       <Text
-        className={`${Style.bio} ${Style.additional}`}
+        className={Style.bioAdditional}
         links={link_text.links}
         callback={linkHover}
       >

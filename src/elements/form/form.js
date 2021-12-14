@@ -4,6 +4,7 @@ import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 import { LabeledButtonForm } from '../button/labeled-button';
 
 import * as Style from './style.module.scss';
+import classNames from 'classnames';
 
 class Form extends React.Component {
   constructor(props) {
@@ -28,13 +29,15 @@ class Form extends React.Component {
       isLoading
     } = this.props;
 
-    const className = isLoading ? Style.isLoading : "";
+    const className = classNames(Style.form, {
+      [Style.isLoading]: isLoading
+    });
 
     return (
       <div className={Style.formContent}>
         <form
           onSubmit={this.onSubmit}
-          className={`${Style.form} ${className}`}
+          className={className}
           netlify-honeypot="bot-field"
           data-netlify="true"
           name={name}>

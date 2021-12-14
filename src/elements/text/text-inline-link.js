@@ -15,17 +15,21 @@ const TextInlineLink = ({
   samePage,
   onClick
 }) => {
-  const className = classNames(Style.textInlineLink, {
-    [classNameProp]: classNameProp,
-    [Style.clickable]: !!onClick
-  });
+  const className = classNames(
+    Style.textInlineLink,
+    Style.clickable,
+    {
+      [classNameProp]: classNameProp,
+      [Style.clickable]: !!onClick
+    }
+  );
 
   if (!href) {
     return (
       <span
         role="button"
         tabIndex={0}
-        className={`${className} ${Style.clickable}`}
+        className={className}
         onMouseOver={onMouseOver}
         onFocus={onFocus}
         onClick={onClick}
