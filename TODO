@@ -19,6 +19,7 @@ GENERAL
 - [ ] content should be done with CONTEXT, only at top level, or graphql
 - [ ] images should not be globally named (some should also be remote from either the website or git instead)
 - [!] make it so you can go tab through the whole site seamlessly
+- [ ] lfs for blog image files
 
 LANDING
 - [ ] switch to typescript and redo this file?
