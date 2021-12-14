@@ -1,6 +1,5 @@
 
 MAIN TODO: Start writing blog posts
-- [ ] working lfs...?
 - [ ] Add typescript
 
 
@@ -8,8 +7,6 @@ MAIN TODO: Start writing blog posts
     - [ ] Less passing in custom classes to Elements, instead take variables like color
     - [ ] No accessing content in Elements (avatar, footer)
     - [ ] use `react-icon` instead of the ones I have
-  - Content
-    - [ ] Move content into static and get with graphql `gatsby-source-filesystem`
 
 
 GENERAL

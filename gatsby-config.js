@@ -27,14 +27,14 @@ module.exports = {
         background_color: `#112a32`,
         theme_color: `#112a32`,
         display: `standalone`,
-        icon: `src/content/icon.png`,
+        icon: `static/img/icon/icon.png`,
         include_favicon: false,
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content/img`,
+        path: `${__dirname}/static/img/main`,
       },
     },
     {
