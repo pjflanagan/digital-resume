@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'gatsby';
 
 import {
-  TextHeading,
+  TextTitle,
   Text,
   TextAccent
 } from 'src/elements'
@@ -25,7 +25,7 @@ const BlogComponent = ({ posts }) => {
                       backgroundImage: `url(${frontmatter.image})`
                     }} />
                   }
-                  <TextHeading>{frontmatter.title}</TextHeading>
+                  <TextTitle>{frontmatter.title}</TextTitle>
                   {
                     frontmatter.blurb && <Text>{frontmatter.blurb}</Text>
                   }

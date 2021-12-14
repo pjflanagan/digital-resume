@@ -1,21 +1,19 @@
 
-MAIN TODO: Start writing blog posts, clean up blog sub-components
-
-
-
+MAIN TODO: Start writing blog posts
 - [ ] START USING NETLIFY IMAGE STORE
-- Reorganize
-  - [ ] Add typescript
-  - [ ] Use `classnames` more
+- [ ] Add typescript
+
+
   - Elements
-    - [ ] Less passing in custom styles to Elements, instead take variables like color
+    - [ ] Less passing in custom classes to Elements, instead take variables like color
     - [ ] No accessing content in Elements (avatar, footer)
+    - [ ] use `react-icon` instead of the ones I have
   - Content
     - [ ] Move content into static and get with graphql `gatsby-source-filesystem`
 
 
 GENERAL
-- [ ] use `react-icon` instead of the ones I have
+- [ ] Use `classnames` more
 - [~] favicon, social icons, ios icons (make ios icon different than just large favicon)
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
@@ -27,7 +25,7 @@ GENERAL
 
 LANDING
 - [ ] switch to typescript and redo this file?
-- [ ] make the canvas pause and play based on where the scoll is
+- [ ] make the canvas pause and play based on where the scroll is
 
 PERSONAL 
 - [ ] add some decorative changing numbers or text maybe too

@@ -3,7 +3,7 @@ import React from "react";
 import { Bio } from "src/content";
 import {
   LabeledButton,
-  TextAccent, TextHeading, Text,
+  TextAccent, TextTitle, Text,
   Form, FormText, FormMessage, FormButton
 } from "src/elements";
 import { encode } from "src/helpers";
@@ -161,7 +161,7 @@ class Card extends React.Component {
         <div className={Style.cardSides}>
           <div className={Style.sideLeft}>
             <TextAccent>{Bio.contact.accent}</TextAccent>
-            <TextHeading>{Bio.contact.title}</TextHeading>
+            <TextTitle>{Bio.contact.title}</TextTitle>
             <Text>{Bio.contact.text}</Text>
             <div className={Style.linkHolder}>
               {Bio.contact.links.map((link, i) => (

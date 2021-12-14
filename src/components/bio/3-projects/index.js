@@ -3,9 +3,9 @@ import * as Scroll from 'react-scroll';
 
 import {
   Ruler,
-  TextHeading,
+  TextTitle,
   TextAccent,
-  TextSubHeading,
+  TextSection,
   Text,
   Stack,
   LabeledButton
@@ -24,11 +24,11 @@ const SlideProjects = ({ data }) => {
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
         <TextAccent>{Bio.projects.accent}</TextAccent>
-        <TextHeading>{Bio.projects.title}</TextHeading>
+        <TextTitle>{Bio.projects.title}</TextTitle>
         <Text links={Bio.projects.link_text.links}>
           {Bio.projects.link_text.text[0]}
         </Text>
-        <TextSubHeading>{Bio.projects.sections[0]}</TextSubHeading>
+        <TextSection>{Bio.projects.sections[0]}</TextSection>
         <div className={Style.featuredBody}>
           {Bio.projects.projects.featured.map((project, i) => (
             <FeaturedProject
@@ -38,7 +38,7 @@ const SlideProjects = ({ data }) => {
             />
           ))}
         </div>
-        <TextSubHeading>{Bio.projects.sections[1]}</TextSubHeading>
+        <TextSection>{Bio.projects.sections[1]}</TextSection>
         <div className={Style.allBody}>
           <Stack>
             {Bio.projects.projects.all.map((project, i) => (

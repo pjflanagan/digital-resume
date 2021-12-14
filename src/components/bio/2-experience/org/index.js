@@ -4,8 +4,8 @@ import {
   Avatar,
   Text,
   TextLinkedHeader,
-  TextSectionHeading,
-  TextSectionSubHeading,
+  TextHeading,
+  TextSubHeading,
   TextAccent
 } from "src/elements";
 
@@ -34,13 +34,13 @@ const Org = ({
         />
       </div>
       <div className={Style.orgInfoHolder}>
-        <TextSectionHeading className={Style.name}>{name}</TextSectionHeading>
+        <TextHeading className={Style.name}>{name}</TextHeading>
         <Text className={Style.location}>{location}</Text>
         <TextAccent className={Style.time}>{time}</TextAccent>
       </div>
     </div>
     <div className={Style.orgRight}>
-      {!!position && <TextSectionHeading className={Style.position}>{position}</TextSectionHeading>}
+      {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
       {description.map((line, i) => (
         <Text key={i} links={links}>
           {line}
@@ -53,7 +53,7 @@ const Org = ({
           <div className={Style.orgLeft}></div>
           <div className={Style.orgRight}>
             <TextLinkedHeader href={org.link} className={Style.name} color="cyan">{org.name}</TextLinkedHeader>
-            <TextSectionSubHeading>{org.position}</TextSectionSubHeading>
+            <TextSubHeading>{org.position}</TextSubHeading>
             <Text key={i}>
               {org.description}
             </Text>

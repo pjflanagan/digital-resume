@@ -16,7 +16,7 @@ So I felt like I could make one too. I had previous experience with creating [so
 
 <!-- I sat on this idea for a long time and didn't act on it, but when TODO: QUARANTINE -->
 
-## Game Rules
+## Gameplay
 
 ### 1. Starting a Match
 
@@ -48,7 +48,7 @@ After all players have entered codes, the most voted on code will be tried in th
   - The amount of incorrect letters in the code is shared with the group 
   - The code then changes for the next round and the agents are given another chance to figure out who the spies are
   
-If the agents fail to enter a correct code after 5 rounds the spies win
+If the agents fail to enter a correct code after 5 rounds the spies win.
 
 ## Development
 

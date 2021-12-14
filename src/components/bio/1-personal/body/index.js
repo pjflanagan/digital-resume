@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import {
   TextAccent,
-  TextHeading,
+  TextTitle,
   Text,
   TextType,
   ParseTextForLinks,
@@ -35,9 +35,9 @@ const Body = ({ photoLinkCallback }) => {
           {accent[language]}
         </TextType>
       </TextAccent>
-      <TextHeading>
+      <TextTitle>
         {ParseTextForLinks(title_text.text, title_text.links, linkHover)}
-      </TextHeading>
+      </TextTitle>
       <Text className={Style.bio} links={link_text.links}>
         {link_text.text[0]}
       </Text>

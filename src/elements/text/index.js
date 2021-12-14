@@ -4,8 +4,8 @@ import { ParseTextForLinks } from "./parse-text-for-links";
 
 import * as Style from "./style.module.scss";
 
-// TextHeading h1
-const TextHeading = (props) => {
+// TextTitle h1
+const TextTitle = (props) => {
   return (
     <h1 className={props.className}>
       {props.children}
@@ -13,8 +13,8 @@ const TextHeading = (props) => {
   );
 };
 
-// TextSubHeading h2
-const TextSubHeading = (props) => {
+// TextSection h2
+const TextSection = (props) => {
   return (
     <h2 className={props.className}>
       {props.children}
@@ -22,8 +22,8 @@ const TextSubHeading = (props) => {
   );
 };
 
-// TextSectionHeading h3 // TODO: this name should switch with TextSubHeading 
-const TextSectionHeading = (props) => {
+// TextHeading h3
+const TextHeading = (props) => {
   return (
     <h3 className={props.className}>
       {props.children}
@@ -31,8 +31,8 @@ const TextSectionHeading = (props) => {
   );
 };
 
-// TextSectionSubHeading h4
-const TextSectionSubHeading = (props) => {
+// TextSubHeading h4
+const TextSubHeading = (props) => {
   return (
     <h4 className={props.className}>
       {props.children}
@@ -85,10 +85,10 @@ export { TextInlineLink } from "./text-inline-link";
 export { TextLinkedHeader } from "./text-linked-header";
 export {
   TextAccent,
+  TextTitle,
+  TextSection,
   TextHeading,
   TextSubHeading,
-  TextSectionHeading,
-  TextSectionSubHeading,
   TextPageCenter,
   Text,
   TextTag

@@ -2,8 +2,8 @@ import React from "react";
 import * as Scroll from 'react-scroll';
 
 import {
-  TextHeading,
-  TextSubHeading,
+  TextTitle,
+  TextSection,
   TextAccent,
   Text,
   ShowMore,
@@ -24,11 +24,11 @@ const SlideExperience = ({ data }) => {
       </div>
       <div className={Style.slideBody}>
         <TextAccent>{Bio.experience.accent}</TextAccent>
-        <TextHeading>{Bio.experience.title}</TextHeading>
+        <TextTitle>{Bio.experience.title}</TextTitle>
         <Text links={Bio.experience.link_text.links}>
           {Bio.experience.link_text.text[0]}
         </Text>
-        <TextSubHeading>{Bio.experience.sections[0]}</TextSubHeading>
+        <TextSection>{Bio.experience.sections[0]}</TextSection>
         {Bio.experience.jobs.featured.map((job, i) => (
           <Org
             key={i}
@@ -62,7 +62,7 @@ const SlideExperience = ({ data }) => {
           ))}
         </ShowMore>
 
-        <TextSubHeading>{Bio.experience.sections[1]}</TextSubHeading>
+        <TextSection>{Bio.experience.sections[1]}</TextSection>
         {Bio.experience.schools.featured.map((school, i) => (
           <Org
             key={i}
@@ -98,7 +98,7 @@ const SlideExperience = ({ data }) => {
           ))}
         </ShowMore>
 
-        <TextSubHeading>{Bio.experience.sections[2]}</TextSubHeading>
+        <TextSection>{Bio.experience.sections[2]}</TextSection>
         <Skills />
       </div>
     </ScrollComponent>

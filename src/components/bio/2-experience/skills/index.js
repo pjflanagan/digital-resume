@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ProgressBar, TextSectionHeading } from "src/elements";
+import { ProgressBar, TextHeading } from "src/elements";
 import { Bio } from 'src/content';
 
 import * as Style from "./style.module.scss";
@@ -9,7 +9,7 @@ const Skills = () => (
   <div>
     {Bio.experience.skills.map(({ type, items, cols }) => (
       <div key={type}>
-        <TextSectionHeading>{type}</TextSectionHeading>
+        <TextHeading>{type}</TextHeading>
         <div className={Style.skillListHolder}>
           {items.map((skill, i) => (
             <div

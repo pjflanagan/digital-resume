@@ -4,7 +4,7 @@ import * as React from "react";
 
 import {
   LabeledButton,
-  TextHeading,
+  TextTitle,
   Text,
   TextAccent,
 } from 'src/elements';
@@ -19,7 +19,7 @@ const PostComponent = ({
   return (
     <BlogContainer image={frontmatter.image}>
       <div className={Style.postContent}>
-        <TextHeading>{frontmatter.title}</TextHeading>
+        <TextTitle>{frontmatter.title}</TextTitle>
         {frontmatter.blurb && <Text>{frontmatter.blurb}</Text>}
         <TextAccent>{frontmatter.date}</TextAccent>
         {
