@@ -27,14 +27,14 @@ module.exports = {
         background_color: `#112a32`,
         theme_color: `#112a32`,
         display: `standalone`,
-        icon: `src/icon.png`,
+        icon: `src/content/icon.png`,
         include_favicon: false,
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/src/content/img`,
       },
     },
     {
@@ -62,12 +62,3 @@ module.exports = {
     },
   ]
 }
-
-/** SCSS variables
- *     {
-      resolve: ,
-      options: {
-        data: `@import "${__dirname}/src/theme/variables";`,
-      }
-    },
- */
