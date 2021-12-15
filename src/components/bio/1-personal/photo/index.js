@@ -8,6 +8,7 @@ import { useReveal } from 'src/hooks';
 
 // TODO: import { BillCypher } from "./bill-cypher"; ?
 import * as Style from "./style.module.scss";
+import classNames from "classnames";
 
 const Photo = ({ data, photo }) => {
 
@@ -15,7 +16,9 @@ const Photo = ({ data, photo }) => {
   const isScrollRevealed = useReveal({ ref, gap: 280, edge: 'top' });
   const [isRevealed, setIsRevealed] = useState(true);
 
-  const className = isScrollRevealed && isRevealed ? Style.reveal : "";
+  const className = classNames(Style.photoFrameHolder, {
+    [Style.reveal]: isScrollRevealed && isRevealed,
+  });
   const imageData = FindImage({ data, image: photo });
 
   useEffect(() => {
@@ -24,7 +27,7 @@ const Photo = ({ data, photo }) => {
     setTimeout(() => {
       setIsRevealed(true);
     }, 10);
-  }, [photo])
+  }, [photo]);
 
   return (
     <div className={Style.personalPhoto} ref={ref}>
@@ -32,7 +35,7 @@ const Photo = ({ data, photo }) => {
         image={imageData.childImageSharp.gatsbyImageData}
         alt={"Peter James Flanagan Headshot"}
         className={Style.image} />
-      <FrameHolder className={`${Style.photoFrameHolder} ${className}`} />
+      <FrameHolder className={className} />
     </div>
   );
 }

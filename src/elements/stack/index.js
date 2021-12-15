@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import classNames from 'classnames';
 
 import { useReveal } from "src/hooks";
 
@@ -17,7 +18,9 @@ const StackNav = ({ current, count, selectLayer }) => {
   return (
     <div className={Style.stackNav}>
       {[...Array(count)].map((e, i) => {
-        const className = i === current ? Style.current : "";
+        const className = classNames(Style.stackBullet, {
+          [Style.current]: i === current,
+        });
         return (
           <div
             key={i}
@@ -27,7 +30,7 @@ const StackNav = ({ current, count, selectLayer }) => {
             role="button"
             tabIndex={0}
           >
-            <div className={`${Style.stackBullet} ${className}`} />
+            <div className={className} />
           </div>
         );
       })}
@@ -44,7 +47,9 @@ const Stack = ({
   const isRevealed = useReveal({ ref, gap: 240, edge: 'top' });
   const [currentLayer, setCurrentLayer] = useState(0);
 
-  const className = isRevealed ? '' : Style.preReveal;
+  const className = classNames(Style.stack, {
+    [Style.preReveal]: !isRevealed
+  });
 
   const getNextLayer = (offset) => {
     const layerIndex = getNextLayerIndex(currentLayer, offset, children.length);
@@ -56,7 +61,7 @@ const Stack = ({
   const layers = [-1, 0, 1, 2, 3, 4].map(i => getNextLayer(i));
 
   return (
-    <div className={`${Style.stack} ${className}`} ref={ref}>
+    <div className={className} ref={ref}>
       <div className={Style.stackBody}>
         {layers.map((layer) => (
           <div

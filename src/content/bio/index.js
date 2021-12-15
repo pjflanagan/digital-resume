@@ -159,6 +159,53 @@ const PageBio = {
       // }
     ]
   },
+  footer: [
+    {
+      "links": [
+        {
+          "key": "github",
+          "href": "//github.com/pjflanagan/digital-resume",
+          "text": "Github"
+        }
+      ],
+      "text": "Website by Peter James Flanagan, available on <github>"
+    },
+    {
+      "links": [
+        {
+          "key": "pixel_perfect",
+          "href": "//www.flaticon.com/authors/pixel-perfect",
+          "text": "Pixel Perfect"
+        },
+        {
+          "key": "freepik",
+          "href": "//www.flaticon.com/authors/freepik",
+          "text": "Freepik"
+        },
+        {
+          "key": "prettycons",
+          "href": "//www.flaticon.com/authors/prettycons",
+          "text": "prettycons"
+        },
+        {
+          "key": "smashicons",
+          "href": "//www.flaticon.com/authors/smashicons",
+          "text": "Smashicons"
+        },
+        {
+          "key": "iconixar",
+          "href": "//www.flaticon.com/authors/iconixar",
+          "text": "iconixar"
+        },
+        {
+          "key": "kiranshastry",
+          "href": "//www.flaticon.com/authors/kiranshastry",
+          "text": "Kiranshastry"
+        }
+      ],
+      "text": "Icons by <pixel_perfect>, <freepik>, <prettycons>, <kiranshastry>, <iconixar> and <smashicons>"
+    }
+  ],
 };
 
 

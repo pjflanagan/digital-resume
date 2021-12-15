@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useState } from "react";
 
 import { LabeledButton } from "src/elements";
@@ -12,10 +13,12 @@ const ShowMore = ({ children, trackerLabel }) => {
     setIsOpen(!isOpen);
   }
 
-  const className = isOpen ? Style.open : "";
+  const className = classNames(Style.showMore, {
+    [Style.open]: isOpen
+  });
 
   return (
-    <div className={`${Style.showMore} ${className}`}>
+    <div className={className}>
       <div className={Style.contentHolder}>{children}</div>
       <div className={Style.buttonHolder}>
         <LabeledButton

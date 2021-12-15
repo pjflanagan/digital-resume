@@ -1,31 +1,24 @@
 
-MAIN TODO: Start writing blog posts
-- [ ] figure out lfs
-- [ ] Add typescript
+MAIN TODO: 
+- [ ] Start writing blog posts
+- [x] figure out lfs
+- [~] Add typescript - change some elements and hooks to use it
 
-- replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
-
-
-  - Elements
-    - [ ] Less passing in custom classes to Elements, instead take variables like color
-    - [ ] No accessing content in Elements (avatar, footer)
-    - [ ] use `react-icon` instead of the ones I have
+- [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
+- [ ] Less passing in custom classes to Elements, instead take variables like color
+- [ ] No accessing content in Elements (avatar, footer)
+- [ ] use `react-icon` instead of the ones I have
 
 
 GENERAL
-- [ ] Use `classnames` more
-- [~] favicon, social icons, ios icons (make ios icon different than just large favicon)
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context
-- [!] use some functions just for fun
 - [ ] content should be done with CONTEXT, only at top level, or graphql
 - [ ] images should not be globally named (some should also be remote from either the website or git instead)
 - [!] make it so you can go tab through the whole site seamlessly
-- [ ] lfs for blog image files
 
 LANDING
-- [ ] switch to typescript and redo this file?
 - [ ] make the canvas pause and play based on where the scroll is
 
 PERSONAL 

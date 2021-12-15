@@ -3,10 +3,8 @@
 .body {
   padding: 14px 14px;
 
-  .bio {
-    &.additional {
-      display: none;
-    }
+  &.bio-additional {
+    display: none;
   }
 }
 
@@ -15,10 +13,8 @@
   .body {
     padding: 50px 24px;
 
-    .bio {
-      &.additional {
-        display: block;
-      }
+    &.bio-additional {
+      display: block;
     }
   }
 }
