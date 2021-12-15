@@ -1,12 +1,17 @@
-import React, { useRef } from "react";
-import PropTypes from "prop-types";
+import React, { FC, useRef } from "react";
 import classNames from 'classnames';
 
-import { useReveal } from 'src/hooks';
+import { useReveal } from 'hooks';
 
 import * as Style from "./style.module.scss";
 
-const ProgressBar = ({
+type ProgressBarProps = {
+  className: string;
+  progress: number;
+  name: string;
+}
+
+const ProgressBar: FC<ProgressBarProps> = ({
   className: classNameProp,
   progress: progressProp,
   name
@@ -24,16 +29,17 @@ const ProgressBar = ({
     <div className={className} ref={ref}>
       <div className={Style.name}>
         {name}
-        <span className={Style.line} style={{ width: `${progress / 6}%` }} />
+        <span
+          className={Style.line}
+          style={{ width: `${progress / 6}%` }}
+        />
       </div>
-      <div className={Style.loader} style={{ width: `${progress}%` }}></div>
+      <div
+        className={Style.loader}
+        style={{ width: `${progress}%` }}
+      />
     </div>
   );
-}
-
-ProgressBar.propTypes = {
-  progress: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired
 }
 
 export { ProgressBar };

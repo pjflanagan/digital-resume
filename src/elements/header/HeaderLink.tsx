@@ -1,25 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 
 import { TextInlineLink } from '../text';
 
 import * as Style from './style.module.scss';
 
-const Header = ({
-  children,
-  className: classNameProp
-}) => {
-  const className = classNames(Style.header, {
-    [classNameProp]: classNameProp,
-  })
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  );
+type HeaderLinkProps = {
+  onClick?: () => void;
+  href?: string;
+  children: string;
+  samePage?: boolean;
 }
 
-const HeaderLink = ({
+const HeaderLink: FC<HeaderLinkProps> = ({
   onClick,
   href,
   children,
@@ -39,7 +32,7 @@ const HeaderLink = ({
   );
 };
 
-export { Header, HeaderLink }
+export { HeaderLink };
 
 
 
