@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as Scroll from "react-scroll";
 
+import { Bio } from "src/content";
 import { Cover, Footer, Splash, Header, HeaderLink } from "src/elements";
 
 import { SlideLanding } from "./0-landing";
@@ -46,7 +47,7 @@ const BioComponent = ({ data }) => {
         <SlideExperience data={data} />
         <SlideProjects data={data} />
         <SlideContact data={data} />
-        <Footer />
+        <Footer text={Bio.footer} />
       </div>
     </div>
   );

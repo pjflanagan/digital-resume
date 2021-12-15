@@ -2,7 +2,7 @@
 MAIN TODO: 
 - [ ] Start writing blog posts
 - [x] figure out lfs
-- [ ] Add typescript
+- [~] Add typescript - change some elements and hooks to use it
 
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
@@ -19,7 +19,6 @@ GENERAL
 - [!] make it so you can go tab through the whole site seamlessly
 
 LANDING
-- [ ] switch to typescript and redo this file?
 - [ ] make the canvas pause and play based on where the scroll is
 
 PERSONAL 
