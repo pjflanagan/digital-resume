@@ -17,7 +17,7 @@ const FeaturedProject = ({
   const isRevealed = useReveal({ ref, gap: 220, edge: 'top' });
 
   const className = classNames(Style.featuredProject, {
-    [Style.hidden]: isRevealed
+    [Style.hidden]: !isRevealed
   });
   const imageData = FindImage({ data, image });
 
