@@ -18,3 +18,5 @@ In comes NYT Crossword Plus.
 In order to scrape the scores, I simply created a Chrome extension that updates a Fauna database whenever I load the leaderboard page. In the past, I had tried to write a crawler for it, but couldn't get past the log in screen. This way is not the worst, as I have a computer nearby most days. I also can distribute the Chrome extension so other people can upload scores too.
 
 ## NextJS
+
+[Example Group](https://nytcrosswordplus.flanny.app/group/test)

@@ -8,7 +8,6 @@ github: https://github.com/pjflanagan/colors-of-pi/
 website: https://www.flanny.app/colors-of-pi/
 ---
 
-<!-- TODO: include the pic of tina fey stuff -->
 ## Version 1
 
 ### [Visit the Site](https://www.flanny.app/colors-of-pi/archive/v1/)
@@ -18,3 +17,7 @@ website: https://www.flanny.app/colors-of-pi/
 ### [Visit the Site](https://www.flanny.app/colors-of-pi/)
 
 Years later, with a better understanding of how Ajax and JavaScript works, I rebuilt this site to 
+
+## SNL Appearance
+
+![Meet Your Second Wife](/blog/2015/meet-your-second-wife.png)
