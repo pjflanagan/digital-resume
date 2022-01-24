@@ -14,7 +14,7 @@ const FeaturedProject = ({
 }) => {
 
   const ref = useRef(null);
-  const isRevealed = useReveal({ ref, gap: 220, edge: 'top' });
+  const isRevealed = useReveal({ ref, gap: 220 });
 
   const className = classNames(Style.featuredProject, {
     [Style.hidden]: !isRevealed

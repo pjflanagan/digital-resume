@@ -9,7 +9,7 @@ import classNames from "classnames";
 const Avatar = ({ image, name, background }) => {
 
   const ref = useRef(null);
-  const isRevealed = useReveal({ ref, gap: 132, edge: 'top' });
+  const isRevealed = useReveal({ ref, gap: 132 });
   const className = classNames(Style.avatarHolder, {
     [Style.reveal]: isRevealed
   });

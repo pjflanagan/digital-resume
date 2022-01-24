@@ -18,7 +18,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
 }) => {
 
   const ref = useRef(null);
-  const isRevealed = useReveal({ ref, gap: 28, edge: 'bottom' });
+  const isRevealed = useReveal({ ref, gap: 28 });
   const progress = isRevealed ? progressProp : 0;
 
   const className = classNames(Style.bar, {

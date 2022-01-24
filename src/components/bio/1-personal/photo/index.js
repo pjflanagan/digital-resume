@@ -13,7 +13,7 @@ import classNames from "classnames";
 const Photo = ({ data, photo }) => {
 
   const ref = useRef(null);
-  const isScrollRevealed = useReveal({ ref, gap: 280, edge: 'top' });
+  const isScrollRevealed = useReveal({ ref, gap: 280 });
   const [isRevealed, setIsRevealed] = useState(true);
 
   const className = classNames(Style.photoFrameHolder, {

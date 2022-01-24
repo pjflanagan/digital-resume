@@ -44,7 +44,7 @@ const Stack = ({
 }) => {
 
   const ref = useRef(null)
-  const isRevealed = useReveal({ ref, gap: 240, edge: 'top' });
+  const isRevealed = useReveal({ ref, gap: 240 });
   const [currentLayer, setCurrentLayer] = useState(0);
 
   const className = classNames(Style.stack, {
