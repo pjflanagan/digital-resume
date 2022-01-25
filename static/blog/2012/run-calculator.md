@@ -14,6 +14,8 @@ This was the first personal project I ever hosted on the internet. I never liked
 
 In the first version, I wrote all the code in Dreamweaver in one single `Index.html` file. I had a completely novice understanding of tables and javascript, it was a miracle it worked at all. With great effort, I managed to make a good looking pace calculator that I was proud enough about to find hosting for.
 
+![Version 1](/blog/2012/runcalculator.jpg)
+
 ## v2: Bootstrap
 
 After learning more web development skills, I broke the code out into `css` and `js` files with different functions. I also used Bootstrap, which was all the rage at the time, although I didn't use it well, and jQuery, which I did use pretty well. The code was cleaner and readable, but the app was more or less the same.
