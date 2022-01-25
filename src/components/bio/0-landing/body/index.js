@@ -1,9 +1,9 @@
 import React from 'react';
 import * as Scroll from "react-scroll";
+import { useWindowScroll } from 'react-use';
 
 import { LabeledButton, TextPageCenter } from "src/elements";
 import { Bio } from "src/content";
-import { useScroll } from 'src/hooks';
 
 import * as Style from './style.module.scss';
 
@@ -19,11 +19,11 @@ const clickToScroll = () => {
 
 const Body = () => {
 
-  const scroll = useScroll();
+  const { y } = useWindowScroll();
   const prompt = Bio.splash.prompts[0];
 
-  const textScroll = -scroll / 5;
-  const opacity = 1.0 - scroll / 1000.0;
+  const textScroll = -y / 5;
+  const opacity = 1.0 - y / 1000.0;
 
   return (
     <>
@@ -52,20 +52,3 @@ const Body = () => {
 }
 
 export { Body };
-
-
-  // componentDidMount() {
-  //   // TODO: this might be wrong...
-  //   // we don't want to re-render on scroll
-  //   window.addEventListener('scroll', _.throttle(this.handleScroll, 40));
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', _.throttle(this.handleScroll, 40));
-  // }
-
-  // handleScroll(e) {
-  //   this.setState({
-  //     scroll: 
-  //   });
-  // }

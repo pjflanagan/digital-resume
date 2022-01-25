@@ -1,7 +1,7 @@
 import React, { FC } from "react";
+import { useWindowScroll } from "react-use";
 
 import { Canvas } from "elements";
-import { useScroll } from "hooks";
 
 import { View } from "./view";
 import { Body } from "./body";
@@ -10,7 +10,8 @@ import * as Style from "./style.module.scss";
 // SlideLanding
 
 const SlideLanding: FC = () => {
-  const canvasScroll = useScroll() / 2;
+  const { y } = useWindowScroll();
+  const canvasScroll = y / 2;
   return (
     <div className={Style.splash}>
       <Body />
