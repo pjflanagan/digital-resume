@@ -8,7 +8,7 @@ github: https://github.com/pjflanagan/drunkweatherchannel
 website: https://drunkweatherchannel.flanny.app/
 ---
 
-This is a website that I've had an idea for for a long time was this silly app. I finally decided it was worth doing because serverless functions have become popular and I wouldn't need to pay for a server to make this work. So I created a standard looking weather app, with silly gifs for the background and funny phrases and quips.
+This is a website that I've had an idea for since college in Michigan. I finally decided it was worth doing because serverless functions have become popular and I wouldn't need to pay for a server to make this work. So I created a standard looking weather app, with silly gifs for the background and funny phrases and quips.
 
 ### The Formula
 
