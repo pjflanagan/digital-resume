@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-// TODO: FIXME: TODO: FIXME: Helemet for social media share images and other stuff
+// TODO: FIXME: TODO: FIXME: Helmet for social media share images and other stuff
 // I think some of my stuff is getting to be worth me sharing, so lets make it shareable
 
 import "src/theme/theme.scss";
