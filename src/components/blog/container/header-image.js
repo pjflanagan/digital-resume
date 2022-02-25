@@ -8,7 +8,8 @@ import * as Style from './style.module.scss';
 const HeaderImage = ({
   src,
 }) => {
-  const y = useWindowScroll();
+  const { y } = useWindowScroll();
+  console.log(y);
   return (
     <div
       className={Style.headerImage}
