@@ -2,7 +2,7 @@
 slug: blackjack-simulator
 date: "2018-02-03"
 title: Blackjack Simulator
-image: /blog/2018/vegas.png
+image: /blog/2018/vegas.jpg
 blurb: "Always split 8s"
 github: https://github.com/pjflanagan/blackjack-simulator
 website:
