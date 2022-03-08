@@ -94,7 +94,7 @@ const PageBio = {
         }
       ],
       text: [
-        "I have a Masters in Computer Science from The University of Michigan and I've worked several internships and jobs at top tech companies. This resume is also available in <pdf>.",
+        "I have a Bachelor's in Computer Science from The University of Michigan and I've worked several positions at top tech companies. This resume is also available in <pdf>.",
       ],
     },
   },
