@@ -10,14 +10,16 @@ const ScrollComponent = Scroll.Element;
 const SlideContact = () => {
 
   const [isWaveOn, setIsWaveOn] = useState(false);
+  const ref = useRef(null);
+  const isRevealed = useReveal({ ref, gap: 132 });
 
   return (
-    <ScrollComponent className={Style.slideContact} name="contact">
+    <ScrollComponent ref={ref} className={Style.slideContact} name="contact">
       <div className={Style.slideFront}>
         <Card setIsWaveOn={setIsWaveOn} />
       </div>
       <div className={Style.slideBack}>
-        <Wave on={isWaveOn} />
+        <Wave on={isWaveOn} open={isRevealed} />
       </div>
     </ScrollComponent>
   )
