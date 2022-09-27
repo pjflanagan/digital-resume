@@ -73,7 +73,6 @@ class Wave extends React.Component {
 
   render() {
     const { wave, pos } = this.state;
-    const { open } = this.props;
     return (
       <div className={Style.waveHolder}>
         {wave.map((height, i) => (
@@ -81,8 +80,9 @@ class Wave extends React.Component {
             key={i}
             className={Style.bar}
             style={{
-              height: `${open ? height : 4}%`,
-              margin: `${getOffset(pos + SPEED * i)}px ${GAP}px`
+              height: `${height}%`,
+              transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px))`,
+              margin: `0 ${GAP}px`
             }}
           />
         ))}

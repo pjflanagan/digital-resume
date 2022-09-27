@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState, useRef } from "react";
+import { useReveal } from "src/hooks";
 import { FindImage } from "src/content";
 import {
   Avatar,
@@ -24,20 +24,25 @@ const Org = ({
   background,
   extra,
 }) => {
-  const [textRevealIndex, setTextRevealIndex] = useState(-1);
+  const bulletPointLength = description.length + (extra || []).length;
+  const [bulletPointRevealIndex, setBulletPointRevealIndex] = useState(-1);
 
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 132 });
 
   useEffect(() => {
-    if (textRevealIndex < description.length) {
+    if (isRevealed && bulletPointRevealIndex < bulletPointLength) {
       setTimeout(() => {
-        setTextRevealIndex(textRevealIndex + 1);
-      });
+        setBulletPointRevealIndex(bulletPointRevealIndex + 1);
+      }, 100);
     }
-  }, [isRevealed, textRevealIndex]);
+  }, [isRevealed, bulletPointRevealIndex, bulletPointLength]);
 
   const imageData = FindImage({ data, image });
+
+  function getClassName(index, offset = 0) {
+    return bulletPointRevealIndex >= index + offset ? Style.revealed : Style.hidden;
+  }
 
   return (
     <div className={Style.org} ref={ref}>
@@ -58,14 +63,14 @@ const Org = ({
       <div className={Style.orgRight}>
         {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
         {description.map((line, i) => (
-          <Text key={i} links={links} className={textRevealIndex >= i ? Style.descriptionRevealed : Style.descriptionHidden}>
+          <Text key={i} links={links} className={getClassName(i)}>
             {line}
           </Text>
         ))}
       </div>
       {!!extra &&
         extra.map((org, i) => (
-          <div key={i} className={Style.orgExtra}>
+          <div key={i} className={`${Style.orgExtra} ${getClassName(i, description.length)}`}>
             <div className={Style.orgLeft}></div>
             <div className={Style.orgRight}>
               <TextLinkedHeader href={org.link} className={Style.name} color="cyan">{org.name}</TextLinkedHeader>

@@ -153,10 +153,10 @@ class Card extends React.Component {
       isLoading,
       placeholders
     } = this.state;
-    const { setIsWaveOn } = this.props;
+    const { setIsWaveOn, isOpen } = this.props;
 
     const className = classNames(Style.card, {
-      [Style.isSubmitted]: isSubmitted
+      [Style.isSubmitted]: isSubmitted || !isOpen
     });
 
     return (
