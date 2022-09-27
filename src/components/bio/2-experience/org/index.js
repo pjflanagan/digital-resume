@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FindImage } from "src/content";
 import {
@@ -24,9 +24,23 @@ const Org = ({
   background,
   extra,
 }) => {
+  const [textRevealIndex, setTextRevealIndex] = useState(-1);
+
+  const ref = useRef(null);
+  const isRevealed = useReveal({ ref, gap: 132 });
+
+  useEffect(() => {
+    if (textRevealIndex < description.length) {
+      setTimeout(() => {
+        setTextRevealIndex(textRevealIndex + 1);
+      });
+    }
+  }, [isRevealed, textRevealIndex]);
+
   const imageData = FindImage({ data, image });
+
   return (
-    <div className={Style.org}>
+    <div className={Style.org} ref={ref}>
       <div className={Style.orgLeft}>
         <div className={Style.avatarHolder}>
           <Avatar
@@ -44,7 +58,7 @@ const Org = ({
       <div className={Style.orgRight}>
         {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
         {description.map((line, i) => (
-          <Text key={i} links={links}>
+          <Text key={i} links={links} className={textRevealIndex >= i ? Style.descriptionRevealed : Style.descriptionHidden}>
             {line}
           </Text>
         ))}

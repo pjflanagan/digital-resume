@@ -33,6 +33,15 @@
 
   .org-right {
     padding: 14px;
+
+    .description-hidden {
+      transition: opacity .2s;
+      opacity: 0;
+    }
+
+    .description-revealed {
+      opacity: 1;
+    }
   }
 
   .org-extra {
