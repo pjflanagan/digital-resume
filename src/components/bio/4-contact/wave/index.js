@@ -81,7 +81,8 @@ class Wave extends React.Component {
             className={Style.bar}
             style={{
               height: `${height}%`,
-              margin: `${getOffset(pos + SPEED * i)}px ${GAP}px`
+              transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px))`,
+              margin: `0 ${GAP}px`
             }}
           />
         ))}

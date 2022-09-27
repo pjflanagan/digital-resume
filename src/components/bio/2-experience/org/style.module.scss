@@ -1,5 +1,15 @@
 @import "/src/theme/variables";
 
+.hidden {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.revealed {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
 .org {
   color: #fff;
   margin-bottom: 24px;

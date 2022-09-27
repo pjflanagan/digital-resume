@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect, useState, useRef } from "react";
+import { useReveal } from "src/hooks";
 import { FindImage } from "src/content";
 import {
   Avatar,
@@ -24,9 +24,28 @@ const Org = ({
   background,
   extra,
 }) => {
+  const bulletPointLength = description.length + (extra || []).length;
+  const [bulletPointRevealIndex, setBulletPointRevealIndex] = useState(-1);
+
+  const ref = useRef(null);
+  const isRevealed = useReveal({ ref, gap: 132 });
+
+  useEffect(() => {
+    if (isRevealed && bulletPointRevealIndex < bulletPointLength) {
+      setTimeout(() => {
+        setBulletPointRevealIndex(bulletPointRevealIndex + 1);
+      }, 100);
+    }
+  }, [isRevealed, bulletPointRevealIndex, bulletPointLength]);
+
   const imageData = FindImage({ data, image });
+
+  function getClassName(index, offset = 0) {
+    return bulletPointRevealIndex >= index + offset ? Style.revealed : Style.hidden;
+  }
+
   return (
-    <div className={Style.org}>
+    <div className={Style.org} ref={ref}>
       <div className={Style.orgLeft}>
         <div className={Style.avatarHolder}>
           <Avatar
@@ -44,14 +63,14 @@ const Org = ({
       <div className={Style.orgRight}>
         {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
         {description.map((line, i) => (
-          <Text key={i} links={links}>
+          <Text key={i} links={links} className={getClassName(i)}>
             {line}
           </Text>
         ))}
       </div>
       {!!extra &&
         extra.map((org, i) => (
-          <div key={i} className={Style.orgExtra}>
+          <div key={i} className={`${Style.orgExtra} ${getClassName(i, description.length)}`}>
             <div className={Style.orgLeft}></div>
             <div className={Style.orgRight}>
               <TextLinkedHeader href={org.link} className={Style.name} color="cyan">{org.name}</TextLinkedHeader>
