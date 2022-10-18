@@ -62,7 +62,7 @@ I decided to hosted this project on Netlify for free frontend hosting and the ba
 
 ### Testing
 
-This was a very interesting project to test. Because it requires at least five players for a game, I hate to create an interface to control several players at once.
+This was a very interesting project to test. Because it requires at least five players for a game, I have to create an interface to control several players at once.
 
 ![Test Interface](/blog/2021/nuclear-codes/test-interface.png)
 
