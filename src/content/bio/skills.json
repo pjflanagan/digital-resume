@@ -95,7 +95,15 @@
       },
       {
         "name": "bash",
-        "progress": 94
+        "progress": 89
+      },
+      {
+        "name": "Postman",
+        "progress": 82
+      },
+      {
+        "name": "Charles Proxy",
+        "progress": 72
       },
       {
         "name": "Photoshop",

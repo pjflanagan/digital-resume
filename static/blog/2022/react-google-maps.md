@@ -4,7 +4,7 @@ date: "2022-10-07"
 title: Google Maps API and React
 image: /blog/2022/google-maps.png
 blurb: A quick tutorial for using React with Google Maps API
-github: 
+github: https://gist.github.com/pjflanagan/ca1339f4be5432b97f4ddee5f4371642
 website: 
 ---
 
@@ -12,25 +12,17 @@ The Google Maps API is incredibly useful and React is incredibly versatile. Comb
 
 ## Extend Overlay View
 
+In the constructor, create a `container` that will be:
+- passed to Google Maps in the `onAdd` function
+- and will render our React `content` in the `draw` function
+
 ```ts
-
-type PopupConfig = {
-  map: google.maps.Map;
-  content: React.Component;
-  position: google.maps.LatLng;
-}
-
 class Popup extends google.maps.OverlayView {
-    private readonly container: HTMLDivElement;
-    private content: ComponentChild;
-    private position: google.maps.LatLng;
-
-    constructor({ map, content, position }: PopupConfig) {
+    constructor({ content }) {
         super();
         // The container is a div that we can feed to Google Maps and attach our React content to
         this.container = document.createElement('div');
         this.container.style.position = 'absolute';
-        this.setMap(map);
         this.content = content;
     }
 
@@ -43,11 +35,11 @@ class Popup extends google.maps.OverlayView {
         // so here we will use React to render our content (React.Component) 
         React.render(this.content, this.container);
     }
-
-    public onRemove(): void {
-        if (this.container.parentElement) {
-            this.container.parentElement.removeChild(this.container);
-        }
-    }
 }
 ```
+
+This is all it takes, now when we go to render a Popup on our map, we can pass React JSX as our content.
+
+## Full Code
+
+<script src="https://gist.github.com/pjflanagan/ca1339f4be5432b97f4ddee5f4371642.js"></script>

@@ -3,7 +3,7 @@ slug: html5-canvas-animations
 date: "2012-10-21"
 title: HTML5 Canvas Animations
 image: /blog/2012/animations.png
-blurb: 
+blurb: Canvas animations
 github: https://github.com/pjflanagan/HTML5Canvas
 website: https://www.flanny.app/HTML5Canvas/
 ---
