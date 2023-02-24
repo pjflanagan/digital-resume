@@ -1,5 +1,5 @@
----
-slug: html5-canvas-animations
+<!-- ---
+slug: html5-canvas-animations-tutorial
 date: "2023-01-01"
 title: HTML5 Canvas Tutorial
 image: /blog/2012/animations.png
@@ -28,4 +28,4 @@ I think Javascript is an excellent starter programming language for many reasons
 - It is straightforward to read
 - It can accomplish a lot with little understanding
 
-After a tiny amount of HTML setup, a first time programmer can create and customize a canvas animation. In fact, one of the first tutorials I ever followed and understood was this [Glazing ribbon screensaver effect in HTML5 canvas](https://codepen.io/quatmo/pen/uFqoi) on Codepen. I also wanted to write a tutorial for a first time programmer to experiment with.
+After a tiny amount of HTML setup, a first time programmer can create and customize a canvas animation. In fact, one of the first tutorials I ever followed and understood was this [Glazing ribbon screensaver effect in HTML5 canvas](https://codepen.io/quatmo/pen/uFqoi) on Codepen. I also wanted to write a tutorial for a first time programmer to experiment with. -->
