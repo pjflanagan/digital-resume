@@ -5,7 +5,7 @@
       "type": "individual",
       "link": "//ohword.flanny.app",
       "description": "Developed daily online game\n",
-      "image": "ohword.webp",
+      "image": "//ohword.flanny.app/img/social/card.webp",
       "tech": [
         "Gatsby",
         "Netlify"
