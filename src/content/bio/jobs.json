@@ -7,7 +7,7 @@
       "position": "Software Engineer II",
       "image": "grubhub.png",
       "description": [
-        "Maintained workflow tool supporting custom JSON to React translator",
+        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
         "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
         "Acted as team's fullstack developer, bridging the gap between backend and frontend"
       ],

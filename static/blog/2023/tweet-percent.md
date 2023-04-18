@@ -3,7 +3,7 @@ slug: tweet-percent
 date: "2023-02-24"
 title: Tweet Percent
 image: https://raw.githubusercontent.com/pjflanagan/TweetPercent/main/img/promo_tile.png
-blurb: 
+blurb: An honest statistic
 github: https://github.com/pjflanagan/TweetPercent
 website: https://chrome.google.com/webstore/detail/tweet-percent/dhfljnmkpcpmacaffjcplpdpggkmojhf?hl=en&authuser=0
 ---

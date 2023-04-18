@@ -1,6 +1,17 @@
 {
   "featured": [
     {
+      "name": "OhWord!?",
+      "type": "individual",
+      "link": "//ohword.flanny.app",
+      "description": "Developed daily online game\n",
+      "image": "ohword.webp",
+      "tech": [
+        "Gatsby",
+        "Netlify"
+      ]
+    },
+    {
       "name": "bamboo",
       "type": "individual",
       "link": "//bamboo.flanny.app",
@@ -23,7 +34,9 @@
         "Angular",
         "Arduino"
       ]
-    },
+    }
+  ],
+  "all": [
     {
       "name": "Nuclear Codes",
       "type": "individual",
@@ -35,9 +48,7 @@
         "Node.js",
         "Socket.io"
       ]
-    }
-  ],
-  "all": [
+    },
     {
       "name": "MTA Clock",
       "type": "individual",
