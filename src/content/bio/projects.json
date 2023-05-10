@@ -110,13 +110,6 @@
       "image": "runcalculator.png"
     },
     {
-      "name": "Play Cross Word Cubes",
-      "type": "individual",
-      "link": "//crosswordcubes.flanny.app",
-      "description": "Developed online version of Scrabble style game during social distancing for entertainment.\n",
-      "image": "crosswordcubes.png"
-    },
-    {
       "name": "ML Asteroids",
       "type": "individual",
       "link": "//github.com/pjflanagan/Machine-Learning-Asteroids/",
