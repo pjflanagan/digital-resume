@@ -1,5 +1,7 @@
 
 MAIN TODO: 
+- [ ] Upgrade to the latest Gatsby or rewrite this entirely in Nextjs
+- [x] Install million JS
 - [ ] Start writing blog posts
 - [x] figure out lfs
 - [~] Add typescript - change some elements and hooks to use it
