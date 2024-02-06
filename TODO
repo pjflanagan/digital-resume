@@ -1,6 +1,6 @@
 
 MAIN TODO: 
-- [ ] Upgrade to the latest Gatsby or rewrite this entirely in Nextjs
+- [ ] Rewrite this entirely in NextJS
 - [x] Install million JS
 - [ ] Start writing blog posts
 - [x] figure out lfs
@@ -13,6 +13,7 @@ MAIN TODO:
 
 
 GENERAL
+- [ ] Need some cyberpunk references, like an Arasaka logo, or the screen effects
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
 - [ ] use data through graphql and context

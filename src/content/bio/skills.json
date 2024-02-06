@@ -30,7 +30,15 @@
     "cols": 1,
     "items": [
       {
-        "name": "AWS",
+        "name": "Netlify",
+        "progress": 94
+      },
+      {
+        "name": "Redis",
+        "progress": 89
+      },
+      {
+        "name": "Lambda",
         "progress": 74
       },
       {
