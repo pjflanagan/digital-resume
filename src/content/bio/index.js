@@ -74,7 +74,7 @@ const PageBio = {
       ],
       text: [
         "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun web tools.",
-        "Outside of coding, I'm an avid <rollerblader>, a novice <rockclimber>, certified <scuba>, <board_sport> enthusiast, and an eager <mandarin_student>.",
+        "Outside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, novice <rockclimber>, certified <scuba>, and <mandarin_student>.",
       ],
     },
   },

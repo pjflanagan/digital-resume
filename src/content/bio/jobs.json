@@ -7,9 +7,13 @@
       "position": "Software Engineer II",
       "image": "grubhub.png",
       "description": [
-        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
         "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
-        "Acted as team's fullstack developer, bridging the gap between backend and frontend"
+        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
+        "Acted as team's fullstack developer, bridging the gap between backend and frontend",
+        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
+      ],
+      "description_hidden": [
+        "Added game UI to order confirmation page, improving customer experience and generating social media exposure"
       ],
       "background": "#f43f4e",
       "color": "#fff"

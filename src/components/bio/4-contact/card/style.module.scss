@@ -21,11 +21,8 @@
     }
 
     .side-right {
-      width: 100%;
-      padding: 0 12px 36px;
+      display: none;
       transition: transform 0.4s;
-      margin-top: 32px;
-      // max-height: 400px;
     }
   }
 
@@ -75,6 +72,7 @@
       }
 
       .side-right {
+        display: inline;
         width: 414px;
         padding: 36px;
         background: $backgroundDark2Opaque;

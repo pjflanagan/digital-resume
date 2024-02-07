@@ -38,5 +38,5 @@ class Popup extends google.maps.OverlayView {
 }
 ```
 
-This is all it takes, now when we go to render a Popup on our map, we can pass React JSX as our content. A more complete version of the code can be found on [Github](https://gist.github.com/pjflanagan/ca1339f4be5432b97f4ddee5f4371642.js).
+This is all it takes, now when we go to render a Popup on our map, we can pass React JSX as our content. A more complete version of the code can be found on [Github](https://gist.github.com/pjflanagan/ca1339f4be5432b97f4ddee5f4371642).
 
