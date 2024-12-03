@@ -12,18 +12,6 @@
       ]
     },
     {
-      "name": "bamboo",
-      "type": "individual",
-      "link": "//bamboo.flanny.app",
-      "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
-      "image": "bamboo.png",
-      "tech": [
-        "Mongodb Stitch",
-        "React",
-        "Chrome Dev"
-      ]
-    },
-    {
       "name": "Michelle Calligraphy",
       "type": "team",
       "link": "//tomglobal.org/project?id=5e3b942bd848736b09554581",
@@ -33,6 +21,16 @@
         "Flask",
         "Angular",
         "Arduino"
+      ]
+    },
+    {
+      "name": "Run Calculator",
+      "type": "individual",
+      "link": "//runcalculator.flanny.app",
+      "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
+      "image": "runcalculator.png",
+      "tech": [
+        "Svelte"
       ]
     }
   ],
@@ -103,18 +101,23 @@
       "image": "witebord.png"
     },
     {
-      "name": "Run Calculator",
-      "type": "individual",
-      "link": "//runcalculator.flanny.app",
-      "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
-      "image": "runcalculator.png"
-    },
-    {
       "name": "ML Asteroids",
       "type": "individual",
       "link": "//github.com/pjflanagan/Machine-Learning-Asteroids/",
       "description": "Attempted to teach the game Asteroids to a computer using JavaScript and Phaser.",
       "image": "asteroids.png"
+    },
+    {
+      "name": "bamboo",
+      "type": "individual",
+      "link": "//bamboo.flanny.app",
+      "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
+      "image": "bamboo.png",
+      "tech": [
+        "Mongodb Stitch",
+        "React",
+        "Chrome Dev"
+      ]
     }
   ]
 }
