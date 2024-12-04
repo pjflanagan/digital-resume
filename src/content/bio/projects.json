@@ -36,9 +36,28 @@
   ],
   "all": [
     {
+      "name": "Canvas Animations",
+      "type": "individual",
+      "link": "//canvas.flanny.app/",
+      "description": "Designed an array of animated visuals using the HTML5 Canvas.\n",
+      "image": "animations.png"
+    },
+    {
+      "name": "bamboo",
+      "type": "individual",
+      "link": "//pjflanagan.me/blog/bamboo/",
+      "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
+      "image": "bamboo.png",
+      "tech": [
+        "Mongodb Stitch",
+        "React",
+        "Chrome Dev"
+      ]
+    },
+    {
       "name": "Nuclear Codes",
       "type": "individual",
-      "link": "//nuclearcodes.flanny.app",
+      "link": "//pjflanagan.me/blog/nuclear-codes/",
       "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
       "image": "nuclear-codes.png",
       "tech": [
@@ -50,21 +69,21 @@
     {
       "name": "MTA Clock",
       "type": "individual",
-      "link": "//github.com/pjflanagan/MTA",
+      "link": "//pjflanagan.me/blog/mta-clock/",
       "description": "Created a cuckoo-style wall clock to track subways at my stop using an AWS Lambda and Arduino.",
       "image": "mta.png"
     },
     {
       "name": "earlybird",
       "type": "individual",
-      "link": "//github.com/pjflanagan/early-bird-twitter",
+      "link": "//pjflanagan.me/blog/earlybird/",
       "description": "Designed and developed website that allows users to draft and schedule tweets using Flask on Heroku.",
       "image": "earlybird.png"
     },
     {
       "name": "Space Fighters",
       "type": "team/individual",
-      "link": "//simple-socket-game.herokuapp.com/",
+      "link": "//pjflanagan.me/blog/simple-socket-game/",
       "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
       "image": "spacefighters.jpg",
       "tech": [
@@ -75,28 +94,21 @@
     {
       "name": "NightPro",
       "type": "individual",
-      "link": "//github.com/pjflanagan/nightpro-for-gopro",
+      "link": "//pjflanagan.me/blog/nightpro-for-gopro/",
       "description": "Created an ffmpeg Python package wrapper to combine GoPro nightlapse photos into timelapse videos.",
       "image": "nightpro.jpg"
     },
     {
       "name": "breadcrumbs",
       "type": "individual",
-      "link": "//github.com/pjflanagan/breadcrumbs",
+      "link": "//pjflanagan.me/blog/breadcrumbs/",
       "description": "Developed a map annotation application in Python Flask and Angular on Heroku. Users can draw line segments anywhere on a map and comment on every vertex.\n",
       "image": "breadcrumbs.png"
     },
     {
-      "name": "Canvas Animations",
-      "type": "individual",
-      "link": "//canvas.flanny.app/",
-      "description": "Designed an array of animated visuals using the HTML5 Canvas.\n",
-      "image": "animations.png"
-    },
-    {
       "name": "witebord",
       "type": "individual",
-      "link": "//witebord.herokuapp.com/room_name",
+      "link": "//pjflanagan.me/blog/witebord/",
       "description": "Developed socket drawing app using Node and Socket.io. Users can create a room and share it with friends to all draw together.\n",
       "image": "witebord.png"
     },
@@ -106,18 +118,6 @@
       "link": "//github.com/pjflanagan/Machine-Learning-Asteroids/",
       "description": "Attempted to teach the game Asteroids to a computer using JavaScript and Phaser.",
       "image": "asteroids.png"
-    },
-    {
-      "name": "bamboo",
-      "type": "individual",
-      "link": "//bamboo.flanny.app",
-      "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
-      "image": "bamboo.png",
-      "tech": [
-        "Mongodb Stitch",
-        "React",
-        "Chrome Dev"
-      ]
     }
   ]
 }
