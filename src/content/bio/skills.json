@@ -5,15 +5,15 @@
     "items": [
       {
         "name": "React",
-        "progress": 89
+        "progress": 94
+      },
+      {
+        "name": "NextJS",
+        "progress": 74
       },
       {
         "name": "Svelte",
         "progress": 52
-      },
-      {
-        "name": "Angular",
-        "progress": 58
       },
       {
         "name": "Flask",
@@ -27,7 +27,7 @@
   },
   {
     "type": "Services",
-    "cols": 1,
+    "cols": 2,
     "items": [
       {
         "name": "Netlify",
@@ -42,11 +42,29 @@
         "progress": 74
       },
       {
-        "name": "MongoDB",
+        "name": "FaunaDB",
         "progress": 78
       },
       {
         "name": "Heroku",
+        "progress": 82
+      }
+    ]
+  },
+  {
+    "type": "Production Tools",
+    "cols": 2,
+    "items": [
+      {
+        "name": "DataDog",
+        "progress": 86
+      },
+      {
+        "name": "Elasticsearch",
+        "progress": 76
+      },
+      {
+        "name": "Splunk",
         "progress": 82
       }
     ]
@@ -90,16 +108,12 @@
     ]
   },
   {
-    "type": "Tools",
+    "type": "Development Tools",
     "cols": 2,
     "items": [
       {
         "name": "Webkit Browsers",
         "progress": 86
-      },
-      {
-        "name": "VS Code",
-        "progress": 96
       },
       {
         "name": "bash",

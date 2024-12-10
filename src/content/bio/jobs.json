@@ -52,7 +52,7 @@
       "description": [
         "Refactored code and altered functionality of various pages for Bentley online portal, creating simpler, future-ready design in .NET",
         "Expanded test suite to encompass more pages and features using C# and Selenium, increasing code coverage",
-        "Converted performance test GUI’s to command line applications, allowing for test case automation"
+        "Converted performance test GUIs to command line applications, allowing for test case automation"
       ],
       "background": "#62bb47",
       "color": "#62bb47"
