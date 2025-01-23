@@ -5,7 +5,7 @@ title: NYT Crossword Plus
 image: https://nytcrosswordplus.flanny.app/img/social.png
 blurb: A stat sheet
 github: https://github.com/pjflanagan/nyt-crossword-plus
-website: https://nytcrosswordplus.flanny.app/
+website: https://nytcrosswordplus.flanny.app/group/test
 ---
 
 The Daily Mini has been a race my friends and I have been playing against each other in for years. Being runners, we love both competition and data, so we have always wanted a more advanced leaderboard than the one on the NYT. So I created NYT Crossword Plus.
