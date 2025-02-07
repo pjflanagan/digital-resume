@@ -5,7 +5,7 @@ title: Wake
 image: https://wake.flanny.app/img/social/wake-social.jpg
 blurb: A DnD inspired game
 github: 
-website: wake.flanny.app/yes-chef
+website: https://wake.flanny.app/yes-chef
 ---
 
 This past year I got into DnD. I love the game mechanics and I think dice look pretty.
