@@ -1,5 +1,5 @@
 ---
-slug: gen-ai
+slug: study-mandarin
 date: "2025-09-27"
 title: Study Mandarin
 image: 

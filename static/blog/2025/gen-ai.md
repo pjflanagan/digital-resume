@@ -8,8 +8,6 @@ github:
 website:
 ---
 
-# My View on Generative AI 
-
 ### (through the lense of multi-linear story telling)
 
 I recently developed a game and game engine for writing playable stories. It's a relatively simple app that and gameplay experience. The story teller writes dialog, gives the player options to respond, and then defines the outcome for each response. The gameplay experience involves reading the dialog, choosing an option, and seeing where the story goes from there. There are other aspects to the game, like recording story events, points, inventory items, random dialog, rolling dice, background images, and text styling, but the core of the game is just a playable story. 
