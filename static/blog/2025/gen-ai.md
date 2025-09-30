@@ -41,4 +41,4 @@ Audio is where I start to become a little more sympathetic to AI usage. For acce
 
 ## 3. Story editor companion
 
-Now this is a type of AI I am excited about.
+Now this is a type of AI I am excited about. 
