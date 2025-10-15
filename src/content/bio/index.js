@@ -58,6 +58,7 @@ const PageBio = {
         },
         {
           key: "mandarin_student",
+          href: "//flanny.app/study-mandarin",
           callbackParam: [
             { action: "text", param: "mandarin" },
             { action: "image", param: "personal-mandarin.jpg" }
