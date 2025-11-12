@@ -2,7 +2,7 @@
 slug: study-mandarin
 date: "2025-09-27"
 title: Study Mandarin
-image: 
+image: https://www.flanny.app/study-mandarin/src/img/banner.png
 blurb: Another mandarin study tool
 github: https://github.com/pjflanagan/study-mandarin
 website: https://flanny.app/study-mandarin
