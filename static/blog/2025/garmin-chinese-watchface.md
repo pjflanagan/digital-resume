@@ -2,7 +2,7 @@
 slug: garmin-chinese-watchface
 date: "2025-11-12"
 title: Garmin Chinese Watchface
-image: https://github.com/pjflanagan/garmin-chinese-watchface/raw/main/images/PromoBanner.jpg
+image: https://github.com/pjflanagan/garmin-chinese-watchface/raw/main/images/HeroImage.jpg
 blurb: 現在是幾點
 github: https://github.com/pjflanagan/garmin-chinese-watchface
 website: 

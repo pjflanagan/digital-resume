@@ -2,7 +2,7 @@
 slug: gen-ai
 date: "2025-09-02"
 title: Gen AI
-image: 
+image: /blog/2025/gen-ai.png
 blurb: Some thoughts on generative AI
 github:
 website:
