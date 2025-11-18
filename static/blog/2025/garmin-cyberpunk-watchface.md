@@ -5,7 +5,7 @@ title: Garmin Cyberpunk Watch Face
 image: https://github.com/pjflanagan/garmin-cyberpunk-watchface/raw/main/images/HeroImage.jpg
 blurb: Preem Cyberware
 github: https://github.com/pjflanagan/garmin-cyberpunk-watchface
-website: 
+website: https://apps.garmin.com/apps/2b923217-1208-41bb-be4e-67b09f7835c3
 ---
 
 This year I bought a Garmin to help me train for a half marathon (and hopefully a full marathon in the future).

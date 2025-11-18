@@ -5,7 +5,7 @@ title: Garmin Chinese Watch Face
 image: https://github.com/pjflanagan/garmin-chinese-watchface/raw/main/images/HeroImage.jpg
 blurb: 現在是幾點
 github: https://github.com/pjflanagan/garmin-chinese-watchface
-website: 
+website: https://apps.garmin.com/apps/c0748c90-06ef-4a73-94c5-4d2e51b02659
 ---
 
 This year I bought a Garmin to help me train for a half marathon (and hopefully a full marathon in the future).
