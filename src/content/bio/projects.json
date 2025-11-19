@@ -32,6 +32,16 @@
       "tech": [
         "Svelte"
       ]
+    },
+    {
+      "name": "Garmin Watch Face",
+      "type": "individual",
+      "link": "/blog/garmin-cyberpunk-watchface",
+      "description": "Designed a custom watch face based on Cyberpunk 2077.\n",
+      "image": "cyberpunk-watchface.jpg",
+      "tech": [
+        "Monkey C"
+      ]
     }
   ],
   "all": [
