@@ -55,7 +55,7 @@ const SlideProjects = ({ data }) => {
           <LabeledButton
             icon="saturn"
             trackerLabel="bio.goToBlog"
-            href="/blog"
+            href="https://www.flanny.app/blog"
           >
             See Project Portfolio
           </LabeledButton>

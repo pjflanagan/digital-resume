@@ -30,13 +30,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/static/blog`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
