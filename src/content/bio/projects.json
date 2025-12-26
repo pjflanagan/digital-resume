@@ -36,7 +36,7 @@
     {
       "name": "Garmin Watch Face",
       "type": "individual",
-      "link": "/blog/garmin-cyberpunk-watchface",
+      "link": "https://www.flanny.app/blog/2025/garmin-cyberpunk-watchface/",
       "description": "Designed a custom watch face based on Cyberpunk 2077.\n",
       "image": "cyberpunk-watchface.jpg",
       "tech": [
@@ -55,7 +55,7 @@
     {
       "name": "bamboo",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/bamboo/",
+      "link": "https://www.flanny.app/blog/2020/bamboo/",
       "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
       "tech": [
@@ -67,7 +67,7 @@
     {
       "name": "Nuclear Codes",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/nuclear-codes/",
+      "link": "https://www.flanny.app/blog/2021/nuclear-codes/",
       "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
       "image": "nuclear-codes.png",
       "tech": [
@@ -79,21 +79,21 @@
     {
       "name": "MTA Clock",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/mta-clock/",
+      "link": "https://www.flanny.app/blog/2020/mta-clock/",
       "description": "Created a cuckoo-style wall clock to track subways at my stop using an AWS Lambda and Arduino.",
       "image": "mta.png"
     },
     {
       "name": "earlybird",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/earlybird/",
+      "link": "https://www.flanny.app/blog/2017/earlybird/",
       "description": "Designed and developed website that allows users to draft and schedule tweets using Flask on Heroku.",
       "image": "earlybird.png"
     },
     {
       "name": "Space Fighters",
       "type": "team/individual",
-      "link": "//pjflanagan.me/blog/simple-socket-game/",
+      "link": "https://www.flanny.app/blog/2019/simple-socket-game/",
       "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
       "image": "spacefighters.jpg",
       "tech": [
@@ -104,21 +104,21 @@
     {
       "name": "NightPro",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/nightpro-for-gopro/",
+      "link": "https://www.flanny.app/blog/2020/nightpro-for-gopro/",
       "description": "Created an ffmpeg Python package wrapper to combine GoPro nightlapse photos into timelapse videos.",
       "image": "nightpro.jpg"
     },
     {
       "name": "breadcrumbs",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/breadcrumbs/",
+      "link": "https://www.flanny.app/blog/2018/breadcrumbs/",
       "description": "Developed a map annotation application in Python Flask and Angular on Heroku. Users can draw line segments anywhere on a map and comment on every vertex.\n",
       "image": "breadcrumbs.png"
     },
     {
       "name": "witebord",
       "type": "individual",
-      "link": "//pjflanagan.me/blog/witebord/",
+      "link": "https://www.flanny.app/blog/2018/witebord/",
       "description": "Developed socket drawing app using Node and Socket.io. Users can create a room and share it with friends to all draw together.\n",
       "image": "witebord.png"
     },
