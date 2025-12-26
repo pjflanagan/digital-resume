@@ -108,7 +108,7 @@ const PageBio = {
       links: [
         {
           key: "blog",
-          href: "/blog",
+          href: "https://www.flanny.app/blog",
           text: "project blog",
         },
         {

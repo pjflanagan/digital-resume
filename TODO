@@ -2,7 +2,6 @@
 MAIN TODO: 
 - [ ] Rewrite this entirely in NextJS
 - [x] Install million JS
-- [ ] Start writing blog posts
 - [x] figure out lfs
 - [~] Add typescript - change some elements and hooks to use it
 

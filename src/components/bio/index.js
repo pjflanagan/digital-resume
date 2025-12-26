@@ -37,7 +37,7 @@ const BioComponent = ({ data }) => {
         <HeaderLink onClick={() => clickToScroll('personal')}>0.0 Bio</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('experience')}>1.0 Experience</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('projects')}>2.0 Projects</HeaderLink>
-        <HeaderLink href="/blog">2.1 Blog</HeaderLink>
+        <HeaderLink href="https://www.flanny.app/blog">2.1 Blog</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('contact')}>3.0 Contact</HeaderLink>
       </Header>
       <Cover />
