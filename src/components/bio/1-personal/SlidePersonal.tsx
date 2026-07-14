@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as Scroll from 'react-scroll';
 
 import type { ImageQueryData } from "src/content";

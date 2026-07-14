@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as Scroll from "react-scroll";
 
 import { Bio } from "src/content";

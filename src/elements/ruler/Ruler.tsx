@@ -1,5 +1,4 @@
-import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import * as Style from "./Ruler.module.scss";
 
@@ -11,7 +10,7 @@ const Ruler = ({
   className: classNameProp
 }: RulerProps) => (
   <div className={Style.rulerHolder}>
-    <div className={classNames(Style.ruler, classNameProp)}>
+    <div className={clsx(Style.ruler, classNameProp)}>
       {[...Array(10)].map((e, i) => (
         <div className={Style.cm} key={i}>
           <div className={Style.mm}></div>

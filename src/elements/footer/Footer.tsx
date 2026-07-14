@@ -1,5 +1,4 @@
-import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { Text } from "src/elements";
 import type { LinkText } from "src/content/types";
@@ -15,7 +14,7 @@ const Footer = ({
   className: classNameProp,
   text
 }: FooterProps) => {
-  const className = classNames(Style.footer, classNameProp);
+  const className = clsx(Style.footer, classNameProp);
   return (
     <div className={className}>
       {text.map((linkText, i) => (

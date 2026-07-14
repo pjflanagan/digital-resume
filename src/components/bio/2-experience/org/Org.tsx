@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useReveal } from "src/hooks";
 import { FindImage } from "src/content";
 import type { ContentLink, ImageQueryData, SchoolExtra } from "src/content";

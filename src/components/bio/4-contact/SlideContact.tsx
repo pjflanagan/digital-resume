@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useReveal } from 'src/hooks';
 import * as Scroll from "react-scroll";
 

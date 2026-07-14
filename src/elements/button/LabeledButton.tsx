@@ -2,7 +2,7 @@ import React from "react";
 import { SVGIcon } from "src/elements";
 
 import * as Style from "./Button.module.scss";
-import classNames from "classnames";
+import clsx from "clsx";
 
 type LabeledButtonFormProps = {
   children?: React.ReactNode;
@@ -53,7 +53,7 @@ const LabeledButtonLinked = ({
   const rel = !sameWindow ? "noreferrer" : undefined;
   const target = !sameWindow ? "_blank" : undefined;
 
-  const className = classNames(Style.labeledButton, classNameProp);
+  const className = clsx(Style.labeledButton, classNameProp);
 
   return (
     <div className={className}>

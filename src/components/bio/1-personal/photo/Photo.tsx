@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import { FrameHolder } from "src/elements";
@@ -8,7 +8,7 @@ import { useReveal } from 'src/hooks';
 
 // TODO: import { BillCypher } from "./bill-cypher"; ?
 import * as Style from "./Photo.module.scss";
-import classNames from "classnames";
+import clsx from "clsx";
 
 type PhotoProps = {
   data: ImageQueryData;
@@ -21,11 +21,12 @@ const Photo = ({ data, photo }: PhotoProps) => {
   const isScrollRevealed = useReveal({ ref, gap: 280 });
   const [isRevealed, setIsRevealed] = useState(true);
 
-  const className = classNames(Style.photoFrameHolder, {
+  const className = clsx(Style.photoFrameHolder, {
     [Style.reveal]: isScrollRevealed && isRevealed,
   });
   const imageData = FindImage({ data, image: photo });
 
+  /* eslint-disable react-hooks/set-state-in-effect -- intentional: re-triggers the reveal animation */
   useEffect(() => {
     // when the hover photo changes re-reveal
     setIsRevealed(false);
@@ -33,6 +34,7 @@ const Photo = ({ data, photo }: PhotoProps) => {
       setIsRevealed(true);
     }, 10);
   }, [photo]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <div className={Style.personalPhoto} ref={ref}>

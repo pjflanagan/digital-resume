@@ -1,4 +1,3 @@
-import React from 'react'
 
 import * as Style from './Curves.module.scss';
 

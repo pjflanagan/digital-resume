@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import classNames from 'classnames';
+import { FC } from 'react';
 
 import { TextInlineLink } from '../text/Text';
 

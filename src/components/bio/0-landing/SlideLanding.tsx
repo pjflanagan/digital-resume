@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { useWindowScroll } from "react-use";
 
 import { Canvas } from 'src/elements';

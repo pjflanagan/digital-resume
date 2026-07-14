@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as Style from './Text.module.scss';
-import classNames from "classnames";
+import clsx from "clsx";
 
 type TextLinkedHeaderProps = {
   href: string;
@@ -16,7 +16,7 @@ const TextLinkedHeader = ({
   className: classNameProp,
   color
 }: TextLinkedHeaderProps) => {
-  const className = classNames(Style.textLinkedHeader, color && Style[color])
+  const className = clsx(Style.textLinkedHeader, color && Style[color])
   return (
     <h3 className={classNameProp}>
       <a

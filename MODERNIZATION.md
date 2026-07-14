@@ -1,5 +1,9 @@
 # Modernization Plan
 
+> **Status (July 2026):** Phases 1–4 complete. Not done by choice: GitHub Actions CI,
+> Dependabot, react-icons swap, and replacing useReveal with react-intersection-observer
+> (the latter two change visuals/behavior and deserve their own pass).
+
 Goal: bring the site up to current tooling (Node, Gatsby, TypeScript everywhere) and
 restructure components away from the `index.js` + `style.module.scss` pattern.
 

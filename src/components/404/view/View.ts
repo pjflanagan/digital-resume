@@ -56,7 +56,7 @@ class View {
   }
 
   stop() {
-    if (!!this.animationReq) {
+    if (this.animationReq) {
       window.cancelAnimationFrame(this.animationReq);
     }
   }

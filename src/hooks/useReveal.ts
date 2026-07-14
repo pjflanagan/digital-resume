@@ -29,7 +29,7 @@ const useReveal = ({ ref, gap }: UseRevealProps): boolean => {
     return () => {
       observer.unobserve(el);
     };
-  }, []);
+  }, [ref, gap]);
 
   return isRevealed;
 };

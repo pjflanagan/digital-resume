@@ -1,5 +1,4 @@
-import classNames from 'classnames';
-import React from 'react'
+import clsx from 'clsx';
 
 import * as Style from './Splash.module.scss';
 
@@ -8,7 +7,7 @@ type SplashProps = {
 };
 
 const Splash = ({ isVisible }: SplashProps) => {
-  const className = classNames(Style.splash, {
+  const className = clsx(Style.splash, {
     [Style.visible]: isVisible,
     [Style.hidden]: !isVisible
   });

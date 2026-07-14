@@ -1,4 +1,4 @@
-import { Color, Random, distance, ellipseCircleIntersection, Point, Range } from 'src/helpers';
+import { Color, Random, distance, ellipseCircleIntersection, Point } from 'src/helpers';
 
 const TWO_PI = 2 * Math.PI;
 
@@ -128,7 +128,7 @@ class View {
   }
 
   stop() {
-    if (!!this.animationReq) {
+    if (this.animationReq) {
       window.cancelAnimationFrame(this.animationReq);
     }
   }

@@ -1,4 +1,3 @@
-import * as React from "react";
 
 import { LabeledButton, Canvas, Cover, TextPageCenter } from "src/elements";
 import Data404 from "src/content/404";

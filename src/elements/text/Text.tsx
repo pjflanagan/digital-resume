@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import type { ContentLink } from "src/content/types";
 
@@ -58,7 +58,7 @@ const Text = ({
   links,
   callback
 }: TextProps) => {
-  if (!!dangerouslySetInnerHTML)
+  if (dangerouslySetInnerHTML)
     return (
       <p
         className={className}
@@ -85,7 +85,7 @@ const TextPageCenter = ({
   blurb,
   style
 }: TextPageCenterProps) => (
-  <div className={classNames(Style.textPageCenter, classNameProp)} style={style}>
+  <div className={clsx(Style.textPageCenter, classNameProp)} style={style}>
     <div className={Style.textHeadline}>{headline}</div>
     <div className={Style.textBlurb}>{blurb}</div>
   </div>

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 
 import { TextAccent, TextTag } from 'src/elements';
@@ -24,7 +24,7 @@ const FormText = ({
   placeholder,
   error
 }: FormTextProps) => {
-  const className = classNames(Style.formField, {
+  const className = clsx(Style.formField, {
     [Style.error]: !!error
   });
   return (
@@ -64,7 +64,7 @@ const FormMessage = ({
   placeholder,
   error
 }: FormMessageProps) => {
-  const className = classNames(Style.formField, {
+  const className = clsx(Style.formField, {
     [Style.error]: !!error
   })
 

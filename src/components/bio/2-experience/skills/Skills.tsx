@@ -1,4 +1,3 @@
-import React from "react";
 
 import { ProgressBar, TextHeading } from "src/elements";
 import { Bio } from 'src/content';

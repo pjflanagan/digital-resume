@@ -2,7 +2,7 @@ import React from 'react';
 import { LabeledButtonForm } from '../button/LabeledButton';
 
 import * as Style from './Form.module.scss';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 type FormProps = {
   children?: React.ReactNode;
@@ -29,7 +29,7 @@ class Form extends React.Component<FormProps> {
       isLoading
     } = this.props;
 
-    const className = classNames(Style.form, {
+    const className = clsx(Style.form, {
       [Style.isLoading]: isLoading
     });
 
@@ -38,7 +38,7 @@ class Form extends React.Component<FormProps> {
         <form
           onSubmit={this.onSubmit}
           className={className}
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           data-netlify="true"
           name={name}>
           <span>

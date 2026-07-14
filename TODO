@@ -2,6 +2,7 @@
 MAIN TODO: 
 - [ ] Use TS everywhere
 - [ ] replace some things with libraries that handle it for me
+- [ ] remove graphql if possible
 
 - [x] figure out lfs
 - [~] Add typescript - change some elements and hooks to use it
@@ -19,8 +20,8 @@ GENERAL
 - [ ] Need some cyberpunk references, like an Arasaka logo, or the screen effects
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
-- [ ] use data through graphql and context
-- [ ] content should be done with CONTEXT, only at top level, or graphql
+- [ ] use data through context
+- [ ] content should be done with CONTEXT, only at top level
 - [ ] images should not be globally named (some should also be remote from either the website or git instead)
 - [!] make it so you can go tab through the whole site seamlessly
 

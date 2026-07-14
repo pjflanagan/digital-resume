@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import * as Style from "./Text.module.scss";
 
@@ -23,7 +23,7 @@ const TextInlineLink = ({
   samePage,
   onClick
 }: TextInlineLinkProps) => {
-  const className = classNames(
+  const className = clsx(
     Style.textInlineLink,
     Style.clickable,
     classNameProp,

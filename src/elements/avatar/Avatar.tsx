@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { useReveal } from "src/hooks";
 
@@ -18,7 +18,7 @@ const Avatar = ({ image, name, background }: AvatarProps) => {
 
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 132 });
-  const className = classNames(Style.avatarHolder, {
+  const className = clsx(Style.avatarHolder, {
     [Style.reveal]: isRevealed
   });
 

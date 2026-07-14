@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 import { useReveal } from "src/hooks";
 
@@ -24,7 +24,7 @@ const StackNav = ({ current, count, selectLayer }: StackNavProps) => {
   return (
     <div className={Style.stackNav}>
       {[...Array(count)].map((e, i) => {
-        const className = classNames(Style.stackBullet, {
+        const className = clsx(Style.stackBullet, {
           [Style.current]: i === current,
         });
         return (
@@ -56,7 +56,7 @@ const Stack = ({
   const isRevealed = useReveal({ ref, gap: 240 });
   const [currentLayer, setCurrentLayer] = useState(0);
 
-  const className = classNames(Style.stack, {
+  const className = clsx(Style.stack, {
     [Style.preReveal]: !isRevealed
   });
 

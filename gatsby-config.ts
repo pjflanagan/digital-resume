@@ -4,12 +4,12 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Peter James Flanagan`,
   },
+  jsxRuntime: `automatic`,
   plugins: [
     'gatsby-plugin-sass',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

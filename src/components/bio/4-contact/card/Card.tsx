@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import React from "react";
 
 import { Bio } from "src/content";
@@ -166,7 +166,7 @@ class Card extends React.Component<CardProps, CardState> {
       return "";
     }
     const error = errorMessages.find(error => error.field === field);
-    return !!error ? error.message : "";
+    return error ? error.message : "";
   }
 
   render() {
@@ -180,7 +180,7 @@ class Card extends React.Component<CardProps, CardState> {
     } = this.state;
     const { setIsWaveOn, isOpen } = this.props;
 
-    const className = classNames(Style.card, {
+    const className = clsx(Style.card, {
       [Style.isSubmitted]: isSubmitted || !isOpen
     });
 

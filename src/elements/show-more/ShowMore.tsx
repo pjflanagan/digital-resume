@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import React, { useState } from "react";
 
 import { LabeledButton } from "src/elements";
@@ -17,7 +17,7 @@ const ShowMore = ({ children }: ShowMoreProps) => {
     setIsOpen(!isOpen);
   }
 
-  const className = classNames(Style.showMore, {
+  const className = clsx(Style.showMore, {
     [Style.open]: isOpen
   });
 

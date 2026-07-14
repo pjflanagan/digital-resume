@@ -1,10 +1,10 @@
-import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import "src/theme/theme.scss";
 
 import { BioComponent } from "src/components/bio/Bio";
 import type { ImageQueryData } from "src/content";
+import { Seo } from "src/components/Seo";
 
 const PageIndex = ({ data }: PageProps<ImageQueryData>) => {
   return <BioComponent data={data} />;
@@ -27,3 +27,5 @@ export const query = graphql`query ImageQuery {
   }
 }
 `;
+
+export const Head = () => <Seo />;

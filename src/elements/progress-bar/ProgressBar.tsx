@@ -1,5 +1,5 @@
-import React, { FC, useRef } from "react";
-import classNames from 'classnames';
+import { FC, useRef } from "react";
+import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
 
@@ -21,7 +21,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   const isRevealed = useReveal({ ref, gap: 28 });
   const progress = isRevealed ? progressProp : 0;
 
-  const className = classNames(Style.bar, {
+  const className = clsx(Style.bar, {
     ...(classNameProp ? { [classNameProp]: true } : {})
   });
 

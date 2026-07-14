@@ -1,7 +1,6 @@
-import React, { FC } from 'react';
-import classNames from 'classnames';
+import { FC } from 'react';
+import clsx from 'clsx';
 
-import { TextInlineLink } from '../text/Text';
 
 import * as Style from './Header.module.scss';
 
@@ -15,7 +14,7 @@ const Header: FC<HeaderProps> = ({
   children,
   className: classNameProp
 }) => {
-  const className = classNames(Style.header, {
+  const className = clsx(Style.header, {
     [classNameProp]: classNameProp,
   })
   return (
