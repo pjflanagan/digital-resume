@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 
 import "src/theme/theme.scss";
 
-import { BioComponent } from "src/components/bio";
+import { BioComponent } from "src/components/bio/Bio";
 import type { ImageQueryData } from "src/content";
 
 const PageIndex = ({ data }: PageProps<ImageQueryData>) => {

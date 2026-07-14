@@ -65,9 +65,8 @@ Rules:
 - Optionally keep a one-line `index.ts` barrel (`export * from './Button'`) so import
   paths stay short — or update all imports to the explicit file; pick one and be
   consistent. Recommendation: no barrels; explicit imports, since the codebase is small.
-- Rename numbered section folders (`0-landing`, `1-personal`, …) to plain names
-  (`landing`, `personal`, `experience`, `projects`, `contact`) — ordering belongs in
-  the page component, not the filesystem.
+- Numbered section folders (`0-landing`, `1-personal`, …) are kept — the ordering is
+  useful.
 - Use `git mv` for every rename so history follows.
 
 ## Phase 4 — Suggested additional modernization

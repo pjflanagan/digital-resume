@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 
-import { TextInlineLink } from '../text';
+import { TextInlineLink } from '../text/Text';
 
-import * as Style from './style.module.scss';
+import * as Style from './Header.module.scss';
 
 type HeaderProps = {
   children: JSX.Element[];
