@@ -6,22 +6,19 @@ const Random = {
   int: (min: number, max: number): number => Math.round(Math.random() * (max - min)) + min,
   dec: (min: number, max: number): number => Math.random() * (max - min) + min,
   bool: (): boolean => Math.random() > 0.5,
-  prop: ({ min, max }: Range): number => {
-    if (min % 1 === 0 && max % 1 === 0) {
-      return Random.int(min, max);
-    }
-    return Random.dec(min, max);
-  },
-  prop2: ({ min, max }: Range, comp: number): number => Random.prop({ min, max }) * comp,
-  shuffle: <T>(array: T[]): T[] => {
-    for (let i = array.length - 1; i > 0; i--) {
+  intProp: ({ min, max }: Range): number => Random.int(min, max),
+  decProp: ({ min, max }: Range): number => Random.dec(min, max),
+  // a random decimal in the range, scaled by comp (e.g. proportions of a dimension)
+  scaledProp: (range: Range, comp: number): number => Random.decProp(range) * comp,
+  shuffle: <T>(array: readonly T[]): T[] => {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      [copy[i], copy[j]] = [copy[j], copy[i]];
     }
-    return array;
+    return copy;
   },
+  fromArray: <T>(array: T[]): T => array[Math.floor(Math.random() * array.length)],
   insertRandom: <T>(array: T[], value: T): void => {
     array.splice(Random.int(0, array.length), 0, value);
   },

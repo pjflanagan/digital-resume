@@ -10,41 +10,27 @@ type ColorValues = {
 };
 
 class Color {
-  r!: number;
-  g!: number;
-  b!: number;
-  a!: number;
+  r: number;
+  g: number;
+  b: number;
+  a: number;
 
+  // defaults to a random color
   constructor(color?: ColorValues) {
-    if (color) {
-      const { r, g, b, a } = color;
-      this.r = r;
-      this.g = g;
-      this.b = b;
-      this.a = a;
-    } else {
-      this.random();
-    }
+    const { r, g, b, a } = color ?? Color.randomValues();
+    this.r = r;
+    this.g = g;
+    this.b = b;
+    this.a = a;
   }
 
-  random(): void {
-    this.r = Random.int(0, 255);
-    this.g = Random.int(0, 255);
-    this.b = Random.int(0, 255);
-    this.a = Random.dec(0, 1);
-  }
-
-  randomSimilar(distance: number): Color {
-    const d1 = Random.dec(-1, 1) * distance;
-    const d2 = Random.dec(-1, 1) * (distance - d1);
-    const d3 = distance - (d1 + d2);
-    const [dr, dg, db] = Random.shuffle([d1, d2, d3]);
-    return new Color({
-      r: this.r + dr,
-      g: this.g + dg,
-      b: this.b + db,
-      a: this.a,
-    });
+  private static randomValues(): ColorValues {
+    return {
+      r: Random.int(0, 255),
+      g: Random.int(0, 255),
+      b: Random.int(0, 255),
+      a: Random.dec(0, 1),
+    };
   }
 
   setOpacity(a: number): Color {

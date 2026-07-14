@@ -1,6 +1,7 @@
 export * from './avatar/Avatar';
 export * from './button/Button';
 export * from './canvas/Canvas';
+export * from './canvas/BaseView';
 export * from './cover/Cover';
 export * from './frame/Frame';
 export * from './form/Form';

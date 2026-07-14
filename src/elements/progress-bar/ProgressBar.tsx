@@ -20,9 +20,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   const isRevealed = useReveal({ ref, gap: 28 });
   const progress = isRevealed ? progressProp : 0;
 
-  const className = clsx(Style.bar, {
-    ...(classNameProp ? { [classNameProp]: true } : {}),
-  });
+  const className = clsx(Style.bar, classNameProp);
 
   return (
     <div className={className} ref={ref}>

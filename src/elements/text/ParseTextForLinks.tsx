@@ -4,8 +4,8 @@ import type { ContentLink } from './types';
 
 import { TextInlineLink } from './TextInlineLink';
 
-// finds all instances of <link_name> in a string
-const REGEX_MATCH_LINKS = /(.*?)<(.*?)>(.*?)/g;
+// matches <link_name> tokens; the capture keeps the name in the split output
+const REGEX_SPLIT_LINKS = /<([^<>]+)>/g;
 
 type LinkCallback = (callbackParam: ContentLink['callbackParam']) => void;
 
@@ -19,47 +19,30 @@ const ParseTextForLinks = (
     return <span>{text}</span>;
   }
 
-  // attempt to match all the links
-  const matches = [...text.matchAll(REGEX_MATCH_LINKS)];
-  // if there are no matches then return just as text
-  if (matches.length === 0) {
+  // split into alternating [text, linkKey, text, linkKey, ..., text]
+  const parts = text.split(REGEX_SPLIT_LINKS);
+  if (parts.length === 1) {
     return <span>{text}</span>;
   }
 
-  // otherwise we will return elements
-  const elems: React.ReactNode[] = [];
-  matches.forEach((match, i) => {
-    // first push the normal text in match 1
-    elems.push(<span key={`${i}-text`}>{match[1]}</span>);
+  return parts.map((part, i) => {
+    const isLinkKey = i % 2 === 1;
+    const link = isLinkKey ? links.find((l) => l.key === part) : undefined;
 
-    // then find the link we parsed in match 2
-    const link = links.find((l) => l.key === match[2]);
+    // plain text, or a key with no matching link (render it as-is)
     if (!link) {
-      return;
+      return <span key={i}>{part}</span>;
     }
+
     const { callbackParam, href, text: linkText } = link;
+    const onHover = callback && callbackParam ? () => callback(callbackParam) : undefined;
 
-    // default the mouse over and href to undefined in case we aren't using them
-    const onMouseOver = !!callback && !!callbackParam ? () => callback(callbackParam) : undefined;
-    const onFocus = !!callback && !!callbackParam ? () => callback(callbackParam) : undefined;
-
-    // push the link to the list
-    elems.push(
-      <TextInlineLink
-        key={`${i}-link`}
-        href={href || undefined}
-        onMouseOver={onMouseOver}
-        onFocus={onFocus}
-      >
+    return (
+      <TextInlineLink key={i} href={href || undefined} onMouseOver={onHover} onFocus={onHover}>
         {linkText}
       </TextInlineLink>
     );
   });
-
-  // push the last bit of unmatched text
-  elems.push(<span key={matches.length}>{text.substr(text.lastIndexOf('>') + 1)}</span>);
-
-  return elems;
 };
 
 export { ParseTextForLinks };

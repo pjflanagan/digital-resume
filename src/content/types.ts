@@ -1,6 +1,7 @@
 // Shared shapes for site content (see src/content/bio/*.json)
 
-import type { ContentLink, LinkText } from 'src/elements/text/types';
+import type { ContentLink, Language, LinkAction, LinkText } from 'src/elements/text/types';
+import type { IconName } from 'src/elements/icon/SVGIcon';
 
 type Job = {
   name: string;
@@ -51,7 +52,7 @@ type SkillGroup = {
 };
 
 type ContactLink = {
-  icon: string;
+  icon: IconName;
   href: string;
   text: string;
 };
@@ -62,8 +63,48 @@ type FormPlaceholder = {
   message: string;
 };
 
+// the whole bio page's content
+type BioContent = {
+  splash: {
+    title: string;
+    subtitle: string;
+    prompts: string[];
+  };
+  personal: {
+    accent: Record<Language, string>;
+    titleText: LinkText<string>;
+    linkText: LinkText;
+  };
+  experience: {
+    accent: string;
+    title: string;
+    sections: string[];
+    jobs: { featured: Job[]; other: Job[] };
+    schools: { featured: School[]; other: School[]; hidden: School[] };
+    skills: SkillGroup[];
+    linkText: LinkText;
+  };
+  projects: {
+    accent: string;
+    title: string;
+    sections: string[];
+    projects: { featured: Project[]; all: Project[] };
+    linkText: LinkText;
+  };
+  contact: {
+    accent: string;
+    title: string;
+    text: string;
+    links: ContactLink[];
+    formPlaceholders: FormPlaceholder[];
+  };
+  footer: LinkText<string>[];
+};
+
 export type {
   ContentLink,
+  Language,
+  LinkAction,
   LinkText,
   Job,
   SchoolExtra,
@@ -72,4 +113,5 @@ export type {
   SkillGroup,
   ContactLink,
   FormPlaceholder,
+  BioContent,
 };

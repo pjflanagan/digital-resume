@@ -3,14 +3,14 @@ import SchoolsJson from './schools.json';
 import SkillsJson from './skills.json';
 import ProjectsJson from './projects.json';
 
-import type { Job, School, SkillGroup, Project } from '../types';
+import type { BioContent, Job, School, SkillGroup, Project } from '../types';
 
 const Jobs = JobsJson as { featured: Job[]; other: Job[] };
 const Schools = SchoolsJson as { featured: School[]; other: School[]; hidden: School[] };
 const Skills = SkillsJson as SkillGroup[];
 const Projects = ProjectsJson as { featured: Project[]; all: Project[] };
 
-const PageBio = {
+const PageBio: BioContent = {
   splash: {
     title: 'Peter James Flanagan',
     subtitle: 'Circuit-navigating Cyberspace',
@@ -26,7 +26,7 @@ const PageBio = {
       english: 'Hi, my name is',
       mandarin: '你好，我名字叫',
     },
-    title_text: {
+    titleText: {
       links: [
         {
           key: 'peter_james_flanagan',
@@ -39,7 +39,7 @@ const PageBio = {
       ],
       text: '<peter_james_flanagan>',
     },
-    link_text: {
+    linkText: {
       links: [
         {
           key: 'rollerblader',
@@ -85,7 +85,7 @@ const PageBio = {
     jobs: Jobs,
     schools: Schools,
     skills: Skills,
-    link_text: {
+    linkText: {
       links: [
         {
           key: 'pdf',
@@ -103,7 +103,7 @@ const PageBio = {
     title: 'Programs',
     sections: ['Featured Projects', 'Other Projects'],
     projects: Projects,
-    link_text: {
+    linkText: {
       links: [
         {
           key: 'blog',
@@ -156,12 +156,12 @@ const PageBio = {
       {
         name: 'Rick Sanchez',
         email: 'rick@c137.com',
-        message: "Wubba lubba dub dub!",
+        message: 'Wubba lubba dub dub!',
       },
       {
         name: 'Johnny Silverhand',
         email: 'rockerboy@samurai.band',
-        message: "Wake up choom.",
+        message: 'Wake up choom.',
       },
       // {
       //   name: "Stanford Pines",

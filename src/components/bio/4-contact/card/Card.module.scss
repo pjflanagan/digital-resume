@@ -3,6 +3,12 @@
 .card {
   width: 100%;
 
+  .submit-error {
+    text-align: right;
+    margin-top: 8px;
+    color: $warnOrange;
+  }
+
   .card-sides {
     width: 100%;
     display: flex;

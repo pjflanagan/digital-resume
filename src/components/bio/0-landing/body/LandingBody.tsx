@@ -4,7 +4,7 @@ import { useWindowScroll } from 'react-use';
 import { LabeledButton, TextPageCenter } from 'src/elements';
 import { Bio } from 'src/content';
 
-import * as Style from './Body.module.scss';
+import * as Style from './LandingBody.module.scss';
 
 const scroller = Scroll.scroller;
 
@@ -16,7 +16,7 @@ const clickToScroll = () => {
   });
 };
 
-const Body = () => {
+const LandingBody = () => {
   const { y } = useWindowScroll();
   const prompt = Bio.splash.prompts[0];
 
@@ -44,4 +44,4 @@ const Body = () => {
   );
 };
 
-export { Body };
+export { LandingBody };

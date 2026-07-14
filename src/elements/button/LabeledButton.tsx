@@ -1,12 +1,13 @@
 import React from 'react';
 import { SVGIcon } from 'src/elements';
+import type { IconName } from '../icon/SVGIcon';
 
 import * as Style from './Button.module.scss';
 import clsx from 'clsx';
 
 type LabeledButtonFormProps = {
   children?: React.ReactNode;
-  icon: string;
+  icon: IconName;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
@@ -19,7 +20,7 @@ const LabeledButtonForm = ({
 }: LabeledButtonFormProps) => {
   return (
     <button
-      className={`${Style.labeledButton} ${Style.buttonReset}`}
+      className={clsx(Style.labeledButton, Style.buttonReset)}
       type="submit"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -75,28 +76,17 @@ const LabeledButtonLinked = ({
 };
 
 type LabeledButtonActionProps = {
-  icon: string;
+  icon: IconName;
   children?: React.ReactNode;
   onClick: () => void;
 };
 
-const LabeledButtonAction = ({
-  icon,
-  children,
-  onClick: propsOnClick,
-}: LabeledButtonActionProps) => {
-  const onClick = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    propsOnClick();
-  };
-
+const LabeledButtonAction = ({ icon, children, onClick }: LabeledButtonActionProps) => {
   return (
-    <div
-      className={Style.labeledButton}
+    <button
+      type="button"
+      className={clsx(Style.labeledButton, Style.buttonReset)}
       onClick={onClick}
-      onKeyDown={onClick}
-      role="button"
-      tabIndex={0}
     >
       <div className={Style.holder}>
         <div className={Style.svgHolder}>
@@ -104,7 +94,7 @@ const LabeledButtonAction = ({
         </div>
         <div className={Style.name}>{children}</div>
       </div>
-    </div>
+    </button>
   );
 };
 

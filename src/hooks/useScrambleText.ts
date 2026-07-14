@@ -50,7 +50,7 @@ const useScrambleText = <T extends Element>({ text, gap = 0 }: UseScrambleTextPr
       return;
     }
     let settledCount = isRevealed ? 0 : -1;
-    // re-scramble right away so a text change restarts the animation without a stale frame
+    /* eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: re-scramble right away so a text change restarts the animation without a stale frame */
     setDisplayText(scrambleText(text, 0));
     const interval = setInterval(
       () => {

@@ -7,7 +7,7 @@ import { IoPlanet, IoRocketSharp } from 'react-icons/io5';
 // Fill-based icon sets only (Material, Simple Icons, Ionicons) — the button
 // styles color icons via `path { fill }`, which breaks stroke-based sets
 // like Feather.
-const ICONS: Record<string, IconType> = {
+const ICONS = {
   linkedin: BsLinkedin,
   email: MdEmail,
   github: SiGithub,
@@ -17,17 +17,20 @@ const ICONS: Record<string, IconType> = {
   saturn: IoPlanet,
   send: MdSend,
   check: MdCheckCircle,
-};
+} satisfies Record<string, IconType>;
+
+type IconName = keyof typeof ICONS;
 
 type SVGIconProps = {
-  icon: string;
+  icon: IconName;
 };
 
 // size="100%" matches the old inline SVGs, which had no width/height
 // attributes and so filled their container
 const SVGIcon = ({ icon }: SVGIconProps) => {
   const Icon = ICONS[icon];
-  return Icon ? <Icon size="100%" /> : <span />;
+  return <Icon size="100%" />;
 };
 
 export { SVGIcon };
+export type { IconName };

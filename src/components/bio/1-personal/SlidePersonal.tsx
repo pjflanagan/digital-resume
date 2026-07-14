@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import * as Scroll from 'react-scroll';
 
-
 import { CurveTopTop, CurveTopBottom, CurveBottomTop, CurveBottomBottom } from './curves/Curves';
 import { Photo } from './photo/Photo';
-import { Body } from './body/Body';
+import { PersonalBody } from './body/PersonalBody';
 
 import * as Style from './SlidePersonal.module.scss';
 
@@ -21,7 +20,7 @@ const SlidePersonal = () => {
         <Photo photo={photo} />
       </div>
       <div className={Style.slidePersonalSideRight}>
-        <Body photoLinkCallback={(newPhoto) => setPhoto(newPhoto)} />
+        <PersonalBody photoLinkCallback={(newPhoto) => setPhoto(newPhoto)} />
       </div>
       <CurveBottomTop />
       <CurveBottomBottom />

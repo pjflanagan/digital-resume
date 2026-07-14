@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
+import { activationKeyHandler } from 'src/helpers';
 
 import * as Style from './Stack.module.scss';
 
@@ -28,16 +29,14 @@ const StackNav = ({ current, count, selectLayer }: StackNavProps) => {
           [Style.current]: i === current,
         });
         return (
-          <div
+          <button
             key={i}
+            type="button"
             className={Style.bulletHolder}
             onClick={() => selectLayer(i)}
-            onKeyDown={() => selectLayer(i)}
-            role="button"
-            tabIndex={0}
           >
             <div className={className} />
-          </div>
+          </button>
         );
       })}
     </div>
@@ -74,7 +73,7 @@ const Stack = ({ children }: StackProps) => {
             key={layer.layerIndex}
             className={Style.layer}
             onClick={() => setCurrentLayer(layer.layerIndex)}
-            onKeyDown={() => setCurrentLayer(layer.layerIndex)}
+            onKeyDown={activationKeyHandler(() => setCurrentLayer(layer.layerIndex))}
             role="button"
             tabIndex={0}
           >

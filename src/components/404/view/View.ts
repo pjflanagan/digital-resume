@@ -1,87 +1,35 @@
+import { BaseView } from 'src/elements';
 import { Color, Point } from 'src/helpers';
 
-class View {
-  ctx: CanvasRenderingContext2D;
-  W: number;
-  H: number;
-  C: Point;
-  space!: Space;
-  bodies!: Particle[];
-  animationReq: number | undefined;
+const PARTICLE_COUNT = 20;
+
+class View extends BaseView {
+  bodies: Particle[] = [];
 
   constructor(canvasElem: HTMLCanvasElement) {
-    this.ctx = canvasElem.getContext('2d', { alpha: false }) as CanvasRenderingContext2D;
-
-    // sizing (window)
-    this.W = window.innerWidth;
-    this.H = window.innerHeight;
-    this.C = {
-      x: this.W / 2,
-      y: this.H / 2,
-    };
-    canvasElem.width = this.W;
-    canvasElem.height = this.H;
-
-    this.animate = this.animate.bind(this);
-
+    super(canvasElem);
+    this.resize();
     this.setup();
     this.start();
   }
 
   setup() {
-    // add things to bodies in order from bottom to top
-    this.space = new Space(this);
-    this.bodies = [];
-    for (let i = 0; i < 20; ++i) this.bodies.push(new Particle(this));
+    this.bodies = Array.from({ length: PARTICLE_COUNT }, () => new Particle(this));
   }
 
   drawFrame() {
-    this.space.drawBackground();
-    for (let i = 0; i < this.bodies.length; ++i) {
-      this.bodies[i].move();
-      this.bodies[i].draw();
+    this.drawBackground();
+    for (const body of this.bodies) {
+      body.move();
+      body.draw();
     }
+    // spawn one particle per frame and drop the ones that left the screen
     this.bodies.push(new Particle(this));
-    // this.bodies.pop();
     this.bodies = this.bodies.filter((b) => !b.isOutOfBounds());
-  }
-
-  start() {
-    this.animate();
-  }
-
-  animate() {
-    this.drawFrame();
-    this.animationReq = window.requestAnimationFrame(this.animate);
-  }
-
-  stop() {
-    if (this.animationReq) {
-      window.cancelAnimationFrame(this.animationReq);
-    }
   }
 }
 
 // TODO: point perspective animation of colors moving away from the center on the top and bottom
-
-class Space {
-  canvas: View;
-  ctx: CanvasRenderingContext2D;
-
-  constructor(canvas: View) {
-    this.canvas = canvas;
-    this.ctx = canvas.ctx;
-  }
-
-  drawBackground() {
-    this.ctx.beginPath();
-    this.ctx.rect(0, 0, this.canvas.W, this.canvas.H);
-    this.ctx.fillStyle = '#06191f';
-    this.ctx.fill();
-  }
-}
-
-// Particle
 
 type ParticleState = {
   pos: Point;

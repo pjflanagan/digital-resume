@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { activationKeyHandler } from 'src/helpers';
+
 import * as Style from './Text.module.scss';
 
 type TextInlineLinkProps = {
@@ -36,7 +38,7 @@ const TextInlineLink = ({
         onMouseOver={onMouseOver}
         onFocus={onFocus}
         onClick={onClick}
-        onKeyDown={onClick}
+        onKeyDown={onClick && activationKeyHandler(onClick)}
       >
         {children}
       </span>

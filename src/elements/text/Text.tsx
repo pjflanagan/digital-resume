@@ -16,25 +16,18 @@ type HeadingProps = {
   mono?: boolean;
 };
 
-// TextTitle h1
-const TextTitle = ({ className, children, mono }: HeadingProps) => (
-  <h1 className={clsx(className, mono && Style.mono)}>{children}</h1>
-);
+const makeHeading = (Tag: 'h1' | 'h2' | 'h3' | 'h4') => {
+  const Heading = ({ className, children, mono }: HeadingProps) => (
+    <Tag className={clsx(className, mono && Style.mono)}>{children}</Tag>
+  );
+  Heading.displayName = `TextHeading(${Tag})`;
+  return Heading;
+};
 
-// TextSection h2
-const TextSection = ({ className, children, mono }: HeadingProps) => (
-  <h2 className={clsx(className, mono && Style.mono)}>{children}</h2>
-);
-
-// TextHeading h3
-const TextHeading = ({ className, children, mono }: HeadingProps) => (
-  <h3 className={clsx(className, mono && Style.mono)}>{children}</h3>
-);
-
-// TextSubHeading h4
-const TextSubHeading = ({ className, children, mono }: HeadingProps) => (
-  <h4 className={clsx(className, mono && Style.mono)}>{children}</h4>
-);
+const TextTitle = makeHeading('h1');
+const TextSection = makeHeading('h2');
+const TextHeading = makeHeading('h3');
+const TextSubHeading = makeHeading('h4');
 
 type TextAccentProps = HeadingProps & {
   // when true, renders as random numbers until scrolled into view, then settles to the real text
@@ -52,7 +45,7 @@ const AnimatedTextAccent = ({ className, children }: HeadingProps) => {
 };
 
 // TextAccent h5
-const TextAccent = ({ className, children, animate, mono=true }: TextAccentProps) => {
+const TextAccent = ({ className, children, animate, mono = true }: TextAccentProps) => {
   const classNames = clsx(className, mono && Style.mono);
   if (animate) {
     return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;

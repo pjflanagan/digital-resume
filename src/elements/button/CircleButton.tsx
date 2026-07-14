@@ -1,10 +1,11 @@
-import React from 'react';
+import clsx from 'clsx';
 import { SVGIcon } from 'src/elements';
+import type { IconName } from '../icon/SVGIcon';
 
 import * as Style from './Button.module.scss';
 
 type CircleButtonLinkedProps = {
-  icon: string;
+  icon: IconName;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   href: string;
@@ -34,35 +35,16 @@ const CircleButtonLinked = ({
 };
 
 type CircleButtonActionProps = {
-  icon: string;
+  icon: IconName;
   onClick: () => void;
 };
 
-class CircleButtonAction extends React.Component<CircleButtonActionProps> {
-  constructor(props: CircleButtonActionProps) {
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick(e: React.SyntheticEvent) {
-    e.preventDefault();
-    this.props.onClick();
-  }
-
-  render() {
-    const { icon } = this.props;
-    return (
-      <div
-        className={Style.circleButton}
-        onClick={this.onClick}
-        onKeyDown={this.onClick}
-        role="button"
-        tabIndex={0}
-      >
-        <SVGIcon icon={icon} />
-      </div>
-    );
-  }
-}
+const CircleButtonAction = ({ icon, onClick }: CircleButtonActionProps) => {
+  return (
+    <button type="button" className={clsx(Style.circleButton, Style.buttonReset)} onClick={onClick}>
+      <SVGIcon icon={icon} />
+    </button>
+  );
+};
 
 export { CircleButtonAction, CircleButtonLinked };

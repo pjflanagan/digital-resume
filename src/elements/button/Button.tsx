@@ -2,41 +2,43 @@ import React from 'react';
 
 import { CircleButtonAction, CircleButtonLinked } from './CircleButton';
 import { LabeledButtonAction, LabeledButtonLinked } from './LabeledButton';
+import type { IconName } from '../icon/SVGIcon';
 
 // TODO: button make width contain to prevent text wrap
 
 type ButtonCommonProps = {
-  icon: string;
+  icon: IconName;
+  children?: React.ReactNode;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
 
 type ActionProps = ButtonCommonProps & {
   onClick: () => void;
-  children?: React.ReactNode;
 };
 
 type LinkedProps = ButtonCommonProps & {
   href: string;
   sameWindow?: boolean;
   className?: string;
-  children?: React.ReactNode;
 };
 
-type ButtonProps = Partial<ActionProps> & Partial<LinkedProps> & ButtonCommonProps;
+type ButtonProps = ActionProps | LinkedProps;
+
+const isAction = (props: ButtonProps): props is ActionProps => 'onClick' in props;
 
 const LabeledButton = (props: ButtonProps) => {
-  if (props.onClick) {
-    return <LabeledButtonAction {...(props as ActionProps)} />;
+  if (isAction(props)) {
+    return <LabeledButtonAction {...props} />;
   }
-  return <LabeledButtonLinked {...(props as LinkedProps)} />;
+  return <LabeledButtonLinked {...props} />;
 };
 
 const CircleButton = (props: ButtonProps) => {
-  if (props.onClick) {
-    return <CircleButtonAction {...(props as ActionProps)} />;
+  if (isAction(props)) {
+    return <CircleButtonAction {...props} />;
   }
-  return <CircleButtonLinked {...(props as LinkedProps)} />;
+  return <CircleButtonLinked {...props} />;
 };
 
 export { LabeledButton, CircleButton };

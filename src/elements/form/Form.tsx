@@ -1,5 +1,6 @@
 import React from 'react';
 import { LabeledButtonForm } from '../button/LabeledButton';
+import type { IconName } from '../icon/SVGIcon';
 
 import * as Style from './Form.module.scss';
 import clsx from 'clsx';
@@ -11,50 +12,41 @@ type FormProps = {
   onSubmit: () => void;
 };
 
-class Form extends React.Component<FormProps> {
-  constructor(props: FormProps) {
-    super(props);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onSubmit(e: React.FormEvent) {
+const Form = ({ children, name, isLoading, onSubmit: onSubmitProp }: FormProps) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    this.props.onSubmit();
-  }
+    onSubmitProp();
+  };
 
-  render() {
-    const { children, name, isLoading } = this.props;
+  const className = clsx(Style.form, {
+    [Style.isLoading]: isLoading,
+  });
 
-    const className = clsx(Style.form, {
-      [Style.isLoading]: isLoading,
-    });
-
-    return (
-      <div className={Style.formContent}>
-        <form
-          onSubmit={this.onSubmit}
-          className={className}
-          data-netlify-honeypot="bot-field"
-          data-netlify="true"
-          name={name}
-        >
-          <span>
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value={name} />
-            {children}
-          </span>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={Style.formContent}>
+      <form
+        onSubmit={onSubmit}
+        className={className}
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
+        name={name}
+      >
+        <span>
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value={name} />
+          {children}
+        </span>
+      </form>
+    </div>
+  );
+};
 
 type FormButtonProps = {
   prompt: string;
-  icon: string;
+  icon: IconName;
   isSubmitted?: boolean;
   promptSubmitted?: string;
-  iconSubmitted?: string;
+  iconSubmitted?: IconName;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };

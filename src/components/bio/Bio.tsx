@@ -26,10 +26,11 @@ const BioComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 400);
-  });
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className={Style.container}>

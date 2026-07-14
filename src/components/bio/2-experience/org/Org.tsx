@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import clsx from 'clsx';
 import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
 import {
@@ -44,13 +45,21 @@ const Org = ({
   const isRevealed = useReveal({ ref, gap: 132 });
 
   useEffect(() => {
-    if (isRevealed && bulletPointRevealIndex < bulletPointLength) {
-      setTimeout(() => {
-        setBulletPointRevealIndex(bulletPointRevealIndex + 1);
-      }, 100);
+    if (!isRevealed) {
+      return;
     }
-  }, [isRevealed, bulletPointRevealIndex, bulletPointLength]);
-
+    // reveal the bullet points one at a time
+    const interval = setInterval(() => {
+      setBulletPointRevealIndex((index) => {
+        if (index >= bulletPointLength) {
+          clearInterval(interval);
+          return index;
+        }
+        return index + 1;
+      });
+    }, 100);
+    return () => clearInterval(interval);
+  }, [isRevealed, bulletPointLength]);
 
   function getClassName(index: number, offset = 0) {
     return bulletPointRevealIndex >= index + offset ? Style.revealed : Style.hidden;
@@ -78,14 +87,14 @@ const Org = ({
       </div>
       {!!extra &&
         extra.map((org, i) => (
-          <div key={i} className={`${Style.orgExtra} ${getClassName(i, description.length)}`}>
+          <div key={org.name} className={clsx(Style.orgExtra, getClassName(i, description.length))}>
             <div className={Style.orgLeft}></div>
             <div className={Style.orgRight}>
               <TextLinkedHeader href={org.link || ''} className={Style.name} color="cyan">
                 {org.name}
               </TextLinkedHeader>
               <TextSubHeading>{org.position}</TextSubHeading>
-              <Text key={i}>{org.description}</Text>
+              <Text>{org.description}</Text>
             </div>
           </div>
         ))}
