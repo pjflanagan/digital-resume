@@ -1,31 +1,33 @@
-import React from 'react';
+import type { IconType } from 'react-icons';
+import { MdAdd, MdArrowDownward, MdCheckCircle, MdEmail, MdRemove, MdSend } from 'react-icons/md';
+import { SiGithub } from 'react-icons/si';
+import { BsLinkedin } from 'react-icons/bs';
+import { IoPlanet } from 'react-icons/io5';
 
-import LINKEDIN_ICON from './linkedin';
-import EMAIL_ICON from './email';
-import GITHUB_ICON from './github';
-import DOWN_ARROW_ICON from './down-arrow';
-import MINUS_ICON from './minus';
-import PLUS_ICON from './plus';
-import SATURN_ICON from './saturn';
-import SEND_ICON from './send';
-import CHECK_ICON from './check';
-
-const ICONS: Record<string, React.ReactElement> = {
-  linkedin: LINKEDIN_ICON,
-  email: EMAIL_ICON,
-  github: GITHUB_ICON,
-  'down-arrow': DOWN_ARROW_ICON,
-  minus: MINUS_ICON,
-  plus: PLUS_ICON,
-  saturn: SATURN_ICON,
-  send: SEND_ICON,
-  check: CHECK_ICON,
+// Fill-based icon sets only (Material, Simple Icons, Ionicons) — the button
+// styles color icons via `path { fill }`, which breaks stroke-based sets
+// like Feather.
+const ICONS: Record<string, IconType> = {
+  linkedin: BsLinkedin,
+  email: MdEmail,
+  github: SiGithub,
+  'down-arrow': MdArrowDownward,
+  minus: MdRemove,
+  plus: MdAdd,
+  saturn: IoPlanet,
+  send: MdSend,
+  check: MdCheckCircle,
 };
 
 type SVGIconProps = {
   icon: string;
 };
 
-const SVGIcon = ({ icon }: SVGIconProps) => ICONS[icon] || <span />;
+// size="100%" matches the old inline SVGs, which had no width/height
+// attributes and so filled their container
+const SVGIcon = ({ icon }: SVGIconProps) => {
+  const Icon = ICONS[icon];
+  return Icon ? <Icon size="100%" /> : <span />;
+};
 
 export { SVGIcon };
