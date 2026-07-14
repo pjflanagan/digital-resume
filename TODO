@@ -2,11 +2,11 @@
 MAIN TODO: 
 - [ ] Use TS everywhere
 - [ ] replace some things with libraries that handle it for me
-- [ ] remove graphql if possible
+- [x] remove graphql if possible
 - [ ] use decamp cms
 
 - [x] figure out lfs
-- [~] Add typescript - change some elements and hooks to use it
+- [x] Add typescript - change some elements and hooks to use it
 
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
@@ -55,6 +55,3 @@ ELEMENTS
 - [x] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 
-EXTERNAL
-- [ ] Flesh out blogger blog, OR write up a few medium posts about things
-- [~] make sure pjflanagan.github.io is link for sites (HTML5Canvas README)

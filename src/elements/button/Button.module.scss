@@ -69,13 +69,12 @@
       svg {
         width: 20px;
         height: 20px;
-        stroke: $accentYellow;
-
-        path {
-          fill: $accentYellow;
-          -webkit-transition: 0.2s;
-          transition: 0.2s;
-        }
+        // react-icons color via currentColor; never force-fill paths — icon
+        // sets ship invisible fill="none" bounding boxes that would render
+        // as solid squares
+        color: $accentYellow;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
       }
     }
 
@@ -104,9 +103,7 @@
       background: $backgroundLightHover;
 
       svg {
-        path {
-          fill: $accentYellowHover;
-        }
+        color: $accentYellowHover;
       }
 
       .name {

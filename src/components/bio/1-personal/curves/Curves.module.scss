@@ -1,51 +1,60 @@
 @use 'theme/variables' as *;
 
-svg {
+// Scoped to the curve classes — a bare `svg` selector in a CSS module is
+// global and would restyle every SVG on the page (it used to paint icon
+// bounding boxes).
+.top-curve,
+.top-curve-bottom,
+.bottom-curve-top,
+.bottom-curve {
   height: 20px;
   width: 100%;
   position: absolute;
-
-  &.top-curve {
-    margin-top: -20px;
-  }
-
-  &.top-curve-bottom,
-  &.bottom-curve-top,
-  &.bottom-curve {
-    display: none;
-  }
 
   path {
     fill: $backgroundLight;
   }
 }
 
+.top-curve {
+  margin-top: -20px;
+}
+
+.top-curve-bottom,
+.bottom-curve-top,
+.bottom-curve {
+  display: none;
+}
+
 @media only screen and (min-width: $md) {
-  svg {
+  .top-curve,
+  .top-curve-bottom,
+  .bottom-curve-top,
+  .bottom-curve {
     height: 40px;
-
-    &.top-curve {
-      margin-top: -40px;
-    }
-
-    &.top-curve-bottom {
-      display: block;
-      z-index: 17;
-    }
-
-    &.bottom-curve-top {
-      display: block;
-      z-index: 17;
-      bottom: 0;
-    }
-
-    &.bottom-curve {
-      top: 100%;
-      display: block;
-    }
 
     path {
       fill: $backgroundDark;
     }
+  }
+
+  .top-curve {
+    margin-top: -40px;
+  }
+
+  .top-curve-bottom {
+    display: block;
+    z-index: 17;
+  }
+
+  .bottom-curve-top {
+    display: block;
+    z-index: 17;
+    bottom: 0;
+  }
+
+  .bottom-curve {
+    top: 100%;
+    display: block;
   }
 }
