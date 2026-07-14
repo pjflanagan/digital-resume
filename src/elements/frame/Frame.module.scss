@@ -1,0 +1,35 @@
+@use 'theme/variables' as *;
+
+.frame {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+
+  &.top-left {
+    border-top: 1px solid $accentYellow;
+    border-left: 1px solid $accentYellow;
+    top: 0;
+    left: 0;
+  }
+
+  &.top-right {
+    border-top: 1px solid $accentYellow;
+    border-right: 1px solid $accentYellow;
+    top: 0;
+    right: 0;
+  }
+
+  &.bottom-left {
+    border-bottom: 1px solid $accentYellow;
+    border-left: 1px solid $accentYellow;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.bottom-right {
+    border-bottom: 1px solid $accentYellow;
+    border-right: 1px solid $accentYellow;
+    bottom: 0;
+    right: 0;
+  }
+}

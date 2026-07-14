@@ -6,10 +6,7 @@
       "link": "//ohword.flanny.app",
       "description": "Developed daily online game\n",
       "image": "ohword.png",
-      "tech": [
-        "Gatsby",
-        "Netlify"
-      ]
+      "tech": ["Gatsby", "Netlify"]
     },
     {
       "name": "Michelle Calligraphy",
@@ -17,11 +14,7 @@
       "link": "//tomglobal.org/project?id=5e3b942bd848736b09554581",
       "description": "Worked to develop user friendly web app to interface with 3D printer-like robot capable of drawing calligraphy. TOM is an organization dedicated to pairing engineers with disabled persons to create solutions to their specific needs.\n",
       "image": "team-michelle.jpg",
-      "tech": [
-        "Flask",
-        "Angular",
-        "Arduino"
-      ]
+      "tech": ["Flask", "Angular", "Arduino"]
     },
     {
       "name": "Run Calculator",
@@ -29,9 +22,7 @@
       "link": "//runcalculator.flanny.app",
       "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
       "image": "runcalculator.png",
-      "tech": [
-        "Svelte"
-      ]
+      "tech": ["Svelte"]
     },
     {
       "name": "Garmin Watch Face",
@@ -39,9 +30,7 @@
       "link": "https://www.flanny.app/blog/2025/garmin-cyberpunk-watchface/",
       "description": "Designed a custom watch face based on Cyberpunk 2077.\n",
       "image": "cyberpunk-watchface.jpg",
-      "tech": [
-        "Monkey C"
-      ]
+      "tech": ["Monkey C"]
     }
   ],
   "all": [
@@ -58,11 +47,7 @@
       "link": "https://www.flanny.app/blog/2020/bamboo/",
       "description": "Developed web app and Chrome extension to help study Mandarin. Users can add words to they are learning to their library, and are shown words every time they open a new tab in Chrome.\n",
       "image": "bamboo.png",
-      "tech": [
-        "Mongodb Stitch",
-        "React",
-        "Chrome Dev"
-      ]
+      "tech": ["Mongodb Stitch", "React", "Chrome Dev"]
     },
     {
       "name": "Nuclear Codes",
@@ -70,11 +55,7 @@
       "link": "https://www.flanny.app/blog/2021/nuclear-codes/",
       "description": "Created text-based, multiplayer socket game. Agents try and figure out a passcode while spies try and prevent them.\n",
       "image": "nuclear-codes.png",
-      "tech": [
-        "React",
-        "Node.js",
-        "Socket.io"
-      ]
+      "tech": ["React", "Node.js", "Socket.io"]
     },
     {
       "name": "MTA Clock",
@@ -96,10 +77,7 @@
       "link": "https://www.flanny.app/blog/2019/simple-socket-game/",
       "description": "Expanded on multiplayer space shooting game built in college for UX course. Players join and are placed onto teams, stay alive to rack up your team's score, get taken out and the other team steals your points.\n",
       "image": "spacefighters.jpg",
-      "tech": [
-        "Socket.io",
-        "Phaser.js"
-      ]
+      "tech": ["Socket.io", "Phaser.js"]
     },
     {
       "name": "NightPro",

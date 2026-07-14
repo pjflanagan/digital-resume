@@ -1,0 +1,114 @@
+@use 'theme/variables' as *;
+
+.button-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+}
+
+.circle-button {
+  width: 48px;
+  height: 48px;
+}
+
+.labeled-button {
+  position: relative;
+  min-width: 192px;
+  width: fit-content;
+  font-family: $ubuntu;
+  display: flex;
+  cursor: pointer;
+
+  a {
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border: 1px solid $accentCyan;
+    clip-path: $polygon;
+  }
+
+  .holder {
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    background: $backgroundLight;
+    clip-path: $polygonSmall;
+    padding: 8px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+
+    .svg-holder {
+      width: 32px;
+      height: 100%;
+      padding: 4px 30px 4px 0;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        // react-icons color via currentColor; never force-fill paths — icon
+        // sets ship invisible fill="none" bounding boxes that would render
+        // as solid squares
+        color: $accentYellow;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+      }
+    }
+
+    .name {
+      min-width: calc(100% - 36px);
+      text-align: center;
+      border-left: 1px solid $accentCyan;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 16px;
+      width: fit-content;
+      padding: 6px 12px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &:after {
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+    }
+
+    .holder {
+      background: $backgroundLightHover;
+
+      svg {
+        color: $accentYellowHover;
+      }
+
+      .name {
+        color: #e4f03c;
+      }
+    }
+  }
+}

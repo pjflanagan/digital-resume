@@ -1,22 +1,28 @@
 
 MAIN TODO: 
-- [ ] Rewrite this entirely in NextJS
-- [x] Install million JS
+- [ ] Use TS everywhere
+- [ ] replace some things with libraries that handle it for me
+- [x] remove graphql if possible
+- [ ] use decamp cms
+
 - [x] figure out lfs
-- [~] Add typescript - change some elements and hooks to use it
+- [x] Add typescript - change some elements and hooks to use it
 
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
-- [ ] No accessing content in Elements (avatar, footer)
-- [ ] use `react-icon` instead of the ones I have
+- [x] No accessing content in Elements (avatar, footer)
+- [x] use `react-icon` instead of the ones I have
 
+REFERENCES
+- Cyberpunk 2077
+- Neon Genesis Evangelion
 
 GENERAL
 - [ ] Need some cyberpunk references, like an Arasaka logo, or the screen effects
 - [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
 - [ ] NEED a rollerblade somewhere
-- [ ] use data through graphql and context
-- [ ] content should be done with CONTEXT, only at top level, or graphql
+- [ ] use data through context
+- [ ] content should be done with CONTEXT, only at top level
 - [ ] images should not be globally named (some should also be remote from either the website or git instead)
 - [!] make it so you can go tab through the whole site seamlessly
 
@@ -49,6 +55,3 @@ ELEMENTS
 - [x] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 
-EXTERNAL
-- [ ] Flesh out blogger blog, OR write up a few medium posts about things
-- [~] make sure pjflanagan.github.io is link for sites (HTML5Canvas README)
