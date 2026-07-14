@@ -6,7 +6,7 @@ import { useReveal } from 'src/hooks';
 import * as Style from "./style.module.scss";
 
 type ProgressBarProps = {
-  className: string;
+  className?: string;
   progress: number;
   name: string;
 }
@@ -22,7 +22,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   const progress = isRevealed ? progressProp : 0;
 
   const className = classNames(Style.bar, {
-    [classNameProp]: classNameProp
+    ...(classNameProp ? { [classNameProp]: true } : {})
   });
 
   return (

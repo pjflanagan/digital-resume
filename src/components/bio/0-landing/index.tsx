@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useWindowScroll } from "react-use";
 
-import { Canvas } from "elements";
+import { Canvas } from 'src/elements';
 
 import { View } from "./view";
 import { Body } from "./body";

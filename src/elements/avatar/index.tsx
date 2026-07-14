@@ -6,8 +6,10 @@ import { useReveal } from "src/hooks";
 
 import * as Style from "./style.module.scss";
 
+import type { ImageNode } from "src/content";
+
 type AvatarProps = {
-  image: any;
+  image: ImageNode;
   name: string;
   background: string;
 }

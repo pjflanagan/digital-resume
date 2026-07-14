@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react'
-import _ from 'lodash'
+import { useState, useEffect, RefObject } from 'react';
 
 type UseRevealProps = {
   gap: number;
-  ref: any;
-}
+  ref: RefObject<Element | null>;
+};
 
-const useReveal = ({ ref, gap }: UseRevealProps) => {
-
+const useReveal = ({ ref, gap }: UseRevealProps): boolean => {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         // update our state when observer callback fires
@@ -18,20 +20,18 @@ const useReveal = ({ ref, gap }: UseRevealProps) => {
 
         // only update once, we don't want to rereveal (otherwise make a useIntersecting hook)
         if (entry.isIntersecting) {
-          observer.unobserve(ref.current);
+          observer.unobserve(el);
         }
       },
-      { rootMargin: `-${gap}px`, }
+      { rootMargin: `-${gap}px` }
     );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el);
     return () => {
-      observer.unobserve(ref.current);
+      observer.unobserve(el);
     };
   }, []);
 
   return isRevealed;
-}
+};
 
 export { useReveal };
