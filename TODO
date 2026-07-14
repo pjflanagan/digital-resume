@@ -3,6 +3,7 @@ MAIN TODO:
 - [ ] Use TS everywhere
 - [ ] replace some things with libraries that handle it for me
 - [ ] remove graphql if possible
+- [ ] use decamp cms
 
 - [x] figure out lfs
 - [~] Add typescript - change some elements and hooks to use it

@@ -6,7 +6,14 @@ const config: GatsbyConfig = {
   },
   jsxRuntime: `automatic`,
   plugins: [
-    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          loadPaths: [`${__dirname}/src`],
+        },
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
