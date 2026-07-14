@@ -10,7 +10,6 @@ import {
   LabeledButton,
 } from 'src/elements';
 import { Bio } from 'src/content';
-import type { ImageQueryData } from 'src/content';
 
 import { FeaturedProject } from './featured-project/FeaturedProject';
 import { Project } from './project/Project';
@@ -18,11 +17,7 @@ import * as Style from './SlideProjects.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
-type SlideProjectsProps = {
-  data: ImageQueryData;
-};
-
-const SlideProjects = ({ data }: SlideProjectsProps) => {
+const SlideProjects = () => {
   return (
     <ScrollComponent className={`${Style.slideProjects} ${Style.blueprint}`} name="projects">
       <Ruler className={Style.ruler} />
@@ -33,14 +28,14 @@ const SlideProjects = ({ data }: SlideProjectsProps) => {
         <TextSection>{Bio.projects.sections[0]}</TextSection>
         <div className={Style.featuredBody}>
           {Bio.projects.projects.featured.map((project, i) => (
-            <FeaturedProject key={i} project={project} data={data} />
+            <FeaturedProject key={i} project={project} />
           ))}
         </div>
         <TextSection>{Bio.projects.sections[1]}</TextSection>
         <div className={Style.allBody}>
           <Stack>
             {Bio.projects.projects.all.map((project, i) => (
-              <Project key={i} project={project} name={project.name} data={data} />
+              <Project key={i} project={project} name={project.name} />
             ))}
           </Stack>
         </div>

@@ -14,9 +14,6 @@ const config: GatsbyConfig = {
         },
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,13 +25,6 @@ const config: GatsbyConfig = {
         display: `standalone`,
         icon: `static/img/icon/icon.png`,
         include_favicon: false,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/img/bio`,
-        name: 'bio',
       },
     },
   ],

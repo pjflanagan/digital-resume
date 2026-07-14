@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useReveal } from 'src/hooks';
-import { FindImage } from 'src/content';
-import type { ContentLink, ImageQueryData, SchoolExtra } from 'src/content';
+import type { ContentLink, SchoolExtra } from 'src/content';
 import {
   Avatar,
   Text,
@@ -13,6 +12,8 @@ import {
 
 import * as Style from './Org.module.scss';
 
+const IMG_ROOT = '/img/bio/2-experience';
+
 type OrgProps = {
   name: string;
   time: string;
@@ -21,7 +22,6 @@ type OrgProps = {
   position?: string;
   image: string;
   links?: ContentLink[];
-  data: ImageQueryData;
   background: string;
   extra?: SchoolExtra[];
 };
@@ -34,7 +34,6 @@ const Org = ({
   position,
   image,
   links,
-  data,
   background,
   extra,
 }: OrgProps) => {
@@ -52,7 +51,6 @@ const Org = ({
     }
   }, [isRevealed, bulletPointRevealIndex, bulletPointLength]);
 
-  const imageData = FindImage({ data, image });
 
   function getClassName(index: number, offset = 0) {
     return bulletPointRevealIndex >= index + offset ? Style.revealed : Style.hidden;
@@ -62,7 +60,7 @@ const Org = ({
     <div className={Style.org} ref={ref}>
       <div className={Style.orgLeft}>
         <div className={Style.avatarHolder}>
-          {imageData && <Avatar image={imageData} name={name} background={background} />}
+          <Avatar src={`${IMG_ROOT}/${image}`} name={name} background={background} />
         </div>
         <div className={Style.orgInfoHolder}>
           <TextHeading className={Style.name}>{name}</TextHeading>

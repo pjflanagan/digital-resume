@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import { Text } from 'src/elements';
-import type { LinkText } from 'src/content/types';
+import type { LinkText } from '../text/types';
 
 import * as Style from './Footer.module.scss';
 

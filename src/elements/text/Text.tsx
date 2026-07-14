@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import type { ContentLink } from 'src/content/types';
+import type { ContentLink } from './types';
 
 import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
 

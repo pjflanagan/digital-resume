@@ -15,3 +15,4 @@ export * from './stack/Stack';
 export * from './show-more/ShowMore';
 export * from './text/Text';
 export * from './splash/Splash';
+export * from './image/Image';

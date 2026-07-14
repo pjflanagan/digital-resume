@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { ContentLink } from 'src/content/types';
+import type { ContentLink } from './types';
 
 import { TextInlineLink } from './TextInlineLink';
 

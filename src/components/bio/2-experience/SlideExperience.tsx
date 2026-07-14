@@ -2,7 +2,6 @@ import * as Scroll from 'react-scroll';
 
 import { TextTitle, TextSection, TextAccent, Text, ShowMore } from 'src/elements';
 import { Bio } from 'src/content';
-import type { ImageQueryData } from 'src/content';
 
 import { Org } from './org/Org';
 import { Skills } from './skills/Skills';
@@ -10,11 +9,7 @@ import * as Style from './SlideExperience.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
-type SlideExperienceProps = {
-  data: ImageQueryData;
-};
-
-const SlideExperience = ({ data }: SlideExperienceProps) => {
+const SlideExperience = () => {
   return (
     <ScrollComponent className={Style.slideExperience} name="experience">
       <div className={Style.preSlideCurveHolder}>
@@ -35,7 +30,6 @@ const SlideExperience = ({ data }: SlideExperienceProps) => {
             description={job.description}
             position={job.position}
             image={job.image}
-            data={data}
             background={job.background}
           />
         ))}
@@ -50,7 +44,6 @@ const SlideExperience = ({ data }: SlideExperienceProps) => {
               description={job.description}
               position={job.position}
               image={job.image}
-              data={data}
               background={job.background}
             />
           ))}
@@ -67,7 +60,6 @@ const SlideExperience = ({ data }: SlideExperienceProps) => {
             description={school.description}
             position={school.degree}
             image={school.image}
-            data={data}
             background={school.background}
             extra={school.extra}
           />
@@ -83,7 +75,6 @@ const SlideExperience = ({ data }: SlideExperienceProps) => {
               description={school.description}
               position={school.degree}
               image={school.image}
-              data={data}
               background={school.background}
               extra={school.extra}
             />

@@ -1,16 +1,6 @@
 // Shared shapes for site content (see src/content/bio/*.json)
 
-type ContentLink = {
-  key: string;
-  href?: string;
-  text: string;
-  callbackParam?: { action: string; param: string }[];
-};
-
-type LinkText = {
-  links: ContentLink[];
-  text: string | string[];
-};
+import type { ContentLink, LinkText } from 'src/elements/text/types';
 
 type Job = {
   name: string;

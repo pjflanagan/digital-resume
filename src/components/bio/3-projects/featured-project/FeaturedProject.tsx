@@ -1,21 +1,19 @@
 import { useRef } from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { FrameHolder, Text, TextLinkedHeader, TextTag } from 'src/elements';
-import { FindImage } from 'src/content';
-import type { ImageQueryData, Project as ProjectContent } from 'src/content';
+import { FrameHolder, Image, Text, TextLinkedHeader, TextTag } from 'src/elements';
+import type { Project as ProjectContent } from 'src/content';
 import { useReveal } from 'src/hooks';
 
 import * as Style from './FeaturedProject.module.scss';
 import clsx from 'clsx';
 
+const IMG_ROOT = '/img/bio/3-projects';
+
 type FeaturedProjectProps = {
-  data: ImageQueryData;
   project: ProjectContent;
 };
 
 const FeaturedProject = ({
-  data,
   project: { name, link, description, image, tech },
 }: FeaturedProjectProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -24,18 +22,11 @@ const FeaturedProject = ({
   const className = clsx(Style.featuredProject, {
     [Style.hidden]: !isRevealed,
   });
-  const imageData = FindImage({ data, image });
 
   return (
     <div className={className} ref={ref}>
       <FrameHolder className={Style.projectImageFrame}>
-        {imageData && (
-          <GatsbyImage
-            image={imageData.childImageSharp.gatsbyImageData}
-            alt={name}
-            className={Style.projectImage}
-          />
-        )}
+        <Image src={`${IMG_ROOT}/${image}`} alt={name} className={Style.projectImage} />
       </FrameHolder>
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>

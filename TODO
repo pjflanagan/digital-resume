@@ -10,7 +10,7 @@ MAIN TODO:
 
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
-- [ ] No accessing content in Elements (avatar, footer)
+- [x] No accessing content in Elements (avatar, footer)
 - [x] use `react-icon` instead of the ones I have
 
 REFERENCES
