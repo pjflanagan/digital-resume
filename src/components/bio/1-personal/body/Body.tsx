@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { TextAccent, TextTitle, Text, TextType, ParseTextForLinks } from 'src/elements';
+import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
 import { Bio } from 'src/content';
 
 import * as Style from './Body.module.scss';
@@ -24,13 +24,8 @@ const Body = ({ photoLinkCallback }: BodyProps) => {
   const { accent, link_text, title_text } = Bio.personal;
   return (
     <div className={Style.body}>
-      <TextAccent mono>
-        {/* TODO: TextType should be a wrapper for <Text> rather than inside,
-        then we can type through links and multiple elements, like Accent then Heading,
-        ensure that ParseText returns items that can be wrapped by TypeText */}
-        <TextType speed={120} revealed={true}>
-          {accent[language]}
-        </TextType>
+      <TextAccent mono animate>
+        {accent[language]}
       </TextAccent>
       <TextTitle>{ParseTextForLinks(title_text.text, title_text.links, linkHover)}</TextTitle>
       <Text links={link_text.links}>{link_text.text[0]}</Text>

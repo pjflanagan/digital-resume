@@ -5,6 +5,22 @@ import { useReveal } from './useReveal';
 const SCRAMBLE_INTERVAL_MS = 50;
 const SETTLE_INTERVAL_MS = 60;
 
+// Bopomofo (zhuyin) letters ㄅ–ㄩ
+const ZHUYIN_RANGE_START = 0x3105;
+const ZHUYIN_RANGE_SIZE = 0x3129 - ZHUYIN_RANGE_START + 1;
+
+const isCJK = (char: string): boolean => {
+  const code = char.charCodeAt(0);
+  return code >= 0x4e00 && code <= 0x9fff;
+};
+
+const randomScrambleChar = (char: string): string => {
+  if (isCJK(char)) {
+    return String.fromCharCode(ZHUYIN_RANGE_START + Math.floor(Math.random() * ZHUYIN_RANGE_SIZE));
+  }
+  return String(Math.floor(Math.random() * 10));
+};
+
 const scrambleText = (text: string, settledCount: number): string =>
   text
     .split('')
@@ -12,7 +28,7 @@ const scrambleText = (text: string, settledCount: number): string =>
       if (i < settledCount || char === ' ') {
         return char;
       }
-      return String(Math.floor(Math.random() * 10));
+      return randomScrambleChar(char);
     })
     .join('');
 
@@ -34,6 +50,8 @@ const useScrambleText = <T extends Element>({ text, gap = 0 }: UseScrambleTextPr
       return;
     }
     let settledCount = isRevealed ? 0 : -1;
+    // re-scramble right away so a text change restarts the animation without a stale frame
+    setDisplayText(scrambleText(text, 0));
     const interval = setInterval(
       () => {
         if (isRevealed) {

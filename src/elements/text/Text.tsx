@@ -131,7 +131,6 @@ const TextPageCenter = ({
 };
 
 export { ParseTextForLinks } from './ParseTextForLinks';
-export { TextType } from './TextType';
 export { TextInlineLink } from './TextInlineLink';
 export { TextLinkedHeader } from './TextLinkedHeader';
 export {
