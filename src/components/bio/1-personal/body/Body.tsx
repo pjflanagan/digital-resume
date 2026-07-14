@@ -24,7 +24,7 @@ const Body = ({ photoLinkCallback }: BodyProps) => {
   const { accent, link_text, title_text } = Bio.personal;
   return (
     <div className={Style.body}>
-      <TextAccent>
+      <TextAccent mono>
         {/* TODO: TextType should be a wrapper for <Text> rather than inside,
         then we can type through links and multiple elements, like Accent then Heading,
         ensure that ParseText returns items that can be wrapped by TypeText */}

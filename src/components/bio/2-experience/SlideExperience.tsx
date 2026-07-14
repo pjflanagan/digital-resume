@@ -16,7 +16,7 @@ const SlideExperience = () => {
         <div className={Style.preSlideCurve} />
       </div>
       <div className={Style.slideBody}>
-        <TextAccent>{Bio.experience.accent}</TextAccent>
+        <TextAccent mono animate>{Bio.experience.accent}</TextAccent>
         <TextTitle>{Bio.experience.title}</TextTitle>
         <Text links={Bio.experience.link_text.links}>{Bio.experience.link_text.text[0]}</Text>
         <TextSection>{Bio.experience.sections[0]}</TextSection>

@@ -189,7 +189,7 @@ class Card extends React.Component<CardProps, CardState> {
       <div className={className}>
         <div className={Style.cardSides}>
           <div className={Style.sideLeft}>
-            <TextAccent>{Bio.contact.accent}</TextAccent>
+            <TextAccent mono animate>{Bio.contact.accent}</TextAccent>
             <TextTitle>{Bio.contact.title}</TextTitle>
             <Text>{Bio.contact.text}</Text>
             <div className={Style.linkHolder}>

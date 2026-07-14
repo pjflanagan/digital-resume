@@ -32,6 +32,8 @@ const Body = () => {
         }}
         headline={Bio.splash.title}
         blurb={Bio.splash.subtitle}
+        mono
+        animate
       />
       <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
         <LabeledButton icon="rocket" onClick={() => clickToScroll()}>

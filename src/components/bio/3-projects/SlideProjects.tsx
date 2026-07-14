@@ -22,7 +22,7 @@ const SlideProjects = () => {
     <ScrollComponent className={`${Style.slideProjects} ${Style.blueprint}`} name="projects">
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
-        <TextAccent>{Bio.projects.accent}</TextAccent>
+        <TextAccent mono animate>{Bio.projects.accent}</TextAccent>
         <TextTitle>{Bio.projects.title}</TextTitle>
         <Text links={Bio.projects.link_text.links}>{Bio.projects.link_text.text[0]}</Text>
         <TextSection>{Bio.projects.sections[0]}</TextSection>

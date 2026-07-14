@@ -153,16 +153,21 @@ const PageBio = {
         email: 'farnsworth@planetexpress.com',
         message: 'Good news everyone!',
       },
+      {
+        name: 'Rick Sanchez',
+        email: 'rick@c137.com',
+        message: "Wubba lubba dub dub!",
+      },
+      {
+        name: 'Johnny Silverhand',
+        email: 'rockerboy@samurai.band',
+        message: "Wake up choom.",
+      },
       // {
       //   name: "Stanford Pines",
-      //   email: "stan@gravityfalls.com",
-      //   message: "..."
+      //   email: "stan@mysteryshack.com",
+      //   message: ""
       // },
-      // {
-      //   name: "Doctor Emmett Brown",
-      //   email: "doc@delorean.future",
-      //   message: "Great Scott!"
-      // }
     ],
   },
   footer: [

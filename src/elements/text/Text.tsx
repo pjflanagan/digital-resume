@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { useScrambleText } from 'src/hooks';
+
 import type { ContentLink } from './types';
 
 import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
@@ -10,36 +12,57 @@ import * as Style from './Text.module.scss';
 type HeadingProps = {
   className?: string;
   children?: React.ReactNode;
+  // when true, renders in Ubuntu Mono
+  mono?: boolean;
 };
 
 // TextTitle h1
-const TextTitle = ({ className, children }: HeadingProps) => (
-  <h1 className={className}>{children}</h1>
+const TextTitle = ({ className, children, mono }: HeadingProps) => (
+  <h1 className={clsx(className, mono && Style.mono)}>{children}</h1>
 );
 
 // TextSection h2
-const TextSection = ({ className, children }: HeadingProps) => (
-  <h2 className={className}>{children}</h2>
+const TextSection = ({ className, children, mono }: HeadingProps) => (
+  <h2 className={clsx(className, mono && Style.mono)}>{children}</h2>
 );
 
 // TextHeading h3
-const TextHeading = ({ className, children }: HeadingProps) => (
-  <h3 className={className}>{children}</h3>
+const TextHeading = ({ className, children, mono }: HeadingProps) => (
+  <h3 className={clsx(className, mono && Style.mono)}>{children}</h3>
 );
 
 // TextSubHeading h4
-const TextSubHeading = ({ className, children }: HeadingProps) => (
-  <h4 className={className}>{children}</h4>
+const TextSubHeading = ({ className, children, mono }: HeadingProps) => (
+  <h4 className={clsx(className, mono && Style.mono)}>{children}</h4>
 );
+
+type TextAccentProps = HeadingProps & {
+  // when true, renders as random numbers until scrolled into view, then settles to the real text
+  animate?: boolean;
+};
+
+const AnimatedTextAccent = ({ className, children }: HeadingProps) => {
+  const text = typeof children === 'string' ? children : '';
+  const { ref, displayText } = useScrambleText<HTMLHeadingElement>({ text });
+  return (
+    <h5 ref={ref} className={className}>
+      {displayText}
+    </h5>
+  );
+};
 
 // TextAccent h5
-const TextAccent = ({ className, children }: HeadingProps) => (
-  <h5 className={className}>{children}</h5>
-);
+const TextAccent = ({ className, children, animate, mono=true }: TextAccentProps) => {
+  const classNames = clsx(className, mono && Style.mono);
+  if (animate) {
+    return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;
+  }
+  return <h5 className={classNames}>{children}</h5>;
+};
 
 // TextTag
-const TextTag = ({ children }: { children?: React.ReactNode }) => (
-  <span className={Style.textTag}>{children}</span>
+const TextTag = ({ children, mono }: { children?: React.ReactNode; mono?: boolean }) => (
+  <span className={clsx(Style.textTag, mono && Style.mono)}>{children}</span>
 );
 
 type TextProps = {
@@ -48,20 +71,42 @@ type TextProps = {
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
+  mono?: boolean;
 };
 
 // Text
-const Text = ({ dangerouslySetInnerHTML, className, children, links, callback }: TextProps) => {
+const Text = ({
+  dangerouslySetInnerHTML,
+  className,
+  children,
+  links,
+  callback,
+  mono,
+}: TextProps) => {
+  const classNames = clsx(className, mono && Style.mono);
   if (dangerouslySetInnerHTML)
-    return <p className={className} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
-  return <p className={className}>{ParseTextForLinks(children || '', links, callback)}</p>;
+    return <p className={classNames} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
+  return <p className={classNames}>{ParseTextForLinks(children || '', links, callback)}</p>;
 };
 
 type TextPageCenterProps = {
   className?: string;
   headline: React.ReactNode;
-  blurb: React.ReactNode;
+  blurb: string;
   style?: React.CSSProperties;
+  // when true, renders the blurb in Ubuntu Mono
+  mono?: boolean;
+  // when true, scrambles the blurb until scrolled into view
+  animate?: boolean;
+};
+
+const AnimatedBlurb = ({ className, children }: { className?: string; children: string }) => {
+  const { ref, displayText } = useScrambleText<HTMLDivElement>({ text: children });
+  return (
+    <div ref={ref} className={className}>
+      {displayText}
+    </div>
+  );
 };
 
 const TextPageCenter = ({
@@ -69,12 +114,21 @@ const TextPageCenter = ({
   headline,
   blurb,
   style,
-}: TextPageCenterProps) => (
-  <div className={clsx(Style.textPageCenter, classNameProp)} style={style}>
-    <div className={Style.textHeadline}>{headline}</div>
-    <div className={Style.textBlurb}>{blurb}</div>
-  </div>
-);
+  mono,
+  animate,
+}: TextPageCenterProps) => {
+  const blurbClassName = clsx(Style.textBlurb, mono && Style.mono);
+  return (
+    <div className={clsx(Style.textPageCenter, classNameProp)} style={style}>
+      <div className={Style.textHeadline}>{headline}</div>
+      {animate ? (
+        <AnimatedBlurb className={blurbClassName}>{blurb}</AnimatedBlurb>
+      ) : (
+        <div className={blurbClassName}>{blurb}</div>
+      )}
+    </div>
+  );
+};
 
 export { ParseTextForLinks } from './ParseTextForLinks';
 export { TextType } from './TextType';

@@ -1,5 +1,11 @@
 @use 'theme/variables' as *;
 
+// Mono
+
+.mono {
+  font-family: $ubuntuMono;
+}
+
 // Tags
 
 .text-tag {
@@ -63,6 +69,10 @@ a {
 
   .text-blurb {
     font-family: $ubuntu;
+
+    &.mono {
+      font-family: $ubuntuMono;
+    }
     font-size: 18px;
     margin-top: -8px;
     color: $accentYellow;
