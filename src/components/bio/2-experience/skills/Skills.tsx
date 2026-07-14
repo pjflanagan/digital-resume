@@ -1,8 +1,7 @@
-
-import { ProgressBar, TextHeading } from "src/elements";
+import { ProgressBar, TextHeading } from 'src/elements';
 import { Bio } from 'src/content';
 
-import * as Style from "./Skills.module.scss";
+import * as Style from './Skills.module.scss';
 
 const Skills = () => (
   <div>
@@ -11,16 +10,8 @@ const Skills = () => (
         <TextHeading>{type}</TextHeading>
         <div className={Style.skillListHolder}>
           {items.map((skill, i) => (
-            <div
-              key={i}
-              className={Style.skillBarHolder}
-              style={{ width: `${100 / cols}%` }}
-            >
-              <ProgressBar
-                key={skill.name}
-                name={skill.name}
-                progress={skill.progress}
-              />
+            <div key={i} className={Style.skillBarHolder} style={{ width: `${100 / cols}%` }}>
+              <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
             </div>
           ))}
         </div>

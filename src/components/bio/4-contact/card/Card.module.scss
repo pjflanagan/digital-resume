@@ -1,4 +1,4 @@
-@import "/src/theme/variables";
+@import '/src/theme/variables';
 
 .card {
   width: 100%;
@@ -27,7 +27,6 @@
   }
 
   &.is-submitted {
-
     .card-sides {
       .side-right {
         // max-height: 0;
@@ -38,7 +37,6 @@
     }
   }
 }
-
 
 // xl
 @media only screen and (min-width: $xl) {

@@ -23,14 +23,10 @@ class Form extends React.Component<FormProps> {
   }
 
   render() {
-    const {
-      children,
-      name,
-      isLoading
-    } = this.props;
+    const { children, name, isLoading } = this.props;
 
     const className = clsx(Style.form, {
-      [Style.isLoading]: isLoading
+      [Style.isLoading]: isLoading,
     });
 
     return (
@@ -40,7 +36,8 @@ class Form extends React.Component<FormProps> {
           className={className}
           data-netlify-honeypot="bot-field"
           data-netlify="true"
-          name={name}>
+          name={name}
+        >
           <span>
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value={name} />
@@ -84,4 +81,4 @@ const FormButton = ({
   );
 };
 
-export { Form, FormButton }
+export { Form, FormButton };

@@ -45,9 +45,7 @@
           "text": "Pennsylvania State Computer Fair Finalist"
         }
       ],
-      "description": [
-        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, <PACPUF>"
-      ],
+      "description": ["Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, <PACPUF>"],
       "background": "#1c4b98",
       "color": "#1c4b98"
     }
@@ -58,9 +56,7 @@
       "location": "New York, NY",
       "class": "Fall 2021",
       "image": "",
-      "description": [
-        "Intermediate Conversation Mandarin Chinese"
-      ],
+      "description": ["Intermediate Conversation Mandarin Chinese"],
       "background": "#fff",
       "color": "#f00"
     },

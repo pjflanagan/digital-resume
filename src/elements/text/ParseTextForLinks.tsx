@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import type { ContentLink } from "src/content/types";
+import type { ContentLink } from 'src/content/types';
 
-import { TextInlineLink } from "./TextInlineLink";
+import { TextInlineLink } from './TextInlineLink';
 
 // finds all instances of <link_name> in a string
 const REGEX_MATCH_LINKS = /(.*?)<(.*?)>(.*?)/g;
@@ -40,14 +40,8 @@ const ParseTextForLinks = (
     const { callbackParam, href, text: linkText } = link;
 
     // default the mouse over and href to undefined in case we aren't using them
-    const onMouseOver =
-      !!callback && !!callbackParam
-        ? () => callback(callbackParam)
-        : undefined;
-    const onFocus =
-      !!callback && !!callbackParam
-        ? () => callback(callbackParam)
-        : undefined;
+    const onMouseOver = !!callback && !!callbackParam ? () => callback(callbackParam) : undefined;
+    const onFocus = !!callback && !!callbackParam ? () => callback(callbackParam) : undefined;
 
     // push the link to the list
     elems.push(
@@ -63,9 +57,7 @@ const ParseTextForLinks = (
   });
 
   // push the last bit of unmatched text
-  elems.push(
-    <span key={matches.length}>{text.substr(text.lastIndexOf(">") + 1)}</span>
-  );
+  elems.push(<span key={matches.length}>{text.substr(text.lastIndexOf('>') + 1)}</span>);
 
   return elems;
 };

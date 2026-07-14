@@ -1,8 +1,8 @@
-import * as Scroll from "react-scroll";
+import * as Scroll from 'react-scroll';
 import { useWindowScroll } from 'react-use';
 
-import { LabeledButton, TextPageCenter } from "src/elements";
-import { Bio } from "src/content";
+import { LabeledButton, TextPageCenter } from 'src/elements';
+import { Bio } from 'src/content';
 
 import * as Style from './Body.module.scss';
 
@@ -14,10 +14,9 @@ const clickToScroll = () => {
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page
   });
-}
+};
 
 const Body = () => {
-
   const { y } = useWindowScroll();
   const prompt = Bio.splash.prompts[0];
 
@@ -34,19 +33,13 @@ const Body = () => {
         headline={Bio.splash.title}
         blurb={Bio.splash.subtitle}
       />
-      <div
-        className={Style.buttonHolder}
-        style={{ filter: `opacity(${opacity})` }}
-      >
-        <LabeledButton
-          icon="down-arrow"
-          onClick={() => clickToScroll()}
-        >
+      <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
+        <LabeledButton icon="down-arrow" onClick={() => clickToScroll()}>
           {prompt}
         </LabeledButton>
       </div>
     </>
-  )
-}
+  );
+};
 
 export { Body };

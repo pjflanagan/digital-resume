@@ -1,4 +1,4 @@
-import { Color, Point } from "src/helpers";
+import { Color, Point } from 'src/helpers';
 
 class View {
   ctx: CanvasRenderingContext2D;
@@ -10,7 +10,7 @@ class View {
   animationReq: number | undefined;
 
   constructor(canvasElem: HTMLCanvasElement) {
-    this.ctx = canvasElem.getContext("2d", { alpha: false }) as CanvasRenderingContext2D;
+    this.ctx = canvasElem.getContext('2d', { alpha: false }) as CanvasRenderingContext2D;
 
     // sizing (window)
     this.W = window.innerWidth;
@@ -76,7 +76,7 @@ class Space {
   drawBackground() {
     this.ctx.beginPath();
     this.ctx.rect(0, 0, this.canvas.W, this.canvas.H);
-    this.ctx.fillStyle = "#06191f";
+    this.ctx.fillStyle = '#06191f';
     this.ctx.fill();
   }
 }

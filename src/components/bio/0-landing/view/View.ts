@@ -236,8 +236,7 @@ abstract class Body {
 
     // run the setup function defined in the child class
     this.setup();
-    this.prop.layerStrength =
-      Random.dec(0.9, 1.1) * (18 / (0.1 * layer + 0.8) + 4); // TODO: use constant or formula
+    this.prop.layerStrength = Random.dec(0.9, 1.1) * (18 / (0.1 * layer + 0.8) + 4); // TODO: use constant or formula
 
     // changing position initial state
     this.state.pos = { x: this.prop.center.x, y: this.prop.center.y };
@@ -258,10 +257,7 @@ abstract class Body {
     // color is relative to the actual center
     this.state.colorPos = {
       angle: Random.dec(-Math.PI, Math.PI),
-      distanceFromCenter: Random.prop2(
-        BODY.COLOR.DISTANCE_FROM_CENTER,
-        this.prop.radius
-      ),
+      distanceFromCenter: Random.prop2(BODY.COLOR.DISTANCE_FROM_CENTER, this.prop.radius),
       smallRadius: 0,
     };
   }
@@ -320,17 +316,14 @@ abstract class Body {
 
   moveColors() {
     const { colorProp, radius } = this.prop;
-    this.state.colorPos.angle =
-      this.state.colorPos.angle + colorProp.angularVelocity;
-    const oscillationAngle =
-      Math.PI * colorProp.resizeFrequency * this.state.colorPos.angle;
+    this.state.colorPos.angle = this.state.colorPos.angle + colorProp.angularVelocity;
+    const oscillationAngle = Math.PI * colorProp.resizeFrequency * this.state.colorPos.angle;
     const oscillation = 0.5 * Math.sin(oscillationAngle) + 1;
     const min = radius * BODY.COLOR.DISTANCE_FROM_CENTER.min;
     const max = radius * BODY.COLOR.DISTANCE_FROM_CENTER.max;
     this.state.colorPos.smallRadius = min + oscillation * max;
     this.state.colorPos.distanceFromCenter =
-      radius * (1 - BODY.COLOR.DISTANCE_FROM_CENTER.min) -
-      this.state.colorPos.smallRadius;
+      radius * (1 - BODY.COLOR.DISTANCE_FROM_CENTER.min) - this.state.colorPos.smallRadius;
   }
 
   drawSpectrum() {
@@ -367,15 +360,11 @@ abstract class Body {
     );
     grd.addColorStop(
       0,
-      colorSpectrum[colorSpectrum.length - 1].toStringA(
-        BODY.COLOR.OVERLAY_OPACITY_INSIDE
-      )
+      colorSpectrum[colorSpectrum.length - 1].toStringA(BODY.COLOR.OVERLAY_OPACITY_INSIDE)
     );
     grd.addColorStop(
       1,
-      colorSpectrum[colorSpectrum.length - 1].toStringA(
-        BODY.COLOR.OVERLAY_OPACITY_OUTSIDE
-      )
+      colorSpectrum[colorSpectrum.length - 1].toStringA(BODY.COLOR.OVERLAY_OPACITY_OUTSIDE)
     );
     this.ctx.beginPath();
     this.ctx.arc(pos.x, pos.y, radius, 0, TWO_PI, false);
@@ -388,10 +377,7 @@ abstract class Body {
     const { x, y } = this.state.pos;
     const grd = this.ctx.createLinearGradient(x, y - radius, x, y + radius);
     grd.addColorStop(0, colorSpectrum[0].toStringA(BODY.TRAIL.OPACITY_OUTSIDE));
-    grd.addColorStop(
-      BODY.TRAIL.COLOR_STOP,
-      colorSpectrum[0].toStringA(BODY.TRAIL.OPACITY_INSIDE)
-    );
+    grd.addColorStop(BODY.TRAIL.COLOR_STOP, colorSpectrum[0].toStringA(BODY.TRAIL.OPACITY_INSIDE));
     grd.addColorStop(
       1 - BODY.TRAIL.COLOR_STOP,
       colorSpectrum[0].toStringA(BODY.TRAIL.OPACITY_INSIDE)
@@ -486,8 +472,7 @@ class Planet extends Body {
     const scrollOffsetAngle = (-Math.PI / 6) * scrollPercent;
     this.state.ringAngleInc += PLANET.RING.RATE;
     const wiggleAngle = Math.sin(this.state.ringAngleInc) * 0.2;
-    this.state.ringAngle =
-      wiggleAngle + scrollOffsetAngle + this.prop.ringAngleCenter;
+    this.state.ringAngle = wiggleAngle + scrollOffsetAngle + this.prop.ringAngleCenter;
   }
 
   draw() {
@@ -558,9 +543,7 @@ class Moon extends Body {
     // unchanging props
     const radius = Random.prop2(MOON_RADIUS, shorterSide);
     const minX =
-      this.layer > VIEW_SHIP_LAYER
-        ? SHIP_CENTER.x * W + radius * 3
-        : MOON_CENTER.x.min * W;
+      this.layer > VIEW_SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : MOON_CENTER.x.min * W;
     this.prop = {
       ...this.prop,
       center: {
@@ -703,8 +686,7 @@ class Ship extends Body {
     const { scrollPercent, W, H } = this.canvas;
     const { exhaustLength } = this.prop;
 
-    const lineLenX =
-      -exhaustLength * (scrollPercent - SHIP_BACKPEDAL) + exhaustLength;
+    const lineLenX = -exhaustLength * (scrollPercent - SHIP_BACKPEDAL) + exhaustLength;
     const inverseLenX = 2 * (exhaustLength - lineLenX);
     const exhaustEnd = Math.pow(scrollPercent, 2) * exhaustLength;
     const width = 5; // (scrollPercent > 0.9) ? (scrollPercent - 0.9) * H / 2 + 5 : 5
@@ -718,12 +700,7 @@ class Ship extends Body {
     this.ctx.beginPath();
     this.ctx.moveTo(pos.x, pos.y - width);
     this.ctx.lineTo(pos.x + lineLenX, pos.y - width);
-    this.ctx.quadraticCurveTo(
-      W - inverseLenX,
-      pos.y - quadraticPointWidth,
-      W - exhaustEnd,
-      0
-    );
+    this.ctx.quadraticCurveTo(W - inverseLenX, pos.y - quadraticPointWidth, W - exhaustEnd, 0);
     this.ctx.lineTo(2 * W, 0);
     this.ctx.lineTo(2 * W, H);
     this.ctx.lineTo(W - exhaustEnd, H);

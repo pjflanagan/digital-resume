@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import { CircleButtonAction, CircleButtonLinked } from './CircleButton';
 import { LabeledButtonAction, LabeledButtonLinked } from './LabeledButton';

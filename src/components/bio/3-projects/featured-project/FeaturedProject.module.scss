@@ -1,4 +1,4 @@
-@import "/src/theme/variables";
+@import '/src/theme/variables';
 
 .featured-project {
   width: calc(100% - 8px);
@@ -62,8 +62,12 @@
       max-width: 560px;
       transform: translate(0, 0);
       filter: opacity(1);
-      transition: transform 0.4s, filter 0.4s;
-      -webkit-transition: transform 0.4s, filter 0.4s;
+      transition:
+        transform 0.4s,
+        filter 0.4s;
+      -webkit-transition:
+        transform 0.4s,
+        filter 0.4s;
 
       .project-image {
         width: calc(100% - 20px);
@@ -86,8 +90,12 @@
       width: 516px;
       padding: 28px 26px;
       filter: opacity(1);
-      transition: transform 0.4s, filter 0.4s;
-      -webkit-transition: transform 0.4s, filter 0.4s;
+      transition:
+        transform 0.4s,
+        filter 0.4s;
+      -webkit-transition:
+        transform 0.4s,
+        filter 0.4s;
 
       .tech-stack-holder {
         display: flex;

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import * as Style from "./Wave.module.scss";
+import * as Style from './Wave.module.scss';
 
 const MAX_HEIGHT = 62;
 const FLUX = 12;
@@ -10,18 +10,16 @@ const FRAME_RATE = 64;
 const MAX_OFFSET = 40;
 
 const getNextHeight = (pos: number): number => {
-  return Math.abs(
-    MAX_HEIGHT * Math.sin(-pos) + (Math.random() * FLUX) / 2 - FLUX
-  );
+  return Math.abs(MAX_HEIGHT * Math.sin(-pos) + (Math.random() * FLUX) / 2 - FLUX);
 };
 
 const getOffset = (x: number): number => {
   return Math.sin(x) * MAX_OFFSET;
-}
+};
 
 const incrementPos = (pos: number): number => {
   return pos + SPEED;
-}
+};
 
 type WaveState = {
   pos: number;
@@ -37,9 +35,9 @@ const initState = (count: number): WaveState => {
   }
   return {
     pos,
-    wave
+    wave,
   };
-}
+};
 
 type WaveProps = {
   on: boolean;
@@ -77,7 +75,7 @@ class Wave extends React.Component<WaveProps, WaveState> {
     wave.unshift(getNextHeight(newPos));
     this.setState({
       pos: newPos,
-      wave
+      wave,
     });
   }
 
@@ -92,7 +90,7 @@ class Wave extends React.Component<WaveProps, WaveState> {
             style={{
               height: `${height}%`,
               transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px))`,
-              margin: `0 ${GAP}px`
+              margin: `0 ${GAP}px`,
             }}
           />
         ))}

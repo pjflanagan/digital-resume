@@ -1,8 +1,7 @@
-
-const DESCRIPTION = "Full-stack Web Developer";
-const AUTHOR = "Peter James Flanagan";
-const HANDLE = "@peterjflan";
-const ROOT = "https://pjflanagan.me";
+const DESCRIPTION = 'Full-stack Web Developer';
+const AUTHOR = 'Peter James Flanagan';
+const HANDLE = '@peterjflan';
+const ROOT = 'https://pjflanagan.me';
 const IMG = `${ROOT}/img/social/social.png`;
 const IMG_TW = `${ROOT}/img/social/social-tw.png`;
 const FAVICON_32 = `${ROOT}/img/icon/favicon-32x32.png`;

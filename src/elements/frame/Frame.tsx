@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import * as Style from "./Frame.module.scss";
+import * as Style from './Frame.module.scss';
 
-const getFrameTypeClassName = (type: string): string => (
-  {
+const getFrameTypeClassName = (type: string): string =>
+  ({
     'top-left': Style.topLeft,
     'top-right': Style.topRight,
     'bottom-left': Style.bottomLeft,
-    'bottom-right': Style.bottomRight
-  }[type] || Style[type]
-);
+    'bottom-right': Style.bottomRight,
+  })[type] || Style[type];
 
 type FrameProps = {
   type: string;
@@ -18,12 +17,7 @@ type FrameProps = {
 
 // Frame takes a type, and optional styles
 const Frame = ({ type, style }: FrameProps) => {
-  return (
-    <div
-      className={`${Style.frame} ${getFrameTypeClassName(type)}`}
-      style={style}
-    ></div>
-  );
+  return <div className={`${Style.frame} ${getFrameTypeClassName(type)}`} style={style}></div>;
 };
 
 type FrameHolderProps = {

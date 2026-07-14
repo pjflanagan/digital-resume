@@ -1,16 +1,21 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from 'clsx';
+import React from 'react';
 
-import { Bio } from "src/content";
-import type { FormPlaceholder } from "src/content";
+import { Bio } from 'src/content';
+import type { FormPlaceholder } from 'src/content';
 import {
   LabeledButton,
-  TextAccent, TextTitle, Text,
-  Form, FormText, FormMessage, FormButton
-} from "src/elements";
-import { encode } from "src/helpers";
+  TextAccent,
+  TextTitle,
+  Text,
+  Form,
+  FormText,
+  FormMessage,
+  FormButton,
+} from 'src/elements';
+import { encode } from 'src/helpers';
 
-import * as Style from "./Card.module.scss";
+import * as Style from './Card.module.scss';
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
@@ -31,32 +36,31 @@ const validate = ({ name, email, message }: FormFields): [boolean, FieldError[]]
   if (name.length === 0) {
     errorMessages.push({
       field: 'name',
-      message: "Let me know your name."
+      message: 'Let me know your name.',
     });
   }
 
   if (!EMAIL_REGEX.test(email)) {
     errorMessages.push({
       field: 'email',
-      message: "This email looks invalid."
+      message: 'This email looks invalid.',
     });
   }
 
   if (message.length === 0) {
     errorMessages.push({
       field: 'message',
-      message: "Be sure to leave a note."
+      message: 'Be sure to leave a note.',
     });
   }
 
-  return [
-    errorMessages.length === 0,
-    errorMessages
-  ];
+  return [errorMessages.length === 0, errorMessages];
 };
 
 const pickPlaceholder = (): FormPlaceholder => {
-  return Bio.contact.formPlaceholders[Math.floor(Math.random() * Bio.contact.formPlaceholders.length)];
+  return Bio.contact.formPlaceholders[
+    Math.floor(Math.random() * Bio.contact.formPlaceholders.length)
+  ];
 };
 
 type CardProps = {
@@ -77,12 +81,12 @@ class Card extends React.Component<CardProps, CardState> {
 
     this.state = {
       errorMessages: [],
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       isLoading: false,
       isSubmitted: false,
-      placeholders: pickPlaceholder()
+      placeholders: pickPlaceholder(),
     };
 
     this.onChange = this.onChange.bind(this);
@@ -95,10 +99,10 @@ class Card extends React.Component<CardProps, CardState> {
 
   // on a field change
   onChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, field: string) {
-    const errorMessages = this.state.errorMessages.filter(error => error.field !== field);
+    const errorMessages = this.state.errorMessages.filter((error) => error.field !== field);
     this.setState({
       [e.target.name]: e.target.value,
-      errorMessages
+      errorMessages,
     } as unknown as CardState);
   }
 
@@ -116,18 +120,22 @@ class Card extends React.Component<CardProps, CardState> {
   fetch() {
     const { name, email, message } = this.state;
     this.setState({
-      isLoading: true
+      isLoading: true,
     });
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message })
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', name, email, message }),
     })
       .then(() => this.success())
-      .catch(error => this.error([{
-        field: "submit",
-        message: String(error)
-      }]));
+      .catch((error) =>
+        this.error([
+          {
+            field: 'submit',
+            message: String(error),
+          },
+        ])
+      );
   }
 
   // error
@@ -142,19 +150,19 @@ class Card extends React.Component<CardProps, CardState> {
   success() {
     this.setState({
       errorMessages: [],
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       placeholders: {
-        name: "",
-        email: "",
-        message: "",
-      }
+        name: '',
+        email: '',
+        message: '',
+      },
     });
     setTimeout(() => {
       this.setState({
         isLoading: false,
-        isSubmitted: true
+        isSubmitted: true,
       });
     }, 600);
   }
@@ -163,25 +171,18 @@ class Card extends React.Component<CardProps, CardState> {
   findError(field: string): string {
     const { errorMessages } = this.state;
     if (!errorMessages || errorMessages.length === 0) {
-      return "";
+      return '';
     }
-    const error = errorMessages.find(error => error.field === field);
-    return error ? error.message : "";
+    const error = errorMessages.find((error) => error.field === field);
+    return error ? error.message : '';
   }
 
   render() {
-    const {
-      name,
-      email,
-      message,
-      isSubmitted,
-      isLoading,
-      placeholders
-    } = this.state;
+    const { name, email, message, isSubmitted, isLoading, placeholders } = this.state;
     const { setIsWaveOn, isOpen } = this.props;
 
     const className = clsx(Style.card, {
-      [Style.isSubmitted]: isSubmitted || !isOpen
+      [Style.isSubmitted]: isSubmitted || !isOpen,
     });
 
     return (
@@ -193,10 +194,7 @@ class Card extends React.Component<CardProps, CardState> {
             <Text>{Bio.contact.text}</Text>
             <div className={Style.linkHolder}>
               {Bio.contact.links.map((link, i) => (
-                <div
-                  className={Style.buttonHolder}
-                  key={i}
-                >
+                <div className={Style.buttonHolder} key={i}>
                   <LabeledButton
                     icon={link.icon}
                     href={link.href}
@@ -211,11 +209,7 @@ class Card extends React.Component<CardProps, CardState> {
           </div>
           <div className={Style.sideRight}>
             {/* TODO: the submit error (findError('submit')) should render at the bottom of the form */}
-            <Form
-              onSubmit={this.onSubmit}
-              name="contact"
-              isLoading={isLoading}
-            >
+            <Form onSubmit={this.onSubmit} name="contact" isLoading={isLoading}>
               <FormText
                 label="Name"
                 placeholder={placeholders.name}

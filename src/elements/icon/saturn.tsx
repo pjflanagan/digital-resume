@@ -1,4 +1,3 @@
-
 export default (
   <svg
     version="1.1"

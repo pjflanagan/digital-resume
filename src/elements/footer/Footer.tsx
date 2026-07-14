@@ -1,19 +1,16 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { Text } from "src/elements";
-import type { LinkText } from "src/content/types";
+import { Text } from 'src/elements';
+import type { LinkText } from 'src/content/types';
 
-import * as Style from "./Footer.module.scss";
+import * as Style from './Footer.module.scss';
 
 type FooterProps = {
   className?: string;
   text: LinkText[];
 };
 
-const Footer = ({
-  className: classNameProp,
-  text
-}: FooterProps) => {
+const Footer = ({ className: classNameProp, text }: FooterProps) => {
   const className = clsx(Style.footer, classNameProp);
   return (
     <div className={className}>

@@ -1,8 +1,8 @@
-import React from "react";
-import { SVGIcon } from "src/elements";
+import React from 'react';
+import { SVGIcon } from 'src/elements';
 
-import * as Style from "./Button.module.scss";
-import clsx from "clsx";
+import * as Style from './Button.module.scss';
+import clsx from 'clsx';
 
 type LabeledButtonFormProps = {
   children?: React.ReactNode;
@@ -15,7 +15,7 @@ const LabeledButtonForm = ({
   children,
   icon,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
 }: LabeledButtonFormProps) => {
   return (
     <button
@@ -50,8 +50,8 @@ const LabeledButtonLinked = ({
   href,
   sameWindow,
 }: LabeledButtonLinkedProps) => {
-  const rel = !sameWindow ? "noreferrer" : undefined;
-  const target = !sameWindow ? "_blank" : undefined;
+  const rel = !sameWindow ? 'noreferrer' : undefined;
+  const target = !sameWindow ? '_blank' : undefined;
 
   const className = clsx(Style.labeledButton, classNameProp);
 
@@ -80,12 +80,15 @@ type LabeledButtonActionProps = {
   onClick: () => void;
 };
 
-const LabeledButtonAction = ({ icon, children, onClick: propsOnClick }: LabeledButtonActionProps) => {
-
+const LabeledButtonAction = ({
+  icon,
+  children,
+  onClick: propsOnClick,
+}: LabeledButtonActionProps) => {
   const onClick = (e: React.SyntheticEvent) => {
     e.preventDefault();
     propsOnClick();
-  }
+  };
 
   return (
     <div
@@ -103,6 +106,6 @@ const LabeledButtonAction = ({ icon, children, onClick: propsOnClick }: LabeledB
       </div>
     </div>
   );
-}
+};
 
 export { LabeledButtonAction, LabeledButtonLinked, LabeledButtonForm };

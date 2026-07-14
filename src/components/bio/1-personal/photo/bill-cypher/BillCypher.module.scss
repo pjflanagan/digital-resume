@@ -32,17 +32,17 @@
 }
 
 @keyframes bill-hat {
-  0%{
-    opacity: .72;
+  0% {
+    opacity: 0.72;
   }
   49% {
-    opacity: .6;
+    opacity: 0.6;
   }
   50% {
-    opacity: .2;
+    opacity: 0.2;
   }
   99% {
-    opacity: .2;
+    opacity: 0.2;
   }
 }
 
@@ -70,7 +70,7 @@
       .triangle {
         width: 1px;
         height: 12px;
-        background: #FFF;
+        background: #fff;
         position: absolute;
 
         &.top-left {

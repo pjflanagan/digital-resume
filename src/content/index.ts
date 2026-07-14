@@ -20,10 +20,17 @@ type FindImageProps = {
   image: string;
 };
 
-const FindImage = ({ data: { allFile: { edges } }, image }: FindImageProps): ImageNode | undefined => {
+const FindImage = ({
+  data: {
+    allFile: { edges },
+  },
+  image,
+}: FindImageProps): ImageNode | undefined => {
   const imageEdge = edges.find(({ node }) => node.base === image);
   if (!imageEdge) {
-    console.error(`No image found for ${image}. Try checking the name and dragging it in and out of the folder to reset Gatsby.`);
+    console.error(
+      `No image found for ${image}. Try checking the name and dragging it in and out of the folder to reset Gatsby.`
+    );
     return;
   }
   return imageEdge.node;

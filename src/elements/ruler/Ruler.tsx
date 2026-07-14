@@ -1,14 +1,12 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import * as Style from "./Ruler.module.scss";
+import * as Style from './Ruler.module.scss';
 
 type RulerProps = {
   className?: string;
 };
 
-const Ruler = ({
-  className: classNameProp
-}: RulerProps) => (
+const Ruler = ({ className: classNameProp }: RulerProps) => (
   <div className={Style.rulerHolder}>
     <div className={clsx(Style.ruler, classNameProp)}>
       {[...Array(10)].map((e, i) => (

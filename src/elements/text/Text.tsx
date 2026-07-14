@@ -1,11 +1,11 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-import type { ContentLink } from "src/content/types";
+import type { ContentLink } from 'src/content/types';
 
-import { ParseTextForLinks, LinkCallback } from "./ParseTextForLinks";
+import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
 
-import * as Style from "./Text.module.scss";
+import * as Style from './Text.module.scss';
 
 type HeadingProps = {
   className?: string;
@@ -51,25 +51,10 @@ type TextProps = {
 };
 
 // Text
-const Text = ({
-  dangerouslySetInnerHTML,
-  className,
-  children,
-  links,
-  callback
-}: TextProps) => {
+const Text = ({ dangerouslySetInnerHTML, className, children, links, callback }: TextProps) => {
   if (dangerouslySetInnerHTML)
-    return (
-      <p
-        className={className}
-        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-      />
-    );
-  return (
-    <p className={className}>
-      {ParseTextForLinks(children || '', links, callback)}
-    </p>
-  );
+    return <p className={className} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
+  return <p className={className}>{ParseTextForLinks(children || '', links, callback)}</p>;
 };
 
 type TextPageCenterProps = {
@@ -83,7 +68,7 @@ const TextPageCenter = ({
   className: classNameProp,
   headline,
   blurb,
-  style
+  style,
 }: TextPageCenterProps) => (
   <div className={clsx(Style.textPageCenter, classNameProp)} style={style}>
     <div className={Style.textHeadline}>{headline}</div>
@@ -91,10 +76,10 @@ const TextPageCenter = ({
   </div>
 );
 
-export { ParseTextForLinks } from "./ParseTextForLinks";
-export { TextType } from "./TextType";
-export { TextInlineLink } from "./TextInlineLink";
-export { TextLinkedHeader } from "./TextLinkedHeader";
+export { ParseTextForLinks } from './ParseTextForLinks';
+export { TextType } from './TextType';
+export { TextInlineLink } from './TextInlineLink';
+export { TextLinkedHeader } from './TextLinkedHeader';
 export {
   TextAccent,
   TextTitle,
@@ -103,5 +88,5 @@ export {
   TextSubHeading,
   TextPageCenter,
   Text,
-  TextTag
+  TextTag,
 };

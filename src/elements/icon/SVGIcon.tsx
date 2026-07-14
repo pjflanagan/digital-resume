@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import LINKEDIN_ICON from './linkedin';
 import EMAIL_ICON from './email';

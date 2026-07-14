@@ -1,14 +1,14 @@
-import { useRef, useState, useEffect } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { useRef, useState, useEffect } from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { FrameHolder } from "src/elements";
-import { FindImage } from "src/content";
-import type { ImageQueryData } from "src/content";
+import { FrameHolder } from 'src/elements';
+import { FindImage } from 'src/content';
+import type { ImageQueryData } from 'src/content';
 import { useReveal } from 'src/hooks';
 
 // TODO: import { BillCypher } from "./bill-cypher"; ?
-import * as Style from "./Photo.module.scss";
-import clsx from "clsx";
+import * as Style from './Photo.module.scss';
+import clsx from 'clsx';
 
 type PhotoProps = {
   data: ImageQueryData;
@@ -16,7 +16,6 @@ type PhotoProps = {
 };
 
 const Photo = ({ data, photo }: PhotoProps) => {
-
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 280 });
   const [isRevealed, setIsRevealed] = useState(true);
@@ -41,13 +40,13 @@ const Photo = ({ data, photo }: PhotoProps) => {
       {imageData && (
         <GatsbyImage
           image={imageData.childImageSharp.gatsbyImageData}
-          alt={"Peter James Flanagan Headshot"}
-          className={Style.image} />
+          alt={'Peter James Flanagan Headshot'}
+          className={Style.image}
+        />
       )}
       <FrameHolder className={className} />
     </div>
   );
-}
-
+};
 
 export { Photo };

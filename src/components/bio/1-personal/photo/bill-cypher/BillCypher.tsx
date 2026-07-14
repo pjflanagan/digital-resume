@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import * as Style from './BillCypher.module.scss'
+import * as Style from './BillCypher.module.scss';
 
 type BillPosition = {
   top: number;
@@ -13,9 +13,11 @@ const randomPosition = (): BillPosition => {
   const left = -40 + Math.random() * 80;
   const deg = Math.random() * 359;
   return {
-    top, left, deg
-  }
-}
+    top,
+    left,
+    deg,
+  };
+};
 
 const randomInterval = () => Math.random() * 2800 + 2800;
 
@@ -26,7 +28,6 @@ class BillCypher extends React.Component<object, BillPosition> {
 
     this.changePosition = this.changePosition.bind(this);
   }
-
 
   componentDidMount() {
     this.changePosition();
@@ -40,10 +41,13 @@ class BillCypher extends React.Component<object, BillPosition> {
   render() {
     const { top, left, deg } = this.state;
     return (
-      <div className={Style.bill} style={{
-        margin: `${top}% ${left}%`,
-        transform: `rotate(${deg}deg)`
-      }}>
+      <div
+        className={Style.bill}
+        style={{
+          margin: `${top}% ${left}%`,
+          transform: `rotate(${deg}deg)`,
+        }}
+      >
         <div className={Style.billBody}>
           <div className={Style.hat}></div>
           <div className={`${Style.triangle} ${Style.topLeft}`}></div>

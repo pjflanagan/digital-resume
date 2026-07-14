@@ -1,18 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 import * as Scroll from 'react-scroll';
 
-import type { ImageQueryData } from "src/content";
+import type { ImageQueryData } from 'src/content';
 
-import {
-  CurveTopTop,
-  CurveTopBottom,
-  CurveBottomTop,
-  CurveBottomBottom,
-} from "./curves/Curves";
-import { Photo } from "./photo/Photo";
-import { Body } from "./body/Body";
+import { CurveTopTop, CurveTopBottom, CurveBottomTop, CurveBottomBottom } from './curves/Curves';
+import { Photo } from './photo/Photo';
+import { Body } from './body/Body';
 
-import * as Style from "./SlidePersonal.module.scss";
+import * as Style from './SlidePersonal.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
@@ -37,6 +32,6 @@ const SlidePersonal = ({ data }: SlidePersonalProps) => {
       <CurveBottomBottom />
     </ScrollComponent>
   );
-}
+};
 
 export { SlidePersonal };

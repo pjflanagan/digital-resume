@@ -1,7 +1,7 @@
-import React from "react";
-import { SVGIcon } from "src/elements";
+import React from 'react';
+import { SVGIcon } from 'src/elements';
 
-import * as Style from "./Button.module.scss";
+import * as Style from './Button.module.scss';
 
 type CircleButtonLinkedProps = {
   icon: string;
@@ -18,8 +18,8 @@ const CircleButtonLinked = ({
   href,
   sameWindow,
 }: CircleButtonLinkedProps) => {
-  const rel = !sameWindow ? "noreferrer" : undefined;
-  const target = !sameWindow ? "_blank" : undefined;
+  const rel = !sameWindow ? 'noreferrer' : undefined;
+  const target = !sameWindow ? '_blank' : undefined;
   return (
     <a
       target={target}

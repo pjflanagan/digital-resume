@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { useWindowScroll } from "react-use";
+import { FC } from 'react';
+import { useWindowScroll } from 'react-use';
 
 import { Canvas } from 'src/elements';
 
-import { View } from "./view/View";
-import { Body } from "./body/Body";
-import * as Style from "./SlideLanding.module.scss";
+import { View } from './view/View';
+import { Body } from './body/Body';
+import * as Style from './SlideLanding.module.scss';
 
 // SlideLanding
 
@@ -24,7 +24,6 @@ const SlideLanding: FC = () => {
       />
     </div>
   );
-}
-
+};
 
 export { SlideLanding };

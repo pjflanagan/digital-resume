@@ -15,17 +15,9 @@ type FormTextProps = {
   error?: string;
 };
 
-const FormText = ({
-  type,
-  name,
-  label,
-  value,
-  onChange,
-  placeholder,
-  error
-}: FormTextProps) => {
+const FormText = ({ type, name, label, value, onChange, placeholder, error }: FormTextProps) => {
   const className = clsx(Style.formField, {
-    [Style.error]: !!error
+    [Style.error]: !!error,
   });
   return (
     <div>
@@ -45,7 +37,7 @@ const FormText = ({
       </div>
     </div>
   );
-}
+};
 
 type FormMessageProps = {
   value: string;
@@ -56,17 +48,10 @@ type FormMessageProps = {
   error?: string;
 };
 
-const FormMessage = ({
-  value,
-  name,
-  label,
-  onChange,
-  placeholder,
-  error
-}: FormMessageProps) => {
+const FormMessage = ({ value, name, label, onChange, placeholder, error }: FormMessageProps) => {
   const className = clsx(Style.formField, {
-    [Style.error]: !!error
-  })
+    [Style.error]: !!error,
+  });
 
   return (
     <div>
@@ -79,14 +64,13 @@ const FormMessage = ({
         onChange={onChange}
         placeholder={placeholder}
         className={className}
-        rows={4}>
-      </textarea>
+        rows={4}
+      ></textarea>
       <div className={Style.errorHolder}>
         <TextTag>{error}</TextTag>
       </div>
     </div>
   );
-
 };
 
-export { FormText, FormMessage }
+export { FormText, FormMessage };

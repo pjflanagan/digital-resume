@@ -1,9 +1,8 @@
+import { LabeledButton, Canvas, Cover, TextPageCenter } from 'src/elements';
+import Data404 from 'src/content/404';
 
-import { LabeledButton, Canvas, Cover, TextPageCenter } from "src/elements";
-import Data404 from "src/content/404";
-
-import { View } from "./view/View";
-import * as Style from "./Page404.module.scss";
+import { View } from './view/View';
+import * as Style from './Page404.module.scss';
 
 const Page404Component = () => {
   return (
@@ -25,6 +24,6 @@ const Page404Component = () => {
       {/* <Footer /> */}
     </div>
   );
-}
+};
 
 export { Page404Component };

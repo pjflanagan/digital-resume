@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-import * as Style from "./Text.module.scss";
+import * as Style from './Text.module.scss';
 
 type TextInlineLinkProps = {
   href?: string;
@@ -21,16 +21,11 @@ const TextInlineLink = ({
   onFocus,
   children,
   samePage,
-  onClick
+  onClick,
 }: TextInlineLinkProps) => {
-  const className = clsx(
-    Style.textInlineLink,
-    Style.clickable,
-    classNameProp,
-    {
-      [Style.clickable]: !!onClick
-    }
-  );
+  const className = clsx(Style.textInlineLink, Style.clickable, classNameProp, {
+    [Style.clickable]: !!onClick,
+  });
 
   if (!href) {
     return (
@@ -61,6 +56,4 @@ const TextInlineLink = ({
   );
 };
 
-export {
-  TextInlineLink,
-};
+export { TextInlineLink };

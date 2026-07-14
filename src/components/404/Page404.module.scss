@@ -1,4 +1,4 @@
-@import "src/theme/variables";
+@import 'src/theme/variables';
 
 .content {
   width: 100%;
@@ -15,11 +15,8 @@
     width: 801px;
     position: absolute;
     background-size: 40px 40px;
-    background-image: linear-gradient(
-        to right,
-        $accentYellow 1px,
-        transparent 1px
-      ),
+    background-image:
+      linear-gradient(to right, $accentYellow 1px, transparent 1px),
       linear-gradient(to bottom, $accentYellow 1px, transparent 1px);
     left: 50%;
     z-index: 1;

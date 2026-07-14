@@ -1,4 +1,4 @@
-@import "src/theme/variables";
+@import 'src/theme/variables';
 
 @keyframes noise {
   100% {
@@ -14,7 +14,7 @@
   position: fixed;
   z-index: 201;
   opacity: 0.6;
-  background: url("../../../static/img/bg/noise.png");
+  background: url('../../../static/img/bg/noise.png');
   top: 0;
 }
 

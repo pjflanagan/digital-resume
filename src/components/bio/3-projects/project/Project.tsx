@@ -1,10 +1,10 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { Text, TextLinkedHeader } from "src/elements";
-import { FindImage } from "src/content";
-import type { ImageQueryData, Project as ProjectContent } from "src/content";
+import { Text, TextLinkedHeader } from 'src/elements';
+import { FindImage } from 'src/content';
+import type { ImageQueryData, Project as ProjectContent } from 'src/content';
 
-import * as Style from "./Project.module.scss";
+import * as Style from './Project.module.scss';
 
 type ProjectProps = {
   data: ImageQueryData;
@@ -12,10 +12,7 @@ type ProjectProps = {
   name?: string;
 };
 
-const Project = ({
-  data,
-  project: { name, link, description, image },
-}: ProjectProps) => {
+const Project = ({ data, project: { name, link, description, image } }: ProjectProps) => {
   const imageData = FindImage({ image, data });
   return (
     <div className={Style.project}>
@@ -23,7 +20,8 @@ const Project = ({
         <GatsbyImage
           image={imageData.childImageSharp.gatsbyImageData}
           alt={name}
-          className={Style.projectImage} />
+          className={Style.projectImage}
+        />
       )}
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
@@ -31,6 +29,6 @@ const Project = ({
       </div>
     </div>
   );
-}
+};
 
 export { Project };

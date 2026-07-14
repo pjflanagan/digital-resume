@@ -9,11 +9,9 @@ type SplashProps = {
 const Splash = ({ isVisible }: SplashProps) => {
   const className = clsx(Style.splash, {
     [Style.visible]: isVisible,
-    [Style.hidden]: !isVisible
+    [Style.hidden]: !isVisible,
   });
-  return (
-    <div className={className} />
-  );
+  return <div className={className} />;
 };
 
 export { Splash };

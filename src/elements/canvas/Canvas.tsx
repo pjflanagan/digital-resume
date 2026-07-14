@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react';
 
 // https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
@@ -21,8 +21,8 @@ const Canvas = (props: CanvasProps) => {
     // eslint-disable-next-line
   }, []);
 
-  return <canvas className={props.className} style={props.style} ref={canvasRef} />
-}
+  return <canvas className={props.className} style={props.style} ref={canvasRef} />;
+};
 
 export { Canvas };
 export type { CanvasView };

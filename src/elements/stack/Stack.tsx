@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 
-import { useReveal } from "src/hooks";
+import { useReveal } from 'src/hooks';
 
-import * as Style from "./Stack.module.scss";
+import * as Style from './Stack.module.scss';
 
 const getNextLayerIndex = (currentLayer: number, offset: number, layersLength: number): number => {
   if (currentLayer + offset >= layersLength) {
@@ -42,22 +42,19 @@ const StackNav = ({ current, count, selectLayer }: StackNavProps) => {
       })}
     </div>
   );
-}
+};
 
 type StackProps = {
   children: React.ReactElement<{ name: string }>[];
 };
 
-const Stack = ({
-  children
-}: StackProps) => {
-
-  const ref = useRef<HTMLDivElement>(null)
+const Stack = ({ children }: StackProps) => {
+  const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 240 });
   const [currentLayer, setCurrentLayer] = useState(0);
 
   const className = clsx(Style.stack, {
-    [Style.preReveal]: !isRevealed
+    [Style.preReveal]: !isRevealed,
   });
 
   const getNextLayer = (offset: number) => {
@@ -67,7 +64,7 @@ const Stack = ({
       name: children[layerIndex].props.name,
     };
   };
-  const layers = [-1, 0, 1, 2, 3, 4].map(i => getNextLayer(i));
+  const layers = [-1, 0, 1, 2, 3, 4].map((i) => getNextLayer(i));
 
   return (
     <div className={className} ref={ref}>
@@ -86,13 +83,9 @@ const Stack = ({
           </div>
         ))}
       </div>
-      <StackNav
-        count={children.length}
-        current={currentLayer}
-        selectLayer={setCurrentLayer}
-      />
+      <StackNav count={children.length} current={currentLayer} selectLayer={setCurrentLayer} />
     </div>
   );
-}
+};
 
 export { Stack };

@@ -1,13 +1,13 @@
-import { useRef } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { useRef } from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { FrameHolder, Text, TextLinkedHeader, TextTag } from "src/elements";
-import { FindImage } from "src/content";
-import type { ImageQueryData, Project as ProjectContent } from "src/content";
-import { useReveal } from "src/hooks"
+import { FrameHolder, Text, TextLinkedHeader, TextTag } from 'src/elements';
+import { FindImage } from 'src/content';
+import type { ImageQueryData, Project as ProjectContent } from 'src/content';
+import { useReveal } from 'src/hooks';
 
-import * as Style from "./FeaturedProject.module.scss";
-import clsx from "clsx";
+import * as Style from './FeaturedProject.module.scss';
+import clsx from 'clsx';
 
 type FeaturedProjectProps = {
   data: ImageQueryData;
@@ -18,12 +18,11 @@ const FeaturedProject = ({
   data,
   project: { name, link, description, image, tech },
 }: FeaturedProjectProps) => {
-
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 220 });
 
   const className = clsx(Style.featuredProject, {
-    [Style.hidden]: !isRevealed
+    [Style.hidden]: !isRevealed,
   });
   const imageData = FindImage({ data, image });
 
@@ -34,7 +33,8 @@ const FeaturedProject = ({
           <GatsbyImage
             image={imageData.childImageSharp.gatsbyImageData}
             alt={name}
-            className={Style.projectImage} />
+            className={Style.projectImage}
+          />
         )}
       </FrameHolder>
       <div className={Style.info}>
@@ -48,7 +48,6 @@ const FeaturedProject = ({
       </div>
     </div>
   );
-}
-
+};
 
 export { FeaturedProject };

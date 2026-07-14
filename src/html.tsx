@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Structural HTML only — page metadata lives in src/components/Seo.tsx via
 // Gatsby's Head export API. This file exists to keep the custom viewport tag
@@ -27,11 +27,7 @@ export default function HTML(props: HTMLProps) {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <div
-          key={`body`}
-          id="___gatsby"
-          dangerouslySetInnerHTML={{ __html: props.body }}
-        />
+        <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>
     </html>

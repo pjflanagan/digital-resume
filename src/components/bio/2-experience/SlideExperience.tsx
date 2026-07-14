@@ -1,18 +1,12 @@
 import * as Scroll from 'react-scroll';
 
-import {
-  TextTitle,
-  TextSection,
-  TextAccent,
-  Text,
-  ShowMore,
-} from "src/elements";
-import { Bio } from "src/content";
-import type { ImageQueryData } from "src/content";
+import { TextTitle, TextSection, TextAccent, Text, ShowMore } from 'src/elements';
+import { Bio } from 'src/content';
+import type { ImageQueryData } from 'src/content';
 
-import { Org } from "./org/Org";
-import { Skills } from "./skills/Skills";
-import * as Style from "./SlideExperience.module.scss";
+import { Org } from './org/Org';
+import { Skills } from './skills/Skills';
+import * as Style from './SlideExperience.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
@@ -29,9 +23,7 @@ const SlideExperience = ({ data }: SlideExperienceProps) => {
       <div className={Style.slideBody}>
         <TextAccent>{Bio.experience.accent}</TextAccent>
         <TextTitle>{Bio.experience.title}</TextTitle>
-        <Text links={Bio.experience.link_text.links}>
-          {Bio.experience.link_text.text[0]}
-        </Text>
+        <Text links={Bio.experience.link_text.links}>{Bio.experience.link_text.text[0]}</Text>
         <TextSection>{Bio.experience.sections[0]}</TextSection>
         {Bio.experience.jobs.featured.map((job, i) => (
           <Org

@@ -9,14 +9,9 @@ type HeaderLinkProps = {
   href?: string;
   children: string;
   samePage?: boolean;
-}
+};
 
-const HeaderLink: FC<HeaderLinkProps> = ({
-  onClick,
-  href,
-  children,
-  samePage
-}) => {
+const HeaderLink: FC<HeaderLinkProps> = ({ onClick, href, children, samePage }) => {
   return (
     <div className={Style.linkHolder}>
       <TextInlineLink
@@ -32,7 +27,3 @@ const HeaderLink: FC<HeaderLinkProps> = ({
 };
 
 export { HeaderLink };
-
-
-
-

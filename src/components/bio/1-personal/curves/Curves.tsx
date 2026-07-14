@@ -1,8 +1,12 @@
-
 import * as Style from './Curves.module.scss';
 
 const CurveTopTop = () => (
-  <svg className={Style.topCurve} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={Style.topCurve}
+    viewBox="0 0 100 10"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="
       M 0 0
@@ -16,7 +20,12 @@ const CurveTopTop = () => (
 );
 
 const CurveTopBottom = () => (
-  <svg className={Style.topCurveBottom} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={Style.topCurveBottom}
+    viewBox="0 0 100 10"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="
       M 0 0
@@ -29,7 +38,12 @@ const CurveTopBottom = () => (
 );
 
 const CurveBottomTop = () => (
-  <svg className={Style.bottomCurveTop} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={Style.bottomCurveTop}
+    viewBox="0 0 100 10"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="
       M 0 10
@@ -39,10 +53,15 @@ const CurveBottomTop = () => (
       "
     />
   </svg>
-)
+);
 
 const CurveBottomBottom = () => (
-  <svg className={Style.bottomCurve} viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={Style.bottomCurve}
+    viewBox="0 0 100 10"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="
       M 0 10
@@ -55,9 +74,4 @@ const CurveBottomBottom = () => (
   </svg>
 );
 
-export {
-  CurveTopTop,
-  CurveTopBottom,
-  CurveBottomTop,
-  CurveBottomBottom
-};
+export { CurveTopTop, CurveTopBottom, CurveBottomTop, CurveBottomBottom };

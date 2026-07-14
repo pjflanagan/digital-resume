@@ -1,15 +1,14 @@
-import { useState, useRef } from "react";
+import { useState, useRef } from 'react';
 import { useReveal } from 'src/hooks';
-import * as Scroll from "react-scroll";
+import * as Scroll from 'react-scroll';
 
-import { Wave } from "./wave/Wave";
-import { Card } from "./card/Card";
-import * as Style from "./SlideContact.module.scss";
+import { Wave } from './wave/Wave';
+import { Card } from './card/Card';
+import * as Style from './SlideContact.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
 const SlideContact = () => {
-
   const [isWaveOn, setIsWaveOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 420 });
@@ -23,7 +22,7 @@ const SlideContact = () => {
         <Wave on={isWaveOn} />
       </div>
     </ScrollComponent>
-  )
-}
+  );
+};
 
 export { SlideContact };

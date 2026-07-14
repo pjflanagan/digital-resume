@@ -1,6 +1,4 @@
-@import "src/theme/variables";
-
-
+@import 'src/theme/variables';
 
 .title-container {
   z-index: 1;
@@ -12,11 +10,8 @@
   z-index: 2;
 }
 
-
 // md
 @media only screen and (min-width: $md) {
-
-
   .title-container {
     top: 50% !important;
   }
@@ -29,6 +24,4 @@
     margin-left: -140px;
     bottom: 40px;
   }
-
-
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // TODO: make this a wrapper for multiple Text objects so you can do a few in a row
 // Also text objects need thier own min height, instead of this setting the first character thing
@@ -20,7 +20,7 @@ class TextType extends React.Component<TextTypeProps, TextTypeState> {
     super(props);
 
     this.state = {
-      typed: "",
+      typed: '',
     };
 
     this.type = this.type.bind(this);
@@ -38,10 +38,7 @@ class TextType extends React.Component<TextTypeProps, TextTypeState> {
     if (!prevProps.revealed && this.props.revealed) {
       // if it was not revealed before but is now then reveal it
       this.type(0);
-    } else if (
-      this.props.revealed &&
-      prevProps.children !== this.props.children
-    ) {
+    } else if (this.props.revealed && prevProps.children !== this.props.children) {
       // if it is revealed and it's children text just changed, retype
       this.type(0);
     }
@@ -49,7 +46,7 @@ class TextType extends React.Component<TextTypeProps, TextTypeState> {
 
   type(nextCharIndex: number) {
     clearTimeout(this.timeoutID);
-    const typed = nextCharIndex === 0 ? "" : this.state.typed;
+    const typed = nextCharIndex === 0 ? '' : this.state.typed;
     const { children, speed } = this.props;
     this.setState({
       typed: typed + children[nextCharIndex],

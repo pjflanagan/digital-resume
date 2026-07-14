@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import * as Scroll from "react-scroll";
+import { useEffect, useState } from 'react';
+import * as Scroll from 'react-scroll';
 
-import { Bio } from "src/content";
-import type { ImageQueryData } from "src/content";
-import { Cover, Footer, Splash, Header, HeaderLink } from "src/elements";
+import { Bio } from 'src/content';
+import type { ImageQueryData } from 'src/content';
+import { Cover, Footer, Splash, Header, HeaderLink } from 'src/elements';
 
-import { SlideLanding } from "./0-landing/SlideLanding";
-import { SlidePersonal } from "./1-personal/SlidePersonal";
-import { SlideExperience } from "./2-experience/SlideExperience";
-import { SlideProjects } from "./3-projects/SlideProjects";
-import { SlideContact } from "./4-contact/SlideContact";
+import { SlideLanding } from './0-landing/SlideLanding';
+import { SlidePersonal } from './1-personal/SlidePersonal';
+import { SlideExperience } from './2-experience/SlideExperience';
+import { SlideProjects } from './3-projects/SlideProjects';
+import { SlideContact } from './4-contact/SlideContact';
 
-import * as Style from "./Bio.module.scss";
+import * as Style from './Bio.module.scss';
 
 const scroller = Scroll.scroller;
 
@@ -21,7 +21,7 @@ const clickToScroll = (slideName: string) => {
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page
   });
-}
+};
 
 type BioComponentProps = {
   data: ImageQueryData;
@@ -57,6 +57,6 @@ const BioComponent = ({ data }: BioComponentProps) => {
       </div>
     </div>
   );
-}
+};
 
 export { BioComponent };

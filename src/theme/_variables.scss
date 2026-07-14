@@ -33,36 +33,24 @@ $warnLightOpaque: #a0534854;
 
 // Fonts
 
-$ubuntu: "Ubuntu",
-sans-serif;
+$ubuntu: 'Ubuntu', sans-serif;
 
 // Shapes
 
-$polygon: polygon(0 0,
-  calc(100% - 20px) 0,
-  100% 20px,
-  100% 100%,
-  20px 100%,
-  0 calc(100% - 20px));
+$polygon: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 
-$polygonSmall: polygon(0 0,
+$polygonSmall: polygon(
+  0 0,
   calc(100% - 10px) 0,
   100% 10px,
   100% 100%,
   10px 100%,
-  0 calc(100% - 10px));
+  0 calc(100% - 10px)
+);
 
-$polygonRight: polygon(0 0,
-  calc(100% - 20px) 0,
-  100% 20px,
-  100% 100%,
-  0 100%);
+$polygonRight: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
 
-$polygonLeft: polygon(0 0,
-  100% 0,
-  100% 100%,
-  20px 100%,
-  0 calc(100% - 20px));
+$polygonLeft: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 
 // Sizes
 

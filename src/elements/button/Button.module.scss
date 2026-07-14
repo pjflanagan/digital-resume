@@ -1,6 +1,5 @@
 @import 'src/theme/variables';
 
-
 .button-reset {
   background: none;
   color: inherit;
@@ -34,7 +33,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -78,7 +77,6 @@
           transition: 0.2s;
         }
       }
-
     }
 
     .name {
