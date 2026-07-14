@@ -1,5 +1,4 @@
 import React from "react";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 import PropTypes from 'prop-types';
 import classNames from "classnames";
 
@@ -40,7 +39,7 @@ const TextInlineLink = ({
     );
   }
   return (
-    <OutboundLink
+    <a
       href={href}
       target={samePage ? '' : '_blank'}
       rel="noreferrer"
@@ -49,7 +48,7 @@ const TextInlineLink = ({
       onFocus={onFocus}
     >
       {children}
-    </OutboundLink>
+    </a>
   );
 };
 

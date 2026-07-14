@@ -7,7 +7,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-root-import',
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -27,22 +26,6 @@ module.exports = {
       options: {
         path: `${__dirname}/static/img/bio`,
         name: "bio",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Ubuntu\:300,500`
-        ],
-        display: 'swap'
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-66104630-1",
-        head: false,
       },
     },
   ]

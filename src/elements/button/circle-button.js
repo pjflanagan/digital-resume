@@ -1,7 +1,5 @@
 
 import React from "react";
-import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics";
-
 import { SVGIcon } from "src/elements";
 
 import * as Style from "./style.module.scss";
@@ -16,7 +14,7 @@ const CircleButtonLinked = ({
   const rel = !sameWindow ? "noreferrer" : undefined;
   const target = !sameWindow ? "_blank" : undefined;
   return (
-    <OutboundLink
+    <a
       target={target}
       rel={rel}
       href={href}
@@ -24,7 +22,7 @@ const CircleButtonLinked = ({
       onMouseLeave={onMouseLeave}
     >
       <SVGIcon icon={icon} />
-    </OutboundLink>
+    </a>
   );
 };
 
@@ -36,11 +34,6 @@ class CircleButtonAction extends React.Component {
 
   onClick(e) {
     e.preventDefault();
-    trackCustomEvent({
-      category: "button",
-      action: "click",
-      label: this.props.trackerLabel,
-    });
     this.props.onClick();
   }
 

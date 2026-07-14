@@ -1,6 +1,4 @@
 import React from 'react';
-import { trackCustomEvent } from "gatsby-plugin-google-analytics";
-
 import { LabeledButtonForm } from '../button/labeled-button';
 
 import * as Style from './style.module.scss';
@@ -14,11 +12,6 @@ class Form extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    trackCustomEvent({
-      category: "form",
-      action: "submit",
-      label: this.props.trackerLabel,
-    });
     this.props.onSubmit();
   }
 

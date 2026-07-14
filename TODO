@@ -1,7 +1,8 @@
 
 MAIN TODO: 
-- [ ] Rewrite this entirely in NextJS
-- [x] Install million JS
+- [ ] Use TS everywhere
+- [ ] replace some things with libraries that handle it for me
+
 - [x] figure out lfs
 - [~] Add typescript - change some elements and hooks to use it
 
@@ -10,6 +11,9 @@ MAIN TODO:
 - [ ] No accessing content in Elements (avatar, footer)
 - [ ] use `react-icon` instead of the ones I have
 
+REFERENCES
+- Cyberpunk 2077
+- Neon Genesis Evangelion
 
 GENERAL
 - [ ] Need some cyberpunk references, like an Arasaka logo, or the screen effects

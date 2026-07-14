@@ -1,6 +1,4 @@
 import React from "react";
-import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics";
-
 import { SVGIcon } from "src/elements";
 
 import * as Style from "./style.module.scss";
@@ -48,7 +46,7 @@ const LabeledButtonLinked = ({
 
   return (
     <div className={className}>
-      <OutboundLink
+      <a
         className={Style.holder}
         rel={rel}
         target={target}
@@ -60,20 +58,15 @@ const LabeledButtonLinked = ({
           <SVGIcon icon={icon} />
         </div>
         <div className={Style.name}>{children}</div>
-      </OutboundLink>
+      </a>
     </div>
   );
 };
 
-const LabeledButtonAction = ({ icon, children, onClick: propsOnClick, trackerLabel }) => {
+const LabeledButtonAction = ({ icon, children, onClick: propsOnClick }) => {
 
   const onClick = (e) => {
     e.preventDefault();
-    trackCustomEvent({
-      category: "button",
-      action: "click",
-      label: trackerLabel,
-    });
     propsOnClick();
   }
 

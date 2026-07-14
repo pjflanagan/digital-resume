@@ -1,7 +1,7 @@
 import React, { FC, useRef } from "react";
 import classNames from 'classnames';
 
-import { useReveal } from 'hooks';
+import { useReveal } from 'src/hooks';
 
 import * as Style from "./style.module.scss";
 
