@@ -3,27 +3,66 @@
 .header {
   display: flex;
   position: fixed;
-  margin: 10px;
+  top: 10px;
+  right: 10px;
   z-index: 99;
-  width: calc(100% - 20px);
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  padding: 2px 26px 2px 14px;
+  background: #112a3266;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  clip-path: $polygonSmall;
+  flex-wrap: wrap;
   justify-content: right;
 
   .link-holder {
-    margin: 10px 24px;
+    margin: 8px 16px;
     text-align: center;
 
     .header-link {
       cursor: pointer;
-      color: $accentYellow;
+      color: $accentCyan;
       text-decoration: none;
-      box-shadow: inset 0px -6px $accentYellowOpaque2;
+      box-shadow: inset 0px -6px $accentCyanOpaque2;
       font-family: $ubuntuMono;
-      font-size: 1em;
+      font-size: 0.85em;
       transition: 0.2s;
 
       &:hover {
-        color: $accentYellowHover;
-        box-shadow: inset 0px -10px $accentYellowOpaque;
+        color: $accentCyanHover;
+        box-shadow: inset 0px -10px $accentCyanOpaque;
+      }
+
+      &.external {
+        color: $accentYellow;
+        box-shadow: inset 0px -6px $accentYellowOpaque2;
+        position: relative;
+        padding-right: 14px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 2px;
+          right: 0;
+          width: 8px;
+          height: 8px;
+          background: $accentYellowOpaque2;
+          border-right: 1px solid $accentYellow;
+          border-top: 1px solid $accentYellow;
+          transition: 0.2s;
+          clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+
+        &:hover {
+          color: $accentYellowHover;
+          box-shadow: inset 0px -10px $accentYellowOpaque;
+
+          &:after {
+            background: $accentYellowOpaque;
+            transform: translate(2px, -2px);
+          }
+        }
       }
     }
   }

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import clsx from 'clsx';
 
 import { TextInlineLink } from '../text/Text';
 
@@ -12,13 +13,14 @@ type HeaderLinkProps = {
 };
 
 const HeaderLink: FC<HeaderLinkProps> = ({ onClick, href, children, samePage }) => {
+  const isExternal = !!href && !samePage;
   return (
     <div className={Style.linkHolder}>
       <TextInlineLink
         samePage={samePage}
         href={href}
         onClick={onClick}
-        className={Style.headerLink}
+        className={clsx(Style.headerLink, { [Style.external]: isExternal })}
       >
         {children}
       </TextInlineLink>

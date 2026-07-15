@@ -11,6 +11,7 @@ type ButtonCommonProps = {
   children?: React.ReactNode;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  className?: string;
 };
 
 type ActionProps = ButtonCommonProps & {
@@ -20,7 +21,6 @@ type ActionProps = ButtonCommonProps & {
 type LinkedProps = ButtonCommonProps & {
   href: string;
   sameWindow?: boolean;
-  className?: string;
 };
 
 type ButtonProps = ActionProps | LinkedProps;

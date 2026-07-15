@@ -19,33 +19,33 @@
         "key": "rollerblader",
         "href": "//instagram.com/roller.babe",
         "image": "personal-roller-blade.jpg",
-        "imageDescription": "London, United Kingdom, 51.504650, -0.020259",
+        "imageDescription": "London, United Kingdom\n51.504650, -0.020259",
         "text": "rollerblader"
       },
       {
         "key": "rockclimber",
         "image": "personal-rock-climbing.jpg",
-        "imageDescription": "Colorado Springs, Colorado, 38.850854, -104.874817",
+        "imageDescription": "Colorado Springs, Colorado\n38.850854, -104.874817",
         "text": "rock climber"
       },
       {
         "key": "scuba",
         "image": "personal-scuba.jpg",
-        "imageDescription": "Curaçao, 12.320089, -69.155978, -45 ft",
+        "imageDescription": "Curaçao\n12.320089, -69.155978\n-45 ft",
         "text": "SCUBA diver"
       },
       {
         "key": "mandarin_student",
         "href": "//flanny.app/study-mandarin",
         "image": "personal-mandarin.jpg",
-        "imageDescription": "Taipei, Taiwan, 25.058497, 121.509620",
+        "imageDescription": "Taipei, Taiwan\n25.058497, 121.509620",
         "greeting": "你好，我名字叫",
         "text": "Mandarin student"
       },
       {
         "key": "board_sport",
         "image": "personal-snowboarding.jpg",
-        "imageDescription": "Solitude, Utah, 40.619934, -111.604462, 10,488 ft + 6 ft",
+        "imageDescription": "Solitude, Utah\n40.619934, -111.604462, 10,488 ft\n+6 ft",
         "text": "board sport"
       }
     ],

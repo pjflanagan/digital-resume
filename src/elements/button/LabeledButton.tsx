@@ -79,13 +79,14 @@ type LabeledButtonActionProps = {
   icon: IconName;
   children?: React.ReactNode;
   onClick: () => void;
+  className?: string;
 };
 
-const LabeledButtonAction = ({ icon, children, onClick }: LabeledButtonActionProps) => {
+const LabeledButtonAction = ({ icon, children, onClick, className }: LabeledButtonActionProps) => {
   return (
     <button
       type="button"
-      className={clsx(Style.labeledButton, Style.buttonReset)}
+      className={clsx(Style.labeledButton, Style.buttonReset, className)}
       onClick={onClick}
     >
       <div className={Style.holder}>

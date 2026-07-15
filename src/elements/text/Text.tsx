@@ -38,7 +38,7 @@ const AnimatedTextAccent = ({ className, children }: HeadingProps) => {
   const text = typeof children === 'string' ? children : '';
   const { ref, displayText } = useScrambleText<HTMLHeadingElement>({ text });
   return (
-    <h5 ref={ref} className={className}>
+    <h5 ref={ref} className={className} style={{ whiteSpace: 'pre-line' }}>
       {displayText}
     </h5>
   );
@@ -50,7 +50,11 @@ const TextAccent = ({ className, children, animate, mono = true }: TextAccentPro
   if (animate) {
     return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;
   }
-  return <h5 className={classNames}>{children}</h5>;
+  return (
+    <h5 className={classNames} style={{ whiteSpace: 'pre-line' }}>
+      {children}
+    </h5>
+  );
 };
 
 // TextTag

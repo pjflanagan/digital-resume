@@ -111,4 +111,38 @@
       }
     }
   }
+
+  &.yellow {
+    &:after {
+      border: 1px solid $accentYellow;
+    }
+
+    .holder {
+      background: $accentYellow;
+
+      svg {
+        color: $backgroundDark;
+      }
+
+      .name {
+        color: $backgroundDark;
+        border-left: 1px solid $backgroundDark;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .holder {
+        background: $accentYellowHover;
+
+        svg {
+          color: $backgroundDark;
+        }
+
+        .name {
+          color: $backgroundDark;
+        }
+      }
+    }
+  }
 }

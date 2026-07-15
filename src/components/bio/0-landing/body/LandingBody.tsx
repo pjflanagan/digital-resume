@@ -4,6 +4,7 @@ import { useWindowScroll } from 'react-use';
 import { LabeledButton, TextPageCenter } from 'src/elements';
 import { useBio } from 'src/content';
 
+import * as ButtonStyle from 'src/elements/button/Button.module.scss';
 import * as Style from './LandingBody.module.scss';
 
 const scroller = Scroll.scroller;
@@ -37,7 +38,11 @@ const LandingBody = () => {
         animate
       />
       <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
-        <LabeledButton icon="rocket" onClick={() => clickToScroll()}>
+        <LabeledButton
+          icon="rocket"
+          onClick={() => clickToScroll()}
+          className={ButtonStyle.yellow}
+        >
           {prompt}
         </LabeledButton>
       </div>

@@ -21,16 +21,31 @@ const randomScrambleChar = (char: string): string => {
   return String(Math.floor(Math.random() * 10));
 };
 
-const scrambleText = (text: string, settledCount: number): string =>
+const scrambleText = (text: string, settledIndices: Set<number>): string =>
   text
     .split('')
     .map((char, i) => {
-      if (i < settledCount || char === ' ') {
+      if (settledIndices.has(i) || char === ' ' || char === '\n') {
         return char;
       }
       return randomScrambleChar(char);
     })
     .join('');
+
+// order in which each character index settles, shuffled so letters don't
+// finish left-to-right
+const shuffledSettleOrder = (text: string): number[] => {
+  const indices = text
+    .split('')
+    .map((char, i) => ({ char, i }))
+    .filter(({ char }) => char !== ' ' && char !== '\n')
+    .map(({ i }) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices;
+};
 
 type UseScrambleTextProps = {
   text: string;
@@ -39,31 +54,35 @@ type UseScrambleTextProps = {
 };
 
 // renders as constantly-changing random numbers until scrolled into view,
-// then settles one character at a time into the real text
+// then settles into the real text, one character at a time in a random order
 const useScrambleText = <T extends Element>({ text, gap = 0 }: UseScrambleTextProps) => {
   const ref = useRef<T>(null);
   const isRevealed = useReveal({ ref, gap });
-  const [displayText, setDisplayText] = useState(() => scrambleText(text, 0));
+  const [displayText, setDisplayText] = useState(() => scrambleText(text, new Set()));
 
   useEffect(() => {
     if (!text) {
       return;
     }
-    let settledCount = isRevealed ? 0 : -1;
+    const settleOrder = shuffledSettleOrder(text);
+    const settledIndices = new Set<number>();
+    let settledCount = 0;
     /* eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: re-scramble right away so a text change restarts the animation without a stale frame */
-    setDisplayText(scrambleText(text, 0));
-    const interval = setInterval(
-      () => {
-        if (isRevealed) {
-          settledCount += 1;
-        }
-        setDisplayText(scrambleText(text, Math.max(settledCount, 0)));
-        if (settledCount >= text.length) {
-          clearInterval(interval);
-        }
-      },
-      isRevealed ? SETTLE_INTERVAL_MS : SCRAMBLE_INTERVAL_MS
-    );
+    setDisplayText(scrambleText(text, settledIndices));
+    if (!isRevealed) {
+      const interval = setInterval(() => {
+        setDisplayText(scrambleText(text, settledIndices));
+      }, SCRAMBLE_INTERVAL_MS);
+      return () => clearInterval(interval);
+    }
+    const interval = setInterval(() => {
+      settledIndices.add(settleOrder[settledCount]);
+      settledCount += 1;
+      setDisplayText(scrambleText(text, settledIndices));
+      if (settledCount >= settleOrder.length) {
+        clearInterval(interval);
+      }
+    }, SETTLE_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [text, isRevealed]);
 

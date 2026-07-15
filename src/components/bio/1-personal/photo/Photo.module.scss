@@ -35,6 +35,8 @@
     position: absolute;
     right: calc(10% + 12px);
     bottom: calc(10%);
+    max-width: 60%;
+    text-align: right;
     text-shadow: 0 0 8px #000a;
   }
 }
