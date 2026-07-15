@@ -6,7 +6,8 @@
       "name": "Wonder",
       "time": "June 2021 - Present",
       "description_hidden": [
-        "Added game UI to order confirmation page, improving customer experience and generating social media exposure"
+        "Added game UI to order confirmation page, improving customer experience and generating social media exposure",
+        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
       ],
       "background": "#f43f4e",
       "location": "Manhattan, NY",
@@ -15,8 +16,7 @@
         "Enhanced post purchase experience with detailed order tracking features, reducing care contacts and increasing customer retention",
         "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
         "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
-        "Acted as team's fullstack developer, bridging the gap between backend and frontend",
-        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
+        "Acted as team's fullstack developer, bridging the gap between backend and frontend"
       ]
     },
     {
