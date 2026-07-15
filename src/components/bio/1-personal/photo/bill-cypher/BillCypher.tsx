@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import * as Style from './BillCypher.module.scss';
 
@@ -21,51 +21,44 @@ const randomPosition = (): BillPosition => {
 
 const randomInterval = () => Math.random() * 2800 + 2800;
 
-class BillCypher extends React.Component<object, BillPosition> {
-  constructor(props: object) {
-    super(props);
-    this.state = randomPosition();
+const BillCypher: React.FC = () => {
+  const [{ top, left, deg }, setPosition] = useState<BillPosition>(randomPosition);
 
-    this.changePosition = this.changePosition.bind(this);
-  }
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    const changePosition = () => {
+      setPosition(randomPosition());
+      timeout = setTimeout(changePosition, randomInterval());
+    };
+    changePosition();
+    return () => clearTimeout(timeout);
+  }, []);
 
-  componentDidMount() {
-    this.changePosition();
-  }
-
-  changePosition() {
-    this.setState(randomPosition());
-    setTimeout(this.changePosition, randomInterval());
-  }
-
-  render() {
-    const { top, left, deg } = this.state;
-    return (
-      <div
-        className={Style.bill}
-        style={{
-          margin: `${top}% ${left}%`,
-          transform: `rotate(${deg}deg)`,
-        }}
-      >
-        <div className={Style.billBody}>
-          <div className={Style.hat}></div>
-          <div className={`${Style.triangle} ${Style.topLeft}`}></div>
-          <div className={`${Style.triangle} ${Style.topRight}`}></div>
-          <div className={`${Style.triangle} ${Style.bottomLeftTop}`}></div>
-          <div className={`${Style.triangle} ${Style.bottomLeftBottom}`}></div>
-          <div className={`${Style.triangle} ${Style.bottomRightTop}`}></div>
-          <div className={`${Style.triangle} ${Style.bottomRightBottom}`}></div>
-          <div className={Style.rotater}>
-            <div className={Style.eye}></div>
-          </div>
-          {/* <div className={`${Style.arm} ${Style.armLeft}`}></div>
-          <div className={`${Style.arm} ${Style.armRight}`}></div> */}
-          <div className={Style.legs}></div>
+  return (
+    <div
+      className={Style.bill}
+      style={{
+        margin: `${top}% ${left}%`,
+        transform: `rotate(${deg}deg)`,
+      }}
+    >
+      <div className={Style.billBody}>
+        <div className={Style.hat}></div>
+        <div className={`${Style.triangle} ${Style.topLeft}`}></div>
+        <div className={`${Style.triangle} ${Style.topRight}`}></div>
+        <div className={`${Style.triangle} ${Style.bottomLeftTop}`}></div>
+        <div className={`${Style.triangle} ${Style.bottomLeftBottom}`}></div>
+        <div className={`${Style.triangle} ${Style.bottomRightTop}`}></div>
+        <div className={`${Style.triangle} ${Style.bottomRightBottom}`}></div>
+        <div className={Style.rotater}>
+          <div className={Style.eye}></div>
         </div>
+        {/* <div className={`${Style.arm} ${Style.armLeft}`}></div>
+        <div className={`${Style.arm} ${Style.armRight}`}></div> */}
+        <div className={Style.legs}></div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export { BillCypher };

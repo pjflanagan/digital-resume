@@ -1,13 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
 
 import { FrameHolder, Image } from 'src/elements';
+import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
 
 // TODO: import { BillCypher } from "./bill-cypher"; ?
 import * as Style from './Photo.module.scss';
 import clsx from 'clsx';
-
-const IMG_ROOT = '/img/bio/1-personal';
 
 type PhotoProps = {
   photo: string;
@@ -35,7 +34,7 @@ const Photo = ({ photo }: PhotoProps) => {
   return (
     <div className={Style.personalPhoto} ref={ref}>
       <Image
-        src={`${IMG_ROOT}/${photo}`}
+        src={contentImage('personal', photo)}
         alt={'Peter James Flanagan Headshot'}
         className={Style.image}
       />

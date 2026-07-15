@@ -1,6 +1,6 @@
 
 MAIN TODO: 
-- [ ] Use TS everywhere
+- [x] Use TS everywhere
 - [ ] replace some things with libraries that handle it for me
 - [x] remove graphql if possible
 - [x] use decamp cms

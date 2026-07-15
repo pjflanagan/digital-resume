@@ -2,10 +2,11 @@
 // Custom Decap CMS previews: rough visual render of each content file with
 // clickable links and visible images (served from this site's /img folders).
 
+const IMG_BASE = 'https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images';
 const IMG = {
-  experience: '/img/bio/2-experience',
-  projects: '/img/bio/3-projects',
-  personal: '/img/bio/1-personal',
+  experience: `${IMG_BASE}/experience`,
+  projects: `${IMG_BASE}/projects`,
+  personal: `${IMG_BASE}/personal`,
 };
 
 const imgSrc = (root, image) => {

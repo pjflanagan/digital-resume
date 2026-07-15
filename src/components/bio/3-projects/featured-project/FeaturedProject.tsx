@@ -2,12 +2,11 @@ import { useRef } from 'react';
 
 import { FrameHolder, Image, Text, TextLinkedHeader, TextTag } from 'src/elements';
 import type { Project as ProjectContent } from 'src/content';
+import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
 
 import * as Style from './FeaturedProject.module.scss';
 import clsx from 'clsx';
-
-const IMG_ROOT = '/img/bio/3-projects';
 
 type FeaturedProjectProps = {
   project: ProjectContent;
@@ -26,7 +25,7 @@ const FeaturedProject = ({
   return (
     <div className={className} ref={ref}>
       <FrameHolder className={Style.projectImageFrame}>
-        <Image src={`${IMG_ROOT}/${image}`} alt={name} className={Style.projectImage} />
+        <Image src={contentImage('projects', image)} alt={name} className={Style.projectImage} />
       </FrameHolder>
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>

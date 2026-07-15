@@ -15,6 +15,7 @@ npm run develop
 
 ```
 ./content - the site copy (JSON, editable via Decap CMS)
+./content/images - CMS-managed images (personal, experience, projects)
 ./static/admin - Decap CMS editor (served at /admin/)
 ./src
 ├── /components - page components
@@ -35,6 +36,8 @@ Site copy lives in `content/*.json` and is edited through [Decap CMS](https://de
 3. The deployed site fetches `content/*.json` from `raw.githubusercontent.com` on page load (`src/content/fetchContent.ts`), so the new copy appears within ~5 minutes (the raw GitHub cache). The build-time copy of the JSON is the initial render and the fallback if the fetch fails.
 
 Any commit touching files outside `content/` triggers a normal Netlify deploy.
+
+Images follow the same pattern: personal photos, company/school logos, and project screenshots live in `content/images/{personal,experience,projects}` and are loaded from raw GitHub at runtime (`contentImage()` in `src/content/fetchContent.ts`), so uploading an image through the CMS skips the rebuild too. Site chrome (icons, social cards, backgrounds, noise) stays in `static/img`. Content JSON may store either a bare filename (resolved against the section's folder) or a full URL (what the CMS image widget writes).
 
 ### Updating content
 

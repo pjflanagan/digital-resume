@@ -4,6 +4,14 @@ import type { ContentFiles } from './types';
 // commits show up without a Netlify redeploy (see _todo/decap-cms-content.md).
 const CONTENT_BASE = 'https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content';
 
+// Images managed through Decap live in content/images/<folder> and are served
+// from GitHub too, so image uploads skip the Netlify rebuild like other content.
+// Content JSON stores bare filenames; CMS image widgets store full URLs.
+type ContentImageFolder = 'personal' | 'experience' | 'projects';
+
+const contentImage = (folder: ContentImageFolder, image: string): string =>
+  /^(https?:)?\//.test(image) ? image : `${CONTENT_BASE}/images/${folder}/${image}`;
+
 async function fetchContentFile<T>(file: string): Promise<T> {
   const res = await fetch(`${CONTENT_BASE}/${file}`, { cache: 'no-cache' });
   if (!res.ok) {
@@ -28,4 +36,4 @@ async function fetchContentFiles(): Promise<ContentFiles> {
   return { splash, personal, experience, jobs, schools, skills, projects, contact, footer };
 }
 
-export { fetchContentFiles };
+export { contentImage, fetchContentFiles };

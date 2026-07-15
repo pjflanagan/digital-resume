@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
+import { contentImage } from 'src/content';
 import {
   Avatar,
   Text,
@@ -12,8 +13,6 @@ import {
 } from 'src/elements';
 
 import * as Style from './Org.module.scss';
-
-const IMG_ROOT = '/img/bio/2-experience';
 
 type OrgProps = {
   name: string;
@@ -69,7 +68,7 @@ const Org = ({
     <div className={Style.org} ref={ref}>
       <div className={Style.orgLeft}>
         <div className={Style.avatarHolder}>
-          <Avatar src={`${IMG_ROOT}/${image}`} name={name} background={background} />
+          <Avatar src={contentImage('experience', image)} name={name} background={background} />
         </div>
         <div className={Style.orgInfoHolder}>
           <TextHeading className={Style.name}>{name}</TextHeading>

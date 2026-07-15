@@ -6,7 +6,9 @@ backend:
   base_url: https://api.netlify.com
 
 # Decap commits directly to main; each save is one commit touching only content/,
-# which the netlify.toml ignore command skips building.
+# which the netlify.toml ignore command skips building. That applies to media
+# uploads too: images live in content/images/* and are served from raw GitHub
+# at runtime, so new images appear without a redeploy.
 media_folder: content/images
 public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images
 
@@ -108,7 +110,11 @@ collections:
               - { name: location, label: Location, widget: string }
               - { name: time, label: Time, widget: string }
               - { name: position, label: Position, widget: string }
-              - { name: image, label: Image Filename, widget: string }
+              - name: image
+                label: Image
+                widget: image
+                media_folder: /content/images/experience
+                public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience
               - name: description
                 label: Description
                 widget: list
@@ -143,7 +149,12 @@ collections:
               - { name: location, label: Location, widget: string }
               - { name: class, label: Class, widget: string }
               - { name: degree, label: Degree, widget: string, required: false }
-              - { name: image, label: Image Filename, widget: string, required: false }
+              - name: image
+                label: Image
+                widget: image
+                required: false
+                media_folder: /content/images/experience
+                public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience
               - name: description
                 label: Description
                 widget: list
@@ -213,7 +224,11 @@ collections:
               - { name: type, label: Type, widget: string }
               - { name: link, label: Link, widget: string }
               - { name: description, label: Description, widget: text }
-              - { name: image, label: Image Filename, widget: string }
+              - name: image
+                label: Image
+                widget: image
+                media_folder: /content/images/projects
+                public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/projects
               - name: tech
                 label: Tech
                 widget: list
