@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import * as Scroll from 'react-scroll';
 
+import { useBio } from 'src/content';
+
 import { CurveTop, CurveBottom } from './curves/Curves';
 import { Photo } from './photo/Photo';
 import { PersonalBody } from './body/PersonalBody';
@@ -10,7 +12,8 @@ import * as Style from './SlidePersonal.module.scss';
 const ScrollComponent = Scroll.Element;
 
 const SlidePersonal = () => {
-  const [photo, setPhoto] = useState('personal-photo.jpg');
+  const { defaultImage } = useBio().personal;
+  const [photo, setPhoto] = useState(defaultImage);
 
   return (
     <ScrollComponent className={Style.slidePersonal} name="personal">

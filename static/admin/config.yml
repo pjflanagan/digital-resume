@@ -34,6 +34,11 @@ collections:
         label: Personal
         file: content/1.0-personal.json
         fields:
+          - name: defaultImage
+            label: Default Photo
+            widget: image
+            media_folder: /content/images/personal
+            public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
           - name: accent
             label: Accent
             widget: object

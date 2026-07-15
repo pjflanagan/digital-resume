@@ -15,28 +15,36 @@ const imgSrc = (root, image) => {
   return /^(https?:)?\//.test(image) ? image : `${root}/${image}`;
 };
 
+// Colors/fonts mirror src/theme/_variables.scss and theme.scss. Ubuntu is
+// self-hosted in the Gatsby bundle, so the preview iframe loads it from Google
+// Fonts instead; AmericanCaptain comes from this site's static /font folder.
 const css = `
-  .preview { font-family: 'Helvetica Neue', Arial, sans-serif; background: #14151a; color: #eee; padding: 24px; min-height: 100vh; line-height: 1.5; }
-  .preview a { color: #6ecbff; }
-  .preview h1 { font-size: 28px; margin: 0 0 4px; }
-  .preview h2 { font-size: 20px; margin: 32px 0 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-  .preview h3 { font-size: 16px; margin: 16px 0 4px; }
-  .preview .accent { color: #f43f4e; font-style: italic; font-size: 14px; margin: 0; }
-  .preview .muted { color: #888; font-size: 13px; }
-  .preview .card { background: #1e2027; border-radius: 8px; padding: 16px; margin: 12px 0; display: flex; gap: 16px; }
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&family=Ubuntu+Mono&display=swap');
+  @font-face { font-family: AmericanCaptain; src: url('/font/AmericanCaptain-MdEY.otf'); }
+  .preview { font-family: 'Ubuntu', sans-serif; font-weight: 300; background: #112a32; color: #fff; padding: 24px; min-height: 100vh; line-height: 1.6; }
+  .preview ::selection { color: #113f54; background: #e4f03c; }
+  .preview a { color: #e4f03c; text-decoration: none; box-shadow: inset 0 -6px #e4f03c33; transition: 0.2s; }
+  .preview a:hover { color: #e4ef50; box-shadow: inset 0 -10px #e4f03c88; }
+  .preview h1 { font-family: AmericanCaptain, 'Ubuntu', sans-serif; font-weight: 400; font-size: 42px; margin: 0 0 4px; color: #fff; text-shadow: 1px 2px 0 #000a; }
+  .preview h2 { font-weight: 500; font-size: 20px; margin: 32px 0 8px; border-bottom: 1px solid #1fcfcc; padding-bottom: 4px; color: #fff; }
+  .preview h3 { font-weight: 500; font-size: 16px; margin: 16px 0 4px; color: #e4f03c; }
+  .preview .accent { color: #e4f03c; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin: 0; }
+  .preview .muted { color: #eaf4f488; font-size: 13px; }
+  .preview .card { background: #113f54dd; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); padding: 16px; margin: 12px 0; display: flex; gap: 16px; }
   .preview .card ul { margin: 8px 0 0; padding-left: 18px; }
   .preview .card li { margin: 4px 0; }
   .preview .hidden-desc { opacity: 0.45; }
   .preview .avatar { width: 56px; height: 56px; border-radius: 50%; flex: 0 0 56px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .preview .avatar img { width: 100%; height: 100%; object-fit: contain; }
-  .preview .project-img { width: 160px; height: 100px; object-fit: cover; border-radius: 6px; flex: 0 0 160px; background: #000; }
-  .preview .tag { display: inline-block; background: #2c2f3a; border-radius: 4px; padding: 1px 8px; margin: 2px 4px 2px 0; font-size: 12px; }
+  .preview .project-img { width: 160px; height: 100px; object-fit: cover; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); flex: 0 0 160px; background: #000; }
+  .preview .tag { display: inline-block; background: #15727044; color: #1fcfcc; font-family: 'Ubuntu Mono', monospace; border-radius: 3px; padding: 1px 8px; margin: 2px 4px 2px 0; font-size: 12px; }
   .preview .bar-row { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
   .preview .bar-row .name { width: 140px; font-size: 14px; }
-  .preview .bar { flex: 1; height: 8px; background: #2c2f3a; border-radius: 4px; overflow: hidden; }
-  .preview .bar > div { height: 100%; background: #f43f4e; }
-  .preview .hover-note { border-bottom: 1px dashed #6ecbff; cursor: help; color: #6ecbff; }
-  .preview .pill { display: inline-block; border: 1px solid #444; border-radius: 999px; padding: 2px 10px; margin: 2px 6px 2px 0; font-size: 13px; }
+  .preview .bar { flex: 1; height: 10px; background: #1c1c1c44; clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px)); overflow: hidden; }
+  .preview .bar > div { height: 100%; background: #1cbebc; }
+  .preview .hover-note { border-bottom: 1px dashed #1fcfcc; cursor: help; color: #1fcfcc; }
+  .preview .pill { display: inline-block; border: 1px solid #15727088; background: #15727044; box-shadow: none; border-radius: 999px; padding: 2px 10px; margin: 2px 6px 2px 0; font-size: 13px; }
+  .preview a.pill:hover { background: #15727088; color: #e4ef50; }
 `;
 
 CMS.registerPreviewStyle(css, { raw: true });
@@ -59,7 +67,9 @@ const linkText = (text, links) => {
     if (link.href) {
       return h('a', { key: i, href: link.href, target: '_blank', rel: 'noreferrer' }, link.text);
     }
-    const actions = (link.callbackParam || []).map((c) => `${c.action}: ${c.param}`).join(', ');
+    const actions = (link.callbackParam || [])
+      .map((c) => `${c.action}: ${c.action === 'image' ? c.image : c.param}`)
+      .join(', ');
     return h('span', { key: i, className: 'hover-note', title: actions || 'no action' }, link.text);
   });
 };
@@ -101,9 +111,17 @@ const PersonalPreview = ({ entry }) => {
   const accent = get(entry, ['accent'], {});
   const titleText = get(entry, ['titleText'], null);
   const bodyText = get(entry, ['linkText'], null);
+  const defaultImage = get(entry, ['defaultImage'], null);
   return h(
     'div',
     { className: 'preview' },
+    defaultImage &&
+      h('img', {
+        className: 'project-img',
+        style: { float: 'right', marginLeft: '16px' },
+        src: imgSrc(IMG.personal, defaultImage),
+        alt: 'default photo',
+      }),
     h('p', { className: 'accent' }, `${accent.english} / ${accent.mandarin}`),
     titleText && h('h1', {}, linkText(titleText.text, titleText.links)),
     bodyText && paragraphs(bodyText)

@@ -72,6 +72,7 @@ type BioContent = {
   };
   personal: {
     accent: Record<Language, string>;
+    defaultImage: string;
     titleText: LinkText<string>;
     linkText: LinkText;
   };
