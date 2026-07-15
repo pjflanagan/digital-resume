@@ -1,36 +1,31 @@
 {
   "featured": [
     {
-      "name": "GrubHub",
-      "location": "Manhattan, NY",
+      "color": "#fff",
+      "position": "Senior Software Engineer",
+      "name": "Wonder",
       "time": "June 2021 - Present",
-      "position": "Software Engineer II",
-      "image": "grubhub.png",
-      "description": [
-        "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
-        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
-        "Acted as team's fullstack developer, bridging the gap between backend and frontend",
-        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
-      ],
       "description_hidden": [
         "Added game UI to order confirmation page, improving customer experience and generating social media exposure"
       ],
       "background": "#f43f4e",
-      "color": "#fff"
+      "location": "Manhattan, NY",
+      "image": "grubhub.png",
+      "description": [
+        "Enhanced post purchase experience with detailed order tracking features, reducing care contacts and increasing customer retention",
+        "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
+        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
+        "Acted as team's fullstack developer, bridging the gap between backend and frontend",
+        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
+      ]
     },
     {
-      "name": "FreeWheel",
-      "location": "Manhattan, NY",
-      "time": "June 2018 - May 2021",
+      "color": "#3b778a",
       "position": "Software Engineer III",
-      "image": "freewheel.png",
-      "description": [
-        "Implemented API endpoint that stores advertisement video files of multiple trafficking methods, used by clients to register over 3,000 videos each month",
-        "Created video transcoding service optimizations to avoid duplicate jobs for same file across networks",
-        "Upgraded front end to modern, standardized React-based framework, improving code quality and website usability",
-        "Designed new theme, elements and layouts to make web tools match FreeWheel's rebrand",
-        "Redesigned open source development tool <dashflow>, allowing users to manage multiple terminal command streams"
-      ],
+      "name": "FreeWheel",
+      "time": "June 2018 - May 2021",
+      "background": "#000",
+      "location": "Manhattan, NY",
       "links": [
         {
           "key": "dashflow",
@@ -38,8 +33,14 @@
           "text": "Dashflow"
         }
       ],
-      "background": "#000",
-      "color": "#3b778a"
+      "image": "freewheel.png",
+      "description": [
+        "Implemented API endpoint that stores advertisement video files of multiple trafficking methods, used by clients to register over 3,000 videos each month",
+        "Created video transcoding service optimizations to avoid duplicate jobs for same file across networks",
+        "Upgraded front end to modern, standardized React-based framework, improving code quality and website usability",
+        "Designed new theme, elements and layouts to make web tools match FreeWheel's rebrand",
+        "Redesigned open source development tool <dashflow>, allowing users to manage multiple terminal command streams"
+      ]
     }
   ],
   "other": [
