@@ -39,12 +39,7 @@ collections:
             widget: image
             media_folder: /content/images/personal
             public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
-          - name: accent
-            label: Accent
-            widget: object
-            fields:
-              - { name: english, label: English, widget: string }
-              - { name: mandarin, label: Mandarin, widget: string }
+          - { name: accent, label: Accent, widget: string }
           - name: titleText
             label: Title Text
             widget: object
@@ -57,23 +52,20 @@ collections:
                   - { name: key, label: Key, widget: string }
                   - { name: href, label: Href, widget: string, required: false }
                   - { name: text, label: Text, widget: string }
-                  - name: callbackParam
-                    label: Hover Actions
-                    widget: list
+                  - name: image
+                    label: Hover Image
+                    widget: image
                     required: false
-                    fields:
-                      - { name: action, label: Action, widget: select, options: [image, text] }
-                      - name: image
-                        label: Image (for image actions)
-                        widget: image
-                        required: false
-                        media_folder: /content/images/personal
-                        public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
-                      - name: param
-                        label: Language (for text actions)
-                        widget: select
-                        options: [english, mandarin]
-                        required: false
+                    media_folder: /content/images/personal
+                    public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
+                  - name: imageDescription
+                    label: Hover Image Description
+                    widget: string
+                    required: false
+                  - name: greeting
+                    label: Hover Greeting
+                    widget: string
+                    required: false
           - name: linkText
             label: Body Text
             widget: object

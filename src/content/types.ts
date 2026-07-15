@@ -1,6 +1,6 @@
 // Shared shapes for site content (see src/content/bio/*.json)
 
-import type { ContentLink, Language, LinkAction, LinkText } from 'src/elements/text/types';
+import type { ContentLink, LinkText } from 'src/elements/text/types';
 import type { IconName } from 'src/elements/icon/SVGIcon';
 
 type Job = {
@@ -71,7 +71,7 @@ type BioContent = {
     prompts: string[];
   };
   personal: {
-    accent: Record<Language, string>;
+    accent: string;
     defaultImage: string;
     titleText: LinkText<string>;
     linkText: LinkText;
@@ -118,8 +118,6 @@ type ContentFiles = {
 export type {
   ContentLink,
   ContentFiles,
-  Language,
-  LinkAction,
   LinkText,
   Job,
   SchoolExtra,

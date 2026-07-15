@@ -30,6 +30,13 @@
       animation: frame-reveal 0.8s forwards;
     }
   }
+
+  .photo-description {
+    position: absolute;
+    right: calc(10% + 12px);
+    bottom: calc(10%);
+    text-shadow: 0 0 8px #000a;
+  }
 }
 
 // md

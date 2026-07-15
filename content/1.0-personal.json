@@ -1,23 +1,13 @@
 {
   "defaultImage": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
-  "accent": {
-    "english": "Hi, my name is",
-    "mandarin": "你好，我名字叫"
-  },
+  "accent": "Hi, my name is",
   "titleText": {
     "links": [
       {
         "key": "peter_james_flanagan",
-        "callbackParam": [
-          {
-            "action": "image",
-            "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg"
-          },
-          {
-            "action": "text",
-            "param": "english"
-          }
-        ],
+        "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
+        "imageDescription": "Peter James Flanagan",
+        "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
       }
     ],
@@ -28,57 +18,34 @@
       {
         "key": "rollerblader",
         "href": "//instagram.com/roller.babe",
-        "callbackParam": [
-          {
-            "action": "image",
-            "image": "personal-roller-blade.jpg"
-          }
-        ],
+        "image": "personal-roller-blade.jpg",
+        "imageDescription": "London, United Kingdom",
         "text": "rollerblader"
       },
       {
         "key": "rockclimber",
-        "callbackParam": [
-          {
-            "action": "image",
-            "image": "personal-rock-climbing.jpg"
-          }
-        ],
+        "image": "personal-rock-climbing.jpg",
+        "imageDescription": "Denver, CO",
         "text": "rock climber"
       },
       {
         "key": "scuba",
-        "callbackParam": [
-          {
-            "action": "image",
-            "image": "personal-scuba.jpg"
-          }
-        ],
+        "image": "personal-scuba.jpg",
+        "imageDescription": "Curaçao, 12.320089, -69.155978, -45 ft",
         "text": "SCUBA diver"
       },
       {
         "key": "mandarin_student",
         "href": "//flanny.app/study-mandarin",
-        "callbackParam": [
-          {
-            "action": "text",
-            "param": "mandarin"
-          },
-          {
-            "action": "image",
-            "image": "personal-mandarin.jpg"
-          }
-        ],
+        "image": "personal-mandarin.jpg",
+        "imageDescription": "Taipei, Taiwan",
+        "greeting": "你好，我名字叫",
         "text": "Mandarin student"
       },
       {
         "key": "board_sport",
-        "callbackParam": [
-          {
-            "action": "image",
-            "image": "personal-snowboarding.jpg"
-          }
-        ],
+        "image": "personal-snowboarding.jpg",
+        "imageDescription": "Big Sky, MT",
         "text": "board sport"
       }
     ],

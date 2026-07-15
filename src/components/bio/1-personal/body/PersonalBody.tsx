@@ -2,35 +2,27 @@ import { useState } from 'react';
 
 import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
-import type { Language, LinkAction } from 'src/content';
+import type { LinkCallback } from 'src/elements';
 
 import * as Style from './PersonalBody.module.scss';
 
 type BodyProps = {
-  photoLinkCallback: (photo: string) => void;
+  photoLinkCallback: (photo: string, photoDescription?: string) => void;
 };
 
 const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
-  const [language, setLanguage] = useState<Language>('english');
+  const { accent, linkText, titleText } = useBio().personal;
+  const [greeting, setGreeting] = useState(accent);
 
-  const linkHover = (actions?: LinkAction[]) => {
-    actions?.forEach((linkAction) => {
-      switch (linkAction.action) {
-        case 'image':
-          photoLinkCallback(linkAction.image);
-          break;
-        case 'text':
-          setLanguage(linkAction.param);
-          break;
-      }
-    });
+  const linkHover: LinkCallback = ({ image, imageDescription, greeting: linkGreeting }) => {
+    if (image) photoLinkCallback(image, imageDescription);
+    if (linkGreeting) setGreeting(linkGreeting);
   };
 
-  const { accent, linkText, titleText } = useBio().personal;
   return (
     <div className={Style.body}>
       <TextAccent mono animate>
-        {accent[language]}
+        {greeting}
       </TextAccent>
       <TextTitle>{ParseTextForLinks(titleText.text, titleText.links, linkHover)}</TextTitle>
       <Text links={linkText.links}>{linkText.text[0]}</Text>

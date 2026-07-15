@@ -14,15 +14,21 @@ const ScrollComponent = Scroll.Element;
 const SlidePersonal = () => {
   const { defaultImage } = useBio().personal;
   const [photo, setPhoto] = useState(defaultImage);
+  const [photoDescription, setPhotoDescription] = useState<string | undefined>(undefined);
 
   return (
     <ScrollComponent className={Style.slidePersonal} name="personal">
       <CurveTop />
       <div className={Style.slidePersonalSideLeft}>
-        <Photo photo={photo} />
+        <Photo photo={photo} photoDescription={photoDescription} />
       </div>
       <div className={Style.slidePersonalSideRight}>
-        <PersonalBody photoLinkCallback={(newPhoto) => setPhoto(newPhoto)} />
+        <PersonalBody
+          photoLinkCallback={(newPhoto, newPhotoDescription) => {
+            setPhoto(newPhoto);
+            setPhotoDescription(newPhotoDescription);
+          }}
+        />
       </div>
       <CurveBottom />
     </ScrollComponent>

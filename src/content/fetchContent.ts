@@ -2,7 +2,12 @@ import type { ContentFiles } from './types';
 
 // Content is fetched at runtime straight from the public repo, so content-only
 // commits show up without a Netlify redeploy (see _todo/decap-cms-content.md).
-const CONTENT_BASE = 'https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content';
+// In development it's served locally instead (static/content symlinks to
+// content/), so edits to content/*.json show up on refresh without a push.
+const CONTENT_BASE =
+  process.env.NODE_ENV === 'development'
+    ? '/content'
+    : 'https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content';
 
 // Images managed through Decap live in content/images/<folder> and are served
 // from GitHub too, so image uploads skip the Netlify rebuild like other content.

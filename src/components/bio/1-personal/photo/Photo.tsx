@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 
-import { FrameHolder, Image } from 'src/elements';
+import { FrameHolder, Image, TextAccent } from 'src/elements';
 import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
 
@@ -10,9 +10,10 @@ import clsx from 'clsx';
 
 type PhotoProps = {
   photo: string;
+  photoDescription?: string;
 };
 
-const Photo = ({ photo }: PhotoProps) => {
+const Photo = ({ photo, photoDescription }: PhotoProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 280 });
   const [isRevealed, setIsRevealed] = useState(true);
@@ -38,7 +39,12 @@ const Photo = ({ photo }: PhotoProps) => {
         alt={'Peter James Flanagan Headshot'}
         className={Style.image}
       />
-      <FrameHolder className={className} />
+      <FrameHolder className={className}></FrameHolder>
+      {photoDescription && (
+        <TextAccent className={Style.photoDescription} mono animate>
+          {photoDescription}
+        </TextAccent>
+      )}
     </div>
   );
 };

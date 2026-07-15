@@ -72,8 +72,8 @@ const Org = ({
         </div>
         <div className={Style.orgInfoHolder}>
           <TextHeading className={Style.name}>{name}</TextHeading>
-          <Text className={Style.location}>{location}</Text>
-          <TextAccent className={Style.time}>{time}</TextAccent>
+          <Text className={Style.time}>{time}</Text>
+          <TextAccent className={Style.location}>{location}</TextAccent>
         </div>
       </div>
       <div className={Style.orgRight}>
