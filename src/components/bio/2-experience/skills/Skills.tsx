@@ -1,11 +1,11 @@
 import { ProgressBar, TextHeading } from 'src/elements';
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 
 import * as Style from './Skills.module.scss';
 
 const Skills = () => (
   <div>
-    {Bio.experience.skills.map(({ type, items, cols }) => (
+    {useBio().experience.skills.map(({ type, items, cols }) => (
       <div key={type}>
         <TextHeading>{type}</TextHeading>
         <div className={Style.skillListHolder}>

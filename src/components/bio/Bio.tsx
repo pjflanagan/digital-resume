@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 
-import { Bio } from 'src/content';
+import { ContentProvider, useBio } from 'src/content';
 import { Cover, Footer, Splash, Header, HeaderLink } from 'src/elements';
 
 import { SlideLanding } from './0-landing/SlideLanding';
@@ -22,8 +22,9 @@ const clickToScroll = (slideName: string) => {
   });
 };
 
-const BioComponent = () => {
+const BioPage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const Bio = useBio();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -54,5 +55,11 @@ const BioComponent = () => {
     </div>
   );
 };
+
+const BioComponent = () => (
+  <ContentProvider>
+    <BioPage />
+  </ContentProvider>
+);
 
 export { BioComponent };

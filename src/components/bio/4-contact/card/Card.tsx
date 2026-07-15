@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 import type { FormPlaceholder } from 'src/content';
 import {
   LabeledButton,
@@ -64,6 +64,7 @@ type CardProps = {
 };
 
 const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
+  const Bio = useBio();
   const [fields, setFields] = useState<FormFields>(EMPTY_FIELDS);
   const [errorMessages, setErrorMessages] = useState<FieldError[]>([]);
   const [isLoading, setIsLoading] = useState(false);

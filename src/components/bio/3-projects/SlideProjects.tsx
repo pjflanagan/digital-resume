@@ -10,7 +10,7 @@ import {
   Stack,
   LabeledButton,
 } from 'src/elements';
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 
 import { FeaturedProject } from './featured-project/FeaturedProject';
 import { Project } from './project/Project';
@@ -19,6 +19,7 @@ import * as Style from './SlideProjects.module.scss';
 const ScrollComponent = Scroll.Element;
 
 const SlideProjects = () => {
+  const Bio = useBio();
   return (
     <ScrollComponent className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
       <Ruler className={Style.ruler} />
