@@ -1,16 +1,10 @@
 {
   "featured": [
     {
-      "name": "University of Michigan",
-      "location": "Ann Arbor, MI",
-      "class": "Class of 2018",
-      "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
-      "image": "umich.jpg",
-      "description": [
-        "Web Databases and Information Systems, User Interface Design, Data Structures and Algorithms, Computer Architecture"
-      ],
-      "background": "#00274c",
       "color": "#00274c",
+      "name": "University of Michigan",
+      "degree": "B.S.E. in Computer Science, Minor in Entrepreneurship",
+      "background": "#00274c",
       "extra": [
         {
           "name": "The Every Three Weekly",
@@ -24,12 +18,18 @@
           "description": "Developed and managed club website with Bootstrap and PHP",
           "link": "https://www.flanny.app/blog/2016/mrun/"
         }
+      ],
+      "location": "Ann Arbor, MI",
+      "class": "Class of 2018",
+      "image": "umich.jpg",
+      "description": [
+        "Web Databases and Information Systems, User Interface Design, Data Structures and Algorithms, Computer Architecture"
       ]
     }
   ],
   "other": [
     {
-      "name": "Great Valley High School",
+      "name": "Great Valley",
       "location": "Malvern, PA",
       "class": "Class of 2014",
       "image": "gvhs.png",
@@ -45,7 +45,9 @@
           "text": "Pennsylvania State Computer Fair Finalist"
         }
       ],
-      "description": ["Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, <PACPUF>"],
+      "description": [
+        "Distinguished Honors, <baccalaureate_speaker>, Varsity Runner, <PACPUF>"
+      ],
       "background": "#1c4b98",
       "color": "#1c4b98"
     }
@@ -56,7 +58,9 @@
       "location": "New York, NY",
       "class": "Fall 2021",
       "image": "",
-      "description": ["Intermediate Conversation Mandarin Chinese"],
+      "description": [
+        "Intermediate Conversation Mandarin Chinese"
+      ],
       "background": "#fff",
       "color": "#f00"
     },
