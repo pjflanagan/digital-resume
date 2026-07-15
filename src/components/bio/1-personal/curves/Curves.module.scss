@@ -4,12 +4,11 @@
 // global and would restyle every SVG on the page (it used to paint icon
 // bounding boxes).
 .top-curve,
-.top-curve-bottom,
-.bottom-curve-top,
 .bottom-curve {
-  height: 20px;
+  height: 40px;
   width: 100%;
   position: absolute;
+  z-index: 17;
 
   path {
     fill: $backgroundLight;
@@ -17,21 +16,17 @@
 }
 
 .top-curve {
-  margin-top: -20px;
+  top: -20px;
 }
 
-.top-curve-bottom,
-.bottom-curve-top,
 .bottom-curve {
   display: none;
 }
 
 @media only screen and (min-width: $md) {
   .top-curve,
-  .top-curve-bottom,
-  .bottom-curve-top,
   .bottom-curve {
-    height: 40px;
+    height: 80px;
 
     path {
       fill: $backgroundDark;
@@ -39,22 +34,11 @@
   }
 
   .top-curve {
-    margin-top: -40px;
-  }
-
-  .top-curve-bottom {
-    display: block;
-    z-index: 17;
-  }
-
-  .bottom-curve-top {
-    display: block;
-    z-index: 17;
-    bottom: 0;
+    top: -40px;
   }
 
   .bottom-curve {
-    top: 100%;
     display: block;
+    bottom: -40px;
   }
 }

@@ -10,12 +10,53 @@
   position: relative;
   height: 14px;
 }
+
+// ticks start spread far apart, then squash into place on reveal;
+// consumers set transforms on .ruler, so the scale needs its own element.
+// Each tick carries an inverse scale so its 1px line isn't stretched by
+// the container scale; both transitions share the same curve so the
+// widths stay in sync as they animate.
+.scale {
+  position: relative;
+  height: 100%;
+  transform: scaleX(1.14);
+  transform-origin: center;
+
+  .cm::before,
+  .mm::before {
+    transform: scaleX(0.864);
+    transform-origin: left;
+  }
+
+  &.revealed {
+    transform: scaleX(1);
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .cm::before,
+    .mm::before {
+      transform: scaleX(1);
+      transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+}
 .ruler .cm,
 .ruler .mm {
   position: absolute;
-  border-left: 1px solid $accentYellow;
   height: 14px;
   width: 10%;
+
+  // the visible tick line; lives on a pseudo-element so the reveal
+  // animation can counter-scale it back to 1px without touching the
+  // tick's own box (whose transform would also squash child mm ticks)
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: $accentYellow;
+  }
 }
 .ruler .cm:after {
   position: absolute;
