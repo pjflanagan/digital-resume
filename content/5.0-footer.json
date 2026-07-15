@@ -6,9 +6,14 @@
           "key": "github",
           "href": "//github.com/pjflanagan/digital-resume",
           "text": "Github"
+        },
+        {
+          "key": "flannyapps",
+          "href": "//flanny.app",
+          "text": "Flanny.app"
         }
       ],
-      "text": "Website by Peter James Flanagan, available on <github>"
+      "text": "Website by Peter James Flanagan, available on <github>. See more on <flannyapps>"
     }
   ]
 }
