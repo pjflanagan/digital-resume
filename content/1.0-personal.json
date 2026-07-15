@@ -10,7 +10,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "image": "personal-photo.jpg"
+            "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg"
           },
           {
             "action": "text",
