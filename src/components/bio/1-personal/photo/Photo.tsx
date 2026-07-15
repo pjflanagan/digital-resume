@@ -16,19 +16,26 @@ type PhotoProps = {
 const Photo = ({ photo, photoDescription }: PhotoProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 280 });
-  const [isRevealed, setIsRevealed] = useState(true);
+  const hasMounted = useRef(false);
+  const [isPulsing, setIsPulsing] = useState(false);
 
   const className = clsx(Style.photoFrameHolder, {
-    [Style.reveal]: isScrollRevealed && isRevealed,
+    [Style.reveal]: isScrollRevealed,
+    [Style.pulse]: isPulsing,
   });
+  const imageClassName = clsx(Style.image);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- intentional: re-triggers the reveal animation */
   useEffect(() => {
-    // when the hover photo changes re-reveal
-    setIsRevealed(false);
-    setTimeout(() => {
-      setIsRevealed(true);
-    }, 10);
+    // skip the pulse on the very first render, only replay it when the photo actually changes
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    setIsPulsing(true);
+    const timeout = setTimeout(() => {
+      setIsPulsing(false);
+    }, 400);
+    return () => clearTimeout(timeout);
   }, [photo]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -37,7 +44,7 @@ const Photo = ({ photo, photoDescription }: PhotoProps) => {
       <Image
         src={contentImage('personal', photo)}
         alt={'Peter James Flanagan Headshot'}
-        className={Style.image}
+        className={imageClassName}
       />
       <FrameHolder className={className}></FrameHolder>
       {photoDescription && (

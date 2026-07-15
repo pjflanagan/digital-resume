@@ -6,17 +6,17 @@
       "name": "Wonder",
       "time": "June 2021 - Present",
       "description_hidden": [
-        "Added game UI to order confirmation page, improving customer experience and generating social media exposure",
-        "Created item substitution modal, allowing customers to accept different brands for same order, improving grocery delivery experience and decreasing refund rate"
+        "Designed game UI for the order confirmation page, boosting customer engagement and driving organic social media buzz",
+        "Built an item substitution modal that let customers approve brand swaps mid-order, streamlining the grocery delivery experience and cutting refund rates"
       ],
       "background": "#00462a",
       "location": "Manhattan, NY",
       "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience/wonder.png",
       "description": [
-        "Enhanced post purchase experience with detailed order tracking features, reducing care contacts and increasing customer retention",
-        "Refactored Google Maps API based restaurant map, allowing for easier React integration and more agile changes, increasing pickup order conversions by 15%",
-        "Maintained and improved  custom JSON to React translator workflow tool, decreasing call center agent response time",
-        "Acted as team's fullstack developer, bridging the gap between backend and frontend"
+        "Enhanced the post-purchase experience with detailed order tracking features, reducing customer care contacts and increasing retention",
+        "Refactored the Google Maps-based restaurant map for seamless React integration, increasing pickup order conversions by 15%",
+        "Maintained and improved a custom JSON-to-React translation tool, decreasing call center agent response time",
+        "Served as the team's fullstack developer, bridging backend and frontend work"
       ]
     },
     {
@@ -35,11 +35,11 @@
       ],
       "image": "freewheel.png",
       "description": [
-        "Implemented API endpoint that stores advertisement video files of multiple trafficking methods, used by clients to register over 3,000 videos each month",
-        "Created video transcoding service optimizations to avoid duplicate jobs for same file across networks",
-        "Upgraded front end to modern, standardized React-based framework, improving code quality and website usability",
-        "Designed new theme, elements and layouts to make web tools match FreeWheel's rebrand",
-        "Redesigned open source development tool <dashflow>, allowing users to manage multiple terminal command streams"
+        "Built an API endpoint supporting multiple ad-trafficking methods, used by clients to register over 3,000 videos each month",
+        "Optimized the video transcoding service to eliminate duplicate jobs for the same file across networks",
+        "Migrated the frontend to a modern, standardized React framework, improving code quality and usability",
+        "Designed new themes, components, and layouts to align internal web tools with FreeWheel's rebrand",
+        "Redesigned the open-source tool <dashflow>, letting users manage multiple terminal command streams"
       ]
     }
   ],
@@ -51,9 +51,9 @@
       "position": "Web Development Intern, Performance Monitor Intern",
       "image": "bentley.png",
       "description": [
-        "Refactored code and altered functionality of various pages for Bentley online portal, creating simpler, future-ready design in .NET",
-        "Expanded test suite to encompass more pages and features using C# and Selenium, increasing code coverage",
-        "Converted performance test GUIs to command line applications, allowing for test case automation"
+        "Refactored and redesigned several pages of the Bentley online portal in .NET, creating a simpler, future-ready design",
+        "Expanded the test suite with C# and Selenium to cover more pages and features, increasing code coverage",
+        "Converted performance test GUIs into command-line applications, enabling automated test cases"
       ],
       "background": "#62bb47",
       "color": "#62bb47"
@@ -65,7 +65,7 @@
       "position": "IT Intern",
       "image": "biotelem.png",
       "description": [
-        "Programmed web pages to display call center information on overhead monitors in real time using JavaScript and Toad SQL, improving call response time and internal company communication"
+        "Built web pages in JavaScript and Toad SQL to display real-time call center metrics on overhead monitors, improving response times and internal communication"
       ],
       "background": "#009edc",
       "color": "#009edc"

@@ -9,13 +9,13 @@
         {
           "name": "The Every Three Weekly",
           "position": "Editor-In-Chief, Lead Graphic Designer",
-          "description": "Wrote and edited articles for U-M humor and satire magazine",
+          "description": "Wrote and edited articles for U-M's humor and satire magazine",
           "link": "//everythreeweekly.com"
         },
         {
           "name": "Michigan Running Club",
           "position": "Webmaster, Runner",
-          "description": "Developed and managed club website with Bootstrap and PHP",
+          "description": "Built and maintained the club website using Bootstrap and PHP",
           "link": "https://www.flanny.app/blog/2016/mrun/"
         }
       ],
@@ -59,7 +59,7 @@
       "class": "Fall 2021",
       "image": "",
       "description": [
-        "Intermediate Conversation Mandarin Chinese"
+        "Intermediate Conversational Mandarin Chinese"
       ],
       "background": "#fff",
       "color": "#f00"

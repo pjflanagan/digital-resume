@@ -14,11 +14,14 @@ type HeadingProps = {
   children?: React.ReactNode;
   // when true, renders in Ubuntu Mono
   mono?: boolean;
+  onClick?: () => void;
 };
 
 const makeHeading = (Tag: 'h1' | 'h2' | 'h3' | 'h4') => {
-  const Heading = ({ className, children, mono }: HeadingProps) => (
-    <Tag className={clsx(className, mono && Style.mono)}>{children}</Tag>
+  const Heading = ({ className, children, mono, onClick }: HeadingProps) => (
+    <Tag className={clsx(className, mono && Style.mono)} onClick={onClick}>
+      {children}
+    </Tag>
   );
   Heading.displayName = `TextHeading(${Tag})`;
   return Heading;

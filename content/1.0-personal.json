@@ -6,7 +6,7 @@
       {
         "key": "peter_james_flanagan",
         "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
-        "imageDescription": "Peter James Flanagan",
+        "imageDescription": "Current location\nunknown",
         "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
       }
@@ -51,7 +51,7 @@
     ],
     "text": [
       "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun websites.",
-      "Outside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, novice <rockclimber>, certified <scuba>, and <mandarin_student>."
+      "Outside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>."
     ]
   }
 }

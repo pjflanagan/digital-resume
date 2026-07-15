@@ -134,6 +134,13 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
   const findError = (field: FieldError['field']): string =>
     errorMessages.find((error) => error.field === field)?.message ?? '';
 
+  const cycleCharacter = () => {
+    const others = Bio.contact.formPlaceholders.filter(
+      (placeholder) => placeholder.name !== placeholders.name
+    );
+    setPlaceholders(Random.fromArray(others));
+  };
+
   const className = clsx(Style.card, {
     [Style.isSubmitted]: isSubmitted || !isOpen,
   });
@@ -147,7 +154,9 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
           <TextAccent mono animate>
             {Bio.contact.accent}
           </TextAccent>
-          <TextTitle>{Bio.contact.title}</TextTitle>
+          <TextTitle className={Style.title} onClick={cycleCharacter}>
+            {Bio.contact.title}
+          </TextTitle>
           <Text>{Bio.contact.text}</Text>
           <div className={Style.linkHolder}>
             {Bio.contact.links.map((link) => (
