@@ -1,8 +1,26 @@
+@use 'theme/variables' as *;
+
+@media only screen and (min-width: $lg) {
+  .skills {
+    columns: 2;
+    column-gap: 20px;
+
+    .skill-group {
+      break-inside: avoid;
+    }
+
+    .skill-list-holder .skill-bar-holder {
+      width: 100%;
+    }
+  }
+}
+
 .skill-list-holder {
   display: flex;
   flex-wrap: wrap;
 
   .skill-bar-holder {
     padding: 4px;
+    width: calc(100% / var(--cols, 1));
   }
 }

@@ -38,8 +38,8 @@ Any commit touching files outside `content/` triggers a normal Netlify deploy.
 
 ### Updating content
 
-- **Via the CMS:** log in at `/admin/` with a GitHub account that has write access to this repo, edit, and publish.
-- **By hand:** edit `content/*.json` directly and push. Keep the shapes in sync with `src/content/types.ts`, and mirror any shape changes in `static/admin/config.yml` so the CMS fields still match. Note `skills.json` is wrapped as `{ "groups": [...] }` because Decap requires an object at the file root.
+- **Via the CMS:** log in at `/admin/` with a GitHub account that has write access to this repo, edit, and publish. Each file has a custom preview (`static/admin/preview.js`) showing a rough render with clickable links and images.
+- **By hand:** edit `content/*.json` directly and push. Keep the shapes in sync with `src/content/types.ts`, and mirror any shape changes in `static/admin/config.yml` so the CMS fields still match. Files are numbered by the order their section appears on the page (e.g. `2.1-jobs.json`). Note `2.3-skills.json` is wrapped as `{ "groups": [...] }` and `5.0-footer.json` as `{ "items": [...] }` because Decap requires an object at the file root.
 - **Locally with the CMS UI:** uncomment `local_backend: true` in `static/admin/config.yml`, then run `npx decap-server` alongside `npm run develop` and open `http://localhost:8000/admin/`. Saves write to your working tree instead of committing to GitHub.
 
 ### One-time CMS setup

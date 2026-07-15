@@ -1,16 +1,18 @@
+import type { CSSProperties } from 'react';
+
 import { ProgressBar, TextHeading } from 'src/elements';
 import { useBio } from 'src/content';
 
 import * as Style from './Skills.module.scss';
 
 const Skills = () => (
-  <div>
+  <div className={Style.skills}>
     {useBio().experience.skills.map(({ type, items, cols }) => (
-      <div key={type}>
+      <div key={type} className={Style.skillGroup}>
         <TextHeading>{type}</TextHeading>
         <div className={Style.skillListHolder}>
           {items.map((skill, i) => (
-            <div key={i} className={Style.skillBarHolder} style={{ width: `${100 / cols}%` }}>
+            <div key={i} className={Style.skillBarHolder} style={{ '--cols': cols } as CSSProperties}>
               <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
             </div>
           ))}
