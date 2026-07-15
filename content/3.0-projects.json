@@ -16,10 +16,15 @@
         "key": "github",
         "href": "//github.com/pjflanagan",
         "text": "Github"
+      },
+      {
+        "key": "flannyapp",
+        "href": "//flanny.app",
+        "text": "Flanny.app"
       }
     ],
     "text": [
-      "Tinkering has always been a favorite hobby of mine. I'm always toying with the latest technologies and writing code. A list of all my development adventures can be found on my <blog> as well as my <github>."
+      "Tinkering has always been a favorite hobby of mine. I'm always toying with the latest technologies and writing code. See all my active projects on <flannyapp>. For details about my development adventures, read my <blog> or checkout my <github>."
     ]
   },
   "featured": [
@@ -27,10 +32,10 @@
       "name": "OhWord!?",
       "type": "individual",
       "link": "//ohword.flanny.app",
-      "description": "Developed daily online game\n",
+      "description": "Developed daily online game based on an old family favorite with global and friend leaderboards.",
       "image": "ohword.png",
       "tech": [
-        "Gatsby",
+        "Nextjs",
         "Netlify"
       ]
     },
@@ -53,7 +58,8 @@
       "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
       "image": "runcalculator.png",
       "tech": [
-        "Svelte"
+        "Svelte",
+        "Netlify"
       ]
     },
     {
@@ -63,7 +69,8 @@
       "description": "Designed a custom watch face based on Cyberpunk 2077.\n",
       "image": "cyberpunk-watchface.jpg",
       "tech": [
-        "Monkey C"
+        "Monkey C",
+        "Garmin SDK"
       ]
     }
   ],
@@ -73,7 +80,10 @@
       "type": "individual",
       "link": "//canvas.flanny.app/koi-pond",
       "description": "Designed a collection of animated visuals using the HTML5 Canvas.\n",
-      "image": "animations.png"
+      "image": "animations.png",
+      "tech": [
+        "HTML5"
+      ]
     },
     {
       "name": "bamboo",
@@ -104,14 +114,21 @@
       "type": "individual",
       "link": "https://www.flanny.app/blog/2020/mta-clock/",
       "description": "Created a cuckoo-style wall clock to track subways at my stop using an AWS Lambda and Arduino.",
-      "image": "mta.png"
+      "image": "mta.png",
+      "tech": [
+        "Arduino"
+      ]
     },
     {
       "name": "earlybird",
       "type": "individual",
       "link": "https://www.flanny.app/blog/2017/earlybird/",
       "description": "Designed and developed website that allows users to draft and schedule tweets using Flask on Heroku.",
-      "image": "earlybird.png"
+      "image": "earlybird.png",
+      "tech": [
+        "Flask",
+        "Heroku"
+      ]
     },
     {
       "name": "Space Fighters",
@@ -129,28 +146,41 @@
       "type": "individual",
       "link": "https://www.flanny.app/blog/2020/nightpro-for-gopro/",
       "description": "Created an ffmpeg Python package wrapper to combine GoPro nightlapse photos into timelapse videos.",
-      "image": "nightpro.jpg"
+      "image": "nightpro.jpg",
+      "tech": [
+        "Python"
+      ]
     },
     {
       "name": "breadcrumbs",
       "type": "individual",
       "link": "https://www.flanny.app/blog/2018/breadcrumbs/",
       "description": "Developed a map annotation application in Python Flask and Angular on Heroku. Users can draw line segments anywhere on a map and comment on every vertex.\n",
-      "image": "breadcrumbs.png"
+      "image": "breadcrumbs.png",
+      "tech": [
+        "Angular",
+        "Mapbox"
+      ]
     },
     {
       "name": "witebord",
       "type": "individual",
       "link": "https://www.flanny.app/blog/2018/witebord/",
       "description": "Developed socket drawing app using Node and Socket.io. Users can create a room and share it with friends to all draw together.\n",
-      "image": "witebord.png"
+      "image": "witebord.png",
+      "tech": [
+        "Socket.io"
+      ]
     },
     {
       "name": "ML Asteroids",
       "type": "individual",
       "link": "//github.com/pjflanagan/Machine-Learning-Asteroids/",
       "description": "Attempted to teach the game Asteroids to a computer using JavaScript and Phaser.",
-      "image": "asteroids.png"
+      "image": "asteroids.png",
+      "tech": [
+        "Phaser"
+      ]
     }
   ]
 }
