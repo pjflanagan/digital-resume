@@ -19,7 +19,7 @@ const SlideContact = () => {
         <Card setIsWaveOn={setIsWaveOn} isOpen={isRevealed} />
       </div>
       <div className={Style.slideBack} ref={ref}>
-        <Wave on={isWaveOn} />
+        <Wave on={isWaveOn} revealed={isRevealed} />
       </div>
     </ScrollComponent>
   );

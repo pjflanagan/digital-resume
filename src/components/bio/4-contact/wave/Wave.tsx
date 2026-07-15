@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 
 import * as Style from './Wave.module.scss';
 
@@ -9,6 +10,8 @@ const GAP = 8;
 const FRAME_RATE = 64;
 const MAX_OFFSET = 40;
 const INITIAL_BAR_COUNT = 32;
+const REVEAL_STAGGER_MS = 15;
+const REVEAL_DURATION_MS = 400;
 
 const getNextHeight = (pos: number): number => {
   return Math.abs(MAX_HEIGHT * Math.sin(-pos) + (Math.random() * FLUX) / 2 - FLUX);
@@ -46,10 +49,12 @@ const shiftBars = ({ pos, wave }: WaveState): WaveState => {
 
 type WaveProps = {
   on: boolean;
+  revealed: boolean;
 };
 
-const Wave = ({ on }: WaveProps) => {
+const Wave = ({ on, revealed }: WaveProps) => {
   const [{ pos, wave }, setState] = useState<WaveState>(() => initState(INITIAL_BAR_COUNT));
+  const [settled, setSettled] = useState(false);
 
   /* eslint-disable react-hooks/set-state-in-effect -- intentional: size the
      wave to the viewport once mounted (no window during SSR) */
@@ -66,8 +71,19 @@ const Wave = ({ on }: WaveProps) => {
     return () => clearInterval(interval);
   }, [on]);
 
+  useEffect(() => {
+    if (!revealed || settled) {
+      return;
+    }
+    const timeout = setTimeout(
+      () => setSettled(true),
+      wave.length * REVEAL_STAGGER_MS + REVEAL_DURATION_MS
+    );
+    return () => clearTimeout(timeout);
+  }, [revealed, settled, wave.length]);
+
   return (
-    <div className={Style.waveHolder}>
+    <div className={clsx(Style.waveHolder, { [Style.revealed]: revealed })}>
       {wave.map((height, i) => (
         <div
           key={i}
@@ -76,6 +92,8 @@ const Wave = ({ on }: WaveProps) => {
             height: `${height}%`,
             transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px))`,
             margin: `0 ${GAP}px`,
+            transitionDelay: revealed && !settled ? `${i * REVEAL_STAGGER_MS}ms` : '0s',
+            transitionDuration: settled ? undefined : `${REVEAL_DURATION_MS}ms`,
           }}
         />
       ))}

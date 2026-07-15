@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { useScrambleText } from 'src/hooks';
+import { activationKeyHandler } from 'src/helpers';
 
 import type { ContentLink } from './types';
 
@@ -19,7 +20,15 @@ type HeadingProps = {
 
 const makeHeading = (Tag: 'h1' | 'h2' | 'h3' | 'h4') => {
   const Heading = ({ className, children, mono, onClick }: HeadingProps) => (
-    <Tag className={clsx(className, mono && Style.mono)} onClick={onClick}>
+    <Tag
+      className={clsx(className, mono && Style.mono)}
+      onClick={onClick}
+      {...(onClick && {
+        role: 'button',
+        tabIndex: 0,
+        onKeyDown: activationKeyHandler(onClick),
+      })}
+    >
       {children}
     </Tag>
   );

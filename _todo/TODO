@@ -1,58 +1,15 @@
 
 MAIN TODO: 
-- [x] Use TS everywhere
 - [ ] replace some things with libraries that handle it for me
-- [x] remove graphql if possible
-- [x] use decamp cms
 - [ ] easier content linking, maybe markdown (see markdown-links.md)
-
-- [x] figure out lfs
-- [x] Add typescript - change some elements and hooks to use it
-
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
-- [x] No accessing content in Elements (avatar, footer)
-- [x] use `react-icon` instead of the ones I have
-
-REFERENCES
-- Cyberpunk 2077
-- Neon Genesis Evangelion
-
-GENERAL
-- [ ] Need some cyberpunk references, like an Arasaka logo, or the screen effects
-- [~] Add my tv show jokes and multi pass back in (some inventions in projects somewhere)
-- [ ] NEED a rollerblade somewhere
-- [x] use data through context
-- [x] content should be done with CONTEXT, only at top level
-- [ ] images should not be globally named (some should also be remote from either the website or git instead)
-- [!] make it so you can go tab through the whole site seamlessly
-
-LANDING
-- [ ] make the canvas pause and play based on where the scroll is
-
-PERSONAL 
-- [ ] add some decorative changing numbers or text maybe too
-- [ ] add a target back into the photo? (Throw bill cypher from gravity falls in there somehow?)
 
 EXPERIENCE 
-- [x] Intro paragraph longer than just PDF link (?)
 - [ ] side by side on wide enough screen
 - [!] useReveal isn't on avatar, make that a prop, instead have an effect for whole thing
 - [ ] Make that curve an inner shadow on experience mobile (?)
-- [ ] make show more animate in reverse
-
-PROJECT
-- [ ] Intro paragraph (?)
-- [ ] external link icon (match all icon styles like this)
-- STACK
-  - [ ] make other projects stack side to side, like the old itunes
-  - [ ] include every element to improve animations
-
-CONTACT 
-- [ ] scroll effect for contact area (wave opens up from height 0?)
 
 ELEMENTS
-- [!] make footer reveal from behind page at bottom (fixed and the whole page comes up to show it?)
-- [x] header with scroll links
 - [ ] Shadow for all dark part thing as _variable (specifically personal slide on mobile)
 

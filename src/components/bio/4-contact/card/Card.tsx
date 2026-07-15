@@ -135,10 +135,11 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
     errorMessages.find((error) => error.field === field)?.message ?? '';
 
   const cycleCharacter = () => {
-    const others = Bio.contact.formPlaceholders.filter(
-      (placeholder) => placeholder.name !== placeholders.name
+    const currentIndex = Bio.contact.formPlaceholders.findIndex(
+      (placeholder) => placeholder.name === placeholders.name
     );
-    setPlaceholders(Random.fromArray(others));
+    const nextIndex = (currentIndex + 1) % Bio.contact.formPlaceholders.length;
+    setPlaceholders(Bio.contact.formPlaceholders[nextIndex]);
   };
 
   const className = clsx(Style.card, {
