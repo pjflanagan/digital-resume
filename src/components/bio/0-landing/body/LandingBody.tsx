@@ -2,7 +2,7 @@ import * as Scroll from 'react-scroll';
 import { useWindowScroll } from 'react-use';
 
 import { LabeledButton, TextPageCenter } from 'src/elements';
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 
 import * as Style from './LandingBody.module.scss';
 
@@ -18,6 +18,7 @@ const clickToScroll = () => {
 
 const LandingBody = () => {
   const { y } = useWindowScroll();
+  const Bio = useBio();
   const prompt = Bio.splash.prompts[0];
 
   const textScroll = -y / 5;

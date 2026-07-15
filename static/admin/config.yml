@@ -1,0 +1,291 @@
+backend:
+  name: github
+  repo: pjflanagan/digital-resume
+  branch: main
+  # Netlify acts as the OAuth provider (Site configuration -> Access & security -> OAuth -> GitHub)
+  base_url: https://api.netlify.com
+
+# Decap commits directly to main; each save is one commit touching only content/,
+# which the netlify.toml ignore command skips building.
+media_folder: content/images
+public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images
+
+# Uncomment to edit locally with `npx decap-server` alongside `npm run develop`:
+# local_backend: true
+
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: bio
+        label: Bio
+        file: content/bio.json
+        fields:
+          - name: splash
+            label: Splash
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: subtitle, label: Subtitle, widget: string }
+              - name: prompts
+                label: Scroll Prompts
+                widget: list
+                field: { name: prompt, label: Prompt, widget: string }
+          - name: personal
+            label: Personal
+            widget: object
+            fields:
+              - name: accent
+                label: Accent
+                widget: object
+                fields:
+                  - { name: english, label: English, widget: string }
+                  - { name: mandarin, label: Mandarin, widget: string }
+              - name: titleText
+                label: Title Text
+                widget: object
+                fields:
+                  - { name: text, label: Text, widget: string }
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields:
+                      - { name: key, label: Key, widget: string }
+                      - { name: href, label: Href, widget: string, required: false }
+                      - { name: text, label: Text, widget: string }
+                      - name: callbackParam
+                        label: Hover Actions
+                        widget: list
+                        required: false
+                        fields:
+                          - { name: action, label: Action, widget: select, options: [image, text] }
+                          - { name: param, label: Param, widget: string }
+              - name: linkText
+                label: Body Text
+                widget: object
+                fields:
+                  - name: text
+                    label: Paragraphs
+                    widget: list
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields:
+                      - { name: key, label: Key, widget: string }
+                      - { name: href, label: Href, widget: string, required: false }
+                      - { name: text, label: Text, widget: string }
+                      - name: callbackParam
+                        label: Hover Actions
+                        widget: list
+                        required: false
+                        fields:
+                          - { name: action, label: Action, widget: select, options: [image, text] }
+                          - { name: param, label: Param, widget: string }
+          - name: experience
+            label: Experience
+            widget: object
+            fields:
+              - { name: accent, label: Accent, widget: string }
+              - { name: title, label: Title, widget: string }
+              - name: sections
+                label: Section Headings
+                widget: list
+                field: { name: section, label: Section, widget: string }
+              - name: linkText
+                label: Intro Text
+                widget: object
+                fields:
+                  - name: text
+                    label: Paragraphs
+                    widget: list
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields:
+                      - { name: key, label: Key, widget: string }
+                      - { name: href, label: Href, widget: string, required: false }
+                      - { name: text, label: Text, widget: string }
+          - name: projects
+            label: Projects
+            widget: object
+            fields:
+              - { name: accent, label: Accent, widget: string }
+              - { name: title, label: Title, widget: string }
+              - name: sections
+                label: Section Headings
+                widget: list
+                field: { name: section, label: Section, widget: string }
+              - name: linkText
+                label: Intro Text
+                widget: object
+                fields:
+                  - name: text
+                    label: Paragraphs
+                    widget: list
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields:
+                      - { name: key, label: Key, widget: string }
+                      - { name: href, label: Href, widget: string, required: false }
+                      - { name: text, label: Text, widget: string }
+          - name: contact
+            label: Contact
+            widget: object
+            fields:
+              - { name: accent, label: Accent, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: text, label: Text, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: icon, label: Icon, widget: select, options: [email, github, linkedin] }
+                  - { name: href, label: Href, widget: string }
+                  - { name: text, label: Text, widget: string }
+              - name: formPlaceholders
+                label: Form Placeholders
+                widget: list
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: email, label: Email, widget: string }
+                  - { name: message, label: Message, widget: string }
+          - name: footer
+            label: Footer
+            widget: list
+            fields:
+              - { name: text, label: Text, widget: string }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: key, label: Key, widget: string }
+                  - { name: href, label: Href, widget: string, required: false }
+                  - { name: text, label: Text, widget: string }
+
+      - name: jobs
+        label: Jobs
+        file: content/jobs.json
+        fields:
+          - name: featured
+            label: Featured Jobs
+            widget: list
+            fields: &job_fields
+              - { name: name, label: Name, widget: string }
+              - { name: location, label: Location, widget: string }
+              - { name: time, label: Time, widget: string }
+              - { name: position, label: Position, widget: string }
+              - { name: image, label: Image Filename, widget: string }
+              - name: description
+                label: Description
+                widget: list
+                required: false
+                field: { name: item, label: Item, widget: text }
+              - name: description_hidden
+                label: Hidden Description (behind Show More)
+                widget: list
+                required: false
+                field: { name: item, label: Item, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                required: false
+                fields:
+                  - { name: key, label: Key, widget: string }
+                  - { name: href, label: Href, widget: string, required: false }
+                  - { name: text, label: Text, widget: string }
+              - { name: background, label: Background Color, widget: string }
+              - { name: color, label: Accent Color, widget: string }
+          - name: other
+            label: Other Jobs
+            widget: list
+            fields: *job_fields
+
+      - name: schools
+        label: Schools
+        file: content/schools.json
+        fields:
+          - name: featured
+            label: Featured Schools
+            widget: list
+            fields: &school_fields
+              - { name: name, label: Name, widget: string }
+              - { name: location, label: Location, widget: string }
+              - { name: class, label: Class, widget: string }
+              - { name: degree, label: Degree, widget: string, required: false }
+              - { name: image, label: Image Filename, widget: string, required: false }
+              - name: description
+                label: Description
+                widget: list
+                required: false
+                field: { name: item, label: Item, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                required: false
+                fields:
+                  - { name: key, label: Key, widget: string }
+                  - { name: href, label: Href, widget: string, required: false }
+                  - { name: text, label: Text, widget: string }
+              - { name: background, label: Background Color, widget: string }
+              - { name: color, label: Accent Color, widget: string }
+              - name: extra
+                label: Extracurriculars
+                widget: list
+                required: false
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: position, label: Position, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: link, label: Link, widget: string, required: false }
+          - name: other
+            label: Other Schools
+            widget: list
+            fields: *school_fields
+          - name: hidden
+            label: Hidden Schools
+            widget: list
+            fields: *school_fields
+
+      - name: skills
+        label: Skills
+        file: content/skills.json
+        fields:
+          - name: groups
+            label: Skill Groups
+            widget: list
+            fields:
+              - { name: type, label: Type, widget: string }
+              - { name: cols, label: Columns, widget: number, value_type: int, min: 1, max: 3 }
+              - name: items
+                label: Skills
+                widget: list
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: progress, label: Progress, widget: number, value_type: int, min: 0, max: 100 }
+
+      - name: projects
+        label: Projects
+        file: content/projects.json
+        fields:
+          - name: featured
+            label: Featured Projects
+            widget: list
+            fields: &project_fields
+              - { name: name, label: Name, widget: string }
+              - { name: type, label: Type, widget: string }
+              - { name: link, label: Link, widget: string }
+              - { name: description, label: Description, widget: text }
+              - { name: image, label: Image Filename, widget: string }
+              - name: tech
+                label: Tech
+                widget: list
+                required: false
+                field: { name: item, label: Item, widget: string }
+          - name: all
+            label: Other Projects
+            widget: list
+            fields: *project_fields

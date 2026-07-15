@@ -101,8 +101,21 @@ type BioContent = {
   footer: LinkText<string>[];
 };
 
+// the raw shapes of the JSON files in content/, before assembly into BioContent
+type ContentFiles = {
+  bio: Omit<BioContent, 'experience' | 'projects'> & {
+    experience: Omit<BioContent['experience'], 'jobs' | 'schools' | 'skills'>;
+    projects: Omit<BioContent['projects'], 'projects'>;
+  };
+  jobs: BioContent['experience']['jobs'];
+  schools: BioContent['experience']['schools'];
+  skills: { groups: BioContent['experience']['skills'] };
+  projects: BioContent['projects']['projects'];
+};
+
 export type {
   ContentLink,
+  ContentFiles,
   Language,
   LinkAction,
   LinkText,

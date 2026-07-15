@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "public/"
+  # Exit 0 (skip build) when nothing outside content/ changed since the last
+  # deployed commit — content-only Decap commits don't need a rebuild because
+  # the site fetches content/ from raw.githubusercontent.com at runtime.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)content'"

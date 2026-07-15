@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 import type { Language, LinkAction } from 'src/content';
 
 import * as Style from './PersonalBody.module.scss';
@@ -26,7 +26,7 @@ const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
     });
   };
 
-  const { accent, linkText, titleText } = Bio.personal;
+  const { accent, linkText, titleText } = useBio().personal;
   return (
     <div className={Style.body}>
       <TextAccent mono animate>

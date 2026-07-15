@@ -1,7 +1,7 @@
 import * as Scroll from 'react-scroll';
 
 import { TextTitle, TextSection, TextAccent, Text, ShowMore } from 'src/elements';
-import { Bio } from 'src/content';
+import { useBio } from 'src/content';
 import type { Job, School } from 'src/content';
 
 import { Org } from './org/Org';
@@ -39,7 +39,7 @@ const SchoolOrg = ({ school }: { school: School }) => (
 );
 
 const SlideExperience = () => {
-  const { accent, title, sections, jobs, schools, linkText } = Bio.experience;
+  const { accent, title, sections, jobs, schools, linkText } = useBio().experience;
   return (
     <ScrollComponent className={Style.slideExperience} name="experience">
       <div className={Style.preSlideCurveHolder}>
