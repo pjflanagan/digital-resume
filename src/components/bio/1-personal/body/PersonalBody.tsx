@@ -14,13 +14,13 @@ const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
   const [language, setLanguage] = useState<Language>('english');
 
   const linkHover = (actions?: LinkAction[]) => {
-    actions?.forEach(({ action, param }) => {
-      switch (action) {
+    actions?.forEach((linkAction) => {
+      switch (linkAction.action) {
         case 'image':
-          photoLinkCallback(param);
+          photoLinkCallback(linkAction.image);
           break;
         case 'text':
-          setLanguage(param);
+          setLanguage(linkAction.param);
           break;
       }
     });

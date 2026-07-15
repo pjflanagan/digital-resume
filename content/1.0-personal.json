@@ -10,7 +10,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "param": "personal-photo.jpg"
+            "image": "personal-photo.jpg"
           },
           {
             "action": "text",
@@ -30,7 +30,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "param": "personal-roller-blade.jpg"
+            "image": "personal-roller-blade.jpg"
           }
         ],
         "text": "rollerblader"
@@ -40,7 +40,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "param": "personal-rock-climbing.jpg"
+            "image": "personal-rock-climbing.jpg"
           }
         ],
         "text": "rock climber"
@@ -50,7 +50,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "param": "personal-scuba.jpg"
+            "image": "personal-scuba.jpg"
           }
         ],
         "text": "SCUBA diver"
@@ -65,7 +65,7 @@
           },
           {
             "action": "image",
-            "param": "personal-mandarin.jpg"
+            "image": "personal-mandarin.jpg"
           }
         ],
         "text": "Mandarin student"
@@ -75,7 +75,7 @@
         "callbackParam": [
           {
             "action": "image",
-            "param": "personal-snowboarding.jpg"
+            "image": "personal-snowboarding.jpg"
           }
         ],
         "text": "board sport"

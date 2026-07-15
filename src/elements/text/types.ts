@@ -5,7 +5,7 @@
 type Language = 'english' | 'mandarin';
 
 // side effects a link can trigger on hover/focus
-type LinkAction = { action: 'image'; param: string } | { action: 'text'; param: Language };
+type LinkAction = { action: 'image'; image: string } | { action: 'text'; param: Language };
 
 type ContentLink = {
   key: string;

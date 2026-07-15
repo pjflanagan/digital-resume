@@ -58,7 +58,17 @@ collections:
                     required: false
                     fields:
                       - { name: action, label: Action, widget: select, options: [image, text] }
-                      - { name: param, label: Param, widget: string }
+                      - name: image
+                        label: Image (for image actions)
+                        widget: image
+                        required: false
+                        media_folder: /content/images/personal
+                        public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
+                      - name: param
+                        label: Language (for text actions)
+                        widget: select
+                        options: [english, mandarin]
+                        required: false
           - name: linkText
             label: Body Text
             widget: object
