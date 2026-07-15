@@ -13,14 +13,19 @@ async function fetchContentFile<T>(file: string): Promise<T> {
 }
 
 async function fetchContentFiles(): Promise<ContentFiles> {
-  const [bio, jobs, schools, skills, projects] = await Promise.all([
-    fetchContentFile<ContentFiles['bio']>('bio.json'),
-    fetchContentFile<ContentFiles['jobs']>('jobs.json'),
-    fetchContentFile<ContentFiles['schools']>('schools.json'),
-    fetchContentFile<ContentFiles['skills']>('skills.json'),
-    fetchContentFile<ContentFiles['projects']>('projects.json'),
-  ]);
-  return { bio, jobs, schools, skills, projects };
+  const [splash, personal, experience, jobs, schools, skills, projects, contact, footer] =
+    await Promise.all([
+      fetchContentFile<ContentFiles['splash']>('0.0-splash.json'),
+      fetchContentFile<ContentFiles['personal']>('1.0-personal.json'),
+      fetchContentFile<ContentFiles['experience']>('2.0-experience.json'),
+      fetchContentFile<ContentFiles['jobs']>('2.1-jobs.json'),
+      fetchContentFile<ContentFiles['schools']>('2.2-schools.json'),
+      fetchContentFile<ContentFiles['skills']>('2.3-skills.json'),
+      fetchContentFile<ContentFiles['projects']>('3.0-projects.json'),
+      fetchContentFile<ContentFiles['contact']>('4.0-contact.json'),
+      fetchContentFile<ContentFiles['footer']>('5.0-footer.json'),
+    ]);
+  return { splash, personal, experience, jobs, schools, skills, projects, contact, footer };
 }
 
 export { fetchContentFiles };

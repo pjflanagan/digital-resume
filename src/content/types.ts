@@ -103,14 +103,15 @@ type BioContent = {
 
 // the raw shapes of the JSON files in content/, before assembly into BioContent
 type ContentFiles = {
-  bio: Omit<BioContent, 'experience' | 'projects'> & {
-    experience: Omit<BioContent['experience'], 'jobs' | 'schools' | 'skills'>;
-    projects: Omit<BioContent['projects'], 'projects'>;
-  };
+  splash: BioContent['splash'];
+  personal: BioContent['personal'];
+  experience: Omit<BioContent['experience'], 'jobs' | 'schools' | 'skills'>;
   jobs: BioContent['experience']['jobs'];
   schools: BioContent['experience']['schools'];
   skills: { groups: BioContent['experience']['skills'] };
-  projects: BioContent['projects']['projects'];
+  projects: Omit<BioContent['projects'], 'projects'> & BioContent['projects']['projects'];
+  contact: BioContent['contact'];
+  footer: { items: BioContent['footer'] };
 };
 
 export type {

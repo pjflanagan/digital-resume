@@ -1,0 +1,44 @@
+{
+  "accent": "Let's make",
+  "title": "Contact!",
+  "text": "While I'm not seeking new opportunities right now, feel free to reach out and I'll be sure to phone back!",
+  "links": [
+    {
+      "icon": "email",
+      "href": "mailto:pjflanagan1@gmail.com",
+      "text": "Email"
+    },
+    {
+      "icon": "github",
+      "href": "//github.com/pjflanagan",
+      "text": "Github"
+    },
+    {
+      "icon": "linkedin",
+      "href": "//www.linkedin.com/in/peterjflan",
+      "text": "LinkedIn"
+    }
+  ],
+  "formPlaceholders": [
+    {
+      "name": "Tony Stark",
+      "email": "tony@starkindustries.com",
+      "message": "I am Ironman."
+    },
+    {
+      "name": "Professor Farnsworth",
+      "email": "farnsworth@planetexpress.com",
+      "message": "Good news everyone!"
+    },
+    {
+      "name": "Rick Sanchez",
+      "email": "rick@c137.com",
+      "message": "Wubba lubba dub dub!"
+    },
+    {
+      "name": "Johnny Silverhand",
+      "email": "rockerboy@samurai.band",
+      "message": "Wake up choom."
+    }
+  ]
+}

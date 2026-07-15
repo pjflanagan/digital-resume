@@ -1,0 +1,21 @@
+{
+  "accent": "Lightyears of",
+  "title": "Experience",
+  "sections": [
+    "Career",
+    "Education",
+    "Skills"
+  ],
+  "linkText": {
+    "links": [
+      {
+        "key": "pdf",
+        "href": "/pdf/PeterFlanaganResume2021.pdf",
+        "text": "PDF form"
+      }
+    ],
+    "text": [
+      "I have a Bachelor's in Computer Science from The University of Michigan and I've worked several positions at top tech companies. This resume is also available in <pdf>."
+    ]
+  }
+}

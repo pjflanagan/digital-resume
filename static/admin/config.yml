@@ -17,158 +17,88 @@ collections:
   - name: site
     label: Site Content
     files:
-      - name: bio
-        label: Bio
-        file: content/bio.json
+      - name: splash
+        label: Splash
+        file: content/0.0-splash.json
         fields:
-          - name: splash
-            label: Splash
-            widget: object
-            fields:
-              - { name: title, label: Title, widget: string }
-              - { name: subtitle, label: Subtitle, widget: string }
-              - name: prompts
-                label: Scroll Prompts
-                widget: list
-                field: { name: prompt, label: Prompt, widget: string }
-          - name: personal
-            label: Personal
-            widget: object
-            fields:
-              - name: accent
-                label: Accent
-                widget: object
-                fields:
-                  - { name: english, label: English, widget: string }
-                  - { name: mandarin, label: Mandarin, widget: string }
-              - name: titleText
-                label: Title Text
-                widget: object
-                fields:
-                  - { name: text, label: Text, widget: string }
-                  - name: links
-                    label: Links
-                    widget: list
-                    fields:
-                      - { name: key, label: Key, widget: string }
-                      - { name: href, label: Href, widget: string, required: false }
-                      - { name: text, label: Text, widget: string }
-                      - name: callbackParam
-                        label: Hover Actions
-                        widget: list
-                        required: false
-                        fields:
-                          - { name: action, label: Action, widget: select, options: [image, text] }
-                          - { name: param, label: Param, widget: string }
-              - name: linkText
-                label: Body Text
-                widget: object
-                fields:
-                  - name: text
-                    label: Paragraphs
-                    widget: list
-                    field: { name: paragraph, label: Paragraph, widget: text }
-                  - name: links
-                    label: Links
-                    widget: list
-                    fields:
-                      - { name: key, label: Key, widget: string }
-                      - { name: href, label: Href, widget: string, required: false }
-                      - { name: text, label: Text, widget: string }
-                      - name: callbackParam
-                        label: Hover Actions
-                        widget: list
-                        required: false
-                        fields:
-                          - { name: action, label: Action, widget: select, options: [image, text] }
-                          - { name: param, label: Param, widget: string }
-          - name: experience
-            label: Experience
-            widget: object
-            fields:
-              - { name: accent, label: Accent, widget: string }
-              - { name: title, label: Title, widget: string }
-              - name: sections
-                label: Section Headings
-                widget: list
-                field: { name: section, label: Section, widget: string }
-              - name: linkText
-                label: Intro Text
-                widget: object
-                fields:
-                  - name: text
-                    label: Paragraphs
-                    widget: list
-                    field: { name: paragraph, label: Paragraph, widget: text }
-                  - name: links
-                    label: Links
-                    widget: list
-                    fields:
-                      - { name: key, label: Key, widget: string }
-                      - { name: href, label: Href, widget: string, required: false }
-                      - { name: text, label: Text, widget: string }
-          - name: projects
-            label: Projects
-            widget: object
-            fields:
-              - { name: accent, label: Accent, widget: string }
-              - { name: title, label: Title, widget: string }
-              - name: sections
-                label: Section Headings
-                widget: list
-                field: { name: section, label: Section, widget: string }
-              - name: linkText
-                label: Intro Text
-                widget: object
-                fields:
-                  - name: text
-                    label: Paragraphs
-                    widget: list
-                    field: { name: paragraph, label: Paragraph, widget: text }
-                  - name: links
-                    label: Links
-                    widget: list
-                    fields:
-                      - { name: key, label: Key, widget: string }
-                      - { name: href, label: Href, widget: string, required: false }
-                      - { name: text, label: Text, widget: string }
-          - name: contact
-            label: Contact
-            widget: object
-            fields:
-              - { name: accent, label: Accent, widget: string }
-              - { name: title, label: Title, widget: string }
-              - { name: text, label: Text, widget: text }
-              - name: links
-                label: Links
-                widget: list
-                fields:
-                  - { name: icon, label: Icon, widget: select, options: [email, github, linkedin] }
-                  - { name: href, label: Href, widget: string }
-                  - { name: text, label: Text, widget: string }
-              - name: formPlaceholders
-                label: Form Placeholders
-                widget: list
-                fields:
-                  - { name: name, label: Name, widget: string }
-                  - { name: email, label: Email, widget: string }
-                  - { name: message, label: Message, widget: string }
-          - name: footer
-            label: Footer
+          - { name: title, label: Title, widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - name: prompts
+            label: Scroll Prompts
             widget: list
+            field: { name: prompt, label: Prompt, widget: string }
+
+      - name: personal
+        label: Personal
+        file: content/1.0-personal.json
+        fields:
+          - name: accent
+            label: Accent
+            widget: object
+            fields:
+              - { name: english, label: English, widget: string }
+              - { name: mandarin, label: Mandarin, widget: string }
+          - name: titleText
+            label: Title Text
+            widget: object
             fields:
               - { name: text, label: Text, widget: string }
               - name: links
                 label: Links
                 widget: list
-                fields:
+                fields: &hover_link_fields
+                  - { name: key, label: Key, widget: string }
+                  - { name: href, label: Href, widget: string, required: false }
+                  - { name: text, label: Text, widget: string }
+                  - name: callbackParam
+                    label: Hover Actions
+                    widget: list
+                    required: false
+                    fields:
+                      - { name: action, label: Action, widget: select, options: [image, text] }
+                      - { name: param, label: Param, widget: string }
+          - name: linkText
+            label: Body Text
+            widget: object
+            fields:
+              - name: text
+                label: Paragraphs
+                widget: list
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                fields: *hover_link_fields
+
+      - name: experience
+        label: Experience Intro
+        file: content/2.0-experience.json
+        fields:
+          - { name: accent, label: Accent, widget: string }
+          - { name: title, label: Title, widget: string }
+          - name: sections
+            label: Section Headings
+            widget: list
+            field: { name: section, label: Section, widget: string }
+          - name: linkText
+            label: Intro Text
+            widget: object
+            fields: &link_text_fields
+              - name: text
+                label: Paragraphs
+                widget: list
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: links
+                label: Links
+                widget: list
+                fields: &link_fields
                   - { name: key, label: Key, widget: string }
                   - { name: href, label: Href, widget: string, required: false }
                   - { name: text, label: Text, widget: string }
 
       - name: jobs
         label: Jobs
-        file: content/jobs.json
+        file: content/2.1-jobs.json
         fields:
           - name: featured
             label: Featured Jobs
@@ -193,10 +123,7 @@ collections:
                 label: Links
                 widget: list
                 required: false
-                fields:
-                  - { name: key, label: Key, widget: string }
-                  - { name: href, label: Href, widget: string, required: false }
-                  - { name: text, label: Text, widget: string }
+                fields: *link_fields
               - { name: background, label: Background Color, widget: string }
               - { name: color, label: Accent Color, widget: string }
           - name: other
@@ -206,7 +133,7 @@ collections:
 
       - name: schools
         label: Schools
-        file: content/schools.json
+        file: content/2.2-schools.json
         fields:
           - name: featured
             label: Featured Schools
@@ -226,10 +153,7 @@ collections:
                 label: Links
                 widget: list
                 required: false
-                fields:
-                  - { name: key, label: Key, widget: string }
-                  - { name: href, label: Href, widget: string, required: false }
-                  - { name: text, label: Text, widget: string }
+                fields: *link_fields
               - { name: background, label: Background Color, widget: string }
               - { name: color, label: Accent Color, widget: string }
               - name: extra
@@ -252,7 +176,7 @@ collections:
 
       - name: skills
         label: Skills
-        file: content/skills.json
+        file: content/2.3-skills.json
         fields:
           - name: groups
             label: Skill Groups
@@ -269,8 +193,18 @@ collections:
 
       - name: projects
         label: Projects
-        file: content/projects.json
+        file: content/3.0-projects.json
         fields:
+          - { name: accent, label: Accent, widget: string }
+          - { name: title, label: Title, widget: string }
+          - name: sections
+            label: Section Headings
+            widget: list
+            field: { name: section, label: Section, widget: string }
+          - name: linkText
+            label: Intro Text
+            widget: object
+            fields: *link_text_fields
           - name: featured
             label: Featured Projects
             widget: list
@@ -289,3 +223,39 @@ collections:
             label: Other Projects
             widget: list
             fields: *project_fields
+
+      - name: contact
+        label: Contact
+        file: content/4.0-contact.json
+        fields:
+          - { name: accent, label: Accent, widget: string }
+          - { name: title, label: Title, widget: string }
+          - { name: text, label: Text, widget: text }
+          - name: links
+            label: Links
+            widget: list
+            fields:
+              - { name: icon, label: Icon, widget: select, options: [email, github, linkedin] }
+              - { name: href, label: Href, widget: string }
+              - { name: text, label: Text, widget: string }
+          - name: formPlaceholders
+            label: Form Placeholders
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: email, label: Email, widget: string }
+              - { name: message, label: Message, widget: string }
+
+      - name: footer
+        label: Footer
+        file: content/5.0-footer.json
+        fields:
+          - name: items
+            label: Lines
+            widget: list
+            fields:
+              - { name: text, label: Text, widget: string }
+              - name: links
+                label: Links
+                widget: list
+                fields: *link_fields
