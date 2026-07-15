@@ -19,13 +19,13 @@
         "key": "rollerblader",
         "href": "//instagram.com/roller.babe",
         "image": "personal-roller-blade.jpg",
-        "imageDescription": "London, United Kingdom",
+        "imageDescription": "London, United Kingdom, 51.504650, -0.020259",
         "text": "rollerblader"
       },
       {
         "key": "rockclimber",
         "image": "personal-rock-climbing.jpg",
-        "imageDescription": "Denver, CO",
+        "imageDescription": "Colorado Springs, Colorado, 38.850854, -104.874817",
         "text": "rock climber"
       },
       {
@@ -38,14 +38,14 @@
         "key": "mandarin_student",
         "href": "//flanny.app/study-mandarin",
         "image": "personal-mandarin.jpg",
-        "imageDescription": "Taipei, Taiwan",
+        "imageDescription": "Taipei, Taiwan, 25.058497, 121.509620",
         "greeting": "你好，我名字叫",
         "text": "Mandarin student"
       },
       {
         "key": "board_sport",
         "image": "personal-snowboarding.jpg",
-        "imageDescription": "Big Sky, MT",
+        "imageDescription": "Solitude, Utah, 40.619934, -111.604462",
         "text": "board sport"
       }
     ],
