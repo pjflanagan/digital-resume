@@ -45,7 +45,7 @@
       {
         "key": "board_sport",
         "image": "personal-snowboarding.jpg",
-        "imageDescription": "Solitude, Utah\n40.619934, -111.604462, 10,488 ft\n+6 ft",
+        "imageDescription": "Solitude, Utah\n40.619934, -111.604462\n10,488 ft +6 ft airtime",
         "text": "board sport"
       }
     ],
