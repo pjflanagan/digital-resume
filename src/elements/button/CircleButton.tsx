@@ -10,6 +10,7 @@ type CircleButtonLinkedProps = {
   onMouseLeave?: () => void;
   href: string;
   sameWindow?: boolean;
+  className?: string;
 };
 
 const CircleButtonLinked = ({
@@ -18,6 +19,7 @@ const CircleButtonLinked = ({
   onMouseLeave,
   href,
   sameWindow,
+  className,
 }: CircleButtonLinkedProps) => {
   const rel = !sameWindow ? 'noreferrer' : undefined;
   const target = !sameWindow ? '_blank' : undefined;
@@ -28,6 +30,7 @@ const CircleButtonLinked = ({
       href={href}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      className={clsx(Style.circleButton, Style.buttonReset, className)}
     >
       <SVGIcon icon={icon} />
     </a>
@@ -37,11 +40,16 @@ const CircleButtonLinked = ({
 type CircleButtonActionProps = {
   icon: IconName;
   onClick: () => void;
+  className?: string;
 };
 
-const CircleButtonAction = ({ icon, onClick }: CircleButtonActionProps) => {
+const CircleButtonAction = ({ icon, onClick, className }: CircleButtonActionProps) => {
   return (
-    <button type="button" className={clsx(Style.circleButton, Style.buttonReset)} onClick={onClick}>
+    <button
+      type="button"
+      className={clsx(Style.circleButton, Style.buttonReset, className)}
+      onClick={onClick}
+    >
       <SVGIcon icon={icon} />
     </button>
   );

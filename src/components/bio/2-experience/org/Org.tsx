@@ -26,6 +26,23 @@ type OrgProps = {
   extra?: SchoolExtra[];
 };
 
+type BulletProps = {
+  revealed: boolean;
+  style?: React.CSSProperties;
+  links?: ContentLink[];
+  children: string;
+};
+
+const Bullet = ({ revealed, style, links, children }: BulletProps) => (
+  <Text
+    links={links}
+    style={style}
+    className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)}
+  >
+    {children}
+  </Text>
+);
+
 const Org = ({
   name,
   time,
@@ -39,8 +56,6 @@ const Org = ({
 }: OrgProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 132 });
-
-  const bulletClassName = clsx(isRevealed ? Style.revealed : Style.hidden, Style.bulletPoint);
 
   function bulletStyle(index: number, offset = 0): React.CSSProperties {
     return { transitionDelay: `${(index + offset) * 100}ms` };
@@ -61,16 +76,16 @@ const Org = ({
       <div className={Style.orgRight}>
         {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
         {description.map((line, i) => (
-          <Text key={i} links={links} className={bulletClassName} style={bulletStyle(i)}>
+          <Bullet key={i} links={links} revealed={isRevealed} style={bulletStyle(i)}>
             {line}
-          </Text>
+          </Bullet>
         ))}
       </div>
       {!!extra &&
         extra.map((org, i) => (
           <div
             key={org.name}
-            className={clsx(Style.orgExtra, bulletClassName)}
+            className={clsx(Style.orgExtra, isRevealed ? Style.revealed : Style.hidden, Style.bulletPoint)}
             style={bulletStyle(i, description.length)}
           >
             <div className={Style.orgLeft}></div>

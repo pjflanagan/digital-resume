@@ -1,10 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 
-import { FrameHolder, Image, TextAccent } from 'src/elements';
+import { TextAccent, FramedImage } from 'src/elements';
 import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
 
-// TODO: import { BillCypher } from "./bill-cypher"; ?
 import * as Style from './Photo.module.scss';
 import clsx from 'clsx';
 
@@ -19,11 +18,10 @@ const Photo = ({ photo, photoDescription }: PhotoProps) => {
   const hasMounted = useRef(false);
   const [isPulsing, setIsPulsing] = useState(false);
 
-  const className = clsx(Style.photoFrameHolder, {
+  const frameClassName = clsx(Style.photoFrameHolder, {
     [Style.reveal]: isScrollRevealed,
     [Style.pulse]: isPulsing,
   });
-  const imageClassName = clsx(Style.image);
 
   useEffect(() => {
     // skip the pulse on the very first render, only replay it when the photo actually changes
@@ -41,12 +39,12 @@ const Photo = ({ photo, photoDescription }: PhotoProps) => {
 
   return (
     <div className={Style.personalPhoto} ref={ref}>
-      <Image
+      <FramedImage
         src={contentImage('personal', photo)}
         alt={'Peter James Flanagan Headshot'}
-        className={imageClassName}
+        imageClassName={Style.image}
+        frameClassName={frameClassName}
       />
-      <FrameHolder className={className}></FrameHolder>
       {photoDescription && (
         <TextAccent className={Style.photoDescription} mono animate>
           {photoDescription}

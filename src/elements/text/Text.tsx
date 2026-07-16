@@ -10,11 +10,14 @@ import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
 
 import * as Style from './Text.module.scss';
 
-type HeadingProps = {
+type MonoTextProps = {
   className?: string;
-  children?: React.ReactNode;
   // when true, renders in Ubuntu Mono
   mono?: boolean;
+};
+
+type HeadingProps = MonoTextProps & {
+  children?: React.ReactNode;
   onClick?: () => void;
 };
 
@@ -74,14 +77,12 @@ const TextTag = ({ children, mono }: { children?: React.ReactNode; mono?: boolea
   <span className={clsx(Style.textTag, mono && Style.mono)}>{children}</span>
 );
 
-type TextProps = {
+type TextProps = MonoTextProps & {
   dangerouslySetInnerHTML?: { __html: string };
-  className?: string;
   style?: React.CSSProperties;
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
-  mono?: boolean;
 };
 
 // Text
@@ -100,13 +101,10 @@ const Text = ({
   return <p className={classNames} style={style}>{ParseTextForLinks(children || '', links, callback)}</p>;
 };
 
-type TextPageCenterProps = {
-  className?: string;
+type TextPageCenterProps = MonoTextProps & {
   headline: React.ReactNode;
   blurb: string;
   style?: React.CSSProperties;
-  // when true, renders the blurb in Ubuntu Mono
-  mono?: boolean;
   // when true, scrambles the blurb until scrolled into view
   animate?: boolean;
 };

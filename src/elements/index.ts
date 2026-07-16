@@ -4,6 +4,7 @@ export * from './canvas/Canvas';
 export * from './canvas/BaseView';
 export * from './cover/Cover';
 export * from './frame/Frame';
+export * from './framed-image/FramedImage';
 export * from './form/Form';
 export * from './form/FormField';
 export * from './footer/Footer';

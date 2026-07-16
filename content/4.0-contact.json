@@ -41,14 +41,24 @@
       "message": "Wake up choom."
     },
     {
-      "name": "Leeloo",
-      "email": "LeelooDallas@multi.pass",
+      "name": "Leeloo Dallas",
+      "email": "Leeloo.dallas@multi.pass",
       "message": "Me protect you."
     },
     {
       "name": "Cassian Andor",
       "email": "cass@ferrix.com",
       "message": "I have friends everywhere."
+    },
+    {
+      "name": "Roy Batty",
+      "email": "replicant.batty@tyrell.com",
+      "message": "Like tears in rain."
+    },
+    {
+      "name": "Paul Atreides",
+      "email": "maudib@arrakis.world",
+      "message": "Fear is the mind-killer."
     }
   ]
 }

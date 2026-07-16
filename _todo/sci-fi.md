@@ -13,9 +13,14 @@
   - [ ] Anything from this?
 - [x] Iron Man
 - [x] Andor 
+- [x] Blade Runner
+- [x] Dune
 
 
+- [ ] Alien
 - [ ] Gravity Falls
+- [ ] Minority Report
+
 - [ ] Horizon (ZD)
   - [ ] Focus effect?
 - [ ] Kurt Vonnegut - Slaghterhouse 5?

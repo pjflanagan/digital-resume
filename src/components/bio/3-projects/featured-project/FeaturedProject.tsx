@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { FrameHolder, Image, Text, TextLinkedHeader, TextTag } from 'src/elements';
+import { Text, TextLinkedHeader, TextTag, FramedImage } from 'src/elements';
 import type { Project as ProjectContent } from 'src/content';
 import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
@@ -24,9 +24,13 @@ const FeaturedProject = ({
 
   return (
     <div className={className} ref={ref}>
-      <FrameHolder className={Style.projectImageFrame}>
-        <Image src={contentImage('projects', image)} alt={name} className={Style.projectImage} />
-      </FrameHolder>
+      <FramedImage
+        layout="inset"
+        src={contentImage('projects', image)}
+        alt={name}
+        frameClassName={Style.projectImageFrame}
+        imageClassName={Style.projectImage}
+      />
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
         <Text>{description}</Text>
