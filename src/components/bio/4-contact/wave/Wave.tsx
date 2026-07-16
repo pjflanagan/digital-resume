@@ -89,8 +89,7 @@ const Wave = ({ on, revealed }: WaveProps) => {
           key={i}
           className={Style.bar}
           style={{
-            height: `${height}%`,
-            transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px))`,
+            transform: `translate(0, calc(-50% + ${getOffset(pos + SPEED * i)}px)) scaleY(${height / 100})`,
             margin: `0 ${GAP}px`,
             transitionDelay: revealed && !settled ? `${i * REVEAL_STAGGER_MS}ms` : '0s',
             transitionDuration: settled ? undefined : `${REVEAL_DURATION_MS}ms`,

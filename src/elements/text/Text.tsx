@@ -77,6 +77,7 @@ const TextTag = ({ children, mono }: { children?: React.ReactNode; mono?: boolea
 type TextProps = {
   dangerouslySetInnerHTML?: { __html: string };
   className?: string;
+  style?: React.CSSProperties;
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
@@ -87,6 +88,7 @@ type TextProps = {
 const Text = ({
   dangerouslySetInnerHTML,
   className,
+  style,
   children,
   links,
   callback,
@@ -94,8 +96,8 @@ const Text = ({
 }: TextProps) => {
   const classNames = clsx(className, mono && Style.mono);
   if (dangerouslySetInnerHTML)
-    return <p className={classNames} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
-  return <p className={classNames}>{ParseTextForLinks(children || '', links, callback)}</p>;
+    return <p className={classNames} style={style} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
+  return <p className={classNames} style={style}>{ParseTextForLinks(children || '', links, callback)}</p>;
 };
 
 type TextPageCenterProps = {

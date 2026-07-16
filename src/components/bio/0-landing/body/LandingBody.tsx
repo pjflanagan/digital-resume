@@ -1,5 +1,5 @@
+import { useEffect, useRef } from 'react';
 import * as Scroll from 'react-scroll';
-import { useWindowScroll } from 'react-use';
 
 import { LabeledButton, TextPageCenter } from 'src/elements';
 import { useBio } from 'src/content';
@@ -18,26 +18,51 @@ const clickToScroll = () => {
 };
 
 const LandingBody = () => {
-  const { y } = useWindowScroll();
   const Bio = useBio();
   const prompt = Bio.splash.prompts[0];
 
-  const textScroll = -y / 5;
-  const opacity = 1.0 - y / 1000.0;
+  const titleRef = useRef<HTMLDivElement>(null);
+  const buttonHolderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+    const applyScroll = () => {
+      rafId = null;
+      const y = window.scrollY;
+      if (titleRef.current) {
+        titleRef.current.style.transform = `translateY(${-y / 5}px)`;
+      }
+      if (buttonHolderRef.current) {
+        buttonHolderRef.current.style.filter = `opacity(${1.0 - y / 1000.0})`;
+      }
+    };
+    const onScroll = () => {
+      if (rafId === null) {
+        rafId = requestAnimationFrame(applyScroll);
+      }
+    };
+    applyScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, []);
 
   return (
     <>
-      <TextPageCenter
-        className={Style.titleContainer}
-        style={{
-          transform: `translateY(${textScroll}px)`,
-        }}
-        headline={Bio.splash.title}
-        blurb={Bio.splash.subtitle}
-        mono
-        animate
-      />
-      <div className={Style.buttonHolder} style={{ filter: `opacity(${opacity})` }}>
+      <div ref={titleRef}>
+        <TextPageCenter
+          className={Style.titleContainer}
+          headline={Bio.splash.title}
+          blurb={Bio.splash.subtitle}
+          mono
+          animate
+        />
+      </div>
+      <div ref={buttonHolderRef} className={Style.buttonHolder}>
         <LabeledButton
           icon="rocket"
           onClick={() => clickToScroll()}

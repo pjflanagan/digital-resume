@@ -38,8 +38,7 @@ const BillCypher: React.FC = () => {
     <div
       className={Style.bill}
       style={{
-        margin: `${top}% ${left}%`,
-        transform: `rotate(${deg}deg)`,
+        transform: `translate(calc(-50% + ${left}%), calc(-50% + ${top}%)) rotate(${deg}deg)`,
       }}
     >
       <div className={Style.billBody}>

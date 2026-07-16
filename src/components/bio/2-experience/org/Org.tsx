@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import clsx from 'clsx';
 import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
@@ -37,31 +37,13 @@ const Org = ({
   background,
   extra,
 }: OrgProps) => {
-  const bulletPointLength = description.length + (extra || []).length;
-  const [bulletPointRevealIndex, setBulletPointRevealIndex] = useState(-1);
-
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 132 });
 
-  useEffect(() => {
-    if (!isRevealed) {
-      return;
-    }
-    // reveal the bullet points one at a time
-    const interval = setInterval(() => {
-      setBulletPointRevealIndex((index) => {
-        if (index >= bulletPointLength) {
-          clearInterval(interval);
-          return index;
-        }
-        return index + 1;
-      });
-    }, 100);
-    return () => clearInterval(interval);
-  }, [isRevealed, bulletPointLength]);
+  const bulletClassName = clsx(isRevealed ? Style.revealed : Style.hidden, Style.bulletPoint);
 
-  function getClassName(index: number, offset = 0) {
-    return bulletPointRevealIndex >= index + offset ? Style.revealed : Style.hidden;
+  function bulletStyle(index: number, offset = 0): React.CSSProperties {
+    return { transitionDelay: `${(index + offset) * 100}ms` };
   }
 
   return (
@@ -79,14 +61,18 @@ const Org = ({
       <div className={Style.orgRight}>
         {!!position && <TextHeading className={Style.position}>{position}</TextHeading>}
         {description.map((line, i) => (
-          <Text key={i} links={links} className={getClassName(i)}>
+          <Text key={i} links={links} className={bulletClassName} style={bulletStyle(i)}>
             {line}
           </Text>
         ))}
       </div>
       {!!extra &&
         extra.map((org, i) => (
-          <div key={org.name} className={clsx(Style.orgExtra, getClassName(i, description.length))}>
+          <div
+            key={org.name}
+            className={clsx(Style.orgExtra, bulletClassName)}
+            style={bulletStyle(i, description.length)}
+          >
             <div className={Style.orgLeft}></div>
             <div className={Style.orgRight}>
               <TextLinkedHeader href={org.link || ''} className={Style.name} color="cyan">
