@@ -92,8 +92,9 @@ abstract class Body<P extends BodyProp = BodyProp> {
 
     const { x, y, to } = this.offset;
     const offsetAngle = Math.atan2(to.y - y, to.x - x);
-    this.offset.x = x + this.prop.offsetSpeed * Math.cos(offsetAngle);
-    this.offset.y = y + this.prop.offsetSpeed * Math.sin(offsetAngle);
+    const speed = this.prop.offsetSpeed * this.canvas.frameScale;
+    this.offset.x = x + speed * Math.cos(offsetAngle);
+    this.offset.y = y + speed * Math.sin(offsetAngle);
 
     this.pos = {
       x: shift.x + this.offset.x,

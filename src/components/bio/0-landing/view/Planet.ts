@@ -83,7 +83,7 @@ class Planet extends SpectrumBody<PlanetProp> {
     // and tilt it as the page scrolls
     const { scrollPercent } = this.canvas;
     const scrollOffsetAngle = (-Math.PI / 6) * scrollPercent;
-    this.ringAngleInc += PLANET.RING.RATE;
+    this.ringAngleInc += PLANET.RING.RATE * this.canvas.frameScale;
     const wiggleAngle = Math.sin(this.ringAngleInc) * 0.2;
     this.ringAngle = wiggleAngle + scrollOffsetAngle + this.prop.ringAngleCenter;
   }

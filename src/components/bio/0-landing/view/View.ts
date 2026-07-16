@@ -45,6 +45,12 @@ class View extends BaseView {
   mouseTarget: Point | null = null;
   virtualMouse: Point | null = null;
 
+  // per-frame movement (offsets, spins, color drift) is written as "units per
+  // frame" baselined at 60fps; frameScale rescales that by real elapsed time
+  // so the animation runs at the same speed regardless of refresh rate
+  frameScale = 1;
+  private lastFrameTime: number | null = null;
+
   bodies: Body[] = [];
 
   constructor(canvasElem: HTMLCanvasElement) {
@@ -74,12 +80,21 @@ class View extends BaseView {
   }
 
   drawFrame() {
+    this.updateFrameScale();
     this.updateVirtualMouse();
     this.drawBackground();
     for (const body of this.bodies) {
       body.move();
       body.draw();
     }
+  }
+
+  updateFrameScale() {
+    const now = performance.now();
+    // cap elapsed time so a backgrounded/throttled tab doesn't leap on return
+    const dt = Math.min(this.lastFrameTime ? now - this.lastFrameTime : 1000 / 60, 100);
+    this.lastFrameTime = now;
+    this.frameScale = dt / (1000 / 60);
   }
 
   updateVirtualMouse() {

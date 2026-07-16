@@ -58,7 +58,7 @@ abstract class SpectrumBody<P extends SpectrumBodyProp = SpectrumBodyProp> exten
 
   protected moveColors() {
     const { radius } = this.prop;
-    this.colorPos.angle += this.colorProp.angularVelocity;
+    this.colorPos.angle += this.colorProp.angularVelocity * this.canvas.frameScale;
     const oscillationAngle = Math.PI * this.colorProp.resizeFrequency * this.colorPos.angle;
     const oscillation = 0.5 * Math.sin(oscillationAngle) + 1;
     const min = radius * COLOR.DISTANCE_FROM_CENTER.min;
