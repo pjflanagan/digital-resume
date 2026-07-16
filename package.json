@@ -9,7 +9,7 @@
     "web developer"
   ],
   "scripts": {
-    "develop": "NODE_OPTIONS=--disable-warning=DEP0040 gatsby develop",
+    "dev": "NODE_OPTIONS=--disable-warning=DEP0040 gatsby develop",
     "start": "NODE_OPTIONS=--disable-warning=DEP0040 gatsby develop",
     "build": "NODE_OPTIONS=--disable-warning=DEP0040 gatsby build",
     "serve": "gatsby serve",

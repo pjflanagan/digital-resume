@@ -60,7 +60,7 @@ collections:
                     public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
                   - name: imageDescription
                     label: Hover Image Description
-                    widget: string
+                    widget: text
                     required: false
                   - name: greeting
                     label: Hover Greeting
