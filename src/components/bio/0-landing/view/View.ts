@@ -7,6 +7,7 @@ import { Planet } from './Planet';
 import { Ship } from './Ship';
 import { Star } from './Star';
 import {
+  MOUSE_EASE,
   SCROLL_DEPTH,
   VIEW_BACKGROUND_MOONS,
   VIEW_FOREGROUND_MOONS,
@@ -38,6 +39,12 @@ class View extends BaseView {
   strength = 0;
   scrollPercent = 0;
 
+  // the real mouse position jumps the instant the cursor enters the window
+  // (e.g. from off-screen at the edge), which would jolt angle/strength;
+  // the virtual mouse eases toward it each frame instead
+  mouseTarget: Point | null = null;
+  virtualMouse: Point | null = null;
+
   bodies: Body[] = [];
 
   constructor(canvasElem: HTMLCanvasElement) {
@@ -67,11 +74,27 @@ class View extends BaseView {
   }
 
   drawFrame() {
+    this.updateVirtualMouse();
     this.drawBackground();
     for (const body of this.bodies) {
       body.move();
       body.draw();
     }
+  }
+
+  updateVirtualMouse() {
+    if (!this.mouseTarget) return;
+
+    // ease from wherever the virtual mouse already sits (defaults to center)
+    // toward the real mouse, so a sudden jump in real position never jolts
+    this.virtualMouse ??= { ...this.C };
+    this.virtualMouse = {
+      x: this.virtualMouse.x + (this.mouseTarget.x - this.virtualMouse.x) * MOUSE_EASE,
+      y: this.virtualMouse.y + (this.mouseTarget.y - this.virtualMouse.y) * MOUSE_EASE,
+    };
+
+    this.angle = Math.atan2(this.virtualMouse.y - this.C.y, this.virtualMouse.x - this.C.x);
+    this.strength = distance(this.C, this.virtualMouse) / this.diagonalHalf;
   }
 
   destroy() {
@@ -81,9 +104,7 @@ class View extends BaseView {
   }
 
   onMouseMove(e: MouseEvent) {
-    const mouse: Point = { x: e.clientX, y: e.clientY };
-    this.angle = Math.atan2(mouse.y - this.C.y, mouse.x - this.C.x);
-    this.strength = distance(this.C, mouse) / this.diagonalHalf;
+    this.mouseTarget = { x: e.clientX, y: e.clientY };
   }
 
   onScroll() {

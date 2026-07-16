@@ -14,6 +14,9 @@ const SCROLL_BACKPEDAL = 0.08;
 const SHIP_LAYER = 5;
 const SHIP_CENTER: Point = { x: 1 / 6, y: 0.5 }; // proportional to the viewport
 
+// how quickly the virtual mouse eases toward the real mouse each frame (0-1)
+const MOUSE_EASE = 0.08;
+
 export {
   VIEW_STARS,
   VIEW_BACKGROUND_MOONS,
@@ -22,4 +25,5 @@ export {
   SCROLL_BACKPEDAL,
   SHIP_LAYER,
   SHIP_CENTER,
+  MOUSE_EASE,
 };
