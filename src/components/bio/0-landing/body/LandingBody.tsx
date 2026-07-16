@@ -53,7 +53,7 @@ const LandingBody = () => {
 
   return (
     <>
-      <div ref={titleRef}>
+      <div ref={titleRef} className={Style.titleWrap}>
         <TextPageCenter
           className={Style.titleContainer}
           headline={Bio.splash.title}

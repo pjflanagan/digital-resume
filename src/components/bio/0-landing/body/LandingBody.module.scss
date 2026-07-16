@@ -1,7 +1,12 @@
 @use 'theme/variables' as *;
 
-.title-container {
+.title-wrap {
+  position: relative;
   z-index: 1;
+  top: 50%;
+}
+
+.title-container {
   top: 32% !important;
   font-family: $ubuntuMono;
 }
