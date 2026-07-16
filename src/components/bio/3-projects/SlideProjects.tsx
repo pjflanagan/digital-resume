@@ -45,7 +45,7 @@ const SlideProjects = () => {
         </div>
         <div className={Style.buttonHolder}>
           <LabeledButton icon="saturn" href="https://www.flanny.app/blog">
-            See Project Portfolio
+            See Project Blog
           </LabeledButton>
         </div>
       </div>

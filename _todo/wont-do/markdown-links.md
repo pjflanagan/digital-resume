@@ -1,3 +1,11 @@
+
+# Reason Why Wont Do
+
+- Links have many different hover effects and I'd like to add even more.
+- We added highlighting to the Decap editor preview for when a link is invalid, so it's less likely to mess up.
+
+---
+
 # Easier content linking (markdown?)
 
 ## The pain today

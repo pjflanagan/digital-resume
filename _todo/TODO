@@ -1,7 +1,6 @@
 
 MAIN TODO: 
 - [ ] replace some things with libraries that handle it for me
-- [ ] easier content linking, maybe markdown (see markdown-links.md)
 - [ ] replace use scroll and use reveal with ones from npm (see issue on digital-resume github)
 - [ ] Less passing in custom classes to Elements, instead take variables like color
 
