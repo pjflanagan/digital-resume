@@ -50,6 +50,8 @@ class Planet extends SpectrumBody<PlanetProp> {
     const { C, shorterSide } = this.canvas;
 
     const colorSpectrum = PLANET.COLORS.map((rgb) => new Color({ ...rgb, a: 0.9 }));
+    Random.insertRandom(colorSpectrum, new Color({ ...Random.fromArray(PLANET.COLORS), a: 0.9 }));
+    Random.insertRandom(colorSpectrum, new Color({ ...Random.fromArray(PLANET.COLORS), a: 0.9 }));
 
     return {
       center: C, // the planet sits in the center of the viewport

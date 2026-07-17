@@ -33,6 +33,40 @@ class Color {
     };
   }
 
+  // a random color whose hue falls outside [excludeMinHue, excludeMaxHue] (degrees, 0-360)
+  static randomExcludingHue(excludeMinHue: number, excludeMaxHue: number): Color {
+    const excludedSpan = excludeMaxHue - excludeMinHue;
+    let hue = Random.dec(0, 360 - excludedSpan);
+    if (hue >= excludeMinHue) hue += excludedSpan;
+
+    const { r, g, b } = Color.hslToRgb(hue, Random.dec(0.4, 1), Random.dec(0.3, 0.7));
+    return new Color({ r, g, b, a: Random.dec(0, 1) });
+  }
+
+  private static hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } {
+    const c = (1 - Math.abs(2 * l - 1)) * s;
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    const m = l - c / 2;
+    const [rp, gp, bp] =
+      h < 60
+        ? [c, x, 0]
+        : h < 120
+          ? [x, c, 0]
+          : h < 180
+            ? [0, c, x]
+            : h < 240
+              ? [0, x, c]
+              : h < 300
+                ? [x, 0, c]
+                : [c, 0, x];
+
+    return {
+      r: Math.round((rp + m) * 255),
+      g: Math.round((gp + m) * 255),
+      b: Math.round((bp + m) * 255),
+    };
+  }
+
   setOpacity(a: number): Color {
     this.a = a;
     return this;
