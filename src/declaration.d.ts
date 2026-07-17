@@ -3,7 +3,7 @@ declare module '*.png';
 
 type EggApi = {
   list: () => void;
-  check: (query: string) => void;
+  check: (query: string | number) => void;
   reset: () => void;
 };
 

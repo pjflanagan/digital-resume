@@ -23,20 +23,22 @@ function saveFound(found: Set<string>): void {
   }
 }
 
-function checkboxLine(reference: EggReference, found: Set<string>): string {
+function checkboxLine(reference: EggReference, index: number, found: Set<string>): string {
   const box = found.has(reference.id) ? '☑' : '☐';
-  return `${box} ${reference.name}`;
+  return `${box} ${index + 1}. ${reference.name}`;
 }
 
 function list(): void {
   const found = getFound();
-  console.log(Egg.references.map((reference) => checkboxLine(reference, found)).join('\n'));
   console.log(
-    `\nFound ${found.size} / ${Egg.references.length}. Call Egg.check('name') to check one off.`
+    Egg.references.map((reference, index) => checkboxLine(reference, index, found)).join('\n')
   );
 }
 
-function findReference(query: string): EggReference | undefined {
+function findReference(query: string | number): EggReference | undefined {
+  if (typeof query === 'number') {
+    return Egg.references[query - 1];
+  }
   const normalized = query.trim().toLowerCase().replace(/\s+/g, '-');
   return Egg.references.find(
     (reference) =>
@@ -44,17 +46,18 @@ function findReference(query: string): EggReference | undefined {
   );
 }
 
-function check(query: string): void {
+function check(query: string | number): void {
   const reference = findReference(query);
   if (!reference) {
-    console.log(`Not sure what "${query}" is. Try Egg.list() to see the names.`);
+    console.log(
+      `There's only ${Egg.references.length} easter eggs. Try a number between 1 and ${Egg.references.length}. Use Egg.list() to see all references.`
+    );
     return;
   }
   const found = getFound();
   found.add(reference.id);
   saveFound(found);
   console.log(`☑ ${reference.name}\n${reference.answer}`);
-  list();
 }
 
 function reset(): void {

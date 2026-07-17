@@ -28,7 +28,7 @@ const PORTAL = {
   },
 };
 
-// a green rick and morty style portal, drawn like a moon but at a fixed small size;
+// a green Rick and Morty style portal, drawn like a moon but at a fixed small size;
 // it periodically shrinks out of existence and grows back in at a new spot
 class Portal extends SpectrumBody {
   private baseRadius = 0;
