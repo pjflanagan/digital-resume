@@ -12,7 +12,17 @@
     .skill-list-holder .skill-bar-holder {
       width: 100%;
     }
+
+    .show-all-holder {
+      column-span: all;
+    }
   }
+}
+
+.show-all-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
 }
 
 .skill-list-holder {
@@ -21,6 +31,23 @@
 
   .skill-bar-holder {
     padding: 4px;
-    width: calc(100% / var(--cols, 1));
+    width: 50%;
   }
+}
+
+@keyframes skill-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: skill-reveal 0.35s ease-out both;
+  animation-delay: var(--delay, 0ms);
 }

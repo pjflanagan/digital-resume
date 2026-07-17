@@ -5,9 +5,12 @@ import type { IconName } from '../icon/SVGIcon';
 import * as Style from './Button.module.scss';
 import clsx from 'clsx';
 
+type LabeledButtonColor = 'yellow';
+
 type LabeledButtonFormProps = {
   children?: React.ReactNode;
   icon: IconName;
+  color?: LabeledButtonColor;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
@@ -15,12 +18,13 @@ type LabeledButtonFormProps = {
 const LabeledButtonForm = ({
   children,
   icon,
+  color,
   onMouseEnter,
   onMouseLeave,
 }: LabeledButtonFormProps) => {
   return (
     <button
-      className={clsx(Style.labeledButton, Style.buttonReset)}
+      className={clsx(Style.labeledButton, Style.buttonReset, color && Style[color])}
       type="submit"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -44,6 +48,7 @@ type LabeledButtonLinkedProps = LabeledButtonFormProps & {
 
 const LabeledButtonLinked = ({
   icon,
+  color,
   onMouseEnter,
   onMouseLeave,
   children,
@@ -54,7 +59,7 @@ const LabeledButtonLinked = ({
   const rel = !sameWindow ? 'noreferrer' : undefined;
   const target = !sameWindow ? '_blank' : undefined;
 
-  const className = clsx(Style.labeledButton, classNameProp);
+  const className = clsx(Style.labeledButton, color && Style[color], classNameProp);
 
   return (
     <div className={className}>
@@ -78,15 +83,16 @@ const LabeledButtonLinked = ({
 type LabeledButtonActionProps = {
   icon: IconName;
   children?: React.ReactNode;
+  color?: LabeledButtonColor;
   onClick: () => void;
   className?: string;
 };
 
-const LabeledButtonAction = ({ icon, children, onClick, className }: LabeledButtonActionProps) => {
+const LabeledButtonAction = ({ icon, children, color, onClick, className }: LabeledButtonActionProps) => {
   return (
     <button
       type="button"
-      className={clsx(Style.labeledButton, Style.buttonReset, className)}
+      className={clsx(Style.labeledButton, Style.buttonReset, color && Style[color], className)}
       onClick={onClick}
     >
       <div className={Style.holder}>

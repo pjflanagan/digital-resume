@@ -2,7 +2,6 @@
   "groups": [
     {
       "type": "Frameworks",
-      "cols": 1,
       "items": [
         {
           "name": "React",
@@ -28,7 +27,6 @@
     },
     {
       "type": "Services",
-      "cols": 2,
       "items": [
         {
           "name": "Netlify",
@@ -54,7 +52,6 @@
     },
     {
       "type": "Production Tools",
-      "cols": 2,
       "items": [
         {
           "name": "DataDog",
@@ -72,7 +69,6 @@
     },
     {
       "type": "Scripts",
-      "cols": 2,
       "items": [
         {
           "name": "JavaScript / Typescript",
@@ -110,7 +106,6 @@
     },
     {
       "type": "Development Tools",
-      "cols": 2,
       "items": [
         {
           "name": "Webkit Browsers",
@@ -136,7 +131,6 @@
     },
     {
       "type": "Languages",
-      "cols": 1,
       "items": [
         {
           "name": "English",
@@ -145,6 +139,23 @@
         {
           "name": "Mandarin",
           "progress": 23
+        }
+      ]
+    },
+    {
+      "type": "Other",
+      "items": [
+        {
+          "name": "Snowboarding",
+          "progress": 80
+        },
+        {
+          "name": "Sewing",
+          "progress": 65
+        },
+        {
+          "name": "Cooking",
+          "progress": 75
         }
       ]
     }

@@ -1,5 +1,29 @@
 
 
+## Places
+
+### Splash
+
+In the form of a space ship
+- Futurama
+- Rick and Morty
+- Andor
+- Dune
+
+### Personal
+
+In the form of micro-designs
+- The 5th Element symbol
+- Neon Genisis Evangelion symbols and/or UI overlays
+- Horizon?
+- Alien?
+
+### Projects
+
+Something on the graph in the background.
+
+## Favorites
+
 - [x] Futurama
 - [x] Cyberpunk
   - [ ] I think I also want the cursor from Cyberpunk
@@ -10,7 +34,6 @@
 - [ ] Neon Genesis Evangelion
   - ABSOLUTLEY NEED TO REPLICATE UI from this somewhere
 - [x] Fifth Element
-  - [ ] Anything from this?
 - [x] Iron Man
 - [x] Andor 
 - [x] Blade Runner

@@ -47,7 +47,6 @@ type Project = {
 
 type SkillGroup = {
   type: string;
-  cols: number;
   items: { name: string; progress: number }[];
 };
 
