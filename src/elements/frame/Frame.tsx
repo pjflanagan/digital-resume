@@ -4,12 +4,12 @@ import * as Style from './Frame.module.scss';
 
 function getFrameTypeClassName(type: string): string {
   return (
-    ({
+    {
       'top-left': Style.topLeft,
       'top-right': Style.topRight,
       'bottom-left': Style.bottomLeft,
       'bottom-right': Style.bottomRight,
-    })[type] || Style[type]
+    }[type] || Style[type]
   );
 }
 
@@ -42,4 +42,4 @@ function FrameHolder({ children, style, className }: FrameHolderProps): React.Re
   );
 }
 
-export { Frame, FrameHolder };
+export { FrameHolder };

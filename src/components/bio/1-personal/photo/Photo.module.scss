@@ -113,13 +113,7 @@
         inset: 0;
         pointer-events: none;
         mix-blend-mode: overlay;
-        background: repeating-linear-gradient(
-          to bottom,
-          #fff3 0,
-          #fff3 1px,
-          #0000 1px,
-          #0000 3px
-        );
+        background: repeating-linear-gradient(to bottom, #fff3 0, #fff3 1px, #0000 1px, #0000 3px);
         animation: crt-scan 20s linear infinite;
       }
     }

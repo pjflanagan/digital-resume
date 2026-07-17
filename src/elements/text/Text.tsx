@@ -59,7 +59,12 @@ function AnimatedTextAccent({ className, children }: HeadingProps): React.ReactN
   );
 }
 
-function TextAccent({ className, children, animate, mono = true }: TextAccentProps): React.ReactNode {
+function TextAccent({
+  className,
+  children,
+  animate,
+  mono = true,
+}: TextAccentProps): React.ReactNode {
   const classNames = clsx(className, mono && Style.mono);
   if (animate) {
     return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;
@@ -71,7 +76,13 @@ function TextAccent({ className, children, animate, mono = true }: TextAccentPro
   );
 }
 
-function TextTag({ children, mono }: { children?: React.ReactNode; mono?: boolean }): React.ReactNode {
+function TextTag({
+  children,
+  mono,
+}: {
+  children?: React.ReactNode;
+  mono?: boolean;
+}): React.ReactNode {
   return <span className={clsx(Style.textTag, mono && Style.mono)}>{children}</span>;
 }
 
@@ -94,8 +105,14 @@ function Text({
 }: TextProps): React.ReactNode {
   const classNames = clsx(className, mono && Style.mono);
   if (dangerouslySetInnerHTML)
-    return <p className={classNames} style={style} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
-  return <p className={classNames} style={style}>{ParseTextForLinks(children || '', links, callback)}</p>;
+    return (
+      <p className={classNames} style={style} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />
+    );
+  return (
+    <p className={classNames} style={style}>
+      {ParseTextForLinks(children || '', links, callback)}
+    </p>
+  );
 }
 
 export { ParseTextForLinks } from './ParseTextForLinks';

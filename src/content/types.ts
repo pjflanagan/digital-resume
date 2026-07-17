@@ -112,16 +112,4 @@ type ContentFiles = {
   footer: { items: BioContent['footer'] };
 };
 
-export type {
-  ContentLink,
-  ContentFiles,
-  LinkText,
-  Job,
-  SchoolExtra,
-  School,
-  Project,
-  SkillGroup,
-  ContactLink,
-  FormPlaceholder,
-  BioContent,
-};
+export type { ContentLink, ContentFiles, Job, SchoolExtra, School, Project, FormPlaceholder, BioContent };

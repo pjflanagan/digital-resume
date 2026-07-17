@@ -12,7 +12,13 @@ type SplashTextProps = {
   style?: React.CSSProperties;
 };
 
-function AnimatedBlurb({ className, children }: { className?: string; children: string }): React.ReactNode {
+function AnimatedBlurb({
+  className,
+  children,
+}: {
+  className?: string;
+  children: string;
+}): React.ReactNode {
   const { ref, displayText } = useScrambleText<HTMLDivElement>({ text: children });
   return (
     <div ref={ref} className={className}>

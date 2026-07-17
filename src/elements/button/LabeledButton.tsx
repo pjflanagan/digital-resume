@@ -84,7 +84,13 @@ type LabeledButtonActionProps = {
   className?: string;
 };
 
-function LabeledButtonAction({ icon, children, color, onClick, className }: LabeledButtonActionProps): React.ReactNode {
+function LabeledButtonAction({
+  icon,
+  children,
+  color,
+  onClick,
+  className,
+}: LabeledButtonActionProps): React.ReactNode {
   return (
     <button
       type="button"

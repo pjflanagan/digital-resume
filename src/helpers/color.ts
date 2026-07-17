@@ -78,4 +78,3 @@ class Color {
 }
 
 export { Color };
-export type { ColorValues };

@@ -15,7 +15,12 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
 
-  const linkHover: LinkCallback = ({ image, imageDescription, greeting: linkGreeting, focusArea }) => {
+  const linkHover: LinkCallback = ({
+    image,
+    imageDescription,
+    greeting: linkGreeting,
+    focusArea,
+  }) => {
     if (image) photoLinkCallback(image, imageDescription, focusArea);
     if (linkGreeting) setGreeting(linkGreeting);
   };

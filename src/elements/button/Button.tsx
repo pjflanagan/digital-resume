@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { CircleButtonAction, CircleButtonLinked } from './CircleButton';
 import { LabeledButtonAction, LabeledButtonLinked } from './LabeledButton';
 import type { IconName } from '../icon/SVGIcon';
 
@@ -35,12 +34,4 @@ function LabeledButton(props: ButtonProps): React.ReactNode {
   return <LabeledButtonLinked {...props} />;
 }
 
-function CircleButton(props: ButtonProps): React.ReactNode {
-  if (isAction(props)) {
-    return <CircleButtonAction {...props} />;
-  }
-  return <CircleButtonLinked {...props} />;
-}
-
-export { LabeledButton, CircleButton };
-export type { ActionProps, LinkedProps };
+export { LabeledButton };

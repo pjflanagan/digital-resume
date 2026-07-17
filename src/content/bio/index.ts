@@ -52,4 +52,4 @@ const StaticContentFiles = {
 const PageBio: BioContent = buildBio(StaticContentFiles);
 
 export default PageBio;
-export { buildBio, StaticContentFiles };
+export { buildBio };

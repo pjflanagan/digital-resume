@@ -41,7 +41,15 @@ type FormTextProps = {
   error?: string;
 };
 
-function FormText({ type, name, label, value, onChange, placeholder, error }: FormTextProps): React.ReactNode {
+function FormText({
+  type,
+  name,
+  label,
+  value,
+  onChange,
+  placeholder,
+  error,
+}: FormTextProps): React.ReactNode {
   return (
     <FormFieldWrapper label={label} error={error}>
       <input
@@ -65,7 +73,14 @@ type FormMessageProps = {
   error?: string;
 };
 
-function FormMessage({ value, name, label, onChange, placeholder, error }: FormMessageProps): React.ReactNode {
+function FormMessage({
+  value,
+  name,
+  label,
+  onChange,
+  placeholder,
+  error,
+}: FormMessageProps): React.ReactNode {
   return (
     <FormFieldWrapper label={label} error={error}>
       <textarea

@@ -26,4 +26,3 @@ function Canvas({ view: View, className, style }: CanvasProps): React.ReactNode 
 }
 
 export { Canvas };
-export type { CanvasView };

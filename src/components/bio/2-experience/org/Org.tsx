@@ -87,7 +87,11 @@ function Org({
         extra.map((org, i) => (
           <div
             key={org.name}
-            className={clsx(Style.orgExtra, isRevealed ? Style.revealed : Style.hidden, Style.bulletPoint)}
+            className={clsx(
+              Style.orgExtra,
+              isRevealed ? Style.revealed : Style.hidden,
+              Style.bulletPoint
+            )}
             style={bulletStyle(i, description.length)}
           >
             <div className={Style.orgLeft}></div>

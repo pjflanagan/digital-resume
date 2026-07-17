@@ -7,7 +7,6 @@ type UseLandingScrollProps = {
 
 // Applies parallax to the title and fades out the button on scroll, driven by rAF to avoid layout thrash.
 function useLandingScroll({ titleRef, buttonHolderRef }: UseLandingScrollProps): void {
-
   useEffect(() => {
     let rafId: number | null = null;
 

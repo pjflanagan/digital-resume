@@ -43,13 +43,20 @@ function FocusFrame({ children, area, className }: FocusFrameProps): React.React
     } else {
       const width = x - firstClickRef.current.x;
       const height = y - firstClickRef.current.y;
-      console.log('focusArea width/height:', { width: Math.round(width), height: Math.round(height) });
+      console.log('focusArea width/height:', {
+        width: Math.round(width),
+        height: Math.round(height),
+      });
       firstClickRef.current = null;
     }
   }
 
   return (
-    <div ref={containerRef} className={clsx(Style.focusFrameHolder, className)} onClick={handleClick}>
+    <div
+      ref={containerRef}
+      className={clsx(Style.focusFrameHolder, className)}
+      onClick={handleClick}
+    >
       {children}
       <FrameHolder
         className={clsx(Style.focusBox, { [Style.animating]: isAnimating })}
