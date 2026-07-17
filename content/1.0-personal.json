@@ -1,7 +1,4 @@
 {
-  "defaultImage": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
-  "defaultFocusArea": { "x": 33, "y": 22, "width": 32, "height": 49 },
-  "accent": "Hi, my name is",
   "titleText": {
     "links": [
       {

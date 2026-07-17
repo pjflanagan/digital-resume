@@ -12,8 +12,8 @@ type BodyProps = {
 };
 
 const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
-  const { accent, linkText, titleText } = useBio().personal;
-  const [greeting, setGreeting] = useState(accent);
+  const { linkText, titleText } = useBio().personal;
+  const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
 
   const linkHover: LinkCallback = ({ image, imageDescription, greeting: linkGreeting, focusArea }) => {
     if (image) photoLinkCallback(image, imageDescription, focusArea);

@@ -13,10 +13,12 @@ import * as Style from './SlidePersonal.module.scss';
 const ScrollComponent = Scroll.Element;
 
 const SlidePersonal = () => {
-  const { defaultImage, defaultFocusArea } = useBio().personal;
-  const [photo, setPhoto] = useState(defaultImage);
+  // the name link (titleText.links[0]) doubles as the default photo/focusArea, so it only
+  // needs to be set in one place in the content JSON
+  const [defaultLink] = useBio().personal.titleText.links;
+  const [photo, setPhoto] = useState(defaultLink.image ?? '');
   const [photoDescription, setPhotoDescription] = useState<string | undefined>(undefined);
-  const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultFocusArea);
+  const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
 
   return (
     <ScrollComponent className={Style.slidePersonal} name="personal">
