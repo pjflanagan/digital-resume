@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import clsx from 'clsx';
 
 import { FrameHolder } from 'src/elements';
+import { useFlashOnChange } from 'src/hooks';
 
 import * as Style from './FocusFrame.module.scss';
 
@@ -24,18 +25,7 @@ type FocusFrameProps = {
 function FocusFrame({ children, area, className }: FocusFrameProps): React.ReactNode {
   const containerRef = useRef<HTMLDivElement>(null);
   const firstClickRef = useRef<{ x: number; y: number } | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const hasMounted = useRef(false);
-
-  useEffect(() => {
-    if (!hasMounted.current) {
-      hasMounted.current = true;
-      return;
-    }
-    setIsAnimating(true);
-    const timeout = setTimeout(() => setIsAnimating(false), 400);
-    return () => clearTimeout(timeout);
-  }, [area.x, area.y, area.width, area.height]);
+  const isAnimating = useFlashOnChange([area.x, area.y, area.width, area.height]);
 
   // dev helper: click the top-left corner of the desired frame, then the
   // bottom-right corner, to log the x/y and width/height percentages to enter above

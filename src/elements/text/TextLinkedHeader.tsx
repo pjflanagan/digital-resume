@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { linkTargetProps } from 'src/helpers';
+
 import * as Style from './Text.module.scss';
 import clsx from 'clsx';
 
@@ -19,7 +21,7 @@ function TextLinkedHeader({
   const className = clsx(Style.textLinkedHeader, color && Style[color]);
   return (
     <h3 className={classNameProp}>
-      <a href={href} target="_blank" rel="noreferrer" className={className}>
+      <a href={href} {...linkTargetProps()} className={className}>
         {children}
       </a>
     </h3>

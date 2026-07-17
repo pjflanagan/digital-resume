@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import * as Scroll from 'react-scroll';
 
 import { useBio } from 'src/content';
+import { ScrollElement } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
 import { CurveTop, CurveBottom } from './curves/Curves';
@@ -9,8 +9,6 @@ import { Photo } from './photo/Photo';
 import { PersonalBody } from './body/PersonalBody';
 
 import * as Style from './SlidePersonal.module.scss';
-
-const ScrollComponent = Scroll.Element;
 
 function SlidePersonal() {
   // the name link (titleText.links[0]) doubles as the default photo/focusArea, so it only
@@ -21,7 +19,7 @@ function SlidePersonal() {
   const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
 
   return (
-    <ScrollComponent className={Style.slidePersonal} name="personal">
+    <ScrollElement className={Style.slidePersonal} name="personal">
       <CurveTop />
       <div className={Style.slidePersonalSideLeft}>
         <Photo photo={photo} photoDescription={photoDescription} focusArea={focusArea} />
@@ -36,7 +34,7 @@ function SlidePersonal() {
         />
       </div>
       <CurveBottom />
-    </ScrollComponent>
+    </ScrollElement>
   );
 }
 

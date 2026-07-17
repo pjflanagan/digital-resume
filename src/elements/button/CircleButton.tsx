@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { SVGIcon } from 'src/elements';
+import { linkTargetProps } from 'src/helpers';
 import type { IconName } from '../icon/SVGIcon';
 
 import * as Style from './Button.module.scss';
@@ -22,12 +23,9 @@ function CircleButtonLinked({
   sameWindow,
   className,
 }: CircleButtonLinkedProps): ReactNode {
-  const rel = !sameWindow ? 'noreferrer' : undefined;
-  const target = !sameWindow ? '_blank' : undefined;
   return (
     <a
-      target={target}
-      rel={rel}
+      {...linkTargetProps(sameWindow)}
       href={href}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

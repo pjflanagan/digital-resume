@@ -19,4 +19,5 @@ export * from './show-more/ShowMore';
 export * from './text/Text';
 export * from './splash/Splash';
 export * from './splash/SplashText';
+export * from './scroll/ScrollElement';
 export * from './image/Image';

@@ -1,14 +1,10 @@
-import * as Scroll from 'react-scroll';
-
-import { TextTitle, TextSection, TextAccent, Text, ShowMore } from 'src/elements';
+import { TextTitle, TextSection, TextAccent, Text, ShowMore, ScrollElement } from 'src/elements';
 import { useBio } from 'src/content';
 import type { Job, School } from 'src/content';
 
 import { Org } from './org/Org';
 import { Skills } from './skills/Skills';
 import * as Style from './SlideExperience.module.scss';
-
-const ScrollComponent = Scroll.Element;
 
 // Job and School map onto <Org> slightly differently
 function JobOrg({ job }: { job: Job }) {
@@ -45,7 +41,7 @@ function SchoolOrg({ school }: { school: School }) {
 function SlideExperience() {
   const { accent, title, sections, jobs, schools, linkText } = useBio().experience;
   return (
-    <ScrollComponent className={Style.slideExperience} name="experience">
+    <ScrollElement className={Style.slideExperience} name="experience">
       <div className={Style.preSlideCurveHolder}>
         <div className={Style.preSlideCurve} />
       </div>
@@ -79,7 +75,7 @@ function SlideExperience() {
         <TextSection>{sections[2]}</TextSection>
         <Skills />
       </div>
-    </ScrollComponent>
+    </ScrollElement>
   );
 }
 

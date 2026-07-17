@@ -1,5 +1,6 @@
 import React from 'react';
 import { SVGIcon } from 'src/elements';
+import { linkTargetProps } from 'src/helpers';
 import type { IconName } from '../icon/SVGIcon';
 
 import * as Style from './Button.module.scss';
@@ -56,17 +57,13 @@ function LabeledButtonLinked({
   href,
   sameWindow,
 }: LabeledButtonLinkedProps): React.ReactNode {
-  const rel = !sameWindow ? 'noreferrer' : undefined;
-  const target = !sameWindow ? '_blank' : undefined;
-
   const className = clsx(Style.labeledButton, color && Style[color], classNameProp);
 
   return (
     <div className={className}>
       <a
         className={Style.holder}
-        rel={rel}
-        target={target}
+        {...linkTargetProps(sameWindow)}
         href={href}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}

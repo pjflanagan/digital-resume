@@ -1,4 +1,3 @@
-import * as Scroll from 'react-scroll';
 import clsx from 'clsx';
 
 import {
@@ -9,6 +8,7 @@ import {
   Text,
   Stack,
   LabeledButton,
+  ScrollElement,
 } from 'src/elements';
 import { useBio } from 'src/content';
 
@@ -16,12 +16,10 @@ import { FeaturedProject } from './featured-project/FeaturedProject';
 import { Project } from './project/Project';
 import * as Style from './SlideProjects.module.scss';
 
-const ScrollComponent = Scroll.Element;
-
 function SlideProjects() {
   const Bio = useBio();
   return (
-    <ScrollComponent className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
+    <ScrollElement className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
         <TextAccent mono animate>
@@ -49,7 +47,7 @@ function SlideProjects() {
           </LabeledButton>
         </div>
       </div>
-    </ScrollComponent>
+    </ScrollElement>
   );
 }
 
