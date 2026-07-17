@@ -4,8 +4,6 @@ import { CircleButtonAction, CircleButtonLinked } from './CircleButton';
 import { LabeledButtonAction, LabeledButtonLinked } from './LabeledButton';
 import type { IconName } from '../icon/SVGIcon';
 
-// TODO: button make width contain to prevent text wrap
-
 type ButtonCommonProps = {
   icon: IconName;
   children?: React.ReactNode;

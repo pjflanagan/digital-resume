@@ -8,6 +8,7 @@ import {
   Text,
   Stack,
   LabeledButton,
+  ButtonHolder,
   ScrollElement,
 } from 'src/elements';
 import { useBio } from 'src/content';
@@ -41,11 +42,11 @@ function SlideProjects() {
             ))}
           </Stack>
         </div>
-        <div className={Style.buttonHolder}>
+        <ButtonHolder className={Style.buttonHolder}>
           <LabeledButton icon="saturn" color="yellow" href="https://www.flanny.app/blog">
             See Project Blog
           </LabeledButton>
-        </div>
+        </ButtonHolder>
       </div>
     </ScrollElement>
   );

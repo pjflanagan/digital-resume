@@ -99,10 +99,6 @@ class Planet extends SpectrumBody<PlanetProp> {
     const { x, y } = this.pos;
     const angle = this.ringAngle;
 
-    // TODO: we also need to move the x,y radius to pass over the planet
-    // if x is less than zero and then reset x to be abs(x) before we draw
-    // to get it to flip to the other side we would draw intersection[2 and 3]?
-
     for (let i = 0; i < rings.length; ++i) {
       const ring = rings[i];
 

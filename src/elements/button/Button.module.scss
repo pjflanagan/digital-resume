@@ -57,7 +57,6 @@
     clip-path: $polygonSmall;
     padding: 8px 24px;
     display: flex;
-    flex-wrap: wrap;
     -webkit-transition: 0.2s;
     transition: 0.2s;
 
@@ -86,6 +85,7 @@
       font-weight: 300;
       font-size: 16px;
       width: fit-content;
+      white-space: nowrap;
       padding: 6px 12px;
     }
   }

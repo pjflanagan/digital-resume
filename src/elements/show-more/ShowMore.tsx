@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
-import { LabeledButton } from 'src/elements';
+import { LabeledButton, ButtonHolder } from 'src/elements';
 
 import * as Style from './ShowMore.module.scss';
 
@@ -23,11 +23,11 @@ function ShowMore({ children }: ShowMoreProps): React.ReactNode {
   return (
     <div className={className}>
       <div className={Style.contentHolder}>{children}</div>
-      <div className={Style.buttonHolder}>
+      <ButtonHolder className={Style.buttonHolder}>
         <LabeledButton onClick={toggle} icon="plus">
           {'Show more'}
         </LabeledButton>
-      </div>
+      </ButtonHolder>
     </div>
   );
 }

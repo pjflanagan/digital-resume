@@ -1,5 +1,6 @@
 export * from './avatar/Avatar';
 export * from './button/Button';
+export * from './button/ButtonHolder';
 export * from './canvas/Canvas';
 export * from './canvas/BaseView';
 export * from './cover/Cover';

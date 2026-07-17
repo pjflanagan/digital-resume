@@ -44,7 +44,6 @@ type LabeledButtonLinkedProps = LabeledButtonFormProps & {
   className?: string;
   href: string;
   sameWindow?: boolean;
-  // TODO: internal use Link from 'gatsby'
 };
 
 function LabeledButtonLinked({

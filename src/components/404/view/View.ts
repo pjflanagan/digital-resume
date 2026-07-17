@@ -29,8 +29,6 @@ class View extends BaseView {
   }
 }
 
-// TODO: point perspective animation of colors moving away from the center on the top and bottom
-
 type ParticleState = {
   pos: Point;
   scale: number;

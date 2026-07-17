@@ -1,4 +1,4 @@
-import { LabeledButton, Canvas, Cover, SplashText } from 'src/elements';
+import { LabeledButton, ButtonHolder, Canvas, Cover, SplashText } from 'src/elements';
 import Data404 from 'src/content/404';
 
 import { View } from './view/View';
@@ -15,11 +15,11 @@ function Page404Component() {
       />
       <div className={`${Style.plane} ${Style.top}`} />
       <div className={`${Style.plane} ${Style.bottom}`} />
-      <div className={Style.buttonHolder}>
+      <ButtonHolder className={Style.buttonHolder}>
         <LabeledButton icon="saturn" href="/" sameWindow={true}>
           {Data404.prompt}
         </LabeledButton>
-      </div>
+      </ButtonHolder>
       <Canvas className={Style.canvas} view={View} />
       {/* <Footer /> */}
     </div>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import * as Scroll from 'react-scroll';
 
-import { LabeledButton, SplashText } from 'src/elements';
+import { LabeledButton, SplashText, ButtonHolder } from 'src/elements';
 import { useBio } from 'src/content';
 
 import * as Style from './LandingBody.module.scss';
@@ -35,11 +35,11 @@ function LandingBody() {
           blurb={Bio.splash.subtitle}
         />
       </div>
-      <div ref={buttonHolderRef} className={Style.buttonHolder}>
+      <ButtonHolder buttonHolderRef={buttonHolderRef} className={Style.buttonHolder}>
         <LabeledButton icon="rocket" color="yellow" onClick={() => clickToScroll()}>
           {prompt}
         </LabeledButton>
-      </div>
+      </ButtonHolder>
     </>
   );
 }

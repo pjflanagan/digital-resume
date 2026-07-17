@@ -5,6 +5,7 @@ import { useBio } from 'src/content';
 import type { FormPlaceholder } from 'src/content';
 import {
   LabeledButton,
+  ButtonHolder,
   TextAccent,
   TextTitle,
   Text,
@@ -162,7 +163,7 @@ function Card({ setIsWaveOn, isOpen }: CardProps) {
           <Text>{Bio.contact.text}</Text>
           <div className={Style.linkHolder}>
             {Bio.contact.links.map((link) => (
-              <div className={Style.buttonHolder} key={link.text}>
+              <ButtonHolder className={Style.buttonHolder} key={link.text}>
                 <LabeledButton
                   icon={link.icon}
                   href={link.href}
@@ -171,7 +172,7 @@ function Card({ setIsWaveOn, isOpen }: CardProps) {
                 >
                   {link.text}
                 </LabeledButton>
-              </div>
+              </ButtonHolder>
             ))}
           </div>
         </div>
