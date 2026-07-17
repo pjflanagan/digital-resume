@@ -11,22 +11,25 @@ type FormFieldWrapperProps = {
   children: React.ReactNode;
 };
 
-const FormFieldWrapper = ({ label, error, children }: FormFieldWrapperProps) => (
-  <div>
-    <div className={Style.labelHolder}>
-      <TextAccent>{label}</TextAccent>
+function FormFieldWrapper({ label, error, children }: FormFieldWrapperProps): React.ReactNode {
+  return (
+    <div>
+      <div className={Style.labelHolder}>
+        <TextAccent>{label}</TextAccent>
+      </div>
+      {children}
+      <div className={Style.errorHolder}>
+        <TextTag>{error}</TextTag>
+      </div>
     </div>
-    {children}
-    <div className={Style.errorHolder}>
-      <TextTag>{error}</TextTag>
-    </div>
-  </div>
-);
+  );
+}
 
-const fieldClassName = (error?: string) =>
-  clsx(Style.formField, {
+function fieldClassName(error?: string): string {
+  return clsx(Style.formField, {
     [Style.error]: !!error,
   });
+}
 
 type FormTextProps = {
   type?: string;
@@ -38,18 +41,20 @@ type FormTextProps = {
   error?: string;
 };
 
-const FormText = ({ type, name, label, value, onChange, placeholder, error }: FormTextProps) => (
-  <FormFieldWrapper label={label} error={error}>
-    <input
-      value={value}
-      onChange={onChange}
-      name={name}
-      type={type}
-      placeholder={placeholder}
-      className={fieldClassName(error)}
-    />
-  </FormFieldWrapper>
-);
+function FormText({ type, name, label, value, onChange, placeholder, error }: FormTextProps): React.ReactNode {
+  return (
+    <FormFieldWrapper label={label} error={error}>
+      <input
+        value={value}
+        onChange={onChange}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        className={fieldClassName(error)}
+      />
+    </FormFieldWrapper>
+  );
+}
 
 type FormMessageProps = {
   value: string;
@@ -60,17 +65,19 @@ type FormMessageProps = {
   error?: string;
 };
 
-const FormMessage = ({ value, name, label, onChange, placeholder, error }: FormMessageProps) => (
-  <FormFieldWrapper label={label} error={error}>
-    <textarea
-      value={value}
-      name={name}
-      onChange={onChange}
-      placeholder={placeholder}
-      className={fieldClassName(error)}
-      rows={4}
-    />
-  </FormFieldWrapper>
-);
+function FormMessage({ value, name, label, onChange, placeholder, error }: FormMessageProps): React.ReactNode {
+  return (
+    <FormFieldWrapper label={label} error={error}>
+      <textarea
+        value={value}
+        name={name}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={fieldClassName(error)}
+        rows={4}
+      />
+    </FormFieldWrapper>
+  );
+}
 
 export { FormText, FormMessage };

@@ -12,7 +12,7 @@ import * as Style from './SlidePersonal.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
-const SlidePersonal = () => {
+function SlidePersonal() {
   // the name link (titleText.links[0]) doubles as the default photo/focusArea, so it only
   // needs to be set in one place in the content JSON
   const [defaultLink] = useBio().personal.titleText.links;
@@ -38,6 +38,6 @@ const SlidePersonal = () => {
       <CurveBottom />
     </ScrollComponent>
   );
-};
+}
 
 export { SlidePersonal };

@@ -8,7 +8,7 @@ type BillPosition = {
   deg: number;
 };
 
-const randomPosition = (): BillPosition => {
+function randomPosition(): BillPosition {
   const top = -40 + Math.random() * 50;
   const left = -40 + Math.random() * 80;
   const deg = Math.random() * 359;
@@ -17,9 +17,11 @@ const randomPosition = (): BillPosition => {
     left,
     deg,
   };
-};
+}
 
-const randomInterval = () => Math.random() * 2800 + 2800;
+function randomInterval() {
+  return Math.random() * 2800 + 2800;
+}
 
 const BillCypher: React.FC = () => {
   const [{ top, left, deg }, setPosition] = useState<BillPosition>(randomPosition);

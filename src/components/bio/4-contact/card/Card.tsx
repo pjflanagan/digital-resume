@@ -31,7 +31,7 @@ type FormFields = Record<FormField, string>;
 
 const EMPTY_FIELDS: FormFields = { name: '', email: '', message: '' };
 
-const validate = ({ name, email, message }: FormFields): FieldError[] => {
+function validate({ name, email, message }: FormFields): FieldError[] {
   const errorMessages: FieldError[] = [];
 
   if (name.length === 0) {
@@ -56,14 +56,14 @@ const validate = ({ name, email, message }: FormFields): FieldError[] => {
   }
 
   return errorMessages;
-};
+}
 
 type CardProps = {
   setIsWaveOn: (on: boolean) => void;
   isOpen: boolean;
 };
 
-const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
+function Card({ setIsWaveOn, isOpen }: CardProps) {
   const Bio = useBio();
   const [fields, setFields] = useState<FormFields>(EMPTY_FIELDS);
   const [errorMessages, setErrorMessages] = useState<FieldError[]>([]);
@@ -76,20 +76,20 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
 
   useEffect(() => () => clearTimeout(submitTimeout.current), []);
 
-  const onChange = (
+  function onChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     field: FormField
-  ) => {
+  ) {
     setFields((prev) => ({ ...prev, [field]: e.target.value }));
     setErrorMessages((prev) => prev.filter((error) => error.field !== field));
-  };
+  }
 
-  const error = (messages: FieldError[]) => {
+  function error(messages: FieldError[]) {
     setIsLoading(false);
     setErrorMessages(messages);
-  };
+  }
 
-  const success = () => {
+  function success() {
     setErrorMessages([]);
     setFields(EMPTY_FIELDS);
     setPlaceholders({ name: '', email: '', message: '' });
@@ -97,9 +97,9 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
       setIsLoading(false);
       setIsSubmitted(true);
     }, 600);
-  };
+  }
 
-  const submitForm = () => {
+  function submitForm() {
     setIsLoading(true);
     fetch('/', {
       method: 'POST',
@@ -120,27 +120,28 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
           },
         ])
       );
-  };
+  }
 
-  const onSubmit = () => {
+  function onSubmit() {
     const validationErrors = validate(fields);
     if (validationErrors.length > 0) {
       error(validationErrors);
       return;
     }
     submitForm();
-  };
+  }
 
-  const findError = (field: FieldError['field']): string =>
-    errorMessages.find((error) => error.field === field)?.message ?? '';
+  function findError(field: FieldError['field']): string {
+    return errorMessages.find((error) => error.field === field)?.message ?? '';
+  }
 
-  const cycleCharacter = () => {
+  function cycleCharacter() {
     const currentIndex = Bio.contact.formPlaceholders.findIndex(
       (placeholder) => placeholder.name === placeholders.name
     );
     const nextIndex = (currentIndex + 1) % Bio.contact.formPlaceholders.length;
     setPlaceholders(Bio.contact.formPlaceholders[nextIndex]);
-  };
+  }
 
   const className = clsx(Style.card, {
     [Style.isSubmitted]: isSubmitted || !isOpen,
@@ -221,6 +222,6 @@ const Card = ({ setIsWaveOn, isOpen }: CardProps) => {
       </div>
     </div>
   );
-};
+}
 
 export { Card };

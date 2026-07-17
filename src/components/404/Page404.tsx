@@ -1,14 +1,14 @@
-import { LabeledButton, Canvas, Cover, TextPageCenter } from 'src/elements';
+import { LabeledButton, Canvas, Cover, SplashText } from 'src/elements';
 import Data404 from 'src/content/404';
 
 import { View } from './view/View';
 import * as Style from './Page404.module.scss';
 
-const Page404Component = () => {
+function Page404Component() {
   return (
     <div className={Style.content}>
       <Cover />
-      <TextPageCenter
+      <SplashText
         className={Style.titleContainer}
         headline={Data404.title}
         blurb={Data404.subtitle}
@@ -24,6 +24,6 @@ const Page404Component = () => {
       {/* <Footer /> */}
     </div>
   );
-};
+}
 
 export { Page404Component };

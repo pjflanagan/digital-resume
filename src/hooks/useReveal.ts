@@ -5,7 +5,7 @@ type UseRevealProps = {
   ref: RefObject<Element | null>;
 };
 
-const useReveal = ({ ref, gap }: UseRevealProps): boolean => {
+function useReveal({ ref, gap }: UseRevealProps): boolean {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
@@ -32,6 +32,6 @@ const useReveal = ({ ref, gap }: UseRevealProps): boolean => {
   }, [ref, gap]);
 
   return isRevealed;
-};
+}
 
 export { useReveal };

@@ -12,9 +12,9 @@ type FeaturedProjectProps = {
   project: ProjectContent;
 };
 
-const FeaturedProject = ({
+function FeaturedProject({
   project: { name, link, description, image, tech },
-}: FeaturedProjectProps) => {
+}: FeaturedProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 220 });
 
@@ -42,6 +42,6 @@ const FeaturedProject = ({
       </div>
     </div>
   );
-};
+}
 
 export { FeaturedProject };

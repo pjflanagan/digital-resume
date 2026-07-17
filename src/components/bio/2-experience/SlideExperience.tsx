@@ -11,34 +11,38 @@ import * as Style from './SlideExperience.module.scss';
 const ScrollComponent = Scroll.Element;
 
 // Job and School map onto <Org> slightly differently
-const JobOrg = ({ job }: { job: Job }) => (
-  <Org
-    name={job.name}
-    location={job.location}
-    time={job.time}
-    links={job.links}
-    description={job.description}
-    position={job.position}
-    image={job.image}
-    background={job.background}
-  />
-);
+function JobOrg({ job }: { job: Job }) {
+  return (
+    <Org
+      name={job.name}
+      location={job.location}
+      time={job.time}
+      links={job.links}
+      description={job.description}
+      position={job.position}
+      image={job.image}
+      background={job.background}
+    />
+  );
+}
 
-const SchoolOrg = ({ school }: { school: School }) => (
-  <Org
-    name={school.name}
-    location={school.location}
-    time={school.class}
-    links={school.links}
-    description={school.description}
-    position={school.degree}
-    image={school.image}
-    background={school.background}
-    extra={school.extra}
-  />
-);
+function SchoolOrg({ school }: { school: School }) {
+  return (
+    <Org
+      name={school.name}
+      location={school.location}
+      time={school.class}
+      links={school.links}
+      description={school.description}
+      position={school.degree}
+      image={school.image}
+      background={school.background}
+      extra={school.extra}
+    />
+  );
+}
 
-const SlideExperience = () => {
+function SlideExperience() {
   const { accent, title, sections, jobs, schools, linkText } = useBio().experience;
   return (
     <ScrollComponent className={Style.slideExperience} name="experience">
@@ -77,6 +81,6 @@ const SlideExperience = () => {
       </div>
     </ScrollComponent>
   );
-};
+}
 
 export { SlideExperience };

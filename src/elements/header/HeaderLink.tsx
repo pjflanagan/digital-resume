@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { TextInlineLink } from '../text/Text';
@@ -12,7 +12,7 @@ type HeaderLinkProps = {
   samePage?: boolean;
 };
 
-const HeaderLink: FC<HeaderLinkProps> = ({ onClick, href, children, samePage }) => {
+function HeaderLink({ onClick, href, children, samePage }: HeaderLinkProps): ReactNode {
   const isExternal = !!href && !samePage;
   return (
     <div className={Style.linkHolder}>
@@ -26,6 +26,6 @@ const HeaderLink: FC<HeaderLinkProps> = ({ onClick, href, children, samePage }) 
       </TextInlineLink>
     </div>
   );
-};
+}
 
 export { HeaderLink };

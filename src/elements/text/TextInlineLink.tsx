@@ -15,8 +15,7 @@ type TextInlineLinkProps = {
   onClick?: () => void;
 };
 
-// TextInlineLink
-const TextInlineLink = ({
+function TextInlineLink({
   href,
   className: classNameProp,
   onMouseOver,
@@ -24,7 +23,7 @@ const TextInlineLink = ({
   children,
   samePage,
   onClick,
-}: TextInlineLinkProps) => {
+}: TextInlineLinkProps): React.ReactNode {
   const className = clsx(Style.textInlineLink, Style.clickable, classNameProp, {
     [Style.clickable]: !!onClick,
   });
@@ -56,6 +55,6 @@ const TextInlineLink = ({
       {children}
     </a>
   );
-};
+}
 
 export { TextInlineLink };

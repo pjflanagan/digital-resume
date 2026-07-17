@@ -21,7 +21,7 @@ type HeadingProps = MonoTextProps & {
   onClick?: () => void;
 };
 
-const makeHeading = (Tag: 'h1' | 'h2' | 'h3' | 'h4') => {
+function makeHeading(Tag: 'h1' | 'h2' | 'h3' | 'h4'): React.FC<HeadingProps> {
   const Heading = ({ className, children, mono, onClick }: HeadingProps) => (
     <Tag
       className={clsx(className, mono && Style.mono)}
@@ -37,7 +37,7 @@ const makeHeading = (Tag: 'h1' | 'h2' | 'h3' | 'h4') => {
   );
   Heading.displayName = `TextHeading(${Tag})`;
   return Heading;
-};
+}
 
 const TextTitle = makeHeading('h1');
 const TextSection = makeHeading('h2');
@@ -49,7 +49,7 @@ type TextAccentProps = HeadingProps & {
   animate?: boolean;
 };
 
-const AnimatedTextAccent = ({ className, children }: HeadingProps) => {
+function AnimatedTextAccent({ className, children }: HeadingProps): React.ReactNode {
   const text = typeof children === 'string' ? children : '';
   const { ref, displayText } = useScrambleText<HTMLHeadingElement>({ text });
   return (
@@ -57,10 +57,9 @@ const AnimatedTextAccent = ({ className, children }: HeadingProps) => {
       {displayText}
     </h5>
   );
-};
+}
 
-// TextAccent h5
-const TextAccent = ({ className, children, animate, mono = true }: TextAccentProps) => {
+function TextAccent({ className, children, animate, mono = true }: TextAccentProps): React.ReactNode {
   const classNames = clsx(className, mono && Style.mono);
   if (animate) {
     return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;
@@ -70,12 +69,11 @@ const TextAccent = ({ className, children, animate, mono = true }: TextAccentPro
       {children}
     </h5>
   );
-};
+}
 
-// TextTag
-const TextTag = ({ children, mono }: { children?: React.ReactNode; mono?: boolean }) => (
-  <span className={clsx(Style.textTag, mono && Style.mono)}>{children}</span>
-);
+function TextTag({ children, mono }: { children?: React.ReactNode; mono?: boolean }): React.ReactNode {
+  return <span className={clsx(Style.textTag, mono && Style.mono)}>{children}</span>;
+}
 
 type TextProps = MonoTextProps & {
   dangerouslySetInnerHTML?: { __html: string };
@@ -85,8 +83,7 @@ type TextProps = MonoTextProps & {
   callback?: LinkCallback;
 };
 
-// Text
-const Text = ({
+function Text({
   dangerouslySetInnerHTML,
   className,
   style,
@@ -94,62 +91,15 @@ const Text = ({
   links,
   callback,
   mono,
-}: TextProps) => {
+}: TextProps): React.ReactNode {
   const classNames = clsx(className, mono && Style.mono);
   if (dangerouslySetInnerHTML)
     return <p className={classNames} style={style} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
   return <p className={classNames} style={style}>{ParseTextForLinks(children || '', links, callback)}</p>;
-};
-
-type TextPageCenterProps = MonoTextProps & {
-  headline: React.ReactNode;
-  blurb: string;
-  style?: React.CSSProperties;
-  // when true, scrambles the blurb until scrolled into view
-  animate?: boolean;
-};
-
-const AnimatedBlurb = ({ className, children }: { className?: string; children: string }) => {
-  const { ref, displayText } = useScrambleText<HTMLDivElement>({ text: children });
-  return (
-    <div ref={ref} className={className}>
-      {displayText}
-    </div>
-  );
-};
-
-const TextPageCenter = ({
-  className: classNameProp,
-  headline,
-  blurb,
-  style,
-  mono,
-  animate,
-}: TextPageCenterProps) => {
-  const blurbClassName = clsx(Style.textBlurb, mono && Style.mono);
-  return (
-    <div className={clsx(Style.textPageCenter, classNameProp)} style={style}>
-      <div className={Style.textHeadline}>{headline}</div>
-      {animate ? (
-        <AnimatedBlurb className={blurbClassName}>{blurb}</AnimatedBlurb>
-      ) : (
-        <div className={blurbClassName}>{blurb}</div>
-      )}
-    </div>
-  );
-};
+}
 
 export { ParseTextForLinks } from './ParseTextForLinks';
 export type { LinkCallback } from './ParseTextForLinks';
 export { TextInlineLink } from './TextInlineLink';
 export { TextLinkedHeader } from './TextLinkedHeader';
-export {
-  TextAccent,
-  TextTitle,
-  TextSection,
-  TextHeading,
-  TextSubHeading,
-  TextPageCenter,
-  Text,
-  TextTag,
-};
+export { TextAccent, TextTitle, TextSection, TextHeading, TextSubHeading, Text, TextTag };

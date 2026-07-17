@@ -11,11 +11,11 @@ type LinkCallback = (
   link: Pick<ContentLink, 'image' | 'imageDescription' | 'greeting' | 'focusArea'>
 ) => void;
 
-const ParseTextForLinks = (
+function ParseTextForLinks(
   text: string,
   links?: ContentLink[],
   callback?: LinkCallback
-): React.ReactNode => {
+): React.ReactNode {
   // if there are no links then ignore
   if (!links) {
     return <span>{text}</span>;
@@ -49,7 +49,7 @@ const ParseTextForLinks = (
       </TextInlineLink>
     );
   });
-};
+}
 
 export { ParseTextForLinks };
 export type { LinkCallback };

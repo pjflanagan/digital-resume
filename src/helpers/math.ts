@@ -2,8 +2,9 @@
 
 type Point = { x: number; y: number };
 
-const distance = (a: Point, b: Point): number =>
-  Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+function distance(a: Point, b: Point): number {
+  return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+}
 
 type EllipseCircleIntersectionProps = {
   eRadx: number;
@@ -13,11 +14,11 @@ type EllipseCircleIntersectionProps = {
 
 type IntersectionPoint = Point & { phi: number; theta?: number };
 
-const ellipseCircleIntersection = ({
+function ellipseCircleIntersection({
   eRadx,
   eRady,
   cRad,
-}: EllipseCircleIntersectionProps): IntersectionPoint[] => {
+}: EllipseCircleIntersectionProps): IntersectionPoint[] {
   // https://www.analyzemath.com/EllipseProblems/ellipse_intersection.html
   const num = eRadx * eRadx - cRad * cRad;
   const denom = (eRadx * eRadx) / (eRady * eRady) - 1;
@@ -34,7 +35,7 @@ const ellipseCircleIntersection = ({
     v.theta = Math.atan((eRadx / eRady) * Math.tan(v.phi));
   });
   return values;
-};
+}
 
 export { distance, ellipseCircleIntersection };
 export type { Point };

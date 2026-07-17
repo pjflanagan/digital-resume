@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactNode } from 'react';
 import { useWindowScroll } from 'react-use';
 
 import { Canvas } from 'src/elements';
@@ -7,9 +7,7 @@ import { View } from './view/View';
 import { LandingBody } from './body/LandingBody';
 import * as Style from './SlideLanding.module.scss';
 
-// SlideLanding
-
-const SlideLanding: FC = () => {
+function SlideLanding(): ReactNode {
   const { y } = useWindowScroll();
   const canvasScroll = y / 2;
   return (
@@ -24,6 +22,6 @@ const SlideLanding: FC = () => {
       />
     </div>
   );
-};
+}
 
 export { SlideLanding };

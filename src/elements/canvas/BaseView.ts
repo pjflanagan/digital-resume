@@ -39,7 +39,11 @@ abstract class BaseView {
   }
 
   // debounced: wait until the user is done resizing before rebuilding the scene
+  // on touch devices, ignore height-only changes: mobile browsers fire resize
+  // when the address bar shows/hides on scroll, which shouldn't rebuild the scene
   onResize() {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice && window.innerWidth === this.W) return;
     clearTimeout(this.resizeTimeout);
     this.resizeTimeout = setTimeout(() => {
       this.resize();

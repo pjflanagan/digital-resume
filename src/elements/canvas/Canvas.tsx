@@ -10,7 +10,7 @@ type CanvasProps = {
   style?: React.CSSProperties;
 };
 
-const Canvas = ({ view: View, className, style }: CanvasProps) => {
+function Canvas({ view: View, className, style }: CanvasProps): React.ReactNode {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Canvas = ({ view: View, className, style }: CanvasProps) => {
   }, [View]);
 
   return <canvas className={className} style={style} ref={canvasRef} />;
-};
+}
 
 export { Canvas };
 export type { CanvasView };

@@ -10,12 +10,12 @@ type TextLinkedHeaderProps = {
   color?: string;
 };
 
-const TextLinkedHeader = ({
+function TextLinkedHeader({
   href,
   children,
   className: classNameProp,
   color,
-}: TextLinkedHeaderProps) => {
+}: TextLinkedHeaderProps): React.ReactNode {
   const className = clsx(Style.textLinkedHeader, color && Style[color]);
   return (
     <h3 className={classNameProp}>
@@ -24,6 +24,6 @@ const TextLinkedHeader = ({
       </a>
     </h3>
   );
-};
+}
 
 export { TextLinkedHeader };

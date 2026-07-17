@@ -14,15 +14,15 @@ import * as Style from './Bio.module.scss';
 
 const scroller = Scroll.scroller;
 
-const clickToScroll = (slideName: string) => {
+function clickToScroll(slideName: string) {
   scroller.scrollTo(slideName, {
     duration: 1500,
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page
   });
-};
+}
 
-const BioPage = () => {
+function BioPage() {
   const [isLoading, setIsLoading] = useState(true);
   const Bio = useBio();
 
@@ -54,12 +54,14 @@ const BioPage = () => {
       </div>
     </div>
   );
-};
+}
 
-const BioComponent = () => (
-  <ContentProvider>
-    <BioPage />
-  </ContentProvider>
-);
+function BioComponent() {
+  return (
+    <ContentProvider>
+      <BioPage />
+    </ContentProvider>
+  );
+}
 
 export { BioComponent };

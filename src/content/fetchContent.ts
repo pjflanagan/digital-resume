@@ -14,8 +14,9 @@ const CONTENT_BASE =
 // Content JSON stores bare filenames; CMS image widgets store full URLs.
 type ContentImageFolder = 'personal' | 'experience' | 'projects';
 
-const contentImage = (folder: ContentImageFolder, image: string): string =>
-  /^(https?:)?\//.test(image) ? image : `${CONTENT_BASE}/images/${folder}/${image}`;
+function contentImage(folder: ContentImageFolder, image: string): string {
+  return /^(https?:)?\//.test(image) ? image : `${CONTENT_BASE}/images/${folder}/${image}`;
+}
 
 async function fetchContentFile<T>(file: string): Promise<T> {
   const res = await fetch(`${CONTENT_BASE}/${file}`, { cache: 'no-cache' });

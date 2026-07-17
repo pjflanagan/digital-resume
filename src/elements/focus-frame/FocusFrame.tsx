@@ -21,7 +21,7 @@ type FocusFrameProps = {
   className?: string;
 };
 
-const FocusFrame = ({ children, area, className }: FocusFrameProps) => {
+function FocusFrame({ children, area, className }: FocusFrameProps): React.ReactNode {
   const containerRef = useRef<HTMLDivElement>(null);
   const firstClickRef = useRef<{ x: number; y: number } | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -39,7 +39,7 @@ const FocusFrame = ({ children, area, className }: FocusFrameProps) => {
 
   // dev helper: click the top-left corner of the desired frame, then the
   // bottom-right corner, to log the x/y and width/height percentages to enter above
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  function handleClick(e: React.MouseEvent<HTMLDivElement>): void {
     if (process.env.NODE_ENV === 'production') return;
     const rect = containerRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -56,7 +56,7 @@ const FocusFrame = ({ children, area, className }: FocusFrameProps) => {
       console.log('focusArea width/height:', { width: Math.round(width), height: Math.round(height) });
       firstClickRef.current = null;
     }
-  };
+  }
 
   return (
     <div ref={containerRef} className={clsx(Style.focusFrameHolder, className)} onClick={handleClick}>
@@ -72,7 +72,7 @@ const FocusFrame = ({ children, area, className }: FocusFrameProps) => {
       />
     </div>
   );
-};
+}
 
 export { FocusFrame };
 export type { FocusArea };

@@ -9,7 +9,7 @@ type ProjectProps = {
   name?: string;
 };
 
-const Project = ({ project: { name, link, description, image } }: ProjectProps) => {
+function Project({ project: { name, link, description, image } }: ProjectProps) {
   return (
     <div className={Style.project}>
       <Image src={contentImage('projects', image)} alt={name} className={Style.projectImage} />
@@ -19,6 +19,6 @@ const Project = ({ project: { name, link, description, image } }: ProjectProps) 
       </div>
     </div>
   );
-};
+}
 
 export { Project };

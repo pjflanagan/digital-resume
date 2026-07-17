@@ -14,7 +14,7 @@ type PhotoProps = {
   focusArea?: FocusArea;
 };
 
-const Photo = ({ photo, photoDescription, focusArea }: PhotoProps) => {
+function Photo({ photo, photoDescription, focusArea }: PhotoProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 280 });
   const hasMounted = useRef(false);
@@ -55,6 +55,6 @@ const Photo = ({ photo, photoDescription, focusArea }: PhotoProps) => {
       )}
     </div>
   );
-};
+}
 
 export { Photo };

@@ -15,13 +15,13 @@ type LabeledButtonFormProps = {
   onMouseLeave?: () => void;
 };
 
-const LabeledButtonForm = ({
+function LabeledButtonForm({
   children,
   icon,
   color,
   onMouseEnter,
   onMouseLeave,
-}: LabeledButtonFormProps) => {
+}: LabeledButtonFormProps): React.ReactNode {
   return (
     <button
       className={clsx(Style.labeledButton, Style.buttonReset, color && Style[color])}
@@ -37,7 +37,7 @@ const LabeledButtonForm = ({
       </div>
     </button>
   );
-};
+}
 
 type LabeledButtonLinkedProps = LabeledButtonFormProps & {
   className?: string;
@@ -46,7 +46,7 @@ type LabeledButtonLinkedProps = LabeledButtonFormProps & {
   // TODO: internal use Link from 'gatsby'
 };
 
-const LabeledButtonLinked = ({
+function LabeledButtonLinked({
   icon,
   color,
   onMouseEnter,
@@ -55,7 +55,7 @@ const LabeledButtonLinked = ({
   className: classNameProp,
   href,
   sameWindow,
-}: LabeledButtonLinkedProps) => {
+}: LabeledButtonLinkedProps): React.ReactNode {
   const rel = !sameWindow ? 'noreferrer' : undefined;
   const target = !sameWindow ? '_blank' : undefined;
 
@@ -78,7 +78,7 @@ const LabeledButtonLinked = ({
       </a>
     </div>
   );
-};
+}
 
 type LabeledButtonActionProps = {
   icon: IconName;
@@ -88,7 +88,7 @@ type LabeledButtonActionProps = {
   className?: string;
 };
 
-const LabeledButtonAction = ({ icon, children, color, onClick, className }: LabeledButtonActionProps) => {
+function LabeledButtonAction({ icon, children, color, onClick, className }: LabeledButtonActionProps): React.ReactNode {
   return (
     <button
       type="button"
@@ -103,6 +103,6 @@ const LabeledButtonAction = ({ icon, children, color, onClick, className }: Labe
       </div>
     </button>
   );
-};
+}
 
 export { LabeledButtonAction, LabeledButtonLinked, LabeledButtonForm };

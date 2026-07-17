@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { Text } from 'src/elements';
@@ -10,7 +11,7 @@ type FooterProps = {
   text: LinkText<string>[];
 };
 
-const Footer = ({ className: classNameProp, text }: FooterProps) => {
+function Footer({ className: classNameProp, text }: FooterProps): ReactNode {
   const className = clsx(Style.footer, classNameProp);
   return (
     <div className={className}>
@@ -21,6 +22,6 @@ const Footer = ({ className: classNameProp, text }: FooterProps) => {
       ))}
     </div>
   );
-};
+}
 
 export { Footer };

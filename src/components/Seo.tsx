@@ -12,33 +12,35 @@ type SeoProps = {
 };
 
 // Rendered via Gatsby's Head export API (export const Head = () => <Seo />)
-const Seo = ({ title = AUTHOR }: SeoProps) => (
-  <>
-    <title>{title}</title>
+function Seo({ title = AUTHOR }: SeoProps) {
+  return (
+    <>
+      <title>{title}</title>
 
-    {/* Icon */}
-    <link rel="icon" type="image/png" sizes="32x32" href={FAVICON_32} />
-    <link rel="icon" type="image/png" sizes="16x16" href={FAVICON_16} />
+      {/* Icon */}
+      <link rel="icon" type="image/png" sizes="32x32" href={FAVICON_32} />
+      <link rel="icon" type="image/png" sizes="16x16" href={FAVICON_16} />
 
-    {/* Social */}
-    <meta name="description" content={DESCRIPTION} />
-    <meta name="author" content={AUTHOR} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={DESCRIPTION} />
-    <meta property="og:url" content={ROOT} />
-    <meta property="og:image" content={IMG} />
+      {/* Social */}
+      <meta name="description" content={DESCRIPTION} />
+      <meta name="author" content={AUTHOR} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={DESCRIPTION} />
+      <meta property="og:url" content={ROOT} />
+      <meta property="og:image" content={IMG} />
 
-    {/* Facebook */}
-    <meta property="og:type" content="website" />
-    <meta property="og:image:secure_url" content={IMG} />
+      {/* Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:image:secure_url" content={IMG} />
 
-    {/* Twitter */}
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={HANDLE} />
-    <meta name="twitter:creator" content={HANDLE} />
-    <meta name="twitter:image" content={IMG_TW} />
-  </>
-);
+      {/* Twitter */}
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={HANDLE} />
+      <meta name="twitter:creator" content={HANDLE} />
+      <meta name="twitter:image" content={IMG_TW} />
+    </>
+  );
+}
 
 export { Seo };

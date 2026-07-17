@@ -1,12 +1,16 @@
+import type { ReactNode } from 'react';
+
 import 'src/theme/theme.scss';
 
 import { Page404Component } from 'src/components/404/Page404';
 import { Seo } from 'src/components/Seo';
 
-const Page404 = () => {
+function Page404(): ReactNode {
   return <Page404Component />;
-};
+}
 
 export default Page404;
 
-export const Head = () => <Seo title="404 | Peter James Flanagan" />;
+export function Head(): ReactNode {
+  return <Seo title="404 | Peter James Flanagan" />;
+}

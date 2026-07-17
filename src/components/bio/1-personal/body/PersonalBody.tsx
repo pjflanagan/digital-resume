@@ -11,7 +11,7 @@ type BodyProps = {
   photoLinkCallback: (photo: string, photoDescription?: string, focusArea?: FocusArea) => void;
 };
 
-const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
+function PersonalBody({ photoLinkCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
 
@@ -32,6 +32,6 @@ const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
       </Text>
     </div>
   );
-};
+}
 
 export { PersonalBody };

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { SVGIcon } from 'src/elements';
 import type { IconName } from '../icon/SVGIcon';
@@ -13,14 +14,14 @@ type CircleButtonLinkedProps = {
   className?: string;
 };
 
-const CircleButtonLinked = ({
+function CircleButtonLinked({
   icon,
   onMouseEnter,
   onMouseLeave,
   href,
   sameWindow,
   className,
-}: CircleButtonLinkedProps) => {
+}: CircleButtonLinkedProps): ReactNode {
   const rel = !sameWindow ? 'noreferrer' : undefined;
   const target = !sameWindow ? '_blank' : undefined;
   return (
@@ -35,7 +36,7 @@ const CircleButtonLinked = ({
       <SVGIcon icon={icon} />
     </a>
   );
-};
+}
 
 type CircleButtonActionProps = {
   icon: IconName;
@@ -43,7 +44,7 @@ type CircleButtonActionProps = {
   className?: string;
 };
 
-const CircleButtonAction = ({ icon, onClick, className }: CircleButtonActionProps) => {
+function CircleButtonAction({ icon, onClick, className }: CircleButtonActionProps): ReactNode {
   return (
     <button
       type="button"
@@ -53,6 +54,6 @@ const CircleButtonAction = ({ icon, onClick, className }: CircleButtonActionProp
       <SVGIcon icon={icon} />
     </button>
   );
-};
+}
 
 export { CircleButtonAction, CircleButtonLinked };

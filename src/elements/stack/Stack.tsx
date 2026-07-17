@@ -6,14 +6,14 @@ import { activationKeyHandler } from 'src/helpers';
 
 import * as Style from './Stack.module.scss';
 
-const getNextLayerIndex = (currentLayer: number, offset: number, layersLength: number): number => {
+function getNextLayerIndex(currentLayer: number, offset: number, layersLength: number): number {
   if (currentLayer + offset >= layersLength) {
     return currentLayer - layersLength + offset;
   } else if (currentLayer + offset < 0) {
     return layersLength + currentLayer + offset;
   }
   return currentLayer + offset;
-};
+}
 
 type StackNavProps = {
   current: number;
@@ -21,7 +21,7 @@ type StackNavProps = {
   selectLayer: (i: number) => void;
 };
 
-const StackNav = ({ current, count, selectLayer }: StackNavProps) => {
+function StackNav({ current, count, selectLayer }: StackNavProps): React.ReactNode {
   return (
     <div className={Style.stackNav}>
       {[...Array(count)].map((e, i) => {
@@ -41,13 +41,13 @@ const StackNav = ({ current, count, selectLayer }: StackNavProps) => {
       })}
     </div>
   );
-};
+}
 
 type StackProps = {
   children: React.ReactElement<{ name: string }>[];
 };
 
-const Stack = ({ children }: StackProps) => {
+function Stack({ children }: StackProps): React.ReactNode {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 240 });
   const [currentLayer, setCurrentLayer] = useState(0);
@@ -56,13 +56,13 @@ const Stack = ({ children }: StackProps) => {
     [Style.preReveal]: !isRevealed,
   });
 
-  const getNextLayer = (offset: number) => {
+  function getNextLayer(offset: number): { layerIndex: number; name: string } {
     const layerIndex = getNextLayerIndex(currentLayer, offset, children.length);
     return {
       layerIndex,
       name: children[layerIndex].props.name,
     };
-  };
+  }
   const layers = [-1, 0, 1, 2, 3, 4].map((i) => getNextLayer(i));
 
   return (
@@ -85,6 +85,6 @@ const Stack = ({ children }: StackProps) => {
       <StackNav count={children.length} current={currentLayer} selectLayer={setCurrentLayer} />
     </div>
   );
-};
+}
 
 export { Stack };

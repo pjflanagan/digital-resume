@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
@@ -12,7 +12,7 @@ type AvatarProps = {
   background: string;
 };
 
-const Avatar = ({ src, name, background }: AvatarProps) => {
+function Avatar({ src, name, background }: AvatarProps): ReactNode {
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 132 });
   const className = clsx(Style.avatarHolder, {
@@ -27,6 +27,6 @@ const Avatar = ({ src, name, background }: AvatarProps) => {
       <div className={Style.avatarBack} />
     </div>
   );
-};
+}
 
 export { Avatar };

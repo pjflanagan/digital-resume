@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
@@ -9,7 +9,7 @@ type RulerProps = {
   className?: string;
 };
 
-const Ruler = ({ className: classNameProp }: RulerProps) => {
+function Ruler({ className: classNameProp }: RulerProps): ReactNode {
   const holderRef = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref: holderRef, gap: 120 });
 
@@ -36,6 +36,6 @@ const Ruler = ({ className: classNameProp }: RulerProps) => {
       </div>
     </div>
   );
-};
+}
 
 export { Ruler };

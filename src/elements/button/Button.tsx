@@ -26,21 +26,23 @@ type LinkedProps = ButtonCommonProps & {
 
 type ButtonProps = ActionProps | LinkedProps;
 
-const isAction = (props: ButtonProps): props is ActionProps => 'onClick' in props;
+function isAction(props: ButtonProps): props is ActionProps {
+  return 'onClick' in props;
+}
 
-const LabeledButton = (props: ButtonProps) => {
+function LabeledButton(props: ButtonProps): React.ReactNode {
   if (isAction(props)) {
     return <LabeledButtonAction {...props} />;
   }
   return <LabeledButtonLinked {...props} />;
-};
+}
 
-const CircleButton = (props: ButtonProps) => {
+function CircleButton(props: ButtonProps): React.ReactNode {
   if (isAction(props)) {
     return <CircleButtonAction {...props} />;
   }
   return <CircleButtonLinked {...props} />;
-};
+}
 
 export { LabeledButton, CircleButton };
 export type { ActionProps, LinkedProps };

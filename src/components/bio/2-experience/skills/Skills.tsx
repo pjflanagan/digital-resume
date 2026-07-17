@@ -13,10 +13,11 @@ const REVEAL_STEP_MS = 60;
 
 type SkillGroup = { type: string; items: { name: string; progress: number }[] };
 
-const visibleLength = (group: SkillGroup, showAll: boolean) =>
-  showAll ? group.items.length : Math.min(group.items.length, COLLAPSED_COUNT);
+function visibleLength(group: SkillGroup, showAll: boolean) {
+  return showAll ? group.items.length : Math.min(group.items.length, COLLAPSED_COUNT);
+}
 
-const splitIntoColumns = (groups: SkillGroup[], showAll: boolean): SkillGroup[][] => {
+function splitIntoColumns(groups: SkillGroup[], showAll: boolean): SkillGroup[][] {
   const columns: SkillGroup[][] = [[], []];
   const columnLengths = [0, 0];
 
@@ -27,29 +28,31 @@ const splitIntoColumns = (groups: SkillGroup[], showAll: boolean): SkillGroup[][
   });
 
   return columns;
-};
+}
 
-const SkillGroupList = ({ type, items, showAll }: SkillGroup & { showAll: boolean }) => (
-  <div className={Style.skillGroup}>
-    <TextHeading>{type}</TextHeading>
-    <div className={Style.skillListHolder}>
-      {(showAll ? items : items.slice(0, COLLAPSED_COUNT)).map((skill, i) => {
-        const isRevealed = i >= COLLAPSED_COUNT || type === HIDDEN_GROUP;
-        const style = isRevealed
-          ? ({ '--delay': `${i * REVEAL_STEP_MS}ms` } as CSSProperties)
-          : undefined;
+function SkillGroupList({ type, items, showAll }: SkillGroup & { showAll: boolean }) {
+  return (
+    <div className={Style.skillGroup}>
+      <TextHeading>{type}</TextHeading>
+      <div className={Style.skillListHolder}>
+        {(showAll ? items : items.slice(0, COLLAPSED_COUNT)).map((skill, i) => {
+          const isRevealed = i >= COLLAPSED_COUNT || type === HIDDEN_GROUP;
+          const style = isRevealed
+            ? ({ '--delay': `${i * REVEAL_STEP_MS}ms` } as CSSProperties)
+            : undefined;
 
-        return (
-          <div key={i} className={clsx(Style.skillBarHolder, isRevealed && Style.reveal)} style={style}>
-            <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
-          </div>
-        );
-      })}
+          return (
+            <div key={i} className={clsx(Style.skillBarHolder, isRevealed && Style.reveal)} style={style}>
+              <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
+            </div>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
-const Skills = () => {
+function Skills() {
   const [showAll, setShowAll] = useState(false);
 
   const groups = useBio().experience.skills.filter(({ type }) => showAll || type !== HIDDEN_GROUP);
@@ -75,6 +78,6 @@ const Skills = () => {
       )}
     </div>
   );
-};
+}
 
 export { Skills };

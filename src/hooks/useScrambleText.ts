@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 
 import { useReveal } from './useReveal';
 
@@ -9,20 +9,20 @@ const SETTLE_INTERVAL_MS = 60;
 const ZHUYIN_RANGE_START = 0x3105;
 const ZHUYIN_RANGE_SIZE = 0x3129 - ZHUYIN_RANGE_START + 1;
 
-const isCJK = (char: string): boolean => {
+function isCJK(char: string): boolean {
   const code = char.charCodeAt(0);
   return code >= 0x4e00 && code <= 0x9fff;
-};
+}
 
-const randomScrambleChar = (char: string): string => {
+function randomScrambleChar(char: string): string {
   if (isCJK(char)) {
     return String.fromCharCode(ZHUYIN_RANGE_START + Math.floor(Math.random() * ZHUYIN_RANGE_SIZE));
   }
   return String(Math.floor(Math.random() * 10));
-};
+}
 
-const scrambleText = (text: string, settledIndices: Set<number>): string =>
-  text
+function scrambleText(text: string, settledIndices: Set<number>): string {
+  return text
     .split('')
     .map((char, i) => {
       if (settledIndices.has(i) || char === ' ' || char === '\n') {
@@ -31,10 +31,11 @@ const scrambleText = (text: string, settledIndices: Set<number>): string =>
       return randomScrambleChar(char);
     })
     .join('');
+}
 
 // order in which each character index settles, shuffled so letters don't
 // finish left-to-right
-const shuffledSettleOrder = (text: string): number[] => {
+function shuffledSettleOrder(text: string): number[] {
   const indices = text
     .split('')
     .map((char, i) => ({ char, i }))
@@ -45,7 +46,7 @@ const shuffledSettleOrder = (text: string): number[] => {
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
   return indices;
-};
+}
 
 type UseScrambleTextProps = {
   text: string;
@@ -55,7 +56,10 @@ type UseScrambleTextProps = {
 
 // renders as constantly-changing random numbers until scrolled into view,
 // then settles into the real text, one character at a time in a random order
-const useScrambleText = <T extends Element>({ text, gap = 0 }: UseScrambleTextProps) => {
+function useScrambleText<T extends Element>({
+  text,
+  gap = 0,
+}: UseScrambleTextProps): { ref: RefObject<T>; displayText: string } {
   const ref = useRef<T>(null);
   const isRevealed = useReveal({ ref, gap });
   const [displayText, setDisplayText] = useState(() => scrambleText(text, new Set()));
@@ -87,6 +91,6 @@ const useScrambleText = <T extends Element>({ text, gap = 0 }: UseScrambleTextPr
   }, [text, isRevealed]);
 
   return { ref, displayText };
-};
+}
 
 export { useScrambleText };

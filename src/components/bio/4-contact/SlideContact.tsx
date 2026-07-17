@@ -8,7 +8,7 @@ import * as Style from './SlideContact.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
-const SlideContact = () => {
+function SlideContact() {
   const [isWaveOn, setIsWaveOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 420 });
@@ -23,6 +23,6 @@ const SlideContact = () => {
       </div>
     </ScrollComponent>
   );
-};
+}
 
 export { SlideContact };

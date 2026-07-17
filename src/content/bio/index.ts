@@ -12,28 +12,30 @@ import type { BioContent, ContentFiles } from '../types';
 
 // Build-time copy of content/, used as the initial render and as a
 // fallback if the runtime fetch from GitHub fails.
-const buildBio = (files: ContentFiles): BioContent => ({
-  splash: files.splash,
-  personal: files.personal,
-  experience: {
-    ...files.experience,
-    jobs: files.jobs,
-    schools: files.schools,
-    skills: files.skills.groups,
-  },
-  projects: {
-    accent: files.projects.accent,
-    title: files.projects.title,
-    sections: files.projects.sections,
-    linkText: files.projects.linkText,
-    projects: {
-      featured: files.projects.featured,
-      all: files.projects.all,
+function buildBio(files: ContentFiles): BioContent {
+  return {
+    splash: files.splash,
+    personal: files.personal,
+    experience: {
+      ...files.experience,
+      jobs: files.jobs,
+      schools: files.schools,
+      skills: files.skills.groups,
     },
-  },
-  contact: files.contact,
-  footer: files.footer.items,
-});
+    projects: {
+      accent: files.projects.accent,
+      title: files.projects.title,
+      sections: files.projects.sections,
+      linkText: files.projects.linkText,
+      projects: {
+        featured: files.projects.featured,
+        all: files.projects.all,
+      },
+    },
+    contact: files.contact,
+    footer: files.footer.items,
+  };
+}
 
 const StaticContentFiles = {
   splash: SplashJson,

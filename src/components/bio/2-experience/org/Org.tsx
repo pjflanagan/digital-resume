@@ -33,17 +33,19 @@ type BulletProps = {
   children: string;
 };
 
-const Bullet = ({ revealed, style, links, children }: BulletProps) => (
-  <Text
-    links={links}
-    style={style}
-    className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)}
-  >
-    {children}
-  </Text>
-);
+function Bullet({ revealed, style, links, children }: BulletProps) {
+  return (
+    <Text
+      links={links}
+      style={style}
+      className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)}
+    >
+      {children}
+    </Text>
+  );
+}
 
-const Org = ({
+function Org({
   name,
   time,
   location,
@@ -53,7 +55,7 @@ const Org = ({
   links,
   background,
   extra,
-}: OrgProps) => {
+}: OrgProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 132 });
 
@@ -100,6 +102,6 @@ const Org = ({
         ))}
     </div>
   );
-};
+}
 
 export { Org };

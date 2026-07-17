@@ -9,12 +9,12 @@ type ShowMoreProps = {
   children?: React.ReactNode;
 };
 
-const ShowMore = ({ children }: ShowMoreProps) => {
+function ShowMore({ children }: ShowMoreProps): React.ReactNode {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
+  function toggle(): void {
     setIsOpen(!isOpen);
-  };
+  }
 
   const className = clsx(Style.showMore, {
     [Style.open]: isOpen,
@@ -30,6 +30,6 @@ const ShowMore = ({ children }: ShowMoreProps) => {
       </div>
     </div>
   );
-};
+}
 
 export { ShowMore };

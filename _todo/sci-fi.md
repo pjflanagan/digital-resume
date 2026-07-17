@@ -38,7 +38,8 @@ Something on the graph in the background.
 - [x] Andor 
 - [x] Blade Runner
 - [x] Dune
-
+- [x] SpaceOddysey
+  - 404 Page
 
 - [ ] Alien
 - [ ] Gravity Falls

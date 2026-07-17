@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
@@ -11,11 +11,11 @@ type ProgressBarProps = {
   name: string;
 };
 
-const ProgressBar: FC<ProgressBarProps> = ({
+function ProgressBar({
   className: classNameProp,
   progress: progressProp,
   name,
-}) => {
+}: ProgressBarProps): ReactNode {
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 28 });
   const progress = isRevealed ? progressProp : 0;
@@ -31,6 +31,6 @@ const ProgressBar: FC<ProgressBarProps> = ({
       <div className={Style.loader} style={{ width: `${progress}%` }} />
     </div>
   );
-};
+}
 
 export { ProgressBar };

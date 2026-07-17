@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { FrameHolder, Image } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import { FocusFrame } from 'src/elements/focus-frame/FocusFrame';
@@ -14,14 +16,14 @@ type FramedImageProps = {
   focusArea?: FocusArea;
 };
 
-const FramedImage = ({
+function FramedImage({
   src,
   alt,
   layout = 'overlay',
   frameClassName,
   imageClassName,
   focusArea,
-}: FramedImageProps) => {
+}: FramedImageProps): ReactNode {
   const plainImage = <Image src={src} alt={alt} className={imageClassName} />;
   const image = focusArea ? <FocusFrame area={focusArea}>{plainImage}</FocusFrame> : plainImage;
 
@@ -40,6 +42,6 @@ const FramedImage = ({
       <FrameHolder className={frameClassName} />
     </>
   );
-};
+}
 
 export { FramedImage };

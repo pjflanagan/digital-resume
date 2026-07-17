@@ -18,7 +18,7 @@ import * as Style from './SlideProjects.module.scss';
 
 const ScrollComponent = Scroll.Element;
 
-const SlideProjects = () => {
+function SlideProjects() {
   const Bio = useBio();
   return (
     <ScrollComponent className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
@@ -51,6 +51,6 @@ const SlideProjects = () => {
       </div>
     </ScrollComponent>
   );
-};
+}
 
 export { SlideProjects };

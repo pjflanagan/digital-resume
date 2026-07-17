@@ -13,20 +13,20 @@ const INITIAL_BAR_COUNT = 32;
 const REVEAL_STAGGER_MS = 15;
 const REVEAL_DURATION_MS = 400;
 
-const getNextHeight = (pos: number): number => {
+function getNextHeight(pos: number): number {
   return Math.abs(MAX_HEIGHT * Math.sin(-pos) + (Math.random() * FLUX) / 2 - FLUX);
-};
+}
 
-const getOffset = (x: number): number => {
+function getOffset(x: number): number {
   return Math.sin(x) * MAX_OFFSET;
-};
+}
 
 type WaveState = {
   pos: number;
   wave: number[];
 };
 
-const initState = (count: number): WaveState => {
+function initState(count: number): WaveState {
   let pos = 0;
   const wave: number[] = [];
   for (let i = 0; i < count; ++i) {
@@ -37,22 +37,22 @@ const initState = (count: number): WaveState => {
     pos,
     wave,
   };
-};
+}
 
-const shiftBars = ({ pos, wave }: WaveState): WaveState => {
+function shiftBars({ pos, wave }: WaveState): WaveState {
   const newPos = pos + SPEED;
   return {
     pos: newPos,
     wave: [getNextHeight(newPos), ...wave.slice(0, -1)],
   };
-};
+}
 
 type WaveProps = {
   on: boolean;
   revealed: boolean;
 };
 
-const Wave = ({ on, revealed }: WaveProps) => {
+function Wave({ on, revealed }: WaveProps) {
   const [{ pos, wave }, setState] = useState<WaveState>(() => initState(INITIAL_BAR_COUNT));
   const [settled, setSettled] = useState(false);
 
@@ -98,6 +98,6 @@ const Wave = ({ on, revealed }: WaveProps) => {
       ))}
     </div>
   );
-};
+}
 
 export { Wave };

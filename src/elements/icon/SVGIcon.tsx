@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons';
 import { MdAdd, MdCheckCircle, MdEmail, MdRemove, MdSend } from 'react-icons/md';
 import { SiGithub } from 'react-icons/si';
@@ -27,10 +28,10 @@ type SVGIconProps = {
 
 // size="100%" matches the old inline SVGs, which had no width/height
 // attributes and so filled their container
-const SVGIcon = ({ icon }: SVGIconProps) => {
+function SVGIcon({ icon }: SVGIconProps): ReactNode {
   const Icon = ICONS[icon];
   return <Icon size="100%" />;
-};
+}
 
 export { SVGIcon };
 export type { IconName };

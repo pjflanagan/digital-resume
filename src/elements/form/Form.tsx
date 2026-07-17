@@ -12,11 +12,11 @@ type FormProps = {
   onSubmit: () => void;
 };
 
-const Form = ({ children, name, isLoading, onSubmit: onSubmitProp }: FormProps) => {
-  const onSubmit = (e: React.FormEvent) => {
+function Form({ children, name, isLoading, onSubmit: onSubmitProp }: FormProps): React.ReactNode {
+  function onSubmit(e: React.FormEvent): void {
     e.preventDefault();
     onSubmitProp();
-  };
+  }
 
   const className = clsx(Style.form, {
     [Style.isLoading]: isLoading,
@@ -39,7 +39,7 @@ const Form = ({ children, name, isLoading, onSubmit: onSubmitProp }: FormProps) 
       </form>
     </div>
   );
-};
+}
 
 type FormButtonProps = {
   prompt: string;
@@ -51,7 +51,7 @@ type FormButtonProps = {
   onMouseLeave?: () => void;
 };
 
-const FormButton = ({
+function FormButton({
   prompt,
   icon,
   isSubmitted,
@@ -59,7 +59,7 @@ const FormButton = ({
   iconSubmitted,
   onMouseEnter,
   onMouseLeave,
-}: FormButtonProps) => {
+}: FormButtonProps): React.ReactNode {
   return (
     <div className={Style.submitHolder}>
       <LabeledButtonForm
@@ -71,6 +71,6 @@ const FormButton = ({
       </LabeledButtonForm>
     </div>
   );
-};
+}
 
 export { Form, FormButton };

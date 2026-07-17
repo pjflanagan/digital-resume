@@ -8,7 +8,7 @@ import type { BioContent } from './types';
 // latest content fetched from GitHub once it arrives.
 const ContentContext = createContext<BioContent>(StaticBio);
 
-const ContentProvider = ({ children }: { children: ReactNode }) => {
+function ContentProvider({ children }: { children: ReactNode }) {
   const [bio, setBio] = useState<BioContent>(StaticBio);
 
   useEffect(() => {
@@ -18,8 +18,10 @@ const ContentProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return <ContentContext.Provider value={bio}>{children}</ContentContext.Provider>;
-};
+}
 
-const useBio = () => useContext(ContentContext);
+function useBio() {
+  return useContext(ContentContext);
+}
 
 export { ContentProvider, useBio };
