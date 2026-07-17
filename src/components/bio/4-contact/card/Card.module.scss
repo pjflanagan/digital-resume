@@ -18,6 +18,7 @@
     .side-left {
       width: 100%;
       padding: 36px 12px 0;
+      position: relative;
 
       .title {
         cursor: pointer;
@@ -27,6 +28,11 @@
         .button-holder {
           margin: 18px 0;
         }
+      }
+
+      .background,
+      .decoration {
+        display: none;
       }
     }
 
@@ -59,23 +65,79 @@
     position: relative;
     width: 690px;
     display: inline-block;
-    // clip-path: $polygon;
     transition: transform 0.4s;
 
     .card-sides {
       width: auto;
 
       .side-left {
+        position: relative;
         padding: 36px;
         z-index: 2;
-        background: $backgroundDarkOpaque;
         width: 276px;
-        clip-path: $polygonLeft;
 
         .link-holder {
           display: block;
           flex-wrap: nowrap;
           margin: 0 auto;
+        }
+
+        .background {
+          display: block;
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          opacity: 0.867;
+          background: $backgroundDark;
+
+          .decoration {
+            display: block;
+
+            &.bottom-circle-outer {
+              position: absolute;
+              background: $backgroundDark;
+              border-radius: 50%;
+              height: 40%;
+              aspect-ratio: 1 / 1;
+              top: 100%;
+              left: 0;
+              margin: -60% -30%;
+              clip-path: polygon(23% 0, 100% 0, 100% 50%, 23% 50%);
+            }
+
+            &.bottom-rectangle-outer {
+              position: absolute;
+              background: $backgroundDark;
+              height: 12%;
+              width: 64%;
+              top: 100%;
+              left: 0;
+              margin: -18% 0;
+              border-radius: 2px;
+            }
+
+            &.bottom-circle {
+              position: absolute;
+              background: $backgroundDark;
+              border-radius: 50%;
+              height: 34%;
+              aspect-ratio: 1 / 1;
+              top: 100%;
+              left: 0;
+              margin: -50% -30%;
+            }
+
+            &.top-rectangle {
+              position: absolute;
+              background: $backgroundDark;
+              height: 12%;
+              width: 64%;
+              top: -2%;
+              left: -12%;
+              border-radius: 2px;
+              clip-path: polygon(10px 0, 100% 0, 200% 200%, 0 100%, 0 10px);
+            }
+          }
         }
       }
 
@@ -86,7 +148,7 @@
         background: $backgroundDark2Opaque;
         z-index: 1;
         margin-top: 0px;
-        clip-path: $polygonRight;
+        border-radius: 0 32px 32px 0;
       }
     }
 

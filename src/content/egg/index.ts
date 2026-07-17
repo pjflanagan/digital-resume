@@ -36,7 +36,7 @@ const references: EggReference[] = [
   {
     id: 'fifth-element',
     name: 'The Fifth Element',
-    answer: 'The contact form placeholder text has a Leeloo Dallas line.',
+    answer: 'The contact form is on a Multipass, the contact form placeholder text also has a Leeloo Dallas line.',
   },
   {
     id: 'iron-man',
@@ -57,6 +57,16 @@ const references: EggReference[] = [
     id: 'neon-genesis-evangelion',
     name: 'Neon Genesis Evangelion',
     answer: `The blueprint has a diagram of the angels.`,
+  },
+  {
+    id: 'contact',
+    name: `Contact`,
+    answer: `This is a stretch but the contact form is a reference to contact in name.`
+  },
+  {
+    id: 'et',
+    name: 'E.T.',
+    answer: `In the contact form prompt I promise to "phone" back.`
   }
 ];
 

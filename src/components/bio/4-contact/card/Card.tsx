@@ -154,6 +154,12 @@ function Card({ setIsWaveOn, isOpen }: CardProps) {
     <div className={className}>
       <div className={Style.cardSides}>
         <div className={Style.sideLeft}>
+          <div className={Style.background}>
+            <div className={clsx(Style.decoration, Style.topRectangle)} />
+            <div className={clsx(Style.decoration, Style.bottomCircle)} />
+            <div className={clsx(Style.decoration, Style.bottomCircleOuter)} />
+            <div className={clsx(Style.decoration, Style.bottomRectangleOuter)} />
+          </div>
           <TextAccent mono animate>
             {Bio.contact.accent}
           </TextAccent>
