@@ -3,6 +3,7 @@ import * as Scroll from 'react-scroll';
 
 import { ContentProvider, useBio } from 'src/content';
 import { Cover, Footer, Splash, Header, HeaderLink } from 'src/elements';
+import { initEgg } from 'src/helpers';
 
 import { SlideLanding } from './0-landing/SlideLanding';
 import { SlidePersonal } from './1-personal/SlidePersonal';
@@ -31,6 +32,10 @@ function BioPage() {
       setIsLoading(false);
     }, 400);
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    initEgg();
   }, []);
 
   return (
