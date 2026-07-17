@@ -3,6 +3,7 @@ import { distance, Point, Random, Range } from 'src/helpers';
 
 import { Body } from './Body';
 import { Moon } from './Moon';
+import { Portal } from './Portal';
 import { Planet } from './Planet';
 import { Ship } from './Ship';
 import { Star } from './Star';
@@ -27,6 +28,7 @@ const LAYERS: { count: Range | number; body: BodyConstructor }[] = [
   { count: 1, body: Ship },
   { count: VIEW_FOREGROUND_MOONS, body: Moon },
   { count: VIEW_FOREGROUND_MOONS, body: Moon },
+  { count: 1, body: Portal },
   { count: VIEW_STARS, body: Star },
 ];
 

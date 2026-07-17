@@ -13,6 +13,7 @@ import {
 } from 'src/elements';
 import { useBio } from 'src/content';
 
+import { Blueprint } from './blueprint/Blueprint';
 import { FeaturedProject } from './featured-project/FeaturedProject';
 import { Project } from './project/Project';
 import * as Style from './SlideProjects.module.scss';
@@ -21,6 +22,7 @@ function SlideProjects() {
   const Bio = useBio();
   return (
     <ScrollElement className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
+      <Blueprint name="tree-of-life" className={Style.treeOfLife} />
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
         <TextAccent mono animate>

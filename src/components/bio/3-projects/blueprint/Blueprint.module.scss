@@ -1,0 +1,13 @@
+@use 'theme/variables' as *;
+
+.blueprint {
+  background-color: $backgroundLightOpaque2;
+  pointer-events: none;
+
+  mask-image: var(--blueprint-src);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--blueprint-src);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}

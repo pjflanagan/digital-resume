@@ -51,6 +51,13 @@
     }
   }
 
+  .micro-graphic {
+    position: absolute;
+    left: calc(10% + 8px);
+    bottom: calc(10% + 8px);
+    z-index: 1;
+  }
+
   .photo-description {
     position: absolute;
     right: calc(10% + 12px);

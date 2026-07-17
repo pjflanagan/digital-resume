@@ -8,15 +8,28 @@
   background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
   background-size: 20px 20px;
   transition: background-position 0.2s;
+
+  .tree-of-life {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    right: -260px;
+    bottom: -160px;
+    z-index: 0;
+    pointer-events: none;
+  }
 }
 
 .slide-projects {
   z-index: 31;
   position: relative;
+  overflow: hidden;
   border-top: 1px solid $backgroundLightOpaque;
   border-bottom: 1px solid $backgroundLightOpaque;
 
   .ruler {
+    position: relative;
+    z-index: 1;
     min-width: 580px;
     width: 96%;
     left: 50%;
@@ -25,6 +38,8 @@
   }
 
   .slide-body {
+    position: relative;
+    z-index: 1;
     padding: 4px 8px 36px;
 
     .featured-body {

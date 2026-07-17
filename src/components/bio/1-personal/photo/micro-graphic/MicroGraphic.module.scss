@@ -1,0 +1,15 @@
+@use 'theme/variables' as *;
+
+.micro-graphic {
+  width: 72px;
+  height: 72px;
+  background-color: $accentYellowOpaque;
+  pointer-events: none;
+
+  mask-image: var(--micro-graphic-src);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--micro-graphic-src);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
