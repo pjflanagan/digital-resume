@@ -5,7 +5,11 @@ import type { View } from './View';
 
 const PLANET = {
   RADIUS: { min: 0.36, max: 0.42 }, // proportional to the shorter viewport side
-  COLORS: 5,
+  COLORS: [
+    { r: 224, g: 161, b: 67 },
+    { r: 241, g: 91, b: 33 },
+    { r: 197, g: 54, b: 44 },
+  ],
   OFFSET: {
     SPEED: 0.1,
     MAX_RADIUS: 40,
@@ -43,12 +47,9 @@ class Planet extends SpectrumBody<PlanetProp> {
   }
 
   protected createProp(): PlanetProp {
-    const color = new Color().setOpacity(0.9);
-    const toColor = new Color().setOpacity(0.9);
     const { C, shorterSide } = this.canvas;
 
-    const colorSpectrum = color.makeSpectrum(toColor, PLANET.COLORS);
-    Random.insertRandom(colorSpectrum, new Color());
+    const colorSpectrum = PLANET.COLORS.map((rgb) => new Color({ ...rgb, a: 0.9 }));
 
     return {
       center: C, // the planet sits in the center of the viewport

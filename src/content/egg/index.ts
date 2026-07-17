@@ -15,7 +15,7 @@ const references: EggReference[] = [
   {
     id: 'rick-and-morty',
     name: 'Rick and Morty',
-    answer: 'The contact form placeholder text has a Rick tagline.',
+    answer: `There's a green portal floating on the splash slide, the contact form placeholder text also has a Rick tagline.`,
   },
   {
     id: 'andor',
@@ -25,7 +25,7 @@ const references: EggReference[] = [
   {
     id: 'dune',
     name: 'Dune',
-    answer: `The contact form placeholder text has Paul's mantra.`,
+    answer: `The splash slide planet is the color of Arrakis on the Dune book cover and the contact form placeholder text has Paul's mantra.`,
   },
   {
     id: 'cyberpunk',
@@ -53,6 +53,11 @@ const references: EggReference[] = [
     name: '2001: A Space Odyssey',
     answer: `The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey.`,
   },
+  {
+    id: 'neon-genesis-evangelion',
+    name: 'Neon Genesis Evangelion',
+    answer: `The blueprint has a diagram of the angels.`,
+  }
 ];
 
 const Egg = { intro, references };

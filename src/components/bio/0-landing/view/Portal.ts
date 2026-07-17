@@ -1,21 +1,46 @@
-import { Color } from 'src/helpers';
+import { Color, Random } from 'src/helpers';
 
-import { Moon } from './Moon';
-import { SpectrumBodyProp } from './SpectrumBody';
+import { SHIP_CENTER, SHIP_LAYER } from './constants';
+import { SpectrumBody, SpectrumBodyProp } from './SpectrumBody';
 
 const PORTAL = {
-  COLORS: 3,
-  CORE: { r: 205, g: 255, b: 165, a: 0.95 },
-  EDGE: { r: 40, g: 220, b: 60, a: 0.95 },
+  RADIUS: 0.03, // proportional to the shorter viewport side, always this size
+  COLORS: [
+    { r: 16, g: 138, b: 13 },
+    { r: 22, g: 198, b: 9 },
+    { r: 176, g: 236, b: 18 },
+  ],
+  OFFSET: {
+    SPEED: 0.1,
+    MAX_RADIUS: 40,
+  },
+  CENTER_X_MIN: -0.25, // proportional to the viewport width
+  SCROLL_SHIFT_RATE: 14,
 };
 
-// a moon recolored to look like a green Rick and Morty portal
-class Portal extends Moon {
+// a green rick and morty style portal, drawn like a moon but at a fixed small size
+class Portal extends SpectrumBody {
   protected createProp(): SpectrumBodyProp {
-    const prop = super.createProp();
-    const core = new Color(PORTAL.CORE);
-    const edge = new Color(PORTAL.EDGE);
-    return { ...prop, colorSpectrum: core.makeSpectrum(edge, PORTAL.COLORS) };
+    const { shorterSide, W, H } = this.canvas;
+
+    const radius = PORTAL.RADIUS * shorterSide;
+    // foreground portals spawn clear of the ship
+    const minX =
+      this.layer > SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : PORTAL.CENTER_X_MIN * W;
+
+    const colorSpectrum = PORTAL.COLORS.map((rgb) => new Color({ ...rgb, a: 0.9 }));
+
+    return {
+      center: {
+        x: Random.int(minX, W - radius * 2),
+        y: Random.int(0, H),
+      },
+      radius,
+      colorSpectrum,
+      offsetRadiusMax: PORTAL.OFFSET.MAX_RADIUS,
+      offsetSpeed: PORTAL.OFFSET.SPEED,
+      scrollShiftRate: PORTAL.SCROLL_SHIFT_RATE,
+    };
   }
 }
 
