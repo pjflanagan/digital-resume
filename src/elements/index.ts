@@ -7,6 +7,7 @@ export * from './frame/Frame';
 export * from './framed-image/FramedImage';
 export * from './form/Form';
 export * from './form/FormField';
+export * from './focus-frame/FocusFrame';
 export * from './footer/Footer';
 export * from './header/Header';
 export * from './header/HeaderLink';

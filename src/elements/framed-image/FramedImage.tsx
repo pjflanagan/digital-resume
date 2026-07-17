@@ -1,4 +1,6 @@
 import { FrameHolder, Image } from 'src/elements';
+import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
+import { FocusFrame } from 'src/elements/focus-frame/FocusFrame';
 
 type FramedImageProps = {
   src: string;
@@ -8,10 +10,25 @@ type FramedImageProps = {
   layout?: 'overlay' | 'inset';
   frameClassName?: string;
   imageClassName?: string;
+  // percentage rect to highlight on the image with an animated FocusFrame
+  focusArea?: FocusArea;
 };
 
-const FramedImage = ({ src, alt, layout = 'overlay', frameClassName, imageClassName }: FramedImageProps) => {
-  const image = <Image src={src} alt={alt} className={imageClassName} />;
+const FramedImage = ({
+  src,
+  alt,
+  layout = 'overlay',
+  frameClassName,
+  imageClassName,
+  focusArea,
+}: FramedImageProps) => {
+  const plainImage = <Image src={src} alt={alt} className={imageClassName} />;
+  const image = focusArea ? <FocusFrame area={focusArea}>{plainImage}</FocusFrame> : plainImage;
+
+  // a focusArea supplies its own FrameHolder, so skip the decorative one to avoid doubling up
+  if (focusArea) {
+    return image;
+  }
 
   if (layout === 'inset') {
     return <FrameHolder className={frameClassName}>{image}</FrameHolder>;

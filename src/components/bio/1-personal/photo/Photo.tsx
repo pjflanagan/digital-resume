@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 
 import { TextAccent, FramedImage } from 'src/elements';
+import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import { contentImage } from 'src/content';
 import { useReveal } from 'src/hooks';
 
@@ -10,9 +11,10 @@ import clsx from 'clsx';
 type PhotoProps = {
   photo: string;
   photoDescription?: string;
+  focusArea?: FocusArea;
 };
 
-const Photo = ({ photo, photoDescription }: PhotoProps) => {
+const Photo = ({ photo, photoDescription, focusArea }: PhotoProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 280 });
   const hasMounted = useRef(false);
@@ -44,6 +46,7 @@ const Photo = ({ photo, photoDescription }: PhotoProps) => {
         alt={'Peter James Flanagan Headshot'}
         imageClassName={Style.image}
         frameClassName={frameClassName}
+        focusArea={focusArea}
       />
       {photoDescription && (
         <TextAccent className={Style.photoDescription} mono animate>

@@ -3,19 +3,20 @@ import { useState } from 'react';
 import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
 import type { LinkCallback } from 'src/elements';
+import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
 import * as Style from './PersonalBody.module.scss';
 
 type BodyProps = {
-  photoLinkCallback: (photo: string, photoDescription?: string) => void;
+  photoLinkCallback: (photo: string, photoDescription?: string, focusArea?: FocusArea) => void;
 };
 
 const PersonalBody = ({ photoLinkCallback }: BodyProps) => {
   const { accent, linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(accent);
 
-  const linkHover: LinkCallback = ({ image, imageDescription, greeting: linkGreeting }) => {
-    if (image) photoLinkCallback(image, imageDescription);
+  const linkHover: LinkCallback = ({ image, imageDescription, greeting: linkGreeting, focusArea }) => {
+    if (image) photoLinkCallback(image, imageDescription, focusArea);
     if (linkGreeting) setGreeting(linkGreeting);
   };
 

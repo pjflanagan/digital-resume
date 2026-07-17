@@ -2,6 +2,7 @@
 
 import type { ContentLink, LinkText } from 'src/elements/text/types';
 import type { IconName } from 'src/elements/icon/SVGIcon';
+import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
 type Job = {
   name: string;
@@ -73,6 +74,7 @@ type BioContent = {
   personal: {
     accent: string;
     defaultImage: string;
+    defaultFocusArea?: FocusArea;
     titleText: LinkText<string>;
     linkText: LinkText;
   };

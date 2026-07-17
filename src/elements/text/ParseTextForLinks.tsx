@@ -7,7 +7,9 @@ import { TextInlineLink } from './TextInlineLink';
 // matches <link_name> tokens; the capture keeps the name in the split output
 const REGEX_SPLIT_LINKS = /<([^<>]+)>/g;
 
-type LinkCallback = (link: Pick<ContentLink, 'image' | 'imageDescription' | 'greeting'>) => void;
+type LinkCallback = (
+  link: Pick<ContentLink, 'image' | 'imageDescription' | 'greeting' | 'focusArea'>
+) => void;
 
 const ParseTextForLinks = (
   text: string,
@@ -34,10 +36,12 @@ const ParseTextForLinks = (
       return <span key={i}>{part}</span>;
     }
 
-    const { image, imageDescription, greeting, href, text: linkText } = link;
+    const { image, imageDescription, greeting, focusArea, href, text: linkText } = link;
     const hasHoverEffect = image || greeting;
     const onHover =
-      callback && hasHoverEffect ? () => callback({ image, imageDescription, greeting }) : undefined;
+      callback && hasHoverEffect
+        ? () => callback({ image, imageDescription, greeting, focusArea })
+        : undefined;
 
     return (
       <TextInlineLink key={i} href={href || undefined} onMouseOver={onHover} onFocus={onHover}>
