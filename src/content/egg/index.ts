@@ -31,7 +31,7 @@ const references: EggReference[] = [
     id: 'cyberpunk',
     name: 'Cyberpunk 2077',
     answer:
-      'The Cyberpunk 2077 Garmin watchface is a featured project of mine, Johnny Silverhand can also be found in the contact form placeholder text.',
+      'Hovering my personal slide photos shows the Cyberpunk 2077 menu cursor, Johnny Silverhand can also be found in the contact form placeholder text. Be sure to checkout my Cyberpunk 2077 Garmin watch face project.',
   },
   {
     id: 'fifth-element',
