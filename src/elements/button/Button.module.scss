@@ -167,6 +167,12 @@
     }
   }
 
+  &.bold {
+    .name {
+      font-weight: 700;
+    }
+  }
+
   &.blue {
     &:after {
       border: 1px solid $accentCyan;

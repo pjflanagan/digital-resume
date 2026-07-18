@@ -12,6 +12,8 @@ type LabeledButtonFormProps = {
   children?: React.ReactNode;
   icon: IconName;
   color?: LabeledButtonColor;
+  bold?: boolean;
+  scale?: number;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
@@ -20,12 +22,20 @@ function LabeledButtonForm({
   children,
   icon,
   color,
+  bold,
+  scale,
   onMouseEnter,
   onMouseLeave,
 }: LabeledButtonFormProps): React.ReactNode {
   return (
     <button
-      className={clsx(Style.labeledButton, Style.buttonReset, color && Style[color])}
+      className={clsx(
+        Style.labeledButton,
+        Style.buttonReset,
+        color && Style[color],
+        bold && Style.bold
+      )}
+      style={scale ? { transform: `scale(${scale})` } : undefined}
       type="submit"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -49,6 +59,8 @@ type LabeledButtonLinkedProps = LabeledButtonFormProps & {
 function LabeledButtonLinked({
   icon,
   color,
+  bold,
+  scale,
   onMouseEnter,
   onMouseLeave,
   children,
@@ -56,10 +68,15 @@ function LabeledButtonLinked({
   href,
   sameWindow,
 }: LabeledButtonLinkedProps): React.ReactNode {
-  const className = clsx(Style.labeledButton, color && Style[color], classNameProp);
+  const className = clsx(
+    Style.labeledButton,
+    color && Style[color],
+    bold && Style.bold,
+    classNameProp
+  );
 
   return (
-    <div className={className}>
+    <div className={className} style={scale ? { transform: `scale(${scale})` } : undefined}>
       <a
         className={Style.holder}
         {...linkTargetProps(sameWindow)}
@@ -80,6 +97,8 @@ type LabeledButtonActionProps = {
   icon: IconName;
   children?: React.ReactNode;
   color?: LabeledButtonColor;
+  bold?: boolean;
+  scale?: number;
   onClick: () => void;
   className?: string;
 };
@@ -88,13 +107,22 @@ function LabeledButtonAction({
   icon,
   children,
   color,
+  bold,
+  scale,
   onClick,
   className,
 }: LabeledButtonActionProps): React.ReactNode {
   return (
     <button
       type="button"
-      className={clsx(Style.labeledButton, Style.buttonReset, color && Style[color], className)}
+      className={clsx(
+        Style.labeledButton,
+        Style.buttonReset,
+        color && Style[color],
+        bold && Style.bold,
+        className
+      )}
+      style={scale ? { transform: `scale(${scale})` } : undefined}
       onClick={onClick}
     >
       <div className={Style.holder}>

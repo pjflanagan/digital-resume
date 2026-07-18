@@ -7,6 +7,8 @@ type ButtonCommonProps = {
   icon: IconName;
   children?: React.ReactNode;
   color?: 'yellow' | 'red' | 'blue';
+  bold?: boolean;
+  scale?: number;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   className?: string;

@@ -37,11 +37,17 @@ function LandingBody() {
       </div>
       <ButtonHolder buttonHolderRef={buttonHolderRef} className={Style.buttonHolder}>
         <div className={Style.side}>
-          <LabeledButton icon="rocket" color="red" href="//flanny.app">
+          <LabeledButton icon="rocket" scale={0.8} color="red" href="//flanny.app">
             Flanny Apps
           </LabeledButton>
         </div>
-        <LabeledButton icon="arrowDown" color="blue" onClick={() => clickToScroll()}>
+        <LabeledButton
+          icon="arrowDown"
+          color="blue"
+          bold
+          scale={1.2}
+          onClick={() => clickToScroll()}
+        >
           {prompt}
         </LabeledButton>
         <div className={Style.side} />
