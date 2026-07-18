@@ -15,9 +15,14 @@
   "linkText": {
     "links": [
       {
+        "key": "fun-websites",
+        "href": "//flanny.app",
+        "text": "fun websites"
+      },
+      {
         "key": "new_york",
         "image": "personal-new-york.jpg",
-        "focusArea": { "x": 50, "y": 50, "width": 50, "height": 50 },
+        "focusArea": { "x": 11, "y": 24, "width": 38, "height": 52 },
         "imageDescription": "New York, United States\n40.712776, -74.005974",
         "text": "New York"
       },
@@ -64,6 +69,6 @@
         "text": "find all the references"
       }
     ],
-    "text": "I'm a full-stack software engineer living in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun websites.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you <sci_fi> to my favorite sci-fi works on this page?"
+    "text": "I'm a full-stack software engineer living in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and <fun-websites>.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you <sci_fi> to my favorite sci-fi works on this page?"
   }
 }

@@ -37,14 +37,12 @@
       &.external {
         color: $accentYellow;
         box-shadow: inset 0px -6px $accentYellowTransparent2;
-        position: relative;
-        padding-right: 14px;
 
         &:after {
           content: '';
           position: absolute;
-          top: 2px;
-          right: 0;
+          margin-left: -3px;
+          margin-top: 0px;
           width: 8px;
           height: 8px;
           background: $accentYellowTransparent2;

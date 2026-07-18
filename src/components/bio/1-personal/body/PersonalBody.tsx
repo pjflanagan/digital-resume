@@ -39,7 +39,9 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
         {greeting}
       </TextAccent>
       <TextTitle>{ParseTextForLinks(titleText.text, titleText.links, linkHover)}</TextTitle>
-      <Text links={linkText.links}>{paragraphs[0]}</Text>
+      <Text links={linkText.links} callback={linkHover}>
+        {paragraphs[0]}
+      </Text>
       {paragraphs.slice(1).map((paragraph) => (
         <Text
           key={paragraph}
