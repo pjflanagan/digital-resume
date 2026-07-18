@@ -7,7 +7,7 @@
     }
 
     .form-field {
-      background: $backgroundDarkOpaque;
+      background: $backgroundDarkTransparent;
       outline: none;
       border: 1px solid #fff0;
       width: 100%;
@@ -21,16 +21,16 @@
       // clip-path: $polygonSmall;
 
       &::placeholder {
-        color: $whiteOpaque;
+        color: $whiteTransparent;
         opacity: 1;
       }
 
       &:-ms-input-placeholder {
-        color: $whiteOpaque;
+        color: $whiteTransparent;
       }
 
       &::-ms-input-placeholder {
-        color: $whiteOpaque;
+        color: $whiteTransparent;
       }
 
       &::selection {
@@ -49,14 +49,14 @@
       &:-webkit-autofill:focus {
         border: 1px solid $accentCyan;
         -webkit-text-fill-color: $white;
-        -webkit-box-shadow: 0 0 0px 1000px $backgroundDarkOpaque inset;
+        -webkit-box-shadow: 0 0 0px 1000px $backgroundDarkTransparent inset;
         transition: background-color 5000s ease-in-out 0s;
       }
 
       &.error {
         border: 1px solid $warnOrange;
         color: $warnOrange;
-        background: $warnLightOpaque;
+        background: $warnLightTransparent;
       }
     }
 

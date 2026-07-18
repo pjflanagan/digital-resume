@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons';
-import { MdAdd, MdCheckCircle, MdEmail, MdRemove, MdSend } from 'react-icons/md';
+import { MdAdd, MdCheckCircle, MdEmail, MdRemove } from 'react-icons/md';
 import { SiGithub } from 'react-icons/si';
 import { BsLinkedin } from 'react-icons/bs';
 import { IoPlanet, IoRocketSharp } from 'react-icons/io5';
+import { TbSendFilled } from "react-icons/tb";
 
 // Fill-based icon sets only (Material, Simple Icons, Ionicons) — the button
 // styles color icons via `path { fill }`, which breaks stroke-based sets
@@ -16,7 +17,7 @@ const ICONS = {
   minus: MdRemove,
   plus: MdAdd,
   saturn: IoPlanet,
-  send: MdSend,
+  send: TbSendFilled,
   check: MdCheckCircle,
 } satisfies Record<string, IconType>;
 

@@ -10,17 +10,12 @@ const references: EggReference[] = [
   {
     id: 'futurama',
     name: 'Futurama',
-    answer: `The contact form placeholder text is the Professor's tagline.`,
+    answer: `The space ship is loosely modeled off the Planet Express ship, the contact form placeholder text also has the Professor's tagline.`,
   },
   {
     id: 'rick-and-morty',
     name: 'Rick and Morty',
     answer: `There's a green portal floating on the splash slide, the contact form placeholder text also has a Rick tagline.`,
-  },
-  {
-    id: 'andor',
-    name: 'Andor',
-    answer: 'The contact form placeholder text has an rebel secret code.',
   },
   {
     id: 'dune',
@@ -39,16 +34,6 @@ const references: EggReference[] = [
     answer: 'The contact form is on a Multipass, the contact form placeholder text also has a Leeloo Dallas line.',
   },
   {
-    id: 'iron-man',
-    name: 'Iron Man',
-    answer: 'The contact form placeholder text has a line at the end of the Iron Man movie.',
-  },
-  {
-    id: 'blade-runner',
-    name: 'Blade Runner',
-    answer: 'The contact form placeholder text has a line from Blade Runner.',
-  },
-  {
     id: '2001-a-space-odyssey',
     name: '2001: A Space Odyssey',
     answer: `The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey.`,
@@ -57,6 +42,31 @@ const references: EggReference[] = [
     id: 'neon-genesis-evangelion',
     name: 'Neon Genesis Evangelion',
     answer: `The blueprint has a diagram of the angels.`,
+  },
+  {
+    id: 'horizon',
+    name: 'Horizon',
+    answer: 'The send button in the contact form was selected because it resembles the focus in Horizon Zero Dawn and Forbidden West.',
+  },
+  {
+    id: 'matrix',
+    name: 'The Matrix',
+    answer: 'The contact form placeholder text has a line from The Matrix.',
+  },
+  {
+    id: 'blade-runner',
+    name: 'Blade Runner',
+    answer: 'The contact form placeholder text has a line from Blade Runner.',
+  },
+  {
+    id: 'andor',
+    name: 'Andor',
+    answer: 'The contact form placeholder text has an rebel secret code.',
+  },
+  {
+    id: 'iron-man',
+    name: 'Iron Man',
+    answer: 'The contact form placeholder text has a line at the end of the Iron Man movie.',
   },
   {
     id: 'contact',

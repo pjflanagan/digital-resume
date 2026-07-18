@@ -66,7 +66,7 @@ h3 {
       margin-top: -5px;
       width: 10px;
       height: 10px;
-      background: $accentYellowOpaque2;
+      background: $accentYellowTransparent2;
       border-right: 1px solid $accentYellow;
       border-top: 1px solid $accentYellow;
       transition: 0.2s;
@@ -75,7 +75,7 @@ h3 {
 
     &:hover {
       &:after {
-        background: $accentYellowOpaque;
+        background: $accentYellowTransparent;
         transform: translate(2px, -2px);
       }
     }
@@ -111,7 +111,7 @@ p {
   code {
     padding: 0.2em 0.6em;
     border-radius: 3px;
-    background: $backgroundLightOpaque2;
+    background: $backgroundLightTransparent2;
     font-size: 1.2em;
   }
 }
@@ -126,12 +126,12 @@ code {
 a {
   text-decoration: none;
   color: $accentYellow;
-  box-shadow: inset 0px -6px $accentYellowOpaque2;
+  box-shadow: inset 0px -6px $accentYellowTransparent2;
   transition: 0.2s;
 
   &:hover {
     color: $accentYellowHover;
-    box-shadow: inset 0px -10px $accentYellowOpaque;
+    box-shadow: inset 0px -10px $accentYellowTransparent;
   }
 }
 
@@ -185,12 +185,12 @@ pre {
   overflow: auto;
   max-height: 780px;
   font-size: 1.1em;
-  border: 1px solid $backgroundLightOpaque2;
+  border: 1px solid $backgroundLightTransparent2;
   box-shadow:
     inset 0 0 100px #0008,
     -2px -2px 8px #0004;
   background: $backgroundDark;
-  background-image: radial-gradient($backgroundLightOpaque 1px, transparent 0);
+  background-image: radial-gradient($backgroundLightTransparent 1px, transparent 0);
   background-size: 20px 20px;
   transition: background-position 0.2s;
 }
@@ -200,7 +200,7 @@ blockquote {
   margin: 1em 2em;
   padding: 2em;
   clip-path: $polygon;
-  background: $backgroundLightOpaque2;
+  background: $backgroundLightTransparent2;
   text-align: center;
 
   p {

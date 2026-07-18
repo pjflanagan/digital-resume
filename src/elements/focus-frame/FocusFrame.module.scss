@@ -26,7 +26,7 @@
     background 0.4s ease-in-out 0.2s;
 
   &.animating {
-    background: $backgroundLightOpaque2;
+    background: $backgroundLightTransparent2;
     transition:
       left 0.4s ease-in-out,
       top 0.4s ease-in-out,

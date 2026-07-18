@@ -24,19 +24,19 @@
       cursor: pointer;
       color: $accentCyan;
       text-decoration: none;
-      box-shadow: inset 0px -6px $accentCyanOpaque2;
+      box-shadow: inset 0px -6px $accentCyanTransparent2;
       font-family: $ubuntuMono;
       font-size: 0.85em;
       transition: 0.2s;
 
       &:hover {
         color: $accentCyanHover;
-        box-shadow: inset 0px -10px $accentCyanOpaque;
+        box-shadow: inset 0px -10px $accentCyanTransparent;
       }
 
       &.external {
         color: $accentYellow;
-        box-shadow: inset 0px -6px $accentYellowOpaque2;
+        box-shadow: inset 0px -6px $accentYellowTransparent2;
         position: relative;
         padding-right: 14px;
 
@@ -47,7 +47,7 @@
           right: 0;
           width: 8px;
           height: 8px;
-          background: $accentYellowOpaque2;
+          background: $accentYellowTransparent2;
           border-right: 1px solid $accentYellow;
           border-top: 1px solid $accentYellow;
           transition: 0.2s;
@@ -56,10 +56,10 @@
 
         &:hover {
           color: $accentYellowHover;
-          box-shadow: inset 0px -10px $accentYellowOpaque;
+          box-shadow: inset 0px -10px $accentYellowTransparent;
 
           &:after {
-            background: $accentYellowOpaque;
+            background: $accentYellowTransparent;
             transform: translate(2px, -2px);
           }
         }

@@ -1,7 +1,7 @@
 @use 'theme/variables' as *;
 
 .blueprint {
-  background-color: $backgroundLightOpaque2;
+  background-color: $backgroundLightTransparent2;
   pointer-events: none;
 
   mask-image: var(--blueprint-src);

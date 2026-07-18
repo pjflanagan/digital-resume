@@ -4,13 +4,13 @@
   padding: 6px 24px;
   position: relative;
   overflow: hidden;
-  background: $blackOpaque;
+  background: $blackTransparent;
   background: linear-gradient(
     90deg,
-    $blackOpaque 0%,
-    $blackOpaque 50%,
-    $backgroundLightOpaque 50%,
-    $backgroundLightOpaque 100%
+    $blackTransparent 0%,
+    $blackTransparent 50%,
+    $backgroundLightTransparent 50%,
+    $backgroundLightTransparent 100%
   );
   background-position: 0 0;
   background-size: 200%;

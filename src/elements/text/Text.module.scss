@@ -19,7 +19,7 @@ p {
   .text-inline-link {
     color: $accentYellow;
     text-decoration: none;
-    box-shadow: inset 0px -6px $accentYellowOpaque2;
+    box-shadow: inset 0px -6px $accentYellowTransparent2;
     transition: 0.2s;
 
     .clickable {
@@ -28,7 +28,7 @@ p {
 
     &:hover {
       color: $accentYellowHover;
-      box-shadow: inset 0px -10px $accentYellowOpaque;
+      box-shadow: inset 0px -10px $accentYellowTransparent;
     }
   }
 }

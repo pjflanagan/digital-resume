@@ -3,7 +3,7 @@
 .micro-graphic {
   width: 72px;
   height: 72px;
-  background-color: $accentYellowOpaque;
+  background-color: $accentYellowTransparent;
   pointer-events: none;
 
   mask-image: var(--micro-graphic-src);

@@ -19,7 +19,7 @@
       box-shadow:
         inset 0 0 100px #0008,
         -2px -2px 8px #0004;
-      border-top: 1px solid $backgroundLightOpaque;
+      border-top: 1px solid $backgroundLightTransparent;
       width: 100%;
       height: 120px;
       background: $backgroundDark;
@@ -47,7 +47,7 @@
     .slide-back {
       width: 100%;
       height: 100%;
-      background: $backgroundDark2Opaque;
+      background: $backgroundDark2Transparent;
       border-top: none;
       position: absolute;
       top: 0;

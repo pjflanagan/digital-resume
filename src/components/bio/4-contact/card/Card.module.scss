@@ -130,9 +130,9 @@
             &.top-rectangle {
               position: absolute;
               background: $backgroundDark;
-              height: 12%;
-              width: 64%;
-              top: -2%;
+              height: 20%;
+              width: 76%;
+              top: -4%;
               left: -12%;
               border-radius: 2px;
               clip-path: polygon(10px 0, 100% 0, 200% 200%, 0 100%, 0 10px);
@@ -145,7 +145,7 @@
         display: inline;
         width: 414px;
         padding: 36px;
-        background: $backgroundDark2Opaque;
+        background: $backgroundDark2Transparent;
         z-index: 1;
         margin-top: 0px;
         border-radius: 0 32px 32px 0;

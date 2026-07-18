@@ -17,7 +17,7 @@
     height: 100%;
     width: 94%;
     left: 3%;
-    background: $backgroundDarkOpaque;
+    background: $backgroundDarkTransparent;
     top: 206px;
     z-index: 16;
     color: #fff;
@@ -50,7 +50,7 @@
       height: 100%;
       width: 60%;
       left: 40%;
-      background: $backgroundDarkOpaque;
+      background: $backgroundDarkTransparent;
       top: 0;
     }
   }

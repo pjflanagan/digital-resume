@@ -18,7 +18,7 @@
   40% {
     width: 84%;
     height: 84%;
-    background: $backgroundLightOpaque2;
+    background: $backgroundLightTransparent2;
   }
 }
 
@@ -41,7 +41,7 @@
     transform: translate(-50%, -50%);
     width: 84%;
     height: 84%;
-    background: $backgroundLightOpaque;
+    background: $backgroundLightTransparent;
 
     &.reveal {
       animation: frame-reveal 0.8s forwards;
