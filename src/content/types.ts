@@ -71,7 +71,7 @@ type BioContent = {
   };
   personal: {
     titleText: LinkText<string>;
-    linkText: LinkText;
+    linkText: LinkText<string>;
   };
   experience: {
     accent: string;

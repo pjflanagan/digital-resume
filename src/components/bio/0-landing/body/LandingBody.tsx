@@ -36,7 +36,10 @@ function LandingBody() {
         />
       </div>
       <ButtonHolder buttonHolderRef={buttonHolderRef} className={Style.buttonHolder}>
-        <LabeledButton icon="rocket" color="yellow" onClick={() => clickToScroll()}>
+        <LabeledButton icon="rocket" color="red" href="//flanny.app">
+          Flanny Apps
+        </LabeledButton>
+        <LabeledButton icon="arrowDown" color="blue" onClick={() => clickToScroll()}>
           {prompt}
         </LabeledButton>
       </ButtonHolder>

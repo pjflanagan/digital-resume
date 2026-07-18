@@ -140,4 +140,64 @@
       }
     }
   }
+
+  &.red {
+    &:after {
+      border: 1px solid $accentRed;
+    }
+
+    .holder {
+      background: $accentRed;
+
+      svg {
+        color: $white;
+      }
+
+      .name {
+        color: $white;
+        border-left: 1px solid $white;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .holder {
+        background: $accentRedHover;
+      }
+    }
+  }
+
+  &.blue {
+    &:after {
+      border: 1px solid $accentCyan;
+    }
+
+    .holder {
+      background: $accentCyan;
+
+      svg {
+        color: $backgroundDark;
+      }
+
+      .name {
+        color: $backgroundDark;
+        border-left: 1px solid $backgroundDark;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .holder {
+        background: $accentCyan;
+
+        svg {
+          color: $backgroundDark;
+        }
+
+        .name {
+          color: $backgroundDark;
+        }
+      }
+    }
+  }
 }

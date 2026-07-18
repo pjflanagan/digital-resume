@@ -41,7 +41,7 @@ const references: EggReference[] = [
   {
     id: 'neon-genesis-evangelion',
     name: 'Neon Genesis Evangelion',
-    answer: `The blueprint has a diagram of the angels.`,
+    answer: `The blueprint background in the Programs section has a diagram of the angels.`,
   },
   {
     id: 'horizon',
@@ -51,7 +51,7 @@ const references: EggReference[] = [
   {
     id: 'matrix',
     name: 'The Matrix',
-    answer: 'The contact form placeholder text has a line from The Matrix.',
+    answer: 'The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from The Matrix.',
   },
   {
     id: 'blade-runner',

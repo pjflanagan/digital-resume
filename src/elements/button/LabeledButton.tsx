@@ -6,7 +6,7 @@ import type { IconName } from '../icon/SVGIcon';
 import * as Style from './Button.module.scss';
 import clsx from 'clsx';
 
-type LabeledButtonColor = 'yellow';
+type LabeledButtonColor = 'yellow' | 'red' | 'blue';
 
 type LabeledButtonFormProps = {
   children?: React.ReactNode;

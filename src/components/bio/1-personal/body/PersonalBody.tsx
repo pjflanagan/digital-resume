@@ -14,6 +14,7 @@ type BodyProps = {
 function PersonalBody({ photoLinkCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
+  const paragraphs = linkText.text.split('\n');
 
   const linkHover: LinkCallback = ({
     image,
@@ -31,10 +32,17 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
         {greeting}
       </TextAccent>
       <TextTitle>{ParseTextForLinks(titleText.text, titleText.links, linkHover)}</TextTitle>
-      <Text links={linkText.links}>{linkText.text[0]}</Text>
-      <Text className={Style.bioAdditional} links={linkText.links} callback={linkHover}>
-        {linkText.text[1]}
-      </Text>
+      <Text links={linkText.links}>{paragraphs[0]}</Text>
+      {paragraphs.slice(1).map((paragraph) => (
+        <Text
+          key={paragraph}
+          className={Style.bioAdditional}
+          links={linkText.links}
+          callback={linkHover}
+        >
+          {paragraph}
+        </Text>
+      ))}
     </div>
   );
 }

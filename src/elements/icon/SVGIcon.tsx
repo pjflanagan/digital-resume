@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons';
-import { MdAdd, MdCheckCircle, MdEmail, MdRemove } from 'react-icons/md';
+import { MdAdd, MdArrowDownward, MdCheckCircle, MdEmail, MdRemove } from 'react-icons/md';
 import { SiGithub } from 'react-icons/si';
 import { BsLinkedin } from 'react-icons/bs';
 import { IoPlanet, IoRocketSharp } from 'react-icons/io5';
@@ -14,6 +14,7 @@ const ICONS = {
   email: MdEmail,
   github: SiGithub,
   rocket: IoRocketSharp,
+  arrowDown: MdArrowDownward,
   minus: MdRemove,
   plus: MdAdd,
   saturn: IoPlanet,

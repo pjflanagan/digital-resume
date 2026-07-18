@@ -6,7 +6,7 @@ import type { IconName } from '../icon/SVGIcon';
 type ButtonCommonProps = {
   icon: IconName;
   children?: React.ReactNode;
-  color?: 'yellow';
+  color?: 'yellow' | 'red' | 'blue';
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   className?: string;
