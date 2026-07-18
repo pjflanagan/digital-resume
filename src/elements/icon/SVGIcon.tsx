@@ -5,6 +5,7 @@ import { SiGithub } from 'react-icons/si';
 import { BsLinkedin } from 'react-icons/bs';
 import { IoPlanet, IoRocketSharp } from 'react-icons/io5';
 import { TbSendFilled } from "react-icons/tb";
+import { SendArrowIcon } from './SendArrowIcon';
 
 // Fill-based icon sets only (Material, Simple Icons, Ionicons) — the button
 // styles color icons via `path { fill }`, which breaks stroke-based sets
@@ -20,6 +21,7 @@ const ICONS = {
   plus: MdAdd,
   saturn: IoPlanet,
   send: TbSendFilled,
+  sendArrow: SendArrowIcon,
   check: MdCheckCircle,
 } satisfies Record<string, IconType>;
 

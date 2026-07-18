@@ -1,24 +1,19 @@
 {
   "references": [
     {
-      "id": "futurama",
-      "name": "Futurama",
-      "answer": "The space ship is loosely modeled off the Planet Express ship, the contact form placeholder text also has the Professor's tagline."
-    },
-    {
-      "id": "rick-and-morty",
-      "name": "Rick and Morty",
-      "answer": "There's a green portal floating on the splash slide, the contact form placeholder text also has a Rick tagline."
-    },
-    {
-      "id": "dune",
-      "name": "Dune",
-      "answer": "The splash slide planet is the color of Arrakis on the Dune book cover and the contact form placeholder text has Paul's mantra."
+      "id": "grand-tour",
+      "name": "The Grand Tour",
+      "answer": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
     },
     {
       "id": "cyberpunk",
       "name": "Cyberpunk 2077",
-      "answer": "Hovering my personal slide photos shows the Cyberpunk 2077 menu cursor, Johnny Silverhand can also be found in the contact form placeholder text. Be sure to checkout my Cyberpunk 2077 Garmin watch face project."
+      "answer": "Of course, the whole theme of this site is cyberpunk. You can also see the Cyberpunk 2077 menu cursor by hovering my personal slide photos, as well as a Johnny Silverhand quote in the contact form placeholder text. Be sure to checkout my Cyberpunk 2077 Garmin watch face project."
+    },
+    {
+      "id": "futurama",
+      "name": "Futurama",
+      "answer": "The space ship is loosely modeled off the Planet Express ship, the contact form placeholder text also has the Professor's tagline."
     },
     {
       "id": "fifth-element",
@@ -26,9 +21,24 @@
       "answer": "The contact form is on a Multipass, the contact form placeholder text also has a Leeloo Dallas line."
     },
     {
+      "id": "rick-and-morty",
+      "name": "Rick and Morty",
+      "answer": "There's a green portal floating on the splash slide, the contact form placeholder text also has a Rick tagline."
+    },
+    {
       "id": "2001-a-space-odyssey",
       "name": "2001: A Space Odyssey",
       "answer": "The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey."
+    },
+    {
+      "id": "dune",
+      "name": "Dune",
+      "answer": "The splash slide planet is the color of Arrakis on the Dune book cover and the contact form placeholder text has Paul's mantra."
+    },
+    {
+      "id": "matrix",
+      "name": "The Matrix",
+      "answer": "The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from Morpheus."
     },
     {
       "id": "neon-genesis-evangelion",
@@ -38,12 +48,17 @@
     {
       "id": "horizon",
       "name": "Horizon",
-      "answer": "The send button in the contact form was selected because it resembles the focus in Horizon Zero Dawn and Forbidden West."
+      "answer": "The send button in the contact form was designed to resemble the focus in Horizon Zero Dawn and Forbidden West."
     },
     {
-      "id": "matrix",
-      "name": "The Matrix",
-      "answer": "The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from Morpheus."
+      "id": "contact",
+      "name": "Contact (1997)",
+      "answer": "This is a stretch but the contact form is a reference to Contact in name, there is also a quote from Ellie Arroway in the placeholder text."
+    },
+    {
+      "id": "et",
+      "name": "E.T.",
+      "answer": "In the contact form prompt I promise to \"phone\" back."
     },
     {
       "id": "blade-runner",
@@ -61,14 +76,9 @@
       "answer": "The contact form placeholder text has a line Tony Stark says."
     },
     {
-      "id": "contact",
-      "name": "Contact (1997)",
-      "answer": "This is a stretch but the contact form is a reference to Contact in name, there is also a quote from Ellie Arroway in the placeholder text."
-    },
-    {
-      "id": "et",
-      "name": "E.T.",
-      "answer": "In the contact form prompt I promise to \"phone\" back."
+      "id": "project-hail-mary",
+      "name": "Project Hail Mary",
+      "answer": "The contact form placeholder text has a line Rocky says a lot."
     }
   ]
 }

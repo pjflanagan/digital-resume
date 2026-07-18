@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
   },
   jsxRuntime: `automatic`,
   plugins: [
+    `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

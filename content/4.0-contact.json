@@ -69,6 +69,11 @@
       "name": "Ellie Arroway",
       "email": "ellie.arroway@nasa.gov",
       "message": "They should've sent a poet."
+    },
+    {
+      "name": "Rocky",
+      "email": "rocky@erid.planet",
+      "message": "Amaze! Amaze! Amaze!"
     }
   ]
 }

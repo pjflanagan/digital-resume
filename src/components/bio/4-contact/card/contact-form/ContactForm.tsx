@@ -162,7 +162,7 @@ function ContactForm({
           isSubmitted={isSubmitted}
           prompt="Send"
           promptSubmitted="Sent"
-          icon="send"
+          icon="sendArrow"
           iconSubmitted="check"
           onMouseEnter={() => setIsWaveOn(true)}
           onMouseLeave={() => setIsWaveOn(false)}
