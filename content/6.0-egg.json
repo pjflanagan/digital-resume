@@ -43,12 +43,12 @@
     {
       "id": "matrix",
       "name": "The Matrix",
-      "answer": "The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from The Matrix."
+      "answer": "The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from Morpheus."
     },
     {
       "id": "blade-runner",
       "name": "Blade Runner",
-      "answer": "The contact form placeholder text has a line from Blade Runner."
+      "answer": "The contact form placeholder text has a line from a replicant."
     },
     {
       "id": "andor",
@@ -58,12 +58,12 @@
     {
       "id": "iron-man",
       "name": "Iron Man",
-      "answer": "The contact form placeholder text has a line at the end of the Iron Man movie."
+      "answer": "The contact form placeholder text has a line Tony Stark says."
     },
     {
       "id": "contact",
-      "name": "Contact",
-      "answer": "This is a stretch but the contact form is a reference to contact in name."
+      "name": "Contact (1997)",
+      "answer": "This is a stretch but the contact form is a reference to Contact in name, there is also a quote from Ellie Arroway in the placeholder text."
     },
     {
       "id": "et",

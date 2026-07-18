@@ -17,9 +17,9 @@
 
 p {
   .text-inline-link {
-    color: $accentYellow;
+    color: $accentCyan;
     text-decoration: none;
-    box-shadow: inset 0px -6px $accentYellowTransparent2;
+    box-shadow: inset 0px -6px $accentCyanTransparent2;
     transition: 0.2s;
 
     &.clickable {
@@ -27,8 +27,39 @@ p {
     }
 
     &:hover {
-      color: $accentYellowHover;
-      box-shadow: inset 0px -10px $accentYellowTransparent;
+      color: $accentCyanHover;
+      box-shadow: inset 0px -10px $accentCyanTransparent;
+    }
+
+    &.external {
+      color: $accentYellow;
+      box-shadow: inset 0px -6px $accentYellowTransparent2;
+      position: relative;
+      padding-right: 14px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background: $accentYellowTransparent2;
+        border-right: 1px solid $accentYellow;
+        border-top: 1px solid $accentYellow;
+        transition: 0.2s;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+      }
+
+      &:hover {
+        color: $accentYellowHover;
+        box-shadow: inset 0px -10px $accentYellowTransparent;
+
+        &:after {
+          background: $accentYellowTransparent;
+          transform: translate(2px, -2px);
+        }
+      }
     }
   }
 }

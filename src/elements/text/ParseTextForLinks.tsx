@@ -4,6 +4,8 @@ import type { ContentLink } from './types';
 
 import { TextInlineLink } from './TextInlineLink';
 
+import * as Style from './Text.module.scss';
+
 // matches <link_name> tokens; the capture keeps the name in the split output
 const REGEX_SPLIT_LINKS = /<([^<>]+)>/g;
 
@@ -52,6 +54,7 @@ function ParseTextForLinks(
         onMouseOver={onHover}
         onFocus={onHover}
         onClick={onClick}
+        className={href ? Style.external : undefined}
       >
         {linkText}
       </TextInlineLink>
