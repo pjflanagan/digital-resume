@@ -5,6 +5,8 @@ import { useBio } from 'src/content';
 import type { LinkCallback } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
+import { SciFiModal } from '../sci-fi-modal/SciFiModal';
+
 import * as Style from './PersonalBody.module.scss';
 
 type BodyProps = {
@@ -14,6 +16,7 @@ type BodyProps = {
 function PersonalBody({ photoLinkCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
+  const [isSciFiModalOpen, setIsSciFiModalOpen] = useState(false);
   const paragraphs = linkText.text.split('\n');
 
   const linkHover: LinkCallback = ({
@@ -25,6 +28,10 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
     if (image) photoLinkCallback(image, imageDescription, focusArea);
     if (linkGreeting) setGreeting(linkGreeting);
   };
+
+  function linkClick(key: string): void {
+    if (key === 'sci_fi') setIsSciFiModalOpen(true);
+  }
 
   return (
     <div className={Style.body}>
@@ -39,10 +46,12 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
           className={Style.bioAdditional}
           links={linkText.links}
           callback={linkHover}
+          onLinkClick={linkClick}
         >
           {paragraph}
         </Text>
       ))}
+      <SciFiModal isOpen={isSciFiModalOpen} onClose={() => setIsSciFiModalOpen(false)} />
     </div>
   );
 }

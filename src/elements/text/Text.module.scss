@@ -22,7 +22,7 @@ p {
     box-shadow: inset 0px -6px $accentYellowTransparent2;
     transition: 0.2s;
 
-    .clickable {
+    &.clickable {
       cursor: pointer;
     }
 

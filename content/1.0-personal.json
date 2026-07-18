@@ -15,6 +15,13 @@
   "linkText": {
     "links": [
       {
+        "key": "new_york",
+        "image": "personal-new-york.jpg",
+        "focusArea": { "x": 50, "y": 50, "width": 50, "height": 50 },
+        "imageDescription": "New York, United States\n40.712776, -74.005974",
+        "text": "New York"
+      },
+      {
         "key": "rollerblader",
         "href": "//instagram.com/roller.babe",
         "image": "personal-roller-blade.jpg",
@@ -51,8 +58,12 @@
         "focusArea": { "x": 34, "y": 9, "width": 33, "height": 52 },
         "imageDescription": "Solitude, Utah\n40.619934, -111.604462\n10,488 ft +6 ft airtime",
         "text": "board sport"
+      },
+      {
+        "key": "sci_fi",
+        "text": "find all the references"
       }
     ],
-    "text": "I'm a full-stack software engineer living in New York. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun websites.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you find all the references to my favorite sci-fi works on this page?"
+    "text": "I'm a full-stack software engineer living in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and fun websites.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you <sci_fi> to my favorite sci-fi works on this page?"
   }
 }

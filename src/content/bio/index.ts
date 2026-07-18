@@ -7,6 +7,7 @@ import SkillsJson from '../../../content/2.3-skills.json';
 import ProjectsJson from '../../../content/3.0-projects.json';
 import ContactJson from '../../../content/4.0-contact.json';
 import FooterJson from '../../../content/5.0-footer.json';
+import EggJson from '../../../content/6.0-egg.json';
 
 import type { BioContent, ContentFiles } from '../types';
 
@@ -34,6 +35,7 @@ function buildBio(files: ContentFiles): BioContent {
     },
     contact: files.contact,
     footer: files.footer.items,
+    egg: files.egg,
   };
 }
 
@@ -47,6 +49,7 @@ const StaticContentFiles = {
   projects: ProjectsJson,
   contact: ContactJson,
   footer: FooterJson,
+  egg: EggJson,
 } as unknown as ContentFiles;
 
 const PageBio: BioContent = buildBio(StaticContentFiles);

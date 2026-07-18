@@ -24,10 +24,16 @@
 
   .button-holder {
     visibility: visible;
+    display: flex;
+    align-items: center;
     position: absolute;
     width: 100%;
-    align-items: center;
-    gap: 32px;
+    padding: 0 24px;
     bottom: 40px;
+  }
+
+  .side {
+    flex: 1 1 0;
+    display: flex;
   }
 }

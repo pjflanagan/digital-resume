@@ -71,9 +71,8 @@ collections:
             widget: object
             fields:
               - name: text
-                label: Paragraphs
-                widget: list
-                field: { name: paragraph, label: Paragraph, widget: text }
+                label: Text (blank line = new paragraph)
+                widget: text
               - name: links
                 label: Links
                 widget: list
@@ -281,3 +280,15 @@ collections:
                 label: Links
                 widget: list
                 fields: *link_fields
+
+      - name: egg
+        label: Sci-Fi Easter Egg
+        file: content/6.0-egg.json
+        fields:
+          - name: references
+            label: References
+            widget: list
+            fields:
+              - { name: id, label: ID (slug), widget: string }
+              - { name: name, label: Movie / Show Name, widget: string }
+              - { name: answer, label: Explanation, widget: text }

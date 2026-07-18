@@ -1,0 +1,61 @@
+@use 'theme/variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: $backgroundDark3Opaque;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: $backgroundDark;
+  clip-path: $polygon;
+  font-family: $ubuntu;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid $accentCyanTransparent2;
+}
+
+.title {
+  color: $white;
+  font-family: $ubuntuMono;
+  font-size: 20px;
+}
+
+.close {
+  cursor: pointer;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  color: $accentYellow;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $accentYellowHover;
+    outline: none;
+  }
+}
+
+.content {
+  overflow-y: auto;
+  padding: 16px 24px 24px;
+}

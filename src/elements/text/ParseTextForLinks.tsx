@@ -14,7 +14,8 @@ type LinkCallback = (
 function ParseTextForLinks(
   text: string,
   links?: ContentLink[],
-  callback?: LinkCallback
+  callback?: LinkCallback,
+  onLinkClick?: (key: string) => void
 ): React.ReactNode {
   // if there are no links then ignore
   if (!links) {
@@ -36,15 +37,22 @@ function ParseTextForLinks(
       return <span key={i}>{part}</span>;
     }
 
-    const { image, imageDescription, greeting, focusArea, href, text: linkText } = link;
+    const { image, imageDescription, greeting, focusArea, href, key, text: linkText } = link;
     const hasHoverEffect = image || greeting;
     const onHover =
       callback && hasHoverEffect
         ? () => callback({ image, imageDescription, greeting, focusArea })
         : undefined;
+    const onClick = !href && onLinkClick ? () => onLinkClick(key) : undefined;
 
     return (
-      <TextInlineLink key={i} href={href || undefined} onMouseOver={onHover} onFocus={onHover}>
+      <TextInlineLink
+        key={i}
+        href={href || undefined}
+        onMouseOver={onHover}
+        onFocus={onHover}
+        onClick={onClick}
+      >
         {linkText}
       </TextInlineLink>
     );

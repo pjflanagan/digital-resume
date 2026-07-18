@@ -27,7 +27,7 @@ async function fetchContentFile<T>(file: string): Promise<T> {
 }
 
 async function fetchContentFiles(): Promise<ContentFiles> {
-  const [splash, personal, experience, jobs, schools, skills, projects, contact, footer] =
+  const [splash, personal, experience, jobs, schools, skills, projects, contact, footer, egg] =
     await Promise.all([
       fetchContentFile<ContentFiles['splash']>('0.0-splash.json'),
       fetchContentFile<ContentFiles['personal']>('1.0-personal.json'),
@@ -38,8 +38,9 @@ async function fetchContentFiles(): Promise<ContentFiles> {
       fetchContentFile<ContentFiles['projects']>('3.0-projects.json'),
       fetchContentFile<ContentFiles['contact']>('4.0-contact.json'),
       fetchContentFile<ContentFiles['footer']>('5.0-footer.json'),
+      fetchContentFile<ContentFiles['egg']>('6.0-egg.json'),
     ]);
-  return { splash, personal, experience, jobs, schools, skills, projects, contact, footer };
+  return { splash, personal, experience, jobs, schools, skills, projects, contact, footer, egg };
 }
 
 export { contentImage, fetchContentFiles };

@@ -92,6 +92,7 @@ type TextProps = MonoTextProps & {
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
+  onLinkClick?: (key: string) => void;
 };
 
 function Text({
@@ -101,6 +102,7 @@ function Text({
   children,
   links,
   callback,
+  onLinkClick,
   mono,
 }: TextProps): React.ReactNode {
   const classNames = clsx(className, mono && Style.mono);
@@ -110,7 +112,7 @@ function Text({
     );
   return (
     <p className={classNames} style={style}>
-      {ParseTextForLinks(children || '', links, callback)}
+      {ParseTextForLinks(children || '', links, callback, onLinkClick)}
     </p>
   );
 }

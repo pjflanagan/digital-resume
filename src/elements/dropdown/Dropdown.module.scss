@@ -1,0 +1,43 @@
+@use 'theme/variables' as *;
+
+.dropdown {
+  border-bottom: 1px solid $accentCyanTransparent2;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 4px;
+  cursor: pointer;
+  color: $white;
+  font-family: $ubuntuMono;
+  font-size: 15px;
+
+  &:hover,
+  &:focus {
+    color: $accentCyan;
+    outline: none;
+  }
+}
+
+.icon {
+  flex: none;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  color: $accentYellow;
+}
+
+.body {
+  padding: 0 4px 16px;
+  color: $whiteTransparent;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+}

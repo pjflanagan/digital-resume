@@ -62,6 +62,12 @@ type FormPlaceholder = {
   message: string;
 };
 
+type EggReference = {
+  id: string;
+  name: string;
+  answer: string;
+};
+
 // the whole bio page's content
 type BioContent = {
   splash: {
@@ -97,6 +103,9 @@ type BioContent = {
     formPlaceholders: FormPlaceholder[];
   };
   footer: LinkText<string>[];
+  egg: {
+    references: EggReference[];
+  };
 };
 
 // the raw shapes of the JSON files in content/, before assembly into BioContent
@@ -110,6 +119,7 @@ type ContentFiles = {
   projects: Omit<BioContent['projects'], 'projects'> & BioContent['projects']['projects'];
   contact: BioContent['contact'];
   footer: { items: BioContent['footer'] };
+  egg: BioContent['egg'];
 };
 
 export type {
@@ -120,5 +130,6 @@ export type {
   School,
   Project,
   FormPlaceholder,
+  EggReference,
   BioContent,
 };
