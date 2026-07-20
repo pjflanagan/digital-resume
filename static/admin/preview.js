@@ -108,21 +108,11 @@ const SplashPreview = ({ entry }) =>
   );
 
 const PersonalPreview = ({ entry }) => {
-  const accent = get(entry, ['accent'], {});
   const titleText = get(entry, ['titleText'], null);
   const bodyText = get(entry, ['linkText'], null);
-  const defaultImage = get(entry, ['defaultImage'], null);
   return h(
     'div',
     { className: 'preview' },
-    defaultImage &&
-      h('img', {
-        className: 'project-img',
-        style: { float: 'right', marginLeft: '16px' },
-        src: imgSrc(IMG.personal, defaultImage),
-        alt: 'default photo',
-      }),
-    h('p', { className: 'accent' }, `${accent.english} / ${accent.mandarin}`),
     titleText && h('h1', {}, linkText(titleText.text, titleText.links)),
     bodyText && paragraphs(bodyText)
   );
@@ -324,6 +314,8 @@ const EggPreview = ({ entry }) => {
         'div',
         { key: i, className: 'card', style: { display: 'block' } },
         h('h3', { style: { margin: 0 } }, r.name),
+        r.description &&
+          h('p', { className: 'muted' }, linkText(r.description.text, r.description.links)),
         (r.eggs || []).map((e, j) =>
           h(
             'p',
@@ -342,7 +334,8 @@ const EggPreview = ({ entry }) => {
         { key: i },
         h('span', { className: 'muted' }, `${l.id} — `),
         l.name,
-        l.description && h('span', { className: 'muted' }, ` — ${l.description}`)
+        l.description &&
+          h('span', { className: 'muted' }, ' — ', linkText(l.description.text, l.description.links))
       )
     )
   );

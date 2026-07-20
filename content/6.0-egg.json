@@ -29,7 +29,17 @@
     },
     {
       "id": "404-page",
-      "name": "404 Page"
+      "name": "404 Page",
+      "description": {
+        "text": "Visit the <404page> to see another animation.",
+        "links": [
+          {
+            "key": "404page",
+            "href": "/404",
+            "text": "404 Page"
+          }
+        ]
+      }
     }
   ],
   "references": [
