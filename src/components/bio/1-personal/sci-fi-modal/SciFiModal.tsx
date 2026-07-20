@@ -64,17 +64,13 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
       {groups.map((group) => (
         <Dropdown key={group.id} label={group.name}>
           {group.description && <p className={Style.description}>{group.description}</p>}
-          {group.eggs.length === 1 ? (
-            group.eggs[0].text
-          ) : (
-            <ul className={Style.list}>
-              {group.eggs.map((egg, index) => (
-                <li key={index}>
-                  <span className={Style.otherName}>{egg.otherName}:</span> {egg.text}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul className={Style.list}>
+            {group.eggs.map((egg, index) => (
+              <li key={index}>
+                <span className={Style.otherName}>{egg.otherName}:</span> {egg.text}
+              </li>
+            ))}
+          </ul>
         </Dropdown>
       ))}
     </Modal>
