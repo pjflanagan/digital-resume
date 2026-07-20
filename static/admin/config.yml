@@ -58,6 +58,15 @@ collections:
                     required: false
                     media_folder: /content/images/personal
                     public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
+                  - name: focusArea
+                    label: Image Focus Area
+                    widget: object
+                    required: false
+                    fields:
+                      - { name: x, label: X, widget: number, value_type: int }
+                      - { name: y, label: Y, widget: number, value_type: int }
+                      - { name: width, label: Width, widget: number, value_type: int }
+                      - { name: height, label: Height, widget: number, value_type: int }
                   - name: imageDescription
                     label: Hover Image Description
                     widget: text
@@ -291,6 +300,18 @@ collections:
             summary: '{{name}}'
             fields:
               - { name: name, label: Movie / Show Name, widget: string }
+              - name: description
+                label: Reference Description
+                widget: object
+                required: false
+                fields:
+                  - name: text
+                    label: Text
+                    widget: string
+                  - name: links
+                    label: Links
+                    widget: list
+                    fields: *link_fields
               - name: eggs
                 label: Eggs
                 widget: list
