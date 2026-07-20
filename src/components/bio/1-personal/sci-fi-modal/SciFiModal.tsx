@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import { Modal, Dropdown, Switch } from 'src/elements';
+import { Modal, Dropdown, Switch, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
 
 import * as Style from './SciFiModal.module.scss';
@@ -33,7 +33,7 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
       return references.map((reference) => ({
         id: reference.name,
         name: reference.name,
-        description: undefined as string | undefined,
+        description: reference.description,
         eggs: reference.eggs.map((egg) => ({
           text: egg.egg,
           otherName: locations.find((location) => location.id === egg.locationId)?.name ?? '',
@@ -63,7 +63,11 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
       />
       {groups.map((group) => (
         <Dropdown key={group.id} label={group.name}>
-          {group.description && <p className={Style.description}>{group.description}</p>}
+          {group.description && (
+            <p className={Style.description}>
+              {ParseTextForLinks(group.description.text, group.description.links)}
+            </p>
+          )}
           <ul className={Style.list}>
             {group.eggs.map((egg, index) => (
               <li key={index}>

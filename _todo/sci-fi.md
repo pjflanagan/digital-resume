@@ -28,24 +28,31 @@ Yeah, like a blueprint for something, a random one every time
 
 - [x] Futurama
 - [x] Cyberpunk
-  - [ ] I think I also want the cursor from Cyberpunk
-  - [ ] Honestly take more ui from this, maybe add hints of red?
+  - [x] I think I also want the cursor from Cyberpunk
+  - [NO] Honestly take more ui from this, maybe add hints of red?
 - [x] Rick and Morty
-  - [ ] A ship in the background
-  - [ ] Or maybe one planet is always portal colored
+  - [x] Or maybe one planet is always portal colored
+  - [NO] A ship in the background
 - [ ] Neon Genesis Evangelion
-  - ABSOLUTLEY NEED TO REPLICATE UI from this somewhere
+  - [ ] make the skills look like the UI, see inspo
+  - [x] blueprints
 - [x] Fifth Element
 - [x] Iron Man
 - [x] Andor 
 - [x] Blade Runner
 - [x] Dune
-- [x] SpaceOddysey
-  - 404 Page
+- [x] The Matrix
+  - [x] Pills
+  - [ ] The green text effect? -> not sure where though
+- [x] Space Odyssey
+  - [x] 404 Page
 
 - [ ] Alien
+- [ ] Blackmirror -> the footer is blacker and has a crack
 - [ ] Gravity Falls
 - [ ] Minority Report
+- [ ] The Dispossessed
+- [ ] Mars Express
 
 - [ ] Horizon (ZD)
   - [ ] Focus effect?

@@ -23,7 +23,9 @@
     {
       "id": "contact-form-placeholder",
       "name": "Contact Form Placeholder Text",
-      "description": "Click the word \"Contact\" to cycle through placeholder texts."
+      "description": {
+        "text": "Click the word \"Contact\" to cycle through placeholder texts."
+      }
     },
     {
       "id": "404-page",
@@ -42,6 +44,16 @@
     },
     {
       "name": "Cyberpunk 2077",
+      "description": {
+        "text": "If you like Cyberpunk 2077 and own a Garmin, checkout my <watch_face>.",
+        "links": [
+          {
+            "key": "watch_face",
+            "href": "https://www.flanny.app/blog/2025/garmin-cyberpunk-watchface/",
+            "text": "Cyberpunk Watch Face"
+          }
+        ]
+      },
       "eggs": [
         {
           "locationId": "site-theme",
@@ -107,6 +119,16 @@
     },
     {
       "name": "Dune",
+      "description": {
+        "text": "Try out this <mini_game> I made.",
+        "links": [
+          {
+            "key": "mini_game",
+            "href": "https://www.flanny.app/gom-jabbar/",
+            "text": "Dune Mini Game"
+          }
+        ]
+      },
       "eggs": [
         {
           "locationId": "splash-slide",
@@ -206,10 +228,6 @@
           "egg": "The contact form placeholder text has a line Rocky says a lot."
         }
       ]
-    },
-    {
-      "name": "The Dispossessed",
-      "eggs": []
     }
   ]
 }

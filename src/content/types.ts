@@ -69,13 +69,14 @@ type Egg = {
 
 type EggReference = {
   name: string;
+  description?: LinkText<string>;
   eggs: Egg[];
 };
 
 type EggLocation = {
   id: string;
   name: string;
-  description?: string;
+  description?: LinkText<string>;
 };
 
 // the whole bio page's content
