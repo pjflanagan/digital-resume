@@ -21,7 +21,8 @@
     - Cut thickness:                 11.504 / 12.496 (move both, symmetrically, to resize)
     - Where the cut ends (right edge of the cut, start of the tip wedge): 18.6
       (paired with 9.868 / 14.134, the y where that x crosses the top/bottom edges)
-    - Tip sharpness (how far the point extends): 23 (also appears in the tip wedge)
+    - Tip sharpness (how far the flat tip extends): 21.5 (also appears in the tip wedge)
+    - Tip flat edge thickness:        11.273 / 12.729 (move both, symmetrically, to resize)
     - Tip vertical center:           12 (also appears in the tip wedge)
 
   The left curve is a quadratic Bezier subdivided at the cut's top/bottom
@@ -34,6 +35,6 @@
   <path
     d="M2.549 2.085 Q1.078 6.795 1.004 11.504 L18.6 11.504 L18.6 9.868 Z
        M1.004 12.496 Q1.078 17.206 2.549 21.915 L18.6 14.134 L18.6 12.496 Z
-       M18.6 9.868 L23 12 L18.6 14.134 Z"
+       M18.6 9.868 L21.5 11.273 L21.5 12.729 L18.6 14.134 Z"
   />
 </svg>
