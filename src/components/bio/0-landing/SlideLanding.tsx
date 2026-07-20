@@ -1,5 +1,4 @@
-import { ReactNode } from 'react';
-import { useWindowScroll } from 'react-use';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { Canvas } from 'src/elements';
 
@@ -8,7 +7,12 @@ import { LandingBody } from './body/LandingBody';
 import * as Style from './SlideLanding.module.scss';
 
 function SlideLanding(): ReactNode {
-  const { y } = useWindowScroll();
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setY(window.scrollY);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const canvasScroll = y / 2;
   return (
     <div className={Style.splash}>

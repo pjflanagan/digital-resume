@@ -25,6 +25,8 @@ function Modal({ isOpen, onClose, title, className, children }: ModalProps): Rea
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen, onClose]);
 
+  if (typeof document === 'undefined') return null;
+
   return createPortal(
     <div
       className={clsx(Style.overlay, { [Style.visible]: isOpen })}
