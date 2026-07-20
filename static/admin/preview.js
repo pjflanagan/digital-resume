@@ -295,6 +295,53 @@ const ProjectsPreview = ({ entry }) =>
     )
   );
 
+// --- Sci-fi easter egg ---
+
+const EggPreview = ({ entry }) => {
+  const references = get(entry, ['references'], []);
+  const locations = get(entry, ['locations'], []);
+  const locationIds = new Set(locations.map((l) => l.id));
+
+  const idBadge = (id, validIds) => {
+    const valid = !!id && validIds.has(id);
+    return h(
+      'span',
+      {
+        className: 'tag',
+        style: valid ? {} : { background: '#f43f4e44', color: '#f43f4e' },
+        title: valid ? undefined : 'No matching location id found below',
+      },
+      id || '(empty)'
+    );
+  };
+
+  return h(
+    'div',
+    { className: 'preview' },
+    h('h2', {}, 'References'),
+    references.map((r, i) =>
+      h(
+        'div',
+        { key: i, className: 'card', style: { display: 'block' } },
+        h('h3', { style: { margin: 0 } }, r.name),
+        (r.eggs || []).map((e, j) =>
+          h(
+            'p',
+            { key: j },
+            idBadge(e.locationId, locationIds),
+            ' ',
+            e.egg
+          )
+        )
+      )
+    ),
+    h('h2', {}, 'Locations'),
+    locations.map((l, i) => h('p', { key: i }, h('span', { className: 'muted' }, `${l.id} — `), l.name))
+  );
+};
+
+CMS.registerPreviewTemplate('egg', EggPreview);
+
 CMS.registerPreviewTemplate('splash', SplashPreview);
 CMS.registerPreviewTemplate('personal', PersonalPreview);
 CMS.registerPreviewTemplate('experience', ExperiencePreview);

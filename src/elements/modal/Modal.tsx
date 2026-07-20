@@ -25,10 +25,12 @@ function Modal({ isOpen, onClose, title, className, children }: ModalProps): Rea
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   return createPortal(
-    <div className={Style.overlay} onClick={onClose}>
+    <div
+      className={clsx(Style.overlay, { [Style.visible]: isOpen })}
+      onClick={onClose}
+      aria-hidden={!isOpen}
+    >
       <div
         className={clsx(Style.modal, className)}
         onClick={(e) => e.stopPropagation()}
@@ -41,14 +43,16 @@ function Modal({ isOpen, onClose, title, className, children }: ModalProps): Rea
           <span
             className={Style.close}
             role="button"
-            tabIndex={0}
+            tabIndex={isOpen ? 0 : -1}
             onClick={onClose}
             onKeyDown={activationKeyHandler(onClose)}
           >
             <SVGIcon icon="close" />
           </span>
         </div>
-        <div className={Style.content}>{children}</div>
+        <div className={Style.contentClip}>
+          <div className={clsx(Style.content, { [Style.visible]: isOpen })}>{children}</div>
+        </div>
       </div>
     </div>,
     document.body

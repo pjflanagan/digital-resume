@@ -18,6 +18,7 @@ export * from './modal/Modal';
 export * from './progress-bar/ProgressBar';
 export * from './ruler/Ruler';
 export * from './stack/Stack';
+export * from './switch/Switch';
 export * from './show-more/ShowMore';
 export * from './text/Text';
 export * from './splash/Splash';

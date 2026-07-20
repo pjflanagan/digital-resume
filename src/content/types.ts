@@ -62,10 +62,19 @@ type FormPlaceholder = {
   message: string;
 };
 
+type Egg = {
+  locationId: string;
+  egg: string;
+};
+
 type EggReference = {
+  name: string;
+  eggs: Egg[];
+};
+
+type EggLocation = {
   id: string;
   name: string;
-  answer: string;
 };
 
 // the whole bio page's content
@@ -105,6 +114,7 @@ type BioContent = {
   footer: LinkText<string>[];
   egg: {
     references: EggReference[];
+    locations: EggLocation[];
   };
 };
 
@@ -131,5 +141,7 @@ export type {
   Project,
   FormPlaceholder,
   EggReference,
+  EggLocation,
+  Egg,
   BioContent,
 };

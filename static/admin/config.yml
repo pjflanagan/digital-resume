@@ -288,7 +288,20 @@ collections:
           - name: references
             label: References
             widget: list
+            summary: '{{name}}'
+            fields:
+              - { name: name, label: Movie / Show Name, widget: string }
+              - name: eggs
+                label: Eggs
+                widget: list
+                summary: '{{locationId}}'
+                fields:
+                  - { name: locationId, label: Location ID, widget: string }
+                  - { name: egg, label: Explanation, widget: text }
+          - name: locations
+            label: Locations
+            widget: list
+            summary: '{{name}} ({{id}})'
             fields:
               - { name: id, label: ID (slug), widget: string }
-              - { name: name, label: Movie / Show Name, widget: string }
-              - { name: answer, label: Explanation, widget: text }
+              - { name: name, label: Site Location Name, widget: string }

@@ -1,0 +1,25 @@
+@use 'theme/variables' as *;
+
+.groupSwitch {
+  margin-bottom: 16px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+
+  li {
+    &::before {
+      content: none;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.otherName {
+  color: $accentYellow;
+}

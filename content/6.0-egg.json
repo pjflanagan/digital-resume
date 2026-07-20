@@ -1,84 +1,214 @@
 {
+  "locations": [
+    {
+      "id": "site-theme",
+      "name": "Overall Site Theme"
+    },
+    {
+      "id": "splash-slide",
+      "name": "Splash Slide"
+    },
+    {
+      "id": "personal-photo",
+      "name": "Personal Photo"
+    },
+    {
+      "id": "programs-blueprint",
+      "name": "Programs Section Blueprint"
+    },
+    {
+      "id": "contact-form",
+      "name": "Contact Form Design"
+    },
+    {
+      "id": "contact-form-placeholder",
+      "name": "Contact Form Placeholder Text"
+    },
+    {
+      "id": "404-page",
+      "name": "404 Page"
+    }
+  ],
   "references": [
     {
-      "id": "grand-tour",
       "name": "The Grand Tour",
-      "answer": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
+        }
+      ]
     },
     {
-      "id": "cyberpunk",
       "name": "Cyberpunk 2077",
-      "answer": "Of course, the whole theme of this site is cyberpunk. You can also see the Cyberpunk 2077 menu cursor by hovering my personal slide photos, as well as a Johnny Silverhand quote in the contact form placeholder text. Be sure to checkout my Cyberpunk 2077 Garmin watch face project."
+      "eggs": [
+        {
+          "locationId": "site-theme",
+          "egg": "The whole theme of this site is cyberpunk."
+        },
+        {
+          "locationId": "personal-photo",
+          "egg": "You can see the Cyberpunk 2077 menu cursor by hovering my personal slide photos."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "There's a Johnny Silverhand quote in the contact form placeholder text."
+        }
+      ]
     },
     {
-      "id": "futurama",
       "name": "Futurama",
-      "answer": "The space ship is loosely modeled off the Planet Express ship, the contact form placeholder text also has the Professor's tagline."
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "The space ship is loosely modeled off the Planet Express ship."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has the Professor's tagline."
+        }
+      ]
     },
     {
-      "id": "fifth-element",
       "name": "The Fifth Element",
-      "answer": "The contact form is on a Multipass, the contact form placeholder text also has a Leeloo Dallas line."
+      "eggs": [
+        {
+          "locationId": "contact-form",
+          "egg": "The contact form is on a Multipass."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text also has a Leeloo Dallas line."
+        }
+      ]
     },
     {
-      "id": "rick-and-morty",
       "name": "Rick and Morty",
-      "answer": "There's a green portal floating on the splash slide, the contact form placeholder text also has a Rick tagline."
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "There's a green portal floating on the splash slide."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text also has a Rick tagline."
+        }
+      ]
     },
     {
-      "id": "2001-a-space-odyssey",
       "name": "2001: A Space Odyssey",
-      "answer": "The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey."
+      "eggs": [
+        {
+          "locationId": "404-page",
+          "egg": "The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey."
+        }
+      ]
     },
     {
-      "id": "dune",
       "name": "Dune",
-      "answer": "The splash slide planet is the color of Arrakis on the Dune book cover and the contact form placeholder text has Paul's mantra."
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "The splash slide planet is the color of Arrakis on the Dune book cover."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has Paul's mantra."
+        }
+      ]
     },
     {
-      "id": "matrix",
       "name": "The Matrix",
-      "answer": "The splash slide has two buttons, one red pill and one blue pill. The contact form placeholder text also has a line from Morpheus."
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "The splash slide has two buttons, one red pill and one blue pill."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text also has a line from Morpheus."
+        }
+      ]
     },
     {
-      "id": "neon-genesis-evangelion",
       "name": "Neon Genesis Evangelion",
-      "answer": "The blueprint background in the Programs section has a diagram of the angels."
+      "eggs": [
+        {
+          "locationId": "programs-blueprint",
+          "egg": "The blueprint background in the Programs section has a diagram of the angels."
+        }
+      ]
     },
     {
-      "id": "horizon",
       "name": "Horizon",
-      "answer": "The send button in the contact form was designed to resemble the focus in Horizon Zero Dawn and Forbidden West."
+      "eggs": [
+        {
+          "locationId": "contact-form",
+          "egg": "The send button in the contact form was designed to resemble the focus in Horizon Zero Dawn and Forbidden West."
+        }
+      ]
     },
     {
-      "id": "contact",
       "name": "Contact (1997)",
-      "answer": "This is a stretch but the contact form is a reference to Contact in name, there is also a quote from Ellie Arroway in the placeholder text."
+      "eggs": [
+        {
+          "locationId": "contact-form",
+          "egg": "This is a stretch but the contact form is a reference to Contact in name."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "There is also a quote from Ellie Arroway in the placeholder text."
+        }
+      ]
     },
     {
-      "id": "et",
       "name": "E.T.",
-      "answer": "In the contact form prompt I promise to \"phone\" back."
+      "eggs": [
+        {
+          "locationId": "contact-form",
+          "egg": "In the contact form prompt I promise to phone back."
+        }
+      ]
     },
     {
-      "id": "blade-runner",
       "name": "Blade Runner",
-      "answer": "The contact form placeholder text has a line from a replicant."
+      "eggs": [
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has a line from a replicant."
+        }
+      ]
     },
     {
-      "id": "andor",
       "name": "Andor",
-      "answer": "The contact form placeholder text has an rebel secret code."
+      "eggs": [
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has a rebel secret code."
+        }
+      ]
     },
     {
-      "id": "iron-man",
       "name": "Iron Man",
-      "answer": "The contact form placeholder text has a line Tony Stark says."
+      "eggs": [
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has a line Tony Stark says."
+        }
+      ]
     },
     {
-      "id": "project-hail-mary",
       "name": "Project Hail Mary",
-      "answer": "The contact form placeholder text has a line Rocky says a lot."
+      "eggs": [
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has a line Rocky says a lot."
+        }
+      ]
+    },
+    {
+      "name": "The Dispossessed",
+      "eggs": []
     }
   ]
 }

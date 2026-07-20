@@ -1,0 +1,34 @@
+@use 'theme/variables' as *;
+
+.switchRoot {
+  display: flex;
+  gap: 2px;
+  background: $accentCyanTransparent2;
+  clip-path: $polygonSmall;
+}
+
+.option {
+  flex: 1;
+  padding: 10px 12px;
+  background: $backgroundDark;
+  border: none;
+  cursor: pointer;
+  color: $whiteTransparent;
+  font-family: $ubuntuMono;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition:
+    color 0.2s,
+    background 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    outline: none;
+  }
+}
+
+.active {
+  color: $accentCyan;
+  background: $accentCyanTransparent2;
+}
