@@ -18,11 +18,12 @@
     },
     {
       "id": "contact-form",
-      "name": "Contact Form Design"
+      "name": "Contact Form"
     },
     {
       "id": "contact-form-placeholder",
-      "name": "Contact Form Placeholder Text"
+      "name": "Contact Form Placeholder Text",
+      "description": "Click the word \"Contact\" to cycle through placeholder texts."
     },
     {
       "id": "404-page",

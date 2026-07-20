@@ -33,6 +33,7 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
       return references.map((reference) => ({
         id: reference.name,
         name: reference.name,
+        description: undefined as string | undefined,
         eggs: reference.eggs.map((egg) => ({
           text: egg.egg,
           otherName: locations.find((location) => location.id === egg.locationId)?.name ?? '',
@@ -42,6 +43,7 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
     return locations.map((location) => ({
       id: location.id,
       name: location.name,
+      description: location.description,
       eggs: flatEggs
         .filter((egg) => egg.locationId === location.id)
         .map((egg) => ({ text: egg.text, otherName: egg.referenceName })),
@@ -61,6 +63,7 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
       />
       {groups.map((group) => (
         <Dropdown key={group.id} label={group.name}>
+          {group.description && <p className={Style.description}>{group.description}</p>}
           {group.eggs.length === 1 ? (
             group.eggs[0].text
           ) : (

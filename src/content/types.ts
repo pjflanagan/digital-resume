@@ -75,6 +75,7 @@ type EggReference = {
 type EggLocation = {
   id: string;
   name: string;
+  description?: string;
 };
 
 // the whole bio page's content

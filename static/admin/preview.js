@@ -336,7 +336,15 @@ const EggPreview = ({ entry }) => {
       )
     ),
     h('h2', {}, 'Locations'),
-    locations.map((l, i) => h('p', { key: i }, h('span', { className: 'muted' }, `${l.id} — `), l.name))
+    locations.map((l, i) =>
+      h(
+        'p',
+        { key: i },
+        h('span', { className: 'muted' }, `${l.id} — `),
+        l.name,
+        l.description && h('span', { className: 'muted' }, ` — ${l.description}`)
+      )
+    )
   );
 };
 

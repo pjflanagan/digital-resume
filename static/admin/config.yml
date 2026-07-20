@@ -305,3 +305,4 @@ collections:
             fields:
               - { name: id, label: ID (slug), widget: string }
               - { name: name, label: Site Location Name, widget: string }
+              - { name: description, label: Description, widget: text, required: false }
