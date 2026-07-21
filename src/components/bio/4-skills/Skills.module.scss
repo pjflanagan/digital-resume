@@ -31,10 +31,30 @@
 .skill-list-holder {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 
   .skill-bar-holder {
+    position: relative;
     padding: 4px;
     width: 100%;
+
+    .connector-left,
+    .connector-right {
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      width: 100vw;
+      transform: translateY(-50%);
+      background: $blackTransparent;
+    }
+
+    .connector-left {
+      right: 100%;
+    }
+
+    .connector-right {
+      left: 100%;
+    }
   }
 }
 

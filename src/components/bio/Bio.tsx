@@ -41,7 +41,8 @@ function BioPage() {
         <HeaderLink onClick={() => clickToScroll('experience')}>1.0 Experience</HeaderLink>
         <HeaderLink onClick={() => clickToScroll('projects')}>2.0 Projects</HeaderLink>
         <HeaderLink href="https://www.flanny.app/blog">2.1 Blog</HeaderLink>
-        <HeaderLink onClick={() => clickToScroll('contact')}>3.0 Contact</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('skills')}>3.0 Skills</HeaderLink>
+        <HeaderLink onClick={() => clickToScroll('contact')}>4.0 Contact</HeaderLink>
       </Header>
       <Cover />
       <Splash isVisible={isLoading} />

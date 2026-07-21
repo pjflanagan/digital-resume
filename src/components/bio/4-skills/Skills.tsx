@@ -47,6 +47,8 @@ function SkillGroupList({ type, items, showAll }: SkillGroup & { showAll: boolea
               className={clsx(Style.skillBarHolder, isRevealed && Style.reveal)}
               style={style}
             >
+              <div className={Style.connectorLeft} />
+              <div className={Style.connectorRight} />
               <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
             </div>
           );

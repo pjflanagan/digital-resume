@@ -1,24 +1,78 @@
 @use 'theme/variables' as *;
 
+@property --fill {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+$tab: 12px;
+$tab-band: 6px;
+$corner: 10px;
+
+$connect-delay: 0.15s;
+$connect-duration: 0.4s;
+$fill-duration: 0.4s;
+$fill-overlap: 0.1s;
+$left-fill-delay: $connect-delay + $connect-duration;
+$right-fill-delay: $left-fill-delay + $fill-duration - $fill-overlap;
+
 .bar {
-  padding: 6px 24px;
   position: relative;
-  overflow: hidden;
-  background: $blackTransparent;
-  background: linear-gradient(
-    90deg,
-    $blackTransparent 0%,
-    $blackTransparent 50%,
-    $backgroundLightTransparent 50%,
-    $backgroundLightTransparent 100%
-  );
-  background-position: 0 0;
-  background-size: 200%;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  clip-path: $polygonSmall;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
+  display: flex;
+
+  .bar-left,
+  .bar-right {
+    --fill: 0%;
+    z-index: 20;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, $backgroundLight var(--fill), $blackTransparent var(--fill));
+    opacity: 0;
+  }
+
+  .bar-left {
+    flex: 0 0 50%;
+    padding: 6px 0 6px 24px;
+    transform: translateX(-60px);
+    transition:
+      transform 0.4s ease #{$connect-delay},
+      opacity 0.4s ease #{$connect-delay},
+      --fill #{$fill-duration} ease #{$left-fill-delay};
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(50% - #{$tab-band} - 2px),
+      calc(100% - #{$tab}) calc(50% - #{$tab-band} - 2px),
+      calc(100% - #{$tab}) calc(50% + #{$tab-band} + 2px),
+      100% calc(50% + #{$tab-band} + 2px),
+      100% 100%,
+      #{$corner} 100%,
+      0 calc(100% - #{$corner})
+    );
+  }
+
+  .bar-right {
+    flex: 0 0 calc(50% + #{$tab});
+    margin-left: -#{$tab};
+    padding: 6px 24px 6px 0;
+    transform: translateX(60px);
+    transition:
+      transform 0.4s ease #{$connect-delay},
+      opacity 0.4s ease #{$connect-delay},
+      --fill #{$fill-duration} ease #{$right-fill-delay};
+    clip-path: polygon(
+      $tab 0,
+      calc(100% - #{$corner}) 0,
+      100% #{$corner},
+      100% 100%,
+      $tab 100%,
+      $tab calc(50% + #{$tab-band}),
+      0 calc(50% + #{$tab-band}),
+      0 calc(50% - #{$tab-band}),
+      $tab calc(50% - #{$tab-band})
+    );
+  }
 
   .name {
     color: #fff;
@@ -35,33 +89,30 @@
     }
   }
 
-  .loader {
-    position: absolute;
-    background: $accentCyan;
-    background: linear-gradient(
-      90deg,
-      $backgroundLight 0%,
-      $backgroundLight 50%,
-      $accentCyanHover 50%,
-      $accentCyanHover 100%
-    );
-    background-position: 0 0;
-    height: 100%;
-    background-size: 200%;
-    top: 0;
-    left: 0;
-    clip-path: $polygonSmall;
-    transition: 0.4s;
-    -webkit-transition: 0.4s;
+  &.revealed {
+    .bar-left {
+      opacity: 1;
+      transform: translateX(-1px);
+
+    }
+
+    .bar-right {
+      opacity: 1;
+      transform: translateX(1px);
+    }
   }
 
-  &:hover {
-    background-position: 100% 0;
+  &.revealed:hover {
+    .bar-left {
+      transform: translateX(-6px);
+    }
+
+    .bar-right {
+      transform: translateX(6px);
+    }
+
     .name {
       color: $accentYellowHover;
-    }
-    .loader {
-      background-position: -100% 0;
     }
   }
 }
