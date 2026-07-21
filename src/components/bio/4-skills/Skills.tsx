@@ -60,7 +60,7 @@ function Skills() {
   const [showAll, setShowAll] = useState(false);
 
   const groups = useBio().experience.skills.groups.filter(
-    ({ type }) => showAll || type !== HIDDEN_GROUP,
+    ({ type }) => showAll || type !== HIDDEN_GROUP
   );
   const columns = splitIntoColumns(groups, showAll);
 
@@ -75,13 +75,13 @@ function Skills() {
           </div>
         ))}
       </div>
-      {!showAll && (
-        <div className={Style.showAllHolder}>
+      <div className={Style.showAllHolder}>
+        {!showAll && (
           <LabeledButton icon="plus" onClick={() => setShowAll(true)}>
             {'Show more'}
           </LabeledButton>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

@@ -5,21 +5,23 @@
   z-index: 20;
   position: relative;
   background: $backgroundDark2;
-  padding: 0 0 36px;
 
   .slide-body {
     font-family: $ubuntu;
     z-index: 21;
     position: relative;
     margin: 0 auto;
-    padding: 20px 20px 20px;
+
+    .title-holder {
+      border-right: 2px solid #143545;
+      padding: 12px 0 0;
+    }
   }
 }
 
 @media only screen and (min-width: $md) {
   .slide-skills {
     z-index: 0;
-    padding: 12px 0;
 
     .slide-body {
       width: 540px;
