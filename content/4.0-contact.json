@@ -74,6 +74,11 @@
       "name": "Rocky",
       "email": "rocky@erid.planet",
       "message": "Amaze! Amaze! Amaze!"
+    },
+    {
+      "name": "HAL",
+      "email": "HAL9000@discovery.one",
+      "message": "I'm afraid I can't do that Dave."
     }
   ]
 }
