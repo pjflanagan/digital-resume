@@ -13,9 +13,20 @@
     margin: 0 auto;
 
     .title-holder {
-      border-right: 2px solid #143545;
+      border-right: 2px solid $blackTransparent;
       padding: 12px 0 0;
       width: 80%;
+
+      &:after {
+        content: "DIGITAL IN";
+        position: absolute;
+        left: calc(80% - 24px);
+        top: 40px;
+        transform: rotate(-90deg);
+        font-family: "Ubuntu Mono", monospace;
+        color: rgba(31, 207, 204, 0.2);
+        font-weight: bold;
+      }
     }
   }
 }

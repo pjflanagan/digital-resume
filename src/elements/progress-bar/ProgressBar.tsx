@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties, type ReactNode } from 'react';
+import { useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
@@ -21,13 +21,13 @@ function ProgressBar({
   const progress = isRevealed ? progressProp : 0;
 
   const className = clsx(Style.bar, isRevealed && Style.revealed, classNameProp);
-  const barStyle = { '--fill-right': `${progress}%` } as CSSProperties;
 
   return (
-    <div className={className} ref={ref} style={barStyle}>
+    <div className={className} ref={ref}>
       <div className={Style.connector} />
       <div className={Style.barLeft} />
       <div className={Style.barRight}>
+        <div className={Style.fill} style={{ width: `${progress}%` }} />
         <div className={Style.name}>
           {name}
           <span className={Style.line} style={{ width: `${progress / 6}%` }} />

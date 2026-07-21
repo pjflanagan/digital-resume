@@ -8,7 +8,7 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #143545;
+  border-top: 2px solid $blackTransparent;
   clip-path: polygon(
       0 0,
       0 100%,
@@ -48,6 +48,7 @@
     }
 
     &:last-child .skillGroup:last-child {
+      // This ensures that the right column is always longer than the left column
       padding-bottom: 38px;
     }
 
@@ -92,6 +93,16 @@
   justify-content: center;
   padding: 36px 0;
   border-right: 2px solid $blackTransparent;
+
+  &:after {
+    content: 'GND';
+    position: absolute;
+    right: 0;
+    transform: rotate(-90deg);
+    font-family: $ubuntuMono;
+    color: $accentCyanTransparent2;
+    font-weight: bold;
+  }
 }
 
 

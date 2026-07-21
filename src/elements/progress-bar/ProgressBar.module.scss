@@ -1,11 +1,5 @@
 @use 'theme/variables' as *;
 
-@property --fill-right {
-  syntax: '<percentage>';
-  inherits: true;
-  initial-value: 0%;
-}
-
 $left-width: 40px;
 $tab: 12px;
 $tab-band: 6px;
@@ -15,6 +9,9 @@ $connect-delay: 0.15s;
 $connect-duration: 0.4s;
 $fill-duration: 0.4s;
 $fill-delay: $connect-delay + $connect-duration;
+
+$unplug-duration: 0.2s;
+$unplug-fill-duration: 0.15s;
 
 .bar {
   position: relative;
@@ -41,7 +38,7 @@ $fill-delay: $connect-delay + $connect-duration;
 
   .bar-left {
     flex: 0 0 #{$left-width};
-    background: $backgroundLight;
+    background: rgb(18 87 96);
     transform: translateX(-60px);
     transition:
       transform 0.4s ease #{$connect-delay},
@@ -65,15 +62,10 @@ $fill-delay: $connect-delay + $connect-duration;
     margin-right: #{$tab + $corner + 12px};
     padding: 6px 24px 6px #{$tab + 12px};
     transform: translateX(60px);
-    background: linear-gradient(
-      90deg,
-      $backgroundLight var(--fill-right),
-      $blackTransparent var(--fill-right)
-    );
+    background: $blackTransparent;
     transition:
       transform 0.4s ease #{$connect-delay},
-      opacity 0.4s ease #{$connect-delay},
-      --fill-right #{$fill-duration} ease #{$fill-delay};
+      opacity 0.4s ease #{$connect-delay};
     clip-path: polygon(
       $tab 0,
       calc(100% - #{$corner}) 0,
@@ -87,11 +79,23 @@ $fill-delay: $connect-delay + $connect-duration;
     );
   }
 
+  .fill {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: $backgroundLight;
+    transition: width #{$fill-duration} ease #{$fill-delay};
+  }
+
   .name {
     color: #fff;
     z-index: 25;
     position: relative;
     font-weight: 300;
+    transition: opacity 0.4s ease #{$connect-delay};
 
     .line {
       background: $accentYellow;
@@ -99,6 +103,7 @@ $fill-delay: $connect-delay + $connect-duration;
       top: 50%;
       position: absolute;
       margin-left: 6px;
+      transition: opacity 0.4s ease #{$connect-delay};
     }
   }
 
@@ -119,21 +124,30 @@ $fill-delay: $connect-delay + $connect-duration;
     .bar-left {
       transform: translateX(-12px);
       transition:
-        transform 0.4s ease,
-        opacity 0.4s ease;
+        transform #{$unplug-duration} ease,
+        opacity #{$unplug-duration} ease;
     }
 
     .bar-right {
       transform: translateX(12px);
       transition:
-        transform 0.4s ease,
-        opacity 0.4s ease,
-        --fill-right 0.3s ease;
-      --fill-right: 0%;
+        transform #{$unplug-duration} ease,
+        opacity #{$unplug-duration} ease;
+    }
+
+    .fill {
+      width: 0 !important;
+      transition: width #{$unplug-fill-duration} ease;
     }
 
     .name {
-      color: $accentYellowHover;
+      opacity: 0.35;
+      transition: opacity #{$unplug-duration} ease;
+
+      .line {
+        opacity: 0.35;
+        transition: opacity #{$unplug-duration} ease;
+      }
     }
   }
 }
