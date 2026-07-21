@@ -1,11 +1,12 @@
 @use 'theme/variables' as *;
 
-@property --fill {
+@property --fill-right {
   syntax: '<percentage>';
-  inherits: false;
+  inherits: true;
   initial-value: 0%;
 }
 
+$left-width: 40px;
 $tab: 12px;
 $tab-band: 6px;
 $corner: 10px;
@@ -13,32 +14,38 @@ $corner: 10px;
 $connect-delay: 0.15s;
 $connect-duration: 0.4s;
 $fill-duration: 0.4s;
-$fill-overlap: 0.1s;
-$left-fill-delay: $connect-delay + $connect-duration;
-$right-fill-delay: $left-fill-delay + $fill-duration - $fill-overlap;
+$fill-delay: $connect-delay + $connect-duration;
 
 .bar {
   position: relative;
   display: flex;
 
+  .connector {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 0;
+    width: 1000px;
+    height: 2px;
+    background: $blackTransparent;
+    transform: translate(-100%, -50%);
+  }
+
   .bar-left,
   .bar-right {
-    --fill: 0%;
     z-index: 20;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(90deg, $backgroundLight var(--fill), $blackTransparent var(--fill));
     opacity: 0;
   }
 
   .bar-left {
-    flex: 0 0 50%;
-    padding: 6px 0 6px 24px;
+    flex: 0 0 #{$left-width};
+    background: $backgroundLight;
     transform: translateX(-60px);
     transition:
       transform 0.4s ease #{$connect-delay},
-      opacity 0.4s ease #{$connect-delay},
-      --fill #{$fill-duration} ease #{$left-fill-delay};
+      opacity 0.4s ease #{$connect-delay};
     clip-path: polygon(
       0 0,
       100% 0,
@@ -53,14 +60,20 @@ $right-fill-delay: $left-fill-delay + $fill-duration - $fill-overlap;
   }
 
   .bar-right {
-    flex: 0 0 calc(50% + #{$tab});
+    flex: 1;
     margin-left: -#{$tab};
-    padding: 6px 24px 6px 0;
+    margin-right: #{$tab + $corner + 12px};
+    padding: 6px 24px 6px #{$tab + 12px};
     transform: translateX(60px);
+    background: linear-gradient(
+      90deg,
+      $backgroundLight var(--fill-right),
+      $blackTransparent var(--fill-right)
+    );
     transition:
       transform 0.4s ease #{$connect-delay},
       opacity 0.4s ease #{$connect-delay},
-      --fill #{$fill-duration} ease #{$right-fill-delay};
+      --fill-right #{$fill-duration} ease #{$fill-delay};
     clip-path: polygon(
       $tab 0,
       calc(100% - #{$corner}) 0,
@@ -104,11 +117,19 @@ $right-fill-delay: $left-fill-delay + $fill-duration - $fill-overlap;
 
   &.revealed:hover {
     .bar-left {
-      transform: translateX(-6px);
+      transform: translateX(-12px);
+      transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
     }
 
     .bar-right {
-      transform: translateX(6px);
+      transform: translateX(12px);
+      transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        --fill-right 0.3s ease;
+      --fill-right: 0%;
     }
 
     .name {

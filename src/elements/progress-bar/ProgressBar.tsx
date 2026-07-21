@@ -20,26 +20,19 @@ function ProgressBar({
   const isRevealed = useReveal({ ref, gap: 40 });
   const progress = isRevealed ? progressProp : 0;
 
-  const leftFill = Math.min(Math.max(progress, 0), 50) * 2;
-  const rightFill = Math.min(Math.max(progress - 50, 0), 50) * 2;
-
   const className = clsx(Style.bar, isRevealed && Style.revealed, classNameProp);
+  const barStyle = { '--fill-right': `${progress}%` } as CSSProperties;
 
   return (
-    <div className={className} ref={ref}>
-      <div
-        className={Style.barLeft}
-        style={{ '--fill': `${leftFill}%` } as CSSProperties}
-      >
+    <div className={className} ref={ref} style={barStyle}>
+      <div className={Style.connector} />
+      <div className={Style.barLeft} />
+      <div className={Style.barRight}>
         <div className={Style.name}>
           {name}
           <span className={Style.line} style={{ width: `${progress / 6}%` }} />
         </div>
       </div>
-      <div
-        className={Style.barRight}
-        style={{ '--fill': `${rightFill}%` } as CSSProperties}
-      />
     </div>
   );
 }

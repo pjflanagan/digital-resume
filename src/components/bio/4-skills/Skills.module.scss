@@ -3,12 +3,40 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
+
+
+  padding: 0 4px;
+  border-left: 2px solid #143545;
+
+  .skill-column {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $blackTransparent;
+
+
+    .skillGroup {
+      overflow: hidden;
+
+      .skillGroupHeading {
+        padding-left: 12px;
+      }
+
+      .skill-list-holder {
+        display: flex;
+        flex-direction: column;
+
+        .skill-bar-holder {
+          margin-left: 20px;
+          position: relative;
+          padding: 4px;
+          width: 100%;
+        }
+      }
+
+    }
+  }
 }
 
-.skill-column {
-  display: flex;
-  flex-direction: column;
-}
 
 @media only screen and (min-width: $lg) {
   .skill-columns {
@@ -28,35 +56,6 @@
   margin-top: 38px;
 }
 
-.skill-list-holder {
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-
-  .skill-bar-holder {
-    position: relative;
-    padding: 4px;
-    width: 100%;
-
-    .connector-left,
-    .connector-right {
-      position: absolute;
-      top: 50%;
-      height: 1px;
-      width: 100vw;
-      transform: translateY(-50%);
-      background: $blackTransparent;
-    }
-
-    .connector-left {
-      right: 100%;
-    }
-
-    .connector-right {
-      left: 100%;
-    }
-  }
-}
 
 @keyframes skill-reveal {
   from {
