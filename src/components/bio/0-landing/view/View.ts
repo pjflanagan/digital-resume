@@ -2,6 +2,7 @@ import { BaseView } from 'src/elements';
 import { distance, Point, Random, Range } from 'src/helpers';
 
 import { Body } from './Body';
+import { Bullet } from './Bullet';
 import { Moon } from './Moon';
 import { Portal } from './Portal';
 import { Planet } from './Planet';
@@ -10,6 +11,7 @@ import { Star } from './Star';
 import {
   MOUSE_EASE,
   SCROLL_DEPTH,
+  SHIP_FIRE_EVENT,
   VIEW_BACKGROUND_MOONS,
   VIEW_FOREGROUND_MOONS,
   VIEW_STARS,
@@ -54,18 +56,25 @@ class View extends BaseView {
   private lastFrameTime: number | null = null;
 
   bodies: Body[] = [];
+  bullets: Bullet[] = [];
 
   constructor(canvasElem: HTMLCanvasElement) {
     super(canvasElem);
 
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onScroll = this.onScroll.bind(this);
+    this.fireBullet = this.fireBullet.bind(this);
     window.addEventListener('mousemove', this.onMouseMove);
     window.addEventListener('scroll', this.onScroll);
+    window.addEventListener(SHIP_FIRE_EVENT, this.fireBullet);
 
     this.resize();
     this.setup();
     this.start();
+  }
+
+  get ship(): Ship | undefined {
+    return this.bodies.find((body): body is Ship => body instanceof Ship);
   }
 
   resize() {
@@ -89,6 +98,27 @@ class View extends BaseView {
       body.move();
       body.draw();
     }
+    this.moveBullets();
+    this.drawBullets();
+  }
+
+  moveBullets() {
+    for (const bullet of this.bullets) {
+      bullet.move();
+    }
+    this.bullets = this.bullets.filter((bullet) => !bullet.isOffScreen());
+  }
+
+  drawBullets() {
+    for (const bullet of this.bullets) {
+      bullet.draw();
+    }
+  }
+
+  fireBullet() {
+    const { ship } = this;
+    if (!ship) return;
+    this.bullets.push(new Bullet(this, { x: ship.pos.x - 50, y: ship.pos.y }));
   }
 
   updateFrameScale() {
@@ -118,6 +148,7 @@ class View extends BaseView {
     super.destroy();
     window.removeEventListener('mousemove', this.onMouseMove);
     window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener(SHIP_FIRE_EVENT, this.fireBullet);
   }
 
   onMouseMove(e: MouseEvent) {

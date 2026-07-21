@@ -10,6 +10,7 @@ type SplashTextProps = {
   headline: React.ReactNode;
   blurb: string;
   style?: React.CSSProperties;
+  onHeadlineClick?: () => void;
 };
 
 function AnimatedBlurb({
@@ -28,10 +29,22 @@ function AnimatedBlurb({
 }
 
 // SplashText: headline + scrambling mono blurb, used to open a page (landing, 404)
-function SplashText({ className, headline, blurb, style }: SplashTextProps): React.ReactNode {
+function SplashText({
+  className,
+  headline,
+  blurb,
+  style,
+  onHeadlineClick,
+}: SplashTextProps): React.ReactNode {
   return (
     <div className={clsx(Style.splashText, className)} style={style}>
-      <div className={Style.headline}>{headline}</div>
+      <div
+        className={Style.headline}
+        onClick={onHeadlineClick}
+        style={onHeadlineClick ? { cursor: 'pointer' } : undefined}
+      >
+        {headline}
+      </div>
       <AnimatedBlurb className={Style.blurb}>{blurb}</AnimatedBlurb>
     </div>
   );

@@ -101,20 +101,7 @@
         },
         {
           "locationId": "contact-form-placeholder",
-          "egg": "The contact form placeholder text also has a Leeloo Dallas line."
-        }
-      ]
-    },
-    {
-      "name": "Rick and Morty",
-      "eggs": [
-        {
-          "locationId": "splash-slide",
-          "egg": "There's a green portal floating on the splash slide."
-        },
-        {
-          "locationId": "contact-form-placeholder",
-          "egg": "The contact form placeholder text also has a Rick tagline."
+          "egg": "The contact form placeholder text has a Leeloo Dallas line."
         }
       ]
     },
@@ -151,6 +138,28 @@
       ]
     },
     {
+      "name": "Asteroids and Space Invaders",
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "Clicking my name in the splash slide makes the ship fire an arcade game style bullet."
+        }
+      ]
+    },
+    {
+      "name": "Rick and Morty",
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "There's a green portal floating on the splash slide."
+        },
+        {
+          "locationId": "contact-form-placeholder",
+          "egg": "The contact form placeholder text has a Rick tagline."
+        }
+      ]
+    },
+    {
       "name": "The Matrix",
       "eggs": [
         {
@@ -159,7 +168,7 @@
         },
         {
           "locationId": "contact-form-placeholder",
-          "egg": "The contact form placeholder text also has a line from Morpheus."
+          "egg": "The contact form placeholder text has a line from Morpheus."
         }
       ]
     },
@@ -190,7 +199,7 @@
         },
         {
           "locationId": "contact-form-placeholder",
-          "egg": "There is also a quote from Ellie Arroway in the placeholder text."
+          "egg": "There is a quote from Ellie Arroway in the placeholder text."
         }
       ]
     },

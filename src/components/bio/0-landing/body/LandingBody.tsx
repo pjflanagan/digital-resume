@@ -4,6 +4,7 @@ import * as Scroll from 'react-scroll';
 import { LabeledButton, SplashText, ButtonHolder } from 'src/elements';
 import { useBio } from 'src/content';
 
+import { SHIP_FIRE_EVENT } from '../view/constants';
 import * as Style from './LandingBody.module.scss';
 import { useLandingScroll } from './useLandingScroll';
 
@@ -15,6 +16,10 @@ function clickToScroll() {
     smooth: true,
     offset: -64, // Scrolls to element + 50 pixels down the page
   });
+}
+
+function fireShip() {
+  window.dispatchEvent(new Event(SHIP_FIRE_EVENT));
 }
 
 function LandingBody() {
@@ -33,6 +38,7 @@ function LandingBody() {
           className={Style.titleContainer}
           headline={Bio.splash.title}
           blurb={Bio.splash.subtitle}
+          onHeadlineClick={fireShip}
         />
       </div>
       <ButtonHolder buttonHolderRef={buttonHolderRef} className={Style.buttonHolder}>
