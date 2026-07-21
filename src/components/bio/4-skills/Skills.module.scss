@@ -3,9 +3,15 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
-  // padding: 0 4px;
   border-top: 2px solid #143545;
-  // border-left: 2px solid #143545;
+  clip-path: polygon(
+      0 0,
+      0 100%,
+      100% 100%,
+      100% 4px,
+      80% 4px,
+      80% 0,
+      );
 
   .skill-column {
     display: flex;
@@ -34,6 +40,10 @@
 
     &:first-child .skillGroup:nth-child(2) {
       border-bottom: 2px solid #143545;
+    }
+
+    &:last-child .skillGroup:last-child {
+      padding-bottom: 38px;
     }
 
     .skillGroup {
