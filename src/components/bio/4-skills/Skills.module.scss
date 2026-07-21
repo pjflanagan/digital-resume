@@ -3,19 +3,31 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
-
-
   padding: 0 4px;
-  border-left: 2px solid #143545;
+  // border-left: 2px solid #143545;
 
   .skill-column {
     display: flex;
     flex-direction: column;
     border-left: 2px solid $blackTransparent;
+    height: fit-content;
+    clip-path: polygon(
+        4px 0,
+        4px 62px,
+        0 62px, 
+        0 calc(100% - 26px),
+        4px calc(100% - 26px),
+        4px 100%,
+        100% 100%,
+        100% 0);
 
+    &:first-child .skillGroup:nth-child(2) {
+      border-bottom: 2px solid #143545;
+    }
 
     .skillGroup {
       overflow: hidden;
+      padding-bottom: 8px;
 
       .skillGroupHeading {
         padding-left: 12px;
@@ -41,7 +53,6 @@
 @media only screen and (min-width: $lg) {
   .skill-columns {
     flex-direction: row;
-    gap: 20px;
   }
 
   .skill-column {
