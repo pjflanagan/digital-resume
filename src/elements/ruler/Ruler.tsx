@@ -11,7 +11,7 @@ type RulerProps = {
 
 function Ruler({ className: classNameProp }: RulerProps): ReactNode {
   const holderRef = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref: holderRef, gap: 120 });
+  const isRevealed = useReveal({ ref: holderRef, gap: 160 });
 
   return (
     <div ref={holderRef} className={Style.rulerHolder}>

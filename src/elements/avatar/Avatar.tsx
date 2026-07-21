@@ -14,7 +14,7 @@ type AvatarProps = {
 
 function Avatar({ src, name, background }: AvatarProps): ReactNode {
   const ref = useRef(null);
-  const isRevealed = useReveal({ ref, gap: 132 });
+  const isRevealed = useReveal({ ref, gap: 180 });
   const className = clsx(Style.avatarHolder, {
     [Style.reveal]: isRevealed,
   });

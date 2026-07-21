@@ -1,21 +1,23 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import { useBio } from 'src/content';
 import type { FormPlaceholder } from 'src/content';
 import { LabeledButton, ButtonHolder, TextAccent, TextTitle, Text } from 'src/elements';
 import { Random } from 'src/helpers';
+import { useReveal } from 'src/hooks';
 
 import { ContactForm } from './contact-form/ContactForm';
 import * as Style from './Card.module.scss';
 
 type CardProps = {
   setIsWaveOn: (on: boolean) => void;
-  isOpen: boolean;
 };
 
-function Card({ setIsWaveOn, isOpen }: CardProps) {
+function Card({ setIsWaveOn }: CardProps) {
   const Bio = useBio();
+  const ref = useRef<HTMLDivElement>(null);
+  const isOpen = useReveal({ ref, gap: 420 });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [placeholders, setPlaceholders] = useState<FormPlaceholder>(() =>
     Random.fromArray(Bio.contact.formPlaceholders)
@@ -30,11 +32,12 @@ function Card({ setIsWaveOn, isOpen }: CardProps) {
   }
 
   const className = clsx(Style.card, {
-    [Style.isSubmitted]: isSubmitted || !isOpen,
+    [Style.rotated]: !isOpen,
+    [Style.collapsed]: isSubmitted || !isOpen,
   });
 
   return (
-    <div className={className}>
+    <div className={className} ref={ref}>
       <div className={Style.cardSides}>
         <div className={Style.sideLeft}>
           <div className={Style.background}>

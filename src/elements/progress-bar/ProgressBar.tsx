@@ -17,7 +17,7 @@ function ProgressBar({
   name,
 }: ProgressBarProps): ReactNode {
   const ref = useRef(null);
-  const isRevealed = useReveal({ ref, gap: 28 });
+  const isRevealed = useReveal({ ref, gap: 40 });
   const progress = isRevealed ? progressProp : 0;
 
   const className = clsx(Style.bar, classNameProp);

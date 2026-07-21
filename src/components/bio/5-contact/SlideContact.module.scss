@@ -10,6 +10,10 @@
   .slide-back {
     display: none;
   }
+
+  .wave-cyan {
+    margin-left: 4px;
+  }
 }
 
 @media only screen and (min-width: $md) {
@@ -32,25 +36,27 @@
 // xl
 @media only screen and (min-width: $xl) {
   .slide-contact {
-    height: 80%;
     display: block;
     position: relative;
     background: none;
-    min-height: 600px;
 
     .slide-front {
       z-index: 2;
       position: relative;
-      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px;
     }
 
     .slide-back {
       width: 100%;
-      height: 100%;
+      height: auto;
       background: $backgroundDark2Transparent;
       border-top: none;
       position: absolute;
       top: 0;
+      bottom: 0;
       z-index: 1;
     }
   }

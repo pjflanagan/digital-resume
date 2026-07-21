@@ -16,7 +16,7 @@ function FeaturedProject({
   project: { name, link, description, image, tech },
 }: FeaturedProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref, gap: 220 });
+  const isRevealed = useReveal({ ref, gap: 300 });
 
   const className = clsx(Style.featuredProject, {
     [Style.hidden]: !isRevealed,

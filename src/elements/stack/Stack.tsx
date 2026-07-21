@@ -49,7 +49,7 @@ type StackProps = {
 
 function Stack({ children }: StackProps): React.ReactNode {
   const ref = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref, gap: 240 });
+  const isRevealed = useReveal({ ref, gap: 320 });
   const [currentLayer, setCurrentLayer] = useState(0);
 
   const className = clsx(Style.stack, {

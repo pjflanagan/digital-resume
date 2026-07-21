@@ -10,7 +10,7 @@
   .bar {
     width: 1px;
     height: 100%;
-    background: $accentYellowTransparent;
+    background: var(--wave-color, #{$accentYellowTransparent});
     top: 50%;
     position: relative;
     opacity: 1;

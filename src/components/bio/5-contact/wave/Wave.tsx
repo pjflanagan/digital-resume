@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import clsx from 'clsx';
 
 import * as Style from './Wave.module.scss';
@@ -50,9 +50,11 @@ function shiftBars({ pos, wave }: WaveState): WaveState {
 type WaveProps = {
   on: boolean;
   revealed: boolean;
+  color?: string;
+  className?: string;
 };
 
-function Wave({ on, revealed }: WaveProps) {
+function Wave({ on, revealed, color, className }: WaveProps) {
   const [{ pos, wave }, setState] = useState<WaveState>(() => initState(INITIAL_BAR_COUNT));
   const [settled, setSettled] = useState(false);
 
@@ -83,7 +85,10 @@ function Wave({ on, revealed }: WaveProps) {
   }, [revealed, settled, wave.length]);
 
   return (
-    <div className={clsx(Style.waveHolder, { [Style.revealed]: revealed })}>
+    <div
+      className={clsx(Style.waveHolder, className, { [Style.revealed]: revealed })}
+      style={color ? ({ '--wave-color': color } as CSSProperties) : undefined}
+    >
       {wave.map((height, i) => (
         <div
           key={i}

@@ -57,7 +57,7 @@ function Org({
   extra,
 }: OrgProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref, gap: 132 });
+  const isRevealed = useReveal({ ref, gap: 180 });
 
   function bulletStyle(index: number, offset = 0): React.CSSProperties {
     return { transitionDelay: `${(index + offset) * 100}ms` };

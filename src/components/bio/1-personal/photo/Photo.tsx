@@ -22,7 +22,7 @@ const MICRO_GRAPHICS_ENABLED = false;
 
 function Photo({ photo, photoDescription, focusArea }: PhotoProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isScrollRevealed = useReveal({ ref, gap: 280 });
+  const isScrollRevealed = useReveal({ ref, gap: 380 });
   const isPulsing = useFlashOnChange([photo]);
   const microGraphic = useMemo(
     () => MICRO_GRAPHICS[Math.floor(Math.random() * MICRO_GRAPHICS.length)],

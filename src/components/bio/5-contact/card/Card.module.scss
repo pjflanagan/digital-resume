@@ -58,14 +58,11 @@
 @media only screen and (min-width: $xl) {
   .card {
     height: auto;
-    top: 50%;
-    left: 50%;
-    margin-left: -345px;
-    transform: translate(0, -50%);
     position: relative;
     width: 690px;
-    display: inline-block;
+    display: block;
     transition: transform 0.4s;
+    transform: rotate(0);
 
     .card-sides {
       width: auto;
@@ -152,9 +149,11 @@
       }
     }
 
-    &.is-submitted {
-      transform: translate(60px, -50%);
+    &.rotated {
+      transform: rotate(-4deg);
+    }
 
+    &.collapsed {
       .card-sides {
         .side-right {
           height: auto;
