@@ -8,7 +8,8 @@ import { SlideLanding } from './0-landing/SlideLanding';
 import { SlidePersonal } from './1-personal/SlidePersonal';
 import { SlideExperience } from './2-experience/SlideExperience';
 import { SlideProjects } from './3-projects/SlideProjects';
-import { SlideContact } from './4-contact/SlideContact';
+import { SlideSkills } from './4-skills/SlideSkills';
+import { SlideContact } from './5-contact/SlideContact';
 
 import * as Style from './Bio.module.scss';
 
@@ -49,6 +50,7 @@ function BioPage() {
         <SlidePersonal />
         <SlideExperience />
         <SlideProjects />
+        <SlideSkills />
         <SlideContact />
         <Footer text={Bio.footer} />
       </div>

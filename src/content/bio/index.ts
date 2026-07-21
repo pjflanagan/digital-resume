@@ -21,7 +21,7 @@ function buildBio(files: ContentFiles): BioContent {
       ...files.experience,
       jobs: files.jobs,
       schools: files.schools,
-      skills: files.skills.groups,
+      skills: files.skills,
     },
     projects: {
       accent: files.projects.accent,

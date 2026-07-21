@@ -93,10 +93,9 @@ type BioContent = {
   experience: {
     accent: string;
     title: string;
-    sections: string[];
-    jobs: { featured: Job[]; other: Job[] };
-    schools: { featured: School[]; other: School[]; hidden: School[] };
-    skills: SkillGroup[];
+    jobs: { title: string; featured: Job[]; other: Job[] };
+    schools: { title: string; featured: School[]; other: School[]; hidden: School[] };
+    skills: { accent: string; title: string; groups: SkillGroup[] };
     linkText: LinkText;
   };
   projects: {
@@ -127,7 +126,7 @@ type ContentFiles = {
   experience: Omit<BioContent['experience'], 'jobs' | 'schools' | 'skills'>;
   jobs: BioContent['experience']['jobs'];
   schools: BioContent['experience']['schools'];
-  skills: { groups: BioContent['experience']['skills'] };
+  skills: BioContent['experience']['skills'];
   projects: Omit<BioContent['projects'], 'projects'> & BioContent['projects']['projects'];
   contact: BioContent['contact'];
   footer: { items: BioContent['footer'] };

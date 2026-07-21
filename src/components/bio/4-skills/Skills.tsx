@@ -59,7 +59,9 @@ function SkillGroupList({ type, items, showAll }: SkillGroup & { showAll: boolea
 function Skills() {
   const [showAll, setShowAll] = useState(false);
 
-  const groups = useBio().experience.skills.filter(({ type }) => showAll || type !== HIDDEN_GROUP);
+  const groups = useBio().experience.skills.groups.filter(
+    ({ type }) => showAll || type !== HIDDEN_GROUP,
+  );
   const columns = splitIntoColumns(groups, showAll);
 
   return (
