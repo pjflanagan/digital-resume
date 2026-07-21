@@ -33,7 +33,7 @@ function splitIntoColumns(groups: SkillGroup[], showAll: boolean): SkillGroup[][
 function SkillGroupList({ type, items, showAll }: SkillGroup & { showAll: boolean }) {
   return (
     <div className={Style.skillGroup}>
-      <TextHeading>{type}</TextHeading>
+      <TextHeading className={Style.skillGroupHeading}>{type}</TextHeading>
       <div className={Style.skillListHolder}>
         {(showAll ? items : items.slice(0, COLLAPSED_COUNT)).map((skill, i) => {
           const isRevealed = i >= COLLAPSED_COUNT || type === HIDDEN_GROUP;

@@ -40,6 +40,10 @@
           }
         ]
       }
+    },
+    {
+      "id": "skills",
+      "name": "Skills Section"
     }
   ],
   "references": [
@@ -175,6 +179,10 @@
     {
       "name": "Neon Genesis Evangelion",
       "eggs": [
+        {
+          "locationId": "skills",
+          "egg": "The progress bars are based on UI seen at Nerv HQ."
+        },
         {
           "locationId": "programs-blueprint",
           "egg": "The blueprint background in the Programs section has a diagram of the angels."
