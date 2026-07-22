@@ -15,7 +15,9 @@ function SlidePersonal() {
   // needs to be set in one place in the content JSON
   const [defaultLink] = useBio().personal.titleText.links;
   const [photo, setPhoto] = useState(defaultLink.image ?? '');
-  const [photoDescription, setPhotoDescription] = useState<string | undefined>(undefined);
+  const [photoDescription, setPhotoDescription] = useState<string | undefined>(
+    defaultLink.imageDescription,
+  );
   const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
 
   return (
