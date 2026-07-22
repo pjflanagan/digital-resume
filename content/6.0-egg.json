@@ -265,6 +265,15 @@
       ]
     },
     {
+      "name": "Apollo 13",
+      "eggs": [
+        {
+          "locationId":"404-page",
+          "egg": "The blurb on the 404 page is a play on the iconic \"Houston...\" line."
+        }
+      ]
+    },
+    {
       "name": "The ENIAC",
       "eggs": [
         {
