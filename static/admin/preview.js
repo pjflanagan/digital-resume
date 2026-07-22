@@ -229,7 +229,7 @@ const SkillsPreview = ({ entry }) =>
       h(
         'div',
         { key: i },
-        h('h2', {}, `${group.type} (${group.cols} col${group.cols === 1 ? '' : 's'})`),
+        h('h2', {}, group.type),
         (group.items || []).map((item, j) =>
           h(
             'div',
