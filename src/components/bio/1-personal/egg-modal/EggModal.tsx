@@ -3,16 +3,16 @@ import React, { useMemo, useState } from 'react';
 import { Modal, Dropdown, Switch, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
 
-import * as Style from './SciFiModal.module.scss';
+import * as Style from './EggModal.module.scss';
 
 type GroupBy = 'reference' | 'location';
 
-type SciFiModalProps = {
+type EggModalProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
+function EggModal({ isOpen, onClose }: EggModalProps): React.ReactNode {
   const { references, locations } = useBio().egg;
   const [groupBy, setGroupBy] = useState<GroupBy>('location');
 
@@ -81,4 +81,4 @@ function SciFiModal({ isOpen, onClose }: SciFiModalProps): React.ReactNode {
   );
 }
 
-export { SciFiModal };
+export { EggModal };

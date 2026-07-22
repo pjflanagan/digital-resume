@@ -4,7 +4,7 @@ import { useBio } from 'src/content';
 import { ScrollElement } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
-import { CurveTop, CurveBottom } from './curves/Curves';
+import { Curve } from './curves/Curves';
 import { Photo } from './photo/Photo';
 import { PersonalBody } from './body/PersonalBody';
 
@@ -22,7 +22,7 @@ function SlidePersonal() {
 
   return (
     <ScrollElement className={Style.slidePersonal} name="personal">
-      <CurveTop />
+      <Curve position="top" />
       <div className={Style.slidePersonalSideLeft}>
         <Photo photo={photo} photoDescription={photoDescription} focusArea={focusArea} />
       </div>
@@ -35,7 +35,7 @@ function SlidePersonal() {
           }}
         />
       </div>
-      <CurveBottom />
+      <Curve position="bottom" />
     </ScrollElement>
   );
 }
