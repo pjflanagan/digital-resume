@@ -33,8 +33,8 @@ Yeah, like a blueprint for something, a random one every time
 - [x] Rick and Morty
   - [x] Or maybe one planet is always portal colored
   - [NO] A ship in the background
-- [ ] Neon Genesis Evangelion
-  - [ ] make the skills look like the UI, see inspo
+- [x] Neon Genesis Evangelion
+  - [x] make the skills look like the UI, see inspo
   - [x] blueprints
 - [x] Fifth Element
 - [x] Iron Man
@@ -46,15 +46,15 @@ Yeah, like a blueprint for something, a random one every time
   - [ ] The green text effect? -> not sure where though
 - [x] Space Odyssey
   - [x] 404 Page
+- [x] Horizon (ZD)
+  - [x] Focus is the send icon
 
 - [ ] Alien
 - [ ] Blackmirror -> the footer is blacker and has a crack
 - [ ] Gravity Falls
-- [ ] Minority Report
+- [ ] Minority Report -> get that triangle symbol somewhere
 - [ ] The Dispossessed
 - [ ] Mars Express
 
-- [ ] Horizon (ZD)
-  - [ ] Focus effect?
 - [ ] Kurt Vonnegut - Slaghterhouse 5?
 - [ ] Arca

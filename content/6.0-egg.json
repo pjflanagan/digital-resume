@@ -48,15 +48,6 @@
   ],
   "references": [
     {
-      "name": "The Grand Tour",
-      "eggs": [
-        {
-          "locationId": "splash-slide",
-          "egg": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
-        }
-      ]
-    },
-    {
       "name": "Cyberpunk 2077",
       "description": {
         "text": "If you like Cyberpunk 2077 and own a Garmin, checkout my <watch_face>.",
@@ -212,6 +203,15 @@
       ]
     },
     {
+      "name": "The Incredibles",
+      "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "The Personal slide's layout is based on the scene where Mr. Incredible discovers the Omnidroid project."
+        }
+      ]
+    },
+    {
       "name": "E.T.",
       "eggs": [
         {
@@ -253,6 +253,15 @@
         {
           "locationId": "contact-form-placeholder",
           "egg": "The contact form placeholder text has a line Rocky says a lot."
+        }
+      ]
+    },
+    {
+      "name": "The Grand Tour",
+      "eggs": [
+        {
+          "locationId": "splash-slide",
+          "egg": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
         }
       ]
     }
