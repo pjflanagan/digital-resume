@@ -28,6 +28,10 @@
       }
     },
     {
+      "id": "experience-slide",
+      "name": "Experience Section"
+    },
+    {
       "id": "404-page",
       "name": "404 Page",
       "description": {
@@ -257,6 +261,15 @@
         {
           "locationId": "contact-form-placeholder",
           "egg": "The contact form placeholder text has a line Rocky says a lot."
+        }
+      ]
+    },
+    {
+      "name": "The ENIAC",
+      "eggs": [
+        {
+          "locationId": "experience-slide",
+          "egg": "The cards on the Experience slide are old punch cards, the kind my mom used in school to program. Not really sci-fi because it's real."
         }
       ]
     },

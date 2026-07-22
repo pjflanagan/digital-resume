@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
@@ -12,6 +12,7 @@ import {
   TextAccent,
 } from 'src/elements';
 
+import { PunchCard } from './PunchCard';
 import * as Style from './Org.module.scss';
 
 type OrgProps = {
@@ -58,6 +59,7 @@ function Org({
 }: OrgProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 180 });
+  const [replayToken, setReplayToken] = useState(0);
 
   function bulletStyle(index: number, offset = 0): React.CSSProperties {
     return { transitionDelay: `${(index + offset) * 100}ms` };
@@ -65,8 +67,12 @@ function Org({
 
   return (
     <div className={Style.org} ref={ref}>
+      <PunchCard revealed={isRevealed} replayToken={replayToken} />
       <div className={Style.orgLeft}>
-        <div className={Style.avatarHolder}>
+        <div
+          className={Style.avatarHolder}
+          onClick={() => setReplayToken((token) => token + 1)}
+        >
           <Avatar src={contentImage('experience', image)} name={name} background={background} />
         </div>
         <div className={Style.orgInfoHolder}>

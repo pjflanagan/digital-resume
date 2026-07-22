@@ -13,6 +13,7 @@
 }
 
 .org {
+  position: relative;
   color: #fff;
   margin-bottom: 24px;
 
@@ -22,6 +23,7 @@
 
     .avatar-holder {
       padding: 0 6px;
+      cursor: pointer;
     }
 
     .org-info-holder {
@@ -56,7 +58,8 @@
     display: flex;
     background: $blackTransparent;
     padding: 24px;
-    clip-path: $polygon;
+    border-radius: 32px;
+    clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
     flex-wrap: wrap;
 
     .org-left {

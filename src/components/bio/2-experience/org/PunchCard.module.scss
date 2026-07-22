@@ -1,0 +1,25 @@
+@use 'theme/variables' as *;
+
+.punch-card {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.punch-row {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: $backgroundLightTransparent2;
+  opacity: 0.4;
+}
