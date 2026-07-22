@@ -93,6 +93,16 @@
     },
     {
       "name": "The Fifth Element",
+      "description": {
+        "text": "My <business_card> is also a multipass.",
+        "links": [
+          {
+            "key": "business_card",
+            "href": "//flanny.app/multipass",
+            "text": "Digital Business Card"
+          }
+        ]
+      },
       "eggs": [
         {
           "locationId": "contact-form",
