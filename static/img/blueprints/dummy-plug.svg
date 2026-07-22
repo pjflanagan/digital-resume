@@ -1,0 +1,37 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid Reference Background lines -->
+  <line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 4" vector-effect="non-scaling-stroke" />
+  <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1 4" vector-effect="non-scaling-stroke" />
+
+  <!-- Outer Capsule Boundary (Dummy Plug) -->
+  <rect x="15" y="32" width="70" height="36" rx="18" ry="18" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <rect x="18" y="35" width="64" height="30" rx="15" ry="15" stroke="currentColor" stroke-width="0.4" stroke-dasharray="3 1" fill="none" vector-effect="non-scaling-stroke" />
+
+  <!-- Section Divider Rings -->
+  <line x1="33" y1="32" x2="33" y2="68" stroke="currentColor" stroke-width="0.8" vector-effect="non-scaling-stroke" />
+  <line x1="45" y1="32" x2="45" y2="68" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 1" vector-effect="non-scaling-stroke" />
+  <line x1="67" y1="32" x2="67" y2="68" stroke="currentColor" stroke-width="0.8" vector-effect="non-scaling-stroke" />
+
+  <!-- Internal Wiring/Pattern details -->
+  <!-- Left Side Hex Elements -->
+  <polygon points="22,46 26,46 28,50 26,54 22,54 20,50" stroke="currentColor" stroke-width="0.5" fill="none" vector-effect="non-scaling-stroke" />
+  
+  <!-- Right Side Nozzle/Thruster Detail -->
+  <path d="M 75 42 L 81 42 L 83 45 L 83 55 L 81 58 L 75 58 Z" stroke="currentColor" stroke-width="0.6" fill="none" vector-effect="non-scaling-stroke" />
+  <line x1="78" y1="42" x2="78" y2="58" stroke="currentColor" stroke-width="0.4" vector-effect="non-scaling-stroke" />
+
+  <!-- Warning Stripes on Middle Column -->
+  <line x1="36" y1="34" x2="42" y2="34" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+  <line x1="36" y1="66" x2="42" y2="66" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+  
+  <!-- Technical Labels (Monospace font matches retro-futurism) -->
+  <text x="56" y="44" font-size="4" font-family="monospace" font-weight="bold" fill="currentColor" letter-spacing="0.5">EVA-01</text>
+  <text x="56" y="50" font-size="3" font-family="monospace" fill="currentColor">DUMMY PLUG</text>
+  <text x="56" y="55" font-size="2" font-family="monospace" fill="currentColor" opacity="0.8">SYSTEM: ACTIVE</text>
+  <text x="56" y="59" font-size="1.8" font-family="monospace" fill="currentColor" opacity="0.6">PROT_V.4.02</text>
+
+  <!-- Circular Injection Port details -->
+  <circle cx="28" cy="50" r="1.5" stroke="currentColor" stroke-width="0.5" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="71" cy="46" r="1" stroke="currentColor" stroke-width="0.5" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="71" cy="54" r="1" stroke="currentColor" stroke-width="0.5" fill="none" vector-effect="non-scaling-stroke" />
+</svg>

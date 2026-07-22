@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Housing -->
+  <circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="0.4" stroke-dasharray="1 2" fill="none" vector-effect="non-scaling-stroke" />
+  
+  <!-- Outer Segmented Ring (Inductor Coils) -->
+  <circle cx="50" cy="50" r="39" stroke="currentColor" stroke-width="4.5" stroke-dasharray="16 8.5" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="39" stroke="#000" stroke-width="5" stroke-dasharray="1 23.5" fill="none" vector-effect="non-scaling-stroke" />
+  
+  <!-- Inner Housing Rings -->
+  <circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.4" stroke-dasharray="2 2" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="0.6" fill="none" vector-effect="non-scaling-stroke" />
+  
+  <!-- Central Triangular Core Structure (Mark VI) -->
+  <polygon points="50,32 66,59 34,59" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <polygon points="50,35 63,57 37,57" stroke="currentColor" stroke-width="0.4" stroke-dasharray="1 1" fill="none" vector-effect="non-scaling-stroke" />
+  
+  <!-- Inner Glass Ring -->
+  <circle cx="50" cy="50" r="14" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="11" stroke="currentColor" stroke-width="0.5" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="6" stroke="currentColor" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke" />
+  <circle cx="50" cy="50" r="2" stroke="currentColor" stroke-width="0.8" fill="currentColor" vector-effect="non-scaling-stroke" />
+
+  <!-- Radial Guide Lines -->
+  <line x1="50" y1="2" x2="50" y2="8" stroke="currentColor" stroke-width="0.5" vector-effect="non-scaling-stroke" />
+  <line x1="50" y1="92" x2="50" y2="98" stroke="currentColor" stroke-width="0.5" vector-effect="non-scaling-stroke" />
+  <line x1="2" y1="50" x2="8" y2="50" stroke="currentColor" stroke-width="0.5" vector-effect="non-scaling-stroke" />
+  <line x1="92" y1="50" x2="98" y2="50" stroke="currentColor" stroke-width="0.5" vector-effect="non-scaling-stroke" />
+</svg>

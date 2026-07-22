@@ -5,6 +5,10 @@ I really need like 5 or 6 more blueprints and they should appear in random locat
 
 ## Blueprints
 
+### Code Changes 
+- [ ] These should be png so I can make them myself easily
+- [ ] These should load from folder automatically (or if they have to be defined, I want it editable on Decap)
+
 ### Favorites
 - [x] NGE angle diagram
 - [ ] Golden Record - the diagram on the golden record
