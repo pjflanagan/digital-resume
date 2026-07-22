@@ -18,7 +18,7 @@
 - [x] Dune
 - [x] The Matrix
   - [x] Pills
-  - [ ] The green text effect? -> not sure where though
+  - [ ] The green text effect? -> Contact page if we do multiple animations there
 - [x] Space Odyssey
   - [x] 404 Page
   - [ ] Maybe put a black obelisk in space sometimes
@@ -32,7 +32,7 @@
 - [ ] The Dispossessed
 - [ ] Mars Express -> a robot beam? 
 
-- [ ] Kurt Vonnegut - Slaghterhouse 5?
+- [ ] Kurt Vonnegut
 - [ ] Arca
 - [ ] The Expanse
 - [ ] Ted Chiang

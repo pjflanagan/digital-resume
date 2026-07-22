@@ -1,25 +1,5 @@
 @use 'theme/variables' as *;
 
-.blueprint {
-  box-shadow:
-    inset 0 0 100px #0008,
-    -2px -2px 8px #0004;
-  background: $backgroundDark;
-  background-image: radial-gradient($backgroundLightTransparent 1px, transparent 0);
-  background-size: 20px 20px;
-  transition: background-position 0.2s;
-
-  .tree-of-life {
-    position: absolute;
-    width: 900px;
-    height: 900px;
-    right: -260px;
-    bottom: -160px;
-    z-index: 0;
-    pointer-events: none;
-  }
-}
-
 .slide-projects {
   z-index: 31;
   position: relative;

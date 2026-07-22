@@ -283,8 +283,15 @@
       ]
     },
     {
-      "name": "The Grand Tour",
+      "name": "NASA",
+      "description": {
+        "text": "Not really sci-fi because this is a real organization."
+      },
       "eggs": [
+        {
+          "locationId": "programs-blueprint",
+          "egg": "The program blueprints feature the diagram on the golden Voyager Interstellar Record."
+        },
         {
           "locationId": "splash-slide",
           "egg": "The splash slide is an animation based on a NASA JPL poster called 'The Grand Tour.'"
