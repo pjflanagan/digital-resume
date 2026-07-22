@@ -9,6 +9,7 @@ $connect-delay: 0.15s;
 $connect-duration: 0.4s;
 $fill-duration: 0.4s;
 $fill-delay: $connect-delay + $connect-duration;
+$text-delay: $fill-delay + $fill-duration - 0.01s;
 
 $unplug-duration: 0.2s;
 $unplug-fill-duration: 0.15s;
@@ -95,7 +96,8 @@ $unplug-fill-duration: 0.15s;
     z-index: 25;
     position: relative;
     font-weight: 300;
-    transition: opacity 0.4s ease #{$connect-delay};
+      opacity: 0.35;
+    transition: opacity 0.1s ease #{$text-delay};
 
     .line {
       background: $accentYellow;
@@ -103,7 +105,8 @@ $unplug-fill-duration: 0.15s;
       top: 50%;
       position: absolute;
       margin-left: 6px;
-      transition: opacity 0.4s ease #{$connect-delay};
+      opacity: 0.35;
+      transition: opacity 0.1s ease #{$text-delay};
     }
   }
 
@@ -111,12 +114,19 @@ $unplug-fill-duration: 0.15s;
     .bar-left {
       opacity: 1;
       transform: translateX(-1px);
-
     }
 
     .bar-right {
       opacity: 1;
       transform: translateX(1px);
+    }
+
+    .name {
+      opacity: 1;
+
+      .line {
+        opacity: 1;
+      }
     }
   }
 

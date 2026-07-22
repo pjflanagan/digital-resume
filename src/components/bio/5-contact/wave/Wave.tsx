@@ -26,8 +26,8 @@ type WaveState = {
   wave: number[];
 };
 
-function initState(count: number): WaveState {
-  let pos = 0;
+function initState(count: number, phaseOffset = 0): WaveState {
+  let pos = phaseOffset;
   const wave: number[] = [];
   for (let i = 0; i < count; ++i) {
     pos += SPEED;
@@ -52,17 +52,20 @@ type WaveProps = {
   revealed: boolean;
   color?: string;
   className?: string;
+  phaseOffset?: number;
 };
 
-function Wave({ on, revealed, color, className }: WaveProps) {
-  const [{ pos, wave }, setState] = useState<WaveState>(() => initState(INITIAL_BAR_COUNT));
+function Wave({ on, revealed, color, className, phaseOffset = 0 }: WaveProps) {
+  const [{ pos, wave }, setState] = useState<WaveState>(() =>
+    initState(INITIAL_BAR_COUNT, phaseOffset)
+  );
   const [settled, setSettled] = useState(false);
 
   /* eslint-disable react-hooks/set-state-in-effect -- intentional: size the
      wave to the viewport once mounted (no window during SSR) */
   useEffect(() => {
-    setState(initState(Math.ceil(window.innerWidth / (GAP * 2))));
-  }, []);
+    setState(initState(Math.ceil(window.innerWidth / (GAP * 2)), phaseOffset));
+  }, [phaseOffset]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {

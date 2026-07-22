@@ -6,13 +6,10 @@ import { Wave } from './wave/Wave';
 import { Card } from './card/Card';
 import * as Style from './SlideContact.module.scss';
 
-// TODO: re-enable once the second wave color has been tuned
-const SECOND_WAVE_ENABLED = false;
-
 function SlideContact() {
   const [isWaveOn, setIsWaveOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref, gap: 560 });
+  const isRevealed = useReveal({ ref, gap: 420 });
 
   return (
     <ScrollElement className={Style.slideContact} name="contact">
@@ -21,14 +18,13 @@ function SlideContact() {
       </div>
       <div className={Style.slideBack} ref={ref}>
         <Wave on={isWaveOn} revealed={isRevealed} />
-        {SECOND_WAVE_ENABLED && (
-          <Wave
-            on={isWaveOn}
-            revealed={isRevealed}
-            color="#1fcfcc88"
-            className={Style.waveCyan}
-          />
-        )}
+        <Wave
+          on={isWaveOn}
+          revealed={isRevealed}
+          color="#1fcfcc55"
+          className={Style.waveCyan}
+          phaseOffset={Math.PI}
+        />
       </div>
     </ScrollElement>
   );
