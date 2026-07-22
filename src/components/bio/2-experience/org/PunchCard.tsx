@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import clsx from 'clsx';
 
 import { Random } from 'src/helpers';
 
@@ -14,57 +15,65 @@ const PUNCH_ROW_CHAR_COUNT = 120;
 const PUNCH_SQUARE_CHAR = '█';
 const PUNCH_SQUARE_CHANCE = 0.15;
 const PUNCH_REVEAL_WINDOW_MS = 1600;
-const PUNCH_REVEAL_MIN_TICK_MS = 10;
+const PUNCH_REVEAL_MIN_TICK_MS = 6;
+// Punch text starts fading back down (and bullets start fading in) this far into the reveal.
+const PUNCH_FADE_START_RATIO = 0.58;
+const PUNCH_BULLET_START_DELAY_MS = PUNCH_REVEAL_WINDOW_MS * PUNCH_FADE_START_RATIO;
 
 type Cell = {
   digitChar: string;
   isPunch: boolean;
-  order: number;
+  col: number;
 };
 
-function buildGrid(): { rows: Cell[][]; punchCount: number } {
+function buildGrid(): { rows: Cell[][] } {
   const rows: Cell[][] = [];
-  const punchCells: Cell[] = [];
 
   for (let row = 0; row < PUNCH_ROW_COUNT; row++) {
     const digitChar = String(row);
     const cells: Cell[] = [];
     for (let col = 0; col < PUNCH_ROW_CHAR_COUNT; col++) {
       const isPunch = Random.dec(0, 1) < PUNCH_SQUARE_CHANCE;
-      const cell: Cell = { digitChar, isPunch, order: -1 };
-      cells.push(cell);
-      if (isPunch) punchCells.push(cell);
+      cells.push({ digitChar, isPunch, col });
     }
     rows.push(cells);
   }
 
-  Random.shuffle(punchCells).forEach((cell, i) => {
-    cell.order = i;
-  });
-
-  return { rows, punchCount: punchCells.length };
+  return { rows };
 }
 
 function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
   // eslint-disable-next-line react-hooks/use-memo
-  const { rows, punchCount } = useMemo(buildGrid, [replayToken]);
-  const [revealedCount, setRevealedCount] = useState(0);
+  const { rows } = useMemo(buildGrid, [replayToken]);
+  const [revealedCol, setRevealedCol] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (!revealed || punchCount === 0) return;
-    setRevealedCount(0);
+    if (!revealed) return;
+    setRevealedCol(0);
+    setIsAnimating(true);
 
-    const tickMs = Math.max(PUNCH_REVEAL_MIN_TICK_MS, PUNCH_REVEAL_WINDOW_MS / punchCount);
+    const tickMs = Math.max(
+      PUNCH_REVEAL_MIN_TICK_MS,
+      PUNCH_REVEAL_WINDOW_MS / PUNCH_ROW_CHAR_COUNT
+    );
     const interval = setInterval(() => {
-      setRevealedCount((count) => {
-        const next = count + 1;
-        if (next >= punchCount) clearInterval(interval);
+      setRevealedCol((col) => {
+        const next = col + 1;
+        if (next >= PUNCH_ROW_CHAR_COUNT) clearInterval(interval);
         return next;
       });
     }, tickMs);
 
-    return () => clearInterval(interval);
-  }, [revealed, punchCount, replayToken]);
+    const fadeTimeout = setTimeout(() => {
+      setIsAnimating(false);
+    }, PUNCH_BULLET_START_DELAY_MS);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(fadeTimeout);
+    };
+  }, [revealed, replayToken]);
 
   return (
     <div className={Style.punchCard} aria-hidden="true">
@@ -82,7 +91,7 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
             segments.push(<React.Fragment key={key++}>{buffer}</React.Fragment>);
             buffer = '';
           }
-          const isPunched = cell.order < revealedCount;
+          const isPunched = cell.col < revealedCol;
           segments.push(
             <span key={key++} className={Style.punch}>
               {isPunched ? PUNCH_SQUARE_CHAR : cell.digitChar}
@@ -92,7 +101,10 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
         if (buffer) segments.push(<React.Fragment key={key++}>{buffer}</React.Fragment>);
 
         return (
-          <div key={rowIndex} className={Style.punchRow}>
+          <div
+            key={rowIndex}
+            className={clsx(Style.punchRow, isAnimating && Style.animating)}
+          >
             {segments}
           </div>
         );
@@ -101,4 +113,4 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
   );
 }
 
-export { PunchCard };
+export { PunchCard, PUNCH_BULLET_START_DELAY_MS };

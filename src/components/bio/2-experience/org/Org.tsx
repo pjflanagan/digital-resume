@@ -12,7 +12,7 @@ import {
   TextAccent,
 } from 'src/elements';
 
-import { PunchCard } from './PunchCard';
+import { PunchCard, PUNCH_BULLET_START_DELAY_MS } from './PunchCard';
 import * as Style from './Org.module.scss';
 
 type OrgProps = {
@@ -62,7 +62,7 @@ function Org({
   const [replayToken, setReplayToken] = useState(0);
 
   function bulletStyle(index: number, offset = 0): React.CSSProperties {
-    return { transitionDelay: `${(index + offset) * 100}ms` };
+    return { transitionDelay: `${PUNCH_BULLET_START_DELAY_MS + (index + offset) * 200}ms` };
   }
 
   return (
