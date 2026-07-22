@@ -31,6 +31,7 @@
 - [ ] Minority Report -> get that triangle symbol somewhere
 - [ ] The Dispossessed
 - [ ] Mars Express -> a robot beam? 
+- [ ] Stray video game -> some really good blueprints here and that little robot is very cute
 
 - [ ] Kurt Vonnegut
 - [ ] Arca

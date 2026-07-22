@@ -34,11 +34,11 @@ async function fetchContentFiles(): Promise<ContentFiles> {
       fetchContentFile<ContentFiles['experience']>('2.0-experience.json'),
       fetchContentFile<ContentFiles['jobs']>('2.1-jobs.json'),
       fetchContentFile<ContentFiles['schools']>('2.2-schools.json'),
-      fetchContentFile<ContentFiles['skills']>('2.3-skills.json'),
+      fetchContentFile<ContentFiles['skills']>('4.0-skills.json'),
       fetchContentFile<ContentFiles['projects']>('3.0-projects.json'),
-      fetchContentFile<ContentFiles['contact']>('4.0-contact.json'),
-      fetchContentFile<ContentFiles['footer']>('5.0-footer.json'),
-      fetchContentFile<ContentFiles['egg']>('6.0-egg.json'),
+      fetchContentFile<ContentFiles['contact']>('5.0-contact.json'),
+      fetchContentFile<ContentFiles['footer']>('6.0-footer.json'),
+      fetchContentFile<ContentFiles['egg']>('0.0-egg.json'),
     ]);
   return { splash, personal, experience, jobs, schools, skills, projects, contact, footer, egg };
 }

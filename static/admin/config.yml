@@ -194,7 +194,7 @@ collections:
 
       - name: skills
         label: Skills
-        file: content/2.3-skills.json
+        file: content/4.0-skills.json
         fields:
           - { name: accent, label: Accent, widget: string }
           - { name: title, label: Title, widget: string }
@@ -250,7 +250,7 @@ collections:
 
       - name: contact
         label: Contact
-        file: content/4.0-contact.json
+        file: content/5.0-contact.json
         fields:
           - { name: accent, label: Accent, widget: string }
           - { name: title, label: Title, widget: string }
@@ -272,7 +272,7 @@ collections:
 
       - name: footer
         label: Footer
-        file: content/5.0-footer.json
+        file: content/6.0-footer.json
         fields:
           - name: items
             label: Lines
@@ -286,7 +286,7 @@ collections:
 
       - name: egg
         label: Sci-Fi Easter Egg
-        file: content/6.0-egg.json
+        file: content/0.0-egg.json
         fields:
           - name: references
             label: References

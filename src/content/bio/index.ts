@@ -3,11 +3,11 @@ import PersonalJson from '../../../content/1.0-personal.json';
 import ExperienceJson from '../../../content/2.0-experience.json';
 import JobsJson from '../../../content/2.1-jobs.json';
 import SchoolsJson from '../../../content/2.2-schools.json';
-import SkillsJson from '../../../content/2.3-skills.json';
 import ProjectsJson from '../../../content/3.0-projects.json';
-import ContactJson from '../../../content/4.0-contact.json';
-import FooterJson from '../../../content/5.0-footer.json';
-import EggJson from '../../../content/6.0-egg.json';
+import SkillsJson from '../../../content/4.0-skills.json';
+import ContactJson from '../../../content/5.0-contact.json';
+import FooterJson from '../../../content/6.0-footer.json';
+import EggJson from '../../../content/0.0-egg.json';
 
 import type { BioContent, ContentFiles } from '../types';
 
