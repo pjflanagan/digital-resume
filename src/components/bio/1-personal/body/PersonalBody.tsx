@@ -5,7 +5,7 @@ import { useBio } from 'src/content';
 import type { LinkCallback } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 
-import { SciFiModal } from '../sci-fi-modal/SciFiModal';
+import { EggModal } from '../egg-modal/EggModal';
 
 import * as Style from './PersonalBody.module.scss';
 
@@ -16,7 +16,7 @@ type BodyProps = {
 function PersonalBody({ photoLinkCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
-  const [isSciFiModalOpen, setIsSciFiModalOpen] = useState(false);
+  const [isEggModalOpen, setIsEggModalOpen] = useState(false);
   const paragraphs = linkText.text.split('\n');
 
   const linkHover: LinkCallback = ({
@@ -30,7 +30,7 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
   };
 
   function linkClick(key: string): void {
-    if (key === 'sci_fi') setIsSciFiModalOpen(true);
+    if (key === 'sci_fi') setIsEggModalOpen(true);
   }
 
   return (
@@ -53,7 +53,7 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
           {paragraph}
         </Text>
       ))}
-      <SciFiModal isOpen={isSciFiModalOpen} onClose={() => setIsSciFiModalOpen(false)} />
+      <EggModal isOpen={isEggModalOpen} onClose={() => setIsEggModalOpen(false)} />
     </div>
   );
 }

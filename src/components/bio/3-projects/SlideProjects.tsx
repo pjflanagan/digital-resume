@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 import {
   Ruler,
   TextTitle,
@@ -14,21 +12,28 @@ import {
 import { useBio } from 'src/content';
 
 import { Blueprint } from './blueprint/Blueprint';
+import { DotGrid } from './blueprint/DotGrid';
+import { useBlueprints } from './blueprint/useBlueprints';
 import { FeaturedProject } from './featured-project/FeaturedProject';
 import { Project } from './project/Project';
 import * as Style from './SlideProjects.module.scss';
 
 function SlideProjects() {
   const Bio = useBio();
+  const [activeBlueprints, randomizeBlueprints] = useBlueprints();
+
   return (
-    <ScrollElement className={clsx(Style.slideProjects, Style.blueprint)} name="projects">
-      <Blueprint name="tree-of-life" className={Style.treeOfLife} />
+    <ScrollElement className={Style.slideProjects} name="projects">
+      <DotGrid />
+      {activeBlueprints.map((bp, index) => (
+        <Blueprint key={`${bp.name}-${index}`} name={bp.name} style={bp.style} />
+      ))}
       <Ruler className={Style.ruler} />
       <div className={Style.slideBody}>
         <TextAccent mono animate>
           {Bio.projects.accent}
         </TextAccent>
-        <TextTitle>{Bio.projects.title}</TextTitle>
+        <TextTitle onClick={randomizeBlueprints}>{Bio.projects.title}</TextTitle>
         <Text links={Bio.projects.linkText.links}>{Bio.projects.linkText.text[0]}</Text>
         <TextSection>{Bio.projects.sections[0]}</TextSection>
         <div className={Style.featuredBody}>

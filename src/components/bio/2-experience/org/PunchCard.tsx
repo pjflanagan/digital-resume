@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
+import { Random } from 'src/helpers';
+
 import * as Style from './PunchCard.module.scss';
 
 type PunchCardProps = {
@@ -20,15 +22,6 @@ type Cell = {
   order: number;
 };
 
-function shuffle<T>(items: T[]): T[] {
-  const shuffled = [...items];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
 function buildGrid(): { rows: Cell[][]; punchCount: number } {
   const rows: Cell[][] = [];
   const punchCells: Cell[] = [];
@@ -37,7 +30,7 @@ function buildGrid(): { rows: Cell[][]; punchCount: number } {
     const digitChar = String(row);
     const cells: Cell[] = [];
     for (let col = 0; col < PUNCH_ROW_CHAR_COUNT; col++) {
-      const isPunch = Math.random() < PUNCH_SQUARE_CHANCE;
+      const isPunch = Random.dec(0, 1) < PUNCH_SQUARE_CHANCE;
       const cell: Cell = { digitChar, isPunch, order: -1 };
       cells.push(cell);
       if (isPunch) punchCells.push(cell);
@@ -45,7 +38,7 @@ function buildGrid(): { rows: Cell[][]; punchCount: number } {
     rows.push(cells);
   }
 
-  shuffle(punchCells).forEach((cell, i) => {
+  Random.shuffle(punchCells).forEach((cell, i) => {
     cell.order = i;
   });
 

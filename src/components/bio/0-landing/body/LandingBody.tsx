@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import * as Scroll from 'react-scroll';
 
 import { LabeledButton, SplashText, ButtonHolder } from 'src/elements';
 import { useBio } from 'src/content';
+import { Random } from 'src/helpers';
 
 import { SHIP_FIRE_EVENT } from '../view/constants';
 import * as Style from './LandingBody.module.scss';
@@ -24,7 +25,8 @@ function fireShip() {
 
 function LandingBody() {
   const Bio = useBio();
-  const prompt = Bio.splash.prompts[0];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const prompt = useMemo(() => Random.fromArray(Bio.splash.prompts), []);
 
   const titleRef = useRef<HTMLDivElement>(null);
   const buttonHolderRef = useRef<HTMLDivElement>(null);

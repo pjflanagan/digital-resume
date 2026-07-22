@@ -1,29 +1,4 @@
 
-## Places
-
-### Splash
-
-In the form of a space ship
-- Futurama - The ship from Futurama
-- Rick and Morty - one of the planets is actually a portal
-- Andor - the ship from Andor
-- Dune (maybe the planet is always yellow/orange to be Dune)
-
-### Personal
-
-In the form of micro-designs
-- The 5th Element symbol
-- Neon Genisis Evangelion symbols and/or UI overlays
-- Horizon? (symbols?)
-- Alien? (Weilan-Yotani)
-
-When hovering on the image use the cursor from Cyberpunk
-
-### Projects
-
-Something on the graph in the background, probably NGE
-Yeah, like a blueprint for something, a random one every time
-
 ## Favorites
 
 - [x] Futurama
@@ -43,9 +18,10 @@ Yeah, like a blueprint for something, a random one every time
 - [x] Dune
 - [x] The Matrix
   - [x] Pills
-  - [ ] The green text effect? -> not sure where though
+  - [ ] The green text effect? -> Contact page if we do multiple animations there
 - [x] Space Odyssey
   - [x] 404 Page
+  - [ ] Maybe put a black obelisk in space sometimes
 - [x] Horizon (ZD)
   - [x] Focus is the send icon
 
@@ -54,7 +30,14 @@ Yeah, like a blueprint for something, a random one every time
 - [ ] Gravity Falls
 - [ ] Minority Report -> get that triangle symbol somewhere
 - [ ] The Dispossessed
-- [ ] Mars Express
+- [ ] Mars Express -> a robot beam? 
+- [ ] Stray video game -> some really good blueprints here and that little robot is very cute
+- [ ] Arrival -> one of the circle insignias
 
-- [ ] Kurt Vonnegut - Slaghterhouse 5?
+- [ ] Kurt Vonnegut
 - [ ] Arca
+- [ ] The Expanse
+- [ ] Ted Chiang
+- [ ] For All Mankind
+- [ ] Don't Look Up
+
