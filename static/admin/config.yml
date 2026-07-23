@@ -80,6 +80,18 @@ collections:
                 label: Links
                 widget: list
                 fields: *hover_link_fields
+          - name: microGraphics
+            label: Micro Graphics
+            hint: >-
+              White 144x144px pngs (become yellow via CSS). One is picked at random and shown in
+              the corner of the photo each time the photo changes.
+            widget: list
+            field:
+              name: microGraphic
+              label: Micro Graphic
+              widget: image
+              media_folder: /content/images/micro-graphics
+              public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/micro-graphics
 
       - name: experience
         label: Experience Intro

@@ -1,0 +1,24 @@
+
+# Dithering
+
+Think about shaders `npm i @paper-design/shaders-react`. If it isn't too resource intensive then this would be a cool way to animate the reveal and photo changes.
+
+```ts
+import { ImageDithering } from '@paper-design/shaders-react';
+
+<ImageDithering
+  width={1280}
+  height={720}
+  image="https://paper.design/flowers.webp"
+  colorBack="#000c38"
+  colorFront="#94ffaf"
+  colorHighlight="#eaff94"
+  originalColors={false}
+  inverted={false}
+  type="8x8"
+  size={2}
+  colorSteps={2}
+  fit="cover"
+/>
+
+```

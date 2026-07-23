@@ -12,7 +12,7 @@ const CONTENT_BASE =
 // Images managed through Decap live in content/images/<folder> and are served
 // from GitHub too, so image uploads skip the Netlify rebuild like other content.
 // Content JSON stores bare filenames; CMS image widgets store full URLs.
-type ContentImageFolder = 'personal' | 'experience' | 'projects';
+type ContentImageFolder = 'personal' | 'experience' | 'projects' | 'micro-graphics';
 
 function contentImage(folder: ContentImageFolder, image: string): string {
   return /^(https?:)?\//.test(image) ? image : `${CONTENT_BASE}/images/${folder}/${image}`;

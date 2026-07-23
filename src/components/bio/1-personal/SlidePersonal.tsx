@@ -19,12 +19,18 @@ function SlidePersonal() {
     defaultLink.imageDescription,
   );
   const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
+  const { microGraphics } = useBio().personal;
 
   return (
     <ScrollElement className={Style.slidePersonal} name="personal">
       <Curve position="top" />
       <div className={Style.slidePersonalSideLeft}>
-        <Photo photo={photo} photoDescription={photoDescription} focusArea={focusArea} />
+        <Photo
+          photo={photo}
+          photoDescription={photoDescription}
+          focusArea={focusArea}
+          microGraphics={microGraphics}
+        />
       </div>
       <div className={Style.slidePersonalSideRight}>
         <PersonalBody
