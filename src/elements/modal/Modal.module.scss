@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: $backgroundDark3Transparent2;
+  background: $background_black_a70;
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(0);
@@ -33,7 +33,7 @@
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-  background: $backgroundDark;
+  background: $background_darkBlue1;
   clip-path: $polygon;
   font-family: $ubuntu;
 }
@@ -45,11 +45,11 @@
   justify-content: space-between;
   flex: 0 0 auto;
   padding: 20px 24px 16px;
-  border-bottom: 1px solid $accentCyanTransparent2;
+  border-bottom: 1px solid $display_cyan_a20;
 }
 
 .title {
-  color: $white;
+  color: $display_white;
   font-family: $ubuntuMono;
   font-size: 20px;
 }
@@ -59,12 +59,12 @@
   display: flex;
   width: 24px;
   height: 24px;
-  color: $accentYellow;
+  color: $display_yellow;
   transition: color 0.2s;
 
   &:hover,
   &:focus {
-    color: $accentYellowHover;
+    color: $accent_yellow;
     outline: none;
   }
 }

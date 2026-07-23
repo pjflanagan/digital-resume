@@ -13,11 +13,11 @@
   }
   21% {
     padding: 20px 0 0;
-    border-bottom: 1px solid $accentCyan;
+    border-bottom: 1px solid $display_cyan;
   }
   60% {
-    border-top: 1px solid $accentCyan;
-    border-bottom: 1px solid $accentCyan;
+    border-top: 1px solid $display_cyan;
+    border-bottom: 1px solid $display_cyan;
     padding: 20px 0 0;
   }
   100% {
@@ -48,7 +48,7 @@
   .content-holder {
     width: 0;
     max-height: 0;
-    border-top: 1px solid $accentCyan;
+    border-top: 1px solid $display_cyan;
     border-bottom: 1px solid #000;
     height: auto;
     margin: 0 50%;

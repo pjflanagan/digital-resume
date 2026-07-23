@@ -27,7 +27,7 @@
 
   .avatar-back {
     content: '';
-    background: $accentCyan;
+    background: $display_cyan;
     position: absolute;
     min-width: 48px;
     width: 48px;
@@ -39,7 +39,7 @@
 
   &:after {
     content: '';
-    border: 1px solid $accentCyan;
+    border: 1px solid $display_cyan;
     clip-path: $polygonSmall;
     position: absolute;
     width: 48px;

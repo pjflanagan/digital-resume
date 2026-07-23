@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 20;
   position: relative;
-  background: $backgroundDark2;
+  background: $background_darkBlue2;
   padding: 0 0 36px;
 
   .pre-slide-curve-holder {
@@ -15,7 +15,7 @@
     overflow-x: hidden;
 
     .pre-slide-curve {
-      background: $backgroundDark2;
+      background: $background_darkBlue2;
       width: 120%;
       height: calc(100% - 4px);
       position: relative;
@@ -37,8 +37,7 @@
 
 @media only screen and (min-width: $md) {
   .slide-experience {
-    background: $backgroundDark2;
-    // background: radial-gradient(circle, $backgroundDark2 54%, #121e25 100%) !important;
+    background: $background_darkBlue2;
     z-index: 0;
     padding: 68px 0 0;
 

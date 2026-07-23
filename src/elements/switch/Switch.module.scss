@@ -3,17 +3,17 @@
 .switchRoot {
   display: flex;
   gap: 2px;
-  background: $accentCyanTransparent2;
+  background: $display_cyan_a20;
   clip-path: $polygonSmall;
 }
 
 .option {
   flex: 1;
   padding: 10px 12px;
-  background: $backgroundDark;
+  background: $background_darkBlue1;
   border: none;
   cursor: pointer;
-  color: $whiteTransparent;
+  color: $display_white_a50;
   font-family: $ubuntuMono;
   font-size: 13px;
   text-transform: uppercase;
@@ -23,12 +23,12 @@
 
   &:hover,
   &:focus {
-    color: $white;
+    color: $display_white;
     outline: none;
   }
 }
 
 .active {
-  color: $accentCyan;
-  background: $accentCyanTransparent2;
+  color: $display_cyan;
+  background: $display_cyan_a20;
 }

@@ -100,7 +100,7 @@
       }
 
       .name {
-        color: $accentYellow;
+        color: $display_yellow;
         font-family: $ubuntu;
         font-weight: 300;
         position: absolute;
@@ -144,7 +144,7 @@
       .stack-bullet {
         width: 1px;
         height: 4px;
-        background: $accentYellow;
+        background: $display_yellow;
         transition: 0.2s;
         -webkit-transition: 0.2s;
 

@@ -8,7 +8,7 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid $blackTransparent;
+  border-top: 2px solid $display_black_a30;
   clip-path: polygon(
       0 0,
       0 100%,
@@ -21,7 +21,7 @@
   .skill-column {
     display: flex;
     flex-direction: column;
-    border-left: 2px solid $blackTransparent;
+    border-left: 2px solid $display_black_a30;
     height: fit-content;
 
     &:first-child {
@@ -40,11 +40,11 @@
           0 100%,
           100% 100%,
           100% 0);
-      border-bottom: 2px solid $blackTransparent;
+      border-bottom: 2px solid $display_black_a30;
     }
 
     &:first-child .skillGroup:nth-child(2) {
-      border-bottom: 2px solid #143545;
+      border-bottom: 2px solid $background_darkBlue2;
     }
 
     &:last-child .skillGroup:last-child {
@@ -92,7 +92,7 @@
   display: flex;
   justify-content: center;
   padding: 36px 0;
-  border-right: 2px solid $blackTransparent;
+  border-right: 2px solid $display_black_a30;
 
   &:after {
     content: 'GND';
@@ -100,7 +100,7 @@
     right: 0;
     transform: rotate(-90deg);
     font-family: $ubuntuMono;
-    color: $accentCyanTransparent2;
+    color: $display_cyan_a20;
     font-weight: bold;
   }
 }

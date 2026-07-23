@@ -7,7 +7,7 @@
     }
 
     .form-field {
-      background: $backgroundDarkTransparent;
+      background: $background_darkBlue1_a90;
       outline: none;
       border: 1px solid #fff0;
       width: 100%;
@@ -21,21 +21,21 @@
       // clip-path: $polygonSmall;
 
       &::placeholder {
-        color: $whiteTransparent;
+        color: $display_white_a50;
         opacity: 1;
       }
 
       &:-ms-input-placeholder {
-        color: $whiteTransparent;
+        color: $display_white_a50;
       }
 
       &::-ms-input-placeholder {
-        color: $whiteTransparent;
+        color: $display_white_a50;
       }
 
       &::selection {
-        background: $accentYellowHover;
-        color: $backgroundDark;
+        background: $accent_yellow;
+        color: $background_darkBlue1;
       }
 
       &:-webkit-autofill,
@@ -47,16 +47,16 @@
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus {
-        border: 1px solid $accentCyan;
-        -webkit-text-fill-color: $white;
-        -webkit-box-shadow: 0 0 0px 1000px $backgroundDarkTransparent inset;
+        border: 1px solid $display_cyan;
+        -webkit-text-fill-color: $display_white;
+        -webkit-box-shadow: 0 0 0px 1000px $background_darkBlue1_a90 inset;
         transition: background-color 5000s ease-in-out 0s;
       }
 
       &.error {
-        border: 1px solid $warnOrange;
-        color: $warnOrange;
-        background: $warnLightTransparent;
+        border: 1px solid $display_orange;
+        color: $display_orange;
+        background: $display_orange_a30;
       }
     }
 

@@ -10,16 +10,16 @@
 
 .text-tag {
   font-size: 12px;
-  color: $accentCyan;
+  color: $display_cyan;
 }
 
 // Function Paragraph Spans
 
 p {
   .text-inline-link {
-    color: $accentCyan;
+    color: $display_cyan;
     text-decoration: none;
-    box-shadow: inset 0px -6px $accentCyanTransparent2;
+    box-shadow: inset 0px -6px $display_cyan_a20;
     transition: 0.2s;
 
     &.clickable {
@@ -27,13 +27,13 @@ p {
     }
 
     &:hover {
-      color: $accentCyanHover;
-      box-shadow: inset 0px -10px $accentCyanTransparent;
+      color: $accent_cyan;
+      box-shadow: inset 0px -10px $display_cyan_a50;
     }
 
     &.external {
-      color: $accentYellow;
-      box-shadow: inset 0px -6px $accentYellowTransparent2;
+      color: $display_yellow;
+      box-shadow: inset 0px -6px $display_yellow_a20;
 
       &:after {
         content: '';
@@ -42,19 +42,19 @@ p {
         margin-top: 0px;
         width: 8px;
         height: 8px;
-        background: $accentYellowTransparent2;
-        border-right: 1px solid $accentYellow;
-        border-top: 1px solid $accentYellow;
+        background: $display_yellow_a20;
+        border-right: 1px solid $display_yellow;
+        border-top: 1px solid $display_yellow;
         transition: 0.2s;
         clip-path: polygon(0 0, 100% 0, 100% 100%);
       }
 
       &:hover {
-        color: $accentYellowHover;
-        box-shadow: inset 0px -10px $accentYellowTransparent;
+        color: $accent_yellow;
+        box-shadow: inset 0px -10px $display_yellow_a50;
 
         &:after {
-          background: $accentYellowTransparent;
+          background: $display_yellow_a50;
           transform: translate(2px, -2px);
         }
       }
@@ -68,11 +68,11 @@ p {
 a {
   h2.text-linked-header {
     &.cyan {
-      color: $accentCyan;
+      color: $display_cyan;
 
       &:after {
-        border-right: 1px solid $accentCyan;
-        border-top: 1px solid $accentCyan;
+        border-right: 1px solid $display_cyan;
+        border-top: 1px solid $display_cyan;
       }
     }
   }

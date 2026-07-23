@@ -25,7 +25,7 @@ $unplug-fill-duration: 0.15s;
     left: 0;
     width: 1000px;
     height: 2px;
-    background: $blackTransparent;
+    background: $display_black_a30;
     transform: translate(-100%, -50%);
   }
 
@@ -63,7 +63,7 @@ $unplug-fill-duration: 0.15s;
     margin-right: #{$tab + $corner + 12px};
     padding: 6px 24px 6px #{$tab + 12px};
     transform: translateX(60px);
-    background: $blackTransparent;
+    background: $display_black_a30;
     transition:
       transform 0.4s ease #{$connect-delay},
       opacity 0.4s ease #{$connect-delay};
@@ -87,7 +87,7 @@ $unplug-fill-duration: 0.15s;
     left: 0;
     height: 100%;
     width: 0;
-    background: $backgroundLight;
+    background: $background_teal;
     transition: width #{$fill-duration} ease #{$fill-delay};
   }
 
@@ -100,7 +100,7 @@ $unplug-fill-duration: 0.15s;
     transition: opacity 0.1s ease #{$text-delay};
 
     .line {
-      background: $accentYellow;
+      background: $display_yellow;
       height: 1px;
       top: 50%;
       position: absolute;

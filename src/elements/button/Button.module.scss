@@ -38,7 +38,7 @@
     z-index: 1;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    border: 1px solid $accentCyan;
+    border: 1px solid $display_cyan;
     clip-path: $polygon;
   }
 
@@ -48,7 +48,7 @@
     color: #fff;
     height: 100%;
     width: 100%;
-    background: $backgroundLight;
+    background: $background_teal;
     clip-path: $polygonSmall;
     padding: 8px 24px;
     display: flex;
@@ -66,7 +66,7 @@
         // react-icons color via currentColor; never force-fill paths — icon
         // sets ship invisible fill="none" bounding boxes that would render
         // as solid squares
-        color: $accentYellow;
+        color: $display_yellow;
         -webkit-transition: color 0.2s;
         transition: color 0.2s;
       }
@@ -75,7 +75,7 @@
     .name {
       min-width: calc(100% - 36px);
       text-align: center;
-      border-left: 1px solid $accentCyan;
+      border-left: 1px solid $display_cyan;
       text-decoration: none;
       font-weight: 300;
       font-size: 16px;
@@ -95,47 +95,47 @@
     }
 
     .holder {
-      background: $backgroundLightHover;
+      background: $accent_teal;
 
       svg {
-        color: $accentYellowHover;
+        color: $accent_yellow;
       }
 
       .name {
-        color: #e4f03c;
+        color: $display_yellow;
       }
     }
   }
 
   &.yellow {
     &:after {
-      border: 1px solid $accentYellow;
+      border: 1px solid $display_yellow;
     }
 
     .holder {
-      background: $accentYellow;
+      background: $display_yellow;
 
       svg {
-        color: $backgroundDark;
+        color: $background_darkBlue1;
       }
 
       .name {
-        color: $backgroundDark;
-        border-left: 1px solid $backgroundDark;
+        color: $background_darkBlue1;
+        border-left: 1px solid $background_darkBlue1;
       }
     }
 
     &:hover,
     &:focus {
       .holder {
-        background: $accentYellowHover;
+        background: $accent_yellow;
 
         svg {
-          color: $backgroundDark;
+          color: $background_darkBlue1;
         }
 
         .name {
-          color: $backgroundDark;
+          color: $background_darkBlue1;
         }
       }
     }
@@ -143,26 +143,26 @@
 
   &.red {
     &:after {
-      border: 1px solid $accentRed;
+      border: 1px solid $display_orange;
     }
 
     .holder {
-      background: $accentRed;
+      background: $display_orange;
 
       svg {
-        color: $white;
+        color: $display_white;
       }
 
       .name {
-        color: $white;
-        border-left: 1px solid $white;
+        color: $display_white;
+        border-left: 1px solid $display_white;
       }
     }
 
     &:hover,
     &:focus {
       .holder {
-        background: $accentRedHover;
+        background: $accent_orange;
       }
     }
   }
@@ -175,33 +175,33 @@
 
   &.blue {
     &:after {
-      border: 1px solid $accentCyan;
+      border: 1px solid $display_cyan;
     }
 
     .holder {
-      background: $accentCyan;
+      background: $display_cyan;
 
       svg {
-        color: $backgroundDark;
+        color: $background_darkBlue1;
       }
 
       .name {
-        color: $backgroundDark;
-        border-left: 1px solid $backgroundDark;
+        color: $background_darkBlue1;
+        border-left: 1px solid $background_darkBlue1;
       }
     }
 
     &:hover,
     &:focus {
       .holder {
-        background: $accentCyan;
+        background: $display_cyan;
 
         svg {
-          color: $backgroundDark;
+          color: $background_darkBlue1;
         }
 
         .name {
-          color: $backgroundDark;
+          color: $background_darkBlue1;
         }
       }
     }

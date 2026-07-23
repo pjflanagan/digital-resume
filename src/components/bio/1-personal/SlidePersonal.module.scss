@@ -9,7 +9,7 @@
     position: relative;
     height: 340px;
     width: 100%;
-    background: $backgroundLight;
+    background: $background_teal;
   }
 
   .slide-personal-side-right {
@@ -17,7 +17,7 @@
     margin-top: -134px;
     width: 94%;
     left: 3%;
-    background: $backgroundDarkTransparent;
+    background: $background_darkBlue1_a90;
     z-index: 16;
     color: #fff;
     backdrop-filter: blur(20px);
@@ -37,12 +37,12 @@
       margin-top: 0;
       flex: 0 0 40vw;
       width: 40vw;
-      background: $accentCyan;
+      background: $display_cyan;
       background: repeating-linear-gradient(
-        $accentCyan,
-        $accentCyan 3px,
-        $accentCyanHover 3px,
-        $accentCyanHover 6px
+        $display_cyan,
+        $display_cyan 3px,
+        $accent_cyan 3px,
+        $accent_cyan 6px
       );
     }
 
@@ -52,7 +52,7 @@
       flex: 1 1 60vw;
       width: 60vw;
       min-width: 0;
-      background: $backgroundDarkTransparent;
+      background: $background_darkBlue1_a90;
     }
   }
 }

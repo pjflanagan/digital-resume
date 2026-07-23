@@ -12,7 +12,7 @@
     position: relative;
 
     .project-image {
-      background: $backgroundLightTransparent;
+      background: $background_teal_a50;
       clip-path: $polygon;
       width: calc(100% - 8px);
       height: calc(100% - 8px);
@@ -85,7 +85,7 @@
       top: 50%;
       transform: translate(0, -50%);
       backdrop-filter: blur(20px);
-      background: $backgroundLightTransparent;
+      background: $background_teal_a50;
       min-height: 140px;
       width: 516px;
       padding: 28px 26px;
