@@ -275,6 +275,24 @@
       ]
     },
     {
+      "name": "Vonnegut",
+      "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "An asterisk Kurt Vonnegut once drew can be seen as a micro-graphic in my photos. I'm a big fan of Player Piano and Slaughterhouse 5."
+        }
+      ]
+    },
+    {
+      "name": "Arrival",
+      "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "A few of the micro-graphics on my photos are the alien text from Arrival."
+        }
+      ]
+    },
+    {
       "name": "Apollo 13",
       "eggs": [
         {
