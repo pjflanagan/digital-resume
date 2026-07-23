@@ -1,9 +1,10 @@
 @use 'theme/variables' as *;
 
 .micro-graphic {
-  width: 64px;
-  height: 64px;
-  background-color: $accentYellowTransparent;
+  width: 54px;
+  height: 54px;
+  background-color: $accentCyanTransparent;
+  backdrop-filter: blur(2px);
   pointer-events: none;
 
   mask-image: var(--micro-graphic-src);

@@ -9,9 +9,9 @@ Including Micro Graphics can be fun little details. Use symbols from things
 
 - [ ] Gravity Falls: Bill Cypher
 - [ ] NGE: an angel or Nerv symbol
-- [ ] Minority Report: triangle police badge
 - [ ] Horizon
 
+- [x] Minority Report: triangle police badge
 - [x] Alien: Company Logo
 - [x] Cyberpunk: Arasaka logo
 - [x] Fifth Element: Fifth element symbol
