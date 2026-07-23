@@ -199,6 +199,10 @@
         {
           "locationId": "contact-form",
           "egg": "The double wave animation behind the contact form is inspired by EVA sync rate UI."
+        },
+        {
+          "locationId": "personal-photo",
+          "egg": "Various angel symbols can be seen as micro-graphics on my personal photos."
         }
       ]
     },
@@ -208,6 +212,10 @@
         {
           "locationId": "contact-form",
           "egg": "The send button in the contact form was designed to resemble the focus in Horizon Zero Dawn and Forbidden West."
+        },
+        {
+          "locationId": "personal-photo",
+          "egg": "Cauldron symbols can be seen as micro-graphics on my personal photos."
         }
       ]
     },

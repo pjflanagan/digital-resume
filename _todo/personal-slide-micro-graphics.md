@@ -8,9 +8,11 @@ Including Micro Graphics can be fun little details. Use symbols from things
 - [ ] Mars Express: triangle monster thing
 
 - [ ] Gravity Falls: Bill Cypher
-- [ ] NGE: an angel or Nerv symbol
-- [ ] Horizon
+- [ ] Horizon: Components
 
+- [x] Horizon: Cauldrons
+- [x] NGE: Nerv symbol
+- [x] NGE: an angel
 - [x] Minority Report: triangle police badge
 - [x] Alien: Company Logo
 - [x] Cyberpunk: Arasaka logo

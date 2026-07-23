@@ -24,20 +24,21 @@
   - [ ] Maybe put a black obelisk in space sometimes
 - [x] Horizon (ZD)
   - [x] Focus is the send icon
+- [x] Arrival -> one of the circle insignias
+- [x] Alien
+- [x] Minority Report -> get that triangle symbol somewhere
+- [x] Kurt Vonnegut
 
-- [ ] Alien
+- [ ] Scavengers Reign
 - [ ] Blackmirror -> the footer is blacker and has a crack
 - [ ] Gravity Falls
-- [ ] Minority Report -> get that triangle symbol somewhere
 - [ ] The Dispossessed
 - [ ] Mars Express -> a robot beam? 
 - [ ] Stray video game -> some really good blueprints here and that little robot is very cute
-- [ ] Arrival -> one of the circle insignias
 
-- [ ] Kurt Vonnegut
 - [ ] Arca
 - [ ] The Expanse
-- [ ] Ted Chiang
+- [ ] Ted Chiang (technically through Arrival)
 - [ ] For All Mankind
-- [ ] Don't Look Up
+- [ ] Don't Look Up - a comet
 
