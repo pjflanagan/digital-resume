@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="606" height="600" viewBox="106 261 505 500"
+   width="357" height="385" viewBox="177.5 347.2 356.9 384.6"
    sodipodi:version="0.32"
    inkscape:version="0.46"
    sodipodi:docname="voyager_plaque.svg"
@@ -27,16 +27,6 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       sodipodi:type="arc"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path3272"
-       sodipodi:cx="362.5"
-       sodipodi:cy="523.86218"
-       sodipodi:rx="241.49872"
-       sodipodi:ry="252.5"
-       d="M 603.99872,523.86218 A 241.49872,252.5 0 1 1 121.00128,523.86218 A 241.49872,252.5 0 1 1 603.99872,523.86218 z"
-       transform="matrix(1.0028363,0,0,0.9534872,-3.9647499,12.616258)" />
     <path
        sodipodi:type="arc"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
