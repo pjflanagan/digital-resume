@@ -14,6 +14,8 @@ type FramedImageProps = {
   imageClassName?: string;
   // percentage rect to highlight on the image with an animated FocusFrame
   focusArea?: FocusArea;
+  // swap in a custom renderer (e.g. a shader) in place of the plain <Image>
+  imageContent?: ReactNode;
 };
 
 function FramedImage({
@@ -23,8 +25,9 @@ function FramedImage({
   frameClassName,
   imageClassName,
   focusArea,
+  imageContent,
 }: FramedImageProps): ReactNode {
-  const plainImage = <Image src={src} alt={alt} className={imageClassName} />;
+  const plainImage = imageContent ?? <Image src={src} alt={alt} className={imageClassName} />;
   const image = focusArea ? <FocusFrame area={focusArea}>{plainImage}</FocusFrame> : plainImage;
 
   // a focusArea supplies its own FrameHolder, so skip the decorative one to avoid doubling up

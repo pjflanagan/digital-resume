@@ -4,6 +4,7 @@ export * from './button/ButtonHolder';
 export * from './canvas/Canvas';
 export * from './canvas/BaseView';
 export * from './cover/Cover';
+export * from './dithered-image/DitheredImage';
 export * from './dropdown/Dropdown';
 export * from './frame/Frame';
 export * from './framed-image/FramedImage';

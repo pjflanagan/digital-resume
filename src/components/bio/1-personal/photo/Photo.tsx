@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 
-import { TextAccent, FramedImage } from 'src/elements';
+import { TextAccent, FramedImage, DitheredImage } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import { contentImage } from 'src/content';
 import { useFlashOnChange, useReveal } from 'src/hooks';
@@ -42,6 +42,13 @@ function Photo({ photo, photoDescription, focusArea }: PhotoProps) {
         imageClassName={Style.image}
         frameClassName={frameClassName}
         focusArea={focusArea}
+        imageContent={
+          <DitheredImage
+            src={contentImage('personal', photo)}
+            className={Style.image}
+            animateKey={`${photo}-${isScrollRevealed}`}
+          />
+        }
       />
       {photoDescription && (
         <TextAccent className={Style.photoDescription} mono animate>

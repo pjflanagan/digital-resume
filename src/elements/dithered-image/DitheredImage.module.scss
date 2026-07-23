@@ -1,0 +1,22 @@
+@use 'theme/variables' as *;
+
+.dithered-image-holder {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.shader {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// hex values handed to the ImageDithering shader (no CSS vars — the shader
+// wants literal color strings), kept in sync with the blue theme palette
+:export {
+  colorBack: $backgroundDark2;
+  colorFront: $backgroundLightHover;
+  colorHighlight: $accentCyan;
+}
