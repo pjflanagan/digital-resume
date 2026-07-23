@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit",
     "netlify": "netlify dev",
     "lint": "eslint src gatsby-*.ts",
+    "lint:css-modules": "node scripts/audit-css-modules.js",
     "format": "prettier --write src gatsby-*.ts"
   },
   "license": "0BSD",

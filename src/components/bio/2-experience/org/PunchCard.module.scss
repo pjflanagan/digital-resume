@@ -21,10 +21,19 @@
   white-space: nowrap;
   overflow: hidden;
   color: $backgroundLightTransparent2;
-  opacity: 0.4;
-  transition: opacity 0.5s ease;
+  opacity: 0.85;
+  transition: opacity 0.5s;
 
-  &.animating {
-    opacity: 0.85;
+  .punch {
+    filter: brightness(38%);
+    transition: filter 1.8s;
+  }
+
+  &.complete {
+    opacity: 0.4;
+
+    .punch {
+      filter: brightness(100%);
+    }
   }
 }

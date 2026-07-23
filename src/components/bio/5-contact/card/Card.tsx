@@ -34,6 +34,7 @@ function Card({ setIsWaveOn }: CardProps) {
   const className = clsx(Style.card, {
     [Style.rotated]: !isOpen,
     [Style.collapsed]: isSubmitted || !isOpen,
+    [Style.isSubmitted]: isSubmitted,
   });
 
   return (

@@ -42,16 +42,22 @@ function buildGrid(): { rows: Cell[][] } {
   return { rows };
 }
 
+enum AnimationState {
+  UN_STARTED = 0,
+  ANIMATING = 1,
+  COMPLETE = 2
+}
+
 function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
   // eslint-disable-next-line react-hooks/use-memo
   const { rows } = useMemo(buildGrid, [replayToken]);
   const [revealedCol, setRevealedCol] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [animationState, setAnimationState] = useState<AnimationState>(AnimationState.UN_STARTED);
 
   useEffect(() => {
     if (!revealed) return;
     setRevealedCol(0);
-    setIsAnimating(true);
+    setAnimationState(AnimationState.ANIMATING);
 
     const tickMs = Math.max(
       PUNCH_REVEAL_MIN_TICK_MS,
@@ -66,7 +72,7 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
     }, tickMs);
 
     const fadeTimeout = setTimeout(() => {
-      setIsAnimating(false);
+      setAnimationState(AnimationState.COMPLETE);
     }, PUNCH_BULLET_START_DELAY_MS);
 
     return () => {
@@ -93,7 +99,7 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
           }
           const isPunched = cell.col < revealedCol;
           segments.push(
-            <span key={key++} className={Style.punch}>
+            <span key={key++} className={clsx(isPunched && Style.punch)}>
               {isPunched ? PUNCH_SQUARE_CHAR : cell.digitChar}
             </span>
           );
@@ -103,7 +109,7 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
         return (
           <div
             key={rowIndex}
-            className={clsx(Style.punchRow, isAnimating && Style.animating)}
+            className={clsx(Style.punchRow, animationState === AnimationState.COMPLETE && Style.complete)}
           >
             {segments}
           </div>

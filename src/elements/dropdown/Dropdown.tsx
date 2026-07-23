@@ -20,7 +20,7 @@ function Dropdown({ label, children, className }: DropdownProps): React.ReactNod
   }
 
   return (
-    <div className={clsx(Style.dropdown, className, { [Style.open]: isOpen })}>
+    <div className={clsx(Style.dropdown, className)}>
       <div
         className={Style.label}
         role="button"
