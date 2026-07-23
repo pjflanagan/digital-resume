@@ -11,7 +11,7 @@ I really need like 5 or 6 more blueprints and they should appear in random locat
 
 ### Favorites
 - [x] NGE - angel diagram
-- [ ] Golden Record - the diagram on the golden record
+- [x] Golden Record - the diagram on the golden record
 - [ ] Cyberpunk 2077 - nothing violent or gorey, like a car or an eye implant
 - [ ] NGE - Dummy plug or anything else that isn't a gun or weapon
 - [ ] Iron Man - Arc Reactor

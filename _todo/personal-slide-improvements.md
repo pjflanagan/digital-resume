@@ -39,9 +39,3 @@ Including Micro Graphics can be fun little details. Use symbols from things
 - Fifth Element - fifth element symbol
 - NGE - an angel or Nerv symbol
 - Arrival - language circle
-
-### TODO: sort
-- The 5th Element symbol
-- Neon Genisis Evangelion symbols and/or UI overlays
-- Horizon? (symbols?)
-- Alien? (Weilan-Yotani)
