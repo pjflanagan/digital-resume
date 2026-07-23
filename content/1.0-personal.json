@@ -102,22 +102,30 @@
       {
         "key": "sci_fi",
         "text": "find all the references"
+      },
+      {
+        "key": "sci_fi_cycle",
+        "text": "sci-fi"
       }
     ],
-    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and <fun-websites>.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you <sci_fi> to my favorite sci-fi works on this page?"
+    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and <fun-websites>.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love <sci_fi_cycle>. Can you <sci_fi> to my favorite sci-fi works on this page?"
   },
   "microGraphics": [
+    "d20.png",
+    "fifth-element.png",
+    "cyberpunk-arasaka.png",
     "vonnegut.png",
     "arrival-1.png",
     "arrival-2.png",
     "alien-wy.png",
-    "cyberpunk-arasaka.png",
-    "fifth-element.png",
     "minority-report.png",
-    "nge-nerv.png",
     "horizon-cauldron-1.png",
     "horizon-cauldron-2.png",
+    "nge-nerv.png",
     "nge-angel-1.png",
-    "nge-angel-2.png"
+    "nge-angel-2.png",
+    "nge-angel-3.png",
+    "nge-angel-4.png",
+    "nge-angel-5.png"
   ]
 }

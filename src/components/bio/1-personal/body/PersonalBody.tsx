@@ -11,9 +11,10 @@ import * as Style from './PersonalBody.module.scss';
 
 type BodyProps = {
   photoLinkCallback: (photo: string, photoDescription?: string, focusArea?: FocusArea) => void;
+  microGraphicCycleCallback: () => void;
 };
 
-function PersonalBody({ photoLinkCallback }: BodyProps) {
+function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
   const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
   const [isEggModalOpen, setIsEggModalOpen] = useState(false);
@@ -31,6 +32,7 @@ function PersonalBody({ photoLinkCallback }: BodyProps) {
 
   function linkClick(key: string): void {
     if (key === 'sci_fi') setIsEggModalOpen(true);
+    if (key === 'sci_fi_cycle') microGraphicCycleCallback();
   }
 
   return (

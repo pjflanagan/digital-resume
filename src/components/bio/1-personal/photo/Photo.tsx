@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { TextAccent, FramedImage } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import { contentImage } from 'src/content';
 import { useFlashOnChange, useReveal } from 'src/hooks';
-import { Random } from 'src/helpers/random';
 
 import { MicroGraphic } from './micro-graphic/MicroGraphic';
 import * as Style from './Photo.module.scss';
@@ -14,20 +13,13 @@ type PhotoProps = {
   photo: string;
   photoDescription?: string;
   focusArea?: FocusArea;
-  microGraphics?: string[];
+  microGraphic?: string;
 };
 
-function Photo({ photo, photoDescription, focusArea, microGraphics }: PhotoProps) {
+function Photo({ photo, photoDescription, focusArea, microGraphic }: PhotoProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 380 });
   const isPulsing = useFlashOnChange([photo]);
-  // re-picked at random each time the photo changes
-  const [microGraphic, setMicroGraphic] = useState<string | undefined>(undefined);
-  useEffect(() => {
-    /* eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: pick a new
-       random micro-graphic right away whenever the photo changes */
-    setMicroGraphic(microGraphics?.length ? Random.fromArray(microGraphics) : undefined);
-  }, [photo, microGraphics]);
 
   const frameClassName = clsx(Style.photoFrameHolder, {
     [Style.reveal]: isScrollRevealed,
