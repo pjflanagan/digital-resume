@@ -1,38 +1,40 @@
 // Colors
 
+$display_white: #fff;
+$display_black: #1c1c1c;
+
 $background_darkBlue1: #112a32;
-$background_darkBlue1_a90: #112a32dd;
-$background_darkBlue1_a40: #112a3266;
+$background_darkBlue1_a90: rgba($background_darkBlue1, 0.9);
+$background_darkBlue1_a40: rgba($background_darkBlue1, 0.4);
 
 $background_darkBlue2: #113f54;
-$background_darkBlue2_a90: #113f54dd;
+$background_darkBlue2_a90: rgba($background_darkBlue2, 0.9);
 
-$background_black_a90: #1c1c1cf0;
-$background_black_a70: #1c1c1caa;
+$background_black_a90: rgba($display_black, 0.9);
+$background_black_a70: rgba($display_black, 0.7);
 
 $background_teal: #157270;
-$background_teal_a50: #15727088;
-$background_teal_a30: #15727044;
+$background_teal_a50: rgba($background_teal, 0.5);
+$background_teal_a30: rgba($background_teal, 0.3);
 $accent_teal: #159997;
 
 $display_yellow: #e4f03c;
-$display_yellow_a50: #e4f03c88;
-$display_yellow_a20: #e4f03c33;
+$display_yellow_a50: rgba($display_yellow, 0.5);
+$display_yellow_a20: rgba($display_yellow, 0.2);
 $accent_yellow: #e4ef50;
 
 $display_cyan: #1fcfcc;
-$display_cyan_a50: #1fcfcc88;
-$display_cyan_a20: #1fcfcc33;
+$display_cyan_a50: rgba($display_cyan, 0.5);
+$display_cyan_a20: rgba($display_cyan, 0.2);
 $accent_cyan: #1cbebc;
 
 $display_orange: #e4400f;
-$display_orange_a30: #e4400f4d;
+$display_orange_a30: rgba($display_orange, 0.3);
 $accent_orange: #ef5220;
 
-$display_white: #fff;
+// Intentionally a distinct off-white, not derived from $display_white
 $display_white_a50: #eaf4f488;
-$display_black: #1c1c1c;
-$display_black_a30: #1c1c1c44;
+$display_black_a30: rgba($display_black, 0.3);
 
 // Fonts
 
