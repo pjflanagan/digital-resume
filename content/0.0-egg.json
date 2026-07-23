@@ -70,7 +70,7 @@
         },
         {
           "locationId": "personal-photo",
-          "egg": "You can see the Cyberpunk 2077 menu cursor by hovering my personal slide photos."
+          "egg": "You can see the Cyberpunk 2077 menu cursor by hovering my personal slide photos. There's also an Arasaka micro-graphic."
         },
         {
           "locationId": "contact-form-placeholder",
@@ -104,6 +104,10 @@
         ]
       },
       "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "The wind, water, earth, and fire logo can be seen as a micro-graphic on the personal photo."
+        },
         {
           "locationId": "contact-form",
           "egg": "The contact form is on a Multipass."
@@ -280,6 +284,15 @@
         {
           "locationId": "personal-photo",
           "egg": "An asterisk Kurt Vonnegut once drew can be seen as a micro-graphic in my photos. I'm a big fan of Player Piano and Slaughterhouse 5."
+        }
+      ]
+    },
+    {
+      "name": "Alien",
+      "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "The Weyland-Yutani logo can be found as a micro-graphic on my personal slide."
         }
       ]
     },

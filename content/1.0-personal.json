@@ -4,7 +4,12 @@
       {
         "key": "peter_james_flanagan",
         "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
-        "focusArea": { "x": 33, "y": 22, "width": 32, "height": 49 },
+        "focusArea": {
+          "x": 33,
+          "y": 22,
+          "width": 32,
+          "height": 49
+        },
         "imageDescription": "Current location\nunknown",
         "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
@@ -22,7 +27,12 @@
       {
         "key": "new_york",
         "image": "personal-new-york.jpg",
-        "focusArea": { "x": 11, "y": 24, "width": 38, "height": 52 },
+        "focusArea": {
+          "x": 11,
+          "y": 24,
+          "width": 38,
+          "height": 52
+        },
         "imageDescription": "New York, United States\n40.712776, -74.005974",
         "text": "New York"
       },
@@ -30,21 +40,36 @@
         "key": "rollerblader",
         "href": "//instagram.com/roller.babe",
         "image": "personal-roller-blade.jpg",
-        "focusArea": { "x": 31, "y": 22, "width": 40, "height": 45 },
+        "focusArea": {
+          "x": 31,
+          "y": 22,
+          "width": 40,
+          "height": 45
+        },
         "imageDescription": "London, United Kingdom\n51.504650, -0.020259",
         "text": "rollerblader"
       },
       {
         "key": "rockclimber",
         "image": "personal-rock-climbing.jpg",
-        "focusArea": { "x": 23, "y": 30, "width": 47, "height": 61 },
+        "focusArea": {
+          "x": 23,
+          "y": 30,
+          "width": 47,
+          "height": 61
+        },
         "imageDescription": "Colorado Springs, Colorado\n38.850854, -104.874817",
         "text": "rock climber"
       },
       {
         "key": "scuba",
         "image": "personal-scuba.jpg",
-        "focusArea": { "x": 9, "y": 8, "width": 37, "height": 44 },
+        "focusArea": {
+          "x": 9,
+          "y": 8,
+          "width": 37,
+          "height": 44
+        },
         "imageDescription": "Curaçao\n12.320089, -69.155978\n-45 ft",
         "text": "SCUBA diver"
       },
@@ -52,7 +77,12 @@
         "key": "mandarin_student",
         "href": "//flanny.app/study-mandarin",
         "image": "personal-mandarin.jpg",
-        "focusArea": { "x": 30, "y": 55, "width": 39, "height": 60 },
+        "focusArea": {
+          "x": 30,
+          "y": 55,
+          "width": 39,
+          "height": 60
+        },
         "imageDescription": "Taipei, Taiwan\n25.058497, 121.509620",
         "greeting": "你好，我名字叫",
         "text": "Mandarin student"
@@ -60,7 +90,12 @@
       {
         "key": "board_sport",
         "image": "personal-snowboarding.jpg",
-        "focusArea": { "x": 34, "y": 9, "width": 33, "height": 52 },
+        "focusArea": {
+          "x": 34,
+          "y": 9,
+          "width": 33,
+          "height": 52
+        },
         "imageDescription": "Solitude, Utah\n40.619934, -111.604462\n10,488 ft +6 ft airtime",
         "text": "board sport"
       },
@@ -71,5 +106,12 @@
     ],
     "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and <fun-websites>.\nOutside of coding, I'm an avid <rollerblader>, <board_sport> enthusiast, occasional <rockclimber>, certified <scuba>, and <mandarin_student>.\nI also love sci-fi. Can you <sci_fi> to my favorite sci-fi works on this page?"
   },
-  "microGraphics": ["vonnegut.png", "arrival-1.png", "arrival-2.png"]
+  "microGraphics": [
+    "vonnegut.png",
+    "arrival-1.png",
+    "arrival-2.png",
+    "alien-wy.png",
+    "cyberpunk-arasaka.png",
+    "fifth-element.png"
+  ]
 }
