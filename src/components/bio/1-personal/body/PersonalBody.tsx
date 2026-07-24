@@ -45,15 +45,11 @@ function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProp
         {paragraphs[0]}
       </Text>
       {paragraphs.slice(1).map((paragraph) => (
-        <Text
-          key={paragraph}
-          className={Style.bioAdditional}
-          links={linkText.links}
-          callback={linkHover}
-          onLinkClick={linkClick}
-        >
-          {paragraph}
-        </Text>
+        <div className={Style.bioAdditional} key={paragraph}>
+          <Text links={linkText.links} callback={linkHover} onLinkClick={linkClick}>
+            {paragraph}
+          </Text>
+        </div>
       ))}
       <EggModal isOpen={isEggModalOpen} onClose={() => setIsEggModalOpen(false)} />
     </div>

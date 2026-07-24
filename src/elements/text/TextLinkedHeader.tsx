@@ -8,15 +8,18 @@ import clsx from 'clsx';
 type TextLinkedHeaderProps = {
   href: string;
   children?: React.ReactNode;
-  className?: string;
   color?: string;
+  // h3 sets its own padding directly, so a wrapper can only add to that box,
+  // never replace it; this stays a composition seam like ButtonHolder's
+  // className, for the cases that need to override it
+  className?: string;
 };
 
 function TextLinkedHeader({
   href,
   children,
-  className: classNameProp,
   color,
+  className: classNameProp,
 }: TextLinkedHeaderProps): React.ReactNode {
   const className = clsx(Style.textLinkedHeader, color && Style[color]);
   return (

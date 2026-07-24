@@ -6,6 +6,15 @@
   font-family: $ubuntuMono;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+// heading color override (default themed color otherwise, see theme.scss)
+.cyan {
+  color: $display_cyan;
+}
+
 // Tags
 
 .text-tag {

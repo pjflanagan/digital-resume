@@ -11,20 +11,25 @@ import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
 import * as Style from './Text.module.scss';
 
 type MonoTextProps = {
-  className?: string;
   // when true, renders in Ubuntu Mono
   mono?: boolean;
+  // a themed tag (h1-h5, p) sets its own padding/color directly, so a caller-owned
+  // wrapper can only add to that box, never replace it; this stays a composition
+  // seam like ButtonHolder's className, for the cases that need to override it
+  className?: string;
 };
 
 type HeadingProps = MonoTextProps & {
   children?: React.ReactNode;
   onClick?: () => void;
+  // overrides the tag's default themed color, e.g. h3's default yellow
+  color?: 'cyan';
 };
 
 function makeHeading(Tag: 'h1' | 'h2' | 'h3' | 'h4'): React.FC<HeadingProps> {
-  const Heading = ({ className, children, mono, onClick }: HeadingProps) => (
+  const Heading = ({ children, mono, onClick, color, className }: HeadingProps) => (
     <Tag
-      className={clsx(className, mono && Style.mono)}
+      className={clsx(className, mono && Style.mono, onClick && Style.clickable, color && Style[color])}
       onClick={onClick}
       {...(onClick && {
         role: 'button',
@@ -49,28 +54,31 @@ type TextAccentProps = HeadingProps & {
   animate?: boolean;
 };
 
-function AnimatedTextAccent({ className, children }: HeadingProps): React.ReactNode {
+function AnimatedTextAccent({ children, mono, className }: HeadingProps): React.ReactNode {
   const text = typeof children === 'string' ? children : '';
   const { ref, displayText } = useScrambleText<HTMLHeadingElement>({ text });
   return (
-    <h5 ref={ref} className={className} style={{ whiteSpace: 'pre-line' }}>
+    <h5 ref={ref} className={clsx(className, mono && Style.mono)} style={{ whiteSpace: 'pre-line' }}>
       {displayText}
     </h5>
   );
 }
 
 function TextAccent({
-  className,
   children,
   animate,
   mono = true,
+  className,
 }: TextAccentProps): React.ReactNode {
-  const classNames = clsx(className, mono && Style.mono);
   if (animate) {
-    return <AnimatedTextAccent className={classNames}>{children}</AnimatedTextAccent>;
+    return (
+      <AnimatedTextAccent mono={mono} className={className}>
+        {children}
+      </AnimatedTextAccent>
+    );
   }
   return (
-    <h5 className={classNames} style={{ whiteSpace: 'pre-line' }}>
+    <h5 className={clsx(className, mono && Style.mono)} style={{ whiteSpace: 'pre-line' }}>
       {children}
     </h5>
   );
@@ -88,7 +96,6 @@ function TextTag({
 
 type TextProps = MonoTextProps & {
   dangerouslySetInnerHTML?: { __html: string };
-  style?: React.CSSProperties;
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
@@ -97,23 +104,18 @@ type TextProps = MonoTextProps & {
 
 function Text({
   dangerouslySetInnerHTML,
-  className,
-  style,
   children,
   links,
   callback,
   onLinkClick,
   mono,
+  className: classNameProp,
 }: TextProps): React.ReactNode {
-  const classNames = clsx(className, mono && Style.mono);
+  const className = clsx(classNameProp, mono && Style.mono);
   if (dangerouslySetInnerHTML)
-    return (
-      <p className={classNames} style={style} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />
-    );
+    return <p className={className} dangerouslySetInnerHTML={dangerouslySetInnerHTML} />;
   return (
-    <p className={classNames} style={style}>
-      {ParseTextForLinks(children || '', links, callback, onLinkClick)}
-    </p>
+    <p className={className}>{ParseTextForLinks(children || '', links, callback, onLinkClick)}</p>
   );
 }
 

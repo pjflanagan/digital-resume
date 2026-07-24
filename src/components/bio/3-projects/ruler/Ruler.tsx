@@ -6,6 +6,8 @@ import { useReveal } from 'src/hooks';
 import * as Style from './Ruler.module.scss';
 
 type RulerProps = {
+  // size/position within the page is page-specific; composition seam like
+  // ButtonHolder's className, not a bounded set of variants
   className?: string;
 };
 

@@ -30,15 +30,17 @@
       padding-left: 6px;
 
       .name {
+        margin: 0;
         padding: 0 0 4px;
-        color: $display_cyan;
       }
 
       .location {
+        margin: 0;
         padding: 2px 2px 4px;
       }
 
       .time {
+        margin: 0;
         padding: 2px 2px;
       }
     }
@@ -81,11 +83,7 @@
       display: flex;
 
       .name {
-        font-size: 18px;
         padding: 2px 0;
-        color: $display_yellow;
-        font-weight: 300;
-        font-size: 16px;
       }
     }
   }

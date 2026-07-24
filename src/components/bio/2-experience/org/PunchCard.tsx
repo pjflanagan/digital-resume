@@ -14,8 +14,8 @@ const PUNCH_ROW_COUNT = 10;
 const PUNCH_ROW_CHAR_COUNT = 120;
 const PUNCH_SQUARE_CHAR = '█';
 const PUNCH_SQUARE_CHANCE = 0.15;
-const PUNCH_REVEAL_WINDOW_MS = 1600;
-const PUNCH_REVEAL_MIN_TICK_MS = 6;
+const PUNCH_REVEAL_WINDOW_MS = 940;
+const PUNCH_REVEAL_MIN_TICK_MS = 4;
 // Punch text starts fading back down (and bullets start fading in) this far into the reveal.
 const PUNCH_FADE_START_RATIO = 0.58;
 const PUNCH_BULLET_START_DELAY_MS = PUNCH_REVEAL_WINDOW_MS * PUNCH_FADE_START_RATIO;

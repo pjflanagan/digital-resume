@@ -36,9 +36,11 @@ function Photo({ photo, photoDescription, focusArea, microGraphic }: PhotoProps)
         focusArea={focusArea}
       />
       {photoDescription && (
-        <TextAccent className={Style.photoDescription} mono animate>
-          {photoDescription}
-        </TextAccent>
+        <div className={Style.photoDescription}>
+          <TextAccent mono animate>
+            {photoDescription}
+          </TextAccent>
+        </div>
       )}
       {microGraphic && (
         <MicroGraphic

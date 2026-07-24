@@ -6,6 +6,9 @@ import * as Style from './Image.module.scss';
 type ImageProps = {
   src: string;
   alt: string;
+  // sizing/shape (clip-path, filters, positioning tricks) is page-specific
+  // art direction; composition seam like ButtonHolder's className, not a
+  // bounded set of variants
   className?: string;
 };
 

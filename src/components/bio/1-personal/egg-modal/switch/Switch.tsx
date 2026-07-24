@@ -12,17 +12,15 @@ type SwitchProps<T extends string> = {
   options: SwitchOption<T>[];
   value: T;
   onChange: (value: T) => void;
-  className?: string;
 };
 
 function Switch<T extends string>({
   options,
   value,
   onChange,
-  className,
 }: SwitchProps<T>): React.ReactNode {
   return (
-    <div className={clsx(Style.switchRoot, className)}>
+    <div className={Style.switchRoot}>
       {options.map((option) => (
         <button
           key={option.value}

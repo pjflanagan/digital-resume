@@ -26,6 +26,9 @@ function Frame({ type, style }: FrameProps): React.ReactNode {
 type FrameHolderProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
+  // size/position of the frame is page-specific art direction (offsets,
+  // hover states, keyframe reveals); composition seam like ButtonHolder's
+  // className, not a bounded set of variants
   className?: string;
 };
 

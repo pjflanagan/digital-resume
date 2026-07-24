@@ -36,13 +36,9 @@ type BulletProps = {
 
 function Bullet({ revealed, style, links, children }: BulletProps) {
   return (
-    <Text
-      links={links}
-      style={style}
-      className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)}
-    >
-      {children}
-    </Text>
+    <div className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)} style={style}>
+      <Text links={links}>{children}</Text>
+    </div>
   );
 }
 
@@ -76,7 +72,9 @@ function Org({
           <Avatar src={contentImage('experience', image)} name={name} background={background} />
         </div>
         <div className={Style.orgInfoHolder}>
-          <TextHeading className={Style.name}>{name}</TextHeading>
+          <TextHeading className={Style.name} color="cyan">
+            {name}
+          </TextHeading>
           <Text className={Style.time}>{time}</Text>
           <TextAccent className={Style.location}>{location}</TextAccent>
         </div>
@@ -102,7 +100,7 @@ function Org({
           >
             <div className={Style.orgLeft}></div>
             <div className={Style.orgRight}>
-              <TextLinkedHeader href={org.link || ''} className={Style.name} color="cyan">
+              <TextLinkedHeader href={org.link || ''} className={Style.name} color="yellow">
                 {org.name}
               </TextLinkedHeader>
               <TextSubHeading>{org.position}</TextSubHeading>

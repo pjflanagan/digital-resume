@@ -50,9 +50,7 @@ function Card({ setIsWaveOn }: CardProps) {
           <TextAccent mono animate>
             {Bio.contact.accent}
           </TextAccent>
-          <TextTitle className={Style.title} onClick={cycleCharacter}>
-            {Bio.contact.title}
-          </TextTitle>
+          <TextTitle onClick={cycleCharacter}>{Bio.contact.title}</TextTitle>
           <Text>{Bio.contact.text}</Text>
           <div className={Style.linkHolder}>
             {Bio.contact.links.map((link) => (

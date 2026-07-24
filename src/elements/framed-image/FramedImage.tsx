@@ -10,6 +10,9 @@ type FramedImageProps = {
   // overlay: frame sits over the image as a sibling decoration (frame bounds are independent of image bounds)
   // inset: image nests inside the frame, so the frame's corner brackets can peek out around it
   layout?: 'overlay' | 'inset';
+  // frame/image sizing differs per page (offsets, hover states, keyframe
+  // reveals); composition seam like ButtonHolder's className, not a bounded
+  // set of variants
   frameClassName?: string;
   imageClassName?: string;
   // percentage rect to highlight on the image with an animated FocusFrame

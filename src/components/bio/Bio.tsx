@@ -40,14 +40,16 @@ function BioPage() {
 
   return (
     <div className={Style.container}>
-      <Header className={Style.header}>
-        <HeaderLink onClick={() => clickToScroll('personal')}>0.0 Bio</HeaderLink>
-        <HeaderLink onClick={() => clickToScroll('experience')}>1.0 Experience</HeaderLink>
-        <HeaderLink onClick={() => clickToScroll('projects')}>2.0 Projects</HeaderLink>
-        <HeaderLink href="https://www.flanny.app/blog">2.1 Blog</HeaderLink>
-        <HeaderLink onClick={() => clickToScroll('skills')}>3.0 Skills</HeaderLink>
-        <HeaderLink onClick={() => clickToScroll('contact')}>4.0 Contact</HeaderLink>
-      </Header>
+      <div className={Style.header}>
+        <Header>
+          <HeaderLink onClick={() => clickToScroll('personal')}>0.0 Bio</HeaderLink>
+          <HeaderLink onClick={() => clickToScroll('experience')}>1.0 Experience</HeaderLink>
+          <HeaderLink onClick={() => clickToScroll('projects')}>2.0 Projects</HeaderLink>
+          <HeaderLink href="https://www.flanny.app/blog">2.1 Blog</HeaderLink>
+          <HeaderLink onClick={() => clickToScroll('skills')}>3.0 Skills</HeaderLink>
+          <HeaderLink onClick={() => clickToScroll('contact')}>4.0 Contact</HeaderLink>
+        </Header>
+      </div>
       <Cover />
       <Splash isVisible={isLoading} />
       <SlideLanding />

@@ -6,6 +6,8 @@ import { useScrambleText } from 'src/hooks';
 import * as Style from './SplashText.module.scss';
 
 type SplashTextProps = {
+  // position within the hosting page varies per page (breakpoints, z-index);
+  // composition seam like ButtonHolder's className, not a bounded set of variants
   className?: string;
   headline: React.ReactNode;
   blurb: string;

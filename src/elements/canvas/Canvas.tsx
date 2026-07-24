@@ -6,6 +6,8 @@ type CanvasView = new (canvasElem: HTMLCanvasElement) => { destroy(): void };
 
 type CanvasProps = {
   view: CanvasView;
+  // sizing/position is page background art direction (fixed vs absolute, breakpoints);
+  // stays a composition seam like ButtonHolder's className, not a bounded set of variants
   className?: string;
   style?: React.CSSProperties;
 };

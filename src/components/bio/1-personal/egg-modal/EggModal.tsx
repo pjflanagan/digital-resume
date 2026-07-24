@@ -56,15 +56,16 @@ function EggModal({ isOpen, onClose }: EggModalProps): React.ReactNode {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Sci-Fi References">
-      <Switch
-        className={Style.groupSwitch}
-        value={groupBy}
-        onChange={setGroupBy}
-        options={[
-          { value: 'location', label: 'By Location' },
-          { value: 'reference', label: 'By Reference' },
-        ]}
-      />
+      <div className={Style.groupSwitch}>
+        <Switch
+          value={groupBy}
+          onChange={setGroupBy}
+          options={[
+            { value: 'location', label: 'By Location' },
+            { value: 'reference', label: 'By Reference' },
+          ]}
+        />
+      </div>
       {groups.map((group) => (
         <Dropdown key={group.id} label={group.name}>
           {group.description && (
