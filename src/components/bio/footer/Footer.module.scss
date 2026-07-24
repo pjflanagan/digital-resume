@@ -13,6 +13,8 @@
     opacity: 0.3;
     transition: 0.2s;
     margin: 0 12px;
+    // footer content (see 6.0-footer.json) uses \n for intentional line breaks
+    white-space: pre-line;
 
     &:hover {
       opacity: 0.9;

@@ -119,4 +119,4 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
   );
 }
 
-export { PunchCard, PUNCH_BULLET_START_DELAY_MS };
+export { PunchCard };

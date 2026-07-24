@@ -9,7 +9,7 @@ function Page404Component() {
     <div className={Style.content}>
       <Cover />
       <SplashText
-        className={Style.titleContainer}
+        className={Style.titleHolder}
         headline={Data404.title}
         blurb={Data404.subtitle}
       />

@@ -17,8 +17,8 @@
 
 .top-curve {
   top: -20px;
-  // below the photo (z-index 18, see Photo.module.scss) so it doesn't cut
-  // across it on mobile, but still above the unpositioned side-left content
+  // mobile only: below the photo (z-index 10, see Photo.module.scss) so it
+  // doesn't cut across it, but still above the unpositioned side-left content
   z-index: 5;
 }
 
@@ -38,6 +38,10 @@
 
   .top-curve {
     top: -40px;
+    // tablet+: back above the photo (z-index 10, see Photo.module.scss) to
+    // cover the top of Personal on purpose; mobile is the only size where
+    // the curve needs to stay behind the photo
+    z-index: 17;
   }
 
   .bottom-curve {

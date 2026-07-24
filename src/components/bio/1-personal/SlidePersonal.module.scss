@@ -4,6 +4,7 @@
   z-index: 15;
   position: relative;
   margin-bottom: -28px;
+  background: $background_teal;
 
   .slide-personal-side-left {
     position: relative;
@@ -21,6 +22,9 @@
     z-index: 16;
     color: #fff;
     backdrop-filter: blur(20px);
+    // Experience's pre-slide-curve-holder overlaps -30px on purpose
+    // (see SlideExperience.module.scss); keep the text clear of it
+    padding-bottom: 30px;
   }
 }
 

@@ -6,8 +6,9 @@
   flex-wrap: wrap;
   height: auto;
   // darker than the desktop $background_darkBlue2 since there's no card/wave
-  // art on mobile and tablet to break the background up
-  background: $background_black_a90;
+  // art on mobile and tablet to break the background up, but stays dark blue
+  // to stay distinct from the (black) footer that follows
+  background: $background_darkBlue1;
 
   .slide-back {
     display: none;

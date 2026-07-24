@@ -1,12 +1,12 @@
 @use 'theme/variables' as *;
 
-.title-wrap {
+.title-holder {
   position: relative;
   z-index: 1;
   top: 50%;
 }
 
-.title-container {
+.title {
   top: 32% !important;
   font-family: $ubuntuMono;
 }
@@ -18,7 +18,7 @@
 
 // md
 @media only screen and (min-width: $md) {
-  .title-container {
+  .title {
     top: 50% !important;
   }
 }

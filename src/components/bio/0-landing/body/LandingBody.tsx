@@ -35,9 +35,9 @@ function LandingBody() {
 
   return (
     <>
-      <div ref={titleRef} className={Style.titleWrap}>
+      <div ref={titleRef} className={Style.titleHolder}>
         <SplashText
-          className={Style.titleContainer}
+          className={Style.title}
           headline={Bio.splash.title}
           blurb={Bio.splash.subtitle}
           onHeadlineClick={fireShip}
