@@ -5,28 +5,28 @@
   height: 10px;
   position: absolute;
 
-  &.top-left {
+  &.topLeft {
     border-top: 1px solid $display_yellow;
     border-left: 1px solid $display_yellow;
     top: 0;
     left: 0;
   }
 
-  &.top-right {
+  &.topRight {
     border-top: 1px solid $display_yellow;
     border-right: 1px solid $display_yellow;
     top: 0;
     right: 0;
   }
 
-  &.bottom-left {
+  &.bottomLeft {
     border-bottom: 1px solid $display_yellow;
     border-left: 1px solid $display_yellow;
     bottom: 0;
     left: 0;
   }
 
-  &.bottom-right {
+  &.bottomRight {
     border-bottom: 1px solid $display_yellow;
     border-right: 1px solid $display_yellow;
     bottom: 0;

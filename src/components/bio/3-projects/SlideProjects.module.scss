@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.slide-projects {
+.slideProjects {
   z-index: 31;
   position: relative;
   overflow: hidden;
@@ -17,23 +17,23 @@
     margin: 26px 0 26px;
   }
 
-  .slide-body {
+  .slideBody {
     position: relative;
     z-index: 1;
     padding: 4px 8px 36px;
 
-    .featured-body {
+    .featuredBody {
       display: flex;
       flex-wrap: wrap;
     }
 
-    .all-body {
+    .allBody {
       display: flex;
       flex-wrap: wrap;
       padding: 12px;
     }
 
-    .button-holder {
+    .buttonHolder {
       width: 280px;
       margin: 0 auto;
     }
@@ -41,18 +41,18 @@
 }
 
 @media only screen and (min-width: $lg) {
-  .slide-projects {
+  .slideProjects {
     padding: 0 4px;
 
-    .slide-body {
+    .slideBody {
       max-width: 840px;
       margin: 0 auto;
 
-      .featured-body {
+      .featuredBody {
         margin: 0 auto 24px;
       }
 
-      .all-body {
+      .allBody {
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto 24px;

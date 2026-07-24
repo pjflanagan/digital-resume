@@ -1,17 +1,17 @@
 @use 'theme/variables' as *;
 
-.featured-project {
+.featuredProject {
   width: calc(100% - 8px);
   font-family: $ubuntu;
   height: 220px;
   margin: 20px 0;
 
-  .project-image-frame {
+  .projectImageFrame {
     height: 100%;
     width: 100%;
     position: relative;
 
-    .project-image {
+    .projectImage {
       background: $background_teal_a50;
       clip-path: $polygon;
       width: calc(100% - 8px);
@@ -40,7 +40,7 @@
     padding: 14px;
     transform: translate(0px, -100%);
 
-    .tech-stack-holder {
+    .techStackHolder {
       display: none;
     }
   }
@@ -49,7 +49,7 @@
 // @media only screen and (min-width: $md) {}
 
 @media only screen and (min-width: $lg) {
-  .featured-project {
+  .featuredProject {
     display: flex;
     width: calc(100% - 8px);
     height: 360px;
@@ -57,7 +57,7 @@
     transform: translateX(-22px);
     position: relative;
 
-    .project-image-frame {
+    .projectImageFrame {
       min-width: 560px;
       max-width: 560px;
       transform: translate(0, 0);
@@ -69,7 +69,7 @@
         transform 0.4s,
         filter 0.4s;
 
-      .project-image {
+      .projectImage {
         width: calc(100% - 20px);
         height: calc(100% - 20px);
 
@@ -97,7 +97,7 @@
         transform 0.4s,
         filter 0.4s;
 
-      .tech-stack-holder {
+      .techStackHolder {
         display: flex;
         flex-wrap: wrap;
         padding: 8px 0 0;
@@ -120,8 +120,8 @@
     }
 
     &:hover {
-      .project-image-frame {
-        .project-image {
+      .projectImageFrame {
+        .projectImage {
           width: calc(100% - 4px);
           height: calc(100% - 4px);
 
@@ -133,7 +133,7 @@
     }
 
     &.hidden {
-      .project-image-frame {
+      .projectImageFrame {
         transform: translate(-50px, 0);
         filter: opacity(0.6);
       }
@@ -144,7 +144,7 @@
       }
 
       &:nth-child(2n) {
-        .project-image-frame {
+        .projectImageFrame {
           transform: translate(50px, 0);
           filter: opacity(0.6);
         }
@@ -159,7 +159,7 @@
 }
 
 @media only screen and (min-width: $xl) {
-  .featured-project {
+  .featuredProject {
     transform: translateX(-82px);
 
     &:nth-child(2n) {

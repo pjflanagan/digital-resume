@@ -29,15 +29,15 @@ $unplug-fill-duration: 0.15s;
     transform: translate(-100%, -50%);
   }
 
-  .bar-left,
-  .bar-right {
+  .barLeft,
+  .barRight {
     z-index: 20;
     position: relative;
     overflow: hidden;
     opacity: 0;
   }
 
-  .bar-left {
+  .barLeft {
     flex: 0 0 #{$left-width};
     background: rgb(18 87 96);
     transform: translateX(-60px);
@@ -57,7 +57,7 @@ $unplug-fill-duration: 0.15s;
     );
   }
 
-  .bar-right {
+  .barRight {
     flex: 1;
     margin-left: -#{$tab};
     margin-right: #{$tab + $corner + 12px};
@@ -111,12 +111,12 @@ $unplug-fill-duration: 0.15s;
   }
 
   &.revealed {
-    .bar-left {
+    .barLeft {
       opacity: 1;
       transform: translateX(-1px);
     }
 
-    .bar-right {
+    .barRight {
       opacity: 1;
       transform: translateX(1px);
     }
@@ -131,14 +131,14 @@ $unplug-fill-duration: 0.15s;
   }
 
   &.revealed:hover {
-    .bar-left {
+    .barLeft {
       transform: translateX(-12px);
       transition:
         transform #{$unplug-duration} ease,
         opacity #{$unplug-duration} ease;
     }
 
-    .bar-right {
+    .barRight {
       transform: translateX(12px);
       transition:
         transform #{$unplug-duration} ease,

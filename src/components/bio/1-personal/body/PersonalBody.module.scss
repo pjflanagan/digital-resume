@@ -5,8 +5,8 @@
 }
 
 // mobile shows only the first paragraph
-.paragraph-tablet,
-.paragraph-desktop {
+.paragraphTablet,
+.paragraphDesktop {
   display: none;
 }
 
@@ -16,14 +16,14 @@
   }
 
   // tablet adds the second paragraph
-  .paragraph-tablet {
+  .paragraphTablet {
     display: block;
   }
 }
 
 @media only screen and (min-width: $xl) {
   // desktop shows the rest
-  .paragraph-desktop {
+  .paragraphDesktop {
     display: block;
   }
 }

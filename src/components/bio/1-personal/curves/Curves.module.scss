@@ -3,8 +3,8 @@
 // Scoped to the curve classes — a bare `svg` selector in a CSS module is
 // global and would restyle every SVG on the page (it used to paint icon
 // bounding boxes).
-.top-curve,
-.bottom-curve {
+.topCurve,
+.bottomCurve {
   height: 40px;
   width: 100%;
   position: absolute;
@@ -15,20 +15,20 @@
   }
 }
 
-.top-curve {
+.topCurve {
   top: -20px;
   // mobile only: below the photo (z-index 10, see Photo.module.scss) so it
   // doesn't cut across it, but still above the unpositioned side-left content
   z-index: 5;
 }
 
-.bottom-curve {
+.bottomCurve {
   display: none;
 }
 
 @media only screen and (min-width: $md) {
-  .top-curve,
-  .bottom-curve {
+  .topCurve,
+  .bottomCurve {
     height: 80px;
 
     path {
@@ -36,7 +36,7 @@
     }
   }
 
-  .top-curve {
+  .topCurve {
     top: -40px;
     // tablet+: back above the photo (z-index 10, see Photo.module.scss) to
     // cover the top of Personal on purpose; mobile is the only size where
@@ -44,7 +44,7 @@
     z-index: 17;
   }
 
-  .bottom-curve {
+  .bottomCurve {
     display: block;
     bottom: -40px;
   }

@@ -3,29 +3,25 @@
 .card {
   width: 100%;
 
-  .submit-error {
+  .submitError {
     text-align: right;
     margin-top: 8px;
     color: $display_orange;
   }
 
-  .card-sides {
+  .cardSides {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     // flex-direction: column-reverse;
 
-    .side-left {
+    .sideLeft {
       width: 100%;
       padding: 36px 12px 0;
       position: relative;
 
-      .title {
-        cursor: pointer;
-      }
-
-      .link-holder {
-        .button-holder {
+      .linkHolder {
+        .buttonHolder {
           margin: 18px 0;
         }
       }
@@ -36,15 +32,15 @@
       }
     }
 
-    .side-right {
+    .sideRight {
       display: none;
       transition: transform 0.4s;
     }
   }
 
-  &.is-submitted {
-    .card-sides {
-      .side-right {
+  &.isSubmitted {
+    .cardSides {
+      .sideRight {
         // max-height: 0;
         // overflow: hidden;
         // padding: 0px 12px;
@@ -57,13 +53,13 @@
 // tablet: contact links sit in a row instead of stacking
 @media only screen and (min-width: $md) and (max-width: #{$xl - 1px}) {
   .card {
-    .card-sides {
-      .side-left {
-        .link-holder {
+    .cardSides {
+      .sideLeft {
+        .linkHolder {
           display: flex;
           flex-wrap: wrap;
 
-          .button-holder {
+          .buttonHolder {
             width: auto;
             margin: 8px;
           }
@@ -83,16 +79,16 @@
     transition: transform 0.4s;
     transform: rotate(0);
 
-    .card-sides {
+    .cardSides {
       width: auto;
 
-      .side-left {
+      .sideLeft {
         position: relative;
         padding: 36px;
         z-index: 2;
         width: 276px;
 
-        .link-holder {
+        .linkHolder {
           display: block;
           flex-wrap: nowrap;
           margin: 0 auto;
@@ -109,7 +105,7 @@
           .decoration {
             display: block;
 
-            &.bottom-circle-outer {
+            &.bottomCircleOuter {
               position: absolute;
               background: $background_darkBlue1;
               border-radius: 50%;
@@ -121,7 +117,7 @@
               clip-path: polygon(23% 0, 100% 0, 100% 50%, 23% 50%);
             }
 
-            &.bottom-rectangle-outer {
+            &.bottomRectangleOuter {
               position: absolute;
               background: $background_darkBlue1;
               height: 12%;
@@ -132,7 +128,7 @@
               border-radius: 2px;
             }
 
-            &.bottom-circle {
+            &.bottomCircle {
               position: absolute;
               background: $background_darkBlue1;
               border-radius: 50%;
@@ -143,7 +139,7 @@
               margin: -50% -30%;
             }
 
-            &.top-rectangle {
+            &.topRectangle {
               position: absolute;
               background: $background_darkBlue1;
               height: 20%;
@@ -157,7 +153,7 @@
         }
       }
 
-      .side-right {
+      .sideRight {
         display: inline;
         width: 414px;
         padding: 36px;
@@ -173,8 +169,8 @@
     }
 
     &.collapsed {
-      .card-sides {
-        .side-right {
+      .cardSides {
+        .sideRight {
           height: auto;
           transform: translate(-120px, 0);
           pointer-events: none;

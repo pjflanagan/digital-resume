@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
 
-  .stack-body {
+  .stackBody {
     position: relative;
     width: 100%;
     height: calc(100% - 64px);
@@ -117,7 +117,7 @@
     }
   }
 
-  .stack-nav {
+  .stackNav {
     width: 60%;
     max-width: 240px;
     margin: 0 auto;
@@ -128,7 +128,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 
-    .bullet-holder {
+    .bulletHolder {
       width: 24px;
       height: 26px;
       display: flex;
@@ -141,7 +141,7 @@
       padding: 6px;
       margin: -6px;
 
-      .stack-bullet {
+      .stackBullet {
         width: 1px;
         height: 4px;
         background: $display_yellow;
@@ -155,15 +155,15 @@
       }
 
       &:hover {
-        .stack-bullet {
+        .stackBullet {
           height: 80%;
         }
       }
     }
   }
 
-  &.pre-reveal {
-    .stack-body {
+  &.preReveal {
+    .stackBody {
       .layer {
         // next 1
         &:nth-of-type(3) {

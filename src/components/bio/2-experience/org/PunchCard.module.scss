@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.punch-card {
+.punchCard {
   display: none;
   position: absolute;
   inset: 0;
@@ -14,12 +14,12 @@
 }
 
 @media only screen and (min-width: $md) {
-  .punch-card {
+  .punchCard {
     display: flex;
   }
 }
 
-.punch-row {
+.punchRow {
   font-family: monospace;
   font-size: 14px;
   line-height: 1;

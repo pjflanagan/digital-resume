@@ -1,12 +1,12 @@
 @use 'theme/variables' as *;
 
-.form-content {
+.formContent {
   .form {
-    .label-holder {
+    .labelHolder {
       margin-bottom: -12px;
     }
 
-    .form-field {
+    .formField {
       background: $background_darkBlue1_a90;
       outline: none;
       border: 1px solid #fff0;
@@ -64,19 +64,19 @@
       resize: none;
     }
 
-    .submit-holder {
+    .submitHolder {
       width: 100%;
       display: flex;
       flex-direction: row-reverse;
       margin-top: 12px;
     }
 
-    .error-holder {
+    .errorHolder {
       min-height: 28px;
       margin-top: -6px;
     }
 
-    &.is-loading {
+    &.isLoading {
       filter: opacity(0.8);
       pointer-events: none;
     }

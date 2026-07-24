@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.slide-skills {
+.slideSkills {
   width: 100%;
   z-index: 20;
   position: relative;
@@ -10,14 +10,14 @@
     inset 0 40px 40px -40px #0008,
     inset 0 -40px 40px -40px #0008;
 
-  .slide-body {
+  .slideBody {
     font-family: $ubuntu;
     z-index: 21;
     position: relative;
     margin: 0 auto;
     padding: 0 12px;
 
-    .title-holder {
+    .titleHolder {
       border-right: 2px solid $display_black_a30;
       padding: 12px 0 0;
       width: 80%;
@@ -37,10 +37,10 @@
 }
 
 @media only screen and (min-width: $md) {
-  .slide-skills {
+  .slideSkills {
     z-index: 0;
 
-    .slide-body {
+    .slideBody {
       width: 540px;
       padding: 0;
     }
@@ -48,16 +48,16 @@
 }
 
 @media only screen and (min-width: $lg) {
-  .slide-skills {
-    .slide-body {
+  .slideSkills {
+    .slideBody {
       width: 680px;
     }
   }
 }
 
 @media only screen and (min-width: $xl) {
-  .slide-skills {
-    .slide-body {
+  .slideSkills {
+    .slideBody {
       width: 820px;
     }
   }

@@ -32,6 +32,10 @@ $display_orange: #e4400f;
 $display_orange_a30: rgba($display_orange, 0.3);
 $accent_orange: #ef5220;
 
+$display_red: #dd072b;
+$display_red_a30: rgba($display_red, 0.3);
+$accent_red: #e52c3e;
+
 // Intentionally a distinct off-white, not derived from $display_white
 $display_white_a50: #eaf4f488;
 $display_black_a30: rgba($display_black, 0.3);
@@ -63,18 +67,3 @@ $polygonLeft: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 $md: 576px;
 $lg: 768px;
 $xl: 960px;
-
-// Timing
-
-// $transitionFast: 0.2s;
-// $transitionMed: 0.4s;
-// $transitionSlow: 0.8s;
-
-// $animationFast: 0.2s;
-// $animationMed: 0.6s;
-// $animationSlow: 1.8s;
-
-// More
-
-// $divPadding: 24px;
-// $boxShadowInner:

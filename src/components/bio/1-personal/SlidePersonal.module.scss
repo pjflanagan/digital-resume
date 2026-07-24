@@ -1,19 +1,19 @@
 @use 'theme/variables' as *;
 
-.slide-personal {
+.slidePersonal {
   z-index: 15;
   position: relative;
   margin-bottom: -28px;
   background: $background_teal;
 
-  .slide-personal-side-left {
+  .slidePersonalSideLeft {
     position: relative;
     height: 340px;
     width: 100%;
     background: $background_teal;
   }
 
-  .slide-personal-side-right {
+  .slidePersonalSideRight {
     position: relative;
     margin-top: -134px;
     width: 94%;
@@ -30,13 +30,13 @@
 
 // md
 @media only screen and (min-width: $md) {
-  .slide-personal {
+  .slidePersonal {
     display: flex;
     align-items: stretch;
     background: #000;
     min-height: 680px;
 
-    .slide-personal-side-left {
+    .slidePersonalSideLeft {
       height: auto;
       margin-top: 0;
       flex: 0 0 40vw;
@@ -50,7 +50,7 @@
       );
     }
 
-    .slide-personal-side-right {
+    .slidePersonalSideRight {
       margin-top: 0;
       left: 0;
       flex: 1 1 60vw;
@@ -62,13 +62,13 @@
 }
 
 @media only screen and (min-width: $lg) {
-  .slide-personal {
-    .slide-personal-side-left {
+  .slidePersonal {
+    .slidePersonalSideLeft {
       flex-basis: 64vw;
       width: 64vw;
     }
 
-    .slide-personal-side-right {
+    .slidePersonalSideRight {
       flex-basis: 36vw;
       width: 36vw;
     }

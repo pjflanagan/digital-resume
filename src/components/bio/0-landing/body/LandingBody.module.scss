@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.title-holder {
+.titleHolder {
   position: relative;
   z-index: 1;
   top: 50%;
@@ -11,7 +11,7 @@
   font-family: $ubuntuMono;
 }
 
-.button-holder {
+.buttonHolder {
   visibility: hidden;
   z-index: 2;
 }
@@ -25,7 +25,7 @@
 
 // desktop only: scroll prompt and rocket button stay hidden on mobile and tablet
 @media only screen and (min-width: $xl) {
-  .button-holder {
+  .buttonHolder {
     visibility: visible;
     display: flex;
     align-items: center;

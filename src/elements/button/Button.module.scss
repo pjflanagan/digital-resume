@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.button-reset {
+.buttonReset {
   background: none;
   color: inherit;
   border: none;
@@ -11,7 +11,7 @@
   display: flex;
 }
 
-.labeled-button {
+.labeledButton {
   position: relative;
   min-width: 192px;
   width: fit-content;
@@ -55,7 +55,7 @@
     -webkit-transition: 0.2s;
     transition: 0.2s;
 
-    .svg-holder {
+    .svgHolder {
       width: 32px;
       height: 100%;
       padding: 4px 30px 4px 0;

@@ -7,7 +7,7 @@ $lineColor: $display_black_a30;
   flex-direction: column;
 }
 
-.skill-columns {
+.skillColumns {
   display: flex;
   flex-direction: column;
   border-top: 2px solid $lineColor;
@@ -19,7 +19,7 @@ $lineColor: $display_black_a30;
       80% 0,
     );
 
-  .skill-column {
+  .skillColumn {
     display: flex;
     flex-direction: column;
     border-left: 2px solid $lineColor;
@@ -65,11 +65,11 @@ $lineColor: $display_black_a30;
         padding-left: 12px;
       }
 
-      .skill-list-holder {
+      .skillListHolder {
         display: flex;
         flex-direction: column;
 
-        .skill-bar-holder {
+        .skillBarHolder {
           margin-left: 20px;
           position: relative;
           padding: 4px;
@@ -83,17 +83,17 @@ $lineColor: $display_black_a30;
 
 
 @media only screen and (min-width: $lg) {
-  .skill-columns {
+  .skillColumns {
     flex-direction: row;
   }
 
-  .skill-column {
+  .skillColumn {
     flex: 1;
     min-width: 0;
   }
 }
 
-.show-all-holder {
+.showAllHolder {
   display: flex;
   justify-content: center;
   padding: 36px 0;

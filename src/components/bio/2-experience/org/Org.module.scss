@@ -1,6 +1,6 @@
 @use 'theme/variables' as *;
 
-.bullet-point {
+.bulletPoint {
   transition: opacity 0.4s;
 }
 
@@ -17,16 +17,16 @@
   color: #fff;
   margin-bottom: 24px;
 
-  .org-left {
+  .orgLeft {
     display: flex;
     flex-wrap: wrap;
 
-    .avatar-holder {
+    .avatarHolder {
       padding: 0 6px;
       cursor: pointer;
     }
 
-    .org-info-holder {
+    .orgInfoHolder {
       padding-left: 6px;
 
       .name {
@@ -46,11 +46,11 @@
     }
   }
 
-  .org-right {
+  .orgRight {
     padding: 14px;
   }
 
-  .org-extra {
+  .orgExtra {
     display: none;
   }
 }
@@ -64,11 +64,11 @@
     clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
     flex-wrap: wrap;
 
-    .org-left {
+    .orgLeft {
       min-width: 320px;
     }
 
-    .org-right {
+    .orgRight {
       width: calc(100% - 320px);
       display: grid;
       padding: 0 14px;
@@ -78,7 +78,7 @@
       }
     }
 
-    .org-extra {
+    .orgExtra {
       width: 100%;
       display: flex;
 

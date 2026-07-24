@@ -44,8 +44,8 @@
   }
 }
 
-.show-more {
-  .content-holder {
+.showMore {
+  .contentHolder {
     width: 0;
     max-height: 0;
     border-top: 1px solid $display_cyan;
@@ -57,7 +57,7 @@
     transition: 0.4s;
   }
 
-  .button-holder {
+  .buttonHolder {
     width: 240px;
     margin: 24px auto;
     transition: 0.2s;
@@ -65,11 +65,11 @@
   }
 
   &.open {
-    .content-holder {
+    .contentHolder {
       animation: content-open 1.2s forwards;
     }
 
-    .button-holder {
+    .buttonHolder {
       animation: button-open 1.2s forwards;
       pointer-events: none;
     }

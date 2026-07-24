@@ -3,7 +3,7 @@
 // fills the positioned parent exactly (rather than relying on the child
 // image's intrinsic size), so the image can object-fit: cover it and the
 // focusArea percentages below stay accurate to the visible, cropped image
-.focus-frame-holder {
+.focusFrameHolder {
   position: absolute;
   inset: 0;
 
@@ -14,7 +14,7 @@
   }
 }
 
-.focus-box {
+.focusBox {
   position: absolute;
   pointer-events: none;
   background: transparent;

@@ -17,7 +17,7 @@
 
 // Tags
 
-.text-tag {
+.textTag {
   font-size: 12px;
   color: $display_cyan;
 }
@@ -25,7 +25,7 @@
 // Function Paragraph Spans
 
 p {
-  .text-inline-link {
+  .textInlineLink {
     color: $display_cyan;
     text-decoration: none;
     box-shadow: inset 0px -6px $display_cyan_a20;
@@ -75,7 +75,7 @@ p {
 // override for cyan color
 
 a {
-  h2.text-linked-header {
+  h2.textLinkedHeader {
     &.cyan {
       color: $display_cyan;
 
