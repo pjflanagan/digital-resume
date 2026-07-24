@@ -1,6 +1,10 @@
 import React, { useMemo, useState } from 'react';
 
-import { Modal, Dropdown, Switch, ParseTextForLinks } from 'src/elements';
+import { ParseTextForLinks } from 'src/elements';
+
+import { Modal } from './modal/Modal';
+import { Dropdown } from './dropdown/Dropdown';
+import { Switch } from './switch/Switch';
 import { useBio } from 'src/content';
 
 import * as Style from './EggModal.module.scss';

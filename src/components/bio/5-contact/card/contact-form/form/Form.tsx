@@ -1,6 +1,6 @@
 import React from 'react';
-import { LabeledButtonForm } from '../button/LabeledButton';
-import type { IconName } from '../icon/SVGIcon';
+import { LabeledButtonForm } from 'src/elements/button/LabeledButton';
+import type { IconName } from 'src/elements';
 
 import * as Style from './Form.module.scss';
 import clsx from 'clsx';

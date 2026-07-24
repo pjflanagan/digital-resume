@@ -2,7 +2,7 @@ import { useRef, type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { useReveal } from 'src/hooks';
-import { Image } from '../image/Image';
+import { Image } from 'src/elements';
 
 import * as Style from './Avatar.module.scss';
 

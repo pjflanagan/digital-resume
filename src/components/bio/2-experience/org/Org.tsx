@@ -4,7 +4,6 @@ import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
 import { contentImage } from 'src/content';
 import {
-  Avatar,
   Text,
   TextLinkedHeader,
   TextHeading,
@@ -12,6 +11,7 @@ import {
   TextAccent,
 } from 'src/elements';
 
+import { Avatar } from './avatar/Avatar';
 import { PunchCard, PUNCH_BULLET_START_DELAY_MS } from './PunchCard';
 import * as Style from './Org.module.scss';
 

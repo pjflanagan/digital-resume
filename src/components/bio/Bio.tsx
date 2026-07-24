@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 
 import { ContentProvider, useBio } from 'src/content';
-import { Cover, Footer, Splash, Header, HeaderLink } from 'src/elements';
+import { Cover, Splash } from 'src/elements';
+
+import { Footer } from './footer/Footer';
+import { Header } from './header/Header';
+import { HeaderLink } from './header/HeaderLink';
 
 import { SlideLanding } from './0-landing/SlideLanding';
 import { SlidePersonal } from './1-personal/SlidePersonal';

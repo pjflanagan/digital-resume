@@ -1,16 +1,16 @@
 import {
-  Ruler,
   TextTitle,
   TextAccent,
   TextSection,
   Text,
-  Stack,
   LabeledButton,
   ButtonHolder,
   ScrollElement,
 } from 'src/elements';
 import { useBio } from 'src/content';
 
+import { Ruler } from './ruler/Ruler';
+import { Stack } from './stack/Stack';
 import { Blueprint } from './blueprint/Blueprint';
 import { DotGrid } from './blueprint/DotGrid';
 import { useBlueprints } from './blueprint/useBlueprints';

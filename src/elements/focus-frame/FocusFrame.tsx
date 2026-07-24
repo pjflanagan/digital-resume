@@ -59,7 +59,10 @@ function FocusFrame({ children, area, className }: FocusFrameProps): React.React
     >
       {children}
       <FrameHolder
-        className={clsx(Style.focusBox, { [Style.animating]: isAnimating })}
+        className={clsx(Style.focusBox, {
+          [Style.animating]: isAnimating,
+          [Style.breathing]: !isAnimating,
+        })}
         style={{
           left: `${area.x}%`,
           top: `${area.y}%`,

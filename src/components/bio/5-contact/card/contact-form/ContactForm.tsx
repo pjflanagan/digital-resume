@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 import type { FormPlaceholder } from 'src/content';
-import { Form, FormText, FormMessage, FormButton, TextTag } from 'src/elements';
+import { TextTag } from 'src/elements';
+
+import { Form, FormButton } from './form/Form';
+import { FormText, FormMessage } from './form/FormField';
 import { encode } from 'src/helpers';
 
 import * as Style from '../Card.module.scss';

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import { Text } from 'src/elements';
-import type { LinkText } from '../text/types';
+import type { LinkText } from 'src/elements/text/types';
 
 import * as Style from './Footer.module.scss';
 

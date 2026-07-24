@@ -2,7 +2,9 @@ import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { LabeledButton, ProgressBar, TextHeading } from 'src/elements';
+import { LabeledButton, TextHeading } from 'src/elements';
+
+import { ProgressBar } from './progress-bar/ProgressBar';
 import { useBio } from 'src/content';
 
 import * as Style from './Skills.module.scss';

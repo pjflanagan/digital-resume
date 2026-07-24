@@ -1,6 +1,7 @@
-import { TextSection, ShowMore } from 'src/elements';
+import { TextSection } from 'src/elements';
 import type { Job } from 'src/content';
 
+import { ShowMore } from '../show-more/ShowMore';
 import { Org } from '../org/Org';
 
 function JobOrg({ job }: { job: Job }) {
