@@ -19,10 +19,9 @@ type FocusArea = {
 type FocusFrameProps = {
   children: React.ReactNode;
   area: FocusArea;
-  className?: string;
 };
 
-function FocusFrame({ children, area, className }: FocusFrameProps): React.ReactNode {
+function FocusFrame({ children, area }: FocusFrameProps): React.ReactNode {
   const containerRef = useRef<HTMLDivElement>(null);
   const firstClickRef = useRef<{ x: number; y: number } | null>(null);
   const isAnimating = useFlashOnChange([area.x, area.y, area.width, area.height]);
@@ -54,7 +53,7 @@ function FocusFrame({ children, area, className }: FocusFrameProps): React.React
   return (
     <div
       ref={containerRef}
-      className={clsx(Style.focusFrameHolder, className)}
+      className={Style.focusFrameHolder}
       onClick={handleClick}
     >
       {children}

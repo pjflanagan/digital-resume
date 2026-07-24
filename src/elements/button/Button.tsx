@@ -11,7 +11,6 @@ type ButtonCommonProps = {
   scale?: number;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
-  className?: string;
 };
 
 type ActionProps = ButtonCommonProps & {

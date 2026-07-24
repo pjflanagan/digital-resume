@@ -6,21 +6,16 @@ import { useReveal } from 'src/hooks';
 import * as Style from './ProgressBar.module.scss';
 
 type ProgressBarProps = {
-  className?: string;
   progress: number;
   name: string;
 };
 
-function ProgressBar({
-  className: classNameProp,
-  progress: progressProp,
-  name,
-}: ProgressBarProps): ReactNode {
+function ProgressBar({ progress: progressProp, name }: ProgressBarProps): ReactNode {
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 40 });
   const progress = isRevealed ? progressProp : 0;
 
-  const className = clsx(Style.bar, isRevealed && Style.revealed, classNameProp);
+  const className = clsx(Style.bar, isRevealed && Style.revealed);
 
   return (
     <div className={className} ref={ref}>

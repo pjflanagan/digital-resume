@@ -11,11 +11,10 @@ type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  className?: string;
   children?: React.ReactNode;
 };
 
-function Modal({ isOpen, onClose, title, className, children }: ModalProps): React.ReactNode {
+function Modal({ isOpen, onClose, title, children }: ModalProps): React.ReactNode {
   useEffect(() => {
     if (!isOpen) return;
     function onKeyDown(e: KeyboardEvent): void {
@@ -34,7 +33,7 @@ function Modal({ isOpen, onClose, title, className, children }: ModalProps): Rea
       aria-hidden={!isOpen}
     >
       <div
-        className={clsx(Style.modal, className)}
+        className={Style.modal}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"

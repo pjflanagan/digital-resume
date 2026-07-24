@@ -51,7 +51,6 @@ function LabeledButtonForm({
 }
 
 type LabeledButtonLinkedProps = LabeledButtonFormProps & {
-  className?: string;
   href: string;
   sameWindow?: boolean;
 };
@@ -64,16 +63,10 @@ function LabeledButtonLinked({
   onMouseEnter,
   onMouseLeave,
   children,
-  className: classNameProp,
   href,
   sameWindow,
 }: LabeledButtonLinkedProps): React.ReactNode {
-  const className = clsx(
-    Style.labeledButton,
-    color && Style[color],
-    bold && Style.bold,
-    classNameProp
-  );
+  const className = clsx(Style.labeledButton, color && Style[color], bold && Style.bold);
 
   return (
     <div className={className} style={scale ? { transform: `scale(${scale})` } : undefined}>
@@ -100,7 +93,6 @@ type LabeledButtonActionProps = {
   bold?: boolean;
   scale?: number;
   onClick: () => void;
-  className?: string;
 };
 
 function LabeledButtonAction({
@@ -110,7 +102,6 @@ function LabeledButtonAction({
   bold,
   scale,
   onClick,
-  className,
 }: LabeledButtonActionProps): React.ReactNode {
   return (
     <button
@@ -119,8 +110,7 @@ function LabeledButtonAction({
         Style.labeledButton,
         Style.buttonReset,
         color && Style[color],
-        bold && Style.bold,
-        className
+        bold && Style.bold
       )}
       style={scale ? { transform: `scale(${scale})` } : undefined}
       onClick={onClick}

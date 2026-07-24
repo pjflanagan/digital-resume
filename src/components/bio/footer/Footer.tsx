@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import clsx from 'clsx';
 
 import { Text } from 'src/elements';
 import type { LinkText } from 'src/elements/text/types';
@@ -7,14 +6,12 @@ import type { LinkText } from 'src/elements/text/types';
 import * as Style from './Footer.module.scss';
 
 type FooterProps = {
-  className?: string;
   text: LinkText<string>[];
 };
 
-function Footer({ className: classNameProp, text }: FooterProps): ReactNode {
-  const className = clsx(Style.footer, classNameProp);
+function Footer({ text }: FooterProps): ReactNode {
   return (
-    <div className={className}>
+    <div className={Style.footer}>
       {text.map((linkText, i) => (
         <div className={Style.textHolder} key={i}>
           <Text links={linkText.links}>{linkText.text}</Text>

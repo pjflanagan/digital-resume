@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
 
 import { SVGIcon } from 'src/elements';
 import { activationKeyHandler } from 'src/helpers';
@@ -9,10 +8,9 @@ import * as Style from './Dropdown.module.scss';
 type DropdownProps = {
   label: React.ReactNode;
   children?: React.ReactNode;
-  className?: string;
 };
 
-function Dropdown({ label, children, className }: DropdownProps): React.ReactNode {
+function Dropdown({ label, children }: DropdownProps): React.ReactNode {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle(): void {
@@ -20,7 +18,7 @@ function Dropdown({ label, children, className }: DropdownProps): React.ReactNod
   }
 
   return (
-    <div className={clsx(Style.dropdown, className)}>
+    <div className={Style.dropdown}>
       <div
         className={Style.label}
         role="button"
