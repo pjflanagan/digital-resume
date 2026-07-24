@@ -54,6 +54,25 @@
   }
 }
 
+// tablet: contact links sit in a row instead of stacking
+@media only screen and (min-width: $md) and (max-width: #{$xl - 1px}) {
+  .card {
+    .card-sides {
+      .side-left {
+        .link-holder {
+          display: flex;
+          flex-wrap: wrap;
+
+          .button-holder {
+            width: auto;
+            margin: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
 // xl
 @media only screen and (min-width: $xl) {
   .card {

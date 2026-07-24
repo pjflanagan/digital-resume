@@ -21,7 +21,10 @@
   .title-container {
     top: 50% !important;
   }
+}
 
+// desktop only: scroll prompt and rocket button stay hidden on mobile and tablet
+@media only screen and (min-width: $xl) {
   .button-holder {
     visibility: visible;
     display: flex;

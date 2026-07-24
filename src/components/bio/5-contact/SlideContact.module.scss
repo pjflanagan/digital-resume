@@ -5,7 +5,9 @@
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  background: $background_darkBlue2;
+  // darker than the desktop $background_darkBlue2 since there's no card/wave
+  // art on mobile and tablet to break the background up
+  background: $background_black_a90;
 
   .slide-back {
     display: none;
@@ -16,7 +18,8 @@
   }
 }
 
-@media only screen and (min-width: $md) {
+// desktop only: wave animation stays hidden on mobile and tablet
+@media only screen and (min-width: $xl) {
   .slide-contact {
     .slide-back {
       display: block;

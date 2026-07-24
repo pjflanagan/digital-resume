@@ -1,6 +1,7 @@
 @use 'theme/variables' as *;
 
 .blueprint {
+  display: none;
   background-color: $background_teal_a30;
   pointer-events: none;
 
@@ -10,4 +11,11 @@
   -webkit-mask-image: var(--blueprint-src);
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
+}
+
+// decorative background art, not shown on mobile
+@media only screen and (min-width: $md) {
+  .blueprint {
+    display: block;
+  }
 }

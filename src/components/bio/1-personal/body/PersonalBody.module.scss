@@ -2,26 +2,28 @@
 
 .body {
   padding: 14px 14px;
-
-  &.bio-additional {
-    display: none;
-  }
 }
 
-// md
+// mobile shows only the first paragraph
+.paragraph-tablet,
+.paragraph-desktop {
+  display: none;
+}
+
 @media only screen and (min-width: $md) {
   .body {
     padding: 50px 24px;
+  }
 
-    &.bio-additional {
-      display: block;
-    }
+  // tablet adds the second paragraph
+  .paragraph-tablet {
+    display: block;
   }
 }
 
-// lg
-// @media only screen and (min-width: $lg) {
-//   .bio.additional {
-//     display: block;
-//   }
-// }
+@media only screen and (min-width: $xl) {
+  // desktop shows the rest
+  .paragraph-desktop {
+    display: block;
+  }
+}

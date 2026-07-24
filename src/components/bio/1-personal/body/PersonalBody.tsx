@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import clsx from 'clsx';
 
 import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
@@ -41,11 +42,11 @@ function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProp
         {greeting}
       </TextAccent>
       <TextTitle>{ParseTextForLinks(titleText.text, titleText.links, linkHover)}</TextTitle>
-      <Text links={linkText.links} callback={linkHover}>
-        {paragraphs[0]}
-      </Text>
-      {paragraphs.slice(1).map((paragraph) => (
-        <div className={Style.bioAdditional} key={paragraph}>
+      {paragraphs.map((paragraph, i) => (
+        <div
+          key={i}
+          className={clsx(i === 1 && Style.paragraphTablet, i >= 2 && Style.paragraphDesktop)}
+        >
           <Text links={linkText.links} callback={linkHover} onLinkClick={linkClick}>
             {paragraph}
           </Text>

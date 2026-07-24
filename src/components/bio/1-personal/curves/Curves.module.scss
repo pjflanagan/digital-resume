@@ -17,6 +17,9 @@
 
 .top-curve {
   top: -20px;
+  // below the photo (z-index 18, see Photo.module.scss) so it doesn't cut
+  // across it on mobile, but still above the unpositioned side-left content
+  z-index: 5;
 }
 
 .bottom-curve {

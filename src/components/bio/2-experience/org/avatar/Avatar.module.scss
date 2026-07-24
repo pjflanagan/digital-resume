@@ -68,3 +68,16 @@
     }
   }
 }
+
+// mobile: skip the scroll-triggered reveal, avatars start in their revealed state
+@media only screen and (max-width: #{$md - 1px}) {
+  .avatar-holder {
+    .avatar-image-holder {
+      filter: grayscale(0.3) opacity(0.7);
+    }
+    &:after {
+      width: 56px;
+      height: 56px;
+    }
+  }
+}

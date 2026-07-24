@@ -19,12 +19,17 @@
 
 @media only screen and (min-width: $md) {
   .container {
-    .header {
-      display: flex;
-    }
-
     .slides {
       top: 300%;
+    }
+  }
+}
+
+// desktop only: header stays hidden on mobile and tablet
+@media only screen and (min-width: $xl) {
+  .container {
+    .header {
+      display: flex;
     }
   }
 }
