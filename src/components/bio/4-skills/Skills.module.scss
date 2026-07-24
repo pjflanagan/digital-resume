@@ -1,5 +1,7 @@
 @use 'theme/variables' as *;
 
+$lineColor: $display_black_a30;
+
 .skills {
   display: flex;
   flex-direction: column;
@@ -8,20 +10,19 @@
 .skill-columns {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid $display_black_a30;
-  clip-path: polygon(
-      0 0,
+  border-top: 2px solid $lineColor;
+  clip-path: polygon(0 0,
       0 100%,
       100% 100%,
       100% 4px,
       80% 4px,
       80% 0,
-      );
+    );
 
   .skill-column {
     display: flex;
     flex-direction: column;
-    border-left: 2px solid $display_black_a30;
+    border-left: 2px solid $lineColor;
     height: fit-content;
 
     &:first-child {
@@ -40,11 +41,15 @@
           0 100%,
           100% 100%,
           100% 0);
-      border-bottom: 2px solid $display_black_a30;
+      border-bottom: 2px solid $lineColor;
     }
 
     &:first-child .skillGroup:nth-child(2) {
-      border-bottom: 2px solid $background_darkBlue2;
+      border-bottom: 2px solid $lineColor;
+
+      @media only screen and (max-width: $lg) {
+        border-bottom: none;
+      }
     }
 
     &:last-child .skillGroup:last-child {
@@ -92,7 +97,7 @@
   display: flex;
   justify-content: center;
   padding: 36px 0;
-  border-right: 2px solid $display_black_a30;
+  border-right: 2px solid $lineColor;
 
   &:after {
     content: 'GND';
