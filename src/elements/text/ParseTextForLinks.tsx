@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import type { ContentLink } from './types';
 
@@ -8,6 +9,18 @@ import * as Style from './Text.module.scss';
 
 // matches <link_name> tokens; the capture keeps the name in the split output
 const REGEX_SPLIT_LINKS = /<([^<>]+)>/g;
+
+// wraps each word of text in its own span, so all but the first can be hidden below $md
+// (see Style.wordHidden) — e.g. "Peter James Flanagan" reads as just "Peter" on small screens
+function splitWords(text: string): React.ReactNode {
+  const words = text.split(' ');
+  return words.map((word, i) => (
+    <React.Fragment key={i}>
+      <span className={clsx(i > 0 && Style.wordHidden)}>{word}</span>
+      {i < words.length - 1 ? ' ' : null}
+    </React.Fragment>
+  ));
+}
 
 type LinkCallback = (
   link: Pick<ContentLink, 'image' | 'photoLocation' | 'photoDescription' | 'greeting' | 'focusArea'>
@@ -71,5 +84,5 @@ function ParseTextForLinks(
   });
 }
 
-export { ParseTextForLinks };
+export { ParseTextForLinks, splitWords };
 export type { LinkCallback };

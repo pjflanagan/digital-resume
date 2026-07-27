@@ -52,7 +52,15 @@ function MusicBox(): ReactNode {
 
   return (
     <div className={Style.musicBox} aria-hidden>
-      <div className={Style.track} style={{ width: trackWidth * 2 } as CSSProperties}>
+      <div
+        className={Style.track}
+        style={
+          {
+            width: trackWidth * 2,
+            '--track-steps': trackWidth / NOTE_UNIT_PX,
+          } as CSSProperties
+        }
+      >
         {trackNotes.map(({ x, width, y, delay }, i) => (
           <span
             key={i}

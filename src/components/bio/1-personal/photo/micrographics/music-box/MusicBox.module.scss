@@ -32,7 +32,7 @@
   position: relative;
   height: 100%;
   margin-left: 4px;
-  animation: scroll-left 16s linear infinite;
+  animation: scroll-left 16s steps(var(--track-steps, 45), end) infinite;
 }
 
 @keyframes note-flicker {
@@ -40,11 +40,9 @@
   40%,
   100% {
     opacity: 1;
-    transform: translateY(-50%) scaleY(1);
   }
   20% {
-    opacity: 0.1;
-    transform: translateY(-50%) scaleY(0.3);
+    opacity: 0;
   }
 }
 
@@ -55,6 +53,7 @@
   width: var(--note-width, 6px);
   height: 3px;
   background: $display_cyan;
-  animation: note-flicker 3s ease-in-out infinite;
+  transform: translateY(-50%);
+  animation: note-flicker 3s steps(1, end) infinite;
   animation-delay: var(--note-delay, 0s);
 }

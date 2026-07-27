@@ -132,7 +132,7 @@ function Text({
   );
 }
 
-export { ParseTextForLinks } from './ParseTextForLinks';
+export { ParseTextForLinks, splitWords } from './ParseTextForLinks';
 export type { LinkCallback } from './ParseTextForLinks';
 export { TextInlineLink } from './TextInlineLink';
 export { TextLinkedHeader } from './TextLinkedHeader';

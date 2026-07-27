@@ -1,14 +1,13 @@
 import { useRef } from 'react';
 
-import { FramedImage } from 'src/elements';
+import { Image } from 'src/elements';
+import { FocusFrame } from 'src/elements/focus-frame/FocusFrame';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import type { PhotoLocation } from 'src/elements/text/types';
 import { contentImage } from 'src/content';
-import { useFlashOnChange, useReveal } from 'src/hooks';
 
 import { Micrographics } from './micrographics/Micrographics';
 import * as Style from './Photo.module.scss';
-import clsx from 'clsx';
 
 type PhotoProps = {
   photo: string;
@@ -20,23 +19,18 @@ type PhotoProps = {
 
 function Photo({ photo, photoDescription, photoLocation, focusArea, microGraphic }: PhotoProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isScrollRevealed = useReveal({ ref, gap: 380 });
-  const isPulsing = useFlashOnChange([photo]);
 
-  const frameClassName = clsx(Style.photoFrameHolder, {
-    [Style.reveal]: isScrollRevealed,
-    [Style.pulse]: isPulsing,
-  });
+  const image = (
+    <Image
+      src={contentImage('personal', photo)}
+      alt="Peter James Flanagan Headshot"
+      className={Style.image}
+    />
+  );
 
   return (
     <div className={Style.personalPhoto} ref={ref}>
-      <FramedImage
-        src={contentImage('personal', photo)}
-        alt={'Peter James Flanagan Headshot'}
-        imageClassName={Style.image}
-        frameClassName={frameClassName}
-        focusArea={focusArea}
-      />
+      {focusArea ? <FocusFrame area={focusArea}>{image}</FocusFrame> : image}
       <Micrographics
         microGraphic={microGraphic}
         photoDescription={photoDescription}

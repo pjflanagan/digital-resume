@@ -7,43 +7,16 @@
   pointer-events: none;
 }
 
-.topLeft,
-.topRight,
-.bottomLeft,
-.bottomRight {
-  position: absolute;
-}
-
-.topLeft {
-  left: calc(10% + 12px);
-  top: calc(10% + 12px);
-}
-
-.topRight {
-  right: calc(10% + 12px);
-  top: calc(10% + 12px);
-}
-
-.bottomLeft {
-  left: calc(10% + 12px);
-  bottom: calc(10% + 12px);
-  // definite width so the description's percentage max-width has something to resolve against
-  width: calc(80% - 24px);
+// the egg micrographic + description group, stacked inside the bottom-left hemisphere
+.bottomLeftContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  width: 100%;
 
   @media only screen and (min-width: $lg) {
     flex-direction: row;
     align-items: flex-end;
   }
-}
-
-.bottomRight {
-  right: calc(10% + 12px);
-  bottom: calc(10% + 12px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 }

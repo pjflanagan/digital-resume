@@ -1,12 +1,15 @@
 @use 'theme/variables' as *;
 
 .worldMap {
-  width: 100px;
   filter: drop-shadow(0 0 6px #000a);
 }
 
 .mapHolder {
   position: relative;
+  width: 100px;
+  // the map graphic stays a fixed size and right-aligns even when the location text
+  // above it (which can be wider) determines .worldMap's own shrink-to-fit width
+  margin-left: auto;
 }
 
 .mapImage {

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { contentImage } from 'src/content';
 import type { PhotoLocation } from 'src/elements/text/types';
 
+import { MicrographicHemisphere } from './micrographic-hemisphere/MicrographicHemisphere';
 import { EggMicrographic } from './egg-micrographic/EggMicrographic';
 import { Description } from './description/Description';
 import { WorldMap } from './world-map/WorldMap';
@@ -25,19 +26,21 @@ function Micrographics({
 }: MicrographicsProps): ReactNode {
   return (
     <div className={Style.micrographics}>
-      <div className={Style.topLeft}>
+      <MicrographicHemisphere position="topLeft" hideSmall>
         <Bars />
-      </div>
-      <div className={Style.topRight}>
+      </MicrographicHemisphere>
+      <MicrographicHemisphere position="topRight">
         <MusicBox />
-      </div>
-      <div className={Style.bottomLeft}>
-        {microGraphic && <EggMicrographic src={contentImage('micro-graphics', microGraphic)} />}
-        {photoDescription && <Description text={photoDescription} />}
-      </div>
-      <div className={Style.bottomRight}>
+      </MicrographicHemisphere>
+      <MicrographicHemisphere position="bottomLeft" hideSmall>
+        <div className={Style.bottomLeftContent}>
+          {microGraphic && <EggMicrographic src={contentImage('micro-graphics', microGraphic)} />}
+          {photoDescription && <Description text={photoDescription} />}
+        </div>
+      </MicrographicHemisphere>
+      <MicrographicHemisphere position="bottomRight">
         <WorldMap photoLocation={photoLocation} />
-      </div>
+      </MicrographicHemisphere>
     </div>
   );
 }

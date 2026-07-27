@@ -1,0 +1,53 @@
+@use 'theme/variables' as *;
+
+// each hemisphere owns a full quadrant (half width, half height) of the photo, with its
+// content justified into that quadrant's corner, so they never compete for space
+.hemisphere {
+  position: absolute;
+  display: flex;
+}
+
+.topLeft,
+.topRight {
+  top: calc(10% + 12px);
+  bottom: 50%;
+  align-items: flex-start;
+}
+
+.bottomLeft,
+.bottomRight {
+  top: 50%;
+  bottom: calc(10% + 12px);
+  align-items: flex-end;
+}
+
+.topLeft,
+.bottomLeft {
+  left: calc(10% + 12px);
+  right: 50%;
+  justify-content: flex-start;
+}
+
+.topRight,
+.bottomRight {
+  left: 50%;
+  right: calc(10% + 12px);
+  justify-content: flex-end;
+}
+
+.hideSmall {
+  @media only screen and (max-width: $lg) {
+    display: none;
+  }
+}
+
+// while the left hemispheres are hidden, let the right ones (their opposite
+// numbers) spread across the full width and center their content instead of
+// hugging the right edge
+@media only screen and (max-width: $lg) {
+  .topRight,
+  .bottomRight {
+    left: calc(10% + 12px);
+    justify-content: center;
+  }
+}

@@ -4,7 +4,6 @@ export * from './canvas/Canvas';
 export * from './canvas/BaseView';
 export * from './cover/Cover';
 export * from './frame/Frame';
-export * from './framed-image/FramedImage';
 export * from './focus-frame/FocusFrame';
 export * from './icon/SVGIcon';
 export * from './text/Text';

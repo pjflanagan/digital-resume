@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
+import { TextAccent, TextTitle, TextInlineLink, Text, splitWords } from 'src/elements';
 import { useBio } from 'src/content';
 import type { LinkCallback } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
@@ -23,7 +23,8 @@ type BodyProps = {
 
 function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProps) {
   const { linkText, titleText } = useBio().personal;
-  const [greeting, setGreeting] = useState(titleText.links[0].greeting ?? '');
+  const [nameLink] = titleText.links;
+  const [greeting, setGreeting] = useState(nameLink.greeting ?? '');
   const [isEggModalOpen, setIsEggModalOpen] = useState(false);
   const paragraphs = linkText.text.split('\n');
 
@@ -48,7 +49,14 @@ function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProp
       <TextAccent mono animate>
         {greeting}
       </TextAccent>
-      <TextTitle>{ParseTextForLinks(titleText.text, titleText.links, linkHover)}</TextTitle>
+      <TextTitle>
+        {/* the name is always exactly one link with no surrounding text, so it's rendered
+            directly (rather than through the generic ParseTextForLinks) to split it into
+            words via splitWords: on small screens only the first word ("Peter") shows */}
+        <TextInlineLink onMouseOver={() => linkHover(nameLink)} onFocus={() => linkHover(nameLink)}>
+          {splitWords(nameLink.text)}
+        </TextInlineLink>
+      </TextTitle>
       {paragraphs.map((paragraph, i) => (
         <div
           key={i}

@@ -1,27 +1,5 @@
 @use 'theme/variables' as *;
 
-@keyframes frame-reveal {
-  100% {
-    width: 80%;
-    height: 80%;
-    background: #fff0;
-  }
-}
-
-@keyframes frame-pulse {
-  0%,
-  100% {
-    width: 80%;
-    height: 80%;
-    background: #fff0;
-  }
-  40% {
-    width: 84%;
-    height: 84%;
-    background: $background_teal_a30;
-  }
-}
-
 .personalPhoto {
   width: 84%;
   position: absolute;
@@ -38,26 +16,6 @@
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><defs><pattern id="d" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="4" fill="%231fcfcc"/></pattern></defs><rect x="1.5" y="1.5" width="29" height="29" fill="url(%23d)" opacity="0.35"/><rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="%231fcfcc" stroke-width="3"/><line x1="10" y1="16" x2="22" y2="16" stroke="%231fcfcc" stroke-width="2"/></svg>')
       16 16,
     auto;
-
-  .photoFrameHolder {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 84%;
-    height: 84%;
-    background: $background_teal_a50;
-
-    &.reveal {
-      animation: frame-reveal 0.8s forwards;
-    }
-
-    &.reveal.pulse {
-      animation:
-        frame-reveal 0.8s forwards,
-        frame-pulse 0.4s ease-in-out;
-    }
-  }
 }
 
 @keyframes crt-scan {

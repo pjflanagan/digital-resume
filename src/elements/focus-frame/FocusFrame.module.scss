@@ -18,6 +18,11 @@
   position: absolute;
   pointer-events: none;
   background: transparent;
+
+  // decluttered off small/tablet screens, where there's no room for it to breathe
+  @media only screen and (max-width: $lg) {
+    display: none;
+  }
   transition:
     left 0.4s ease-in-out,
     top 0.4s ease-in-out,
