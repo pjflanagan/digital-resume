@@ -8,7 +8,6 @@ import { EggMicrographic } from './egg-micrographic/EggMicrographic';
 import { Description } from './description/Description';
 import { WorldMap } from './world-map/WorldMap';
 import { MusicBox } from './music-box/MusicBox';
-import { Bars } from './bars/Bars';
 
 import * as Style from './Micrographics.module.scss';
 
@@ -26,15 +25,14 @@ function Micrographics({
 }: MicrographicsProps): ReactNode {
   return (
     <div className={Style.micrographics}>
-      <MicrographicHemisphere position="topLeft" hideSmall>
-        <Bars />
-      </MicrographicHemisphere>
-      <MicrographicHemisphere position="topRight">
+      <MicrographicHemisphere position="topLeft">
         <MusicBox />
+      </MicrographicHemisphere>
+      <MicrographicHemisphere position="topRight" hideSmall>
+        {microGraphic && <EggMicrographic src={contentImage('micro-graphics', microGraphic)} />}
       </MicrographicHemisphere>
       <MicrographicHemisphere position="bottomLeft" hideSmall>
         <div className={Style.bottomLeftContent}>
-          {microGraphic && <EggMicrographic src={contentImage('micro-graphics', microGraphic)} />}
           {photoDescription && <Description text={photoDescription} />}
         </div>
       </MicrographicHemisphere>

@@ -20,13 +20,13 @@
 
 .wordHidden {
   display: none;
-}
 
-@media only screen and (min-width: $md) {
-  .wordHidden {
+  @media only screen and (min-width: $lg) {
     display: inline;
   }
 }
+
+
 
 // Tags
 
