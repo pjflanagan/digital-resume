@@ -3,8 +3,6 @@
 
 ## Timeline
 
-- [ ] DONE
-
 Left of the content area, we can be a timeline that scrolls with the user.
 It would likely be a bar that runs the full length of the slide. There would be an occasional marker, probably set as a `:before` on an experience card.
 

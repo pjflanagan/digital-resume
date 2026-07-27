@@ -5,7 +5,7 @@
 
 Including Micro Graphics can be fun little details. Use symbols from things
 
-- [ ] Mars Express: triangle monster thing
+- [ ] Mars Express: triangle AI thing
 
 - [ ] Gravity Falls: Bill Cypher
 - [ ] Horizon: Components
@@ -19,3 +19,4 @@ Including Micro Graphics can be fun little details. Use symbols from things
 - [x] Fifth Element: Fifth element symbol
 - [x] Vonnegut: Butthole Asterisk
 - [x] Arrival: language circle
+- [x] Black Mirror: white bear

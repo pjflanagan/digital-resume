@@ -28,9 +28,11 @@
 - [x] Alien
 - [x] Minority Report -> get that triangle symbol somewhere
 - [x] Kurt Vonnegut
+- [x] Blackmirror
+  - [x] white bear
+  - [ ] the footer is blacker and has a crack
 
 - [ ] Scavengers Reign
-- [ ] Blackmirror -> the footer is blacker and has a crack
 - [ ] Gravity Falls
 - [ ] The Dispossessed
 - [ ] Mars Express -> a robot beam? 
