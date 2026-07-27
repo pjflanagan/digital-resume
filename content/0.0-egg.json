@@ -323,6 +323,15 @@
       ]
     },
     {
+      "name": "Black Mirror",
+      "eggs": [
+        {
+          "locationId": "personal-photo",
+          "egg": "The White Bear symbol used throughout the show can be seen as a micro-graphic on my personal photos."
+        }
+      ]
+    },
+    {
       "name": "Apollo 13",
       "eggs": [
         {
