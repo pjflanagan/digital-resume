@@ -10,7 +10,8 @@
           "width": 32,
           "height": 49
         },
-        "imageDescription": "Current location\nunknown",
+        "photoLocation": { "name": "current location unknown" },
+        "photoDescription": "Net runner, regular runner.",
         "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
       }
@@ -33,7 +34,11 @@
           "width": 38,
           "height": 52
         },
-        "imageDescription": "New York, United States\n40.712776, -74.005974",
+        "photoLocation": {
+          "name": "New York, NY",
+          "coordinates": { "lat": 40.712776, "lng": -74.005974 }
+        },
+        "photoDescription": "Living life on the edge.",
         "text": "New York"
       },
       {
@@ -46,7 +51,11 @@
           "width": 40,
           "height": 45
         },
-        "imageDescription": "London, United Kingdom\n51.504650, -0.020259",
+        "photoLocation": {
+          "name": "London, UK",
+          "coordinates": { "lat": 51.50465, "lng": -0.020259 }
+        },
+        "photoDescription": "Powerslide, 110mm, ceramic bearings",
         "text": "rollerblader"
       },
       {
@@ -58,7 +67,11 @@
           "width": 47,
           "height": 61
         },
-        "imageDescription": "Colorado Springs, Colorado\n38.850854, -104.874817",
+        "photoLocation": {
+          "name": "Colorado Springs, CO",
+          "coordinates": { "lat": 38.850854, "lng": -104.874817 }
+        },
+        "photoDescription": "Belay certified!",
         "text": "rock climber"
       },
       {
@@ -70,7 +83,12 @@
           "width": 37,
           "height": 44
         },
-        "imageDescription": "Curaçao\n12.320089, -69.155978\n-45 ft",
+        "photoLocation": {
+          "name": "Curaçao",
+          "coordinates": { "lat": 12.320089, "lng": -69.155978 },
+          "altitude": "-45 ft"
+        },
+        "photoDescription": "Puffer fish fan.",
         "text": "SCUBA diver"
       },
       {
@@ -83,7 +101,11 @@
           "width": 39,
           "height": 60
         },
-        "imageDescription": "Taipei, Taiwan\n25.058497, 121.509620",
+        "photoLocation": {
+          "name": "Taipei, Taiwan",
+          "coordinates": { "lat": 25.058497, "lng": 121.50962 }
+        },
+        "photoDescription": "聽不懂",
         "greeting": "你好，我名字叫",
         "text": "Mandarin student"
       },
@@ -96,7 +118,12 @@
           "width": 33,
           "height": 52
         },
-        "imageDescription": "Solitude, Utah\n40.619934, -111.604462\n10,488 ft +6 ft airtime",
+        "photoLocation": {
+          "name": "Solitude, UT",
+          "coordinates": { "lat": 40.619934, "lng": -111.604462 },
+          "altitude": "10,488 ft + 6ft"
+        },
+        "photoDescription": "Regular footed, goofy attitude.",
         "text": "board sport"
       },
       {

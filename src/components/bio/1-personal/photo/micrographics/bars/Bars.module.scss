@@ -1,0 +1,72 @@
+@use 'theme/variables' as *;
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  filter: drop-shadow(0 0 6px #000a);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  font-family: $ubuntuMono;
+  font-size: 9px;
+  color: $display_cyan_a50;
+  width: 14px;
+}
+
+.bar {
+  display: block;
+  height: 4px;
+  background: $display_cyan;
+  transform-origin: left;
+}
+
+@keyframes bar-breathe-0 {
+  0%,
+  100% {
+    width: 24px;
+  }
+  50% {
+    width: 58px;
+  }
+}
+
+@keyframes bar-breathe-1 {
+  0%,
+  100% {
+    width: 46px;
+  }
+  50% {
+    width: 18px;
+  }
+}
+
+@keyframes bar-breathe-2 {
+  0%,
+  100% {
+    width: 32px;
+  }
+  50% {
+    width: 64px;
+  }
+}
+
+.bar0 {
+  animation: bar-breathe-0 7.4s ease-in-out infinite;
+}
+
+.bar1 {
+  animation: bar-breathe-1 9s ease-in-out infinite;
+  animation-delay: -2.4s;
+}
+
+.bar2 {
+  animation: bar-breathe-2 6.2s ease-in-out infinite;
+  animation-delay: -1.3s;
+}

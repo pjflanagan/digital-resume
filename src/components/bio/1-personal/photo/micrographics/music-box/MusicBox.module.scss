@@ -1,0 +1,60 @@
+@use 'theme/variables' as *;
+
+.musicBox {
+  position: relative;
+  width: 90px;
+  height: 28px;
+  overflow: hidden;
+  filter: drop-shadow(0 0 6px #000a);
+
+  // the y-axis, not a staff line: a single vertical reference edge, no horizontal rules
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: $display_cyan_a50;
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.track {
+  position: relative;
+  height: 100%;
+  margin-left: 4px;
+  animation: scroll-left 16s linear infinite;
+}
+
+@keyframes note-flicker {
+  0%,
+  40%,
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scaleY(1);
+  }
+  20% {
+    opacity: 0.1;
+    transform: translateY(-50%) scaleY(0.3);
+  }
+}
+
+.note {
+  position: absolute;
+  left: var(--note-x, 0);
+  top: var(--note-y, 50%);
+  width: var(--note-width, 6px);
+  height: 3px;
+  background: $display_cyan;
+  animation: note-flicker 3s ease-in-out infinite;
+  animation-delay: var(--note-delay, 0s);
+}

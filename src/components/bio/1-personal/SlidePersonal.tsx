@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useBio } from 'src/content';
 import { ScrollElement } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
+import type { PhotoLocation } from 'src/elements/text/types';
 import { Random } from 'src/helpers/random';
 
 import { Curve } from './curves/Curves';
@@ -18,7 +19,10 @@ function SlidePersonal() {
   const [defaultLink] = titleText.links;
   const [photo, setPhoto] = useState(defaultLink.image ?? '');
   const [photoDescription, setPhotoDescription] = useState<string | undefined>(
-    defaultLink.imageDescription,
+    defaultLink.photoDescription,
+  );
+  const [photoLocation, setPhotoLocation] = useState<PhotoLocation | undefined>(
+    defaultLink.photoLocation,
   );
   const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
   // random on photo change, advances in order on click (see microGraphicCycleCallback below)
@@ -42,15 +46,17 @@ function SlidePersonal() {
         <Photo
           photo={photo}
           photoDescription={photoDescription}
+          photoLocation={photoLocation}
           focusArea={focusArea}
           microGraphic={microGraphic}
         />
       </div>
       <div className={Style.slidePersonalSideRight}>
         <PersonalBody
-          photoLinkCallback={(newPhoto, newPhotoDescription, newFocusArea) => {
+          photoLinkCallback={(newPhoto, newPhotoDescription, newPhotoLocation, newFocusArea) => {
             setPhoto(newPhoto);
             setPhotoDescription(newPhotoDescription);
+            setPhotoLocation(newPhotoLocation);
             setFocusArea(newFocusArea);
           }}
           microGraphicCycleCallback={() => setMicroGraphicIndex((i) => i + 1)}

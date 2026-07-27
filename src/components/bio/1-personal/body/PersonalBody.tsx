@@ -5,13 +5,19 @@ import { TextAccent, TextTitle, Text, ParseTextForLinks } from 'src/elements';
 import { useBio } from 'src/content';
 import type { LinkCallback } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
+import type { PhotoLocation } from 'src/elements/text/types';
 
 import { EggModal } from '../egg-modal/EggModal';
 
 import * as Style from './PersonalBody.module.scss';
 
 type BodyProps = {
-  photoLinkCallback: (photo: string, photoDescription?: string, focusArea?: FocusArea) => void;
+  photoLinkCallback: (
+    photo: string,
+    photoDescription?: string,
+    photoLocation?: PhotoLocation,
+    focusArea?: FocusArea
+  ) => void;
   microGraphicCycleCallback: () => void;
 };
 
@@ -23,11 +29,12 @@ function PersonalBody({ photoLinkCallback, microGraphicCycleCallback }: BodyProp
 
   const linkHover: LinkCallback = ({
     image,
-    imageDescription,
+    photoLocation,
+    photoDescription,
     greeting: linkGreeting,
     focusArea,
   }) => {
-    if (image) photoLinkCallback(image, imageDescription, focusArea);
+    if (image) photoLinkCallback(image, photoDescription, photoLocation, focusArea);
     if (linkGreeting) setGreeting(linkGreeting);
   };
 

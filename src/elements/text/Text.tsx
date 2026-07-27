@@ -29,7 +29,12 @@ type HeadingProps = MonoTextProps & {
 function makeHeading(Tag: 'h1' | 'h2' | 'h3' | 'h4'): React.FC<HeadingProps> {
   const Heading = ({ children, mono, onClick, color, className }: HeadingProps) => (
     <Tag
-      className={clsx(className, mono && Style.mono, onClick && Style.clickable, color && Style[color])}
+      className={clsx(
+        className,
+        mono && Style.mono,
+        onClick && Style.clickable,
+        color && Style[color]
+      )}
       onClick={onClick}
       {...(onClick && {
         role: 'button',
@@ -54,11 +59,15 @@ type TextAccentProps = HeadingProps & {
   animate?: boolean;
 };
 
-function AnimatedTextAccent({ children, mono, className }: HeadingProps): React.ReactNode {
+function AnimatedTextAccent({ children, mono, className, color }: HeadingProps): React.ReactNode {
   const text = typeof children === 'string' ? children : '';
   const { ref, displayText } = useScrambleText<HTMLHeadingElement>({ text });
   return (
-    <h5 ref={ref} className={clsx(className, mono && Style.mono)} style={{ whiteSpace: 'pre-line' }}>
+    <h5
+      ref={ref}
+      className={clsx(className, mono && Style.mono, color && Style[color])}
+      style={{ whiteSpace: 'pre-line' }}
+    >
       {displayText}
     </h5>
   );
@@ -69,16 +78,20 @@ function TextAccent({
   animate,
   mono = true,
   className,
+  color,
 }: TextAccentProps): React.ReactNode {
   if (animate) {
     return (
-      <AnimatedTextAccent mono={mono} className={className}>
+      <AnimatedTextAccent mono={mono} className={className} color={color}>
         {children}
       </AnimatedTextAccent>
     );
   }
   return (
-    <h5 className={clsx(className, mono && Style.mono)} style={{ whiteSpace: 'pre-line' }}>
+    <h5
+      className={clsx(className, mono && Style.mono, color && Style[color])}
+      style={{ whiteSpace: 'pre-line' }}
+    >
       {children}
     </h5>
   );

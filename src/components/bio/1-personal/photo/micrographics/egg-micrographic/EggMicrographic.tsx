@@ -1,21 +1,21 @@
 import type { CSSProperties, ReactNode } from 'react';
 import clsx from 'clsx';
 
-import * as Style from './MicroGraphic.module.scss';
+import * as Style from './EggMicrographic.module.scss';
 
-type MicroGraphicProps = {
+type EggMicrographicProps = {
   src: string;
   className?: string;
 };
 
 // A small transparent decorative svg graphic meant to sit in a corner of a photo/frame.
 // Rendered via CSS mask (rather than <img>) so its color can be set from CSS/theme.
-function MicroGraphic({ src, className }: MicroGraphicProps): ReactNode {
+function EggMicrographic({ src, className }: EggMicrographicProps): ReactNode {
   const style = {
-    '--micro-graphic-src': `url(${src})`,
+    '--egg-micrographic-src': `url(${src})`,
   } as CSSProperties;
 
-  return <div className={clsx(Style.microGraphic, className)} style={style} />;
+  return <div className={clsx(Style.eggMicrographic, className)} style={style} />;
 }
 
-export { MicroGraphic };
+export { EggMicrographic };

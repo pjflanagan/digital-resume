@@ -1,22 +1,24 @@
 import { useRef } from 'react';
 
-import { TextAccent, FramedImage } from 'src/elements';
+import { FramedImage } from 'src/elements';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
+import type { PhotoLocation } from 'src/elements/text/types';
 import { contentImage } from 'src/content';
 import { useFlashOnChange, useReveal } from 'src/hooks';
 
-import { MicroGraphic } from './micro-graphic/MicroGraphic';
+import { Micrographics } from './micrographics/Micrographics';
 import * as Style from './Photo.module.scss';
 import clsx from 'clsx';
 
 type PhotoProps = {
   photo: string;
   photoDescription?: string;
+  photoLocation?: PhotoLocation;
   focusArea?: FocusArea;
   microGraphic?: string;
 };
 
-function Photo({ photo, photoDescription, focusArea, microGraphic }: PhotoProps) {
+function Photo({ photo, photoDescription, photoLocation, focusArea, microGraphic }: PhotoProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isScrollRevealed = useReveal({ ref, gap: 380 });
   const isPulsing = useFlashOnChange([photo]);
@@ -35,19 +37,11 @@ function Photo({ photo, photoDescription, focusArea, microGraphic }: PhotoProps)
         frameClassName={frameClassName}
         focusArea={focusArea}
       />
-      {photoDescription && (
-        <div className={Style.photoDescription}>
-          <TextAccent mono animate>
-            {photoDescription}
-          </TextAccent>
-        </div>
-      )}
-      {microGraphic && (
-        <MicroGraphic
-          className={Style.microGraphic}
-          src={contentImage('micro-graphics', microGraphic)}
-        />
-      )}
+      <Micrographics
+        microGraphic={microGraphic}
+        photoDescription={photoDescription}
+        photoLocation={photoLocation}
+      />
     </div>
   );
 }

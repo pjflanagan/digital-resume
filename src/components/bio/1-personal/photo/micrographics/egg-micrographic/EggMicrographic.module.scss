@@ -1,16 +1,17 @@
 @use 'theme/variables' as *;
 
-.microGraphic {
+.eggMicrographic {
   width: 54px;
   height: 54px;
+  flex-shrink: 0;
   background-color: $display_cyan_a50;
   backdrop-filter: blur(2px);
   pointer-events: none;
 
-  mask-image: var(--micro-graphic-src);
+  mask-image: var(--egg-micrographic-src);
   mask-size: contain;
   mask-repeat: no-repeat;
-  -webkit-mask-image: var(--micro-graphic-src);
+  -webkit-mask-image: var(--egg-micrographic-src);
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
 }

@@ -1,0 +1,13 @@
+@use 'theme/variables' as *;
+
+.description {
+  max-width: 100%;
+  text-align: left;
+  text-shadow: 0 0 8px #000a;
+  white-space: pre-line;
+  padding: 0;
+
+  @media only screen and (min-width: $lg) {
+    flex: 1;
+  }
+}

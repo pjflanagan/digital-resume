@@ -10,7 +10,7 @@ import * as Style from './Text.module.scss';
 const REGEX_SPLIT_LINKS = /<([^<>]+)>/g;
 
 type LinkCallback = (
-  link: Pick<ContentLink, 'image' | 'imageDescription' | 'greeting' | 'focusArea'>
+  link: Pick<ContentLink, 'image' | 'photoLocation' | 'photoDescription' | 'greeting' | 'focusArea'>
 ) => void;
 
 function ParseTextForLinks(
@@ -39,11 +39,20 @@ function ParseTextForLinks(
       return <span key={i}>{part}</span>;
     }
 
-    const { image, imageDescription, greeting, focusArea, href, key, text: linkText } = link;
+    const {
+      image,
+      photoLocation,
+      photoDescription,
+      greeting,
+      focusArea,
+      href,
+      key,
+      text: linkText,
+    } = link;
     const hasHoverEffect = image || greeting;
     const onHover =
       callback && hasHoverEffect
-        ? () => callback({ image, imageDescription, greeting, focusArea })
+        ? () => callback({ image, photoLocation, photoDescription, greeting, focusArea })
         : undefined;
     const onClick = !href && onLinkClick ? () => onLinkClick(key) : undefined;
 
