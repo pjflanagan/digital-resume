@@ -3,19 +3,22 @@
     "links": [
       {
         "key": "peter_james_flanagan",
-        "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
-        "focusArea": {
-          "x": 25,
-          "y": 15,
-          "width": 45,
-          "height": 72
-        },
-        "photoLocation": {
-          "name": "current location unknown"
-        },
-        "photoDescription": "Net runner, regular runner",
-        "greeting": "Hi, my name is",
-        "text": "Peter James Flanagan"
+        "text": "Peter James Flanagan",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
+            "focusArea": {
+              "x": 25,
+              "y": 15,
+              "width": 45,
+              "height": 72
+            },
+            "location": { "name": "current location unknown" },
+            "description": "Net runner, regular runner"
+          },
+          { "type": "greeting", "greeting": "Hi, my name is" }
+        ]
       }
     ],
     "text": "<peter_james_flanagan>"
@@ -29,131 +32,145 @@
       },
       {
         "key": "new_york",
-        "image": "personal-new-york.jpg",
-        "focusArea": {
-          "x": 23,
-          "y": 43,
-          "width": 50,
-          "height": 46
-        },
-        "photoLocation": {
-          "name": "New York, NY",
-          "coordinates": {
-            "lat": 40.712776,
-            "lng": -74.005974
+        "text": "New York",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-new-york.jpg",
+            "focusArea": {
+              "x": 23,
+              "y": 43,
+              "width": 50,
+              "height": 46
+            },
+            "location": {
+              "name": "New York, NY",
+              "coordinates": { "lat": 40.712776, "lng": -74.005974 }
+            },
+            "description": "Living life on the edge"
           }
-        },
-        "photoDescription": "Living life on the edge",
-        "text": "New York"
+        ]
       },
       {
         "key": "rollerblading",
         "href": "//instagram.com/roller.babe",
-        "image": "personal-roller-blade.jpg",
-        "focusArea": {
-          "x": 26,
-          "y": 21,
-          "width": 48,
-          "height": 72
-        },
-        "photoLocation": {
-          "name": "London, UK",
-          "coordinates": {
-            "lat": 51.50465,
-            "lng": -0.020259
+        "text": "rollerblading",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-roller-blade.jpg",
+            "focusArea": {
+              "x": 26,
+              "y": 21,
+              "width": 48,
+              "height": 72
+            },
+            "location": {
+              "name": "London, UK",
+              "coordinates": { "lat": 51.50465, "lng": -0.020259 }
+            },
+            "description": "Vehicle of choice: Powerslide 110mm with ceramic bearings"
           }
-        },
-        "photoDescription": "Vehicle of choice: Powerslide 110mm with ceramic bearings",
-        "text": "rollerblading"
+        ]
       },
       {
         "key": "climbing",
-        "image": "personal-rock-climbing.jpg",
-        "focusArea": {
-          "x": 18,
-          "y": 21,
-          "width": 46,
-          "height": 78
-        },
-        "photoLocation": {
-          "name": "Colorado Springs, CO",
-          "coordinates": {
-            "lat": 38.850854,
-            "lng": -104.874817
+        "text": "climbing",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-rock-climbing.jpg",
+            "focusArea": {
+              "x": 18,
+              "y": 21,
+              "width": 46,
+              "height": 78
+            },
+            "location": {
+              "name": "Colorado Springs, CO",
+              "coordinates": { "lat": 38.850854, "lng": -104.874817 }
+            },
+            "description": "Belay certified"
           }
-        },
-        "photoDescription": "Belay certified",
-        "text": "climbing"
+        ]
       },
       {
         "key": "scuba",
-        "image": "personal-scuba.jpg",
-        "focusArea": {
-          "x": 2,
-          "y": 3,
-          "width": 48,
-          "height": 52
-        },
-        "photoLocation": {
-          "name": "Curaçao",
-          "coordinates": {
-            "lat": 12.320089,
-            "lng": -69.155978
-          },
-          "altitude": "-45 ft"
-        },
-        "photoDescription": "Puffer fish fan",
-        "text": "SCUBA"
+        "text": "SCUBA",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-scuba.jpg",
+            "focusArea": {
+              "x": 2,
+              "y": 3,
+              "width": 48,
+              "height": 52
+            },
+            "location": {
+              "name": "Curaçao",
+              "coordinates": { "lat": 12.320089, "lng": -69.155978 },
+              "altitude": "-45 ft"
+            },
+            "description": "Puffer fish fan"
+          }
+        ]
       },
       {
         "key": "mandarin",
         "href": "//flanny.app/study-mandarin",
-        "image": "personal-mandarin.jpg",
-        "focusArea": {
-          "x": 22,
-          "y": 42,
-          "width": 52,
-          "height": 68
-        },
-        "photoLocation": {
-          "name": "Taipei, Taiwan",
-          "coordinates": {
-            "lat": 25.058497,
-            "lng": 121.50962
-          }
-        },
-        "photoDescription": "聽不懂",
-        "greeting": "你好，我名字叫",
-        "text": "Mandarin"
+        "text": "Mandarin",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-mandarin.jpg",
+            "focusArea": {
+              "x": 22,
+              "y": 42,
+              "width": 52,
+              "height": 68
+            },
+            "location": {
+              "name": "Taipei, Taiwan",
+              "coordinates": { "lat": 25.058497, "lng": 121.50962 }
+            },
+            "description": "聽不懂"
+          },
+          { "type": "greeting", "greeting": "你好，我名字叫" }
+        ]
       },
       {
         "key": "snowboard",
         "href": "//www.youtube.com/watch?v=ZQl8cPAu4wk",
-        "image": "personal-snowboarding.jpg",
-        "focusArea": {
-          "x": 28,
-          "y": 10,
-          "width": 52,
-          "height": 54
-        },
-        "photoLocation": {
-          "name": "Solitude, UT",
-          "coordinates": {
-            "lat": 40.619934,
-            "lng": -111.604462
-          },
-          "altitude": "10,488 ft + 6ft"
-        },
-        "photoDescription": "Regular footed, goofy attitude",
-        "text": "snowboard"
+        "text": "snowboard",
+        "hover": [
+          {
+            "type": "photo",
+            "image": "personal-snowboarding.jpg",
+            "focusArea": {
+              "x": 28,
+              "y": 10,
+              "width": 52,
+              "height": 54
+            },
+            "location": {
+              "name": "Solitude, UT",
+              "coordinates": { "lat": 40.619934, "lng": -111.604462 },
+              "altitude": "10,488 ft + 6ft"
+            },
+            "description": "Regular footed, goofy attitude"
+          }
+        ]
       },
       {
         "key": "sci_fi",
-        "text": "references"
+        "text": "find all the references",
+        "click": [{ "type": "modal", "modalKey": "egg" }]
       },
       {
         "key": "sci_fi_cycle",
-        "text": "sci-fi"
+        "text": "sci-fi",
+        "click": [{ "type": "micrographic", "micrographicKey": "sci-fi" }]
       }
     ],
     "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been having fun with it ever since. I find unique and deliberate design to be delightful, so I'm always building <websites> in my spare time.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and like to watch and read <sci_fi_cycle>.\nCan you find all the <sci_fi> to my favorite sci-fi works on this page?"
