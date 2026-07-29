@@ -148,15 +148,15 @@
         "text": "snowboard"
       },
       {
-        "key": "references",
+        "key": "sci_fi",
         "text": "references"
       },
       {
-        "key": "sci_fi",
+        "key": "sci_fi_cycle",
         "text": "sci-fi"
       }
     ],
-    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been having fun with it ever since. I find unique and deliberate design to be delightful, so I'm always building <websites> in my spare time.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and like to watch and read <sci_fi>.\nCan you find all the <references> to my favorite sci-fi works on this page?"
+    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been having fun with it ever since. I find unique and deliberate design to be delightful, so I'm always building <websites> in my spare time.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and like to watch and read <sci_fi_cycle>.\nCan you find all the <sci_fi> to my favorite sci-fi works on this page?"
   },
   "microGraphics": [
     "d20.png",
