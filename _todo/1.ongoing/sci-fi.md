@@ -33,11 +33,12 @@
   - [ ] the footer is blacker and has a crack
 
 - [ ] Scavengers Reign
+- [ ] Mars Express -> a robot beam? 
 - [ ] Gravity Falls
 - [ ] The Dispossessed
-- [ ] Mars Express -> a robot beam? 
 - [ ] Stray video game -> some really good blueprints here and that little robot is very cute
 
+- [ ] Planet of the Apes
 - [ ] Arca
 - [ ] The Expanse
 - [ ] Ted Chiang (technically through Arrival)
