@@ -47,7 +47,7 @@ type Project = {
 
 type SkillGroup = {
   type: string;
-  items: { name: string; progress: number }[];
+  items: { name: string; progress: number; href?: string }[];
 };
 
 type ContactLink = {

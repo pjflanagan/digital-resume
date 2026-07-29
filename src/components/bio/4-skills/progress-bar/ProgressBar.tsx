@@ -8,17 +8,21 @@ import * as Style from './ProgressBar.module.scss';
 type ProgressBarProps = {
   progress: number;
   name: string;
+  href?: string;
 };
 
-function ProgressBar({ progress: progressProp, name }: ProgressBarProps): ReactNode {
+function ProgressBar({ progress: progressProp, name, href }: ProgressBarProps): ReactNode {
   const ref = useRef(null);
   const isRevealed = useReveal({ ref, gap: 40 });
   const progress = isRevealed ? progressProp : 0;
 
-  const className = clsx(Style.bar, isRevealed && Style.revealed);
+  const className = clsx(Style.bar, isRevealed && Style.revealed, href && Style.hasHref);
+
+  const Element = href ? 'a' : 'div';
+  const elementProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
-    <div className={className} ref={ref}>
+    <Element className={className} ref={ref} {...elementProps}>
       <div className={Style.connector} />
       <div className={Style.barLeft} />
       <div className={Style.barRight}>
@@ -28,7 +32,7 @@ function ProgressBar({ progress: progressProp, name }: ProgressBarProps): ReactN
           <span className={Style.line} style={{ width: `${progress / 6}%` }} />
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 

@@ -160,4 +160,22 @@ $unplug-fill-duration: 0.15s;
       }
     }
   }
+
+  &.hasHref {
+    cursor: pointer;
+    box-shadow: none !important;
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: none !important;
+
+      .name {
+        color: $accent_yellow;
+      }
+    }
+
+    .fill {
+      background: $display_yellow_a50;
+    }
+  }
 }

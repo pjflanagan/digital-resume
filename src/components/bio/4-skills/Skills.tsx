@@ -13,7 +13,7 @@ const COLLAPSED_COUNT = 2;
 const HIDDEN_GROUP = 'Other';
 const REVEAL_STEP_MS = 60;
 
-type SkillGroup = { type: string; items: { name: string; progress: number }[] };
+type SkillGroup = { type: string; items: { name: string; progress: number; href?: string }[] };
 
 function visibleLength(group: SkillGroup, showAll: boolean) {
   return showAll ? group.items.length : Math.min(group.items.length, COLLAPSED_COUNT);
@@ -51,7 +51,12 @@ function SkillGroupList({ type, items, showAll }: SkillGroup & { showAll: boolea
               className={clsx(Style.skillBarHolder, isRevealed && Style.reveal)}
               style={style}
             >
-              <ProgressBar key={skill.name} name={skill.name} progress={skill.progress} />
+              <ProgressBar
+                key={skill.name}
+                name={skill.name}
+                progress={skill.progress}
+                href={skill.href}
+              />
             </div>
           );
         })}

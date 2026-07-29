@@ -221,6 +221,7 @@ collections:
                 fields:
                   - { name: name, label: Name, widget: string }
                   - { name: progress, label: Progress, widget: number, value_type: int, min: 0, max: 100 }
+                  - { name: href, label: Href, widget: string, required: false }
 
       - name: projects
         label: Projects
