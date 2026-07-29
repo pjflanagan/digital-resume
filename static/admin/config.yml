@@ -57,10 +57,10 @@ collections:
                     widget: object
                     required: false
                     fields:
-                      - { name: x, label: X, widget: number, value_type: int }
-                      - { name: y, label: Y, widget: number, value_type: int }
-                      - { name: width, label: Width, widget: number, value_type: int }
-                      - { name: height, label: Height, widget: number, value_type: int }
+                      - { name: x, label: X, widget: number, value_type: int, required: false }
+                      - { name: y, label: Y, widget: number, value_type: int, required: false }
+                      - { name: width, label: Width, widget: number, value_type: int, required: false }
+                      - { name: height, label: Height, widget: number, value_type: int, required: false }
                   - name: imageDescription
                     label: Hover Image Description
                     widget: text
@@ -310,9 +310,7 @@ collections:
                 widget: object
                 required: false
                 fields:
-                  - name: text
-                    label: Text
-                    widget: string
+                  - { name: text, label: Text, widget: string, required: false }
                   - name: links
                     label: Links
                     widget: list
@@ -337,9 +335,7 @@ collections:
                 widget: object
                 required: false
                 fields:
-                  - name: text
-                    label: Text
-                    widget: string
+                  - { name: text, label: Text, widget: string, required: false }
                   - name: links
                     label: Links
                     widget: list
