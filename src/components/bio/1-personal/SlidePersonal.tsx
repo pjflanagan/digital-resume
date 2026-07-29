@@ -19,10 +19,10 @@ function SlidePersonal() {
   const [defaultLink] = titleText.links;
   const [photo, setPhoto] = useState(defaultLink.image ?? '');
   const [photoDescription, setPhotoDescription] = useState<string | undefined>(
-    defaultLink.photoDescription,
+    defaultLink.photoDescription
   );
   const [photoLocation, setPhotoLocation] = useState<PhotoLocation | undefined>(
-    defaultLink.photoLocation,
+    defaultLink.photoLocation
   );
   const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
   // random on photo change, advances in order on click (see microGraphicCycleCallback below)

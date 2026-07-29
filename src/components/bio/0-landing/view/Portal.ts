@@ -47,8 +47,7 @@ class Portal extends SpectrumBody {
 
     const radius = PORTAL.RADIUS * shorterSide;
     // foreground portals spawn clear of the ship
-    const minX =
-      this.layer > SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : PORTAL.CENTER_X_MIN * W;
+    const minX = this.layer > SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : PORTAL.CENTER_X_MIN * W;
 
     const colorSpectrum = PORTAL.COLORS.map((rgb) => new Color({ ...rgb, a: 0.9 }));
     Random.insertRandom(colorSpectrum, new Color({ ...Random.fromArray(PORTAL.COLORS), a: 0.9 }));
@@ -106,8 +105,7 @@ class Portal extends SpectrumBody {
   private relocate() {
     const { W, H } = this.canvas;
     const radius = this.baseRadius;
-    const minX =
-      this.layer > SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : PORTAL.CENTER_X_MIN * W;
+    const minX = this.layer > SHIP_LAYER ? SHIP_CENTER.x * W + radius * 3 : PORTAL.CENTER_X_MIN * W;
 
     this.prop.center = {
       x: Random.int(minX, W - radius * 2),

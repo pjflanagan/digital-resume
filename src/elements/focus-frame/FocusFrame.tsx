@@ -51,11 +51,7 @@ function FocusFrame({ children, area }: FocusFrameProps): React.ReactNode {
   }
 
   return (
-    <div
-      ref={containerRef}
-      className={Style.focusFrameHolder}
-      onClick={handleClick}
-    >
+    <div ref={containerRef} className={Style.focusFrameHolder} onClick={handleClick}>
       {children}
       <FrameHolder
         className={clsx(Style.focusBox, {

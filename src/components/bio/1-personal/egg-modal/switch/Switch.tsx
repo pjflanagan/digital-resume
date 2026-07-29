@@ -14,11 +14,7 @@ type SwitchProps<T extends string> = {
   onChange: (value: T) => void;
 };
 
-function Switch<T extends string>({
-  options,
-  value,
-  onChange,
-}: SwitchProps<T>): React.ReactNode {
+function Switch<T extends string>({ options, value, onChange }: SwitchProps<T>): React.ReactNode {
   return (
     <div className={Style.switchRoot}>
       {options.map((option) => (

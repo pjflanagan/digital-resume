@@ -11,13 +11,7 @@ $lineColor: $display_black_a30;
   display: flex;
   flex-direction: column;
   border-top: 2px solid $lineColor;
-  clip-path: polygon(0 0,
-      0 100%,
-      100% 100%,
-      100% 4px,
-      80% 4px,
-      80% 0,
-    );
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 4px, 80% 4px, 80% 0);
 
   .skillColumn {
     display: flex;
@@ -26,21 +20,18 @@ $lineColor: $display_black_a30;
     height: fit-content;
 
     &:first-child {
-      clip-path: polygon(0 0,
-          0 calc(100% - 26px),
-          4px calc(100% - 26px),
-          4px 100%,
-          100% 100%,
-          100% 0);
+      clip-path: polygon(
+        0 0,
+        0 calc(100% - 26px),
+        4px calc(100% - 26px),
+        4px 100%,
+        100% 100%,
+        100% 0
+      );
     }
 
     &:nth-child(2) {
-      clip-path: polygon(4px 0,
-          4px 62px,
-          0 62px,
-          0 100%,
-          100% 100%,
-          100% 0);
+      clip-path: polygon(4px 0, 4px 62px, 0 62px, 0 100%, 100% 100%, 100% 0);
       border-bottom: 2px solid $lineColor;
     }
 
@@ -76,11 +67,9 @@ $lineColor: $display_black_a30;
           width: 100%;
         }
       }
-
     }
   }
 }
-
 
 @media only screen and (min-width: $lg) {
   .skillColumns {
@@ -109,7 +98,6 @@ $lineColor: $display_black_a30;
     font-weight: bold;
   }
 }
-
 
 @keyframes skill-reveal {
   from {

@@ -8,7 +8,7 @@ A project portfolio at [pjflanagan.me](https://pjflanagan.me). Created with Gats
 ## Develop
 
 ```shell
-npm run develop
+npm run dev
 ```
 
 ## Structure

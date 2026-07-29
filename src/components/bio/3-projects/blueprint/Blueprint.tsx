@@ -3,12 +3,10 @@ import clsx from 'clsx';
 
 import * as Style from './Blueprint.module.scss';
 
-type BlueprintName =
-  | 'tree-of-life'
-  | 'golden-record';
-  // | 'arc-reactor'
-  // | 'dummy-plug'
-  // | 'bender';
+type BlueprintName = 'tree-of-life' | 'golden-record';
+// | 'arc-reactor'
+// | 'dummy-plug'
+// | 'bender';
 
 type BlueprintProps = {
   name: BlueprintName;

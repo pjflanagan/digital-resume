@@ -45,7 +45,7 @@ function buildGrid(): { rows: Cell[][] } {
 enum AnimationState {
   UN_STARTED = 0,
   ANIMATING = 1,
-  COMPLETE = 2
+  COMPLETE = 2,
 }
 
 function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
@@ -53,11 +53,18 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
   const { rows } = useMemo(buildGrid, [replayToken]);
   const [revealedCol, setRevealedCol] = useState(0);
   const [animationState, setAnimationState] = useState<AnimationState>(AnimationState.UN_STARTED);
+  const [prevTrigger, setPrevTrigger] = useState<number>(-1);
+
+  const currentTrigger = revealed ? replayToken : -1;
+
+  if (currentTrigger !== prevTrigger) {
+    setPrevTrigger(currentTrigger);
+    setRevealedCol(0);
+    setAnimationState(revealed ? AnimationState.ANIMATING : AnimationState.UN_STARTED);
+  }
 
   useEffect(() => {
     if (!revealed) return;
-    setRevealedCol(0);
-    setAnimationState(AnimationState.ANIMATING);
 
     const tickMs = Math.max(
       PUNCH_REVEAL_MIN_TICK_MS,
@@ -109,7 +116,10 @@ function PunchCard({ revealed, replayToken = 0 }: PunchCardProps) {
         return (
           <div
             key={rowIndex}
-            className={clsx(Style.punchRow, animationState === AnimationState.COMPLETE && Style.complete)}
+            className={clsx(
+              Style.punchRow,
+              animationState === AnimationState.COMPLETE && Style.complete
+            )}
           >
             {segments}
           </div>

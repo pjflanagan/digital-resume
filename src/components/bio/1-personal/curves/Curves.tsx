@@ -4,7 +4,7 @@ import { ReactComponent as CurveBottomSvg } from './curve-bottom.svg';
 import * as Style from './Curves.module.scss';
 
 type CurveProps = {
-  position: 'top' | 'bottom'
+  position: 'top' | 'bottom';
 };
 
 export function Curve({ position }: CurveProps) {
@@ -13,4 +13,3 @@ export function Curve({ position }: CurveProps) {
   }
   return <CurveBottomSvg className={Style.bottomCurve} />;
 }
-

@@ -3,13 +3,7 @@ import clsx from 'clsx';
 import { useReveal } from 'src/hooks';
 import type { ContentLink, SchoolExtra } from 'src/content';
 import { contentImage } from 'src/content';
-import {
-  Text,
-  TextLinkedHeader,
-  TextHeading,
-  TextSubHeading,
-  TextAccent,
-} from 'src/elements';
+import { Text, TextLinkedHeader, TextHeading, TextSubHeading, TextAccent } from 'src/elements';
 
 import { Avatar } from './avatar/Avatar';
 import { PunchCard } from './PunchCard';
@@ -36,7 +30,10 @@ type BulletProps = {
 
 function Bullet({ revealed, style, links, children }: BulletProps) {
   return (
-    <div className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)} style={style}>
+    <div
+      className={clsx(Style.bulletPoint, revealed ? Style.revealed : Style.hidden)}
+      style={style}
+    >
       <Text links={links}>{children}</Text>
     </div>
   );
@@ -65,10 +62,7 @@ function Org({
     <div className={Style.org} ref={ref}>
       <PunchCard revealed={isRevealed} replayToken={replayToken} />
       <div className={Style.orgLeft}>
-        <div
-          className={Style.avatarHolder}
-          onClick={() => setReplayToken((token) => token + 1)}
-        >
+        <div className={Style.avatarHolder} onClick={() => setReplayToken((token) => token + 1)}>
           <Avatar src={contentImage('experience', image)} name={name} background={background} />
         </div>
         <div className={Style.orgInfoHolder}>

@@ -6,7 +6,7 @@ import type { BlueprintName } from './Blueprint';
 
 const BLUEPRINT_POOL: BlueprintName[] = [
   'tree-of-life',
-  'golden-record'
+  'golden-record',
   // 'arc-reactor',
   // 'dummy-plug',
   // 'bender',
@@ -21,7 +21,11 @@ interface ActiveBlueprint {
   style: CSSProperties;
 }
 
-function generateBlueprintStyle(bandStart: number, bandEnd: number, side: 'left' | 'right'): CSSProperties {
+function generateBlueprintStyle(
+  bandStart: number,
+  bandEnd: number,
+  side: 'left' | 'right'
+): CSSProperties {
   const size = Random.int(500, 700);
   const vOffset = Random.int(bandStart + BAND_MARGIN, bandEnd - BAND_MARGIN);
   const hOffset = -Random.int(150, 300);

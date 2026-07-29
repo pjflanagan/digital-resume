@@ -8,11 +8,7 @@ function Page404Component() {
   return (
     <div className={Style.content}>
       <Cover />
-      <SplashText
-        className={Style.titleHolder}
-        headline={Data404.title}
-        blurb={Data404.subtitle}
-      />
+      <SplashText className={Style.titleHolder} headline={Data404.title} blurb={Data404.subtitle} />
       <div className={`${Style.plane} ${Style.top}`} />
       <div className={`${Style.plane} ${Style.bottom}`} />
       <ButtonHolder className={Style.buttonHolder}>
