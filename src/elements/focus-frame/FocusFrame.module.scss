@@ -18,7 +18,7 @@
   position: absolute;
   pointer-events: none;
   background: transparent;
-  box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.28);
+  box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.18);
 
   // decluttered off small/tablet screens, where there's no room for it to breathe
   @media only screen and (max-width: $lg) {
@@ -34,7 +34,7 @@
 
   &.animating {
     background: transparent;
-    box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.54);
+    box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.36);
     transition:
       left 0.4s ease-in-out,
       top 0.4s ease-in-out,
