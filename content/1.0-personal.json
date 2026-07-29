@@ -5,13 +5,13 @@
         "key": "peter_james_flanagan",
         "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal/personal-photo-2026.jpg",
         "focusArea": {
-          "x": 33,
-          "y": 22,
-          "width": 32,
-          "height": 49
+          "x": 25,
+          "y": 15,
+          "width": 45,
+          "height": 48
         },
         "photoLocation": { "name": "current location unknown" },
-        "photoDescription": "Net runner, regular runner.",
+        "photoDescription": "Net runner, regular runner",
         "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
       }
@@ -29,16 +29,16 @@
         "key": "new_york",
         "image": "personal-new-york.jpg",
         "focusArea": {
-          "x": 11,
-          "y": 24,
-          "width": 38,
-          "height": 52
+          "x": 23,
+          "y": 43,
+          "width": 50,
+          "height": 46
         },
         "photoLocation": {
           "name": "New York, NY",
           "coordinates": { "lat": 40.712776, "lng": -74.005974 }
         },
-        "photoDescription": "Living life on the edge.",
+        "photoDescription": "Living life on the edge",
         "text": "New York"
       },
       {
@@ -46,26 +46,26 @@
         "href": "//instagram.com/roller.babe",
         "image": "personal-roller-blade.jpg",
         "focusArea": {
-          "x": 31,
-          "y": 22,
-          "width": 40,
-          "height": 45
+          "x": 26,
+          "y": 21,
+          "width": 48,
+          "height": 72
         },
         "photoLocation": {
           "name": "London, UK",
           "coordinates": { "lat": 51.50465, "lng": -0.020259 }
         },
-        "photoDescription": "Powerslide, 110mm, ceramic bearings",
+        "photoDescription": "Vehicle of choice: Powerslide 110mm with ceramic bearings",
         "text": "rollerblader"
       },
       {
         "key": "rockclimber",
         "image": "personal-rock-climbing.jpg",
         "focusArea": {
-          "x": 23,
-          "y": 30,
-          "width": 47,
-          "height": 61
+          "x": 18,
+          "y": 21,
+          "width": 46,
+          "height": 78
         },
         "photoLocation": {
           "name": "Colorado Springs, CO",
@@ -78,17 +78,17 @@
         "key": "scuba",
         "image": "personal-scuba.jpg",
         "focusArea": {
-          "x": 9,
-          "y": 8,
-          "width": 37,
-          "height": 44
+          "x": 2,
+          "y": 3,
+          "width": 48,
+          "height": 52
         },
         "photoLocation": {
           "name": "Curaçao",
           "coordinates": { "lat": 12.320089, "lng": -69.155978 },
           "altitude": "-45 ft"
         },
-        "photoDescription": "Puffer fish fan.",
+        "photoDescription": "Puffer fish fan",
         "text": "SCUBA diver"
       },
       {
@@ -96,10 +96,10 @@
         "href": "//flanny.app/study-mandarin",
         "image": "personal-mandarin.jpg",
         "focusArea": {
-          "x": 30,
-          "y": 55,
-          "width": 39,
-          "height": 60
+          "x": 22,
+          "y": 42,
+          "width": 52,
+          "height": 68
         },
         "photoLocation": {
           "name": "Taipei, Taiwan",
@@ -113,17 +113,17 @@
         "key": "board_sport",
         "image": "personal-snowboarding.jpg",
         "focusArea": {
-          "x": 34,
-          "y": 9,
-          "width": 33,
-          "height": 52
+          "x": 28,
+          "y": 10,
+          "width": 52,
+          "height": 54
         },
         "photoLocation": {
           "name": "Solitude, UT",
           "coordinates": { "lat": 40.619934, "lng": -111.604462 },
           "altitude": "10,488 ft + 6ft"
         },
-        "photoDescription": "Regular footed, goofy attitude.",
+        "photoDescription": "Regular footed, goofy attitude",
         "text": "board sport"
       },
       {
