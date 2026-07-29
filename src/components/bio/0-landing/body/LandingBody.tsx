@@ -1,7 +1,7 @@
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import * as Scroll from 'react-scroll';
 
-import { LabeledButton, SplashText, ButtonHolder } from 'src/elements';
+import { LabeledButton, SplashText, ButtonHolder, Glitch } from 'src/elements';
 import { useBio } from 'src/content';
 import { Random } from 'src/helpers';
 
@@ -33,12 +33,25 @@ function LandingBody() {
 
   useLandingScroll({ titleRef, buttonHolderRef });
 
+  const [glitchIndex, setGlitchIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setGlitchIndex((i) => i + 1);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <div ref={titleRef} className={Style.titleHolder}>
         <SplashText
           className={Style.title}
-          headline={Bio.splash.title}
+          headline={
+            <Glitch glitchIndex={glitchIndex} strength="strong">
+              {Bio.splash.title}
+            </Glitch>
+          }
           blurb={Bio.splash.subtitle}
           onHeadlineClick={fireShip}
         />

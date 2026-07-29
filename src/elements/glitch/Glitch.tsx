@@ -9,9 +9,10 @@ type GlitchProps = {
   children: ReactNode;
   glitchIndex: any;
   className?: string;
+  strength?: 'weak' | 'medium' | 'strong';
 };
 
-function Glitch({ children, glitchIndex, className }: GlitchProps): ReactNode {
+function Glitch({ children, glitchIndex, className, strength = 'medium' }: GlitchProps): ReactNode {
   const [glitchState, setGlitchState] = useState<{
     splits: number[];
     offsets: number[];
@@ -39,7 +40,18 @@ function Glitch({ children, glitchIndex, className }: GlitchProps): ReactNode {
       }
 
       const getRandomOffset = () => {
-        const val = Random.int(4, 12);
+        let min = 4;
+        let max = 12;
+
+        if (strength === 'weak') {
+          min = 1;
+          max = 2;
+        } else if (strength === 'strong') {
+          min = 8;
+          max = 24;
+        }
+
+        const val = Random.int(min, max);
         return Random.bool() ? val : -val;
       };
 
@@ -80,15 +92,18 @@ function Glitch({ children, glitchIndex, className }: GlitchProps): ReactNode {
     return () => {
       timers.forEach(clearTimeout);
     };
-  }, [glitchIndex]);
+  }, [glitchIndex, strength]);
 
   const numSlices = glitchState.splits.length + 1;
-  const { splits, offsets } = glitchState;
+  const { splits, offsets, glitchCount } = glitchState;
+  const isGlitching = glitchCount > 0;
 
   return (
     <div className={clsx(Style.glitchContainer, className)}>
-      {/* Sizer copy to naturally scale the container to match the children's bounds */}
-      <div className={Style.hiddenSizer}>{children}</div>
+      {/* Sizer copy to naturally scale the container and handle all user interactions (hovers, clicks, focus) */}
+      <div className={clsx(Style.interactiveOverlay, { [Style.glitching]: isGlitching })}>
+        {children}
+      </div>
 
       {/* Render each dynamic horizontal slice wrapper */}
       {Array.from({ length: numSlices }, (_, i) => {
@@ -101,7 +116,7 @@ function Glitch({ children, glitchIndex, className }: GlitchProps): ReactNode {
         return (
           <div
             key={i}
-            className={Style.slice}
+            className={clsx(Style.slice, { [Style.glitching]: isGlitching })}
             style={{
               clipPath,
               WebkitClipPath: clipPath,

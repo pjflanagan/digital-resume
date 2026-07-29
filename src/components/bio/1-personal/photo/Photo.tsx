@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { Image, Glitch } from 'src/elements';
+import { Image } from 'src/elements';
 import { FocusFrame } from 'src/elements/focus-frame/FocusFrame';
 import type { FocusArea } from 'src/elements/focus-frame/FocusFrame';
 import type { PhotoLocation } from 'src/elements/text/types';
@@ -21,13 +21,11 @@ function Photo({ photo, photoDescription, photoLocation, focusArea, microGraphic
   const ref = useRef<HTMLDivElement>(null);
 
   const image = (
-    <Glitch glitchIndex={photo} className={Style.glitchWrapper}>
-      <Image
-        src={contentImage('personal', photo)}
-        alt="Peter James Flanagan Headshot"
-        className={Style.image}
-      />
-    </Glitch>
+    <Image
+      src={contentImage('personal', photo)}
+      alt="Peter James Flanagan Headshot"
+      className={Style.image}
+    />
   );
 
   return (

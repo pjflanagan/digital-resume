@@ -3,9 +3,13 @@
   display: inline-block;
 }
 
-.hiddenSizer {
-  visibility: hidden;
-  pointer-events: none;
+.interactiveOverlay {
+  position: relative;
+  z-index: 1;
+
+  &.glitching {
+    opacity: 0;
+  }
 }
 
 .slice {
@@ -16,4 +20,15 @@
   height: 100%;
   pointer-events: none;
   will-change: transform, clip-path;
+  z-index: 0;
+
+  // Inherit padding from parent container so absolute slices align perfectly with interactiveOverlay
+  padding: inherit;
+
+  // Hide by default to prevent any sub-pixel alignment lines when not glitching
+  visibility: hidden;
+
+  &.glitching {
+    visibility: visible;
+  }
 }

@@ -93,6 +93,8 @@ type LabeledButtonActionProps = {
   bold?: boolean;
   scale?: number;
   onClick: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 function LabeledButtonAction({
@@ -102,6 +104,8 @@ function LabeledButtonAction({
   bold,
   scale,
   onClick,
+  onMouseEnter,
+  onMouseLeave,
 }: LabeledButtonActionProps): React.ReactNode {
   return (
     <button
@@ -114,6 +118,8 @@ function LabeledButtonAction({
       )}
       style={scale ? { transform: `scale(${scale})` } : undefined}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <div className={Style.holder}>
         <div className={Style.svgHolder}>
