@@ -17,14 +17,15 @@ function SlidePersonal() {
   // needs to be set in one place in the content JSON
   const { titleText, microGraphics } = useBio().personal;
   const [defaultLink] = titleText.links;
-  const [photo, setPhoto] = useState(defaultLink.image ?? '');
+  const defaultPhotoEffect = defaultLink.hover?.find((effect) => effect.type === 'photo');
+  const [photo, setPhoto] = useState(defaultPhotoEffect?.image ?? '');
   const [photoDescription, setPhotoDescription] = useState<string | undefined>(
-    defaultLink.photoDescription
+    defaultPhotoEffect?.description
   );
   const [photoLocation, setPhotoLocation] = useState<PhotoLocation | undefined>(
-    defaultLink.photoLocation
+    defaultPhotoEffect?.location
   );
-  const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultLink.focusArea);
+  const [focusArea, setFocusArea] = useState<FocusArea | undefined>(defaultPhotoEffect?.focusArea);
   // random on photo change, advances in order on click (see microGraphicCycleCallback below)
   const [microGraphicIndex, setMicroGraphicIndex] = useState(0);
   const microGraphic = microGraphics?.length

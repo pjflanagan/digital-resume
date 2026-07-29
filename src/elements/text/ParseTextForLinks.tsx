@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import type { ContentLink } from './types';
+import type { ContentLink, HoverEffect, ClickEffect } from './types';
 
 import { TextInlineLink } from './TextInlineLink';
 
@@ -22,15 +22,14 @@ function splitWords(text: string): React.ReactNode {
   ));
 }
 
-type LinkCallback = (
-  link: Pick<ContentLink, 'image' | 'photoLocation' | 'photoDescription' | 'greeting' | 'focusArea'>
-) => void;
+type LinkCallback = (effects: HoverEffect[]) => void;
+type LinkClickCallback = (effects: ClickEffect[]) => void;
 
 function ParseTextForLinks(
   text: string,
   links?: ContentLink[],
   callback?: LinkCallback,
-  onLinkClick?: (key: string) => void
+  onLinkClick?: LinkClickCallback
 ): React.ReactNode {
   // if there are no links then ignore
   if (!links) {
@@ -52,22 +51,9 @@ function ParseTextForLinks(
       return <span key={i}>{part}</span>;
     }
 
-    const {
-      image,
-      photoLocation,
-      photoDescription,
-      greeting,
-      focusArea,
-      href,
-      key,
-      text: linkText,
-    } = link;
-    const hasHoverEffect = image || greeting;
-    const onHover =
-      callback && hasHoverEffect
-        ? () => callback({ image, photoLocation, photoDescription, greeting, focusArea })
-        : undefined;
-    const onClick = !href && onLinkClick ? () => onLinkClick(key) : undefined;
+    const { hover, click, href, text: linkText } = link;
+    const onHover = callback && hover?.length ? () => callback(hover) : undefined;
+    const onClick = !href && onLinkClick && click?.length ? () => onLinkClick(click) : undefined;
 
     return (
       <TextInlineLink
@@ -85,4 +71,4 @@ function ParseTextForLinks(
 }
 
 export { ParseTextForLinks, splitWords };
-export type { LinkCallback };
+export type { LinkCallback, LinkClickCallback };

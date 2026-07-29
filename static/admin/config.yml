@@ -46,29 +46,60 @@ collections:
                   - { name: key, label: Key, widget: string }
                   - { name: href, label: Href, widget: string, required: false }
                   - { name: text, label: Text, widget: string }
-                  - name: image
-                    label: Hover Image
-                    widget: image
+                  - name: hover
+                    label: Hover Effects
+                    widget: list
                     required: false
-                    media_folder: /content/images/personal
-                    public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
-                  - name: focusArea
-                    label: Image Focus Area
-                    widget: object
+                    types:
+                      - name: photo
+                        label: Photo
+                        fields:
+                          - name: image
+                            label: Image
+                            widget: image
+                            media_folder: /content/images/personal
+                            public_folder: https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/personal
+                          - name: focusArea
+                            label: Image Focus Area
+                            widget: object
+                            required: false
+                            fields:
+                              - { name: x, label: X, widget: number, value_type: int, required: false }
+                              - { name: y, label: Y, widget: number, value_type: int, required: false }
+                              - { name: width, label: Width, widget: number, value_type: int, required: false }
+                              - { name: height, label: Height, widget: number, value_type: int, required: false }
+                          - name: location
+                            label: Photo Location
+                            widget: object
+                            required: false
+                            fields:
+                              - { name: name, label: Name, widget: string }
+                              - name: coordinates
+                                label: Coordinates
+                                widget: object
+                                required: false
+                                fields:
+                                  - { name: lat, label: Latitude, widget: number, required: false }
+                                  - { name: lng, label: Longitude, widget: number, required: false }
+                              - { name: altitude, label: Altitude, widget: string, required: false }
+                          - { name: description, label: Description, widget: text, required: false }
+                      - name: greeting
+                        label: Greeting
+                        fields:
+                          - { name: greeting, label: Greeting, widget: string }
+                  - name: click
+                    label: Click Effects
+                    widget: list
                     required: false
-                    fields:
-                      - { name: x, label: X, widget: number, value_type: int, required: false }
-                      - { name: y, label: Y, widget: number, value_type: int, required: false }
-                      - { name: width, label: Width, widget: number, value_type: int, required: false }
-                      - { name: height, label: Height, widget: number, value_type: int, required: false }
-                  - name: imageDescription
-                    label: Hover Image Description
-                    widget: text
-                    required: false
-                  - name: greeting
-                    label: Hover Greeting
-                    widget: string
-                    required: false
+                    types:
+                      - name: modal
+                        label: Open Modal
+                        fields:
+                          - { name: modalKey, label: Modal Key, widget: string }
+                      - name: micrographic
+                        label: Cycle Micro Graphic
+                        fields:
+                          - { name: micrographicKey, label: Micro Graphic Key, widget: string }
           - name: linkText
             label: Body Text
             widget: object

@@ -10,17 +10,41 @@ type PhotoLocation = {
   altitude?: string;
 };
 
-type ContentLink = {
-  key: string;
-  href?: string;
-  text: string;
-  // hover/focus side effects, all optional since a link may trigger none, one, or both
-  image?: string;
-  photoLocation?: PhotoLocation;
-  photoDescription?: string;
-  greeting?: string;
+type PhotoHoverEffect = {
+  type: 'photo';
+  image: string;
+  location?: PhotoLocation;
+  description?: string;
   // percentage rect on `image` to highlight with a FocusFrame, when the image has one
   focusArea?: FocusArea;
+};
+
+type GreetingHoverEffect = {
+  type: 'greeting';
+  greeting: string;
+};
+
+type HoverEffect = PhotoHoverEffect | GreetingHoverEffect;
+
+type ModalClickEffect = {
+  type: 'modal';
+  modalKey: string;
+};
+
+type MicroGraphicClickEffect = {
+  type: 'micrographic';
+  micrographicKey: string;
+};
+
+type ClickEffect = ModalClickEffect | MicroGraphicClickEffect;
+
+type ContentLink = {
+  key: string;
+  text: string;
+  href?: string;
+  // hover/focus side effects, all optional since a link may trigger none, one, or several
+  hover?: HoverEffect[];
+  click?: ClickEffect[];
 };
 
 type LinkText<T extends string | string[] = string[]> = {
@@ -28,4 +52,14 @@ type LinkText<T extends string | string[] = string[]> = {
   text: T;
 };
 
-export type { ContentLink, LinkText, PhotoLocation };
+export type {
+  ContentLink,
+  LinkText,
+  PhotoLocation,
+  PhotoHoverEffect,
+  GreetingHoverEffect,
+  HoverEffect,
+  ModalClickEffect,
+  MicroGraphicClickEffect,
+  ClickEffect,
+};

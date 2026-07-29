@@ -6,7 +6,7 @@ import { activationKeyHandler } from 'src/helpers';
 
 import type { ContentLink } from './types';
 
-import { ParseTextForLinks, LinkCallback } from './ParseTextForLinks';
+import { ParseTextForLinks, LinkCallback, LinkClickCallback } from './ParseTextForLinks';
 
 import * as Style from './Text.module.scss';
 
@@ -112,7 +112,7 @@ type TextProps = MonoTextProps & {
   children?: string;
   links?: ContentLink[];
   callback?: LinkCallback;
-  onLinkClick?: (key: string) => void;
+  onLinkClick?: LinkClickCallback;
 };
 
 function Text({
@@ -133,7 +133,7 @@ function Text({
 }
 
 export { ParseTextForLinks, splitWords } from './ParseTextForLinks';
-export type { LinkCallback } from './ParseTextForLinks';
+export type { LinkCallback, LinkClickCallback } from './ParseTextForLinks';
 export { TextInlineLink } from './TextInlineLink';
 export { TextLinkedHeader } from './TextLinkedHeader';
 export { TextAccent, TextTitle, TextSection, TextHeading, TextSubHeading, Text, TextTag };
