@@ -4,18 +4,9 @@
   width: 54px;
   height: 54px;
   flex-shrink: 0;
-  pointer-events: none;
-  position: relative;
-}
-
-.slice {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: $display_cyan_a50;
   backdrop-filter: blur(2px);
+  pointer-events: none;
 
   mask-image: var(--egg-micrographic-src);
   mask-size: contain;
@@ -23,6 +14,4 @@
   -webkit-mask-image: var(--egg-micrographic-src);
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
-
-  will-change: transform, clip-path;
 }

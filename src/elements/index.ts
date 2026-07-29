@@ -11,3 +11,4 @@ export * from './splash/Splash';
 export * from './splash/SplashText';
 export * from './scroll/ScrollElement';
 export * from './image/Image';
+export * from './glitch/Glitch';
