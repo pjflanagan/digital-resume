@@ -18,6 +18,7 @@
   position: absolute;
   pointer-events: none;
   background: transparent;
+  box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.28);
 
   // decluttered off small/tablet screens, where there's no room for it to breathe
   @media only screen and (max-width: $lg) {
@@ -28,16 +29,19 @@
     top 0.4s ease-in-out,
     width 0.4s ease-in-out,
     height 0.4s ease-in-out,
-    background 0.4s ease-in-out 0.2s;
+    background 0.4s ease-in-out 0.2s,
+    box-shadow 0.4s ease-in-out 0.2s;
 
   &.animating {
-    background: $background_teal_a30;
+    background: transparent;
+    box-shadow: 0 0 0 9999px rgba($background_darkBlue1, 0.54);
     transition:
       left 0.4s ease-in-out,
       top 0.4s ease-in-out,
       width 0.4s ease-in-out,
       height 0.4s ease-in-out,
-      background 0s;
+      background 0s,
+      box-shadow 0s;
   }
 
   &.breathing {
