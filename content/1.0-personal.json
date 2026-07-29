@@ -10,7 +10,9 @@
           "width": 45,
           "height": 72
         },
-        "photoLocation": { "name": "current location unknown" },
+        "photoLocation": {
+          "name": "current location unknown"
+        },
         "photoDescription": "Net runner, regular runner",
         "greeting": "Hi, my name is",
         "text": "Peter James Flanagan"
@@ -21,9 +23,9 @@
   "linkText": {
     "links": [
       {
-        "key": "fun-websites",
+        "key": "websites",
         "href": "//flanny.app",
-        "text": "fun websites"
+        "text": "websites"
       },
       {
         "key": "new_york",
@@ -36,7 +38,10 @@
         },
         "photoLocation": {
           "name": "New York, NY",
-          "coordinates": { "lat": 40.712776, "lng": -74.005974 }
+          "coordinates": {
+            "lat": 40.712776,
+            "lng": -74.005974
+          }
         },
         "photoDescription": "Living life on the edge",
         "text": "New York"
@@ -53,7 +58,10 @@
         },
         "photoLocation": {
           "name": "London, UK",
-          "coordinates": { "lat": 51.50465, "lng": -0.020259 }
+          "coordinates": {
+            "lat": 51.50465,
+            "lng": -0.020259
+          }
         },
         "photoDescription": "Vehicle of choice: Powerslide 110mm with ceramic bearings",
         "text": "rollerblading"
@@ -69,7 +77,10 @@
         },
         "photoLocation": {
           "name": "Colorado Springs, CO",
-          "coordinates": { "lat": 38.850854, "lng": -104.874817 }
+          "coordinates": {
+            "lat": 38.850854,
+            "lng": -104.874817
+          }
         },
         "photoDescription": "Belay certified",
         "text": "climbing"
@@ -85,14 +96,17 @@
         },
         "photoLocation": {
           "name": "Curaçao",
-          "coordinates": { "lat": 12.320089, "lng": -69.155978 },
+          "coordinates": {
+            "lat": 12.320089,
+            "lng": -69.155978
+          },
           "altitude": "-45 ft"
         },
         "photoDescription": "Puffer fish fan",
         "text": "SCUBA"
       },
       {
-      "key": "mandarin",
+        "key": "mandarin",
         "href": "//flanny.app/study-mandarin",
         "image": "personal-mandarin.jpg",
         "focusArea": {
@@ -103,7 +117,10 @@
         },
         "photoLocation": {
           "name": "Taipei, Taiwan",
-          "coordinates": { "lat": 25.058497, "lng": 121.50962 }
+          "coordinates": {
+            "lat": 25.058497,
+            "lng": 121.50962
+          }
         },
         "photoDescription": "聽不懂",
         "greeting": "你好，我名字叫",
@@ -121,22 +138,25 @@
         },
         "photoLocation": {
           "name": "Solitude, UT",
-          "coordinates": { "lat": 40.619934, "lng": -111.604462 },
+          "coordinates": {
+            "lat": 40.619934,
+            "lng": -111.604462
+          },
           "altitude": "10,488 ft + 6ft"
         },
         "photoDescription": "Regular footed, goofy attitude",
         "text": "snowboard"
       },
       {
-        "key": "sci_fi",
-        "text": "find all the references"
+        "key": "references",
+        "text": "references"
       },
       {
-        "key": "sci_fi_cycle",
+        "key": "sci_fi",
         "text": "sci-fi"
       }
     ],
-    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been playing with it ever since. I enjoy making useful, deliberately designed, and <fun-websites>.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and enjoy reading and watching <sci_fi_cycle>.\nCan you <sci_fi> to my favorite sci-fi works on this page?"
+    "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been having fun with it ever since. I find unique and deliberate design to be delightful, so I'm always building <websites> in my spare time.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and like to watch and read <sci_fi>.\nCan you find all the <references> to my favorite sci-fi works on this page?"
   },
   "microGraphics": [
     "d20.png",
