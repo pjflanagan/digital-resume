@@ -9,7 +9,7 @@ import * as Style from './SlideContact.module.scss';
 function SlideContact() {
   const [isWaveOn, setIsWaveOn] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isRevealed = useReveal({ ref, gap: 420 });
+  const isRevealed = useReveal({ ref, gap: 200 });
 
   return (
     <ScrollElement className={Style.slideContact} name="contact">

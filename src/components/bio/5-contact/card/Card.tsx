@@ -17,7 +17,7 @@ type CardProps = {
 function Card({ setIsWaveOn }: CardProps) {
   const Bio = useBio();
   const ref = useRef<HTMLDivElement>(null);
-  const isOpen = useReveal({ ref, gap: 420 });
+  const isOpen = useReveal({ ref, gap: 200 });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [placeholders, setPlaceholders] = useState<FormPlaceholder>(() =>
     Random.fromArray(Bio.contact.formPlaceholders)
