@@ -14,10 +14,15 @@
               "width": 45,
               "height": 72
             },
-            "location": { "name": "current location unknown" },
+            "location": {
+              "name": "current location unknown"
+            },
             "description": "Net runner, regular runner"
           },
-          { "type": "greeting", "greeting": "Hi, my name is" }
+          {
+            "type": "greeting",
+            "greeting": "Hi, my name is"
+          }
         ]
       }
     ],
@@ -45,9 +50,12 @@
             },
             "location": {
               "name": "New York, NY",
-              "coordinates": { "lat": 40.712776, "lng": -74.005974 }
+              "coordinates": {
+                "lat": 40.712776,
+                "lng": -74.005974
+              }
             },
-            "description": "Living life on the edge"
+            "description": "Greatest city in the world"
           }
         ]
       },
@@ -67,7 +75,10 @@
             },
             "location": {
               "name": "London, UK",
-              "coordinates": { "lat": 51.50465, "lng": -0.020259 }
+              "coordinates": {
+                "lat": 51.50465,
+                "lng": -0.020259
+              }
             },
             "description": "Vehicle of choice: Powerslide 110mm with ceramic bearings"
           }
@@ -88,7 +99,10 @@
             },
             "location": {
               "name": "Colorado Springs, CO",
-              "coordinates": { "lat": 38.850854, "lng": -104.874817 }
+              "coordinates": {
+                "lat": 38.850854,
+                "lng": -104.874817
+              }
             },
             "description": "Belay certified"
           }
@@ -109,7 +123,10 @@
             },
             "location": {
               "name": "Curaçao",
-              "coordinates": { "lat": 12.320089, "lng": -69.155978 },
+              "coordinates": {
+                "lat": 12.320089,
+                "lng": -69.155978
+              },
               "altitude": "-45 ft"
             },
             "description": "Puffer fish fan"
@@ -132,11 +149,17 @@
             },
             "location": {
               "name": "Taipei, Taiwan",
-              "coordinates": { "lat": 25.058497, "lng": 121.50962 }
+              "coordinates": {
+                "lat": 25.058497,
+                "lng": 121.50962
+              }
             },
             "description": "聽不懂"
           },
-          { "type": "greeting", "greeting": "你好，我名字叫" }
+          {
+            "type": "greeting",
+            "greeting": "你好，我名字叫"
+          }
         ]
       },
       {
@@ -155,7 +178,10 @@
             },
             "location": {
               "name": "Solitude, UT",
-              "coordinates": { "lat": 40.619934, "lng": -111.604462 },
+              "coordinates": {
+                "lat": 40.619934,
+                "lng": -111.604462
+              },
               "altitude": "10,488 ft + 6ft"
             },
             "description": "Regular footed, goofy attitude"
@@ -165,12 +191,22 @@
       {
         "key": "references",
         "text": "references",
-        "click": [{ "type": "modal", "modalKey": "egg" }]
+        "click": [
+          {
+            "type": "modal",
+            "modalKey": "egg"
+          }
+        ]
       },
       {
         "key": "sci_fi",
         "text": "sci-fi",
-        "click": [{ "type": "micrographic", "micrographicKey": "sci-fi" }]
+        "click": [
+          {
+            "type": "micrographic",
+            "micrographicKey": "sci-fi"
+          }
+        ]
       }
     ],
     "text": "I'm a full-stack software engineer in <new_york>. I fell in love with web development at a young age and have been having fun with it ever since. I find unique and deliberate design to be delightful, so I'm always building <websites> in my spare time.\nOutside of coding I like to stay active. You can find me <rollerblading> the streets of NYC, carving it up on a <snowboard>, exploring heights while rock <climbing>, and exploring depths while <scuba> diving. I also study <mandarin> and like to watch and read <sci_fi>.\nCan you find all the <references> to my favorite sci-fi works on this page?"
