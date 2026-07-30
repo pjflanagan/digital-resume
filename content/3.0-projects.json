@@ -46,11 +46,18 @@
       "name": "Run Calculator",
       "type": "individual",
       "link": "//runcalculator.flanny.app",
-      "description": "Constructed minimalist website to calculate running pace on desktop and mobile  using CSS, JavaScript and jQuery. This was my very first website.\n",
+      "description": "Constructed and <reconstructed> minimalist website to calculate running pace on desktop and mobile using Svelte.",
       "image": "runcalculator.png",
       "tech": [
         "Svelte",
         "Netlify"
+      ],
+      "links": [
+        {
+          "key": "reconstructed",
+          "text": "reconstructed",
+          "tooltip": "This was my very first website."
+        }
       ]
     },
     {
