@@ -41,6 +41,7 @@ type Project = {
   type: string;
   link: string;
   description: string;
+  links?: ContentLink[];
   image: string;
   tech?: string[];
 };

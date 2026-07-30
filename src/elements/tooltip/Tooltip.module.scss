@@ -1,0 +1,36 @@
+@use 'theme/variables' as *;
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  .tooltipBox {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -8px);
+    width: max-content;
+    max-width: 260px;
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .tooltipInner {
+    display: inline-block;
+    padding: 0.6em 0.8em;
+    background-color: $background_teal_a30;
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    clip-path: $polygonSmall;
+    color: #fff;
+    font-size: 0.85em;
+    line-height: 1.4em;
+    text-align: left;
+    box-shadow: -2px -2px 8px #0004;
+  }
+}

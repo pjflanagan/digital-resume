@@ -7,6 +7,7 @@ export * from './frame/Frame';
 export * from './focus-frame/FocusFrame';
 export * from './icon/SVGIcon';
 export * from './text/Text';
+export * from './tooltip/Tooltip';
 export * from './splash/Splash';
 export * from './splash/SplashText';
 export * from './scroll/ScrollElement';

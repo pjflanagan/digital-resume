@@ -42,6 +42,8 @@ type ContentLink = {
   key: string;
   text: string;
   href?: string;
+  // shown as a tooltip instead of navigating; mutually exclusive with href
+  tooltip?: string;
   // hover/focus side effects, all optional since a link may trigger none, one, or several
   hover?: HoverEffect[];
   click?: ClickEffect[];

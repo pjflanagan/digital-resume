@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import type { ContentLink, HoverEffect, ClickEffect } from './types';
 
 import { TextInlineLink } from './TextInlineLink';
+import { Tooltip } from '../tooltip/Tooltip';
 
 import * as Style from './Text.module.scss';
 
@@ -51,13 +52,12 @@ function ParseTextForLinks(
       return <span key={i}>{part}</span>;
     }
 
-    const { hover, click, href, text: linkText } = link;
+    const { hover, click, href, tooltip, text: linkText } = link;
     const onHover = callback && hover?.length ? () => callback(hover) : undefined;
     const onClick = !href && onLinkClick && click?.length ? () => onLinkClick(click) : undefined;
 
-    return (
+    const inlineLink = (
       <TextInlineLink
-        key={i}
         href={href || undefined}
         onMouseOver={onHover}
         onFocus={onHover}
@@ -67,6 +67,16 @@ function ParseTextForLinks(
         {linkText}
       </TextInlineLink>
     );
+
+    if (tooltip) {
+      return (
+        <Tooltip key={i} text={tooltip}>
+          {inlineLink}
+        </Tooltip>
+      );
+    }
+
+    return <React.Fragment key={i}>{inlineLink}</React.Fragment>;
   });
 }
 

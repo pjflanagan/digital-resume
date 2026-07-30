@@ -13,7 +13,7 @@ type FeaturedProjectProps = {
 };
 
 function FeaturedProject({
-  project: { name, link, description, image, tech },
+  project: { name, link, description, links, image, tech },
 }: FeaturedProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isRevealed = useReveal({ ref, gap: 300 });
@@ -29,7 +29,7 @@ function FeaturedProject({
       </FrameHolder>
       <div className={Style.info}>
         <TextLinkedHeader href={link}>{name}</TextLinkedHeader>
-        <Text>{description}</Text>
+        <Text links={links}>{description}</Text>
         <div className={Style.techStackHolder}>
           {(tech || []).map((item) => (
             <TextTag key={item}>{item}</TextTag>
