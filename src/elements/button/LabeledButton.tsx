@@ -14,6 +14,7 @@ type LabeledButtonFormProps = {
   color?: LabeledButtonColor;
   bold?: boolean;
   scale?: number;
+  expand?: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
@@ -24,6 +25,7 @@ function LabeledButtonForm({
   color,
   bold,
   scale,
+  expand,
   onMouseEnter,
   onMouseLeave,
 }: LabeledButtonFormProps): React.ReactNode {
@@ -33,7 +35,8 @@ function LabeledButtonForm({
         Style.labeledButton,
         Style.buttonReset,
         color && Style[color],
-        bold && Style.bold
+        bold && Style.bold,
+        expand && Style.expand
       )}
       style={scale ? { transform: `scale(${scale})` } : undefined}
       type="submit"
@@ -60,13 +63,19 @@ function LabeledButtonLinked({
   color,
   bold,
   scale,
+  expand,
   onMouseEnter,
   onMouseLeave,
   children,
   href,
   sameWindow,
 }: LabeledButtonLinkedProps): React.ReactNode {
-  const className = clsx(Style.labeledButton, color && Style[color], bold && Style.bold);
+  const className = clsx(
+    Style.labeledButton,
+    color && Style[color],
+    bold && Style.bold,
+    expand && Style.expand
+  );
 
   return (
     <div className={className} style={scale ? { transform: `scale(${scale})` } : undefined}>
@@ -92,6 +101,7 @@ type LabeledButtonActionProps = {
   color?: LabeledButtonColor;
   bold?: boolean;
   scale?: number;
+  expand?: boolean;
   onClick: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
@@ -103,6 +113,7 @@ function LabeledButtonAction({
   color,
   bold,
   scale,
+  expand,
   onClick,
   onMouseEnter,
   onMouseLeave,
@@ -114,7 +125,8 @@ function LabeledButtonAction({
         Style.labeledButton,
         Style.buttonReset,
         color && Style[color],
-        bold && Style.bold
+        bold && Style.bold,
+        expand && Style.expand
       )}
       style={scale ? { transform: `scale(${scale})` } : undefined}
       onClick={onClick}

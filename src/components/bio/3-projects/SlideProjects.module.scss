@@ -33,9 +33,21 @@
       padding: 12px;
     }
 
+    .buttonRow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
     .buttonHolder {
-      width: 280px;
-      margin: 0 auto;
+      width: auto;
+      margin: 0;
+    }
+
+    .hideMobile {
+      display: none;
     }
   }
 }
@@ -57,6 +69,14 @@
         flex-wrap: wrap;
         margin: 0 auto 24px;
         width: 88%;
+      }
+
+      .hideMobile {
+        display: block;
+      }
+
+      .allBody.hideMobile {
+        display: flex;
       }
     }
   }

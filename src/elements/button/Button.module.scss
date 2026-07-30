@@ -19,6 +19,18 @@
   display: flex;
   cursor: pointer;
 
+  &.expand {
+    @media only screen and (max-width: #{$md - 1px}) {
+      width: 100%;
+
+      .holder {
+        .name {
+          flex: 1;
+        }
+      }
+    }
+  }
+
   a {
     box-shadow: none;
 

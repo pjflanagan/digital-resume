@@ -6,25 +6,9 @@
     "Other Projects"
   ],
   "linkText": {
-    "links": [
-      {
-        "key": "blog",
-        "href": "https://www.flanny.app/blog",
-        "text": "project blog"
-      },
-      {
-        "key": "github",
-        "href": "//github.com/pjflanagan",
-        "text": "Github"
-      },
-      {
-        "key": "flannyapp",
-        "href": "//flanny.app",
-        "text": "Flanny.app"
-      }
-    ],
+    "links": [],
     "text": [
-      "Tinkering has always been a favorite hobby of mine. I'm always toying with the latest technologies and writing code. See all my active projects on <flannyapp>. For details about my development adventures, read my <blog> or checkout my <github>."
+      "Tinkering has always been a favorite hobby of mine. I'm always toying with the latest technologies and writing code."
     ]
   },
   "featured": [

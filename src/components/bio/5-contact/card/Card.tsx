@@ -58,6 +58,7 @@ function Card({ setIsWaveOn }: CardProps) {
                 <LabeledButton
                   icon={link.icon}
                   href={link.href}
+                  expand
                   onMouseEnter={() => setIsWaveOn(true)}
                   onMouseLeave={() => setIsWaveOn(false)}
                 >

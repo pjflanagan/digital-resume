@@ -1,19 +1,28 @@
 {
   "items": [
     {
+      "links": [],
+      "text": "Website by Peter James Flanagan"
+    },
+    {
       "links": [
         {
           "key": "github",
           "href": "//github.com/pjflanagan/digital-resume",
           "text": "Github"
-        },
+        }
+      ],
+      "text": "Source code available on <github>"
+    },
+    {
+      "links": [
         {
           "key": "flannyapps",
           "href": "//flanny.app",
           "text": "Flanny.app"
         }
       ],
-      "text": "Website by Peter James Flanagan, available on <github>.\nSee more on <flannyapps>"
+      "text": "See more on <flannyapps>"
     }
   ]
 }

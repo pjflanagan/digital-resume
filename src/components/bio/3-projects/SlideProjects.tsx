@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
   TextTitle,
   TextAccent,
@@ -35,25 +36,32 @@ function SlideProjects() {
         </TextAccent>
         <TextTitle onClick={randomizeBlueprints}>{Bio.projects.title}</TextTitle>
         <Text links={Bio.projects.linkText.links}>{Bio.projects.linkText.text[0]}</Text>
-        <TextSection>{Bio.projects.sections[0]}</TextSection>
+        <div className={Style.buttonRow}>
+          <ButtonHolder className={Style.buttonHolder}>
+            <LabeledButton icon="rocket" color="yellow" href="//flanny.app">
+              Flanny Apps
+            </LabeledButton>
+          </ButtonHolder>
+          <ButtonHolder className={Style.buttonHolder}>
+            <LabeledButton icon="saturn" color="blue" href="https://www.flanny.app/blog">
+              Project Blog
+            </LabeledButton>
+          </ButtonHolder>
+        </div>
+        <TextSection className={Style.hideMobile}>{Bio.projects.sections[0]}</TextSection>
         <div className={Style.featuredBody}>
           {Bio.projects.projects.featured.map((project) => (
             <FeaturedProject key={project.name} project={project} />
           ))}
         </div>
-        <TextSection>{Bio.projects.sections[1]}</TextSection>
-        <div className={Style.allBody}>
+        <TextSection className={Style.hideMobile}>{Bio.projects.sections[1]}</TextSection>
+        <div className={clsx(Style.allBody, Style.hideMobile)}>
           <Stack>
             {Bio.projects.projects.all.map((project) => (
               <Project key={project.name} project={project} name={project.name} />
             ))}
           </Stack>
         </div>
-        <ButtonHolder className={Style.buttonHolder}>
-          <LabeledButton icon="saturn" color="yellow" href="https://www.flanny.app/blog">
-            See Project Blog
-          </LabeledButton>
-        </ButtonHolder>
       </div>
     </ScrollElement>
   );

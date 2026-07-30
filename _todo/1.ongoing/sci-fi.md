@@ -36,12 +36,12 @@
 - [ ] Mars Express -> a robot beam? 
 - [ ] Gravity Falls
 - [ ] The Dispossessed
+- [ ] Solar Opposites -> pupa or planet getting struck by asteroid
 - [ ] Stray video game -> some really good blueprints here and that little robot is very cute
 
-- [ ] Planet of the Apes
 - [ ] Arca
 - [ ] The Expanse
 - [ ] Ted Chiang (technically through Arrival)
 - [ ] For All Mankind
 - [ ] Don't Look Up - a comet
-
+- [ ] Planet of the Apes

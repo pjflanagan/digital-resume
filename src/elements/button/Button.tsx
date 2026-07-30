@@ -9,6 +9,7 @@ type ButtonCommonProps = {
   color?: 'yellow' | 'red' | 'blue';
   bold?: boolean;
   scale?: number;
+  expand?: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 };
