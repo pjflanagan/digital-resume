@@ -21,7 +21,7 @@
   - [ ] The green text effect? -> Contact page if we do multiple animations there
 - [x] Space Odyssey
   - [x] 404 Page
-  - [ ] Maybe put a black obelisk in space sometimes
+  - [x] Maybe put a black obelisk in space sometimes
 - [x] Horizon (ZD)
   - [x] Focus is the send icon
 - [x] Arrival -> one of the circle insignias

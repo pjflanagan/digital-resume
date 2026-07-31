@@ -3,6 +3,7 @@ import { distance, Point, Random, Range } from 'src/helpers';
 
 import { Body } from './Body';
 import { Bullet } from './Bullet';
+import { Monolith } from './Monolith';
 import { Moon } from './Moon';
 import { Portal } from './Portal';
 import { Planet } from './Planet';
@@ -31,6 +32,7 @@ const LAYERS: { count: Range | number; body: BodyConstructor }[] = [
   { count: VIEW_FOREGROUND_MOONS, body: Moon },
   { count: VIEW_FOREGROUND_MOONS, body: Moon },
   { count: 1, body: Portal },
+  { count: 1, body: Monolith },
   { count: VIEW_STARS, body: Star },
 ];
 

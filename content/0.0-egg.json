@@ -124,6 +124,10 @@
         {
           "locationId": "404-page",
           "egg": "The 404 page's drifting particle field is a nod to the Star Gate sequence in 2001: A Space Odyssey."
+        },
+        {
+          "locationId": "splash-slide",
+          "egg": "The Monolith can be seen spinning around in the darkness of space."
         }
       ]
     },
