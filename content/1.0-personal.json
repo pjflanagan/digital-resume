@@ -17,7 +17,7 @@
             "location": {
               "name": "current location unknown"
             },
-            "description": "Net runner, regular runner"
+            "description": "Net runner, regular runner too"
           },
           {
             "type": "greeting",
@@ -129,7 +129,7 @@
               },
               "altitude": "-45 ft"
             },
-            "description": "Puffer fish fan"
+            "description": "SCUBA Certified"
           }
         ]
       },
