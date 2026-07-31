@@ -3,6 +3,56 @@ import { Random } from 'src/helpers';
 import { Body, BodyProp } from './Body';
 import type { View } from './View';
 
+const MONOLITH = {
+  // Spawn position range from screen boundaries
+  SPAWN_MARGIN: { min: 80, max: 120 },
+
+  // Sizing and proportions (Space Odyssey 1:4:9 scale proportions)
+  SCALE: { min: 3.5, factor: 0.007 },
+  RATIOS: { w: 4, h: 9, d: 1 },
+
+  // Movement offset parameters
+  OFFSET: {
+    MAX_RADIUS: 15,
+    SPEED: 0.08,
+  },
+
+  // Parallax scroll speed rate
+  SCROLL_SHIFT_RATE: 8,
+
+  // Scroll rotation coefficients for each axis (how much to rotate at 100% scroll)
+  SCROLL_ROTATION: {
+    X: Math.PI * 0.3,
+    Y: Math.PI * 0.6,
+    Z: Math.PI * 0.3,
+  },
+
+  // Passive rotation speeds over time per frame
+  SPIN_SPEED: {
+    X: 0.0005,
+    Y: 0.0012,
+    Z: 0.0003,
+  },
+
+  // 3D rendering parameters
+  FOCAL_LENGTH: 300,
+  LIGHT: { x: -0.5, y: -0.8, z: -1.0 },
+
+  // Rendering colors and shading
+  SHADING: {
+    AMBIENT: 0.05,
+    DIFFUSE: 0.45,
+    BASE_GREY: 5,
+    GREY_RANGE: 60,
+  },
+  STROKE: {
+    COLOR: '100, 100, 100',
+    BASE_OPACITY: 0.05,
+    OPACITY_FACTOR: 0.2,
+    WIDTH: 1,
+  },
+};
+
 type MonolithProp = BodyProp & {
   w: number;
   h: number;
@@ -28,23 +78,25 @@ class Monolith extends Body<MonolithProp> {
 
     // Pick top-left or bottom-left corner
     const isTop = Random.bool();
-    const cx = Random.int(80, 120);
-    const cy = isTop ? Random.int(80, 120) : H - Random.int(80, 120);
+    const cx = Random.int(MONOLITH.SPAWN_MARGIN.min, MONOLITH.SPAWN_MARGIN.max);
+    const cy = isTop
+      ? Random.int(MONOLITH.SPAWN_MARGIN.min, MONOLITH.SPAWN_MARGIN.max)
+      : H - Random.int(MONOLITH.SPAWN_MARGIN.min, MONOLITH.SPAWN_MARGIN.max);
 
     // 1:4:9 scale (Space Odyssey Monolith proportions)
-    const scale = Math.max(3.5, shorterSide * 0.007);
-    const w = 4 * scale;  // width along X
-    const h = 9 * scale;  // height along Y
-    const d = 1 * scale;  // depth along Z
+    const scale = Math.max(MONOLITH.SCALE.min, shorterSide * MONOLITH.SCALE.factor);
+    const w = MONOLITH.RATIOS.w * scale;  // width along X
+    const h = MONOLITH.RATIOS.h * scale;  // height along Y
+    const d = MONOLITH.RATIOS.d * scale;  // depth along Z
 
     return {
       center: { x: cx, y: cy },
       w,
       h,
       d,
-      offsetRadiusMax: 15,
-      offsetSpeed: 0.08,
-      scrollShiftRate: 8,
+      offsetRadiusMax: MONOLITH.OFFSET.MAX_RADIUS,
+      offsetSpeed: MONOLITH.OFFSET.SPEED,
+      scrollShiftRate: MONOLITH.SCROLL_SHIFT_RATE,
     };
   }
 
@@ -53,9 +105,9 @@ class Monolith extends Body<MonolithProp> {
 
     // Rotate the monolith over time
     const speedScale = this.canvas.frameScale;
-    this.spinAngleX += 0.0005 * speedScale;
-    this.spinAngleY += 0.0012 * speedScale;
-    this.spinAngleZ += 0.0003 * speedScale;
+    this.spinAngleX += MONOLITH.SPIN_SPEED.X * speedScale;
+    this.spinAngleY += MONOLITH.SPIN_SPEED.Y * speedScale;
+    this.spinAngleZ += MONOLITH.SPIN_SPEED.Z * speedScale;
   }
 
   private rotate3D(x: number, y: number, z: number, rx: number, ry: number, rz: number) {
@@ -86,6 +138,7 @@ class Monolith extends Body<MonolithProp> {
   draw() {
     const { w, h, d } = this.prop;
     const { x, y } = this.pos;
+    const { scrollPercent } = this.canvas;
 
     // Define 8 vertices for the cuboid centered at (0, 0, 0)
     const halfW = w / 2;
@@ -103,13 +156,18 @@ class Monolith extends Body<MonolithProp> {
       { x: -halfW, y:  halfH, z:  halfD }, // 7: back-bottom-left
     ];
 
+    // Calculate actual rotation angles including scroll-based rotation
+    const rx = this.spinAngleX + MONOLITH.SCROLL_ROTATION.X * scrollPercent;
+    const ry = this.spinAngleY + MONOLITH.SCROLL_ROTATION.Y * scrollPercent;
+    const rz = this.spinAngleZ + MONOLITH.SCROLL_ROTATION.Z * scrollPercent;
+
     // Apply 3D rotations
     const rotated = vertices.map((v) =>
-      this.rotate3D(v.x, v.y, v.z, this.spinAngleX, this.spinAngleY, this.spinAngleZ)
+      this.rotate3D(v.x, v.y, v.z, rx, ry, rz)
     );
 
     // Project 3D vertices to 2D screen coordinates using perspective projection
-    const focalLength = 300;
+    const focalLength = MONOLITH.FOCAL_LENGTH;
     const projected = rotated.map((v) => {
       const scale = focalLength / (focalLength + v.z);
       return {
@@ -168,7 +226,7 @@ class Monolith extends Body<MonolithProp> {
     facesWithDepth.sort((a, b) => b.avgZ - a.avgZ);
 
     // Directional light source (normalized)
-    const light = { x: -0.5, y: -0.8, z: -1.0 };
+    const light = MONOLITH.LIGHT;
     const lLen = Math.sqrt(light.x * light.x + light.y * light.y + light.z * light.z);
     const L = { x: light.x / lLen, y: light.y / lLen, z: light.z / lLen };
 
@@ -178,12 +236,12 @@ class Monolith extends Body<MonolithProp> {
 
       // Compute shading intensity (ambient + diffuse dot product)
       const dot = normal.x * L.x + normal.y * L.y + normal.z * L.z;
-      const ambient = 0.05;
-      const diffuse = 0.45 * Math.max(0, dot);
+      const ambient = MONOLITH.SHADING.AMBIENT;
+      const diffuse = MONOLITH.SHADING.DIFFUSE * Math.max(0, dot);
       const factor = ambient + diffuse;
 
       // Black and grey colors
-      const grey = Math.floor(5 + factor * 60);
+      const grey = Math.floor(MONOLITH.SHADING.BASE_GREY + factor * MONOLITH.SHADING.GREY_RANGE);
       const fillColor = `rgb(${grey}, ${grey}, ${grey})`;
 
       this.ctx.beginPath();
@@ -198,8 +256,8 @@ class Monolith extends Body<MonolithProp> {
       this.ctx.fill();
 
       // Stroke face outline for subtle 3D definition
-      this.ctx.strokeStyle = `rgba(100, 100, 100, ${0.05 + factor * 0.2})`;
-      this.ctx.lineWidth = 1;
+      this.ctx.strokeStyle = `rgba(${MONOLITH.STROKE.COLOR}, ${MONOLITH.STROKE.BASE_OPACITY + factor * MONOLITH.STROKE.OPACITY_FACTOR})`;
+      this.ctx.lineWidth = MONOLITH.STROKE.WIDTH;
       this.ctx.stroke();
     }
   }
