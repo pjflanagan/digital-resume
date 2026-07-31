@@ -4,7 +4,7 @@
     {
       "color": "#fff",
       "position": "Senior Software Engineer",
-      "name": "Wonder",
+      "name": "Grubhub (Wonder)",
       "time": "June 2021 - Present",
       "description_hidden": [
         "Designed game UI for the order confirmation page, boosting customer engagement and driving organic social media buzz",
@@ -14,8 +14,8 @@
       "location": "Manhattan, NY",
       "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience/wonder.png",
       "description": [
-        "Enhanced the post-purchase experience with detailed order tracking features, reducing customer care contacts and increasing retention",
-        "Refactored the Google Maps-based restaurant map for seamless React integration, increasing pickup order conversions by 15%",
+        "Enhanced the post-purchase experience for 20,000 weekly users with live order tracking features, reducing customer care contacts and increasing recommender score",
+        "Refactored Google Maps-based restaurant search for seamless React integration, increasing pickup order conversions by 15%",
         "Maintained and improved a custom JSON-to-React translation tool, decreasing call center agent response time",
         "Served as the team's fullstack developer, bridging backend and frontend work"
       ]
