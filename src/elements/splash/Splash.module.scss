@@ -8,16 +8,115 @@
   left: 0;
   background: $background_darkBlue1;
   z-index: 101;
-  transition: filter 0.4s;
-  -webkit-transition: filter 0.4s;
+  transition: opacity 0.8s ease-out, filter 0.8s ease-out;
+  -webkit-transition: opacity 0.8s ease-out, filter 0.8s ease-out;
 
   &.visible {
+    opacity: 1;
     filter: opacity(1);
     pointer-events: all;
   }
 
   &.hidden {
+    opacity: 0;
     filter: opacity(0);
     pointer-events: none;
+  }
+
+  /* Bottom-left alignment styling is isolated and applied only in console mode */
+  &.consoleMode {
+    display: flex;
+    align-items: flex-end; /* bottom-aligned */
+    justify-content: flex-start; /* left-aligned */
+    padding: 40px;
+    box-sizing: border-box;
+
+    @media (max-width: $md) {
+      padding: 24px;
+    }
+  }
+}
+
+.terminalContent {
+  font-family: $ubuntuMono;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* tight spacing between lines */
+  color: $display_white_a50; /* using standard variable from _variables.scss */
+  font-size: 15px;
+  line-height: 1.15; /* compact line height */
+
+  @media (max-width: $md) {
+    font-size: 13px;
+    gap: 1px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    opacity: 0.15;
+  }
+}
+
+.line {
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: $display_white_a50; /* using standard variable from _variables.scss */
+}
+
+.promptPrefix {
+  color: $accent_cyan; /* using standard variable from _variables.scss */
+  font-weight: bold;
+}
+
+.promptDirectory {
+  color: $accent_yellow; /* using standard variable from _variables.scss */
+  font-weight: bold;
+}
+
+.systemLine {
+  color: $display_white_a50; /* using standard variable from _variables.scss */
+}
+
+.successPart {
+  color: $accent_teal; /* using standard variable from _variables.scss */
+  font-weight: bold;
+}
+
+.readyLine {
+  color: $accent_cyan; /* using standard variable from _variables.scss */
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: $accent_cyan; /* using standard variable from _variables.scss */
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
   }
 }

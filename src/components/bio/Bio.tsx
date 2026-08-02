@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import * as Scroll from 'react-scroll';
 
 import { ContentProvider, useBio } from 'src/content';
-import { Cover, Splash } from 'src/elements';
+import { Cover, Splash, ENABLE_CONSOLE_ANIMATION } from 'src/elements';
 
 import { Footer } from './footer/Footer';
 import { Header } from './header/Header';
@@ -32,6 +32,10 @@ function BioPage() {
   const Bio = useBio();
 
   useEffect(() => {
+    // If console animation is enabled, Splash itself controls its hide timing via onComplete
+    if (ENABLE_CONSOLE_ANIMATION) return;
+
+    // Fallback to original behavior: hide splash after 400ms
     const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 400);
@@ -51,7 +55,7 @@ function BioPage() {
         </Header>
       </div>
       <Cover />
-      <Splash isVisible={isLoading} />
+      <Splash isVisible={isLoading} onComplete={() => setIsLoading(false)} />
       <SlideLanding />
       <div className={Style.slides}>
         <SlidePersonal />
