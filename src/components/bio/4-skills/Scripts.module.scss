@@ -1,0 +1,112 @@
+@use 'theme/variables' as *;
+
+.scriptsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.scriptsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 32px 16px;
+  position: relative;
+  padding: 24px;
+  background: rgba($display_black, 0.2);
+  border: 1px solid rgba($display_cyan, 0.15);
+  clip-path: $polygonSmall;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  // Single horizontal line going between the circles in the grid
+  &::before {
+    content: '';
+    position: absolute;
+    top: 28px; // aligned with the center of the 56px circle
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: rgba($display_cyan, 0.15);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &:hover {
+    .capacitor {
+      border-color: $accent_cyan;
+      box-shadow: 0 0 12px rgba($display_cyan, 0.4);
+      transform: scale(1.05);
+
+      .iconWrapper {
+        color: $display_cyan;
+      }
+    }
+
+    .label {
+      color: $display_cyan;
+    }
+  }
+}
+
+.capacitor {
+  position: relative;
+  z-index: 5;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $background_darkBlue1;
+  border: 2px solid rgba($display_cyan, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+  color: $display_white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease;
+}
+
+.label {
+  margin-top: 12px;
+  font-family: $ubuntuMono;
+  font-size: 11px;
+  color: $display_white;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.25s ease;
+  z-index: 5;
+}
+
+// Scroll animation matching layout standards
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: script-reveal 0.3s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes script-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

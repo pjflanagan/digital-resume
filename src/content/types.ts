@@ -97,7 +97,13 @@ type BioContent = {
     title: string;
     jobs: { title: string; featured: Job[]; other: Job[] };
     schools: { title: string; featured: School[]; other: School[]; hidden: School[] };
-    skills: { accent: string; title: string; groups: SkillGroup[] };
+    skills: {
+      accent: string;
+      title: string;
+      groups: SkillGroup[];
+      scripts: { name: string }[];
+      certifications: { name: string }[];
+    };
     linkText: LinkText;
   };
   projects: {

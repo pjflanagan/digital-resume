@@ -1,0 +1,138 @@
+@use 'theme/variables' as *;
+
+.certificationsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.certsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 24px 16px;
+  position: relative;
+  padding: 24px;
+  background: rgba($display_black, 0.2);
+  border: 1px solid rgba($display_yellow, 0.15);
+  clip-path: $polygonSmall;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    .chip {
+      border-color: $accent_yellow;
+      box-shadow: 0 0 12px rgba($display_yellow, 0.3);
+      transform: scale(1.03);
+
+      .chipBody {
+        background: #182226;
+      }
+
+      .pin {
+        background: $accent_yellow;
+        box-shadow: 0 0 6px $accent_yellow;
+      }
+
+      .certName {
+        color: $display_white;
+      }
+    }
+  }
+}
+
+// Complete IC / Op-Amp chip container (pins + body)
+.chip {
+  position: relative;
+  width: 110px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+// The core silicon body of the chip
+.chipBody {
+  position: relative;
+  z-index: 10;
+  width: 86px;
+  height: 44px;
+  background: #0f181a;
+  border: 1px solid rgba($display_yellow, 0.4);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all 0.25s ease;
+}
+
+// The actual certification title printed on the chip
+.certName {
+  font-family: $ubuntuMono;
+  font-size: 11px;
+  color: $display_yellow;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.2;
+  transition: color 0.25s ease;
+}
+
+// Op-Amp Metal pins (4 on left side, 4 on right side)
+.pinsLeft,
+.pinsRight {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(100% - 8px);
+  z-index: 5;
+}
+
+.pinsLeft {
+  left: 6px;
+}
+
+.pinsRight {
+  right: 6px;
+}
+
+// Individual dual in-line pin leg
+.pin {
+  width: 8px;
+  height: 4px;
+  background: rgba($display_yellow, 0.3);
+  border-radius: 1px;
+  transition: all 0.25s ease;
+}
+
+// Scroll animation support
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: cert-reveal 0.3s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes cert-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

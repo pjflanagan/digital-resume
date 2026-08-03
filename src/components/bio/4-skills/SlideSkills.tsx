@@ -3,6 +3,8 @@ import { useBio } from 'src/content';
 
 import { Skills } from './Skills';
 import * as Style from './SlideSkills.module.scss';
+import { Scripts } from './Scripts';
+import { Certifications } from './Certifications';
 
 export function SlideSkills() {
   const { accent, title } = useBio().experience.skills;
@@ -16,6 +18,8 @@ export function SlideSkills() {
           <TextTitle>{title}</TextTitle>
         </div>
         <Skills />
+        <Scripts />
+        <Certifications />
       </div>
     </ScrollElement>
   );

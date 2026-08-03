@@ -18,10 +18,6 @@
           "progress": 52
         },
         {
-          "name": "Flask",
-          "progress": 72
-        },
-        {
           "name": "GRPC",
           "progress": 64
         }
@@ -45,15 +41,11 @@
         {
           "name": "MongoDB",
           "progress": 78
-        },
-        {
-          "name": "Heroku",
-          "progress": 82
         }
       ]
     },
     {
-      "type": "Production Tools",
+      "type": "Monitoring Tools",
       "items": [
         {
           "name": "DataDog",
@@ -66,43 +58,6 @@
         {
           "name": "Splunk",
           "progress": 82
-        }
-      ]
-    },
-    {
-      "type": "Scripts",
-      "items": [
-        {
-          "name": "Typescript",
-          "progress": 92
-        },
-        {
-          "name": "Golang",
-          "progress": 78
-        },
-        {
-          "name": "Python",
-          "progress": 72
-        },
-        {
-          "name": "Java",
-          "progress": 58
-        },
-        {
-          "name": "C++",
-          "progress": 61
-        },
-        {
-          "name": "SQL",
-          "progress": 68
-        },
-        {
-          "name": "HTML",
-          "progress": 99
-        },
-        {
-          "name": "CSS / SCSS",
-          "progress": 89
         }
       ]
     },
@@ -124,10 +79,6 @@
         {
           "name": "Charles Proxy",
           "progress": 72
-        },
-        {
-          "name": "Photoshop",
-          "progress": 55
         }
       ]
     },
@@ -144,23 +95,43 @@
           "href": "//flanny.app/study-mandarin"
         }
       ]
+    }
+  ],
+  "scripts": [
+    {
+      "name": "Typescript"
     },
     {
-      "type": "Other",
-      "items": [
-        {
-          "name": "Snowboarding",
-          "progress": 80
-        },
-        {
-          "name": "Sewing",
-          "progress": 65
-        },
-        {
-          "name": "Cooking",
-          "progress": 75
-        }
-      ]
+      "name": "CSS / SCSS"
+    },
+    {
+      "name": "Golang"
+    },
+    {
+      "name": "SQL"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "Java"
+    },
+    {
+      "name": "C++"
+    },
+    {
+      "name": "JSX / HTML"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Belay"
+    },
+    {
+      "name": "Scuba"
+    },
+    {
+      "name": "Ordained Minister"
     }
   ]
 }

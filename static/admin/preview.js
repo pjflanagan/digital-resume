@@ -240,6 +240,22 @@ const SkillsPreview = ({ entry }) =>
           )
         )
       )
+    ),
+    h('h2', {}, 'Scripts'),
+    h(
+      'div',
+      { style: { display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' } },
+      get(entry, ['scripts'], []).map((script, i) =>
+        h('span', { key: i, style: { border: '1px solid currentColor', padding: '4px 8px', borderRadius: '4px' } }, script.name)
+      )
+    ),
+    h('h2', {}, 'Certifications'),
+    h(
+      'div',
+      { style: { display: 'flex', gap: '8px', flexWrap: 'wrap' } },
+      get(entry, ['certifications'], []).map((cert, i) =>
+        h('span', { key: i, style: { border: '1px solid currentColor', padding: '4px 8px', borderRadius: '4px' } }, cert.name)
+      )
     )
   );
 
