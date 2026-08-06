@@ -10,7 +10,10 @@
     },
     {
       "id": "personal-photo",
-      "name": "Personal Photo"
+      "name": "Personal Photo",
+      "description": {
+        "text": "Click the word \"sci-fi\" to cycle through micrographics."
+      }
     },
     {
       "id": "programs-blueprint",
@@ -339,7 +342,7 @@
       "name": "Apollo 13",
       "eggs": [
         {
-          "locationId":"404-page",
+          "locationId": "404-page",
           "egg": "The blurb on the 404 page is a play on the iconic \"Houston...\" line."
         }
       ]
