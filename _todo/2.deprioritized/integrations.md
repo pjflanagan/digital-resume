@@ -4,10 +4,12 @@
 One of the core tenets of the cyberpunk style is data overload. That means it would be cool to depict live data about me, such as:
 - Github stats
 - Strava stats
-- other?
+- Garmin stats
 
 Obviously, I don't want to reveal too much (but this is a personal website so there will be info about me). The idea would be that
 in one of our Micrographics or somewhere else we would be using "live" data about me.
+
+---
 
 # GitHub Data
 

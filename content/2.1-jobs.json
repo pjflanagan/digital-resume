@@ -14,10 +14,12 @@
       "location": "Manhattan, NY",
       "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience/wonder.png",
       "description": [
-        "Enhanced the post-purchase experience for 20,000 weekly users with live order tracking features, reducing customer care contacts and increasing recommender score",
-        "Refactored Google Maps-based restaurant search for seamless React integration, increasing pickup order conversions by 15%",
-        "Maintained and improved a custom JSON-to-React translation tool, decreasing call center agent response time",
-        "Served as the team's fullstack developer, bridging backend and frontend work"
+        "Architected order tracking page to unified BFF framework to standardize experience across all platforms",
+        "Enhanced order tracking experience for 20,000 weekly users with robot and drone delivery, pin verification, dropoff pin location, reducing care contact",
+        "Generated new revenue streams and purchase points with Rokt ad integration and features like convenience store upselling and item substitutions",
+        "Defined cross team architecture for in-app-messaging integration and dropoff pin coordinates",
+        "Refactored Google Maps based search and tracking experience for improved React integration, feature updates led to 15%  increase in pickup order conversions and 10% decrease in call center contact rate",
+        "Created experimental game to improve user satisfaction, decrease care contact rate, and generate online buzz"
       ]
     },
     {
