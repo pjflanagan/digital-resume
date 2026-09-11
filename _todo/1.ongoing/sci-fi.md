@@ -33,9 +33,11 @@
   - [ ] the footer is blacker and has a crack
 
 - [ ] Scavengers Reign
+- [ ] Nausicaä 
 - [ ] Mars Express -> a robot beam? 
 - [ ] Gravity Falls
-- [ ] The Dispossessed
+- [ ] Hyperion
+- [ ] Ursula LeGuin: The Dispossessed and The Left Hand Of Darkness
 - [ ] Solar Opposites -> pupa or planet getting struck by asteroid
 - [ ] Stray video game -> some really good blueprints here and that little robot is very cute
 
