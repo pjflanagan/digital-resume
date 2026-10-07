@@ -2,10 +2,20 @@
   "title": "Career",
   "featured": [
     {
+      "name": "CapitalOne Travel",
+      "location": "Manhattan, NY",
+      "time": "October 2026 - Present",
+      "position": "Software Engineer 4 (Lead)",
+      "description": [],
+      "background": "#013d5b",
+      "color": "#cc2426",
+      "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience/capitalone.png"
+    },
+    {
       "color": "#fff",
       "position": "Senior Software Engineer",
       "name": "Grubhub (Wonder)",
-      "time": "June 2021 - Present",
+      "time": "June 2021 - October 2026",
       "description_hidden": [
         "Designed game UI for the order confirmation page, boosting customer engagement and driving organic social media buzz",
         "Built an item substitution modal that let customers approve brand swaps mid-order, streamlining the grocery delivery experience and cutting refund rates"
