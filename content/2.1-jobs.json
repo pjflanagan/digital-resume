@@ -5,8 +5,10 @@
       "name": "CapitalOne Travel",
       "location": "Manhattan, NY",
       "time": "October 2026 - Present",
-      "position": "Software Engineer 4 (Lead)",
-      "description": [],
+      "position": "Software Engineer 4",
+      "description": [
+        "Excited for a new role!"
+      ],
       "background": "#013d5b",
       "color": "#cc2426",
       "image": "https://raw.githubusercontent.com/pjflanagan/digital-resume/main/content/images/experience/capitalone.png"
